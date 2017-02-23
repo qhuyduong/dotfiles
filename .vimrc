@@ -303,7 +303,6 @@ nmap <F8> :TagbarToggle<CR>
 " Jason Duell       jduell@alumni.princeton.edu     2002/3/7
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-echo "personal configuration from ~/.vimrc"
 nmap <C-l> :tabnext<CR>
 nmap <C-h> :tabprev<CR>
 set undolevels=100
@@ -325,7 +324,6 @@ set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
 " when it was compiled.  If it wasn't, time to recompile vim...
 if has ("cscope")
 
-	echo "intializing cscope..."
 
 	""""""""""""" Standard cscope/vim boilerplate
 
