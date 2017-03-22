@@ -278,6 +278,9 @@ nmap <F8> :TagbarToggle<CR>
 "autocmd FileType javascript :iabbrev <buffer> ret return
 "augroup END
 
+" Disable auto comment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CSCOPE settings for vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
