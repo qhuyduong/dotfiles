@@ -417,7 +417,6 @@ if has ("cscope")
 	nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
 	nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 	nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
-	nmap <F5> :!cscope -b -q -k -R<CR>:cs reset<CR><CR>
 
 	""""""""""""" key map timeouts
 	"
