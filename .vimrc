@@ -119,8 +119,8 @@ set foldmethod=indent
 set foldlevel=99
 
 " search remap
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 set ignorecase
 set smartcase
 set gdefault
@@ -264,6 +264,8 @@ set fileformat=unix
 set fileformats=unix,dos
 
 " -- solarized personal conf
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 set background=dark
 " Uncomment the next line if your terminal is not configured for solarized
 colorscheme solarized
