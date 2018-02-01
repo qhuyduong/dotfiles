@@ -34,11 +34,11 @@ _isarch=false
 if $_isarch; then
     tput_cmd=/bin/tput
     dircolors_cmd=/bin/dircolors
-else 
+else
     tput_cmd=/usr/bin/tput
     dircolors_cmd=/usr/bin/dircolors
 fi
-    
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
@@ -98,10 +98,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias vi='/usr/bin/vim'
 export EDITOR=vim
 
-# screen alias
-alias scrls='screen -ls'
-alias scropen='screen -xS -R'
-
 alias cls='clear'
 alias hgrep='history | grep'
 alias la='ls -A'
@@ -110,43 +106,7 @@ alias gitdiff='git diff --no-index'
 alias mcscope='find . -name '*.[chS]' -print > cscope.files; cscope -R -b -q -k; ctags -L cscope.files'
 
 alias ll='ls -Alrt'
-export P4PORT=hcmp4proxy01:1666
-export P4DIFF=/usr/bin/diff
-export P4USER=hduong
-export P4PASSWD=amcc1234
-export P4EDITOR=vim
-export P4CLIENT=gitp4admin
-
-export AARCH64_TOOLCHAIN_VER=8.0.12-le;
-export ARCH=arm64;
-export CROSS_COMPILE=aarch64-apm-linux-gnu-;
-export PATH=/tools/arm/armv8/Theobroma/opt/apm-aarch64/$AARCH64_TOOLCHAIN_VER/bin:/AMCC/hduong/utilities/gcc-linaro-6.1.1-2016.08-x86_64_aarch64-linux-gnu/bin:/tools/perforce/p4/v2015.1/bin:~/opt/bin:$PATH
-export QT_XKB_CONFIG_ROOT=/usr/lib/kbd/keymaps/xkb
-
-alias arm32="export ARCH=arm;
-	     export CROSS_COMPILE=arm-none-eabi-
-             export PATH=/AMCC/hduong/opt/toolchains/gcc-arm-none-eabi-5_4-2016q3/bin:$PATH"
-
-alias connect-sw4="ssh -Y hduong@10.38.12.20"
-alias connect-sw7="ssh -Y hduong@10.38.12.21"
-alias connect-sw8="ssh -Y hduong@10.38.12.23"
-alias connect-pc="ssh -Y hduong@10.38.7.104"
-
-alias testing06="ssh -Y hduong@10.38.12.56"
-alias ser2tel="telnet 10.38.12.71"
-alias ser2tel56="telnet 10.38.12.56"
-
-alias opensource="cd /AMCC/hduong/opensource/"
-
-alias vanilla="cd /AMCC/hduong/opensource/linux-stable/"
-
-alias gotftp="cd /tftpboot/hduong/"
-
-alias release="cd /hcm_software/ftproot/apmsw/"
-
-alias workspace="cd /AMCC/hduong/"
-
-source ~/macbook_ascii.sh
 
 unset SSH_ASKPASS
 export MAILCHECK=0
+export CYGWIN=winsymlinks:nativestrict
