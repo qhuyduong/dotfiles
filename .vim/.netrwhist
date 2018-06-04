@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/var/lib/tftpboot/hduong/mudan/package/mudan_sw_1.08.02/tianocore/ArmPlatformPkg/APMXGenePkg/Drivers/BMCDxe'
-let g:netrw_dirhist_2='/AMCC/hduong/p4/refPlatforms/storm_dev_boards/mp30ar0/tianocore/ArmPlatformPkg/APMXGenePkg/DeviceTree'
-let g:netrw_dirhist_3='/AMCC/hduong/p4/refPlatforms/storm_dev_boards/mudan'
-let g:netrw_dirhist_4='/AMCC/hduong/opensource/ovcebik-openwrt/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_rt305x/linux-3.18.36/drivers/usb/dwc2'
-let g:netrw_dirhist_5='/AMCC/hduong/opensource/linux-3.18.36/drivers/usb/gadget/udc'
-let g:netrw_dirhist_6='/user/hcm/mule'
