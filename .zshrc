@@ -7,7 +7,7 @@ export ZSH=/Users/huyduong/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="gnzh"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -60,6 +60,9 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  vi-mode
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -141,3 +144,5 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/huyduong/Library/Caches/heroku/autocomplete/zsh_
 
 ########## Export variables ##########
 source "$HOME/.zshrc_env"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
