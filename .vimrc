@@ -28,6 +28,7 @@ Plug 'tpope/vim-rake'
 " Add 'end' to ruby structures
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
 
 " Vim Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -54,17 +55,13 @@ Plug 'vim-syntastic/syntastic'
 " vim-closetag
 Plug 'alvan/vim-closetag'
 
-" vim-codequery
-Plug 'Shougo/unite.vim'
-Plug 'devjoe/vim-codequery'
-
 " vim-trailing-whitespace
 Plug 'ntpeters/vim-better-whitespace'
 
 " vim-jsx
 Plug 'pangloss/vim-javascript', { 'for': '*javascript*' }
 Plug 'mxw/vim-jsx', { 'for': '*javascript*' }
-"Plug 'ternjs/tern_for_vim', { 'for': '*javascript*' }
+Plug 'ternjs/tern_for_vim', { 'for': '*javascript*', 'do': 'npm install' }
 " emmet-vim
 Plug 'mattn/emmet-vim', { 'for': ['html', '*erb', '*javascript*'] }
 " vim-jsbeautify
@@ -75,11 +72,11 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 
 " ES2015 code snippets (Optional)
-Plug 'epilande/vim-es2015-snippets'
+Plug 'epilande/vim-es2015-snippets', { 'for': '*javascript*' }
 " React code snippets
-Plug 'epilande/vim-react-snippets'
+Plug 'epilande/vim-react-snippets', { 'for': '*javascript*' }
 " Ultisnips
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips', { 'for': '*javascript*' }
 
 Plug 'mhinz/vim-startify'
 
@@ -91,9 +88,15 @@ Plug 'godlygeek/tabular'
 
 Plug 'whatyouhide/vim-lengthmatters'
 
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'for': ['*javascript*', 'ruby'] }
 
 Plug 'moll/vim-node'
+
+Plug 'prettier/vim-prettier'
+
+Plug 'lfilho/cosco.vim'
+
+Plug 'elzr/vim-json'
 
 " Initialize plugin system
 call plug#end()
@@ -152,6 +155,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
 let g:airline_theme = 'luna'
 
 " Colour settings
@@ -172,6 +177,18 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_scss_checkers = [ 'sass_lint' ]
 let g:syntastic_sass_sass_args = '-I ' . getcwd()
+
+"Tries to find eslint's binary locally, fallback to globally installed
+if executable($PWD .'/node_modules/eslint/bin/eslint.js')
+  let s:eslint_path = $PWD .'/node_modules/eslint/bin/eslint.js'
+else
+  let s:eslint_path = 'eslint'
+endif
+
+let s:eslint_maker = {
+      \ 'args': [' --no-color', '--format', 'compact', '--quiet'],
+      \ 'errorformat': '%f: line %l\, col %c\, %m',
+      \ }
 
 " To have NERDTree always open on startup
 let g:nerdtree_tabs_open_on_console_startup = 1
@@ -205,8 +222,17 @@ let g:user_emmet_settings = {
       \  },
       \}
 
-" Set tags option
-set tags=./ruby_tags;/
+let g:cosco_ignore_comment_lines = 1
+
+"prettier
+"run prettier before saving
+let g:prettier#autoformat = 0
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+
+" Highlight trailing-whitespace
+let g:better_whitespace_ctermcolor='green'
 
 " File types
 augroup file_types
@@ -223,7 +249,7 @@ augroup file_types
   autocmd BufNewFile,BufRead *.less set filetype=less
   autocmd BufRead,BufNewFile *.ts set ft=typescript syntax=typescript
   autocmd BufRead,BufNewFile *.es6 set ft=javascript.jsx syntax=javascript.jsx
-  autocmd BufRead,BufNewFile *.json set ft=json syntax=javascript
+  autocmd BufRead,BufNewFile *.json set expandtab tabstop=4 softtabstop=4 shiftwidth=4 ft=json syntax=javascript
   autocmd BufRead,BufNewFile *.twig set ft=htmldjango
   autocmd BufRead,BufNewFile *.rabl set ft=ruby
   autocmd BufRead,BufNewFile *.jade set ft=jade
@@ -235,8 +261,9 @@ augroup file_types
   autocmd BufRead,BufNewFile *.rb set ft=ruby
 augroup END
 
-" Highlight trailing-whitespace
-let g:better_whitespace_ctermcolor='green'
+function! Jsctags()
+  :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | LANG=C sort > tags
+endfunction
 
 """""""""" Keys mapping """"""""""
 map <C-\> :NERDTreeToggle<CR>
@@ -288,3 +315,5 @@ autocmd FileType css vnoremap <buffer> <leader>f :call RangeCSSBeautify()<cr>
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " emmet
 autocmd FileType html,javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+autocmd FileType javascript.*,css nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+autocmd FileType javascript.*,css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
