@@ -173,6 +173,7 @@ set statusline+=%*
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 3
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_scss_checkers = [ 'sass_lint' ]
@@ -227,9 +228,16 @@ let g:cosco_ignore_comment_lines = 1
 "prettier
 "run prettier before saving
 let g:prettier#autoformat = 0
+let g:prettier#config#print_width = 80
+let g:prettier#config#tab_width = 2
+let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#semi = 'true'
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#arrow_parens = 'always'
+let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#parser = 'flow'
 
 " Highlight trailing-whitespace
 let g:better_whitespace_ctermcolor='green'
