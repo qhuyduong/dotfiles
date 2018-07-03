@@ -96,6 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi='vim'
+export EDITOR='vim'
 alias ll='ls -lha'
 
 # fvim [FUZZY PATTERN] - Open the selected file with the default editor
@@ -121,6 +122,17 @@ fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
+# fgrep - searching file contents
+fgrep() {
+  grep --line-buffered --color=never -r "" * | fzf
+}
+
+tmux_send_keys_all_panes() {
+  for _pane in $(tmux list-panes -F '#P'); do
+    tmux send-keys -t ${_pane} "$@"
+  done
+}
+
 ########## ENVIRONMENT VARIABLES ##########
 # Add rbenv to PATH
 eval "$(rbenv init -)"
@@ -142,9 +154,7 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/huyduong/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
-########## Export variables ##########
-source "$HOME/.zshrc_env"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+########## Export variables ##########
+source "$HOME/.zshrc_env"
