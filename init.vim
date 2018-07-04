@@ -119,6 +119,8 @@ Plug 'vimwiki/vimwiki'
 
 Plug 'plasticboy/vim-markdown'
 
+Plug 'christoomey/vim-tmux-navigator'
+"
 " Initialize plugin system
 call plug#end()
 
@@ -190,7 +192,7 @@ let mapleader = ','
 autocmd BufLeave * silent! :wa
 
 " Remove trailing white spaces on save
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * StripWhitespace
 
 " Center the screen quickly
 nnoremap <space> zz
@@ -207,7 +209,7 @@ colorscheme hybrid_material
 "
 " Reference:
 " - http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-highlight Search guibg=DeepPink4 guifg=White ctermbg=53 ctermfg=White
+"highlight Search guibg=DeepPink4 guifg=White ctermbg=53 ctermfg=White
 
 "----------------------------------------------
 " Searching
@@ -244,8 +246,8 @@ noremap <Left> <nop>
 noremap <Right> <nop>
 
 " Move between buffers with Shift + arrow key...
-nnoremap <S-Left> :bprevious<cr>
-nnoremap <S-Right> :bnext<cr>
+nnoremap <S-l> :bprevious<cr>
+nnoremap <S-h> :bnext<cr>
 
 " ... but skip the quickfix when navigating
 augroup qf
@@ -280,7 +282,7 @@ nnoremap <leader>h :split<cr>
 nnoremap <leader>q :close<cr>
 
 "----------------------------------------------
-" Plugin: Shougo/deoplete.nvim
+" Plugin: 'Shougo/deoplete.nvim'
 "----------------------------------------------
 if has('nvim')
     " Enable deoplete on startup
@@ -297,7 +299,7 @@ function! Multiple_cursors_after()
 endfunction
 
 "----------------------------------------------
-" Plugin: vim-airline/vim-airline
+" Plugin: 'vim-airline/vim-airline'
 "----------------------------------------------
 " Show status bar by default.
 set laststatus=2
@@ -323,7 +325,7 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_powerline_fonts = 1
 
 "----------------------------------------------
-" Plugin: christoomey/vim-tmux-navigator
+" Plugin: 'christoomey/vim-tmux-navigator'
 "----------------------------------------------
 " tmux will send xterm-style keys when its xterm-keys option is on.
 if &term =~ '^screen'
@@ -345,23 +347,11 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 
 "----------------------------------------------
-" Plugin: easymotion/vim-easymotion
+" Plugin: 'easymotion/vim-easymotion'
 "----------------------------------------------
 " Enable support for bidirectional motions
 map  <leader><leader>w <Plug>(easymotion-bd-w)
 nmap <leader><leader>w <Plug>(easymotion-overwin-w)
-
-function! s:config_easyfuzzymotion(...) abort
-  return extend(copy({
-        \   'converters': [incsearch#config#fuzzyword#converter()],
-        \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-        \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-        \   'is_expr': 0,
-        \   'is_stay': 1
-        \ }), get(a:, 1, {}))
-endfunction
-
-noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 "----------------------------------------------
 " Plugin: 'junegunn/fzf.vim'
@@ -375,7 +365,7 @@ nnoremap <c-p> :FZF<cr>
 nnoremap <F3> :TagbarToggle<cr>
 
 "----------------------------------------------
-" Plugin: plasticboy/vim-markdown
+" Plugin: 'plasticboy/vim-markdown'
 "----------------------------------------------
 " Disable folding
 let g:vim_markdown_folding_disabled = 1
@@ -384,7 +374,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 
 "----------------------------------------------
-" Plugin: neomake/neomake
+" Plugin: 'neomake/neomake'
 "----------------------------------------------
 " Configure signs.
 let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
@@ -408,7 +398,7 @@ let g:neomake_json_enabled_makers = ['jsonlint']
 let g:neomake_javascript_eslint_exe = s:eslint_path
 
 "----------------------------------------------
-" Plugin: scrooloose/nerdtree
+" Plugin: 'scrooloose/nerdtree'
 "----------------------------------------------
 nnoremap <leader>d :NERDTreeToggle<cr>
 nnoremap <F2> :NERDTreeToggle<cr>
@@ -434,7 +424,7 @@ let NERDTreeShowHidden = 1
 let g:NERDTreeChDirMode = 2
 
 "----------------------------------------------
-" Plugin: vimwiki/vimwiki
+" Plugin: 'vimwiki/vimwiki'
 "----------------------------------------------
 " Path to wiki
 let g:vimwiki_list = [{
@@ -458,9 +448,6 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb'
 let g:closetag_emptyTags_caseSensitive = 1
 " Add > at current position without closing the current tag, default is ''
 let g:closetag_close_shortcut = '<leader>>'
-
-let g:javascript_plugin_flow = 1
-let g:jsx_ext_required = 0
 
 "----------------------------------------------
 " Plugin: 'mattn/emmet-vim'
@@ -530,6 +517,8 @@ nnoremap / /\v
 vnoremap / /\v
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
 
 "----------------------------------------------
 " Language: apiblueprint
