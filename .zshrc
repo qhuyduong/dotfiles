@@ -101,15 +101,15 @@ alias ll='ls -lha'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
 alias zshconfig='nvim ~/.zshrc'
 
-# fvim [FUZZY PATTERN] - Open the selected file with the default editor
+# fnvim [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
 #   - Exit if there's no match (--exit-0)
-fvim() {
+fnvim() {
   local files
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
-alias fvi='fvim'
+alias fnvi='fnvim'
 
 # fcd - cd to selected directory
 fcd() {
@@ -127,12 +127,6 @@ fh() {
 # fgrep - searching file contents
 fgrep() {
   grep --line-buffered --color=never -r "" * | fzf
-}
-
-tmux_send_keys_all_panes() {
-  for _pane in $(tmux list-panes -F '#P'); do
-    tmux send-keys -t ${_pane} "$@"
-  done
 }
 
 ########## ENVIRONMENT VARIABLES ##########
@@ -156,6 +150,7 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/huyduong/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
+# Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ########## Export variables ##########

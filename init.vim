@@ -41,7 +41,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Color Schemes
 Plug 'flazz/vim-colorschemes'
-Plug 'altercation/vim-colors-solarized'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 
 " NERD Commenter
 " On-demand loading
@@ -50,9 +50,6 @@ Plug 'scrooloose/nerdcommenter'
 
 " vim-ripgrep
 Plug 'jremmen/vim-ripgrep'
-
-" Syntastic
-Plug 'vim-syntastic/syntastic'
 
 " vim-closetag
 Plug 'alvan/vim-closetag'
@@ -66,8 +63,6 @@ Plug 'mxw/vim-jsx', { 'for': '*javascript*' }
 Plug 'ternjs/tern_for_vim', { 'for': '*javascript*', 'do': 'npm install' }
 " emmet-vim
 Plug 'mattn/emmet-vim', { 'for': ['html', '*erb', '*javascript*'] }
-" vim-jsbeautify
-Plug 'maksimr/vim-jsbeautify', { 'for': '*javascript*' }
 
 Plug 'jiangmiao/auto-pairs'
 
@@ -79,6 +74,10 @@ Plug 'epilande/vim-es2015-snippets', { 'for': '*javascript*' }
 Plug 'epilande/vim-react-snippets', { 'for': '*javascript*' }
 " Ultisnips
 Plug 'SirVer/ultisnips', { 'for': '*javascript*' }
+Plug 'carlitux/deoplete-ternjs', { 'for': '*javascript*' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 
 Plug 'mhinz/vim-startify'
 
@@ -90,19 +89,13 @@ Plug 'godlygeek/tabular'
 
 Plug 'whatyouhide/vim-lengthmatters'
 
-Plug 'Valloric/YouCompleteMe', { 'for': ['*javascript*', 'ruby'] }
-
 Plug 'moll/vim-node'
-
-Plug 'prettier/vim-prettier', { 'for': ['*javascript*', 'css', 'json', 'markdown'] }
 
 Plug 'lfilho/cosco.vim'
 
 Plug 'elzr/vim-json'
 
 Plug 'wakatime/vim-wakatime'
-
-Plug 'thoughtbot/vim-rspec'
 
 Plug 'Yggdroot/indentLine'
 
@@ -112,86 +105,292 @@ Plug 'kassio/neoterm'
 
 Plug 'neomake/neomake'
 
+Plug 'sbdchd/neoformat'
+
+Plug 'janko-m/vim-test'
+
+Plug 'easymotion/vim-easymotion'
+
+Plug 'kylef/apiblueprint.vim'
+
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'vimwiki/vimwiki'
+
+Plug 'plasticboy/vim-markdown'
+
 " Initialize plugin system
 call plug#end()
 
-" Global settings
-set expandtab tabstop=2 softtabstop=2 shiftwidth=2 " default indentation
-syntax enable
-set modelines=0
-set number
-set ruler
-set encoding=utf-8
-set scrolloff=3
-set autoindent
-set showmode
-set showcmd
-set hidden
-set wildmenu
-set wildmode=list:longest,full
-set visualbell
-set ttyfast
-set backspace=indent,eol,start
-set laststatus=2
-" set relativenumber
-set cursorline
-set undolevels=100
-set title
-set noerrorbells
-set noswapfile
-set nobackup
-set ignorecase
-set smartcase
-set gdefault
-set incsearch
-set showmatch
-set hlsearch
-"set textwidth=80
-set colorcolumn=80
+"----------------------------------------------
+" General settings
+"----------------------------------------------
+filetype plugin indent on
+set autoindent                    " take indent for new line from previous line
+set smartindent                   " enable smart indentation
+set autoread                      " reload file if the file changes on the disk
+set autowrite                     " write when switching buffers
+set autowriteall                  " write on :quit
 " yank to clipboard
 "if has("clipboard")
-"set clipboard=unnamed " copy to the system clipboard
-
-"if has("unnamedplus") " X11 support
-"set clipboard+=unnamedplus
+"  set clipboard=unnamed " copy to the system clipboard
+"  if has("unnamedplus") " X11 support
+"    set clipboard+=unnamedplus
+"  endif
 "endif
-"endif
-let mapleader = ","
+set completeopt-=preview          " remove the horrendous preview window
+set cursorline                    " highlight the current line for the cursor
+set encoding=utf-8
 set list
 set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 set showbreak=↪
 set splitright
+set nospell                       " disable spelling
+set noswapfile                    " disable swapfile usage
+set nowrap
+set noerrorbells                  " No bells!
+set novisualbell                  " I said, no bells!
+set number                        " show number ruler
+set relativenumber                " show relative numbers in the ruler
+set ruler
+set formatoptions=tcqronj         " set vims text formatting options
+set expandtab                     " expands tabs to spaces
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
+set title                         " let vim set the terminal title
+set updatetime=100                " redraw the status bar often
+set nomodeline " don't use modeline (no. of lines in file containing vim config) (security)
+set scrolloff=3
+set showmode
+set showcmd
+set hidden " can put buffer to the background without writing to disk, will remember history/marks.
+set wildmenu
+set wildmode=list:longest,full
+set ttyfast " Send more characters at a given time.
+set backspace=indent,eol,start
+set undolevels=100
+set ignorecase
+set smartcase
+set gdefault
+set showmatch
 
-" Airlines settings
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-"let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
+" Enable mouse if possible
+if has('mouse')
+    set mouse=a
+endif
+
+" Allow vim to set a custom font or color for a word
+syntax enable
+
+" Set the leader button
+let mapleader = ','
+
+" Autosave buffers before leaving them
+autocmd BufLeave * silent! :wa
+
+" Remove trailing white spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Center the screen quickly
+nnoremap <space> zz
+
+"----------------------------------------------
+" Colors
+"----------------------------------------------
+set background=dark
+"colorscheme PaperColor
+colorscheme hybrid_material
+
+" Override the search highlight color with a combination that is easier to
+" read. The default PaperColor is dark green backgroun with black foreground.
+"
+" Reference:
+" - http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+highlight Search guibg=DeepPink4 guifg=White ctermbg=53 ctermfg=White
+
+"----------------------------------------------
+" Searching
+"----------------------------------------------
+set incsearch                     " move to match as you type the search query
+set hlsearch                      " disable search result highlighting
+
+if has('nvim')
+  set inccommand=split          " enables interactive search and replace
+endif
+
+" Clear search highlights
+nnoremap <Esc> :noh<CR><Esc>
+
+" These mappings will make it so that going to the next one in a search will
+" center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+"----------------------------------------------
+" Navigation
+"----------------------------------------------
+" Esc remap
+inoremap jj <Esc>
+
+" Disable arrow keys
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+" Move between buffers with Shift + arrow key...
+nnoremap <S-Left> :bprevious<cr>
+nnoremap <S-Right> :bnext<cr>
+
+" ... but skip the quickfix when navigating
+augroup qf
+  autocmd!
+  autocmd FileType qf set nobuflisted
+augroup END
+
+" Fix some common typos
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
+
+"----------------------------------------------
+" Splits
+"----------------------------------------------
+" Create horizontal splits below the current window
+set splitbelow
+set splitright
+
+" Creating splits
+nnoremap <leader>v :vsplit<cr>
+nnoremap <leader>h :split<cr>
+
+" Closing splits
+nnoremap <leader>q :close<cr>
+
+"----------------------------------------------
+" Plugin: Shougo/deoplete.nvim
+"----------------------------------------------
+if has('nvim')
+    " Enable deoplete on startup
+    let g:deoplete#enable_at_startup = 1
+endif
+
+" Disable deoplete when in multi cursor mode
+function! Multiple_cursors_before()
+    let b:deoplete_disable_auto_complete = 1
+endfunction
+
+function! Multiple_cursors_after()
+    let b:deoplete_disable_auto_complete = 0
+endfunction
+
+"----------------------------------------------
+" Plugin: vim-airline/vim-airline
+"----------------------------------------------
+" Show status bar by default.
+set laststatus=2
+
 " Set this. Airline will handle the rest.
-let g:airline#extensions#ale#enabled = 1
 let g:airline_theme = 'luna'
 
-" Colour settings
-set background=dark
-colorscheme hybrid_material
-"colorscheme solarized
-"let g:solarized_termcolors = 256
-"let g:solarized_termtrans = 1
+" Enable top tabline.
+let g:airline#extensions#tabline#enabled = 1
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 3
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_scss_checkers = [ 'sass_lint' ]
-let g:syntastic_sass_sass_args = '-I ' . getcwd()
+" Disable showing tabs in the tabline. This will ensure that the buffers are
+" what is shown in the tabline at all times.
+let g:airline#extensions#tabline#show_tabs = 0
+
+" Show only file name in tabline
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Show buffer index next to file name
+"let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+
+" Enable powerline fonts.
+let g:airline_powerline_fonts = 1
+
+"----------------------------------------------
+" Plugin: christoomey/vim-tmux-navigator
+"----------------------------------------------
+" tmux will send xterm-style keys when its xterm-keys option is on.
+if &term =~ '^screen'
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
+
+" Tmux vim integration
+let g:tmux_navigator_no_mappings = 1
+let g:tmux_navigator_save_on_switch = 1
+
+" Move between splits with ctrl+h,j,k,l
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+
+"----------------------------------------------
+" Plugin: easymotion/vim-easymotion
+"----------------------------------------------
+" Enable support for bidirectional motions
+map  <leader><leader>w <Plug>(easymotion-bd-w)
+nmap <leader><leader>w <Plug>(easymotion-overwin-w)
+
+function! s:config_easyfuzzymotion(...) abort
+  return extend(copy({
+        \   'converters': [incsearch#config#fuzzyword#converter()],
+        \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+        \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+        \   'is_expr': 0,
+        \   'is_stay': 1
+        \ }), get(a:, 1, {}))
+endfunction
+
+noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
+
+"----------------------------------------------
+" Plugin: 'junegunn/fzf.vim'
+"----------------------------------------------
+nnoremap <c-p> :FZF<cr>
+
+"----------------------------------------------
+" Plugin: 'majutsushi/tagbar'
+"----------------------------------------------
+" Add shortcut for toggling the tag bar
+nnoremap <F3> :TagbarToggle<cr>
+
+"----------------------------------------------
+" Plugin: plasticboy/vim-markdown
+"----------------------------------------------
+" Disable folding
+let g:vim_markdown_folding_disabled = 1
+
+" Auto shrink the TOC, so that it won't take up 50% of the screen
+let g:vim_markdown_toc_autofit = 1
+
+"----------------------------------------------
+" Plugin: neomake/neomake
+"----------------------------------------------
+" Configure signs.
+let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
+let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeWarningSign'}
+let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
+let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
 
 "Tries to find eslint's binary locally, fallback to globally installed
 if executable($PWD .'/node_modules/eslint/bin/eslint.js')
@@ -199,21 +398,61 @@ if executable($PWD .'/node_modules/eslint/bin/eslint.js')
 else
   let s:eslint_path = 'eslint'
 endif
-
-let s:eslint_maker = {
-      \ 'args': [' --no-color', '--format', 'compact', '--quiet'],
-      \ 'errorformat': '%f: line %l\, col %c\, %m',
+" eslint maker
+let g:neomake_javascript_eslint_maker = {
+      \ 'args': ['--env', 'es6', '-f', 'compact'],
+      \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
       \ }
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_json_enabled_makers = ['jsonlint']
+let g:neomake_javascript_eslint_exe = s:eslint_path
 
-" To have NERDTree always open on startup
-let g:nerdtree_tabs_open_on_console_startup = 1
+"----------------------------------------------
+" Plugin: scrooloose/nerdtree
+"----------------------------------------------
+nnoremap <leader>d :NERDTreeToggle<cr>
+nnoremap <F2> :NERDTreeToggle<cr>
+nnoremap \ :Ag<cr>
 
-"" FZF
-"let g:fzf_action = { 'enter': 'tabedit' }
+" Files to ignore
+let NERDTreeIgnore = [
+      \ '\~$',
+      \ '\.pyc$',
+      \ '^\.DS_Store$',
+      \ '^node_modules$',
+      \ '^.ropeproject$',
+      \ '^__pycache__$'
+      \]
 
-"" Closetag
-" filetypes like xml, html, xhtml, ...
-" These are the file types where this plugin is enabled.
+" Close vim if NERDTree is the only opened window.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Show hidden files by default.
+let NERDTreeShowHidden = 1
+
+" Allow NERDTree to change session root.
+let g:NERDTreeChDirMode = 2
+
+"----------------------------------------------
+" Plugin: vimwiki/vimwiki
+"----------------------------------------------
+" Path to wiki
+let g:vimwiki_list = [{
+      \ 'path': '~/Notes/vimwiki',
+      \ 'syntax': 'markdown',
+      \ 'ext': '.md'}]
+
+au FileType vimwiki set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+
+"----------------------------------------------
+" Plugin: 'terryma/vim-multiple-cursors'
+"----------------------------------------------
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_skip_key='<C-b>'
+
+"----------------------------------------------
+" Plugin: 'alvan/vim-closetag'
+"----------------------------------------------
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb'
 let g:closetag_emptyTags_caseSensitive = 1
@@ -223,7 +462,9 @@ let g:closetag_close_shortcut = '<leader>>'
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
-" emmet settings
+"----------------------------------------------
+" Plugin: 'mattn/emmet-vim'
+"----------------------------------------------
 let g:user_emmet_expandabbr_key='<Tab>'
 let g:user_emmet_settings = {
       \  'javascript.jsx' : {
@@ -237,126 +478,150 @@ let g:user_emmet_settings = {
       \  },
       \}
 
+"----------------------------------------------
+" Plugin: 'lfilho/cosco.vim'
+"----------------------------------------------
 let g:cosco_ignore_comment_lines = 1
 
-"prettier
-"run prettier before saving
-let g:prettier#autoformat = 0
-let g:prettier#config#print_width = 80
-let g:prettier#config#tab_width = 2
-let g:prettier#config#use_tabs = 'false'
-let g:prettier#config#semi = 'true'
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#arrow_parens = 'always'
-let g:prettier#config#trailing_comma = 'all'
-let g:prettier#config#parser = 'flow'
-
-" Highlight trailing-whitespace
+"----------------------------------------------
+" Plugin: 'ntpeters/vim-better-whitespace'
+"----------------------------------------------
 let g:better_whitespace_ctermcolor='green'
 
-" github-dashboard
+"----------------------------------------------
+" Plugin: 'junegunn/vim-github-dashboard'
+"----------------------------------------------
 let g:github_dashboard = { 'username': 'qhuyduong', 'password': $GITHUB_TOKEN }
 let g:github_dashboard['position'] = 'right'
 
-" rspec
-let g:rspec_command = "Dispatch rspec {spec}"
+"----------------------------------------------
+" Plugin: 'kassio/neoterm'
+"----------------------------------------------
+let g:neoterm_default_mod = 'split'
+" Useful maps
+" hide/close terminal
+nnoremap <Leader>x :Ttoggle<cr>
 
-" File types
-augroup file_types
-  autocmd!
-  autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-  autocmd BufRead,BufNewFile *.txt set filetype=markdown
-  autocmd BufRead,BufNewFile *.module set filetype=php
-  autocmd BufRead,BufNewFile *.install set filetype=php
-  autocmd BufRead,BufNewFile *.test set filetype=php
-  autocmd BufRead,BufNewFile *.inc set filetype=php
-  autocmd BufRead,BufNewFile *.profile set filetype=php
-  autocmd BufRead,BufNewFile *.view set filetype=php
-  autocmd BufNewFile,BufRead *.less set filetype=less
-  autocmd BufRead,BufNewFile *.ts set ft=typescript syntax=typescript
-  autocmd BufRead,BufNewFile *.es6 set ft=javascript.jsx syntax=javascript.jsx
-  autocmd BufRead,BufNewFile *.json set expandtab tabstop=4 softtabstop=4 shiftwidth=4 ft=json syntax=javascript
-  autocmd BufRead,BufNewFile *.twig set ft=htmldjango
-  autocmd BufRead,BufNewFile *.rabl set ft=ruby
-  autocmd BufRead,BufNewFile *.jade set ft=jade
-  autocmd BufRead,BufNewFile *.py set expandtab tabstop=4 softtabstop=4 shiftwidth=4
-  autocmd BufRead,BufNewFile *.js set ft=javascript syntax=javascript
-  autocmd BufRead,BufNewFile *.jsx set ft=javascript.jsx syntax=javascript.jsx
-  autocmd BufRead,BufNewFile *.xml,*.html,*.erb set ft=html syntax=html
-  autocmd BufRead,BufNewFile *.css,*.scss set ft=css syntax=css
-  autocmd BufRead,BufNewFile *.rb set ft=ruby
-augroup END
+"----------------------------------------------
+" Plugin: 'janko-m/vim-test'
+"----------------------------------------------
+nnoremap <Leader>n :TestNearest<CR>
+nnoremap <Leader>f :TestFile<CR>
+nnoremap <Leader>s :TestSuite<CR>
+nnoremap <Leader>l :TestLast<CR>
+nnoremap <Leader>v :TestVisit<CR>
 
-augroup qf
-  autocmd!
-  autocmd FileType qf set nobuflisted
-augroup END
+"----------------------------------------------
+" Plugin: 'T.B.D'
+"----------------------------------------------
 
+"----------------------------------------------
+" Miscellaneous
+"----------------------------------------------
+" Generate js ctags file
 function! Jsctags()
   :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | LANG=C sort > tags
 endfunction
-
-"""""""""" Keys mapping """"""""""
-map <C-\> :NERDTreeToggle<CR>
 " Buffers switching
-nnoremap <C-l> :bnext<CR>
-nnoremap <C-h> :bprev<CR>
-augroup qf
-  autocmd!
-  autocmd FileType qf nnoremap <buffer> :bd :q
-augroup END
-map <C-j> <C-w>j<C-w>_
-map <C-k> <C-w>k<C-w>_
+noremap <C-j> <C-w>j<C-w>_
+noremap <C-k> <C-w>k<C-w>_
 " search remap
 nnoremap / /\v
 vnoremap / /\v
-" clear search
-nnoremap <leader>c :noh<cr>
-" NERDTree settings
-nnoremap <leader>d :NERDTreeToggle<CR>
-" FZF settings
-nnoremap <leader><space> :FZF<cr>
-nnoremap \ :Ag<cr>
-" CtrlP settings
-nnoremap <leader>. :CtrlPTag<cr>
-" Disable arrow keys
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-" Esc remap
-inoremap jj <Esc>
-" js-beautify
-" for javascript
-autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<cr>
-autocmd FileType javascript vnoremap <buffer> <leader>f :call RangeJsBeautify()<cr>
-" for json
-autocmd FileType json noremap <buffer> <leader>f :call JsonBeautify()<cr>
-autocmd FileType json vnoremap <buffer> <leader>f :call RangeJsonBeautify()<cr>
-" for jsx
-autocmd FileType javascript.jsx noremap <buffer> <leader>f :call JsxBeautify()<cr>
-autocmd FileType javascript.jsx vnoremap <buffer> <leader>f :call RangeJsxBeautify()<cr>
-" for html
-autocmd FileType html noremap <buffer> <leader>f :call HtmlBeautify()<cr>
-autocmd FileType html vnoremap <buffer> <leader>f :call RangeHtmlBeautify()<cr>
-" for css or scss
-autocmd FileType css noremap <buffer> <leader>f :call CSSBeautify()<cr>
-autocmd FileType css vnoremap <buffer> <leader>f :call RangeCSSBeautify()<cr>
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-" emmet
-autocmd FileType html,javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-autocmd FileType javascript.*,css nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
-autocmd FileType javascript.*,css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+
+"----------------------------------------------
+" Language: apiblueprint
+"----------------------------------------------
+au FileType apiblueprint set expandtab shiftwidth=4 softtabstop=4 tabstop=4
+
+"----------------------------------------------
+" Language: Bash
+"----------------------------------------------
+au FileType sh set noexpandtab shiftwidth=2 softtabstop=2 tabstop=2
+
+"----------------------------------------------
+" Language: gitcommit
+"----------------------------------------------
+au FileType gitcommit setlocal spell
+au FileType gitcommit setlocal textwidth=80
+
+"----------------------------------------------
+" Language: gitconfig
+"----------------------------------------------
+au FileType gitconfig set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+
+"----------------------------------------------
+" Language: HTML
+"----------------------------------------------
+au FileType html set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+au FileType html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+"----------------------------------------------
+" Language: CSS
+"----------------------------------------------
+au FileType css set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+au FileType css autocmd BufWritePost * Neomake
+au FileType css autocmd BufWritePost * Neoformat
+au FileType css nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+au FileType css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+
+"----------------------------------------------
+" Language: JavaScript
+"----------------------------------------------
+au FileType javascript set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+au FileType javascript autocmd BufWritePost * Neomake
+au FileType javascript autocmd BufWritePost * Neoformat
+au FileType javascript imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+au FileType javascript nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+au FileType javascript imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+
+"----------------------------------------------
+" Language: JSON
+"----------------------------------------------
+au FileType json set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+au FileType json autocmd BufWritePost * Neomake
+au FileType json autocmd BufWritePost * Neoformat
+
+"----------------------------------------------
+" Language: LESS
+"----------------------------------------------
+au FileType less set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+
+"----------------------------------------------
+" Language: Make
+"----------------------------------------------
+au FileType make set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+
+"----------------------------------------------
+" Language: Markdown
+"----------------------------------------------
+au FileType markdown setlocal spell
+au FileType markdown set expandtab shiftwidth=4 softtabstop=4 tabstop=4 syntax=markdown
+au FileType markdown autocmd BufWritePost * Neomake
+au FileType markdown autocmd BufWritePost * Neoformat
+
+"----------------------------------------------
+" Language: Ruby
+"----------------------------------------------
+au FileType ruby set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+
+" Enable neomake for linting.
+au FileType ruby autocmd BufWritePost * Neomake
+au FileType ruby autocmd BufWritePost * Neoformat
+
+"----------------------------------------------
+" Language: SQL
+"----------------------------------------------
+au FileType sql set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+
+"----------------------------------------------
+" Language: vimscript
+"----------------------------------------------
+au FileType vim set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+
+"----------------------------------------------
+" Language: YAML
+"----------------------------------------------
+au FileType yaml set expandtab shiftwidth=2 softtabstop=2 tabstop=2
