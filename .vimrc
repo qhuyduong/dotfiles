@@ -29,6 +29,8 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-rhubarb'
 
 " Vim Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -92,11 +94,17 @@ Plug 'Valloric/YouCompleteMe', { 'for': ['*javascript*', 'ruby'] }
 
 Plug 'moll/vim-node'
 
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', { 'for': ['*javascript*', 'css', 'json', 'markdown'] }
 
 Plug 'lfilho/cosco.vim'
 
 Plug 'elzr/vim-json'
+
+Plug 'wakatime/vim-wakatime'
+
+Plug 'thoughtbot/vim-rspec'
+
+Plug 'Yggdroot/indentLine'
 
 " Initialize plugin system
 call plug#end()
@@ -141,20 +149,26 @@ set hlsearch
 "set textwidth=80
 set colorcolumn=80
 " yank to clipboard
-if has("clipboard")
-  set clipboard=unnamed " copy to the system clipboard
+"if has("clipboard")
+"set clipboard=unnamed " copy to the system clipboard
 
-  if has("unnamedplus") " X11 support
-    set clipboard+=unnamedplus
-  endif
-endif
+"if has("unnamedplus") " X11 support
+"set clipboard+=unnamedplus
+"endif
+"endif
 let mapleader = ","
+set list
+set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set showbreak=↪
+set splitright
 
 " Airlines settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
 let g:airline_theme = 'luna'
@@ -242,6 +256,13 @@ let g:prettier#config#parser = 'flow'
 " Highlight trailing-whitespace
 let g:better_whitespace_ctermcolor='green'
 
+" github-dashboard
+let g:github_dashboard = { 'username': 'qhuyduong', 'password': $GITHUB_TOKEN }
+let g:github_dashboard['position'] = 'right'
+
+" rspec
+let g:rspec_command = "Dispatch rspec {spec}"
+
 " File types
 augroup file_types
   autocmd!
@@ -278,6 +299,8 @@ map <C-\> :NERDTreeToggle<CR>
 " Buffers switching
 nmap <C-l> :bnext<CR>
 nmap <C-h> :bprev<CR>
+autocmd FileType qf nunmap <C-l>
+autocmd FileType qf nunmap <C-h>
 map <C-j> <C-w>j<C-w>_
 map <C-k> <C-w>k<C-w>_
 " search remap
@@ -325,3 +348,8 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 autocmd FileType html,javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 autocmd FileType javascript.*,css nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 autocmd FileType javascript.*,css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
