@@ -1,7 +1,7 @@
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 " Make sure you use single quotes
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -106,17 +106,17 @@ Plug 'thoughtbot/vim-rspec'
 
 Plug 'Yggdroot/indentLine'
 
+Plug 'romainl/vim-qf'
+
+Plug 'kassio/neoterm'
+
+Plug 'neomake/neomake'
+
 " Initialize plugin system
 call plug#end()
 
-packadd! matchit
-
 " Global settings
 set expandtab tabstop=2 softtabstop=2 shiftwidth=2 " default indentation
-set term=xterm
-set t_Co=256
-let &t_AB="\e[48;5;%dm"
-let &t_AF="\e[38;5;%dm"
 syntax enable
 set modelines=0
 set number
@@ -290,6 +290,11 @@ augroup file_types
   autocmd BufRead,BufNewFile *.rb set ft=ruby
 augroup END
 
+augroup qf
+  autocmd!
+  autocmd FileType qf set nobuflisted
+augroup END
+
 function! Jsctags()
   :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | LANG=C sort > tags
 endfunction
@@ -297,10 +302,12 @@ endfunction
 """""""""" Keys mapping """"""""""
 map <C-\> :NERDTreeToggle<CR>
 " Buffers switching
-nmap <C-l> :bnext<CR>
-nmap <C-h> :bprev<CR>
-autocmd FileType qf nunmap <C-l>
-autocmd FileType qf nunmap <C-h>
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprev<CR>
+augroup qf
+  autocmd!
+  autocmd FileType qf nnoremap <buffer> :bd :q
+augroup END
 map <C-j> <C-w>j<C-w>_
 map <C-k> <C-w>k<C-w>_
 " search remap

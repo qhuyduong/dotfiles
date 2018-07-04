@@ -95,9 +95,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vi='vim'
-export EDITOR='vim'
+alias nvi='nvim'
+export EDITOR='nvim'
 alias ll='ls -lha'
+alias nvimconfig='nvim ~/.config/nvim/init.vim'
+alias zshconfig='nvim ~/.zshrc'
 
 # fvim [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
