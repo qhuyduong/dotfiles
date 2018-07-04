@@ -496,14 +496,15 @@ let g:github_dashboard['position'] = 'right'
 "----------------------------------------------
 " Plugin: 'kassio/neoterm'
 "----------------------------------------------
-let g:neoterm_default_mod = 'split'
-" Useful maps
-" hide/close terminal
-nnoremap <Leader>x :Ttoggle<cr>
+"let g:neoterm_default_mod = 'split'
+let g:neoterm_default_mod = 'belowright'
 
 "----------------------------------------------
 " Plugin: 'janko-m/vim-test'
 "----------------------------------------------
+let g:test#strategy = "vimux"
+let g:test#preserve_screen = 1
+
 nnoremap <Leader>n :TestNearest<CR>
 nnoremap <Leader>f :TestFile<CR>
 nnoremap <Leader>s :TestSuite<CR>
@@ -539,6 +540,14 @@ endfunction
 "vnoremap / /\v
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+set guifont=DroidSansMono\ Nerd\ Font\ 12
+
+" testing rounded separators (extra-powerline-symbols):
+let g:airline_left_sep = "\uE0B4"
+let g:airline_right_sep = "\uE0B6"
+
+" set the CN (column number) symbol:
+let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])"])"
 
 "----------------------------------------------
 " Language: apiblueprint
