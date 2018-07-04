@@ -120,6 +120,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 
 Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'benmills/vimux'
 "
 " Initialize plugin system
 call plug#end()
@@ -398,6 +400,16 @@ let g:neomake_json_enabled_makers = ['jsonlint']
 let g:neomake_javascript_eslint_exe = s:eslint_path
 
 "----------------------------------------------
+" Plugin: 'sbdchd/neoformat'
+"----------------------------------------------
+let g:neoformat_javascript_prettier = {
+      \ 'exe': 'prettier',
+      \ 'args': ['--stdin', '--parser flow', '--single-quote', '--trailing-comma all', '--arrow-parens always'],
+      \ 'stdin': 1,
+      \}
+let g:neoformat_enabled_javascript = ['prettier']
+
+"----------------------------------------------
 " Plugin: 'scrooloose/nerdtree'
 "----------------------------------------------
 nnoremap <leader>d :NERDTreeToggle<cr>
@@ -499,6 +511,16 @@ nnoremap <Leader>l :TestLast<CR>
 nnoremap <Leader>v :TestVisit<CR>
 
 "----------------------------------------------
+" Plugin: 'pangloss/vim-javascript'
+"----------------------------------------------
+let g:javascript_plugin_flow = 1
+
+"----------------------------------------------
+" Plugin: 'mxw/vim-jsx'
+"----------------------------------------------
+let g:jsx_ext_required = 0
+
+"----------------------------------------------
 " Plugin: 'T.B.D'
 "----------------------------------------------
 
@@ -510,15 +532,13 @@ function! Jsctags()
   :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | LANG=C sort > tags
 endfunction
 " Buffers switching
-noremap <C-j> <C-w>j<C-w>_
-noremap <C-k> <C-w>k<C-w>_
+"noremap <C-j> <C-w>j<C-w>_
+"noremap <C-k> <C-w>k<C-w>_
 " search remap
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-let g:javascript_plugin_flow = 1
-let g:jsx_ext_required = 0
 
 "----------------------------------------------
 " Language: apiblueprint
@@ -546,6 +566,8 @@ au FileType gitconfig set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 "----------------------------------------------
 au FileType html set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 au FileType html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+au FileType html autocmd BufWritePost * Neomake
+au FileType html autocmd BufWritePost * Neoformat
 
 "----------------------------------------------
 " Language: CSS
@@ -559,12 +581,12 @@ au FileType css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 "----------------------------------------------
 " Language: JavaScript
 "----------------------------------------------
-au FileType javascript set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-au FileType javascript autocmd BufWritePost * Neomake
-au FileType javascript autocmd BufWritePost * Neoformat
-au FileType javascript imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-au FileType javascript nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
-au FileType javascript imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+au FileType javascript.* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+au FileType javascript.* autocmd BufWritePost * Neomake
+au FileType javascript.* autocmd BufWritePost * Neoformat
+au FileType javascript.* nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+au FileType javascript.* imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+au FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 "----------------------------------------------
 " Language: JSON
@@ -595,8 +617,6 @@ au FileType markdown autocmd BufWritePost * Neoformat
 " Language: Ruby
 "----------------------------------------------
 au FileType ruby set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-
-" Enable neomake for linting.
 au FileType ruby autocmd BufWritePost * Neomake
 au FileType ruby autocmd BufWritePost * Neoformat
 
