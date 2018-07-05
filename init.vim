@@ -537,14 +537,19 @@ let g:jsx_ext_required = 0
 function! Jsctags()
   :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | LANG=C sort > tags
 endfunction
-" Buffers switching
-"noremap <C-j> <C-w>j<C-w>_
-"noremap <C-k> <C-w>k<C-w>_
+" testing extra-powerline-symbols
+
+" set font terminal font or set gui vim font
+" to a Nerd Font (https://github.com/ryanoasis/nerd-fonts):
+"set guifont=DroidSansMono\ Nerd\ Font\ 12
+
+" testing rounded separators (extra-powerline-symbols):
+let g:airline_left_sep = "\uE0C4"
+let g:airline_right_sep = "\uE0C5"
+
 " search remap
 "nnoremap / /\v
 "vnoremap / /\v
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "----------------------------------------------
 " Language: apiblueprint
