@@ -248,8 +248,8 @@ noremap <Left> <nop>
 noremap <Right> <nop>
 
 " Move between buffers with Shift + arrow key...
-nnoremap <S-l> :bprevious<cr>
-nnoremap <S-h> :bnext<cr>
+nnoremap <S-l> :bnext<cr>
+nnoremap <S-h> :bprevious<cr>
 
 " ... but skip the quickfix when navigating
 augroup qf
@@ -408,6 +408,11 @@ let g:neoformat_javascript_prettier = {
       \ 'stdin': 1,
       \}
 let g:neoformat_enabled_javascript = ['prettier']
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
 
 "----------------------------------------------
 " Plugin: 'scrooloose/nerdtree'
@@ -568,14 +573,12 @@ au FileType gitconfig set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 au FileType html set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 au FileType html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 au FileType html autocmd BufWritePost * Neomake
-au FileType html autocmd BufWritePost * Neoformat
 
 "----------------------------------------------
 " Language: CSS
 "----------------------------------------------
 au FileType css set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 au FileType css autocmd BufWritePost * Neomake
-au FileType css autocmd BufWritePost * Neoformat
 au FileType css nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 au FileType css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 
@@ -584,7 +587,6 @@ au FileType css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 "----------------------------------------------
 au FileType javascript.* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 au FileType javascript.* autocmd BufWritePost * Neomake
-au FileType javascript.* autocmd BufWritePost * Neoformat
 au FileType javascript.* nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 au FileType javascript.* imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 au FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
@@ -594,7 +596,6 @@ au FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>
 "----------------------------------------------
 au FileType json set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 au FileType json autocmd BufWritePost * Neomake
-au FileType json autocmd BufWritePost * Neoformat
 
 "----------------------------------------------
 " Language: LESS
@@ -612,14 +613,12 @@ au FileType make set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 au FileType markdown setlocal spell
 au FileType markdown set expandtab shiftwidth=4 softtabstop=4 tabstop=4 syntax=markdown
 au FileType markdown autocmd BufWritePost * Neomake
-au FileType markdown autocmd BufWritePost * Neoformat
 
 "----------------------------------------------
 " Language: Ruby
 "----------------------------------------------
 au FileType ruby set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 au FileType ruby autocmd BufWritePost * Neomake
-au FileType ruby autocmd BufWritePost * Neoformat
 
 "----------------------------------------------
 " Language: SQL
