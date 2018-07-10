@@ -45,7 +45,7 @@ Plug 'frankier/neovim-colors-solarized-truecolor-only'
 
 " NERD Commenter
 " On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 
 " vim-ripgrep
@@ -73,11 +73,15 @@ Plug 'epilande/vim-es2015-snippets', { 'for': '*javascript*' }
 " React code snippets
 Plug 'epilande/vim-react-snippets', { 'for': '*javascript*' }
 " Ultisnips
-Plug 'SirVer/ultisnips', { 'for': '*javascript*' }
+"Plug 'SirVer/ultisnips', { 'for': '*javascript*' }
 Plug 'carlitux/deoplete-ternjs', { 'for': '*javascript*' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'honza/vim-snippets'
+"Plug 'MarcWeber/vim-addon-mw-utils'
+"Plug 'tomtom/tlib_vim'
+"Plug 'garbas/vim-snipmate'
 
 Plug 'mhinz/vim-startify'
 
@@ -111,7 +115,7 @@ Plug 'janko-m/vim-test'
 
 Plug 'easymotion/vim-easymotion'
 
-Plug 'kylef/apiblueprint.vim'
+Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
 
 Plug 'ryanoasis/vim-devicons'
 
@@ -122,7 +126,10 @@ Plug 'plasticboy/vim-markdown'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'benmills/vimux'
-"
+
+Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+
 " Initialize plugin system
 call plug#end()
 
@@ -178,11 +185,12 @@ set ignorecase
 set smartcase
 set gdefault
 set showmatch
+set viminfo^=%
 
 " Enable mouse if possible
-if has('mouse')
-    set mouse=a
-endif
+"if has('mouse')
+    "set mouse=a
+"endif
 
 " Allow vim to set a custom font or color for a word
 syntax enable
@@ -320,11 +328,15 @@ let g:airline#extensions#tabline#show_tabs = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Show buffer index next to file name
-"let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+"let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 " Enable powerline fonts.
 let g:airline_powerline_fonts = 1
+
+" Advanced separators (extra-powerline-symbols):
+let g:airline_left_sep = "\uE0C4"
+let g:airline_right_sep = "\uE0C5"
 
 "----------------------------------------------
 " Plugin: 'christoomey/vim-tmux-navigator'
@@ -409,9 +421,16 @@ let g:neoformat_javascript_prettier = {
       \}
 let g:neoformat_enabled_javascript = ['prettier']
 
+let g:neoformat_ruby_rubocop = {
+      \ 'exe': 'rubocop',
+      \ 'args': ['--auto-correct', '--force-exclusion', '--stdin', '%:p', '2>/dev/null', '|', 'sed "1,/^====================$/d"'],
+      \ 'stdin': 1,
+      \ }
+let g:neoformat_enabled_ruby = ['rubocop']
+
 augroup fmt
   autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
+  autocmd BufWritePre * silent! undojoin | Neoformat
 augroup END
 
 "----------------------------------------------
@@ -430,6 +449,10 @@ let NERDTreeIgnore = [
       \ '^.ropeproject$',
       \ '^__pycache__$'
       \]
+
+" Open a NERDTree automatically when vim starts up if no files were specified?
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Close vim if NERDTree is the only opened window.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -469,7 +492,7 @@ let g:closetag_close_shortcut = '<leader>>'
 "----------------------------------------------
 " Plugin: 'mattn/emmet-vim'
 "----------------------------------------------
-let g:user_emmet_expandabbr_key='<Tab>'
+"let g:user_emmet_expandabbr_key='<Tab>'
 let g:user_emmet_settings = {
       \  'javascript.jsx' : {
       \      'extends' : 'jsx',
@@ -501,8 +524,29 @@ let g:github_dashboard['position'] = 'right'
 "----------------------------------------------
 " Plugin: 'kassio/neoterm'
 "----------------------------------------------
-"let g:neoterm_default_mod = 'split'
+let g:neoterm_size='12'
 let g:neoterm_default_mod = 'belowright'
+
+" allow to navigation as normal
+au TermOpen *neoterm* :tnoremap <buffer> <Esc> <C-\><C-n>
+au TermOpen *neoterm* :tnoremap <buffer> <C-h> <C-\><C-n><C-w>h
+au TermOpen *neoterm* :tnoremap <buffer> <C-k> <C-\><C-n><C-w>k
+au TermOpen *neoterm* :tnoremap <buffer> <C-j> <C-\><C-n><C-w>j
+au TermOpen *neoterm* :tnoremap <buffer> <C-l> <C-\><C-n><C-w>l
+
+augroup Term
+  autocmd!
+  " Always start in terminal mode in term buffers
+  autocmd TermOpen * startinsert
+  autocmd BufEnter term://* startinsert
+  autocmd BufLeave term://* stopinsert
+augroup END
+
+" escape from terminal mode to normal mode
+tnoremap <esc> <C-\><C-n>
+nnoremap <silent> <C-t> :Ttoggle<cr>
+" toggle terminal from within terminal mode
+tnoremap <silent> <C-t> <C-\><C-n>:Ttoggle<cr>
 
 "----------------------------------------------
 " Plugin: 'janko-m/vim-test'
@@ -510,11 +554,11 @@ let g:neoterm_default_mod = 'belowright'
 let g:test#strategy = "vimux"
 let g:test#preserve_screen = 1
 
-nnoremap <Leader>n :TestNearest<CR>
-nnoremap <Leader>f :TestFile<CR>
-nnoremap <Leader>s :TestSuite<CR>
-nnoremap <Leader>l :TestLast<CR>
-nnoremap <Leader>v :TestVisit<CR>
+nnoremap <Leader>n :TestNearest -f d<CR>
+nnoremap <Leader>f :TestFile -f d<CR>
+nnoremap <Leader>s :TestSuite -f d<CR>
+nnoremap <Leader>l :TestLast -f d<CR>
+nnoremap <Leader>v :TestVisit -f d<CR>
 
 "----------------------------------------------
 " Plugin: 'pangloss/vim-javascript'
@@ -527,6 +571,38 @@ let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
 "----------------------------------------------
+" Plugin: 'xolox/vim-session'
+"----------------------------------------------
+let g:session_autoload = 'no'
+let g:session_autosave = 'no'
+
+"----------------------------------------------
+" Plugin: 'Shougo/neosnippet'
+"----------------------------------------------
+let g:neosnippet#enable_completed_snippet = 1
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <expr><TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ neosnippet#expandable_or_jumpable() ?
+      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+"----------------------------------------------
 " Plugin: 'T.B.D'
 "----------------------------------------------
 
@@ -537,19 +613,9 @@ let g:jsx_ext_required = 0
 function! Jsctags()
   :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | LANG=C sort > tags
 endfunction
-" testing extra-powerline-symbols
 
-" set font terminal font or set gui vim font
-" to a Nerd Font (https://github.com/ryanoasis/nerd-fonts):
-"set guifont=DroidSansMono\ Nerd\ Font\ 12
-
-" testing rounded separators (extra-powerline-symbols):
-let g:airline_left_sep = "\uE0C4"
-let g:airline_right_sep = "\uE0C5"
-
-" search remap
-"nnoremap / /\v
-"vnoremap / /\v
+" Grep word under cursor
+nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
 "----------------------------------------------
 " Language: apiblueprint
@@ -576,7 +642,7 @@ au FileType gitconfig set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 " Language: HTML
 "----------------------------------------------
 au FileType html set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-au FileType html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+"au FileType html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 au FileType html autocmd BufWritePost * Neomake
 
 "----------------------------------------------
@@ -594,7 +660,7 @@ au FileType javascript.* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 au FileType javascript.* autocmd BufWritePost * Neomake
 au FileType javascript.* nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 au FileType javascript.* imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
-au FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+"au FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 "----------------------------------------------
 " Language: JSON
