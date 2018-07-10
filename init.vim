@@ -625,7 +625,7 @@ au FileType apiblueprint set expandtab shiftwidth=4 softtabstop=4 tabstop=4
 "----------------------------------------------
 " Language: Bash
 "----------------------------------------------
-au FileType sh set noexpandtab shiftwidth=2 softtabstop=2 tabstop=2
+au FileType sh set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "----------------------------------------------
 " Language: gitcommit
