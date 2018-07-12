@@ -73,12 +73,12 @@ Plug 'epilande/vim-es2015-snippets', { 'for': '*javascript*' }
 " React code snippets
 Plug 'epilande/vim-react-snippets', { 'for': '*javascript*' }
 " Ultisnips
-"Plug 'SirVer/ultisnips', { 'for': '*javascript*' }
-Plug 'carlitux/deoplete-ternjs', { 'for': '*javascript*' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
+Plug 'carlitux/deoplete-ternjs', { 'for': '*javascript*' }
+"Plug 'SirVer/ultisnips', { 'for': '*javascript*' }
 "Plug 'MarcWeber/vim-addon-mw-utils'
 "Plug 'tomtom/tlib_vim'
 "Plug 'garbas/vim-snipmate'
@@ -99,11 +99,7 @@ Plug 'lfilho/cosco.vim'
 
 Plug 'elzr/vim-json'
 
-Plug 'wakatime/vim-wakatime'
-
 Plug 'Yggdroot/indentLine'
-
-Plug 'romainl/vim-qf'
 
 Plug 'kassio/neoterm'
 
@@ -284,13 +280,6 @@ cnoreabbrev Qall qall
 set splitbelow
 set splitright
 
-" Creating splits
-nnoremap <leader>v :vsplit<cr>
-nnoremap <leader>h :split<cr>
-
-" Closing splits
-nnoremap <leader>q :close<cr>
-
 "----------------------------------------------
 " Plugin: 'Shougo/deoplete.nvim'
 "----------------------------------------------
@@ -367,6 +356,20 @@ nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 map  <leader><leader>w <Plug>(easymotion-bd-w)
 nmap <leader><leader>w <Plug>(easymotion-overwin-w)
 
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
 "----------------------------------------------
 " Plugin: 'junegunn/fzf.vim'
 "----------------------------------------------
@@ -427,11 +430,6 @@ let g:neoformat_ruby_rubocop = {
       \ 'stdin': 1,
       \ }
 let g:neoformat_enabled_ruby = ['rubocop']
-
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * silent! undojoin | Neoformat
-augroup END
 
 "----------------------------------------------
 " Plugin: 'scrooloose/nerdtree'
@@ -558,7 +556,7 @@ nnoremap <Leader>n :TestNearest -f d<CR>
 nnoremap <Leader>f :TestFile -f d<CR>
 nnoremap <Leader>s :TestSuite -f d<CR>
 nnoremap <Leader>l :TestLast -f d<CR>
-nnoremap <Leader>v :TestVisit -f d<CR>
+nnoremap <Leader>v :TestVisit<CR>
 
 "----------------------------------------------
 " Plugin: 'pangloss/vim-javascript'
