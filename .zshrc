@@ -59,7 +59,14 @@ ZSH_THEME="gnzh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  bundler
+  colored-man-pages
+  command-not-found
+  copydir
+  copyfile
   git
+  thefuck
+  tmuxinator
   vi-mode
   zsh-autosuggestions
   zsh-syntax-highlighting

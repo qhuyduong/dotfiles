@@ -126,6 +126,8 @@ Plug 'benmills/vimux'
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 
+Plug 'ludovicchabant/vim-gutentags'
+
 " Initialize plugin system
 call plug#end()
 
@@ -324,8 +326,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
 
 " Advanced separators (extra-powerline-symbols):
-let g:airline_left_sep = "\uE0C4"
-let g:airline_right_sep = "\uE0C5"
+let g:airline_left_sep = "\uE0C6"
+let g:airline_right_sep = "\uE0C7"
 
 "----------------------------------------------
 " Plugin: 'christoomey/vim-tmux-navigator'
@@ -361,7 +363,7 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
+nmap <Leader><Leader>s <Plug>(easymotion-overwin-f2)
 
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
@@ -552,10 +554,10 @@ tnoremap <silent> <C-t> <C-\><C-n>:Ttoggle<cr>
 let g:test#strategy = "vimux"
 let g:test#preserve_screen = 1
 
-nnoremap <Leader>n :TestNearest -f d<CR>
-nnoremap <Leader>f :TestFile -f d<CR>
-nnoremap <Leader>s :TestSuite -f d<CR>
-nnoremap <Leader>l :TestLast -f d<CR>
+nnoremap <Leader>n :TestNearest<CR>
+nnoremap <Leader>f :TestFile<CR>
+nnoremap <Leader>s :TestSuite<CR>
+nnoremap <Leader>l :TestLast<CR>
 nnoremap <Leader>v :TestVisit<CR>
 
 "----------------------------------------------
@@ -605,6 +607,11 @@ endif
 "----------------------------------------------
 let g:VimuxHeight = "40"
 let g:VimuxOrientation = "h"
+
+"----------------------------------------------
+" Plugin: 'ludovicchabant/vim-gutentags'
+"----------------------------------------------
+let g:gutentags_cache_dir = get(g:, 'gutentags_cache_dir', expand('~/.cache/tags'))
 
 "----------------------------------------------
 " Plugin: 'T.B.D'
