@@ -65,10 +65,12 @@ plugins=(
   copydir
   copyfile
   git
+  github
   thefuck
   tmuxinator
   vi-mode
   zsh-autosuggestions
+  zsh-completions
   zsh-syntax-highlighting
 )
 
@@ -140,6 +142,13 @@ fgrep() {
 ########## ENVIRONMENT VARIABLES ##########
 # Add rbenv to PATH
 eval "$(rbenv init -)"
+
+# Add pyenv to PATH
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 # Source NVM on shell starting up
 export NVM_DIR="$HOME/.nvm"
