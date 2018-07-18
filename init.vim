@@ -31,6 +31,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-commentary'
 
 " Vim Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -46,7 +47,7 @@ Plug 'frankier/neovim-colors-solarized-truecolor-only'
 " NERD Commenter
 " On-demand loading
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdcommenter'
 
 " vim-ripgrep
 Plug 'jremmen/vim-ripgrep'
@@ -127,6 +128,10 @@ Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 
 Plug 'ludovicchabant/vim-gutentags'
+
+" Add ie and ae textobj
+Plug 'kana/vim-textobj-user'      " Dependency
+Plug 'kana/vim-textobj-entire'
 
 " Initialize plugin system
 call plug#end()
@@ -241,7 +246,7 @@ nnoremap N Nzzzv
 " Navigation
 "----------------------------------------------
 " Esc remap
-inoremap jj <Esc>
+" inoremap jj <Esc>
 
 " Disable arrow keys
 inoremap <Up> <nop>
@@ -450,12 +455,12 @@ let NERDTreeIgnore = [
       \ '^__pycache__$'
       \]
 
-" Open a NERDTree automatically when vim starts up if no files were specified?
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" " Open a NERDTree automatically when vim starts up if no files were specified?
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" Close vim if NERDTree is the only opened window.
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" " Close vim if NERDTree is the only opened window.
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Show hidden files by default.
 let NERDTreeShowHidden = 1
@@ -534,13 +539,13 @@ au TermOpen *neoterm* :tnoremap <buffer> <C-k> <C-\><C-n><C-w>k
 au TermOpen *neoterm* :tnoremap <buffer> <C-j> <C-\><C-n><C-w>j
 au TermOpen *neoterm* :tnoremap <buffer> <C-l> <C-\><C-n><C-w>l
 
-augroup Term
-  autocmd!
-  " Always start in terminal mode in term buffers
-  autocmd TermOpen * startinsert
-  autocmd BufEnter term://* startinsert
-  autocmd BufLeave term://* stopinsert
-augroup END
+" augroup Term
+"   autocmd!
+"   " Always start in terminal mode in term buffers
+"   autocmd TermOpen * startinsert
+"   autocmd BufEnter term://* startinsert
+"   autocmd BufLeave term://* stopinsert
+" augroup END
 
 " escape from terminal mode to normal mode
 tnoremap <esc> <C-\><C-n>
@@ -612,6 +617,15 @@ let g:VimuxOrientation = "h"
 " Plugin: 'ludovicchabant/vim-gutentags'
 "----------------------------------------------
 let g:gutentags_cache_dir = get(g:, 'gutentags_cache_dir', expand('~/.cache/tags'))
+
+"----------------------------------------------
+" Plugin: 'junegunn/vim-easy-align'
+"----------------------------------------------
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 "----------------------------------------------
 " Plugin: 'T.B.D'
