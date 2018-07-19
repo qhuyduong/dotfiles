@@ -5,133 +5,72 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Make sure you use single quotes
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
-" FzF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'                                          " Fuzzy Finder
 Plug 'junegunn/vim-github-dashboard'
-
-" vim-rails
-Plug 'tpope/vim-rails'
-" Fugitive
-Plug 'tpope/vim-fugitive'
-" gem-ctags
-Plug 'tpope/gem-ctags'
-" bundler.vim
-Plug 'tpope/vim-bundler'
-" Surround
-Plug 'tpope/vim-surround'
-" vim-rbenv
-Plug 'tpope/vim-rbenv'
-" vim-rake
-Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'                                           " Rails support in vim
+Plug 'tpope/vim-fugitive'                                        " Easily manipulate Git(hub)
+Plug 'tpope/vim-bundler'                                         " Bundle support in vim
+Plug 'tpope/vim-surround'                                        " Easily change Surround characters
+Plug 'tpope/vim-rbenv'                                           " vim-rbenv
+Plug 'tpope/vim-projectionist'                                   " vim-rake
 Plug 'tpope/vim-rake'
-" Add 'end' to ruby structures
-Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'                                         " Add 'end' to ruby structures
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-commentary'
-
-" Vim Ruby
-Plug 'vim-ruby/vim-ruby'
-
-" Airline
-Plug 'vim-airline/vim-airline'
+Plug 'vim-ruby/vim-ruby'                                         " Vim Ruby
+Plug 'vim-airline/vim-airline'                                   " Airline
 Plug 'vim-airline/vim-airline-themes'
-
-" Color Schemes
-Plug 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'                                    " Color Schemes
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
-
-" NERD Commenter
-" On-demand loading
 Plug 'scrooloose/nerdtree'
-"Plug 'scrooloose/nerdcommenter'
-
-" vim-ripgrep
-Plug 'jremmen/vim-ripgrep'
-
-" vim-closetag
-Plug 'alvan/vim-closetag'
-
-" vim-trailing-whitespace
-Plug 'ntpeters/vim-better-whitespace'
-
-" vim-jsx
-Plug 'pangloss/vim-javascript', { 'for': '*javascript*' }
-Plug 'mxw/vim-jsx', { 'for': '*javascript*' }
-Plug 'ternjs/tern_for_vim', { 'for': '*javascript*', 'do': 'npm install' }
-" emmet-vim
-Plug 'mattn/emmet-vim', { 'for': ['html', '*erb', '*javascript*'] }
-
+Plug 'jremmen/vim-ripgrep'                                       " vim-ripgrep
+Plug 'alvan/vim-closetag'                                        " vim-closetag
+Plug 'ntpeters/vim-better-whitespace'                            " vim-trailing-whitespace
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }          " vim-jsx
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'erb', 'javascript'] } " emmet-vim
 Plug 'jiangmiao/auto-pairs'
-
 Plug 'airblade/vim-gitgutter'
-
-" ES2015 code snippets (Optional)
-Plug 'epilande/vim-es2015-snippets', { 'for': '*javascript*' }
-" React code snippets
-Plug 'epilande/vim-react-snippets', { 'for': '*javascript*' }
-" Ultisnips
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'epilande/vim-es2015-snippets', { 'for': 'javascript' }     " ES2015 code snippets (Optional)
+Plug 'epilande/vim-react-snippets', { 'for': 'javascript' }      " React code snippets
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }    " Ultisnips
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
-Plug 'carlitux/deoplete-ternjs', { 'for': '*javascript*' }
-"Plug 'SirVer/ultisnips', { 'for': '*javascript*' }
-"Plug 'MarcWeber/vim-addon-mw-utils'
-"Plug 'tomtom/tlib_vim'
-"Plug 'garbas/vim-snipmate'
-
+Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
+" Plug 'SirVer/ultisnips', { 'for': 'javascript' }
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+" Plug 'garbas/vim-snipmate'
 Plug 'mhinz/vim-startify'
-
 Plug 'majutsushi/tagbar'
-
 Plug 'terryma/vim-multiple-cursors'
-
 Plug 'godlygeek/tabular'
-
 Plug 'whatyouhide/vim-lengthmatters'
-
 Plug 'moll/vim-node'
-
 Plug 'lfilho/cosco.vim'
-
 Plug 'elzr/vim-json'
-
 Plug 'Yggdroot/indentLine'
-
 Plug 'kassio/neoterm'
-
-Plug 'neomake/neomake'
-
-Plug 'sbdchd/neoformat'
-
 Plug 'janko-m/vim-test'
-
 Plug 'easymotion/vim-easymotion'
-
 Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
-
 Plug 'ryanoasis/vim-devicons'
-
 Plug 'vimwiki/vimwiki'
-
 Plug 'plasticboy/vim-markdown'
-
 Plug 'christoomey/vim-tmux-navigator'
-
 Plug 'benmills/vimux'
-
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
-
 Plug 'ludovicchabant/vim-gutentags'
-
-" Add ie and ae textobj
-Plug 'kana/vim-textobj-user'      " Dependency
-Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-user'                                     " Dependency
+Plug 'kana/vim-textobj-entire'                                   " Add ie and ae textobj
+Plug 'w0rp/ale'                                                  " Code linting
 
 " Initialize plugin system
 call plug#end()
@@ -398,47 +337,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 
 "----------------------------------------------
-" Plugin: 'neomake/neomake'
-"----------------------------------------------
-" Configure signs.
-let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
-let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeWarningSign'}
-let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
-let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
-
-"Tries to find eslint's binary locally, fallback to globally installed
-if executable($PWD .'/node_modules/eslint/bin/eslint.js')
-  let s:eslint_path = $PWD .'/node_modules/eslint/bin/eslint.js'
-else
-  let s:eslint_path = 'eslint'
-endif
-" eslint maker
-let g:neomake_javascript_eslint_maker = {
-      \ 'args': ['--env', 'es6', '-f', 'compact'],
-      \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
-      \ }
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_json_enabled_makers = ['jsonlint']
-let g:neomake_javascript_eslint_exe = s:eslint_path
-
-"----------------------------------------------
-" Plugin: 'sbdchd/neoformat'
-"----------------------------------------------
-let g:neoformat_javascript_prettier = {
-      \ 'exe': 'prettier',
-      \ 'args': ['--stdin', '--parser flow', '--single-quote', '--trailing-comma all', '--arrow-parens always'],
-      \ 'stdin': 1,
-      \}
-let g:neoformat_enabled_javascript = ['prettier']
-
-let g:neoformat_ruby_rubocop = {
-      \ 'exe': 'rubocop',
-      \ 'args': ['--auto-correct', '--force-exclusion', '--stdin', '%:p', '2>/dev/null', '|', 'sed "1,/^====================$/d"'],
-      \ 'stdin': 1,
-      \ }
-let g:neoformat_enabled_ruby = ['rubocop']
-
-"----------------------------------------------
 " Plugin: 'scrooloose/nerdtree'
 "----------------------------------------------
 nnoremap <leader>d :NERDTreeToggle<cr>
@@ -610,7 +508,7 @@ endif
 "----------------------------------------------
 " Plugin: 'benmills/vimux'
 "----------------------------------------------
-let g:VimuxHeight = "40"
+let g:VimuxHeight = "30"
 let g:VimuxOrientation = "h"
 
 "----------------------------------------------
@@ -628,6 +526,26 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "----------------------------------------------
+" Plugin: 'w0rp/ale'
+"----------------------------------------------
+" Enable completion where available.
+let g:ale_completion_enabled = 1
+
+" Set this variable to 1 to fix files when you save them.
+let g:ale_lint_on_save = 1
+
+let g:ale_linters = {
+      \   'javascript': ['eslint'],
+      \   'ruby': ['rubocop'],
+      \}
+
+" Configure signs.
+let g:ale_sign_error   = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+"----------------------------------------------
 " Plugin: 'T.B.D'
 "----------------------------------------------
 
@@ -635,9 +553,9 @@ nmap ga <Plug>(EasyAlign)
 " Miscellaneous
 "----------------------------------------------
 " Generate js ctags file
-function! Jsctags()
-  :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | LANG=C sort > tags
-endfunction
+" function! Jsctags()
+"   :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | LANG=C sort > tags
+" endfunction
 
 " Grep word under cursor
 nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
@@ -668,13 +586,11 @@ au FileType gitconfig set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 "----------------------------------------------
 au FileType html set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 "au FileType html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-au FileType html autocmd BufWritePost * Neomake
 
 "----------------------------------------------
 " Language: CSS
 "----------------------------------------------
 au FileType css set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-au FileType css autocmd BufWritePost * Neomake
 au FileType css nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 au FileType css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 
@@ -682,7 +598,6 @@ au FileType css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 " Language: JavaScript
 "----------------------------------------------
 au FileType javascript.* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-au FileType javascript.* autocmd BufWritePost * Neomake
 au FileType javascript.* nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
 au FileType javascript.* imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 "au FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
@@ -691,7 +606,6 @@ au FileType javascript.* imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiCo
 " Language: JSON
 "----------------------------------------------
 au FileType json set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-au FileType json autocmd BufWritePost * Neomake
 
 "----------------------------------------------
 " Language: LESS
@@ -708,13 +622,11 @@ au FileType make set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 "----------------------------------------------
 au FileType markdown setlocal spell
 au FileType markdown set expandtab shiftwidth=4 softtabstop=4 tabstop=4 syntax=markdown
-au FileType markdown autocmd BufWritePost * Neomake
 
 "----------------------------------------------
 " Language: Ruby
 "----------------------------------------------
 au FileType ruby set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-au FileType ruby autocmd BufWritePost * Neomake
 
 "----------------------------------------------
 " Language: SQL
