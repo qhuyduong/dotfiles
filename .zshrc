@@ -67,7 +67,6 @@ plugins=(
   git
   github
   thefuck
-  tmuxinator
   vi-mode
   zsh-autosuggestions
   zsh-completions
