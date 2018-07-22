@@ -108,7 +108,7 @@ export EDITOR='nvim'
 alias ll='ls -lha'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
 alias zshconfig='nvim ~/.zshrc'
-alias tmuxconfig='nvim ~/.tmux.conf.local'
+alias tmuxconfig='nvim ~/.tmux.conf'
 
 # fnvim [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
