@@ -25,7 +25,6 @@ Plug 'vim-ruby/vim-ruby'                                         " Vim Ruby
 Plug 'vim-airline/vim-airline'                                   " Airline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'                                    " Color Schemes
-Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'scrooloose/nerdtree'
 Plug 'jremmen/vim-ripgrep'                                       " vim-ripgrep
 Plug 'alvan/vim-closetag'                                        " vim-closetag
@@ -39,6 +38,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'epilande/vim-es2015-snippets', { 'for': 'javascript' }     " ES2015 code snippets (Optional)
 Plug 'epilande/vim-react-snippets', { 'for': 'javascript' }      " React code snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }    " Ultisnips
+Plug 'fszymanski/deoplete-emoji'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
@@ -61,7 +61,6 @@ Plug 'janko-m/vim-test'
 Plug 'easymotion/vim-easymotion'
 Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'vimwiki/vimwiki'
 Plug 'plasticboy/vim-markdown'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
@@ -84,13 +83,6 @@ set smartindent                   " enable smart indentation
 set autoread                      " reload file if the file changes on the disk
 set autowrite                     " write when switching buffers
 set autowriteall                  " write on :quit
-" yank to clipboard
-"if has("clipboard")
-"  set clipboard=unnamed " copy to the system clipboard
-"  if has("unnamedplus") " X11 support
-"    set clipboard+=unnamedplus
-"  endif
-"endif
 set completeopt-=preview          " remove the horrendous preview window
 set cursorline                    " highlight the current line for the cursor
 set encoding=utf-8
@@ -119,7 +111,7 @@ set showmode
 set showcmd
 set hidden " can put buffer to the background without writing to disk, will remember history/marks.
 set wildmenu
-set wildmode=list:longest,full
+set wildmode=full
 set ttyfast " Send more characters at a given time.
 set backspace=indent,eol,start
 set undolevels=100
@@ -128,11 +120,6 @@ set smartcase
 set gdefault
 set showmatch
 set viminfo^=%
-
-" Enable mouse if possible
-"if has('mouse')
-    "set mouse=a
-"endif
 
 " Allow vim to set a custom font or color for a word
 syntax enable
@@ -149,19 +136,16 @@ autocmd BufWritePre * StripWhitespace
 " Center the screen quickly
 nnoremap <space> zz
 
+" Key maps to emulate the "system clipboard" shortcuts
+inoremap <C-v> <ESC>"+pa
+vnoremap <C-c> "+y
+vnoremap <C-x> "+d
+
 "----------------------------------------------
 " Colors
 "----------------------------------------------
 set background=dark
-"colorscheme PaperColor
 colorscheme hybrid_material
-
-" Override the search highlight color with a combination that is easier to
-" read. The default PaperColor is dark green backgroun with black foreground.
-"
-" Reference:
-" - http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-"highlight Search guibg=DeepPink4 guifg=White ctermbg=53 ctermfg=White
 
 "----------------------------------------------
 " Searching
@@ -184,8 +168,6 @@ nnoremap N Nzzzv
 "----------------------------------------------
 " Navigation
 "----------------------------------------------
-" Esc remap
-" inoremap jj <Esc>
 
 " Disable arrow keys
 inoremap <Up> <nop>
@@ -264,14 +246,13 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Show buffer index next to file name
 let g:airline#extensions#tabline#buffer_nr_show = 1
-"let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 " Enable powerline fonts.
 let g:airline_powerline_fonts = 1
 
 " Advanced separators (extra-powerline-symbols):
-let g:airline_left_sep = "\uE0C6"
-let g:airline_right_sep = "\uE0C7"
+let g:airline_left_sep = "\uE0B4"
+let g:airline_right_sep = "\uE0B6"
 
 "----------------------------------------------
 " Plugin: 'christoomey/vim-tmux-navigator'
@@ -353,29 +334,11 @@ let NERDTreeIgnore = [
       \ '^__pycache__$'
       \]
 
-" " Open a NERDTree automatically when vim starts up if no files were specified?
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" " Close vim if NERDTree is the only opened window.
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 " Show hidden files by default.
 let NERDTreeShowHidden = 1
 
 " Allow NERDTree to change session root.
 let g:NERDTreeChDirMode = 2
-
-"----------------------------------------------
-" Plugin: 'vimwiki/vimwiki'
-"----------------------------------------------
-" Path to wiki
-let g:vimwiki_list = [{
-      \ 'path': '~/Notes/vimwiki',
-      \ 'syntax': 'markdown',
-      \ 'ext': '.md'}]
-
-au FileType vimwiki set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "----------------------------------------------
 " Plugin: 'terryma/vim-multiple-cursors'
@@ -533,9 +496,17 @@ let g:ale_completion_enabled = 1
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_lint_on_save = 1
+" let g:ale_fix_on_save = 1
+
+let g:ale_fixers = {
+      \   'javascript': ['prettier'],
+      \   'json': ['jq'],
+      \   'ruby': ['rubocop'],
+      \}
 
 let g:ale_linters = {
       \   'javascript': ['eslint'],
+      \   'json': ['jsonlint'],
       \   'ruby': ['rubocop'],
       \}
 
@@ -544,6 +515,13 @@ let g:ale_sign_error   = '✘'
 let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+let g:ale_json_jq_options = '--indent 4'
+
+"----------------------------------------------
+" Plugin: 'mhinz/vim-startify'
+"----------------------------------------------
+let g:startify_change_to_vcs_root = 1
 
 "----------------------------------------------
 " Plugin: 'T.B.D'
