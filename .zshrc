@@ -138,6 +138,8 @@ fgrep() {
   grep --line-buffered --color=never -r "" * | fzf
 }
 
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --skip-vcs-ignores -f -g ""'
+
 ########## ENVIRONMENT VARIABLES ##########
 # Add rbenv to PATH
 eval "$(rbenv init -)"
