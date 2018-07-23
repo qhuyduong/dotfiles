@@ -21,6 +21,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dadbod'
+Plug 'tpope/vim-dotenv'
 Plug 'vim-ruby/vim-ruby'                                         " Vim Ruby
 Plug 'vim-airline/vim-airline'                                   " Airline
 Plug 'vim-airline/vim-airline-themes'
@@ -51,7 +53,6 @@ Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
-Plug 'whatyouhide/vim-lengthmatters'
 Plug 'moll/vim-node'
 Plug 'lfilho/cosco.vim'
 Plug 'elzr/vim-json'
@@ -70,6 +71,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'kana/vim-textobj-user'                                     " Dependency
 Plug 'kana/vim-textobj-entire'                                   " Add ie and ae textobj
 Plug 'w0rp/ale'                                                  " Code linting
+Plug 'qhuyduong/dbext.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -522,6 +524,11 @@ let g:ale_json_jq_options = '--indent 4'
 " Plugin: 'mhinz/vim-startify'
 "----------------------------------------------
 let g:startify_change_to_vcs_root = 1
+
+"----------------------------------------------
+" Plugin: 'tpope/vim-dadbod'
+"----------------------------------------------
+let g:dadbod_manage_dbext = 1
 
 "----------------------------------------------
 " Plugin: 'T.B.D'
