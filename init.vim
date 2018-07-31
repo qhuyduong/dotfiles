@@ -72,6 +72,7 @@ Plug 'kana/vim-textobj-user'                                     " Dependency
 Plug 'kana/vim-textobj-entire'                                   " Add ie and ae textobj
 Plug 'w0rp/ale'                                                  " Code linting
 Plug 'qhuyduong/dbext.vim'
+Plug 'tpope/vim-unimpaired'
 
 " Initialize plugin system
 call plug#end()
@@ -185,11 +186,7 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
-" Move between buffers with Shift + arrow key...
-nnoremap <S-l> :bnext<cr>
-nnoremap <S-h> :bprevious<cr>
-
-" ... but skip the quickfix when navigating
+" Skip the quickfix when navigating
 augroup qf
   autocmd!
   autocmd FileType qf set nobuflisted
