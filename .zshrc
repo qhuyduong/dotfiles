@@ -103,12 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias nvi='nvim'
-export EDITOR='nvim'
-alias ll='ls -lha'
-alias nvimconfig='nvim ~/.config/nvim/init.vim'
-alias zshconfig='nvim ~/.zshrc'
-alias tmuxconfig='nvim ~/.tmux.conf'
 
 # fnvim [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
@@ -118,7 +112,6 @@ fnvim() {
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
-alias fnvi='fnvim'
 
 # fcd - cd to selected directory
 fcd() {
@@ -171,5 +164,16 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/huyduong/Library/Caches/heroku/autocomplete/zsh_
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+########## Aliases ##########
+alias nvi='nvim'
+alias fnvi='fnvim'
+alias ll='ls -lha'
+alias nvimconfig='nvim ~/.config/nvim/init.vim'
+alias zshconfig='nvim ~/.zshrc'
+alias tmuxconfig='nvim ~/.tmux.conf'
+alias herostag='ehcli'
+alias herocli='ehcli'
+
 ########## Export variables ##########
+export EDITOR='nvim'
 source "$HOME/.zshrc_env"
