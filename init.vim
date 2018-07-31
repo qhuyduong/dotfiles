@@ -122,6 +122,10 @@ set smartcase
 set gdefault
 set showmatch
 set viminfo^=%
+" Enable mouse if possible
+if has('mouse')
+  set mouse=a
+endif
 
 " Allow vim to set a custom font or color for a word
 syntax enable
