@@ -51,7 +51,6 @@ Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
 " Plug 'garbas/vim-snipmate'
 Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'moll/vim-node'
 Plug 'lfilho/cosco.vim'
@@ -65,14 +64,18 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'plasticboy/vim-markdown'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
-Plug 'xolox/vim-session'
-Plug 'xolox/vim-misc'
-Plug 'ludovicchabant/vim-gutentags'
+Plug 'xolox/vim-misc'                                            " Dependency
+Plug 'xolox/vim-session'                                         " Sessions manager
+Plug 'ludovicchabant/vim-gutentags'                              " Tags manager
 Plug 'kana/vim-textobj-user'                                     " Dependency
 Plug 'kana/vim-textobj-entire'                                   " Add ie and ae textobj
 Plug 'w0rp/ale'                                                  " Code linting
-Plug 'qhuyduong/dbext.vim'
-Plug 'tpope/vim-unimpaired'
+Plug 'qhuyduong/dbext.vim'                                       " Database interaction from vim
+Plug 'tpope/vim-unimpaired'                                      " Better buffers switching mapping
+Plug 'mbbill/undotree'                                           " View undo history
+Plug 'AndrewRadev/splitjoin.vim'                                 " Better lines split/join
+Plug 'tpope/vim-speeddating'                                     " Increase date with <C-a>/<C-x>
+Plug 'matze/vim-move'                                            " Move lines/block
 
 " Initialize plugin system
 call plug#end()
@@ -530,6 +533,16 @@ let g:startify_change_to_vcs_root = 1
 " Plugin: 'tpope/vim-dadbod'
 "----------------------------------------------
 let g:dadbod_manage_dbext = 1
+
+"----------------------------------------------
+" Plugin: 'mbbill/undotree'
+"----------------------------------------------
+nnoremap <F5> :UndotreeToggle<cr>
+
+"----------------------------------------------
+" Plug 'matze/vim-move'
+"----------------------------------------------
+let g:move_key_modifier = 'S'
 
 "----------------------------------------------
 " Plugin: 'T.B.D'
