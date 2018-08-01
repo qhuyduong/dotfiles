@@ -215,7 +215,7 @@ set splitbelow
 set splitright
 
 "----------------------------------------------
-" Plugin: 'Shougo/deoplete.nvim'
+" Plug 'Shougo/deoplete.nvim'
 "----------------------------------------------
 if has('nvim')
     " Enable deoplete on startup
@@ -232,7 +232,7 @@ function! Multiple_cursors_after()
 endfunction
 
 "----------------------------------------------
-" Plugin: 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 "----------------------------------------------
 " Show status bar by default.
 set laststatus=2
@@ -261,7 +261,7 @@ let g:airline_left_sep = "\uE0B4"
 let g:airline_right_sep = "\uE0B6"
 
 "----------------------------------------------
-" Plugin: 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 "----------------------------------------------
 " tmux will send xterm-style keys when its xterm-keys option is on.
 if &term =~ '^screen'
@@ -283,7 +283,7 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 
 "----------------------------------------------
-" Plugin: 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 "----------------------------------------------
 " Enable support for bidirectional motions
 map  <leader><leader>w <Plug>(easymotion-bd-w)
@@ -304,7 +304,7 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 "----------------------------------------------
-" Plugin: 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf.vim'
 "----------------------------------------------
 nnoremap <c-p> :FZF<cr>
 
@@ -315,7 +315,7 @@ nnoremap <c-p> :FZF<cr>
 nnoremap <F3> :TagbarToggle<cr>
 
 "----------------------------------------------
-" Plugin: 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
 "----------------------------------------------
 " Disable folding
 let g:vim_markdown_folding_disabled = 1
@@ -324,7 +324,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 
 "----------------------------------------------
-" Plugin: 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 "----------------------------------------------
 nnoremap <leader>d :NERDTreeToggle<cr>
 nnoremap <F2> :NERDTreeToggle<cr>
@@ -347,13 +347,13 @@ let NERDTreeShowHidden = 1
 let g:NERDTreeChDirMode = 2
 
 "----------------------------------------------
-" Plugin: 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 "----------------------------------------------
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_skip_key='<C-b>'
 
 "----------------------------------------------
-" Plugin: 'alvan/vim-closetag'
+" Plug 'alvan/vim-closetag'
 "----------------------------------------------
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb'
@@ -362,7 +362,7 @@ let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_close_shortcut = '<leader>>'
 
 "----------------------------------------------
-" Plugin: 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 "----------------------------------------------
 "let g:user_emmet_expandabbr_key='<Tab>'
 let g:user_emmet_settings = {
@@ -378,23 +378,23 @@ let g:user_emmet_settings = {
       \}
 
 "----------------------------------------------
-" Plugin: 'lfilho/cosco.vim'
+" Plug 'lfilho/cosco.vim'
 "----------------------------------------------
 let g:cosco_ignore_comment_lines = 1
 
 "----------------------------------------------
-" Plugin: 'ntpeters/vim-better-whitespace'
+" Plug 'ntpeters/vim-better-whitespace'
 "----------------------------------------------
 let g:better_whitespace_ctermcolor='green'
 
 "----------------------------------------------
-" Plugin: 'junegunn/vim-github-dashboard'
+" Plug 'junegunn/vim-github-dashboard'
 "----------------------------------------------
 let g:github_dashboard = { 'username': 'qhuyduong', 'password': $GITHUB_TOKEN }
 let g:github_dashboard['position'] = 'right'
 
 "----------------------------------------------
-" Plugin: 'kassio/neoterm'
+" Plug 'kassio/neoterm'
 "----------------------------------------------
 let g:neoterm_size='12'
 let g:neoterm_default_mod = 'belowright'
@@ -421,7 +421,7 @@ nnoremap <silent> <C-t> :Ttoggle<cr>
 tnoremap <silent> <C-t> <C-\><C-n>:Ttoggle<cr>
 
 "----------------------------------------------
-" Plugin: 'janko-m/vim-test'
+" Plug 'janko-m/vim-test'
 "----------------------------------------------
 let g:test#strategy = "vimux"
 let g:test#preserve_screen = 1
@@ -433,23 +433,23 @@ nnoremap <Leader>l :TestLast<CR>
 nnoremap <Leader>v :TestVisit<CR>
 
 "----------------------------------------------
-" Plugin: 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
 "----------------------------------------------
 let g:javascript_plugin_flow = 1
 
 "----------------------------------------------
-" Plugin: 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
 "----------------------------------------------
 let g:jsx_ext_required = 0
 
 "----------------------------------------------
-" Plugin: 'xolox/vim-session'
+" Plug 'xolox/vim-session'
 "----------------------------------------------
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 
 "----------------------------------------------
-" Plugin: 'Shougo/neosnippet'
+" Plug 'Shougo/neosnippet'
 "----------------------------------------------
 let g:neosnippet#enable_completed_snippet = 1
 let g:neosnippet#enable_snipmate_compatibility = 1
@@ -475,18 +475,18 @@ if has('conceal')
 endif
 
 "----------------------------------------------
-" Plugin: 'benmills/vimux'
+" Plug 'benmills/vimux'
 "----------------------------------------------
 let g:VimuxHeight = "30"
 let g:VimuxOrientation = "h"
 
 "----------------------------------------------
-" Plugin: 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 "----------------------------------------------
 let g:gutentags_cache_dir = get(g:, 'gutentags_cache_dir', expand('~/.cache/tags'))
 
 "----------------------------------------------
-" Plugin: 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-easy-align'
 "----------------------------------------------
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -495,7 +495,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "----------------------------------------------
-" Plugin: 'w0rp/ale'
+" Plug 'w0rp/ale'
 "----------------------------------------------
 " Enable completion where available.
 let g:ale_completion_enabled = 1
@@ -525,17 +525,17 @@ highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 let g:ale_json_jq_options = '--indent 4'
 
 "----------------------------------------------
-" Plugin: 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 "----------------------------------------------
 let g:startify_change_to_vcs_root = 1
 
 "----------------------------------------------
-" Plugin: 'tpope/vim-dadbod'
+" Plug 'tpope/vim-dadbod'
 "----------------------------------------------
 let g:dadbod_manage_dbext = 1
 
 "----------------------------------------------
-" Plugin: 'mbbill/undotree'
+" Plug 'mbbill/undotree'
 "----------------------------------------------
 nnoremap <F5> :UndotreeToggle<cr>
 
@@ -545,7 +545,7 @@ nnoremap <F5> :UndotreeToggle<cr>
 let g:move_key_modifier = 'S'
 
 "----------------------------------------------
-" Plugin: 'T.B.D'
+" Plug 'T.B.D'
 "----------------------------------------------
 
 "----------------------------------------------
