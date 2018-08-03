@@ -8,21 +8,26 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                                          " Fuzzy Finder
 Plug 'junegunn/vim-github-dashboard'
-Plug 'tpope/vim-rails'                                           " Rails support in vim
-Plug 'tpope/vim-fugitive'                                        " Easily manipulate Git(hub)
+
+" Tim Pope's plugins
 Plug 'tpope/vim-bundler'                                         " Bundle support in vim
-Plug 'tpope/vim-surround'                                        " Easily change Surround characters
-Plug 'tpope/vim-rbenv'                                           " vim-rbenv
-Plug 'tpope/vim-projectionist'                                   " vim-rake
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-endwise'                                         " Add 'end' to ruby structures
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dadbod'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-dotenv'
+Plug 'tpope/vim-endwise'                                         " Add 'end' to ruby structures
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'                                        " Easily manipulate Git(hub)
+Plug 'tpope/vim-projectionist'                                   " vim-rake
+Plug 'tpope/vim-rails'                                           " Rails support in vim
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-rbenv'                                           " Rbenv within vim
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-speeddating'                                     " Increase date with <C-a>/<C-x>
+Plug 'tpope/vim-surround'                                        " Easily change Surround characters
+Plug 'tpope/vim-unimpaired'                                      " Better buffers switching mapping
+
 Plug 'vim-ruby/vim-ruby'                                         " Vim Ruby
 Plug 'vim-airline/vim-airline'                                   " Airline
 Plug 'vim-airline/vim-airline-themes'
@@ -71,11 +76,11 @@ Plug 'kana/vim-textobj-user'                                     " Dependency
 Plug 'kana/vim-textobj-entire'                                   " Add ie and ae textobj
 Plug 'w0rp/ale'                                                  " Code linting
 Plug 'qhuyduong/dbext.vim'                                       " Database interaction from vim
-Plug 'tpope/vim-unimpaired'                                      " Better buffers switching mapping
 Plug 'mbbill/undotree'                                           " View undo history
 Plug 'AndrewRadev/splitjoin.vim'                                 " Better lines split/join
-Plug 'tpope/vim-speeddating'                                     " Increase date with <C-a>/<C-x>
 Plug 'matze/vim-move'                                            " Move lines/block
+Plug 'tommcdo/vim-exchange'                                      " Easy text exchange operator for Vim
+Plug 'tmux-plugins/vim-tmux-focus-events'                        " Make terminal vim and tmux work better together
 
 " Initialize plugin system
 call plug#end()
