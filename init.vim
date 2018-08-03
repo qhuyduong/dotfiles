@@ -561,6 +561,9 @@ let g:move_key_modifier = 'S'
 " Grep word under cursor
 nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
+" Easy expansion of the active file directory
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 "----------------------------------------------
 " Language: apiblueprint
 "----------------------------------------------
