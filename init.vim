@@ -524,6 +524,8 @@ highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 let g:ale_json_jq_options = '--indent 4'
 
+nnoremap <leader>a :ALEFix<CR>
+
 "----------------------------------------------
 " Plug 'mhinz/vim-startify'
 "----------------------------------------------
