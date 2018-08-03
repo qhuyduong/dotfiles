@@ -104,32 +104,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# fnvim [FUZZY PATTERN] - Open the selected file with the default editor
-#   - Bypass fuzzy finder if there's only one match (--select-1)
-#   - Exit if there's no match (--exit-0)
-fnvim() {
-  local files
-  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+# fzf-edit-widget - Open the selected file with the default editor
+#   - CTRL-E or Enter key to open with the $EDITOR
+fzf-edit-widget() {
+  local cmd="${EDITOR:-vim} $PWD/$(__fsel)"
+  eval "$cmd"
+  return $?
 }
+zle     -N   fzf-edit-widget
+bindkey '^E' fzf-edit-widget
 
-# fcd - cd to selected directory
-fcd() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
+# fzf-grep-widget - searching file contents and open file for editting
+fzf-grep-widget() {
+  local file="$PWD/$(ag --nogroup --hidden --ignore .git -U -f . | fzf -0 -1 | awk -F: '{print $1 " +" $2}')"
+  eval "${EDITOR:-vim} $file"
+  return $?
 }
-
-# fh - repeat history
-fh() {
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
-
-# fgrep - searching file contents
-fgrep() {
-  grep --line-buffered --color=never -r "" * | fzf
-}
+zle     -N   fzf-grep-widget
+bindkey '^G' fzf-grep-widget
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --skip-vcs-ignores -f -g ""'
 
