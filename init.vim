@@ -403,7 +403,7 @@ let g:javascript_plugin_flow = 1
 "----------------------------------------------
 " Plug 'mxw/vim-jsx'
 "----------------------------------------------
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 1
 
 "----------------------------------------------
 " Plug 'benmills/vimux'
