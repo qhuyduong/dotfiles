@@ -4,83 +4,86 @@
 call plug#begin('~/.local/share/nvim/plugged')
 " Make sure you use single quotes
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'                                          " Fuzzy Finder
-Plug 'junegunn/vim-github-dashboard'
+" Junegunn Choi's plugins
+Plug '/usr/local/opt/fzf'                 " Add fzf to runtime path
+Plug 'junegunn/fzf.vim'                   " Fuzzy Finder
+Plug 'junegunn/vim-easy-align'            " Easily alignment
+Plug 'junegunn/vim-github-dashboard'      " Browse GitHub events in Vim
 
 " Tim Pope's plugins
-Plug 'tpope/vim-bundler'                                         " Bundle support in vim
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dadbod'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-dotenv'
-Plug 'tpope/vim-endwise'                                         " Add 'end' to ruby structures
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'                                        " Easily manipulate Git(hub)
-Plug 'tpope/vim-projectionist'                                   " vim-rake
-Plug 'tpope/vim-rails'                                           " Rails support in vim
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-rbenv'                                           " Rbenv within vim
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-speeddating'                                     " Increase date with <C-a>/<C-x>
-Plug 'tpope/vim-surround'                                        " Easily change Surround characters
-Plug 'tpope/vim-unimpaired'                                      " Better buffers switching mapping
+Plug 'tpope/vim-bundler'                  " Bundle support in vim
+Plug 'tpope/vim-commentary'               " Comment stuff out
+Plug 'tpope/vim-dadbod'                   " Modern database interface for Vim
+Plug 'tpope/vim-dispatch'                 " Asynchronous build and test dispatcher
+Plug 'tpope/vim-dotenv'                   " Basic support for .env and Procfile
+Plug 'tpope/vim-endwise'                  " Add 'end' to ruby structures
+Plug 'tpope/vim-eunuch'                   " Basic Unix commands
+Plug 'tpope/vim-fugitive'                 " Easily manipulate Git(hub)
+Plug 'tpope/vim-projectionist'            " Granular project configuration
+Plug 'tpope/vim-rails'                    " Rails support in vim
+Plug 'tpope/vim-rake'                     " It's like rails.vim without the rails
+Plug 'tpope/vim-rbenv'                    " Rbenv within vim
+Plug 'tpope/vim-repeat'                   " Advanced dot usage
+Plug 'tpope/vim-rhubarb'                  " GitHub extension for fugitive.vim
+Plug 'tpope/vim-speeddating'              " Increase date with <C-a>/<C-x>
+Plug 'tpope/vim-surround'                 " Easily change Surround characters
+Plug 'tpope/vim-unimpaired'               " Better buffers switching mapping
 
-Plug 'vim-ruby/vim-ruby'                                         " Vim Ruby
-Plug 'vim-airline/vim-airline'                                   " Airline
-Plug 'vim-airline/vim-airline-themes'
-Plug 'flazz/vim-colorschemes'                                    " Color Schemes
-Plug 'scrooloose/nerdtree'
-Plug 'jremmen/vim-ripgrep'                                       " vim-ripgrep
-Plug 'alvan/vim-closetag'                                        " vim-closetag
-Plug 'ntpeters/vim-better-whitespace'                            " vim-trailing-whitespace
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }          " vim-jsx
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
-Plug 'mattn/emmet-vim', { 'for': ['html', 'erb', 'javascript'] } " emmet-vim
-Plug 'jiangmiao/auto-pairs'
-Plug 'airblade/vim-gitgutter'
-Plug 'epilande/vim-es2015-snippets', { 'for': 'javascript' }     " ES2015 code snippets (Optional)
-Plug 'epilande/vim-react-snippets', { 'for': 'javascript' }      " React code snippets
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }    " Ultisnips
-Plug 'fszymanski/deoplete-emoji'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'honza/vim-snippets'
-Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
-" Plug 'SirVer/ultisnips', { 'for': 'javascript' }
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'tomtom/tlib_vim'
-" Plug 'garbas/vim-snipmate'
-Plug 'mhinz/vim-startify'
-Plug 'majutsushi/tagbar'
-Plug 'godlygeek/tabular'
-Plug 'moll/vim-node'
-Plug 'lfilho/cosco.vim'
-Plug 'elzr/vim-json'
-Plug 'Yggdroot/indentLine'
-Plug 'kassio/neoterm'
-Plug 'janko-m/vim-test'
-Plug 'easymotion/vim-easymotion'
-Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
-Plug 'ryanoasis/vim-devicons'
-Plug 'plasticboy/vim-markdown'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'benmills/vimux'
-Plug 'xolox/vim-misc'                                            " Dependency
-Plug 'xolox/vim-session'                                         " Sessions manager
-Plug 'ludovicchabant/vim-gutentags'                              " Tags manager
-Plug 'kana/vim-textobj-user'                                     " Dependency
-Plug 'kana/vim-textobj-entire'                                   " Add ie and ae textobj
-Plug 'w0rp/ale'                                                  " Code linting
-Plug 'qhuyduong/dbext.vim'                                       " Database interaction from vim
-Plug 'mbbill/undotree'                                           " View undo history
-Plug 'AndrewRadev/splitjoin.vim'                                 " Better lines split/join
-Plug 'matze/vim-move'                                            " Move lines/block
-Plug 'tommcdo/vim-exchange'                                      " Easy text exchange operator for Vim
-Plug 'tmux-plugins/vim-tmux-focus-events'                        " Make terminal vim and tmux work better together
+" Visualisation
+Plug 'vim-airline/vim-airline'            " Airline
+Plug 'vim-airline/vim-airline-themes'     " Themes for airline
+Plug 'flazz/vim-colorschemes'             " Color Schemes
+Plug 'ryanoasis/vim-devicons'             " Add file type glyphs/icons to popular Vim plugins
+Plug 'airblade/vim-gitgutter'             " Shows a git diff in the gutter and stages/undoes hunks
+
+" Editing
+Plug 'w0rp/ale'                           " Code linting
+Plug 'jiangmiao/auto-pairs'               " Auto insert or delete brackets, parens, quotes
+Plug 'qhuyduong/dbext.vim'                " Database interaction from vim
+Plug 'Shougo/deoplete.nvim'               " Autocompletion for neovim
+Plug 'fszymanski/deoplete-emoji'          " Emoji autocompletion
+Plug 'Yggdroot/indentLine'                " Display the indention levels with thin vertical lines
+Plug 'coderifous/textobj-word-column.vim' " Adds text-objects for word-based columns in Vim
+Plug 'ntpeters/vim-better-whitespace'     " Remove trailing whitespaces
+Plug 'alvan/vim-closetag'                 " Auto close (X)HTML tags
+Plug 'easymotion/vim-easymotion'          " Enhanced vim motions
+Plug 'tommcdo/vim-exchange'               " Easy text exchange operator for Vim
+Plug 'ludovicchabant/vim-gutentags'       " Tags manager
+Plug 'matze/vim-move'                     " Move lines/block
+Plug 'kana/vim-textobj-user'              " Dependency
+Plug 'kana/vim-textobj-entire'            " Add ie and ae textobj
+Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting ruby blocks
+Plug 'lucapette/vim-textobj-underscore'   " Underscore text-object for Vim
+Plug 'AndrewRadev/splitjoin.vim'          " Better lines split/join
+
+" Windows layout
+Plug 'kassio/neoterm'                     " Wrapper of some vim/neovim's :terminal functions
+Plug 'scrooloose/nerdtree'                " A tree explorer plugin for vim
+Plug 'Xuyuanp/nerdtree-git-plugin'        " A plugin of NERDTree showing git status
+Plug 'majutsushi/tagbar'                  " Tags sidebar
+Plug 'benmills/vimux'                     " Interact with tmux within vim
+Plug 'mhinz/vim-startify'                 " The fancy start screen for Vim
+Plug 'janko-m/vim-test'                   " Run your tests at the speed of thought
+Plug 'tmux-plugins/vim-tmux-focus-events' " Make terminal vim and tmux work better together
+Plug 'christoomey/vim-tmux-navigator'     " Seamless navigation between tmux panes and vim splits
+Plug 'mbbill/undotree'                    " View undo history
+
+" Language: API Blueprint
+Plug 'kylef/apiblueprint.vim'             " Syntax highlighting and linting for API Blueprint<
+
+" Language: Ruby
+Plug 'vim-ruby/vim-ruby'                  " Vim/Ruby Configuration Files
+
+" Language: JavaScript
+Plug 'carlitux/deoplete-ternjs'           " deoplete.nvim source for javascript
+Plug 'mattn/emmet-vim'                    " Provides support for expanding abbreviations similar to emmet
+Plug 'ternjs/tern_for_vim'                " Tern plugin for Vim
+Plug 'pangloss/vim-javascript'            " Vastly improved Javascript indentation and syntax support in Vim
+Plug 'mxw/vim-jsx'                        " React JSX syntax highlighting and indenting for vim
+Plug 'moll/vim-node'                      " Like Rails.vim for Node
+
+" Language: Json
+Plug 'elzr/vim-json'                      " A better JSON for Vim
 
 " Initialize plugin system
 call plug#end()
@@ -183,17 +186,6 @@ nnoremap N Nzzzv
 "----------------------------------------------
 " Navigation
 "----------------------------------------------
-
-" Disable arrow keys
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-
 " Skip the quickfix when navigating
 augroup qf
   autocmd!
@@ -226,15 +218,6 @@ if has('nvim')
     " Enable deoplete on startup
     let g:deoplete#enable_at_startup = 1
 endif
-
-" Disable deoplete when in multi cursor mode
-function! Multiple_cursors_before()
-    let b:deoplete_disable_auto_complete = 1
-endfunction
-
-function! Multiple_cursors_after()
-    let b:deoplete_disable_auto_complete = 0
-endfunction
 
 "----------------------------------------------
 " Plug 'vim-airline/vim-airline'
@@ -320,15 +303,6 @@ nnoremap <c-p> :FZF<cr>
 nnoremap <F3> :TagbarToggle<cr>
 
 "----------------------------------------------
-" Plug 'plasticboy/vim-markdown'
-"----------------------------------------------
-" Disable folding
-let g:vim_markdown_folding_disabled = 1
-
-" Auto shrink the TOC, so that it won't take up 50% of the screen
-let g:vim_markdown_toc_autofit = 1
-
-"----------------------------------------------
 " Plug 'scrooloose/nerdtree'
 "----------------------------------------------
 nnoremap <leader>d :NERDTreeToggle<cr>
@@ -350,12 +324,6 @@ let NERDTreeShowHidden = 1
 
 " Allow NERDTree to change session root.
 let g:NERDTreeChDirMode = 2
-
-"----------------------------------------------
-" Plug 'terryma/vim-multiple-cursors'
-"----------------------------------------------
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_skip_key='<C-b>'
 
 "----------------------------------------------
 " Plug 'alvan/vim-closetag'
@@ -383,11 +351,6 @@ let g:user_emmet_settings = {
       \}
 
 "----------------------------------------------
-" Plug 'lfilho/cosco.vim'
-"----------------------------------------------
-let g:cosco_ignore_comment_lines = 1
-
-"----------------------------------------------
 " Plug 'ntpeters/vim-better-whitespace'
 "----------------------------------------------
 let g:better_whitespace_ctermcolor='green'
@@ -411,19 +374,14 @@ au TermOpen *neoterm* :tnoremap <buffer> <C-k> <C-\><C-n><C-w>k
 au TermOpen *neoterm* :tnoremap <buffer> <C-j> <C-\><C-n><C-w>j
 au TermOpen *neoterm* :tnoremap <buffer> <C-l> <C-\><C-n><C-w>l
 
-" augroup Term
-"   autocmd!
-"   " Always start in terminal mode in term buffers
-"   autocmd TermOpen * startinsert
-"   autocmd BufEnter term://* startinsert
-"   autocmd BufLeave term://* stopinsert
-" augroup END
-
-" escape from terminal mode to normal mode
+" Escape from terminal mode to normal mode
 tnoremap <esc> <C-\><C-n>
 nnoremap <silent> <C-t> :Ttoggle<cr>
-" toggle terminal from within terminal mode
+" Toggle terminal from within terminal mode
 tnoremap <silent> <C-t> <C-\><C-n>:Ttoggle<cr>
+
+" Exclude from buffer list
+autocmd TermOpen * set nobuflisted
 
 "----------------------------------------------
 " Plug 'janko-m/vim-test'
@@ -446,38 +404,6 @@ let g:javascript_plugin_flow = 1
 " Plug 'mxw/vim-jsx'
 "----------------------------------------------
 let g:jsx_ext_required = 0
-
-"----------------------------------------------
-" Plug 'xolox/vim-session'
-"----------------------------------------------
-let g:session_autoload = 'no'
-let g:session_autosave = 'no'
-
-"----------------------------------------------
-" Plug 'Shougo/neosnippet'
-"----------------------------------------------
-let g:neosnippet#enable_completed_snippet = 1
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <expr><TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ neosnippet#expandable_or_jumpable() ?
-      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
 
 "----------------------------------------------
 " Plug 'benmills/vimux'
@@ -507,7 +433,6 @@ let g:ale_completion_enabled = 1
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_lint_on_save = 1
-" let g:ale_fix_on_save = 1
 
 let g:ale_fixers = {
       \   'javascript': ['prettier'],
@@ -527,7 +452,7 @@ let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
-let g:ale_json_jq_options = '--indent 4'
+let g:ale_json_jq_options = '--indent 2'
 
 nnoremap <leader>a :ALEFix<CR>
 
@@ -600,15 +525,11 @@ au FileType html set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 " Language: CSS
 "----------------------------------------------
 au FileType css set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-au FileType css nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
-au FileType css imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 
 "----------------------------------------------
 " Language: JavaScript
 "----------------------------------------------
 au FileType javascript.* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-au FileType javascript.* nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
-au FileType javascript.* imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
 "au FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 "----------------------------------------------
