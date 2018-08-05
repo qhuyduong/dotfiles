@@ -46,7 +46,6 @@ Plug 'jiangmiao/auto-pairs'               " Auto insert or delete brackets, pare
 Plug 'qhuyduong/dbext.vim'                " Database interaction from vim
 Plug 'Shougo/deoplete.nvim'               " Autocompletion for neovim
 Plug 'fszymanski/deoplete-emoji'          " Emoji autocompletion
-Plug 'Yggdroot/indentLine'                " Display the indention levels with thin vertical lines
 Plug 'coderifous/textobj-word-column.vim' " Adds text-objects for word-based columns in Vim
 Plug 'ntpeters/vim-better-whitespace'     " Remove trailing whitespaces
 Plug 'alvan/vim-closetag'                 " Auto close (X)HTML tags
@@ -144,7 +143,6 @@ endif
 " For conceal markers.
 if has('conceal')
   set conceallevel=2
-  set concealcursor=inc
 endif
 
 " Allow vim to set a custom font or color for a word
@@ -490,18 +488,8 @@ nnoremap <F5> :UndotreeToggle<cr>
 let g:move_key_modifier = 'S'
 
 "----------------------------------------------
-" Plug 'Yggdroot/indentLine'
-"----------------------------------------------
-let g:indentLine_setConceal = 0
-
-"----------------------------------------------
 " Miscellaneous
 "----------------------------------------------
-" Generate js ctags file
-" function! Jsctags()
-"   :!find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | LANG=C sort > tags
-" endfunction
-
 " Grep word under cursor
 nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
