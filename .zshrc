@@ -163,8 +163,9 @@ alias ll='ls -lha'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
 alias zshconfig='nvim ~/.zshrc'
 alias tmuxconfig='nvim ~/.tmux.conf'
-alias herostag='ehcli'
-alias herocli='ehcli'
+alias tmuxlocalconfig='nvim ~/.tmux.conf.local'
+alias herostag="ehcli $@ --context $STAGING_CLUSTER"
+alias heroprod="ehcli $@ --context $PRODUCTION_CLUSTER"
 
 ########## Export variables ##########
 export EDITOR='nvim'
