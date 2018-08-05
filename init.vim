@@ -285,7 +285,7 @@ nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 " Plug 'easymotion/vim-easymotion'
 "----------------------------------------------
 " Enable support for bidirectional motions
-map  <leader><leader>w <Plug>(easymotion-bd-w)
+nmap  <leader><leader>w <Plug>(easymotion-bd-w)
 nmap <leader><leader>w <Plug>(easymotion-overwin-w)
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -299,8 +299,8 @@ nmap <Leader><Leader>s <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
 
 " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+nmap <Leader>j <Plug>(easymotion-j)
+nmap <Leader>k <Plug>(easymotion-k)
 
 "----------------------------------------------
 " Plug 'junegunn/fzf.vim'
