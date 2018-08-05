@@ -1,3 +1,6 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
@@ -9,6 +12,7 @@ Plug '/usr/local/opt/fzf'                 " Add fzf to runtime path
 Plug 'junegunn/fzf.vim'                   " Fuzzy Finder
 Plug 'junegunn/vim-easy-align'            " Easily alignment
 Plug 'junegunn/vim-github-dashboard'      " Browse GitHub events in Vim
+Plug 'junegunn/vader.vim'                 " A simple Vimscript test framework
 
 " Tim Pope's plugins
 Plug 'tpope/vim-bundler'                  " Bundle support in vim
@@ -99,7 +103,6 @@ set autowrite                     " write when switching buffers
 set autowriteall                  " write on :quit
 set completeopt-=preview          " remove the horrendous preview window
 set cursorline                    " highlight the current line for the cursor
-set encoding=utf-8
 set list
 set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 set showbreak=↪
@@ -138,18 +141,26 @@ set viminfo^=%
 if has('mouse')
   set mouse=a
 endif
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2
+  set concealcursor=inc
+endif
 
 " Allow vim to set a custom font or color for a word
 syntax enable
 
 " Set the leader button
-let mapleader = ','
+let g:mapleader = ','
 
-" Autosave buffers before leaving them
-autocmd BufLeave * silent! :wa
-
-" Remove trailing white spaces on save
-autocmd BufWritePre * StripWhitespace
+" Define a group `Utilities` and initialize.
+augroup Utilities
+  autocmd!
+  " Autosave buffers before leaving them
+  autocmd BufLeave * silent! :wa
+  " Remove trailing white spaces on save
+  autocmd BufWritePre * StripWhitespace
+augroup END
 
 " Center the screen quickly
 nnoremap <space> zz
@@ -187,7 +198,7 @@ nnoremap N Nzzzv
 " Navigation
 "----------------------------------------------
 " Skip the quickfix when navigating
-augroup qf
+augroup Quickfixes
   autocmd!
   autocmd FileType qf set nobuflisted
 augroup END
@@ -215,8 +226,8 @@ set splitright
 " Plug 'Shougo/deoplete.nvim'
 "----------------------------------------------
 if has('nvim')
-    " Enable deoplete on startup
-    let g:deoplete#enable_at_startup = 1
+  " Enable deoplete on startup
+  let g:deoplete#enable_at_startup = 1
 endif
 
 "----------------------------------------------
@@ -252,7 +263,7 @@ let g:airline_right_sep = "\uE0B6"
 " Plug 'christoomey/vim-tmux-navigator'
 "----------------------------------------------
 " tmux will send xterm-style keys when its xterm-keys option is on.
-if &term =~ '^screen'
+if &term =~? '^screen'
   execute "set <xUp>=\e[1;*A"
   execute "set <xDown>=\e[1;*B"
   execute "set <xRight>=\e[1;*C"
@@ -310,7 +321,7 @@ nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap \ :Ag<cr>
 
 " Files to ignore
-let NERDTreeIgnore = [
+let g:NERDTreeIgnore = [
       \ '\~$',
       \ '\.pyc$',
       \ '^\.DS_Store$',
@@ -320,7 +331,7 @@ let NERDTreeIgnore = [
       \]
 
 " Show hidden files by default.
-let NERDTreeShowHidden = 1
+let g:NERDTreeShowHidden = 1
 
 " Allow NERDTree to change session root.
 let g:NERDTreeChDirMode = 2
@@ -328,7 +339,7 @@ let g:NERDTreeChDirMode = 2
 "----------------------------------------------
 " Plug 'alvan/vim-closetag'
 "----------------------------------------------
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.jsx'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb'
 let g:closetag_emptyTags_caseSensitive = 1
 " Add > at current position without closing the current tag, default is ''
@@ -367,12 +378,16 @@ let g:github_dashboard['position'] = 'right'
 let g:neoterm_size='12'
 let g:neoterm_default_mod = 'belowright'
 
-" allow to navigation as normal
-au TermOpen *neoterm* :tnoremap <buffer> <Esc> <C-\><C-n>
-au TermOpen *neoterm* :tnoremap <buffer> <C-h> <C-\><C-n><C-w>h
-au TermOpen *neoterm* :tnoremap <buffer> <C-k> <C-\><C-n><C-w>k
-au TermOpen *neoterm* :tnoremap <buffer> <C-j> <C-\><C-n><C-w>j
-au TermOpen *neoterm* :tnoremap <buffer> <C-l> <C-\><C-n><C-w>l
+augroup Terminals
+  " Allow to navigation as normal
+  autocmd TermOpen *neoterm* :tnoremap <buffer> <Esc> <C-\><C-n>
+  autocmd TermOpen *neoterm* :tnoremap <buffer> <C-h> <C-\><C-n><C-w>h
+  autocmd TermOpen *neoterm* :tnoremap <buffer> <C-k> <C-\><C-n><C-w>k
+  autocmd TermOpen *neoterm* :tnoremap <buffer> <C-j> <C-\><C-n><C-w>j
+  autocmd TermOpen *neoterm* :tnoremap <buffer> <C-l> <C-\><C-n><C-w>l
+  " Exclude from buffer list
+  autocmd TermOpen * set nobuflisted
+augroup END
 
 " Escape from terminal mode to normal mode
 tnoremap <esc> <C-\><C-n>
@@ -380,13 +395,10 @@ nnoremap <silent> <C-t> :Ttoggle<cr>
 " Toggle terminal from within terminal mode
 tnoremap <silent> <C-t> <C-\><C-n>:Ttoggle<cr>
 
-" Exclude from buffer list
-autocmd TermOpen * set nobuflisted
-
 "----------------------------------------------
 " Plug 'janko-m/vim-test'
 "----------------------------------------------
-let g:test#strategy = "vimux"
+let g:test#strategy = 'vimux'
 let g:test#preserve_screen = 1
 
 nnoremap <Leader>n :TestNearest<CR>
@@ -408,8 +420,8 @@ let g:jsx_ext_required = 1
 "----------------------------------------------
 " Plug 'benmills/vimux'
 "----------------------------------------------
-let g:VimuxHeight = "30"
-let g:VimuxOrientation = "h"
+let g:VimuxHeight = '30'
+let g:VimuxOrientation = 'h'
 
 "----------------------------------------------
 " Plug 'ludovicchabant/vim-gutentags'
@@ -444,6 +456,7 @@ let g:ale_linters = {
       \   'javascript': ['eslint'],
       \   'json': ['jsonlint'],
       \   'ruby': ['rubocop'],
+      \   'vim': ['vint'],
       \}
 
 " Configure signs.
@@ -482,10 +495,6 @@ let g:move_key_modifier = 'S'
 let g:indentLine_setConceal = 0
 
 "----------------------------------------------
-" Plug 'T.B.D'
-"----------------------------------------------
-
-"----------------------------------------------
 " Miscellaneous
 "----------------------------------------------
 " Generate js ctags file
@@ -499,81 +508,86 @@ nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) 
 " Easy expansion of the active file directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+" Define a group `Languages` and initialize
+augroup Languages
+  autocmd!
+augroup END
+
 "----------------------------------------------
 " Language: apiblueprint
 "----------------------------------------------
-au FileType apiblueprint set expandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd Languages FileType apiblueprint set expandtab shiftwidth=4 softtabstop=4 tabstop=4
 
 "----------------------------------------------
 " Language: Bash
 "----------------------------------------------
-au FileType sh set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Languages FileType sh set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "----------------------------------------------
 " Language: gitcommit
 "----------------------------------------------
-au FileType gitcommit setlocal spell
-au FileType gitcommit setlocal textwidth=80
+autocmd Languages FileType gitcommit setlocal spell
+autocmd Languages FileType gitcommit setlocal textwidth=80
 
 "----------------------------------------------
 " Language: gitconfig
 "----------------------------------------------
-au FileType gitconfig set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd Languages FileType gitconfig set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 
 "----------------------------------------------
 " Language: HTML
 "----------------------------------------------
-au FileType html set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-"au FileType html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+autocmd Languages FileType html set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+"autocmd Languages FileType html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 "----------------------------------------------
 " Language: CSS
 "----------------------------------------------
-au FileType css set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Languages FileType css set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "----------------------------------------------
 " Language: JavaScript
 "----------------------------------------------
-au FileType javascript.* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-"au FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+autocmd Languages FileType javascript.* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+"autocmd Languages FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 "----------------------------------------------
 " Language: JSON
 "----------------------------------------------
-au FileType json set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Languages FileType json set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "----------------------------------------------
 " Language: LESS
 "----------------------------------------------
-au FileType less set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Languages FileType less set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "----------------------------------------------
 " Language: Make
 "----------------------------------------------
-au FileType make set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd Languages FileType make set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 
 "----------------------------------------------
 " Language: Markdown
 "----------------------------------------------
-au FileType markdown setlocal spell
-au FileType markdown set expandtab shiftwidth=4 softtabstop=4 tabstop=4 syntax=markdown
+autocmd Languages FileType markdown setlocal spell
+autocmd Languages FileType markdown set expandtab shiftwidth=4 softtabstop=4 tabstop=4 syntax=markdown
 
 "----------------------------------------------
 " Language: Ruby
 "----------------------------------------------
-au FileType ruby set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Languages FileType ruby set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "----------------------------------------------
 " Language: SQL
 "----------------------------------------------
-au FileType sql set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Languages FileType sql set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "----------------------------------------------
 " Language: vimscript
 "----------------------------------------------
-au FileType vim set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Languages FileType vim set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 "----------------------------------------------
 " Language: YAML
 "----------------------------------------------
-au FileType yaml set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Languages FileType yaml set expandtab shiftwidth=2 softtabstop=2 tabstop=2
