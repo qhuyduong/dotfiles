@@ -435,7 +435,7 @@ let g:ale_completion_enabled = 1
 let g:ale_lint_on_save = 1
 
 let g:ale_fixers = {
-      \   'javascript': ['prettier'],
+      \   'javascript': ['eslint'],
       \   'json': ['jq'],
       \   'ruby': ['rubocop'],
       \}
