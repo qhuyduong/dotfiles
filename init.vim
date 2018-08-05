@@ -369,7 +369,7 @@ let g:better_whitespace_ctermcolor='green'
 "----------------------------------------------
 " Plug 'junegunn/vim-github-dashboard'
 "----------------------------------------------
-let g:github_dashboard = { 'username': 'qhuyduong', 'password': $GITHUB_TOKEN }
+let g:github_dashboard = { 'username': $GITHUB_USER, 'password': $GITHUB_TOKEN }
 let g:github_dashboard['position'] = 'right'
 
 "----------------------------------------------
