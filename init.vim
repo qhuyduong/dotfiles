@@ -39,6 +39,7 @@ Plug 'vim-airline/vim-airline-themes'     " Themes for airline
 Plug 'flazz/vim-colorschemes'             " Color Schemes
 Plug 'ryanoasis/vim-devicons'             " Add file type glyphs/icons to popular Vim plugins
 Plug 'airblade/vim-gitgutter'             " Shows a git diff in the gutter and stages/undoes hunks
+Plug 'qhuyduong/vim-ruby-conceal'         " Unicode goodness for Ruby code by using vim's `conceal` feature
 
 " Editing
 Plug 'w0rp/ale'                           " Code linting
