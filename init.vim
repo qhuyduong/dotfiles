@@ -486,7 +486,9 @@ nnoremap <F5> :UndotreeToggle<cr>
 "----------------------------------------------
 " Plug 'matze/vim-move'
 "----------------------------------------------
-let g:move_key_modifier = 'S'
+let g:move_map_keys = 0
+vmap <silent> <S-k> <Plug>MoveBlockUp
+vmap <silent> <S-j> <Plug>MoveBlockDown
 
 "----------------------------------------------
 " Miscellaneous
