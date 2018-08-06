@@ -34,12 +34,13 @@ Plug 'tpope/vim-surround'                 " Easily change Surround characters
 Plug 'tpope/vim-unimpaired'               " Better buffers switching mapping
 
 " Visualisation
+Plug 'Yggdroot/indentLine'                " Display the indention levels with thin vertical lines
 Plug 'vim-airline/vim-airline'            " Airline
 Plug 'vim-airline/vim-airline-themes'     " Themes for airline
 Plug 'flazz/vim-colorschemes'             " Color Schemes
 Plug 'ryanoasis/vim-devicons'             " Add file type glyphs/icons to popular Vim plugins
 Plug 'airblade/vim-gitgutter'             " Shows a git diff in the gutter and stages/undoes hunks
-Plug 'qhuyduong/vim-ruby-conceal'         " Unicode goodness for Ruby code by using vim's `conceal` feature
+" Plug 'qhuyduong/vim-ruby-conceal'         " Unicode goodness for Ruby code by using vim's `conceal` feature
 
 " Editing
 Plug 'w0rp/ale'                           " Code linting
@@ -489,6 +490,11 @@ nnoremap <F5> :UndotreeToggle<cr>
 let g:move_map_keys = 0
 vmap <silent> <S-k> <Plug>MoveBlockUp
 vmap <silent> <S-j> <Plug>MoveBlockDown
+
+"----------------------------------------------
+" Plug 'Yggdroot/indentLine'
+"----------------------------------------------
+let g:indentLine_setConceal = 0
 
 "----------------------------------------------
 " Miscellaneous
