@@ -104,7 +104,7 @@ set autowriteall                  " write on :quit
 set completeopt-=preview          " remove the horrendous preview window
 set cursorline                    " highlight the current line for the cursor
 set list
-set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set listchars=tab:→\ ,eol:↵,trail:⋅,extends:❯,precedes:❮
 set showbreak=↪
 set splitright
 set nospell                       " disable spelling
