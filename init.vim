@@ -89,6 +89,9 @@ Plug 'moll/vim-node'                      " Like Rails.vim for Node
 " Language: Json
 Plug 'elzr/vim-json'                      " A better JSON for Vim
 
+" Language: Proto
+Plug 'qhuyduong/vim-proto'                " Google Proto Buffer syntax highlighting
+
 " Initialize plugin system
 call plug#end()
 
