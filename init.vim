@@ -34,7 +34,6 @@ Plug 'tpope/vim-surround'                 " Easily change Surround characters
 Plug 'tpope/vim-unimpaired'               " Better buffers switching mapping
 
 " Visualisation
-Plug 'Yggdroot/indentLine'                " Display the indention levels with thin vertical lines
 Plug 'vim-airline/vim-airline'            " Airline
 Plug 'vim-airline/vim-airline-themes'     " Themes for airline
 Plug 'flazz/vim-colorschemes'             " Color Schemes
@@ -141,10 +140,6 @@ set viminfo^=%
 " Enable mouse if possible
 if has('mouse')
   set mouse=a
-endif
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2
 endif
 
 " Allow vim to set a custom font or color for a word
@@ -490,11 +485,6 @@ nnoremap <F5> :UndotreeToggle<cr>
 let g:move_map_keys = 0
 vmap <silent> <S-k> <Plug>MoveBlockUp
 vmap <silent> <S-j> <Plug>MoveBlockDown
-
-"----------------------------------------------
-" Plug 'Yggdroot/indentLine'
-"----------------------------------------------
-let g:indentLine_setConceal = 0
 
 "----------------------------------------------
 " Miscellaneous
