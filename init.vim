@@ -132,6 +132,7 @@ set showcmd
 set hidden " can put buffer to the background without writing to disk, will remember history/marks.
 set wildmenu
 set wildmode=full
+set wildignorecase
 set ttyfast " Send more characters at a given time.
 set backspace=indent,eol,start
 set undolevels=100
@@ -445,12 +446,14 @@ let g:ale_completion_enabled = 1
 let g:ale_lint_on_save = 1
 
 let g:ale_fixers = {
-      \   'javascript': ['eslint'],
+      \   'html': ['tidy'],
+      \   'javascript': ['prettier-eslint'],
       \   'json': ['jq'],
       \   'ruby': ['rubocop'],
       \}
 
 let g:ale_linters = {
+      \   'html': ['tidy'],
       \   'javascript': ['eslint'],
       \   'json': ['jsonlint'],
       \   'ruby': ['rubocop'],
@@ -463,6 +466,7 @@ let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
+let g:ale_html_tidy_options = '-q -i --show-errors 0'
 let g:ale_json_jq_options = '--indent 2'
 
 nnoremap <leader>a :ALEFix<CR>
@@ -538,7 +542,7 @@ autocmd Languages FileType css set expandtab shiftwidth=2 softtabstop=2 tabstop=
 "----------------------------------------------
 " Language: JavaScript
 "----------------------------------------------
-autocmd Languages FileType javascript.* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Languages FileType javascript* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
 "autocmd Languages FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 "----------------------------------------------
