@@ -107,8 +107,8 @@ source $ZSH/oh-my-zsh.sh
 # fzf-edit-widget - Open the selected file with the default editor
 #   - CTRL-E or Enter key to open with the $EDITOR
 fzf-edit-widget() {
-  local cmd="${EDITOR:-vim} $PWD/$(__fsel)"
-  eval "$cmd"
+  local file=$(__fsel)
+  [[ -n $file ]] && eval "${EDITOR:-vim} $PWD/$file"
   return $?
 }
 zle     -N   fzf-edit-widget
@@ -116,8 +116,9 @@ bindkey '^E' fzf-edit-widget
 
 # fzf-grep-widget - searching file contents and open file for editting
 fzf-grep-widget() {
-  local file="$PWD/$(ag --nogroup --hidden --ignore .git -U -f . | fzf -0 -1 | awk -F: '{print $1 " +" $2}')"
-  eval "${EDITOR:-vim} $file"
+  local file="$(ag --nogroup --hidden --ignore .git -U -f . | fzf -0 -1 | awk -F: '{print $1 " +" $2}')"
+  echo $file
+  [[ -n $file ]] && eval "${EDITOR:-vim} $PWD/$file"
   return $?
 }
 zle     -N   fzf-grep-widget
