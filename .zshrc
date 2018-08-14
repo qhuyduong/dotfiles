@@ -160,7 +160,7 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/huyduong/Library/Caches/heroku/autocomplete/zsh_
 
 ########## Aliases ##########
 alias ll='ls -lha'
-alias emacsconfig='spacemacs ~/.spacemacs'
+alias spacemacsconfig='spacemacs ~/.spacemacs'
 alias zshconfig='spacemacs ~/.zshrc'
 alias tmuxconfig='spacemacs ~/.tmux.conf'
 alias tmuxlocalconfig='spacemacs ~/.tmux.conf.local'
