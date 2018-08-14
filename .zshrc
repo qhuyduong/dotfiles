@@ -161,6 +161,7 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/huyduong/Library/Caches/heroku/autocomplete/zsh_
 alias nvi='nvim'
 alias fnvi='fnvim'
 alias ll='ls -lha'
+alias emacsconfig='nvim ~/.spacemacs'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
 alias zshconfig='nvim ~/.zshrc'
 alias tmuxconfig='nvim ~/.tmux.conf'
