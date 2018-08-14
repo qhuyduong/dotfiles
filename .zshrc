@@ -159,17 +159,15 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/huyduong/Library/Caches/heroku/autocomplete/zsh_
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ########## Aliases ##########
-alias nvi='nvim'
-alias fnvi='fnvim'
 alias ll='ls -lha'
-alias emacsconfig='nvim ~/.spacemacs'
+alias emacsconfig='spacemacs ~/.spacemacs'
+alias zshconfig='spacemacs ~/.zshrc'
+alias tmuxconfig='spacemacs ~/.tmux.conf'
+alias tmuxlocalconfig='spacemacs ~/.tmux.conf.local'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
-alias zshconfig='nvim ~/.zshrc'
-alias tmuxconfig='nvim ~/.tmux.conf'
-alias tmuxlocalconfig='nvim ~/.tmux.conf.local'
 alias herostag="ehcli $@ --context $STAGING_CLUSTER"
 alias heroprod="ehcli $@ --context $PRODUCTION_CLUSTER"
 
 ########## Export variables ##########
-export EDITOR='nvim'
+export EDITOR='spacemacs'
 source "$HOME/.zshrc_env"
