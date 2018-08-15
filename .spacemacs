@@ -43,12 +43,13 @@ This function should only modify configuration layer settings."
      markdown
      osx
      org
-     spell-checking
-     syntax-checking
      (ruby :variables
            ruby-enable-enh-ruby-mode t
            ruby-version-manager 'rbenv
            ruby-test-runner 'rspec)
+     ruby-on-rails
+     spell-checking
+     syntax-checking
      treemacs
      tmux
      vimscript
@@ -73,6 +74,7 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages
    '(
+     prettier-js
      )
 
    ;; A list of packages that cannot be updated.
@@ -468,6 +470,14 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq vc-follow-symlinks t)
+  (require 'prettier-js)
+  (add-hook 'js2-mode-hook 'prettier-js-mode)
+  (add-hook 'web-mode-hook 'prettier-js-mode)
+  (setq prettier-js-args '(
+                           "--trailing-comma" "all"
+                           "--bracket-spacing" "false"
+                           "--single-quote" "true"
+                           ))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -484,7 +494,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (prettier-js yasnippet-snippets yaml-mode ws-butler winum which-key web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-evil toc-org symon string-inflection spaceline-all-the-icons smeargle seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rake rainbow-delimiters popwin persp-mode password-generator paradox overseer osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless mwim move-text mmm-mode minitest markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum livid-mode link-hint launchctl json-navigator json-mode js2-refactor js-doc indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-cleverparens evil-args evil-anzu eval-sexp-fu enh-ruby-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode diminish diff-hl dactyl-mode counsel-projectile company-tern company-statistics column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent ace-link ace-jump-helm-line ac-ispell))))
+    (projectile-rails inflections feature-mode prettier-js yasnippet-snippets yaml-mode ws-butler winum which-key web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-evil toc-org symon string-inflection spaceline-all-the-icons smeargle seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rake rainbow-delimiters popwin persp-mode password-generator paradox overseer osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless mwim move-text mmm-mode minitest markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum livid-mode link-hint launchctl json-navigator json-mode js2-refactor js-doc indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-cleverparens evil-args evil-anzu eval-sexp-fu enh-ruby-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode diminish diff-hl dactyl-mode counsel-projectile company-tern company-statistics column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
