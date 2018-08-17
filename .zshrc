@@ -170,4 +170,5 @@ alias heroprod="ehcli $@ --context $PRODUCTION_CLUSTER"
 
 ########## Export variables ##########
 export EDITOR='emacs'
+export GTAGSLABEL='ctags'
 source "$HOME/.zshrc_env"
