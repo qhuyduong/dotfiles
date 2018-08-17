@@ -57,6 +57,7 @@ This function should only modify configuration layer settings."
      treemacs
      version-control
      vimscript
+     xclipboard
      yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -489,7 +490,7 @@ before packages are loaded."
           (concat "" (format "SVN-%s" revision))))
        (t (format "%s" vc-mode)))))
 
-  (telephone-line-defsegment* my-airline-position-segment (&optional lines columns)
+  (telephone-line-defsegment* telephone-line-airline-position-segment (&optional lines columns)
     (let* ((l (number-to-string (if lines lines 1)))
            (c (number-to-string (if columns columns 2))))
       (if (eq major-mode 'paradox-menu-mode)
@@ -507,48 +508,13 @@ before packages are loaded."
         '((nil    . (telephone-line-flycheck-segment
                      telephone-line-misc-info-segment))
           (accent . (telephone-line-major-mode-segment))
-          (evil   . (my-airline-position-segment))))
+          (evil   . (telephone-line-airline-position-segment))))
 
   ;; Load theme
   (telephone-line-mode t)
 
   ;; Always follow symbolic links
   (setq vc-follow-symlinks t)
-
-  ;; Key mapping
-  (evil-leader/set-key "o y" 'copy-to-clipboard)
-  (evil-leader/set-key "o p" 'paste-from-clipboard)
-
-  ;; Functions definitions
-  ;; Copies selected range to clipboard
-  (defun copy-to-clipboard ()
-    "Copies selection to x-clipboard."
-    (interactive)
-    (if (display-graphic-p)
-        (progn
-          (message "Yanked region to x-clipboard!")
-          (call-interactively 'clipboard-kill-ring-save)
-          )
-      (if (region-active-p)
-          (progn
-            (shell-command-on-region (region-beginning) (region-end) "pbcopy")
-            (message "Yanked region to clipboard!")
-            (deactivate-mark))
-        (message "No region active; can't yank to clipboard!")))
-    )
-
-  ;; Pastes selected range from clipboard
-  (defun paste-from-clipboard ()
-    "Pastes from x-clipboard."
-    (interactive)
-    (if (display-graphic-p)
-        (progn
-          (clipboard-yank)
-          (message "graphics active")
-          )
-      (insert (shell-command-to-string "pbpaste"))
-      )
-    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
