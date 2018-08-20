@@ -209,7 +209,7 @@ It should only modify the values of Spacemacs settings."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes
    '(
-     base16-oceanicnext
+     (material :location local)
      )
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
