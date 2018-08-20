@@ -60,7 +60,6 @@ This function should only modify configuration layer settings."
      treemacs
      version-control
      vimscript
-     xclipboard
      yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -81,7 +80,9 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages
    '(
+     all-the-icons
      base16-theme
+     osx-clipboard
      prettier-js
      telephone-line
      )
@@ -519,6 +520,88 @@ before packages are loaded."
 
   ;; Always follow symbolic links
   (setq vc-follow-symlinks t)
+
+  ;; clipboard for emacs version >= 26
+  (use-package osx-clipboard
+    :config
+    (progn
+      (osx-clipboard-mode +1)
+      (diminish 'osx-clipboard-mode)))
+
+  (setq treemacs-no-png-images t)
+  (defun my-treemacs-hash-icons ()
+    "Create and define all icons-related caches, hashes and stashes."
+    (setq-local treemacs-icons-hash (make-hash-table :size 100 :test #'equal))
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "vim")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "svg")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "md" "markdown")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "js")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "jsx")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "css")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "png" "pdf" "jpg")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "ico")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "html")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "clj")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "cljs")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "go")
+    (treemacs-define-custom-icon
+     (propertize "" 'face 'font-lock-keyword-face)
+     "yml"
+     "yaml"
+     "DS_Store"
+     "properties"
+     "conf"
+     "config"
+     "gitignore"
+     "gitconfig"
+     "ini"
+     "xdefaults"
+     "xresources"
+     "terminalrc"
+     "org"
+     "toml")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "rb" "ruby")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "zsh" "bash" "sh")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "py")
+    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "json")
+    treemacs-icons-hash)
+
+  (defun my-treemacs--create-file-button-strings (path prefix parent depth)
+    "Return the text to insert for a file button for PATH.
+PREFIX is a string inserted as indentation.
+PARENT is the (optional) button under which this one is inserted.
+DEPTH indicates how deep in the filetree the current button is."
+    (my-treemacs-hash-icons)
+    (list
+     prefix
+     (ht-get treemacs-icons-hash
+             (-> path (treemacs--file-extension) (downcase))
+             treemacs-icon-fallback)
+     (propertize (file-name-nondirectory path)
+                 'button '(t)
+                 'category 'default-button
+                 'help-echo nil
+                 'keymap nil
+                 :default-face 'treemacs-git-unmodified-face
+                 :state 'file-node-closed
+                 :path path
+                 :parent parent
+                 :depth depth)))
+
+  (advice-add 'treemacs--create-file-button-strings :override #'my-treemacs--create-file-button-strings )
+
+  (with-eval-after-load "treemacs"
+    (setq
+     treemacs-icon-tag-node-open-txt   (propertize "▾ " 'face 'font-lock-keyword-face)
+     treemacs-icon-tag-node-closed-txt (propertize "▸ " 'face 'font-lock-keyword-face)
+     treemacs-icon-open-text   (propertize "▾ " 'face 'font-lock-keyword-face)
+     treemacs-icon-closed-text (propertize "▸ " 'face 'font-lock-keyword-face)
+     treemacs-icon-tag-leaf-txt (propertize "- " 'face 'font-lock-keyword-face)
+     treemacs-icon-fallback-text (propertize " " 'face 'font-lock-keyword-face)
+
+     treemacs-icon-open-png   (propertize "▾ " 'face 'font-lock-keyword-face)
+     treemacs-icon-closed-png (propertize "▸ " 'face 'font-lock-keyword-face)
+     treemacs-icon-text (propertize " " 'face 'font-lock-keyword-face)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -535,7 +618,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (base16-theme define-word yasnippet-snippets yaml-mode ws-butler winum which-key web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-evil toc-org telephone-line symon string-inflection spaceline-all-the-icons smeargle slack seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters projectile-rails prettier-js popwin persp-mode password-generator paradox overseer osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless mwim move-text mmm-mode minitest markdown-toc magithub magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode link-hint launchctl json-navigator json-mode js2-refactor js-doc indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flx-ido fill-column-indicator feature-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-cleverparens evil-args evil-anzu eval-sexp-fu enh-ruby-mode emoji-cheat-sheet-plus elisp-slime-nav editorconfig dumb-jump dotenv-mode diminish diff-hl dactyl-mode counsel-projectile company-tern company-statistics company-emoji column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent add-node-modules-path ace-link ace-jump-helm-line ac-ispell))))
+    (osx-clipboard yasnippet-snippets yaml-mode ws-butler winum which-key web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-evil toc-org telephone-line symon string-inflection spaceline-all-the-icons smeargle seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode restart-emacs rbenv rainbow-delimiters projectile-rails prettier-js powershell popwin persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nameless mwim move-text mmm-mode minitest markdown-toc magithub magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode link-hint json-navigator json-mode js2-refactor js-doc indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flx-ido fill-column-indicator feature-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-cleverparens evil-args evil-anzu eval-sexp-fu enh-ruby-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode diminish diff-hl define-word dactyl-mode counsel-projectile company-tern company-statistics column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote base16-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent add-node-modules-path ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
