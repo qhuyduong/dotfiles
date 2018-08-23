@@ -531,7 +531,7 @@ before packages are loaded."
           (concat "" (format "SVN-%s" revision))))
        (t (format "%s" vc-mode)))))
 
-  (telephone-line-defsegment* telephone-line-airline-position-segment (&optional lines columns)
+  (telephone-line-defsegment* telephone-line-improved-airline-position-segment (&optional lines columns)
     (let* ((l (number-to-string (if lines lines 1)))
            (c (number-to-string (if columns columns 2))))
       (if (eq major-mode 'paradox-menu-mode)
@@ -549,7 +549,7 @@ before packages are loaded."
         '((nil    . (telephone-line-flycheck-segment
                      telephone-line-misc-info-segment))
           (accent . (telephone-line-major-mode-segment))
-          (evil   . (telephone-line-airline-position-segment))))
+          (evil   . (telephone-line-improved-airline-position-segment))))
 
   ;; Load theme
   (telephone-line-mode t)
