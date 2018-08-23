@@ -515,9 +515,6 @@ before packages are loaded."
 
   (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
 
-  (add-to-list 'magic-mode-alist
-               '("\\(import.*from \'react\';\\|\/\/ @flow\nimport.*from \'react\';\\)" . rjsx-mode))
-
   ;; Languages hook
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'web-mode-hook 'prettier-js-mode)
