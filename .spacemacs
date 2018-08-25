@@ -103,6 +103,7 @@ This function should only modify configuration layer settings."
      ;;;;;;;;;;;;;;;;;;;;
      ;; Themes
      ;;;;;;;;;;;;;;;;;;;;
+     (airline-themes :location local)
      all-the-icons
      telephone-line
 
@@ -513,54 +514,18 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   (require 'flow-js2-mode)
+  (require 'airline-themes)
 
   (global-evil-matchit-mode t)
   (indent-guide-global-mode t)
 
-  (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
-
   ;; Languages hook
+  (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'web-mode-hook 'prettier-js-mode)
-
   (autoload 'apib-mode "apib-mode"
     "Major mode for editing API Blueprint files" t)
   (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
-
-  ;; telephone-line customization
-  (telephone-line-defsegment telephone-line-improved-vc-segment ()
-    (when vc-mode
-      (cond
-       ((string-match "Git[:-]" vc-mode)
-        (let ((branch (mapconcat 'concat (cdr (split-string vc-mode "[:-]")) "-")))
-          (concat "" (format " %s" branch))))
-       ((string-match "SVN-" vc-mode)
-        (let ((revision (cadr (split-string vc-mode "-"))))
-          (concat "" (format "SVN-%s" revision))))
-       (t (format "%s" vc-mode)))))
-
-  (telephone-line-defsegment* telephone-line-improved-airline-position-segment (&optional lines columns)
-    (let* ((l (number-to-string (if lines lines 1)))
-           (c (number-to-string (if columns columns 2))))
-      (if (eq major-mode 'paradox-menu-mode)
-          (telephone-line-raw mode-line-front-space t)
-        `((-3 "%p") ,(concat "  " "%" l "l:%" c "c")))))
-
-  (setq telephone-line-lhs
-        '((evil   . (telephone-line-evil-tag-segment))
-          (accent . (telephone-line-improved-vc-segment
-                     telephone-line-process-segment))
-          (nil    . (telephone-line-buffer-segment
-                     telephone-line-projectile-segment))))
-
-  (setq telephone-line-rhs
-        '((nil    . (telephone-line-flycheck-segment
-                     telephone-line-misc-info-segment))
-          (accent . (telephone-line-major-mode-segment))
-          (evil   . (telephone-line-improved-airline-position-segment))))
-
-  ;; Load theme
-  (telephone-line-mode t)
 
   ;; Always follow symbolic links
   (setq vc-follow-symlinks t)
@@ -571,6 +536,19 @@ before packages are loaded."
     (progn
       (osx-clipboard-mode +1)
       (diminish 'osx-clipboard-mode)))
+
+  (setq powerline-utf-8-separator-left        #xe0b0
+        powerline-utf-8-separator-right       #xe0b2
+        airline-utf-glyph-separator-left      #xe0b0
+        airline-utf-glyph-separator-right     #xe0b2
+        airline-utf-glyph-subseparator-left   #xe0b1
+        airline-utf-glyph-subseparator-right  #xe0b3
+        airline-utf-glyph-branch              #xf408
+        airline-utf-glyph-readonly            #xe0a2
+        airline-utf-glyph-linenumber          #xe0a1)
+
+  ;; Load theme
+  (load-theme 'airline-light t)
 
   (setq treemacs-no-png-images t)
   (defun my-treemacs-hash-icons ()
