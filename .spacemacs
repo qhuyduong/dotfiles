@@ -40,9 +40,15 @@ This function should only modify configuration layer settings."
      spell-checking
      syntax-checking
      tmux
+
+     ;;;;;;;;;;;;;;;;;;;;
+     ;; Project tree
+     ;;;;;;;;;;;;;;;;;;;;
      treemacs
 
+     ;;;;;;;;;;;;;;;;;;;;
      ;; SVC
+     ;;;;;;;;;;;;;;;;;;;;
      git
      github
      version-control
