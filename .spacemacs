@@ -554,6 +554,8 @@ before packages are loaded."
         airline-utf-glyph-readonly            #xe0a2
         airline-utf-glyph-linenumber          #xe0a1)
 
+  (setq airline-minor-modes nil)
+  (setq airline-shortened-vc-info t)
   ;; Load theme
   (load-theme 'airline-light t)
 
