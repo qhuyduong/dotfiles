@@ -110,7 +110,6 @@ This function should only modify configuration layer settings."
      ;; Themes
      ;;;;;;;;;;;;;;;;;;;;
      (airline-themes :location local)
-     mode-icons
      telephone-line
 
      ;;;;;;;;;;;;;;;;;;;;
@@ -522,7 +521,6 @@ before packages are loaded."
   (require 'flow-js2-mode)
   (require 'airline-themes)
 
-  (mode-icons-mode)
   (global-evil-matchit-mode t)
   (indent-guide-global-mode t)
 
