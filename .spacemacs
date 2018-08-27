@@ -71,6 +71,9 @@ This function should only modify configuration layer settings."
      ;; Markdown
      markdown
 
+     ;; Python
+     python
+
      ;; Ruby
      (ruby :variables
            ruby-enable-enh-ruby-mode t
