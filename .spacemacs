@@ -546,6 +546,9 @@ before packages are loaded."
       (osx-clipboard-mode +1)
       (diminish 'osx-clipboard-mode)))
 
+  (setq google-translate-default-source-language "en")
+  (setq google-translate-default-target-language "vi")
+
   (setq powerline-utf-8-separator-left        #xe0b0
         powerline-utf-8-separator-right       #xe0b2
         airline-utf-glyph-separator-left      #xe0b0
