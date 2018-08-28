@@ -563,7 +563,7 @@ before packages are loaded."
   (setq airline-minor-modes nil)
   (setq airline-shortened-vc-info t)
   ;; Load theme
-  (load-theme 'airline-nord t)
+  (load-theme 'airline-distinguished t)
 
   ;; Remove underline when highlighting current line
   (set-face-attribute hl-line-face nil :underline nil)
