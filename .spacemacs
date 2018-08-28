@@ -252,7 +252,8 @@ It should only modify the values of Spacemacs settings."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes
    '(
-     (material :location local)
+     ;; (material :location local)
+     wombat
      )
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -563,6 +564,9 @@ before packages are loaded."
   (setq airline-shortened-vc-info t)
   ;; Load theme
   (load-theme 'airline-nord t)
+
+  ;; Remove underline when highlighting current line
+  (set-face-attribute hl-line-face nil :underline nil)
 
   (setq treemacs-no-png-images t)
   (defun my-treemacs-hash-icons ()
