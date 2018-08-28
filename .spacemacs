@@ -559,7 +559,7 @@ before packages are loaded."
   (setq airline-minor-modes nil)
   (setq airline-shortened-vc-info t)
   ;; Load theme
-  (load-theme 'airline-light t)
+  (load-theme 'airline-nord t)
 
   (setq treemacs-no-png-images t)
   (defun my-treemacs-hash-icons ()
