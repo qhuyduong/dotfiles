@@ -568,68 +568,6 @@ before packages are loaded."
   ;; Remove underline when highlighting current line
   (set-face-attribute hl-line-face nil :underline nil)
 
-  (setq treemacs-no-png-images t)
-  (defun my-treemacs-hash-icons ()
-    "Create and define all icons-related caches, hashes and stashes."
-    (setq-local treemacs-icons-hash (make-hash-table :size 100 :test #'equal))
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "vim")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "svg")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "md" "markdown")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "js")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "jsx")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "css")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "png" "pdf" "jpg")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "ico")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "html")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "clj")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "cljs")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "go")
-    (treemacs-define-custom-icon
-     (propertize "" 'face 'font-lock-keyword-face)
-     "yml"
-     "yaml"
-     "DS_Store"
-     "properties"
-     "conf"
-     "config"
-     "gitignore"
-     "gitconfig"
-     "ini"
-     "xdefaults"
-     "xresources"
-     "terminalrc"
-     "org"
-     "toml")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "rb" "ruby")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "zsh" "bash" "sh")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "py")
-    (treemacs-define-custom-icon (propertize "" 'face 'font-lock-keyword-face) "json")
-    treemacs-icons-hash)
-
-  (defun my-treemacs--create-file-button-strings (path prefix parent depth)
-    "Return the text to insert for a file button for PATH.
-PREFIX is a string inserted as indentation.
-PARENT is the (optional) button under which this one is inserted.
-DEPTH indicates how deep in the filetree the current button is."
-    (my-treemacs-hash-icons)
-    (list
-     prefix
-     (ht-get treemacs-icons-hash
-             (-> path (treemacs--file-extension) (downcase))
-             treemacs-icon-fallback)
-     (propertize (file-name-nondirectory path)
-                 'button '(t)
-                 'category 'default-button
-                 'help-echo nil
-                 'keymap nil
-                 :default-face 'treemacs-git-unmodified-face
-                 :state 'file-node-closed
-                 :path path
-                 :parent parent
-                 :depth depth)))
-
-  (advice-add 'treemacs--create-file-button-strings :override #'my-treemacs--create-file-button-strings )
-
   (with-eval-after-load "treemacs"
     (setq
      treemacs-icon-tag-node-open-txt   (propertize "▾ " 'face 'font-lock-keyword-face)
