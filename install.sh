@@ -4,7 +4,7 @@ echo "Installing dependencies via Homebrew"
 brew update && brew upgrade
 brew install tree fzf curl rbenv the_silver_searcher jq \
 						 tmuxinator-completion neovim zsh-completions \
-						 zsh-syntax-highlighting emacs
+						 zsh-syntax-highlighting emacs pyenv ispell
 brew remove ctags
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
@@ -91,3 +91,15 @@ cat <<EOF > ~/.ctags.d/global.ctags
 --extras=+q+f
 --fields=+i+a+S+n
 EOF
+
+echo "Configure 24-bit terminal"
+cat <<EOF > ~/xterm-24bit.terminfo
+xterm-24bit|xterm with 24-bit direct color mode,
+   use=xterm-256color,
+   sitm=\E[3m,
+   ritm=\E[23m,
+   setb24=\E[48;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&%d;%p1%{255}%&%dm,
+   setf24=\E[38;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&%d;%p1%{255}%&%dm,
+
+EOF
+tic -x -o ~/.terminfo ~/xterm-24bit.terminfo
