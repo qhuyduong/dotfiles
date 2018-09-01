@@ -151,8 +151,8 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 # Configure exercism
 [ -s "$HOME/.config/exercism/exercism_completion.zsh" ] && source "$HOME/.config/exercism/exercism_completion.zsh"
 
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/huyduong/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+# Configure iterm2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -164,9 +164,6 @@ alias zshconfig='emacs ~/.zshrc'
 alias tmuxconfig='emacs ~/.tmux.conf'
 alias tmuxlocalconfig='emacs ~/.tmux.conf.local'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
-alias herostag="ehcli $@ --context $STAGING_CLUSTER"
-alias heroprod="ehcli $@ --context $PRODUCTION_CLUSTER"
 
 ########## Export variables ##########
 export EDITOR='emacs'
-export GTAGSLABEL='ctags'
