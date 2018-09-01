@@ -536,7 +536,7 @@ before packages are loaded."
   (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'web-mode-hook 'prettier-js-mode)
-  (add-hook 'ruby-mode-hook 'rubocopfmt-mode)
+  ;; (add-hook 'ruby-mode-hook 'rubocopfmt-mode)
   (autoload 'apib-mode "apib-mode"
     "Major mode for editing API Blueprint files" t)
   (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
