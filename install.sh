@@ -48,9 +48,13 @@ bindkey -M vicmd 'v' visual-mode
 bindkey -M vicmd '^v' edit-command-line
 EOF
 
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 cat <<EOF > ~/.oh-my-zsh/custom/zsh-autosuggestion.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 EOF
+
+echo "Configure fzf"
+$(brew --prefix)/opt/fzf/install
 
 echo "Some ctags config"
 mkdir -p ~/.ctags.d
