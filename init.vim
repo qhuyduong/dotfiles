@@ -173,7 +173,7 @@ vnoremap <C-x> "+d
 " Colors
 "----------------------------------------------
 set background=dark
-colorscheme hybrid_material
+colorscheme wombat
 
 "----------------------------------------------
 " Searching
