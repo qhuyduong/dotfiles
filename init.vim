@@ -236,7 +236,7 @@ endif
 set laststatus=2
 
 " Set this. Airline will handle the rest.
-let g:airline_theme = 'hybrid'
+let g:airline_theme = 'wombat'
 
 " Enable top tabline.
 let g:airline#extensions#tabline#enabled = 1
