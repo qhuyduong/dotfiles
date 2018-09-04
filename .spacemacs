@@ -571,6 +571,7 @@ before packages are loaded."
 
   ;; Remove underline when highlighting current line
   (set-face-attribute hl-line-face nil :underline nil)
+  (set-face-attribute 'region nil :background "#cbe587" :foreground "#000000")
 
   (with-eval-after-load "treemacs"
     (setq
