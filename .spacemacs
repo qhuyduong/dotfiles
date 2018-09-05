@@ -570,7 +570,10 @@ before packages are loaded."
   (load-theme 'airline-wombat t)
 
   ;; Remove underline when highlighting current line
-  (set-face-attribute hl-line-face nil :underline nil)
+  (set-face-underline 'highlight nil)
+  ;; Preserve syntax highlight when highlighting current line
+  (set-face-foreground 'highlight nil)
+  ;; Change visual selection's colors
   (set-face-attribute 'region nil :background "#cbe587" :foreground "#000000")
 
   (with-eval-after-load "treemacs"
