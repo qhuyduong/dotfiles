@@ -166,4 +166,4 @@ alias tmuxlocalconfig='emacs ~/.tmux.conf.local'
 alias nvimconfig='nvim ~/.config/nvim/init.vim'
 
 ########## Export variables ##########
-export EDITOR='emacs'
+export EDITOR='nvim'
