@@ -577,6 +577,11 @@ before packages are loaded."
   ;; Change visual selection's colors
   (set-face-attribute 'region nil :background "#cbe587" :foreground "#000000")
 
+  (with-eval-after-load 'helm
+    (define-key helm-map (kbd "<left>") 'backward-char)
+    (define-key helm-map (kbd "<right>") 'forward-char)
+    (define-key helm-map (kbd "C-h") 'delete-backward-char))
+
   (with-eval-after-load "treemacs"
     (setq
      treemacs-icon-tag-node-open-txt   (propertize "▾ " 'face 'font-lock-keyword-face)
@@ -588,8 +593,7 @@ before packages are loaded."
 
      treemacs-icon-open-png   (propertize "▾ " 'face 'font-lock-keyword-face)
      treemacs-icon-closed-png (propertize "▸ " 'face 'font-lock-keyword-face)
-     treemacs-icon-text (propertize " " 'face 'font-lock-keyword-face)))
-  )
+     treemacs-icon-text (propertize " " 'face 'font-lock-keyword-face))))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
