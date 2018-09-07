@@ -116,7 +116,6 @@ This function should only modify configuration layer settings."
      ;; Themes
      ;;;;;;;;;;;;;;;;;;;;
      (airline-themes :location local)
-     telephone-line
 
      ;;;;;;;;;;;;;;;;;;;;
      ;; Languages
