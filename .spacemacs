@@ -576,6 +576,14 @@ before packages are loaded."
   (set-face-foreground 'highlight nil)
   ;; Change visual selection's colors
   (set-face-attribute 'region nil :background "#cbe587" :foreground "#000000")
+  ;; Change company mode style
+  (let ((bg (face-attribute 'default :background)))
+    (custom-set-faces
+     `(company-tooltip ((t (:inherit default :background ,(color-lighten-name bg 2)))))
+     `(company-tooltip-common ((t (:inherit font-lock-constant-face))))
+     `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
+     `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 10)))))
+     `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))))
 
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "<left>") 'backward-char)
