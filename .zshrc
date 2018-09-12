@@ -160,6 +160,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 ########## Aliases ##########
+ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
 alias spacemacsconfig='emacs ~/.spacemacs'
 alias zshconfig='emacs ~/.zshrc'
