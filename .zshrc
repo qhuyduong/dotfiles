@@ -157,6 +157,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
 ########## Aliases ##########
 alias ll='ls -lha'
 alias spacemacsconfig='emacs ~/.spacemacs'
