@@ -258,7 +258,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-themes
    '(
      ;; (material :location local)
-     wombat
+     ;; wombat
+     (nord :location local)
      )
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -569,22 +570,22 @@ before packages are loaded."
   (setq airline-minor-modes nil)
   (setq airline-shortened-vc-info t)
   ;; Load theme
-  (load-theme 'airline-wombat t)
+  (load-theme 'airline-nord t)
 
   ;; Remove underline when highlighting current line
   (set-face-underline 'highlight nil)
   ;; Preserve syntax highlight when highlighting current line
   (set-face-foreground 'highlight nil)
   ;; Change visual selection's colors
-  (set-face-attribute 'region nil :background "#cbe587" :foreground "#000000")
+  (set-face-attribute 'region nil :background (color-lighten-name (face-background 'highlight) 5))
   ;; Change company mode style
-  (let ((bg (face-attribute 'default :background)))
-    (custom-set-faces
-     `(company-tooltip ((t (:inherit default :background ,(color-lighten-name bg 5)))))
-     `(company-tooltip-common ((t (:inherit font-lock-constant-face))))
-     `(company-tooltip-selection ((t (:inherit default :background "#cbe587" :foreground "#000000"))))
-     `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 10)))))
-     `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))))
+  ;; (let ((bg (face-attribute 'default :background)))
+  ;;   (custom-set-faces
+  ;;    `(company-tooltip ((t (:inherit default :background ,(color-lighten-name bg 5)))))
+  ;;    `(company-tooltip-common ((t (:inherit font-lock-constant-face))))
+  ;;    `(company-tooltip-selection ((t (:inherit default :background "#cbe587" :foreground "#000000"))))
+  ;;    `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 10)))))
+  ;;    `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))))
 
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "<left>") 'backward-char)
