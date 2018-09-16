@@ -40,6 +40,7 @@ Plug 'flazz/vim-colorschemes'             " Color Schemes
 Plug 'ryanoasis/vim-devicons'             " Add file type glyphs/icons to popular Vim plugins
 Plug 'airblade/vim-gitgutter'             " Shows a git diff in the gutter and stages/undoes hunks
 " Plug 'qhuyduong/vim-ruby-conceal'         " Unicode goodness for Ruby code by using vim's `conceal` feature
+Plug 'arcticicestudio/nord-vim'           " Nord theme
 
 " Editing
 Plug 'w0rp/ale'                           " Code linting
@@ -173,7 +174,7 @@ vnoremap <C-x> "+d
 " Colors
 "----------------------------------------------
 set background=dark
-colorscheme wombat
+colorscheme nord
 
 "----------------------------------------------
 " Searching
@@ -236,7 +237,7 @@ endif
 set laststatus=2
 
 " Set this. Airline will handle the rest.
-let g:airline_theme = 'wombat'
+let g:airline_theme = 'nord'
 
 " Enable top tabline.
 let g:airline#extensions#tabline#enabled = 1
