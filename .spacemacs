@@ -118,7 +118,6 @@ This function should only modify configuration layer settings."
      ;;;;;;;;;;;;;;;;;;;;
      ;; Themes
      ;;;;;;;;;;;;;;;;;;;;
-     (airline-themes :location local)
 
      ;;;;;;;;;;;;;;;;;;;;
      ;; Languages
@@ -268,7 +267,7 @@ It should only modify the values of Spacemacs settings."
    ;; to create your own spaceline theme. Value can be a symbol or list with\
    ;; additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme 'vim-powerline
+   dotspacemacs-mode-line-theme '(spacemacs :separator utf-8)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -528,7 +527,6 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  (require 'airline-themes)
   (require 'flow-js2-mode)
 
   (global-evil-matchit-mode t)
@@ -555,21 +553,6 @@ before packages are loaded."
 
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "vi")
-
-  (setq powerline-utf-8-separator-left        #xe0b0
-        powerline-utf-8-separator-right       #xe0b2
-        airline-utf-glyph-separator-left      #xe0b0
-        airline-utf-glyph-separator-right     #xe0b2
-        airline-utf-glyph-subseparator-left   #xe0b1
-        airline-utf-glyph-subseparator-right  #xe0b3
-        airline-utf-glyph-branch              #xf408
-        airline-utf-glyph-readonly            #xe0a2
-        airline-utf-glyph-linenumber          #xe0a1)
-
-  (setq airline-minor-modes nil)
-  (setq airline-shortened-vc-info t)
-  ;; Load theme
-  (load-theme 'airline-nord t)
 
   ;; Remove underline when highlighting current line
   (set-face-underline 'highlight nil)
