@@ -159,6 +159,15 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 ########## Aliases ##########
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
+emacs() {
+  args=("$@")
+  if [[ "$args" != *'-gui'* ]]; then
+    args+=("-nw")
+  else
+    args=${args/-gui}
+  fi
+  /usr/local/bin/emacs $args
+}
 alias zshconfig='emacs ~/.zshrc'
 alias tmuxconfig='emacs ~/.tmux.conf'
 alias tmuxlocalconfig='emacs ~/.tmux.conf.local'
