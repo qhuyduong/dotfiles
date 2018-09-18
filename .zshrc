@@ -66,7 +66,6 @@ plugins=(
   copyfile
   git
   github
-  thefuck
   vi-mode
   zsh-autosuggestions
   zsh-completions
@@ -142,9 +141,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Add sqlite3 to PATH
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-
 # Add imagemagick to PATH
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
@@ -157,12 +153,12 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Add GNU coreutils to PATH
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 ########## Aliases ##########
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
-alias spacemacsconfig='emacs ~/.spacemacs'
 alias zshconfig='emacs ~/.zshrc'
 alias tmuxconfig='emacs ~/.tmux.conf'
 alias tmuxlocalconfig='emacs ~/.tmux.conf.local'
