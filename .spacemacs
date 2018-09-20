@@ -527,21 +527,18 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (icomplete-mode 1)
 
+  ;; Require packages
   (require 'flow-js2-mode)
 
+  ;; Enable matchit by default
   (global-evil-matchit-mode t)
+
+  ;; Enable indent guide by default
   (indent-guide-global-mode t)
 
-  ;; Languages hook
-  (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
-  (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode)
-  ;; (add-hook 'ruby-mode-hook 'rubocopfmt-mode)
-  (autoload 'apib-mode "apib-mode"
-    "Major mode for editing API Blueprint files" t)
-  (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
+  ;; Use icomplete over iswitchb
+  (icomplete-mode 1)
 
   ;; Always follow symbolic links
   (setq vc-follow-symlinks t)
@@ -553,8 +550,12 @@ before packages are loaded."
       (osx-clipboard-mode +1)
       (diminish 'osx-clipboard-mode)))
 
+  ;; Set default source and destination languages for Google Translate
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "vi")
+
+  ;; Rename default ctags file from TAGS to tags
+  (setq projectile-tags-file-name "tags")
 
   ;; Remove underline when highlighting current line
   (set-face-underline 'highlight nil)
@@ -571,11 +572,13 @@ before packages are loaded."
   ;;    `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 10)))))
   ;;    `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))))
 
+  ;; Enable left/right arrow in Helm mini buffer
   (with-eval-after-load 'helm
     (define-key helm-map (kbd "<left>") 'backward-char)
     (define-key helm-map (kbd "<right>") 'forward-char)
     (define-key helm-map (kbd "C-h") 'delete-backward-char))
 
+  ;; Configure treemacs icons
   (with-eval-after-load "treemacs"
     (setq
      treemacs-icon-tag-node-open-txt   (propertize "▾ " 'face 'font-lock-keyword-face)
@@ -590,7 +593,15 @@ before packages are loaded."
      treemacs-icon-text (propertize " " 'face 'font-lock-keyword-face)))
 
   ;; Languages
+  ;; API Blueprint
+  (autoload 'apib-mode "apib-mode"
+    "Major mode for editing API Blueprint files" t)
+  (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
+
   ;; Javascript
+  (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
+  (add-hook 'js2-mode-hook 'prettier-js-mode)
+  (add-hook 'web-mode-hook 'prettier-js-mode)
   (setq-default js2-basic-offset 2
                 js-indent-level 2
                 css-indent-offset 2
@@ -598,6 +609,9 @@ before packages are loaded."
                 web-mode-css-indent-offset 2
                 web-mode-code-indent-offset 2
                 web-mode-attr-indent-offset 2)
+  ;; Ruby
+  ;; (add-hook 'ruby-mode-hook 'rubocopfmt-mode)
+
   ;; Shell-script
   (setq-default sh-basic-offset 2
                 sh-indentation 2))
