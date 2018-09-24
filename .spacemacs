@@ -85,7 +85,7 @@ This function should only modify configuration layer settings."
      prettier
      (javascript :variables
                  javascript-backend 'tern
-                 javascript-disable-tern-port-files nil
+                 javascript-disable-tern-port-files t
                  javascript-fmt-tool 'prettier)
      (node :variables node-add-modules-path t)
      react
