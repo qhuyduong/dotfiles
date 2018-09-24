@@ -47,6 +47,11 @@ This function should only modify configuration layer settings."
      copy-as-format
      org
      osx
+     (shell :variables
+            shell-default-shell 'eshell
+            ;; shell-enable-smart-eshell t
+            shell-default-position 'full
+            shell-default-full-span t)
      spell-checking
      spotify
      syntax-checking
@@ -591,6 +596,14 @@ before packages are loaded."
      treemacs-icon-open-png   (propertize "▾ " 'face 'font-lock-keyword-face)
      treemacs-icon-closed-png (propertize "▸ " 'face 'font-lock-keyword-face)
      treemacs-icon-text (propertize " " 'face 'font-lock-keyword-face)))
+
+  ;; Configure dump jump
+  (evil-leader/set-key-for-mode 'enh-ruby-mode "g g" 'dumb-jump-go)
+  (evil-leader/set-key-for-mode 'enh-ruby-mode "g G" 'dumb-jump-go-other-window)
+  (evil-leader/set-key-for-mode 'js2-mode "g g" 'dumb-jump-go)
+  (evil-leader/set-key-for-mode 'js2-mode "g G" 'dumb-jump-go-other-window)
+  (evil-leader/set-key-for-mode 'rjsx-mode "g g" 'dumb-jump-go)
+  (evil-leader/set-key-for-mode 'rjsx-mode "g G" 'dumb-jump-go-other-window)
 
   ;; Languages
   ;; API Blueprint
