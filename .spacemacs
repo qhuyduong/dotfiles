@@ -526,6 +526,43 @@ This function is called only while dumping Spacemacs configuration. You can
 dump."
   )
 
+(defun user-config-gui()
+  " Extra configurations for GUI."
+
+  ;; Icons in dired
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+
+  ;; Set title bar to match background
+  (add-to-list 'default-frame-alist
+               '(ns-transparent-titlebar . t))
+
+  (add-to-list 'default-frame-alist
+               '(ns-appearance . dark)))
+
+(defun user-config-tui()
+  " Extra configurations for TUI."
+
+  ;; clipboard for emacs version >= 26
+  (use-package osx-clipboard
+    :config
+    (progn
+      (osx-clipboard-mode +1)
+      (diminish 'osx-clipboard-mode)))
+
+  ;; Configure treemacs icons
+  (with-eval-after-load "treemacs"
+    (setq
+     treemacs-icon-tag-node-open-txt (propertize "▾ " 'face 'font-lock-keyword-face)
+     treemacs-icon-tag-node-closed-txt (propertize "▸ " 'face 'font-lock-keyword-face)
+     treemacs-icon-open-text (propertize "▾ " 'face 'font-lock-keyword-face)
+     treemacs-icon-closed-text (propertize "▸ " 'face 'font-lock-keyword-face)
+     treemacs-icon-tag-leaf-txt (propertize "- " 'face 'font-lock-keyword-face)
+     treemacs-icon-fallback-text (propertize " " 'face 'font-lock-keyword-face)
+
+     treemacs-icon-open-png (propertize "▾ " 'face 'font-lock-keyword-face)
+     treemacs-icon-closed-png (propertize "▸ " 'face 'font-lock-keyword-face)
+     treemacs-icon-text (propertize " " 'face 'font-lock-keyword-face))))
+
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
@@ -547,13 +584,6 @@ before packages are loaded."
 
   ;; Always follow symbolic links
   (setq vc-follow-symlinks t)
-
-  ;; clipboard for emacs version >= 26
-  (use-package osx-clipboard
-    :config
-    (progn
-      (osx-clipboard-mode +1)
-      (diminish 'osx-clipboard-mode)))
 
   ;; Set default source and destination languages for Google Translate
   (setq google-translate-default-source-language "en")
@@ -582,20 +612,6 @@ before packages are loaded."
     (define-key helm-map (kbd "<left>") 'backward-char)
     (define-key helm-map (kbd "<right>") 'forward-char)
     (define-key helm-map (kbd "C-h") 'delete-backward-char))
-
-  ;; Configure treemacs icons
-  (with-eval-after-load "treemacs"
-    (setq
-     treemacs-icon-tag-node-open-txt   (propertize "▾ " 'face 'font-lock-keyword-face)
-     treemacs-icon-tag-node-closed-txt (propertize "▸ " 'face 'font-lock-keyword-face)
-     treemacs-icon-open-text   (propertize "▾ " 'face 'font-lock-keyword-face)
-     treemacs-icon-closed-text (propertize "▸ " 'face 'font-lock-keyword-face)
-     treemacs-icon-tag-leaf-txt (propertize "- " 'face 'font-lock-keyword-face)
-     treemacs-icon-fallback-text (propertize " " 'face 'font-lock-keyword-face)
-
-     treemacs-icon-open-png   (propertize "▾ " 'face 'font-lock-keyword-face)
-     treemacs-icon-closed-png (propertize "▸ " 'face 'font-lock-keyword-face)
-     treemacs-icon-text (propertize " " 'face 'font-lock-keyword-face)))
 
   ;; Configure dump jump
   (evil-leader/set-key-for-mode 'enh-ruby-mode "g g" 'dumb-jump-go)
@@ -627,7 +643,12 @@ before packages are loaded."
 
   ;; Shell-script
   (setq-default sh-basic-offset 2
-                sh-indentation 2))
+                sh-indentation 2)
+
+  ;; Extra configurations for TUI or GUI mode
+  (if (display-graphic-p)
+      (user-config-gui)
+    (user-config-tui)))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
