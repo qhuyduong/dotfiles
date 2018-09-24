@@ -631,7 +631,10 @@ before packages are loaded."
 
   ;; Javascript
   (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
+  (add-hook 'rjsx-mode-hook 'flow-minor-enable-automatically)
+  (add-hook 'web-mode-hook 'flow-minor-enable-automatically)
   (add-hook 'js2-mode-hook 'prettier-js-mode)
+  (add-hook 'rjsx-mode-hook 'prettier-js-mode)
   (add-hook 'web-mode-hook 'prettier-js-mode)
   (setq-default js2-basic-offset 2
                 js-indent-level 2
