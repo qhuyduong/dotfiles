@@ -530,6 +530,7 @@ dump."
 
 (defun user-config-gui()
   " Extra configurations for GUI."
+  (require 'font-lock+)
 
   ;; Icons in dired
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
