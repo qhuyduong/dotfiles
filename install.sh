@@ -114,3 +114,12 @@ xterm-24bit|xterm with 24-bit direct color mode,
 
 EOF
 tic -x -o ~/.terminfo ~/xterm-24bit.terminfo
+
+echo "Install iterm2 shell integration"
+curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+
+echo "Install NVM"
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+echo "Install Tmux plugins manager"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
