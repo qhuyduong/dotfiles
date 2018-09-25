@@ -1,12 +1,16 @@
 #!/bin/sh
+echo "Installing Homebrew"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "Installing dependencies via Homebrew"
 brew update && brew upgrade
-brew install tree fzf curl rbenv the_silver_searcher jq \
+brew install zsh tree fzf curl rbenv the_silver_searcher jq \
 						 tmuxinator-completion neovim zsh-completions \
-						 zsh-syntax-highlighting emacs pyenv ispell
-brew remove ctags
+						 zsh-syntax-highlighting pyenv ispell mplayer \
+             redis tmux postgres coreutils watchman
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+brew tap d12frosted/emacs-plus
+brew install emacs-plus --HEAD
 
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
