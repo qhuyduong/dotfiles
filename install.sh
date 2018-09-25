@@ -31,6 +31,7 @@ echo "Create symlinks nvim configs"
 mkdir -p ~/.config/nvim
 mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak
 ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Create symlinks emacs configs"
 mv ~/.spacemacs ~/.spacemacs.bak
