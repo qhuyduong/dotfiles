@@ -7,7 +7,7 @@ brew update && brew upgrade
 brew install zsh tree fzf curl rbenv the_silver_searcher jq \
 						 tmuxinator-completion neovim zsh-completions \
 						 zsh-syntax-highlighting pyenv ispell mplayer \
-             redis tmux postgres coreutils watchman
+             redis tmux postgres coreutils watchman drafter
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 brew tap d12frosted/emacs-plus
 brew install emacs-plus --HEAD
