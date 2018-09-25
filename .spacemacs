@@ -587,6 +587,10 @@ before packages are loaded."
   ;; Always follow symbolic links
   (setq vc-follow-symlinks t)
 
+  ;; Use gls for 'ls' command
+  (let ((gls "/usr/local/bin/gls"))
+    (if (file-exists-p gls) (setq insert-directory-program gls)))
+
   ;; Set default source and destination languages for Google Translate
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "vi")
