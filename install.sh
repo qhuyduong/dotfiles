@@ -43,6 +43,8 @@ mkdir -p ~/.emacs.d/private/local/airline-themes
 git clone https://github.com/qhuyduong/airline-themes.git ~/.emacs.d/private/local/airline-themes
 mkdir -p ~/.emacs.d/private/local/flow-js2-mode
 git clone https://github.com/Fuco1/flow-js2-mode.git ~/.emacs.d/private/local/flow-js2-mode
+mkdir -p ~/.emacs.d/private/local/nord-theme
+git clone https://github.com/visigoth/nord-emacs.git ~/.emacs.d/private/local/nord-theme
 
 echo "Some oh-my-zsh tweaks"
 cat <<EOF > ~/.oh-my-zsh/custom/vi-mode.zsh
