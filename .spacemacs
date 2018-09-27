@@ -278,7 +278,7 @@ It should only modify the values of Spacemacs settings."
    ;; additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
    dotspacemacs-mode-line-theme '(spacemacs
-                                  :separator alternate
+                                  :separator roundstub
                                   :separator-scale 1.2)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
