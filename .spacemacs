@@ -137,7 +137,8 @@ This function should only modify configuration layer settings."
      apib-mode
 
      ;; Javascript
-     (flow-js2-mode :location local)
+     (flow-js2-mode :location (recipe :fetcher github
+                                      :repo "Fuco1/flow-js2-mode"))
      flow-minor-mode
      flycheck-flow
 
@@ -268,7 +269,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-themes '(
                          ;; (material :location local)
                          ;; wombat
-                         (nord :location local))
+                         (nord :location (recipe :fetcher github
+                                                 :repo "visigoth/nord-emacs")))
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `vim-powerline' and `vanilla'. The first three
