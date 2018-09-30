@@ -1,4 +1,8 @@
-export TERM=xterm-24bit
+if [ -n "$INSIDE_EMACS" ]; then
+  export TERM=eterm-256color
+else
+  export TERM=xterm-24bit
+fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -149,7 +153,7 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 [ -s "$HOME/.config/exercism/exercism_completion.zsh" ] && source "$HOME/.config/exercism/exercism_completion.zsh"
 
 # Configure iterm2 shell integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+! [ -n "$INSIDE_EMACS" ] && test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
