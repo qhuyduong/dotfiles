@@ -576,16 +576,6 @@ dump."
      treemacs-icon-closed-png (propertize "▸ " 'face 'font-lock-keyword-face)
      treemacs-icon-text (propertize " " 'face 'font-lock-keyword-face))))
 
-(defun multi-term-line-mode ()
-  (interactive)
-  (evil-normal-state)
-  (term-line-mode))
-
-(defun multi-term-char-mode ()
-  (interactive)
-  (evil-insert-state)
-  (term-char-mode))
-
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
@@ -654,9 +644,10 @@ before packages are loaded."
   ;; Multi-term key bindings
   (add-hook 'term-mode-hook
             (lambda ()
-              (setq term-unbind-key-list '("C-z" "C-x" "C-c" "C-h" "C-y"))
-              (evil-declare-key 'insert term-raw-map (kbd "<escape>") 'multi-term-line-mode)
-              (evil-declare-key 'normal term-mode-map (kbd "i") 'multi-term-char-mode)))
+              (add-to-list 'term-bind-key-alist '("C-c C-n" . multi-term-next))
+              (add-to-list 'term-bind-key-alist '("C-c C-p" . multi-term-prev))
+              (add-to-list 'term-bind-key-alist '("C-c C-j" . term-line-mode))
+              (add-to-list 'term-bind-key-alist '("C-c C-k" . term-char-mode))))
 
   ;; Languages
   ;; API Blueprint
