@@ -82,7 +82,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
 
      ;; Html
-     html
+     (html :variables web-fmt-tool 'web-beautify)
 
      ;; Javascript
      prettier
@@ -658,10 +658,10 @@ before packages are loaded."
   ;; Javascript
   (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
   (add-hook 'rjsx-mode-hook 'flow-minor-enable-automatically)
-  (add-hook 'web-mode-hook 'flow-minor-enable-automatically)
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'rjsx-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode)
+  (add-hook 'web-mode-hook (lambda ()
+                             (add-hook 'before-save-hook 'web-beautify-html-buffer t t)))
   (setq-default js2-basic-offset 2
                 js-indent-level 2
                 css-indent-offset 2
