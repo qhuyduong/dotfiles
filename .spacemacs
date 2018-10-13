@@ -129,6 +129,7 @@ This function should only modify configuration layer settings."
    '(
      all-the-icons-dired
      beacon
+     company-flow
      (eterm-256color :location (recipe :fetcher github
                                        :repo "dieggsy/eterm-256color"
                                        :branch "devel"))
@@ -548,7 +549,8 @@ dump."
 
   (mode-icons-mode)
   ;; Icons in dired
-  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+  (with-eval-after-load 'dired
+    (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 
   ;; Set title bar to match background
   (add-to-list 'default-frame-alist
@@ -588,12 +590,6 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  ;; Require packages
-  (require 'flow-js2-mode)
-  (require 'eterm-256color)
-
-  (add-hook 'term-mode-hook #'eterm-256color-mode)
-
   ;; Enable matchit by default
   (global-evil-matchit-mode t)
 
@@ -614,8 +610,9 @@ before packages are loaded."
     (if (file-exists-p gls) (setq insert-directory-program gls)))
 
   ;; Set default source and destination languages for Google Translate
-  (setq google-translate-default-source-language "en")
-  (setq google-translate-default-target-language "vi")
+  (with-eval-after-load 'google-translate-core-ui
+    (setq google-translate-default-source-language "en")
+    (setq google-translate-default-target-language "vi"))
 
   ;; Rename default ctags file from TAGS to tags
   (setq projectile-tags-file-name "tags")
@@ -626,14 +623,6 @@ before packages are loaded."
   (set-face-foreground 'highlight nil)
   ;; Change visual selection's colors
   (set-face-attribute 'region nil :background (color-lighten-name (face-background 'highlight) 5))
-  ;; Change company mode style
-  ;; (let ((bg (face-attribute 'default :background)))
-  ;;   (custom-set-faces
-  ;;    `(company-tooltip ((t (:inherit default :background ,(color-lighten-name bg 5)))))
-  ;;    `(company-tooltip-common ((t (:inherit font-lock-constant-face))))
-  ;;    `(company-tooltip-selection ((t (:inherit default :background "#cbe587" :foreground "#000000"))))
-  ;;    `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 10)))))
-  ;;    `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))))
 
   ;; Enable left/right arrow in Helm mini buffer
   (with-eval-after-load 'helm
@@ -641,21 +630,17 @@ before packages are loaded."
     (define-key helm-map (kbd "<right>") 'forward-char)
     (define-key helm-map (kbd "C-h") 'delete-backward-char))
 
-  ;; Configure dump jump
-  (evil-leader/set-key-for-mode 'enh-ruby-mode "g g" 'dumb-jump-go)
-  (evil-leader/set-key-for-mode 'enh-ruby-mode "g G" 'dumb-jump-go-other-window)
-  (evil-leader/set-key-for-mode 'js2-mode "g g" 'dumb-jump-go)
-  (evil-leader/set-key-for-mode 'js2-mode "g G" 'dumb-jump-go-other-window)
-  (evil-leader/set-key-for-mode 'rjsx-mode "g g" 'dumb-jump-go)
-  (evil-leader/set-key-for-mode 'rjsx-mode "g G" 'dumb-jump-go-other-window)
+  ;; Multi-term configs
+  (require 'eterm-256color)
 
-  ;; Multi-term key bindings
-  (add-hook 'term-mode-hook
-            (lambda ()
-              (add-to-list 'term-bind-key-alist '("C-c C-n" . multi-term-next))
-              (add-to-list 'term-bind-key-alist '("C-c C-p" . multi-term-prev))
-              (add-to-list 'term-bind-key-alist '("C-c C-j" . term-line-mode))
-              (add-to-list 'term-bind-key-alist '("C-c C-k" . term-char-mode))))
+  (with-eval-after-load 'term
+    (add-hook 'term-mode-hook #'eterm-256color-mode)
+    (add-hook 'term-mode-hook
+              (lambda ()
+                (add-to-list 'term-bind-key-alist '("C-c C-n" . multi-term-next))
+                (add-to-list 'term-bind-key-alist '("C-c C-p" . multi-term-prev))
+                (add-to-list 'term-bind-key-alist '("C-c C-j" . term-line-mode))
+                (add-to-list 'term-bind-key-alist '("C-c C-k" . term-char-mode)))))
 
   ;; Languages
   ;; API Blueprint
@@ -664,12 +649,29 @@ before packages are loaded."
   (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
 
   ;; Javascript
-  (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
-  (add-hook 'rjsx-mode-hook 'flow-minor-enable-automatically)
-  (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-hook 'rjsx-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook (lambda ()
-                             (add-hook 'before-save-hook 'web-beautify-html-buffer t t)))
+  (require 'flow-js2-mode)
+
+  (with-eval-after-load 'company
+    (add-to-list 'company-backends 'company-flow))
+
+  (with-eval-after-load 'flycheck
+    (flycheck-add-mode 'javascript-flow 'flow-minor-mode)
+    (flycheck-add-mode 'javascript-eslint 'flow-minor-mode)
+    (flycheck-add-next-checker 'javascript-flow 'javascript-eslint))
+
+  (with-eval-after-load 'js2-mode
+    (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
+    (add-hook 'js2-mode-hook 'prettier-js-mode))
+
+  (with-eval-after-load 'rjsx-mode
+    (add-hook 'rjsx-mode-hook 'flow-minor-enable-automatically)
+    (add-hook 'rjsx-mode-hook 'prettier-js-mode))
+
+  (with-eval-after-load 'web-mode
+    (add-hook 'web-mode-hook
+              (lambda ()
+                (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
+
   (setq-default js2-basic-offset 2
                 js-indent-level 2
                 css-indent-offset 2
@@ -677,8 +679,6 @@ before packages are loaded."
                 web-mode-css-indent-offset 2
                 web-mode-code-indent-offset 2
                 web-mode-attr-indent-offset 2)
-  ;; Ruby
-  ;; (add-hook 'ruby-mode-hook 'rubocopfmt-mode)
 
   ;; Shell-script
   (setq-default sh-basic-offset 2
@@ -702,7 +702,8 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(beacon rubocopfmt projectile-rails evil-matchit anaconda-mode counsel magit git-commit with-editor treemacs avy yasnippet-snippets yapfify yaml-mode ws-butler winum which-key web-mode web-beautify wakatime-mode volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-evil toc-org tagedit symon swiper string-inflection spotify spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode reveal-in-osx-finder restart-emacs rbenv rake rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements pfuture persp-mode password-generator paradox ox-reveal ox-hugo ox-gfm overseer osx-trash osx-dictionary osx-clipboard orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nord-theme nameless mwim multi-term move-text mode-icons mmm-mode minitest markdown-toc magithub magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode live-py-mode link-hint launchctl json-navigator js2-refactor js-doc inflections indent-guide importmagic impatient-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-spotify-plus helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flycheck-flow flx-ido flow-minor-mode flow-js2-mode fill-column-indicator feature-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eterm-256color eshell-z eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline dockerfile-mode docker diminish diff-hl dactyl-mode cython-mode counsel-projectile copy-as-format company-web company-tern company-statistics company-anaconda column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile apib-mode all-the-icons-dired aggressive-indent add-node-modules-path ace-window ace-link ace-jump-helm-line ac-ispell)))
+   '(company-flow beacon rubocopfmt projectile-rails evil-matchit anaconda-mode counsel magit git-commit with-editor treemacs avy yasnippet-snippets yapfify yaml-mode ws-butler winum which-key web-mode web-beautify wakatime-mode volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-evil toc-org tagedit symon swiper string-inflection spotify spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode reveal-in-osx-finder restart-emacs rbenv rake rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements pfuture persp-mode password-generator paradox ox-reveal ox-hugo ox-gfm overseer osx-trash osx-dictionary osx-clipboard orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nord-theme nameless mwim multi-term move-text mode-icons mmm-mode minitest markdown-toc magithub magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode live-py-mode link-hint launchctl json-navigator js2-refactor js-doc inflections indent-guide importmagic impatient-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-spotify-plus helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flycheck-flow flx-ido flow-minor-mode flow-js2-mode fill-column-indicator feature-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eterm-256color eshell-z eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline dockerfile-mode docker diminish diff-hl dactyl-mode cython-mode counsel-projectile copy-as-format company-web company-tern company-statistics company-anaconda column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile apib-mode all-the-icons-dired aggressive-indent add-node-modules-path ace-window ace-link ace-jump-helm-line ac-ispell))
+ '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
