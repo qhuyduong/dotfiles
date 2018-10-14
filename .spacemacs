@@ -654,11 +654,6 @@ before packages are loaded."
   (with-eval-after-load 'company
     (add-to-list 'company-backends 'company-flow))
 
-  (with-eval-after-load 'flycheck
-    (flycheck-add-mode 'javascript-flow 'flow-minor-mode)
-    (flycheck-add-mode 'javascript-eslint 'flow-minor-mode)
-    (flycheck-add-next-checker 'javascript-flow 'javascript-eslint))
-
   (with-eval-after-load 'js2-mode
     (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
     (add-hook 'js2-mode-hook 'prettier-js-mode))
