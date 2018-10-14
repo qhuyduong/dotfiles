@@ -47,10 +47,9 @@ This function should only modify configuration layer settings."
      copy-as-format
      osx
      (shell :variables
-            shell-default-shell 'eshell
-            ;; shell-enable-smart-eshell t
+            shell-default-full-span t
             shell-default-position 'full
-            shell-default-full-span t)
+            shell-default-shell 'multi-term)
      spell-checking
      spotify
      syntax-checking
