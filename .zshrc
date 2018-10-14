@@ -161,6 +161,9 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 # Add GNU coreutils to PATH
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
+# Add cask to PATH
+export PATH="/Users/qhuyduong/.cask/bin:$PATH"
+
 ########## Aliases ##########
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
