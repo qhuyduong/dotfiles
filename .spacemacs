@@ -46,6 +46,7 @@ This function should only modify configuration layer settings."
      better-defaults
      copy-as-format
      osx
+     imenu-list
      (shell :variables
             shell-default-full-span t
             shell-default-position 'full
