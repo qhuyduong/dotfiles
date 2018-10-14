@@ -543,7 +543,7 @@ This function is called only while dumping Spacemacs configuration. You can
 dump."
   )
 
-(defun user-config-gui()
+(defun dotspacemacs/user-config-gui()
   " Extra configurations for GUI."
   (require 'font-lock+)
 
@@ -559,7 +559,7 @@ dump."
   (add-to-list 'default-frame-alist
                '(ns-appearance . dark)))
 
-(defun user-config-tui()
+(defun dotspacemacs/user-config-tui()
   " Extra configurations for TUI."
 
   ;; clipboard for emacs version >= 26
@@ -686,8 +686,8 @@ before packages are loaded."
 
   ;; Extra configurations for TUI or GUI mode
   (if (display-graphic-p)
-      (user-config-gui)
-    (user-config-tui)))
+      (dotspacemacs/user-config-gui)
+    (dotspacemacs/user-config-tui)))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
