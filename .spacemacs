@@ -134,8 +134,11 @@ This function should only modify configuration layer settings."
      (eterm-256color :location (recipe :fetcher github
                                        :repo "dieggsy/eterm-256color"
                                        :branch "devel"))
+     helm-pass
      mode-icons
      osx-clipboard
+     pass
+     password-store
      pretty-mode
 
      ;;;;;;;;;;;;;;;;;;;;
@@ -254,7 +257,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner "~/.emacs.d/core/banners/img/spacemacs_better_logo.png"
 
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
