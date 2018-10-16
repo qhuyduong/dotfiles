@@ -615,7 +615,12 @@ before packages are loaded."
 
   ;; Always follow symbolic links
   (setq vc-follow-symlinks t)
+
+  ;; Add token for pivotal-tracker
   (setq pivotal-api-token (password-store-get "pivotal-tracker-token"))
+
+  ;; Add token for paradox
+  (setq paradox-github-token (password-store-get "paradox-token"))
 
   ;; Use gls for 'ls' command
   (let ((gls "/usr/local/bin/gls"))
