@@ -613,6 +613,9 @@ before packages are loaded."
   ;; Enable beacon everywhere
   (beacon-mode 1)
 
+  ;; Reduce beacon delay time
+  (setq-default beacon-blink-delay 0.1)
+
   ;; Always follow symbolic links
   (setq vc-follow-symlinks t)
 
