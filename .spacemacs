@@ -85,12 +85,12 @@ This function should only modify configuration layer settings."
      (html :variables web-fmt-tool 'web-beautify)
 
      ;; Javascript
-     prettier
      (javascript :variables
                  javascript-backend 'tern
                  javascript-disable-tern-port-files t
                  javascript-fmt-tool 'prettier)
      (node :variables node-add-modules-path t)
+     prettier
      react
 
      ;; Markdown
@@ -157,6 +157,7 @@ This function should only modify configuration layer settings."
                                       :repo "Fuco1/flow-js2-mode"))
      flow-minor-mode
      flycheck-flow
+     import-js
 
      ;; Ruby
      rubocopfmt)
@@ -676,11 +677,13 @@ before packages are loaded."
 
   (with-eval-after-load 'js2-mode
     (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
-    (add-hook 'js2-mode-hook 'prettier-js-mode))
+    (add-hook 'js2-mode-hook 'prettier-js-mode)
+    (evil-leader/set-key-for-mode 'js2-mode "i" 'import-js-import))
 
   (with-eval-after-load 'rjsx-mode
     (add-hook 'rjsx-mode-hook 'flow-minor-enable-automatically)
-    (add-hook 'rjsx-mode-hook 'prettier-js-mode))
+    (add-hook 'rjsx-mode-hook 'prettier-js-mode)
+    (evil-leader/set-key-for-mode 'rjsx-mode "i" 'import-js-import))
 
   (with-eval-after-load 'web-mode
     (add-hook 'web-mode-hook
