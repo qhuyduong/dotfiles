@@ -291,8 +291,7 @@ It should only modify the values of Spacemacs settings."
    ;; to create your own spaceline theme. Value can be a symbol or list with\
    ;; additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs
-                                  :separator roundstub)
+   dotspacemacs-mode-line-theme '(all-the-icons :separator arrow :separator-scale 1.9)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -553,6 +552,15 @@ dump."
   ;; Enable pretty-mode globally
   (require 'pretty-mode)
   (global-pretty-mode t)
+
+  ;; Modify all-the-icons-mode-icon
+  (use-package all-the-icons
+    :ensure t
+    :config
+    (add-to-list 'all-the-icons-mode-icon-alist
+                 '(enh-ruby-mode all-the-icons-alltheicon "ruby-alt" :face all-the-icons-lred))
+    (add-to-list 'all-the-icons-mode-icon-alist
+                 '(rjsx-mode all-the-icons-fileicon "jsx2-alt" :height 1.0 :v-adjust -0.1 :face all-the-icons-cyan-alt)))
 
   ;; Icons in dired
   (with-eval-after-load 'dired
