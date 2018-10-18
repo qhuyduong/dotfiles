@@ -623,10 +623,10 @@ before packages are loaded."
   (setq vc-follow-symlinks t)
 
   ;; Add token for pivotal-tracker
-  ;; (setq pivotal-api-token (password-store-get "pivotal-tracker-token"))
+  (setq pivotal-api-token (getenv "PIVOTAL_API_TOKEN"))
 
   ;; Add token for paradox
-  ;; (setq paradox-github-token (password-store-get "paradox-token"))
+  (setq paradox-github-token (getenv "PARADOX_GITHUB_TOKEN"))
 
   ;; Use gls for 'ls' command
   (let ((gls "/usr/local/bin/gls"))
