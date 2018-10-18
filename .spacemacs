@@ -585,7 +585,7 @@ before packages are loaded."
   (global-evil-matchit-mode t)
 
   ;; Enable indent guide by default
-  (indent-guide-global-mode t)
+  (indent-guide-global-mode)
 
   ;; Use icomplete over iswitchb
   (icomplete-mode 1)
