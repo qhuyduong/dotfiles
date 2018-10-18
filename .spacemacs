@@ -53,17 +53,11 @@ This function should only modify configuration layer settings."
             shell-default-position 'full
             shell-default-shell 'multi-term)
      spell-checking
-     spotify
      syntax-checking
      tmux
      (wakatime :variables
                ;; use the actual wakatime path
                wakatime-cli-path "~/.pyenv/shims/wakatime")
-
-     ;;;;;;;;;;;;;;;;;;;;
-     ;; Project tree
-     ;;;;;;;;;;;;;;;;;;;;
-     treemacs
 
      ;;;;;;;;;;;;;;;;;;;;
      ;; SVC
@@ -75,9 +69,9 @@ This function should only modify configuration layer settings."
      ;;;;;;;;;;;;;;;;;;;;
      ;; Languages
      ;;;;;;;;;;;;;;;;;;;;
-
      ;; Docker
      docker
+
      ;; Emacs Lisp
      emacs-lisp
 
@@ -156,10 +150,7 @@ This function should only modify configuration layer settings."
                                       :repo "Fuco1/flow-js2-mode"))
      flow-minor-mode
      flycheck-flow
-     import-js
-
-     ;; Ruby
-     rubocopfmt)
+     import-js)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -581,21 +572,7 @@ dump."
     :config
     (progn
       (osx-clipboard-mode +1)
-      (diminish 'osx-clipboard-mode)))
-
-  ;; Configure treemacs icons
-  (with-eval-after-load "treemacs"
-    (setq
-     treemacs-icon-tag-node-open-txt (propertize "▾ " 'face 'font-lock-keyword-face)
-     treemacs-icon-tag-node-closed-txt (propertize "▸ " 'face 'font-lock-keyword-face)
-     treemacs-icon-open-text (propertize "▾ " 'face 'font-lock-keyword-face)
-     treemacs-icon-closed-text (propertize "▸ " 'face 'font-lock-keyword-face)
-     treemacs-icon-tag-leaf-txt (propertize "- " 'face 'font-lock-keyword-face)
-     treemacs-icon-fallback-text (propertize " " 'face 'font-lock-keyword-face)
-
-     treemacs-icon-open-png (propertize "▾ " 'face 'font-lock-keyword-face)
-     treemacs-icon-closed-png (propertize "▸ " 'face 'font-lock-keyword-face)
-     treemacs-icon-text (propertize " " 'face 'font-lock-keyword-face))))
+      (diminish 'osx-clipboard-mode))))
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -722,7 +699,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(magithub hl-todo highlight-numbers eterm-256color dumb-jump doom-modeline ivy company magit treemacs projectile yasnippet org-plus-contrib yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key web-mode web-beautify wakatime-mode volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-evil toc-org tagedit symon string-inflection spotify spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rjsx-mode reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode projectile-rails pretty-mode prettier-js popwin pivotal-tracker pippel pipenv pip-requirements pfuture persp-mode password-generator pass parent-mode paradox ox-reveal ox-hugo ox-gfm overseer osx-trash osx-dictionary osx-clipboard orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nord-theme nameless mwim multi-term move-text mmm-mode minitest markdown-toc magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode live-py-mode link-hint launchctl json-navigator js2-refactor js-doc indent-guide importmagic import-js impatient-mode hungry-delete highlight-parentheses highlight-indentation helm-xref helm-themes helm-swoop helm-spotify-plus helm-pydoc helm-purpose helm-projectile helm-pass helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist ghub+ gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flycheck-flow flx-ido flow-minor-mode flow-js2-mode fill-column-indicator feature-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help enh-ruby-mode emojify emoji-cheat-sheet-plus emmet-mode elisp-slime-nav eldoc-eval editorconfig dotenv-mode dockerfile-mode docker diminish diff-hl dactyl-mode cython-mode counsel-projectile copy-as-format company-web company-tern company-statistics company-flow company-emoji company-anaconda column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote beacon auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile apib-mode all-the-icons-dired aggressive-indent add-node-modules-path ace-window ace-link ace-jump-helm-line ac-ispell)))
+   '(neotree yasnippet-snippets yapfify yaml-mode ws-butler winum which-key web-mode web-beautify wakatime-mode volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-evil toc-org tagedit symon string-inflection spotify spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rjsx-mode reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode projectile-rails pretty-mode prettier-js popwin pivotal-tracker pippel pipenv pip-requirements persp-mode password-generator pass paradox ox-reveal ox-hugo ox-gfm overseer osx-trash osx-dictionary osx-clipboard orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nord-theme nameless mwim multi-term move-text mmm-mode minitest markdown-toc magithub magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode live-py-mode link-hint launchctl json-navigator js2-refactor js-doc indent-guide importmagic import-js impatient-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-spotify-plus helm-pydoc helm-purpose helm-projectile helm-pass helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flycheck-flow flx-ido flow-minor-mode flow-js2-mode fill-column-indicator feature-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eterm-256color eshell-z eshell-prompt-extras esh-help enh-ruby-mode emojify emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline dockerfile-mode docker diminish diff-hl dactyl-mode cython-mode counsel-projectile copy-as-format company-web company-tern company-statistics company-flow company-emoji company-anaconda column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote beacon auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile apib-mode all-the-icons-dired aggressive-indent add-node-modules-path ace-link ace-jump-helm-line ac-ispell)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
