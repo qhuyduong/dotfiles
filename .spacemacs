@@ -125,15 +125,8 @@ This function should only modify configuration layer settings."
      (eterm-256color :location (recipe :fetcher github
                                        :repo "dieggsy/eterm-256color"
                                        :branch "devel"))
-     helm-pass
      osx-clipboard
-     pass
-     password-store
      pretty-mode
-
-     ;;;;;;;;;;;;;;;;;;;;
-     ;; Themes
-     ;;;;;;;;;;;;;;;;;;;;
 
      ;;;;;;;;;;;;;;;;;;;;
      ;; Languages
