@@ -44,7 +44,6 @@ This function should only modify configuration layer settings."
      ;;        shell-default-position 'bottom)
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t)
-     better-defaults
      copy-as-format
      emoji
      osx
@@ -56,9 +55,6 @@ This function should only modify configuration layer settings."
      spell-checking
      syntax-checking
      tmux
-     (wakatime :variables
-               ;; use the actual wakatime path
-               wakatime-cli-path "~/.pyenv/shims/wakatime")
 
      ;;;;;;;;;;;;;;;;;;;;
      ;; SVC
