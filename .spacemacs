@@ -599,12 +599,11 @@ before packages are loaded."
   ;; Always follow symbolic links
   (setq vc-follow-symlinks t)
 
-  ;; Add token for paradox
-  (setq paradox-github-token (getenv "PARADOX_GITHUB_TOKEN"))
+  ;; Suppress warning with GNU ls in Dired
+  (setq dired-use-ls-dired nil)
 
-  ;; Use gls for 'ls' command
-  (let ((gls "/usr/local/bin/gls"))
-    (if (file-exists-p gls) (setq insert-directory-program gls)))
+ ;; Add token for paradox
+  (setq paradox-github-token (getenv "PARADOX_GITHUB_TOKEN"))
 
   ;; Set default source and destination languages for Google Translate
   (with-eval-after-load 'google-translate-core-ui
