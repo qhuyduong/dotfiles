@@ -616,6 +616,13 @@ before packages are loaded."
   ;; Rename default ctags file from TAGS to tags
   (setq projectile-tags-file-name "tags")
 
+  ;; Configure npm project with projectile
+  (projectile-register-project-type 'npm '("package.json")
+                                    :compile "yarn install"
+                                    :test "yarn test"
+                                    :run "yarn start"
+                                    :test-suffix ".spec")
+
   ;; Remove underline when highlighting current line
   (set-face-underline 'highlight nil)
   ;; Preserve syntax highlight when highlighting current line
