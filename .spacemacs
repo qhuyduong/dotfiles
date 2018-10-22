@@ -80,8 +80,7 @@ This function should only modify configuration layer settings."
 
      ;; Javascript
      (javascript :variables
-                 javascript-backend 'tern
-                 javascript-disable-tern-port-files t
+                 javascript-backend 'nil
                  javascript-fmt-tool 'prettier)
      (node :variables node-add-modules-path t)
      prettier
