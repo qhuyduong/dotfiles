@@ -1,0 +1,14 @@
+[magithub]
+	online = true
+[magithub "status"]
+	includeStatusHeader = false
+	includePullRequestsSection = false
+	includeIssuesSection = false
+[user]
+	name = Huy Duong
+	email = huy.duong@employmenthero.com
+[core]
+	hooksPath = /Users/qhuyduong/.config/git/hooks
+	excludesfile = /Users/qhuyduong/.gitignore_global
+[github]
+	user = qhuyduong

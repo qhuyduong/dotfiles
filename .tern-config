@@ -1,0 +1,16 @@
+{
+  "dontLoad": [
+    "node_modules/**"
+  ],
+  "ecmaVersion": 6,
+  "libs": [
+    "browser",
+    "react"
+  ],
+  "plugins": {
+    "complete_strings": {},
+    "es_modules": {},
+    "jsx": {},
+    "node": {}
+  }
+}

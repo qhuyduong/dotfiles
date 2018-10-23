@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+branch_name = `git symbolic-ref HEAD`.strip
+message_file = ARGV[0]
+
+if branch_name =~ /(--|__)(\w+)\z/
+  story_number = Regexp.last_match(2)
+  message = File.read(message_file).strip
+
+  exit 0 if message =~ /\/#{Regexp.escape(story_number)}/
+
+  message << "\n\n[https://www.pivotaltracker.com/story/show/#{story_number}]"
+
+  File.open(message_file, 'w') { |f| f.write(message) }
+end
