@@ -76,13 +76,11 @@ This function should only modify configuration layer settings."
      (html :variables web-fmt-tool 'web-beautify)
 
      ;; Javascript
-     (javascript :variables
-                 javascript-backend 'tern
-                 javascript-disable-tern-port-files t
-                 javascript-fmt-tool 'prettier)
-     (node :variables node-add-modules-path t)
+     (javascript :variables javascript-fmt-tool 'prettier)
      prettier
      react
+     (node :variables node-add-modules-path t)
+     (tern :variables tern-disable-port-files nil)
 
      ;; Markdown
      markdown
