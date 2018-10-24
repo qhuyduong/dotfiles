@@ -583,6 +583,9 @@ before packages are loaded."
   ;; Reduce beacon delay time
   (setq-default beacon-blink-delay 0.1)
 
+  ;; Use git executable from Homebrew
+  (setq-default magit-git-executable "/usr/local/bin/git")
+
   ;; Always follow symbolic links
   (setq vc-follow-symlinks t)
 
