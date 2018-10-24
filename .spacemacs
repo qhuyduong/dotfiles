@@ -582,6 +582,9 @@ before packages are loaded."
   ;; Enable beacon everywhere
   (beacon-mode 1)
 
+  ;; Enable fancy-battery by default
+  (fancy-battery-mode)
+
   ;; Reduce beacon delay time
   (setq-default beacon-blink-delay 0.1)
 
