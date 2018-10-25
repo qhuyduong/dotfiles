@@ -674,6 +674,10 @@ before packages are loaded."
   ;;org-sync-github-auth credentials
   (setq org-sync-github-auth (cons (getenv "GITHUB_USER") (getenv "GITHUB_TOKEN")))
 
+  ;; Org agenda files
+  (setq org-agenda-files (list "~/orgs/work.org"
+                               "~/orgs/home.org"))
+
   (setq-default js2-basic-offset 2
                 js-indent-level 2
                 css-indent-offset 2
