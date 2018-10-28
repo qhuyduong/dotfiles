@@ -650,7 +650,11 @@ before packages are loaded."
   (require 'flow-js2-mode)
 
   (with-eval-after-load 'company
-    (add-to-list 'company-backends 'company-flow))
+    (add-to-list 'company-backends 'company-flow)
+    (define-key company-active-map (kbd "M-n") nil)
+    (define-key company-active-map (kbd "M-p") nil)
+    (define-key company-active-map (kbd "C-n") #'company-select-next)
+    (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
   (with-eval-after-load 'js2-mode
     (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
