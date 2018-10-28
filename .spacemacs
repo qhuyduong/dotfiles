@@ -679,8 +679,28 @@ before packages are loaded."
   (setq org-sync-github-auth (cons (getenv "GITHUB_USER") (getenv "GITHUB_TOKEN")))
 
   ;; Org agenda files
-  (setq org-agenda-files (list "~/orgs/work.org"
-                               "~/orgs/home.org"))
+  (setq org-agenda-files '("~/orgs/inbox.org"
+                           "~/orgs/gtd.org"
+                           "~/orgs/tickler.org"))
+  ;; Org capture templates
+  (setq org-capture-templates '(("t" "Todo [inbox]" entry
+                                 (file+headline "~/orgs/inbox.org" "Tasks")
+                                 "* ☛ TODO %i%?")
+                                ("T" "Tickler" entry
+                                 (file+headline "~/orgs/tickler.org" "Tickler")
+                                 "* %i%? \n %U")))
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+  (setq org-refile-allow-creating-parent-nodes 'confirm)
+  (setq org-refile-use-outline-path 'file)
+  ;; makes org-refile outline working with helm/ivy
+  (setq org-outline-path-complete-in-steps nil)
+  ;; Org TODO keywords
+  (setq org-todo-keywords '((sequence "☛ TODO" "⚑ IN-PROGRESS" "|" "✓ DONE" "✘ CANCELED")))
+  ;; (evil-set-initial-state 'pivotal-project-mode 'emacs)
+  (setq org-todo-keyword-faces '(("☛ TODO" . (:foreground "grey"))
+                                 ("⚑ IN-PROGRESS" . (:foreground "yellow"))
+                                 ("✓ DONE" . (:foreground "green"))
+                                 ("✘ CANCELED" . (:foreground "red"))))
 
   (setq-default js2-basic-offset 2
                 js-indent-level 2
