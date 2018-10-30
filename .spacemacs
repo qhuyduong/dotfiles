@@ -669,6 +669,9 @@ before packages are loaded."
               (lambda ()
                 (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
 
+  (with-eval-after-load 'magithub-edit-mode
+    (evil-leader/set-key-for-mode 'magithub-edit-mode "," 'magithub-edit-submit)
+    (evil-leader/set-key-for-mode 'magithub-edit-mode "a" 'magithub-edit-cancel))
 
   ;; Org agenda files
   (setq org-agenda-files '("~/orgs/inbox.org"
