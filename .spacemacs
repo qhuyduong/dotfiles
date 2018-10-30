@@ -123,8 +123,6 @@ This function should only modify configuration layer settings."
      (eterm-256color :location (recipe :fetcher github
                                        :repo "dieggsy/eterm-256color"
                                        :branch "devel"))
-     org-sync
-     org-sync-snippets
      osx-clipboard
      pretty-mode
 
@@ -671,12 +669,6 @@ before packages are loaded."
               (lambda ()
                 (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
 
-  ;; org-sync
-  (require 'org-sync)
-  (require 'org-sync-github)
-
-  ;;org-sync-github-auth credentials
-  (setq org-sync-github-auth (cons (getenv "GITHUB_USER") (getenv "GITHUB_TOKEN")))
 
   ;; Org agenda files
   (setq org-agenda-files '("~/orgs/inbox.org"
