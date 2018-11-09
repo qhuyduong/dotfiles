@@ -11,6 +11,13 @@
 ;; Reduce which-key delay
 (setq which-key-idle-delay 0.5)
 
+;; rubocopfmt hook
+(with-eval-after-load 'enh-ruby-mode
+  (add-hook 'enh-ruby-mode-hook #'rubocopfmt-mode))
+
+(with-eval-after-load 'ruby-mode
+  (add-hook 'ruby-mode-hook #'rubocopfmt-mode))
+
 ;; Keybindings
 ;; Easier window navigation
 (map! :n "C-h"   #'evil-window-left
