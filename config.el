@@ -47,9 +47,10 @@
 (indent-guide-global-mode)
 
 ;; Magit
-(setq magit-repository-directories '(("~/EH-Workspace" . 0)
-                                     ("~/Workspace" . 0))
-      magit-save-repository-buffers nil)
+(after! magit
+  (setq magit-repository-directories '(("~/EH-Workspace" . 0)
+                                       ("~/Workspace" . 0))
+        magit-save-repository-buffers nil))
 
 ;; lang/org
 (setq org-directory (expand-file-name "~/orgs")
