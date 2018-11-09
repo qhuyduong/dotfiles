@@ -11,3 +11,10 @@
 ;; Reduce which-key delay
 (setq which-key-idle-delay 0.5)
 
+;; Keybindings
+;; Easier window navigation
+(map! :n "C-h"   #'evil-window-left
+      :n "C-j"   #'evil-window-down
+      :n "C-k"   #'evil-window-up
+      :n "C-l"   #'evil-window-right)
+
