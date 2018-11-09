@@ -25,3 +25,8 @@
     (list (point-min) (point-max)))
   (define-key evil-inner-text-objects-map "g" 'evil-inner-buffer))
 
+;; Magit
+(setq magit-repository-directories '(("~/EH-Workspace" . 0)
+                                     ("~/Workspace" . 0))
+      magit-save-repository-buffers nil)
+
