@@ -18,6 +18,12 @@
 (with-eval-after-load 'ruby-mode
   (add-hook 'ruby-mode-hook #'rubocopfmt-mode))
 
+;; Icons in dired
+(with-eval-after-load 'dired
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+;; Workaround for all-the-icons-dired
+(require 'font-lock+)
+
 ;; Keybindings
 ;; Easier window navigation
 (map! :n "C-h"   #'evil-window-left
