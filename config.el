@@ -53,5 +53,24 @@
         magit-save-repository-buffers nil))
 
 ;; lang/org
-(setq org-directory (expand-file-name "~/orgs")
-      org-agenda-files (list org-directory))
+(after! org
+  (setq org-directory (expand-file-name "~/orgs")
+        org-agenda-files (list org-directory))
+  ;; Org capture templates
+  (setq org-capture-templates '(("t" "Todo [inbox]" entry
+                                 (file+headline "~/orgs/inbox.org" "Tasks")
+                                 "* ☛ TODO %i%?")
+                                ("T" "Tickler" entry
+                                 (file+headline "~/orgs/tickler.org" "Tickler")
+                                 "* %i%? \n %U")))
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+  (setq org-refile-allow-creating-parent-nodes 'confirm)
+  (setq org-refile-use-outline-path 'file)
+  ;; makes org-refile outline working with helm/ivy
+  (setq org-outline-path-complete-in-steps nil)
+  ;; Org TODO keywords
+  (setq org-todo-keywords '((sequence "☛ TODO" "⚑ IN-PROGRESS" "|" "✓ DONE" "✘ CANCELED")))
+  (setq org-todo-keyword-faces '(("☛ TODO" . (:foreground "grey"))
+                                 ("⚑ IN-PROGRESS" . (:foreground "yellow"))
+                                 ("✓ DONE" . (:foreground "green"))
+                                 ("✘ CANCELED" . (:foreground "red")))))
