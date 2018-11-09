@@ -11,6 +11,9 @@
 ;; Reduce which-key delay
 (setq which-key-idle-delay 0.5)
 
+;; Workaround for magithub authentication stuffs
+(setq auth-sources '("~/.authinfo"))
+
 ;; rubocopfmt hook
 (with-eval-after-load 'enh-ruby-mode
   (add-hook 'enh-ruby-mode-hook #'rubocopfmt-mode))
