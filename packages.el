@@ -7,6 +7,7 @@
 ;; (package! builtin-package :disable t)
 
 (package! all-the-icons-dired)
+(package! copy-as-format)
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
 (package! indent-guide)
 (package! rubocopfmt)
