@@ -32,6 +32,9 @@
     (list (point-min) (point-max)))
   (define-key evil-inner-text-objects-map "g" 'evil-inner-buffer))
 
+;; indent-guide
+(indent-guide-global-mode)
+
 ;; Magit
 (setq magit-repository-directories '(("~/EH-Workspace" . 0)
                                      ("~/Workspace" . 0))
