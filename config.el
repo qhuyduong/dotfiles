@@ -24,6 +24,11 @@
 ;; Workaround for all-the-icons-dired
 (require 'font-lock+)
 
+;; Set default source and destination languages for Google Translate
+(with-eval-after-load 'google-translate-core-ui
+  (setq google-translate-default-source-language "en")
+  (setq google-translate-default-target-language "vi"))
+
 ;; Keybindings
 ;; Easier window navigation
 (map! :n "C-h"   #'evil-window-left
