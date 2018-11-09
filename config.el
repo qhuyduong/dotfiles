@@ -14,6 +14,10 @@
 ;; Workaround for magithub authentication stuffs
 (setq auth-sources '("~/.authinfo"))
 
+(when (eq system-type 'darwin)
+  (osx-trash-setup))
+(setq delete-by-moving-to-trash t)
+
 ;; rubocopfmt hook
 (with-eval-after-load 'enh-ruby-mode
   (add-hook 'enh-ruby-mode-hook #'rubocopfmt-mode))

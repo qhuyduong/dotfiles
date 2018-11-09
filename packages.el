@@ -10,4 +10,5 @@
 (package! copy-as-format)
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
 (package! indent-guide)
+(package! osx-trash)
 (package! rubocopfmt)
