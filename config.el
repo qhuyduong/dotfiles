@@ -18,3 +18,10 @@
       :n "C-k"   #'evil-window-up
       :n "C-l"   #'evil-window-right)
 
+;; Modules
+;; Evil
+(after! evil
+  (evil-define-text-object evil-inner-buffer (count &optional beg end type)
+    (list (point-min) (point-max)))
+  (define-key evil-inner-text-objects-map "g" 'evil-inner-buffer))
+
