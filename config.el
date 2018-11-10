@@ -55,7 +55,7 @@
         (:prefix "p"
           :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test)
         (:prefix "g"
-          :desc "Resolve conflict" :n "r" #'hydra-smerge/body)
+          :desc "Resolve conflicts" :n "r" #'hydra-smerge/body)
         (:prefix "w"
           :desc "evil-window-resize" :n "r" #'hydra-evil-window-resize/body)))
 
