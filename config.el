@@ -19,20 +19,18 @@
 (setq delete-by-moving-to-trash t)
 
 ;; rubocopfmt hook
-(with-eval-after-load 'enh-ruby-mode
-  (add-hook 'enh-ruby-mode-hook #'rubocopfmt-mode))
-
-(with-eval-after-load 'ruby-mode
-  (add-hook 'ruby-mode-hook #'rubocopfmt-mode))
+(add-hook! enh-ruby-mode #'rubocopfmt-mode)
+(add-hook! ruby-mode #'rubocopfmt-mode)
 
 ;; Icons in dired
-(with-eval-after-load 'dired
+(after! dired
+  (require 'font-lock+)
+  ;; Suppress warning with GNU ls in Dired
+  (setq dired-use-ls-dired nil)
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
-;; Workaround for all-the-icons-dired
-(require 'font-lock+)
 
 ;; Set default source and destination languages for Google Translate
-(with-eval-after-load 'google-translate-core-ui
+(after! google-translate-core-ui
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "vi"))
 
