@@ -69,7 +69,8 @@
         +capture         ; org-capture in and outside of Emacs
         +export          ; Exporting org to whatever you want
         +present)        ; Emacs for presentations
-       ruby              ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+       (ruby             ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+        +rbenv)          ; enable rbenv
        (sh +fish)        ; she sells (ba|z|fi)sh shells on the C xor
        web               ; the tubes
 

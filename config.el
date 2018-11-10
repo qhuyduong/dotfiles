@@ -20,6 +20,9 @@
 ;; Workaround for magithub authentication stuffs
 (setq auth-sources '("~/.authinfo"))
 
+;; Rspec doesn't use RVM!
+(setq rspec-use-rvm nil)
+
 (when (eq system-type 'darwin)
   (osx-trash-setup))
 (setq delete-by-moving-to-trash t)
