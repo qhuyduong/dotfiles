@@ -55,7 +55,9 @@
         (:prefix "p"
           :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test)
         (:prefix "g"
-          :desc "Resolve conflict" :n "r" #'hydra-smerge/body)))
+          :desc "Resolve conflict" :n "r" #'hydra-smerge/body)
+        (:prefix "w"
+          :desc "evil-window-resize" :n "r" #'hydra-evil-window-resize/body)))
 
 ;; Modules
 ;; Evil
@@ -127,3 +129,10 @@
   ("r" smerge-refine)
   ("u" undo-tree-undo)
   ("q" nil :exit t))
+
+(defhydra hydra-evil-window-resize (:color blue :hint nil)
+  ("k" evil-window-increase-height "increase height" :exit nil)
+  ("j" evil-window-decrease-height "decrease height" :exit nil)
+  ("l" evil-window-increase-width "increase width" :exit nil)
+  ("h" evil-window-decrease-width "decrease width" :exit nil)
+  ("q" nil "quit" :exit t))
