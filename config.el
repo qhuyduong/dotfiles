@@ -47,9 +47,12 @@
       :n "C-k"   #'evil-window-up
       :n "C-l"   #'evil-window-right
       (:leader
-        :nv "*"  #'counsel-rg-thing-at-point
+        (:prefix "/"
+          :desc "Search this text in project" :nv "*"  #'counsel-rg-thing-at-point)
         (:prefix "p"
-          :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test)))
+          :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test)
+        (:prefix "g"
+          :desc "Resolve conflict" :n "r" #'hydra-smerge/body)))
 
 ;; Modules
 ;; Evil
@@ -91,6 +94,33 @@
                                  ("✓ DONE" . (:foreground "green"))
                                  ("✘ CANCELED" . (:foreground "red")))))
 
+;;;;;;;;;; Chores ;;;;;;;;;;
+
 (defun counsel-rg-thing-at-point ()
   (interactive)
   (counsel-rg (ivy-thing-at-point)))
+
+(defhydra hydra-smerge (:color blue :hint nil)
+  "
+ Movement^^^^               Merge action^^           Other
+ ---------------------^^^^  -------------------^^    -----------
+ [_n_]^^    next hunk       [_b_] keep base          [_u_] undo
+ [_N_/_p_]  prev hunk       [_m_] keep mine          [_r_] refine
+ [_j_/_k_]  move up/down    [_a_] keep all           [_q_] quit
+ ^^^^                       [_o_] keep other
+ ^^^^                       [_c_] keep current
+ ^^^^                       [_C_] combine with next"
+  ("n" smerge-next)
+  ("p" smerge-prev)
+  ("N" smerge-prev)
+  ("j" evil-next-line)
+  ("k" evil-previous-line)
+  ("a" smerge-keep-all)
+  ("b" smerge-keep-base)
+  ("m" smerge-keep-mine)
+  ("o" smerge-keep-other)
+  ("c" smerge-keep-current)
+  ("C" smerge-combine-with-next)
+  ("r" smerge-refine)
+  ("u" undo-tree-undo)
+  ("q" nil :exit t))
