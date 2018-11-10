@@ -3,6 +3,8 @@
 ;; Emacs GUI settings
 (setq doom-font (font-spec :family "Monaco" :size 14))
 (setq doom-theme 'doom-city-lights)
+(setq show-trailing-whitespace t)
+
 ;; Make titlebar match background color
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
