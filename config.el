@@ -45,7 +45,7 @@
       :n "C-l"   #'evil-window-right
       (:leader
         (:prefix "p"
-          :desc "Toggle between source and test" :n "a" #'projectile-toggle-between-implementation-and-test)))
+          :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test)))
 
 ;; Modules
 ;; Evil
