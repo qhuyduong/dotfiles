@@ -57,7 +57,14 @@
         (:prefix "g"
           :desc "Resolve conflicts" :n "r" #'hydra-smerge/body)
         (:prefix "w"
-          :desc "evil-window-resize" :n "r" #'hydra-evil-window-resize/body)))
+          :desc "evil-window-resize" :n "r" #'hydra-evil-window-resize/body)
+        (:prefix "i"
+          :desc "UUIDv4" :n "u" #'uuidgen
+          (:desc "lorem-ipsum" :prefix "l"
+            :desc "list" :n "l" #'lorem-ipsum-insert-list
+            :desc "sentences" :n "s" #'lorem-ipsum-insert-sentences
+            :desc "paragraphs" :n "p" #'lorem-ipsum-insert-paragraphs)
+          :desc "Emoji" :n "e" #'emoji-cheat-sheet-plus-insert)))
 
 ;; Modules
 ;; Evil
