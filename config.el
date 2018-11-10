@@ -3,6 +3,7 @@
 ;; Emacs GUI settings
 (setq doom-font (font-spec :family "Monaco" :size 14))
 (setq doom-theme 'doom-city-lights)
+(setq doom-localleader-key ",")
 (setq show-trailing-whitespace t)
 
 ;; Make titlebar match background color
@@ -48,7 +49,8 @@
 (after! evil
   (evil-define-text-object evil-inner-buffer (count &optional beg end type)
     (list (point-min) (point-max)))
-  (define-key evil-inner-text-objects-map "g" 'evil-inner-buffer))
+  (map! :map evil-inner-text-objects-map "g" 'evil-inner-buffer
+        :map evil-motion-state-map "," nil))
 
 ;; indent-guide
 (indent-guide-global-mode)
