@@ -47,6 +47,7 @@
       :n "C-k"   #'evil-window-up
       :n "C-l"   #'evil-window-right
       (:leader
+        :nv "*"  #'counsel-rg-thing-at-point
         (:prefix "p"
           :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test)))
 
@@ -89,3 +90,7 @@
                                  ("⚑ IN-PROGRESS" . (:foreground "yellow"))
                                  ("✓ DONE" . (:foreground "green"))
                                  ("✘ CANCELED" . (:foreground "red")))))
+
+(defun counsel-rg-thing-at-point ()
+  (interactive)
+  (counsel-rg (ivy-thing-at-point)))
