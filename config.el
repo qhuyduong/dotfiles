@@ -11,6 +11,9 @@
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 (add-hook 'window-setup-hook #'toggle-frame-fullscreen)
 
+;; Set option key as meta on OSX
+(setq mac-option-modifier 'meta)
+
 ;; Reduce which-key delay
 (setq which-key-idle-delay 0.5)
 
