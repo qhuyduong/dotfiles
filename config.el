@@ -42,7 +42,10 @@
 (map! :n "C-h"   #'evil-window-left
       :n "C-j"   #'evil-window-down
       :n "C-k"   #'evil-window-up
-      :n "C-l"   #'evil-window-right)
+      :n "C-l"   #'evil-window-right
+      (:leader
+        (:prefix "p"
+          :desc "Toggle between source and test" :n "a" #'projectile-toggle-between-implementation-and-test)))
 
 ;; Modules
 ;; Evil
