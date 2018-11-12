@@ -13,5 +13,4 @@
 (package! indent-guide)
 (package! lorem-ipsum)
 (package! osx-trash)
-(package! rubocopfmt)
 (package! uuidgen)

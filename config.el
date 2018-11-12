@@ -27,10 +27,6 @@
   (osx-trash-setup))
 (setq delete-by-moving-to-trash t)
 
-;; rubocopfmt hook
-(add-hook! enh-ruby-mode #'rubocopfmt-mode)
-(add-hook! ruby-mode #'rubocopfmt-mode)
-
 ;; Icons in dired
 (after! dired
   (require 'font-lock+)
