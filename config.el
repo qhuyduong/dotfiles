@@ -78,8 +78,8 @@
 
 ;; Magit
 (after! magit
-  (setq magit-repository-directories '(("~/EH-Workspace" . 0)
-                                       ("~/Workspace" . 0))
+  (setq magit-repository-directories '(("~/EH-Workspace" . 1)
+                                       ("~/Workspace" . 1))
         magit-save-repository-buffers nil))
 
 ;; lang/org
