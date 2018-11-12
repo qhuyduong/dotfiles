@@ -113,28 +113,30 @@
 
 (defhydra hydra-smerge (:hint nil)
   "
- Movement^^^^               Merge action^^           Other
- ---------------------^^^^  -------------------^^    -----------
- [_n_]^^    next hunk       [_b_] keep base          [_u_] undo
- [_N_/_p_]  prev hunk       [_m_] keep mine          [_r_] refine
- [_j_/_k_]  move up/down    [_a_] keep all           [_q_] quit
- ^^^^                       [_o_] keep other
- ^^^^                       [_c_] keep current
- ^^^^                       [_C_] combine with next"
+Movement^^^^            Merge action^^           Other
+------------------^^^^  ---------------------^^  -----------
+[_n_]^^    next hunk    [_b_] keep base          [_u_] undo
+[_N_/_p_]  prev hunk    [_m_] keep mine          [_r_] refine
+[_k_]^^    move up      [_a_] keep all           [_q_] quit
+[_j_]^^    move down    [_o_] keep other
+[_C-u_]^^  scroll up    [_c_] keep current
+[_C-d_]^^  scroll down  [_C_] combine with next"
   ("n" smerge-next)
-  ("p" smerge-prev)
   ("N" smerge-prev)
+  ("p" smerge-prev)
   ("j" evil-next-line)
   ("k" evil-previous-line)
-  ("a" smerge-keep-all)
+  ("C-u" evil-scroll-up)
+  ("C-d" evil-scroll-down)
   ("b" smerge-keep-base)
   ("m" smerge-keep-mine)
+  ("a" smerge-keep-all)
   ("o" smerge-keep-other)
   ("c" smerge-keep-current)
   ("C" smerge-combine-with-next)
-  ("r" smerge-refine)
   ("u" undo-tree-undo)
-  ("q" nil "quit"))
+  ("r" smerge-refine)
+  ("q" nil))
 
 (defhydra hydra-evil-window-resize (:hint nil)
   ("k" evil-window-increase-height "increase height")
