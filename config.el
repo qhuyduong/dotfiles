@@ -111,7 +111,7 @@
   (interactive)
   (counsel-rg (ivy-thing-at-point)))
 
-(defhydra hydra-smerge (:color blue :hint nil)
+(defhydra hydra-smerge (:hint nil)
   "
  Movement^^^^               Merge action^^           Other
  ---------------------^^^^  -------------------^^    -----------
@@ -134,11 +134,11 @@
   ("C" smerge-combine-with-next)
   ("r" smerge-refine)
   ("u" undo-tree-undo)
-  ("q" nil :exit t))
+  ("q" nil "quit"))
 
-(defhydra hydra-evil-window-resize (:color blue :hint nil)
-  ("k" evil-window-increase-height "increase height" :exit nil)
-  ("j" evil-window-decrease-height "decrease height" :exit nil)
-  ("l" evil-window-increase-width "increase width" :exit nil)
-  ("h" evil-window-decrease-width "decrease width" :exit nil)
-  ("q" nil "quit" :exit t))
+(defhydra hydra-evil-window-resize (:hint nil)
+  ("k" evil-window-increase-height "increase height")
+  ("j" evil-window-decrease-height "decrease height")
+  ("l" evil-window-increase-width "increase width")
+  ("h" evil-window-decrease-width "decrease width")
+  ("q" nil "quit"))
