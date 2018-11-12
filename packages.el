@@ -9,6 +9,8 @@
 (package! all-the-icons-dired)
 (package! copy-as-format)
 (package! emoji-cheat-sheet-plus)
+(package! flycheck-popup-tip :disable t)
+(package! flycheck-pos-tip)
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
 (package! indent-guide)
 (package! lorem-ipsum)
