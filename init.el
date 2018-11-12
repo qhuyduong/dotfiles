@@ -38,7 +38,6 @@
        window-select     ; visually switch windows
 
        :editor
-       (format +onsave)  ; automated prettiness
        multiple-cursors  ; editing in many places at once
        rotate-text       ; cycle region at point between text candidates
 
