@@ -51,7 +51,6 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
-       editorconfig      ; let someone else argue about tabs vs spaces
        gist              ; interacting with github gists
        macos             ; MacOS-specific commands
        make              ; run make tasks from Emacs
