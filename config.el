@@ -41,11 +41,12 @@
 
 ;; Keybindings
 ;; Easier window navigation
-(map! :n "C-h"   #'evil-window-left
-      :n "C-j"   #'evil-window-down
-      :n "C-k"   #'evil-window-up
-      :n "C-l"   #'evil-window-right
+(map! :n "C-h"  #'evil-window-left
+      :n "C-j"  #'evil-window-down
+      :n "C-k"  #'evil-window-up
+      :n "C-l"  #'evil-window-right
       (:leader
+        :nv "x" nil
         (:prefix "/"
           :desc "Search this text in project" :nv "*"  #'counsel-rg-thing-at-point)
         (:prefix "p"
@@ -60,7 +61,15 @@
             :desc "list" :n "l" #'lorem-ipsum-insert-list
             :desc "sentences" :n "s" #'lorem-ipsum-insert-sentences
             :desc "paragraphs" :n "p" #'lorem-ipsum-insert-paragraphs)
-          :desc "Emoji" :n "e" #'emoji-cheat-sheet-plus-insert)))
+          :desc "Emoji" :n "e" #'emoji-cheat-sheet-plus-insert)
+        (:desc "text-transform" :prefix "x"
+          :desc "Translate this text" :nv "g" #'google-translate-at-point
+          (:desc "copy-as-format" :prefix "f"
+            :desc "Github" :nv "g" #'copy-as-format-github
+            :desc "HTML" :nv "h" #'copy-as-format-html
+            :desc "Markdown" :nv "m" #'copy-as-format-markdown
+            :desc "Org" :nv "o" #'copy-as-format-org
+            :desc "Slack" :nv "s" #'copy-as-format-slack))))
 
 ;; Modules
 ;; Evil
