@@ -69,7 +69,12 @@
             :desc "HTML" :nv "h" #'copy-as-format-html
             :desc "Markdown" :nv "m" #'copy-as-format-markdown
             :desc "Org" :nv "o" #'copy-as-format-org
-            :desc "Slack" :nv "s" #'copy-as-format-slack))))
+            :desc "Slack" :nv "s" #'copy-as-format-slack)))
+      (:localleader
+        :map enh-ruby-mode-map
+        :prefix "d"
+        :nv "g" #'dumb-jump-go
+        :nv "G" #'dumb-jump-go-other-window))
 
 ;; Modules
 ;; Evil
