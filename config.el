@@ -50,7 +50,8 @@
         (:prefix "/"
           :desc "Search this text in project" :nv "*"  #'counsel-rg-thing-at-point)
         (:prefix "p"
-          :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test)
+          :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test
+          :desc "Regenerate tags" :n "G" #'projectile-regenerate-tags)
         (:prefix "g"
           :desc "Resolve conflicts" :n "r" #'hydra-smerge/body)
         (:prefix "w"
