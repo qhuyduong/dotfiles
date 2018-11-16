@@ -5,6 +5,7 @@
 (setq doom-theme 'doom-city-lights)
 (setq doom-localleader-key ",")
 (setq show-trailing-whitespace t)
+(setq display-line-numbers-type 'visual)
 
 ;; Make titlebar match background color
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
