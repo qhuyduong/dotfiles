@@ -12,6 +12,9 @@
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 (add-hook 'window-setup-hook #'toggle-frame-fullscreen)
 
+;; apib-mode
+(add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
+
 ;; Set option key as meta on OSX
 (setq mac-option-modifier 'meta)
 

@@ -7,6 +7,7 @@
 ;; (package! builtin-package :disable t)
 
 (package! all-the-icons-dired)
+(package! apib-mode)
 (package! copy-as-format)
 (package! emoji-cheat-sheet-plus)
 (package! flycheck-popup-tip :disable t)
