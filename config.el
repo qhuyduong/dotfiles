@@ -43,6 +43,11 @@
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "vi"))
 
+(defun osx-active-iterm2 ()
+  "Active Iterm 2"
+  (interactive)
+  (shell-command "osascript -e 'activate application \"iterm2\"'"))
+
 ;; Keybindings
 ;; Easier window navigation
 (map! :n "C-h"  #'evil-window-left
@@ -59,7 +64,8 @@
         (:prefix "g"
           :desc "Resolve conflicts" :n "r" #'hydra-smerge/body)
         (:prefix "w"
-          :desc "evil-window-resize" :n "r" #'hydra-evil-window-resize/body)
+          :desc "evil-window-resize" :n "r" #'hydra-evil-window-resize/body
+          :desc "Switch to iTerm2" :n "i" #'osx-active-iterm2)
         (:prefix "i"
           :desc "UUIDv4" :n "u" #'uuidgen
           (:desc "lorem-ipsum" :prefix "l"
