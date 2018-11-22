@@ -12,9 +12,6 @@
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 (add-hook 'window-setup-hook #'toggle-frame-fullscreen)
 
-;; apib-mode
-(add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
-
 ;; Set option key as meta on OSX
 (setq mac-option-modifier 'meta)
 
@@ -130,6 +127,15 @@
                                  ("⚑ IN-PROGRESS" . (:foreground "yellow"))
                                  ("✓ DONE" . (:foreground "green"))
                                  ("✘ CANCELED" . (:foreground "red")))))
+
+;; flycheck-apib
+(def-package! flycheck-apib
+  :when (featurep! :feature syntax-checker)
+  :after apib-mode
+  :config (add-hook 'apib-mode-hook #'flycheck-apib-setup))
+
+;; apib-mode
+(add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
 

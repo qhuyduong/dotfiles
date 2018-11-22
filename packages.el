@@ -10,6 +10,7 @@
 (package! apib-mode)
 (package! copy-as-format)
 (package! emoji-cheat-sheet-plus)
+(package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
 (package! flycheck-popup-tip :disable t)
 (package! flycheck-pos-tip)
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
