@@ -22,7 +22,6 @@
 
 ;;; Disabled packages
 (package! coffee-mode :disable t)
-(package! eslintd-fix :disable t)
 (package! flycheck-popup-tip :disable t)
 (package! skewer-mode :disable t)
 (package! typescript-mode :disable t)
