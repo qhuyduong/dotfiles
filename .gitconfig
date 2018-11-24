@@ -1,9 +1,9 @@
 [magithub]
 	online = true
 [magithub "status"]
-	includeStatusHeader = false
-	includePullRequestsSection = false
-	includeIssuesSection = false
+	includeStatusHeader = true
+	includePullRequestsSection = true
+	includeIssuesSection = true
 [user]
 	name = Huy Duong
 	email = huy.duong@employmenthero.com
