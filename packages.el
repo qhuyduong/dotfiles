@@ -9,6 +9,8 @@
 (package! all-the-icons-dired)
 (package! apib-mode)
 (package! copy-as-format)
+(package! docker-compose-mode)
+(package! dockerfile-mode)
 (package! emoji-cheat-sheet-plus)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
 (package! flycheck-popup-tip :disable t)
