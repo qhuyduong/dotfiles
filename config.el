@@ -137,6 +137,10 @@
 ;; apib-mode
 (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
 
+;; js2-mode
+(after! js2-mode
+  (setq-default js-indent-level 2))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 
 (defun counsel-rg-thing-at-point ()
