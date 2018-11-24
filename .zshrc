@@ -107,16 +107,6 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# fzf-edit-widget - Open the selected file with the default editor
-#   - CTRL-E or Enter key to open with the $EDITOR
-fzf-edit-widget() {
-  local file=$(__fsel)
-  [[ -n $file ]] && eval "${EDITOR:-vim} $PWD/$file"
-  return $?
-}
-zle     -N   fzf-edit-widget
-bindkey '^E' fzf-edit-widget
-
 # fzf-grep-widget - searching file contents and open file for editting
 fzf-grep-widget() {
   local file="$(ag --nogroup --hidden --ignore .git -U -f . | fzf -0 -1 | awk -F: '{print $1 " +" $2}')"
