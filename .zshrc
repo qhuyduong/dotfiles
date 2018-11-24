@@ -128,16 +128,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 
 # Source NVM on shell starting up
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="$NVM_DIR:$PATH"
-
-# Add imagemagick to PATH
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
 # Configure exercism
 [ -s "$HOME/.config/exercism/exercism_completion.zsh" ] && source "$HOME/.config/exercism/exercism_completion.zsh"
@@ -147,12 +142,6 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Add GNU coreutils to PATH
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-
-# Add cask to PATH
-export PATH="/Users/qhuyduong/.cask/bin:$PATH"
 
 ########## Aliases ##########
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
