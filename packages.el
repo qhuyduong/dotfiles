@@ -6,6 +6,7 @@
 ;; (package! another-package :recipe (:fetcher github :repo "username/repo"))
 ;; (package! builtin-package :disable t)
 
+(package! add-node-modules-path)
 (package! all-the-icons-dired)
 (package! apib-mode)
 (package! copy-as-format)

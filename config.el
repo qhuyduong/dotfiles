@@ -33,7 +33,7 @@
   (require 'font-lock+)
   ;; Suppress warning with GNU ls in Dired
   (setq dired-use-ls-dired nil)
-  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+  (add-hook 'dired-mode-hook #'all-the-icons-dired-mode))
 
 ;; Set default source and destination languages for Google Translate
 (after! google-translate-core-ui
@@ -139,7 +139,15 @@
 
 ;; js2-mode
 (after! js2-mode
-  (setq-default js-indent-level 2))
+  (setq-default js-indent-level 2)
+  (add-hook 'js2-mode-hook #'add-node-modules-path)
+  (add-hook 'js2-mode-hook #'eslintd-fix-mode))
+
+(after! projectile
+  ;; Configure npm project with projectile
+  (projectile-register-project-type 'npm '("package.json")
+                                    :test "npm run test"
+                                    :test-suffix ".spec"))
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
 
