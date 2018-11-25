@@ -2,7 +2,7 @@
 
 ;; Emacs GUI settings
 (setq doom-font (font-spec :family "Monaco" :size 14))
-(setq doom-theme 'doom-city-lights)
+(setq doom-theme 'doom-nord)
 (setq doom-localleader-key ",")
 (setq show-trailing-whitespace t)
 (setq display-line-numbers-type 'visual)
