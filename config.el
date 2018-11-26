@@ -5,7 +5,7 @@
 (setq doom-theme 'doom-city-lights)
 (setq doom-localleader-key ",")
 (setq show-trailing-whitespace t)
-(setq display-line-numbers-type 'visual)
+(setq display-line-numbers-type 'relative)
 
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil)
