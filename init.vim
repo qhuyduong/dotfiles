@@ -73,9 +73,6 @@ Plug 'tmux-plugins/vim-tmux-focus-events' " Make terminal vim and tmux work bett
 Plug 'christoomey/vim-tmux-navigator'     " Seamless navigation between tmux panes and vim splits
 Plug 'mbbill/undotree'                    " View undo history
 
-" Utilities
-Plug 'wakatime/vim-wakatime'
-
 " Language: API Blueprint
 Plug 'kylef/apiblueprint.vim'             " Syntax highlighting and linting for API Blueprint<
 
