@@ -187,8 +187,8 @@ Movement^^^^            Merge action^^           Other
   ("q" nil))
 
 (defhydra hydra-evil-window-resize (:hint nil)
-  ("k" evil-window-increase-height "increase height")
-  ("j" evil-window-decrease-height "decrease height")
-  ("l" evil-window-increase-width "increase width")
-  ("h" evil-window-decrease-width "decrease width")
+  ("k" (evil-window-increase-height 10) "increase height by 10 rows")
+  ("j" (evil-window-decrease-height 10) "decrease height by 10 rows")
+  ("l" (evil-window-increase-width 10) "increase width by 10 columns")
+  ("h" (evil-window-decrease-width 10) "decrease width by 10 columns")
   ("q" nil "quit"))
