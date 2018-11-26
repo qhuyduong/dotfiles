@@ -7,6 +7,10 @@
 (setq show-trailing-whitespace t)
 (setq display-line-numbers-type 'visual)
 
+;; truncate-lines in all buffers
+(setq-default truncate-lines nil)
+(setq-default global-visual-line-mode t)
+
 ;; Make titlebar match background color
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
