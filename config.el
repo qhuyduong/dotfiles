@@ -147,11 +147,19 @@
   (add-hook 'js2-mode-hook #'add-node-modules-path)
   (add-hook 'js2-mode-hook #'eslintd-fix-mode))
 
+;; projectile
 (after! projectile
   ;; Configure npm project with projectile
   (projectile-register-project-type 'npm '("package.json")
                                     :test "npm run test"
                                     :test-suffix ".spec"))
+
+;; Re-add visual-line-mode's fringes
+(after! fringe-helper
+  (add-to-list 'fringe-indicator-alist
+               (list 'continuation
+                     (fringe-lib-load fringe-lib-slash)
+                     (fringe-lib-load fringe-lib-backslash))))
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
 
