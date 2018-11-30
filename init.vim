@@ -240,7 +240,7 @@ set laststatus=2
 let g:airline_theme = 'nord'
 
 " Enable top tabline.
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 " Disable showing tabs in the tabline. This will ensure that the buffers are
 " what is shown in the tabline at all times.
