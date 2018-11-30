@@ -25,9 +25,6 @@
 ;; Workaround for magithub authentication stuffs
 (setq auth-sources '("~/.authinfo"))
 
-;; Rspec doesn't use RVM!
-(setq rspec-use-rvm nil)
-
 (when (eq system-type 'darwin)
   (osx-trash-setup))
 (setq delete-by-moving-to-trash t)
@@ -160,6 +157,10 @@
                (list 'continuation
                      (fringe-lib-load fringe-lib-slash)
                      (fringe-lib-load fringe-lib-backslash))))
+
+;; Rspec doesn't use RVM!
+(after! rspec-mode
+  (setq rspec-use-rvm nil))
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
 
