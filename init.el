@@ -52,6 +52,7 @@
        macos             ; MacOS-specific commands
        make              ; run make tasks from Emacs
        magit             ; a git porcelain for Emacs
+       pdf               ; pdf enhancements
        tmux              ; an API for interacting with tmux
 
        :lang
