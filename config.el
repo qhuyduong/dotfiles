@@ -162,6 +162,9 @@
 (after! rspec-mode
   (setq rspec-use-rvm nil))
 
+;; nov-mode (epub)
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 
 (defun counsel-rg-thing-at-point ()
