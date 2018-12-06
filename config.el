@@ -71,6 +71,8 @@
             :desc "sentences" :n "s" #'lorem-ipsum-insert-sentences
             :desc "paragraphs" :n "p" #'lorem-ipsum-insert-paragraphs)
           :desc "Emoji" :n "e" #'emoji-cheat-sheet-plus-insert)
+        (:prefix "t"
+          :desc "Truncate lines" :n "t" #'toggle-truncate-lines)
         (:desc "text-transform" :prefix "x"
           :desc "Translate this text" :nv "g" #'google-translate-at-point
           (:desc "copy-as-format" :prefix "f"
