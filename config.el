@@ -110,6 +110,8 @@
 
 ;; lang/org
 (after! org
+  (remove-hook 'org-mode-hook #'org-indent-mode)
+  (setq org-startup-indented nil)
   (setq org-directory (expand-file-name "~/orgs")
         org-agenda-files (list org-directory))
   ;; Org capture templates
