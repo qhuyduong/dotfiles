@@ -110,6 +110,7 @@
 
 ;; lang/org
 (after! org
+  (setq org-plantuml-jar-path "~/.doom.d/plantuml.jar")
   (remove-hook 'org-mode-hook #'org-indent-mode)
   (setq org-startup-indented nil)
   (setq org-directory (expand-file-name "~/orgs")
