@@ -16,6 +16,7 @@ SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_CHAR_PREFIX="\uf296"
 SPACESHIP_CHAR_SYMBOL=" \uf0e7"
 SPACESHIP_CHAR_SUFFIX=(" ")
+SPACESHIP_BATTERY_SHOW=false
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
