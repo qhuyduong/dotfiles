@@ -10,6 +10,7 @@
 (package! all-the-icons-dired)
 (package! apib-mode)
 (package! copy-as-format)
+(package! dash-at-point)
 (package! docker-compose-mode)
 (package! dockerfile-mode)
 (package! emoji-cheat-sheet-plus)
