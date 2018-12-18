@@ -150,6 +150,10 @@
   (add-hook 'js2-mode-hook #'add-node-modules-path)
   (add-hook 'js2-mode-hook #'eslintd-fix-mode))
 
+;; json-mode
+(after! json-mode
+  (setq-default js-indent-level 2))
+
 ;; projectile
 (after! projectile
   ;; Configure npm project with projectile
