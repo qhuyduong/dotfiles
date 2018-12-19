@@ -112,7 +112,7 @@
 (after! org
   (add-to-list 'org-modules 'org-drill)
   (advice-add 'org-babel-execute-src-block :around 'ob-async-org-babel-execute-src-block)
-  (setq org-plantuml-jar-path "~/.doom.d/plantuml.jar")
+  (setq org-plantuml-jar-path "~/.local/bin/plantuml.jar")
   (remove-hook 'org-mode-hook #'org-indent-mode)
   (setq org-startup-indented nil)
   (setq org-directory (expand-file-name "~/orgs")
