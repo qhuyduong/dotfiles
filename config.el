@@ -7,6 +7,9 @@
 (setq show-trailing-whitespace t)
 (setq display-line-numbers-type 'relative)
 
+;; Use fancy icons for neotree
+(setq doom-neotree-file-icons t)
+
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil)
 (setq-default global-visual-line-mode t)
