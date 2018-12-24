@@ -82,8 +82,6 @@
             :desc "Org" :nv "o" #'copy-as-format-org
             :desc "Slack" :nv "s" #'copy-as-format-slack)))
       (:localleader
-        :after enh-ruby-mode
-        :map enh-ruby-mode-map
         :prefix "d"
         :nv "g" #'dumb-jump-go
         :nv "G" #'dumb-jump-go-other-window))
