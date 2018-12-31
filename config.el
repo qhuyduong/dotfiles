@@ -37,7 +37,10 @@
   (require 'font-lock+)
   ;; Suppress warning with GNU ls in Dired
   (setq dired-use-ls-dired nil)
-  (add-hook 'dired-mode-hook #'all-the-icons-dired-mode))
+  (add-hook 'dired-mode-hook #'all-the-icons-dired-mode)
+  (diredp-toggle-find-file-reuse-dir t)
+  (setq diredp-hide-details-initially-flag nil)
+  (setq diredp-hide-details-propagate-flag nil))
 
 ;; Set default source and destination languages for Google Translate
 (after! google-translate-core-ui

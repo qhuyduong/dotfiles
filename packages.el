@@ -11,6 +11,7 @@
 (package! apib-mode)
 (package! copy-as-format)
 (package! dash-at-point)
+(package! dired+ :recipe (:fetcher github :repo "emacsmirror/dired-plus"))
 (package! docker-compose-mode)
 (package! dockerfile-mode)
 (package! emoji-cheat-sheet-plus)
