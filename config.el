@@ -92,6 +92,9 @@
         :nv "g" #'dumb-jump-go
         :nv "G" #'dumb-jump-go-other-window))
 
+;; Emacs sometimes registers C-s-f as this weird keycode
+(global-set-key (kbd "<C-s-268632070>") #'toggle-frame-fullscreen)
+
 ;; Modules
 ;; Evil
 (after! evil
