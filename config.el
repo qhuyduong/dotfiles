@@ -117,6 +117,7 @@
 
 ;; lang/org
 (after! org
+  (set-face-attribute 'org-headline-done nil :strike-through t)
   (add-to-list 'org-modules 'org-drill)
   (advice-add 'org-babel-execute-src-block :around 'ob-async-org-babel-execute-src-block)
   (setq org-plantuml-jar-path "~/.local/bin/plantuml.jar")
