@@ -19,6 +19,9 @@
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 (add-hook 'window-setup-hook #'toggle-frame-fullscreen)
 
+;; Set command key as super on OSX
+(setq mac-command-modifier 'super)
+
 ;; Set option key as meta on OSX
 (setq mac-option-modifier 'meta)
 
