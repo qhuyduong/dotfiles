@@ -16,7 +16,6 @@
 (package! dockerfile-mode)
 (package! emoji-cheat-sheet-plus)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
-(package! flycheck-pos-tip)
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
 (package! indent-guide)
 (package! lorem-ipsum)
@@ -27,6 +26,5 @@
 
 ;;; Disabled packages
 (package! coffee-mode :disable t)
-(package! flycheck-popup-tip :disable t)
 (package! skewer-mode :disable t)
 (package! typescript-mode :disable t)

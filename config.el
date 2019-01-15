@@ -109,9 +109,6 @@
 ;; indent-guide
 (indent-guide-global-mode)
 
-;; flycheck-pos-tip
-(flycheck-pos-tip-mode)
-
 ;; Magit
 (after! magit
   (setq magit-repository-directories '(("~/EH-Workspace" . 1)
