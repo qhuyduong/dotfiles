@@ -57,7 +57,8 @@
 
 ;; Keybindings
 ;; Easier window navigation
-(map! :n "C-h"  #'evil-window-left
+(map! "C-s-f"  #'toggle-frame-fullscreen
+      :n "C-h"  #'evil-window-left
       :n "C-j"  #'evil-window-down
       :n "C-k"  #'evil-window-up
       :n "C-l"  #'evil-window-right
@@ -94,9 +95,6 @@
         :prefix "d"
         :nv "g" #'dumb-jump-go
         :nv "G" #'dumb-jump-go-other-window))
-
-;; Emacs sometimes registers C-s-f as this weird keycode
-(global-set-key (kbd "<C-s-268632070>") #'toggle-frame-fullscreen)
 
 ;; Modules
 ;; Evil
