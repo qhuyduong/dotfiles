@@ -50,11 +50,6 @@
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "vi"))
 
-(defun osx-active-iterm2 ()
-  "Active Iterm 2"
-  (interactive)
-  (shell-command "osascript -e 'activate application \"iterm2\"'"))
-
 ;; Keybindings
 ;; Easier window navigation
 (map! "C-s-f"  #'toggle-frame-fullscreen
