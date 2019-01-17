@@ -2,7 +2,6 @@
 ;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
 (doom! :feature
-       ;;debugger          ; FIXME stepping through code, to help you add bugs
        eval              ; run code, run (also, repls)
        (evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
@@ -23,40 +22,31 @@
        :ui
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
-       ;; doom-modeline     ; a snazzy Atom-inspired mode-line
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        evil-goggles      ; display visual hints when editing in evil
        hl-todo           ; highlight TODO/FIXME/NOTE tags
        modeline          ; snazzy, Atom-inspired modeline, plus API
-       nav-flash         ; blink the current line after jumping
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
        neotree           ; a project drawer, like NERDTree for vim
-       ;; treemacs          ; a project drawer, like neotree but cooler
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
 
        :editor
        multiple-cursors  ; editing in many places at once
-       rotate-text       ; cycle region at point between text candidates
 
        :emacs
        dired             ; making dired pretty [functional]
-       ediff             ; comparing files in Emacs
        electric          ; smarter, keyword-based electric-indent
-       hideshow          ; basic code-folding support
        imenu             ; an imenu sidebar and searchable code index
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
        gist              ; interacting with github gists
        macos             ; MacOS-specific commands
-       make              ; run make tasks from Emacs
        magit             ; a git porcelain for Emacs
-       pdf               ; pdf enhancements
-       tmux              ; an API for interacting with tmux
 
        :lang
        data              ; config/data formats
@@ -73,13 +63,6 @@
         +rbenv)          ; enable rbenv
        (sh +fish)        ; she sells (ba|z|fi)sh shells on the C xor
        web               ; the tubes
-
-       ;; Applications are complex and opinionated modules that transform Emacs
-       ;; toward a specific purpose. They may have additional dependencies and
-       ;; should be loaded late.
-       :app
-
-       :collab
 
        :config
        ;; The default module sets reasonable defaults for Emacs. It also
