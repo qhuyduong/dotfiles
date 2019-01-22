@@ -11,13 +11,7 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
-SPACESHIP_VI_MODE_SHOW=false
-SPACESHIP_CHAR_PREFIX="\uf296"
-SPACESHIP_CHAR_SYMBOL=" \uf0e7"
-SPACESHIP_CHAR_SUFFIX=(" ")
-SPACESHIP_BATTERY_SHOW=false
-SPACESHIP_PROMPT_ADD_NEWLINE=false
+ZSH_THEME="gnzh"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
