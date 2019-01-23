@@ -22,9 +22,11 @@
 (package! nov)
 (package! ob-async)
 (package! osx-trash)
+(package! prettier-js)
 (package! uuidgen)
 
 ;;; Disabled packages
 (package! coffee-mode :disable t)
+(package! eslintd-fix :disable t)
 (package! skewer-mode :disable t)
 (package! typescript-mode :disable t)
