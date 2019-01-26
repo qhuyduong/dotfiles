@@ -40,6 +40,7 @@
 ;; Icons in dired
 (after! dired
   (require 'font-lock+)
+  (setq font-lock-maximum-decoration 'default)
   ;; Suppress warning with GNU ls in Dired
   (setq dired-use-ls-dired nil)
   (add-hook 'dired-mode-hook #'all-the-icons-dired-mode)
