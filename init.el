@@ -53,11 +53,8 @@
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
-        +attach          ; custom attachment system
         +babel           ; running code in org
-        +capture         ; org-capture in and outside of Emacs
-        +export          ; Exporting org to whatever you want
-        +present)        ; Emacs for presentations
+        +capture)        ; org-capture in and outside of Emacs
        (ruby             ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +rbenv)          ; enable rbenv
        (sh +fish)        ; she sells (ba|z|fi)sh shells on the C xor
