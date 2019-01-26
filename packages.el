@@ -24,6 +24,7 @@
 
 ;;; Disabled packages
 (package! coffee-mode :disable t)
+(package! counsel-dash :disable t)
 (package! csv-mode :disable t)
 (package! dhall-mode :disable t)
 (package! eslintd-fix :disable t)

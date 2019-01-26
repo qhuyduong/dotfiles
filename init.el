@@ -3,7 +3,8 @@
 
 (doom! :feature
        eval              ; run code, run (also, repls)
-       (evil +everywhere); come to the dark side, we have cookies
+       (evil             ; come to the dark side, we have cookies
+        +everywhere)     ; enables evil globally
        file-templates    ; auto-snippets for empty files
        (lookup           ; helps you navigate your code and documentation
         +docsets)        ; ...or in Dash docsets locally
@@ -34,7 +35,6 @@
        window-select     ; visually switch windows
 
        :editor
-       multiple-cursors  ; editing in many places at once
 
        :emacs
        dired             ; making dired pretty [functional]
@@ -43,7 +43,6 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
-       gist              ; interacting with github gists
        macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
 
@@ -57,8 +56,6 @@
         +capture)        ; org-capture in and outside of Emacs
        (ruby             ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +rbenv)          ; enable rbenv
-       (sh +fish)        ; she sells (ba|z|fi)sh shells on the C xor
-       web               ; the tubes
 
        :config
        ;; The default module sets reasonable defaults for Emacs. It also
@@ -66,4 +63,3 @@
        ;; library, and additional ex commands for evil-mode. Use it as a
        ;; reference for your own modules.
        (default +bindings +snippets +evil-commands))
-
