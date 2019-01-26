@@ -17,7 +17,9 @@
 ;; Make titlebar match background color
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
-(add-hook 'window-setup-hook #'toggle-frame-fullscreen)
+
+;; Make Emacs fullscreen by default
+(add-to-list 'default-frame-alist '(fullscreen . fullboth))
 
 ;; Set command key as super on OSX
 (setq mac-command-modifier 'super)
