@@ -40,11 +40,21 @@
 ;; Icons in dired
 (after! dired
   (require 'font-lock+)
-  (setq font-lock-maximum-decoration 'default)
   ;; Suppress warning with GNU ls in Dired
   (setq dired-use-ls-dired nil)
   (add-hook 'dired-mode-hook #'all-the-icons-dired-mode)
   (diredp-toggle-find-file-reuse-dir t)
+  ;; Make diredp less colorful
+  (dolist (face '(diredp-dir-priv
+                  diredp-read-priv
+                  diredp-write-priv
+                  diredp-exec-priv
+                  diredp-file-suffix
+                  diredp-link-priv
+                  diredp-rare-priv
+                  diredp-number
+                  diredp-date-time))
+    (set-face-foreground face (face-foreground 'default)))
   (setq diredp-hide-details-initially-flag nil)
   (setq diredp-hide-details-propagate-flag nil))
 
