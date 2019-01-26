@@ -16,7 +16,8 @@
 
        :completion
        (company          ; the ultimate code completion backend
-        +auto)           ; as-you-type code completion
+        +auto            ; as-you-type code completion
+        +childframe)     ; enables displaying completion candidates in a child frame
        (ivy              ; a search engine for love and life
         +fuzzy           ; enables fuzzy search backend for ivy
         +childframe)     ; causes ivy to display in a floating child frame
