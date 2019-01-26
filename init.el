@@ -17,7 +17,8 @@
        (company          ; the ultimate code completion backend
         +auto)           ; as-you-type code completion
        (ivy              ; a search engine for love and life
-        +fuzzy)          ; enable fuzzy search backend for ivy
+        +fuzzy           ; enables fuzzy search backend for ivy
+        +childframe)     ; causes ivy to display in a floating child frame
 
        :ui
        doom              ; what makes DOOM look the way it does
