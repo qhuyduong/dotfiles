@@ -25,7 +25,16 @@
 
 ;;; Disabled packages
 (package! coffee-mode :disable t)
+(package! csv-mode :disable t)
+(package! dhall-mode :disable t)
 (package! eslintd-fix :disable t)
+(package! evil-easymotion :disable t)
 (package! evil-escape :disable t)
+(package! evil-vimish-fold :disable t)
+(package! evil-visualstar :disable t)
+(package! exato :disable t)
+(package! graphql-mode :disable t)
 (package! skewer-mode :disable t)
+(package! toml-mode :disable t)
 (package! typescript-mode :disable t)
+(package! vimrc-mode :disable t)
