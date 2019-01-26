@@ -28,5 +28,6 @@
 ;;; Disabled packages
 (package! coffee-mode :disable t)
 (package! eslintd-fix :disable t)
+(package! evil-escape :disable t)
 (package! skewer-mode :disable t)
 (package! typescript-mode :disable t)
