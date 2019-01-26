@@ -28,7 +28,6 @@
 (package! csv-mode :disable t)
 (package! dhall-mode :disable t)
 (package! eslintd-fix :disable t)
-(package! evil-easymotion :disable t)
 (package! evil-escape :disable t)
 (package! evil-vimish-fold :disable t)
 (package! evil-visualstar :disable t)

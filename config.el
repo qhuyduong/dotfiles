@@ -53,10 +53,10 @@
   (setq google-translate-default-target-language "vi"))
 
 ;; Keybindings
-;; Easier window navigation
 (map! "C-s-f"  #'toggle-frame-fullscreen
       "s-c"  #'evil-yank
       "s-v"  #'yank
+      ;; Easier window navigation
       :n "C-h"  #'evil-window-left
       :n "C-j"  #'evil-window-down
       :n "C-k"  #'evil-window-up
