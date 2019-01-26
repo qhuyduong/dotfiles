@@ -17,7 +17,6 @@
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
 (package! indent-guide)
 (package! lorem-ipsum)
-(package! nov)
 (package! ob-async)
 (package! osx-trash)
 (package! prettier-js)
