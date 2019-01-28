@@ -1,7 +1,7 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Emacs GUI settings
-(setq doom-font (font-spec :family "FuraCode Nerd Font" :size 14))
+(setq doom-font (font-spec :family "Iosevka" :size 16))
 (setq doom-theme 'doom-city-lights)
 (setq doom-localleader-key ",")
 (setq show-trailing-whitespace t)
@@ -191,7 +191,6 @@
 ;; Rspec doesn't use RVM!
 (after! rspec-mode
   (setq rspec-use-rvm nil))
-
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
 
