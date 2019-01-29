@@ -168,6 +168,9 @@
 (after! js2-mode
   (setq-default js-indent-level 2)
   (add-hook 'js2-mode-hook #'add-node-modules-path)
+  (add-hook 'js2-mode-hook #'run-import-js)
+  (add-hook 'js2-mode-hook #'(lambda ()
+                               (add-hook 'after-save-hook #'import-js-fix)))
   (add-hook 'js2-mode-hook #'prettier-js-mode))
 
 ;; json-mode
