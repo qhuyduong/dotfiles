@@ -240,3 +240,6 @@ Movement^^^^            Merge action^^           Other
   ("l" (evil-window-increase-width 10) "increase width by 10 columns")
   ("h" (evil-window-decrease-width 10) "decrease width by 10 columns")
   ("q" nil "quit"))
+
+(after! ivy
+  (assq-delete-all 'counsel-ag ivy-display-functions-alist))
