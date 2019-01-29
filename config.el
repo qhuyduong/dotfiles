@@ -198,6 +198,9 @@
 (after! flycheck
   (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
+(after! treemacs
+  (setq doom-treemacs-use-generic-icons nil))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 
 (defun counsel-rg-thing-at-point ()
