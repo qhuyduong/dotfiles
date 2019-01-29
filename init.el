@@ -48,6 +48,9 @@
        magit             ; a git porcelain for Emacs
 
        :lang
+       (cc               ; C/C++/Obj-C madness
+        +irony           ; enables Irony as a backend for code completion, syntax checking, and eldoc support
+        +rtags)          ; enables rtags integration
        data              ; config/data formats
        emacs-lisp        ; drown in parentheses
        javascript        ; all(hope(abandon(ye(who(enter(here))))))

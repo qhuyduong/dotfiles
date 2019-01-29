@@ -192,6 +192,9 @@
 (after! rspec-mode
   (setq rspec-use-rvm nil))
 
+(after! flycheck
+  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 
 (defun counsel-rg-thing-at-point ()
