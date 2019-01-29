@@ -68,10 +68,10 @@
       "s-c"  #'evil-yank
       "s-v"  #'yank
       ;; Easier window navigation
-      :n "C-h"  #'evil-window-left
-      :n "C-j"  #'evil-window-down
-      :n "C-k"  #'evil-window-up
-      :n "C-l"  #'evil-window-right
+      "C-h"  #'evil-window-left
+      "C-j"  #'evil-window-down
+      "C-k"  #'evil-window-up
+      "C-l"  #'evil-window-right
       (:leader
         :nv "x" nil
         (:prefix "/"
