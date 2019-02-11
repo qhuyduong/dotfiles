@@ -64,8 +64,7 @@
   (setq google-translate-default-target-language "vi"))
 
 ;; Keybindings
-(map! "C-s-f"  #'toggle-frame-fullscreen
-      "s-c"  #'evil-yank
+(map! "s-c"  #'evil-yank
       "s-v"  #'yank
       ;; Easier window navigation
       "C-h"  #'evil-window-left
