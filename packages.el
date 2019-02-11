@@ -19,6 +19,7 @@
 (package! indent-guide)
 (package! lorem-ipsum)
 (package! ob-async)
+(package! org-pivotal)
 (package! osx-trash)
 (package! prettier-js)
 (package! uuidgen)
