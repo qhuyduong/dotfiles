@@ -66,11 +66,6 @@
 ;; Keybindings
 (map! "s-c"  #'evil-yank
       "s-v"  #'yank
-      ;; Easier window navigation
-      "C-h"  #'evil-window-left
-      "C-j"  #'evil-window-down
-      "C-k"  #'evil-window-up
-      "C-l"  #'evil-window-right
       (:leader
         :nv "x" nil
         (:prefix "/"
@@ -200,6 +195,9 @@
 (after! treemacs
   (setq doom-treemacs-use-generic-icons nil))
 
+(after! ivy
+  (assq-delete-all 'counsel-ag ivy-display-functions-alist))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 
 (defun counsel-rg-thing-at-point ()
@@ -239,6 +237,3 @@ Movement^^^^            Merge action^^           Other
   ("l" (evil-window-increase-width 10) "increase width by 10 columns")
   ("h" (evil-window-decrease-width 10) "decrease width by 10 columns")
   ("q" nil "quit"))
-
-(after! ivy
-  (assq-delete-all 'counsel-ag ivy-display-functions-alist))
