@@ -15,7 +15,7 @@
 (package! dockerfile-mode)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
-(package! import-js)
+(package! import-js :recipe (:fetcher github :repo "qhuyduong/emacs-import-js" :files ("plugin/import-js.el")))
 (package! indent-guide)
 (package! lorem-ipsum)
 (package! ob-async)

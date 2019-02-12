@@ -76,8 +76,7 @@
         (:prefix "g"
           :desc "Resolve conflicts" :n "r" #'hydra-smerge/body)
         (:prefix "w"
-          :desc "evil-window-resize" :n "r" #'hydra-evil-window-resize/body
-          :desc "Switch to iTerm2" :n "i" #'osx-active-iterm2)
+          :desc "evil-window-resize" :n "r" #'hydra-evil-window-resize/body)
         (:prefix "i"
           :desc "UUIDv4" :n "u" #'uuidgen
           (:desc "lorem-ipsum" :prefix "l"
@@ -164,7 +163,7 @@
   (add-hook 'js2-mode-hook #'add-node-modules-path)
   (add-hook 'js2-mode-hook #'run-import-js)
   (add-hook 'js2-mode-hook #'(lambda ()
-                               (add-hook 'after-save-hook #'import-js-fix)))
+                               (add-hook 'before-save-hook #'import-js-fix nil t)))
   (add-hook 'js2-mode-hook #'prettier-js-mode))
 
 ;; json-mode
