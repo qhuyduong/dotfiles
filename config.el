@@ -197,6 +197,9 @@
 (after! ivy
   (assq-delete-all 'counsel-ag ivy-display-functions-alist))
 
+(after! vterm
+  (map! :map vterm-mode-map :i "C-c" #'vterm--self-insert))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 
 (defun counsel-rg-thing-at-point ()
