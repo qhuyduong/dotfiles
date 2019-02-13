@@ -1,8 +1,4 @@
-if [ -n "$INSIDE_EMACS" ]; then
-  export TERM=eterm-256color
-else
-  export TERM=xterm-24bit
-fi
+export TERM=xterm-24bit
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -125,9 +121,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --skip-vcs-ignores -f -g "
 eval "$(rbenv init -)"
 
 # Add pyenv to PATH
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+eval "$(pyenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 
 # Source NVM on shell starting up
@@ -147,19 +141,15 @@ export NVM_DIR="$HOME/.nvm"
 ########## Aliases ##########
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
-emacs() {
-  args=("$@")
-  if [[ "$args" != *'-gui'* ]]; then
-    args+=("-nw")
-  else
-    args=${args/-gui}
-  fi
-  /usr/local/bin/emacs $args
-}
-alias zshconfig='emacs ~/.zshrc'
-alias tmuxconfig='emacs ~/.tmux.conf'
-alias tmuxlocalconfig='emacs ~/.tmux.conf.local'
-alias nvimconfig='nvim ~/.config/nvim/init.vim'
 
 ########## Export variables ##########
 export EDITOR='nvim'
+
+########## Emacs term configuration ##########
+if [ -n "$INSIDE_EMACS" ]; then
+    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=2'
+    export FZF_DEFAULT_OPTS="--height 20% --reverse --bind=\
+ctrl-j:accept,ctrl-k:kill-line,tab:toggle-up,btab:toggle-down,\
+ctrl-y:execute('echo {} | xclip -selection clipboard')+abort"
+    export TERM=xterm-256color
+fi
