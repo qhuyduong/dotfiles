@@ -48,13 +48,8 @@ This function should only modify configuration layer settings."
      emoji
      osx
      imenu-list
-     (shell :variables
-            shell-default-full-span t
-            shell-default-position 'full
-            shell-default-shell 'multi-term)
      spell-checking
      syntax-checking
-     tmux
 
      ;;;;;;;;;;;;;;;;;;;;
      ;; SVC
@@ -118,13 +113,10 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages
    '(
      all-the-icons-dired
-     beacon
      company-flow
-     (eterm-256color :location (recipe :fetcher github
-                                       :repo "dieggsy/eterm-256color"
-                                       :branch "devel"))
      osx-clipboard
      pretty-mode
+     evil-easymotion
 
      ;;;;;;;;;;;;;;;;;;;;
      ;; Languages
@@ -133,10 +125,6 @@ This function should only modify configuration layer settings."
      apib-mode
 
      ;; Javascript
-     (flow-js2-mode :location (recipe :fetcher github
-                                      :repo "Fuco1/flow-js2-mode"))
-     flow-minor-mode
-     flycheck-flow
      import-js)
 
    ;; A list of packages that cannot be updated.
@@ -236,7 +224,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner "~/.emacs.d/core/banners/img/spacemacs_better_logo.png"
+   ;; dotspacemacs-startup-banner "~/.emacs.d/core/banners/img/spacemacs_better_logo.png"
 
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
@@ -269,7 +257,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(all-the-icons :separator arrow :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(spacemacs :separator arrow :separator-scale 1.5)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -577,14 +565,8 @@ before packages are loaded."
   ;; Use icomplete over iswitchb
   (icomplete-mode 1)
 
-  ;; Enable beacon everywhere
-  (beacon-mode 1)
-
   ;; Enable fancy-battery by default
   (fancy-battery-mode)
-
-  ;; Reduce beacon delay time
-  (setq-default beacon-blink-delay 0.1)
 
   ;; Use git executable from Homebrew
   (setq-default magit-git-executable "/usr/local/bin/git")
@@ -626,18 +608,6 @@ before packages are loaded."
     (define-key helm-map (kbd "<right>") 'forward-char)
     (define-key helm-map (kbd "C-h") 'delete-backward-char))
 
-  ;; Multi-term configs
-  (require 'eterm-256color)
-
-  (with-eval-after-load 'term
-    (add-hook 'term-mode-hook #'eterm-256color-mode)
-    (add-hook 'term-mode-hook
-              (lambda ()
-                (add-to-list 'term-bind-key-alist '("C-c C-n" . multi-term-next))
-                (add-to-list 'term-bind-key-alist '("C-c C-p" . multi-term-prev))
-                (add-to-list 'term-bind-key-alist '("C-c C-j" . term-line-mode))
-                (add-to-list 'term-bind-key-alist '("C-c C-k" . term-char-mode)))))
-
   ;; Languages
   ;; API Blueprint
   (autoload 'apib-mode "apib-mode"
@@ -645,24 +615,17 @@ before packages are loaded."
   (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
 
   ;; Javascript
-  (require 'flow-js2-mode)
-
   (with-eval-after-load 'company
-    (add-to-list 'company-backends 'company-flow)
     (define-key company-active-map (kbd "M-n") nil)
     (define-key company-active-map (kbd "M-p") nil)
     (define-key company-active-map (kbd "C-n") #'company-select-next)
     (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
   (with-eval-after-load 'js2-mode
-    (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
-    (add-hook 'js2-mode-hook 'prettier-js-mode)
-    (evil-leader/set-key-for-mode 'js2-mode "i" 'import-js-import))
+    (add-hook 'js2-mode-hook 'prettier-js-mode))
 
   (with-eval-after-load 'rjsx-mode
-    (add-hook 'rjsx-mode-hook 'flow-minor-enable-automatically)
-    (add-hook 'rjsx-mode-hook 'prettier-js-mode)
-    (evil-leader/set-key-for-mode 'rjsx-mode "i" 'import-js-import))
+    (add-hook 'rjsx-mode-hook 'prettier-js-mode))
 
   (with-eval-after-load 'web-mode
     (add-hook 'web-mode-hook
@@ -727,7 +690,8 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(org-sync-snippets org-sync ghub+ yasnippet-snippets yapfify yaml-mode ws-butler winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toc-org tagedit symon string-inflection spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode projectile-rails pretty-mode prettier-js popwin pippel pipenv pip-requirements persp-mode password-generator paradox ox-reveal ox-hugo ox-gfm overseer osx-trash osx-dictionary osx-clipboard orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nord-theme neotree nameless multi-term move-text mmm-mode minitest markdown-toc magithub magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode live-py-mode link-hint launchctl json-navigator js2-refactor js-doc indent-guide importmagic import-js impatient-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-pos-tip flycheck-flow flx-ido flow-minor-mode flow-js2-mode fill-column-indicator feature-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eterm-256color eshell-z eshell-prompt-extras esh-help enh-ruby-mode emojify emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline dockerfile-mode docker diminish diff-hl dactyl-mode cython-mode counsel-projectile copy-as-format company-web company-tern company-statistics company-flow company-emoji company-anaconda column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote beacon auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile apiwrap apib-mode all-the-icons-dired aggressive-indent add-node-modules-path ace-window ace-link ace-jump-helm-line ac-ispell)))
+   (quote
+    (evil-easymotion yasnippet-snippets yapfify yaml-mode ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package treemacs-projectile treemacs-evil toc-org tagedit symon string-inflection spaceline-all-the-icons smeargle slim-mode shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode projectile-rails pretty-mode prettier-js popwin pippel pipenv pip-requirements persp-mode password-generator paradox ox-reveal ox-hugo ox-gfm overseer osx-trash osx-dictionary osx-clipboard orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file nord-theme nameless multi-term move-text mmm-mode minitest markdown-toc magithub magit-svn magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode link-hint launchctl json-navigator js2-refactor js-doc indent-guide importmagic import-js impatient-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy forge font-lock+ flyspell-correct-helm flycheck-pos-tip flycheck-flow flx-ido flow-minor-mode flow-js2-mode fill-column-indicator feature-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eterm-256color eshell-z eshell-prompt-extras esh-help enh-ruby-mode emojify emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline dockerfile-mode docker diminish diff-hl dactyl-mode cython-mode counsel-projectile copy-as-format company-web company-tern company-statistics company-flow company-emoji company-anaconda column-enforce-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote beacon auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile apib-mode all-the-icons-dired aggressive-indent add-node-modules-path ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
