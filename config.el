@@ -186,6 +186,7 @@
 
 ;; Rspec doesn't use RVM!
 (after! rspec-mode
+  (add-hook 'rspec-compilation-mode-hook #'inf-ruby-switch-setup)
   (setq rspec-use-rvm nil))
 
 (after! flycheck
