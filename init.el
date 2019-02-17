@@ -45,7 +45,8 @@
 
        :tools
        macos             ; MacOS-specific commands
-       magit             ; a git porcelain for Emacs
+       (magit            ; a git porcelain for Emacs
+        +forge)          ; github integration to magit
 
        :lang
        (cc               ; C/C++/Obj-C madness
