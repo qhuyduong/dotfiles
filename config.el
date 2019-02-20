@@ -189,9 +189,6 @@
   (add-hook 'rspec-compilation-mode-hook #'inf-ruby-switch-setup)
   (setq rspec-use-rvm nil))
 
-(after! flycheck
-  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
-
 (after! treemacs
   (setq doom-treemacs-use-generic-icons nil))
 
