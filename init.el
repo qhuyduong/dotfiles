@@ -18,9 +18,9 @@
        (company          ; the ultimate code completion backend
         +auto            ; as-you-type code completion
         +childframe)     ; enables displaying completion candidates in a child frame
-       (ivy              ; a search engine for love and life
-        +fuzzy           ; enables fuzzy search backend for ivy
-        +childframe)     ; causes ivy to display in a floating child frame
+       (helm             ; the *other* search engine for love and life
+        +fuzzy           ; enables fuzzy search backend for helm
+        +childframe)     ; causes helm to display in a floating child frame
 
        :ui
        doom              ; what makes DOOM look the way it does

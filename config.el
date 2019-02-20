@@ -69,7 +69,7 @@
       (:leader
         :nv "x" nil
         (:prefix "/"
-          :desc "Search this text in project" :nv "*"  #'counsel-rg-thing-at-point)
+          :desc "Search this text in project" :nv "*"  #'helm-rg-thing-at-point)
         (:prefix "p"
           :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test
           :desc "Regenerate tags" :n "G" #'projectile-regenerate-tags)
@@ -195,17 +195,14 @@
 (after! treemacs
   (setq doom-treemacs-use-generic-icons nil))
 
-(after! ivy
-  (assq-delete-all 'counsel-ag ivy-display-functions-alist))
-
-(after! vterm
-  (map! :map vterm-mode-map :i "C-c" #'vterm--self-insert))
+(after! helm
+  (setq +helm-posframe-text-scale nil))
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
 
-(defun counsel-rg-thing-at-point ()
+(defun helm-rg-thing-at-point ()
   (interactive)
-  (counsel-rg (ivy-thing-at-point)))
+  (helm-rg (helm-rg--get-thing-at-pt)))
 
 (defhydra hydra-smerge (:hint nil)
   "
