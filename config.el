@@ -69,7 +69,7 @@
       (:leader
         :nv "x" nil
         (:prefix "/"
-          :desc "Search this text in project" :nv "*"  #'helm-rg-thing-at-point)
+          :desc "Search this text in project" :nv "*"  #'helm-projectile-ag)
         (:prefix "p"
           :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test
           :desc "Regenerate tags" :n "G" #'projectile-regenerate-tags)
@@ -193,14 +193,10 @@
   (setq doom-treemacs-use-generic-icons nil))
 
 (after! helm
+  (setq helm-ag-insert-at-point 'symbol)
   (setq +helm-posframe-text-scale nil))
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
-
-(defun helm-rg-thing-at-point ()
-  (interactive)
-  (helm-rg (helm-rg--get-thing-at-pt)))
-
 (defhydra hydra-smerge (:hint nil)
   "
 Movement^^^^            Merge action^^           Other
