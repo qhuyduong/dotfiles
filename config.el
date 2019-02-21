@@ -93,11 +93,7 @@
             :desc "HTML" :nv "h" #'copy-as-format-html
             :desc "Markdown" :nv "m" #'copy-as-format-markdown
             :desc "Org" :nv "o" #'copy-as-format-org
-            :desc "Slack" :nv "s" #'copy-as-format-slack)))
-      (:localleader
-        :prefix "d"
-        :nv "g" #'dumb-jump-go
-        :nv "G" #'dumb-jump-go-other-window))
+            :desc "Slack" :nv "s" #'copy-as-format-slack))))
 
 ;; Emacs sometimes registers C-s-f as this weird keycode
 (global-set-key (kbd "<C-s-268632070>") #'toggle-frame-fullscreen)
@@ -164,7 +160,11 @@
   (add-hook 'js2-mode-hook #'run-import-js)
   (add-hook 'js2-mode-hook #'(lambda ()
                                (add-hook 'before-save-hook #'import-js-fix nil t)))
-  (add-hook 'js2-mode-hook #'prettier-js-mode))
+  (add-hook 'js2-mode-hook #'prettier-js-mode)
+  (map! :map js2-mode-map (:localleader
+                            :prefix "d"
+                            :nv "g" #'dumb-jump-go
+                            :nv "G" #'dumb-jump-go-other-window)))
 
 ;; json-mode
 (after! json-mode
@@ -195,6 +195,12 @@
 (after! helm
   (setq helm-ag-insert-at-point 'symbol)
   (setq +helm-posframe-text-scale nil))
+
+(after! enh-ruby-mode
+  (map! :map enh-ruby-mode-map (:localleader
+                                 :prefix "d"
+                                 :nv "g" #'dumb-jump-go
+                                 :nv "G" #'dumb-jump-go-other-window)))
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
