@@ -55,7 +55,8 @@
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
         +babel           ; running code in org
-        +capture)        ; org-capture in and outside of Emacs
+        +capture         ; org-capture in and outside of Emacs
+        +present)        ; Emacs for presentations
        (ruby             ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +rbenv)          ; enable rbenv
        web               ; the tubes
