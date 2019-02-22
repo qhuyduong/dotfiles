@@ -42,7 +42,6 @@
   (require 'font-lock+)
   ;; Suppress warning with GNU ls in Dired
   (setq dired-use-ls-dired nil)
-  (add-hook 'dired-mode-hook #'all-the-icons-dired-mode)
   (diredp-toggle-find-file-reuse-dir t)
   ;; Make diredp less colorful
   (dolist (face '(diredp-dir-priv
@@ -121,7 +120,7 @@
   (add-to-list 'org-modules 'org-drill)
   (advice-add 'org-babel-execute-src-block :around 'ob-async-org-babel-execute-src-block)
   (setq org-plantuml-jar-path "~/.local/bin/plantuml.jar")
-  (remove-hook 'org-mode-hook #'org-indent-mode)
+  (remove-hook! org-mode #'org-indent-mode)
   (setq org-startup-indented nil)
   (setq org-directory (expand-file-name "~/orgs")
         org-agenda-files (list org-directory))
@@ -148,7 +147,7 @@
 (def-package! flycheck-apib
   :when (featurep! :feature syntax-checker)
   :after apib-mode
-  :config (add-hook 'apib-mode-hook #'flycheck-apib-setup))
+  :config (add-hook! apib-mode #'flycheck-apib-setup))
 
 ;; apib-mode
 (add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
@@ -156,8 +155,7 @@
 ;; js2-mode
 (after! js2-mode
   (setq-default js-indent-level 2)
-  (add-hook 'js2-mode-hook #'add-node-modules-path)
-  (add-hook 'js2-mode-hook #'prettier-js-mode)
+  (add-hook! js2-mode #'(add-node-modules-path prettier-js-mode))
   (map! :map js2-mode-map (:localleader
                             :prefix "d"
                             :nv "g" #'dumb-jump-go
@@ -183,7 +181,7 @@
 
 ;; Rspec doesn't use RVM!
 (after! rspec-mode
-  (add-hook 'rspec-compilation-mode-hook #'inf-ruby-switch-setup)
+  (add-hook! rspec-compilation-mode #'inf-ruby-switch-setup)
   (setq rspec-use-rvm nil))
 
 (after! treemacs
