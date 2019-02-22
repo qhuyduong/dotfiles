@@ -102,6 +102,7 @@
 (after! evil
   (evil-define-text-object evil-inner-buffer (count &optional beg end type)
     (list (point-min) (point-max)))
+  (add-to-list 'evil-motion-state-modes #'process-menu-mode)
   (map! :map evil-inner-text-objects-map "g" 'evil-inner-buffer
         :map evil-motion-state-map "," nil))
 
