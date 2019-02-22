@@ -156,10 +156,10 @@
 (after! js2-mode
   (setq-default js-indent-level 2)
   (add-hook! js2-mode #'(add-node-modules-path prettier-js-mode))
-  (map! :map js2-mode-map (:localleader
-                            :prefix "d"
-                            :nv "g" #'dumb-jump-go
-                            :nv "G" #'dumb-jump-go-other-window)))
+  (map! :mode js2-mode (:localleader
+                         :prefix "d"
+                         :nv "g" #'dumb-jump-go
+                         :nv "G" #'dumb-jump-go-other-window)))
 
 ;; json-mode
 (after! json-mode
@@ -192,10 +192,10 @@
   (setq +helm-posframe-text-scale nil))
 
 (after! enh-ruby-mode
-  (map! :map enh-ruby-mode-map (:localleader
-                                 :prefix "d"
-                                 :nv "g" #'dumb-jump-go
-                                 :nv "G" #'dumb-jump-go-other-window)))
+  (map! :mode enh-ruby-mode (:localleader
+                              :prefix "d"
+                              :nv "g" #'dumb-jump-go
+                              :nv "G" #'dumb-jump-go-other-window)))
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
