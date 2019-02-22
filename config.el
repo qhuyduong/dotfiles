@@ -157,9 +157,6 @@
 (after! js2-mode
   (setq-default js-indent-level 2)
   (add-hook 'js2-mode-hook #'add-node-modules-path)
-  (add-hook 'js2-mode-hook #'run-import-js)
-  (add-hook 'js2-mode-hook #'(lambda ()
-                               (add-hook 'before-save-hook #'import-js-fix nil t)))
   (add-hook 'js2-mode-hook #'prettier-js-mode)
   (map! :map js2-mode-map (:localleader
                             :prefix "d"
