@@ -40,8 +40,6 @@
 ;; Icons in dired
 (after! dired
   (require 'font-lock+)
-  ;; Suppress warning with GNU ls in Dired
-  (setq dired-use-ls-dired nil)
   (diredp-toggle-find-file-reuse-dir t)
   ;; Make diredp less colorful
   (dolist (face '(diredp-dir-priv
