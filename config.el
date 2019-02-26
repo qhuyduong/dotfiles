@@ -196,6 +196,9 @@
                               :nv "g" #'dumb-jump-go
                               :nv "G" #'dumb-jump-go-other-window)))
 
+(after! company-box
+  (setq company-box-doc-delay 5))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
   "
