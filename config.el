@@ -63,6 +63,11 @@
 ;; Keybindings
 (map! "s-c"  #'evil-yank
       "s-v"  #'yank
+      ;; Easier window navigation
+      "C-h"  #'evil-window-left
+      "C-j"  #'evil-window-down
+      "C-k"  #'evil-window-up
+      "C-l"  #'evil-window-right
       (:leader
         :nv "x" nil
         (:prefix "/"
