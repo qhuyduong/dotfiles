@@ -13,6 +13,7 @@
 (package! dired+ :recipe (:fetcher github :repo "emacsmirror/dired-plus"))
 (package! docker-compose-mode)
 (package! dockerfile-mode)
+(package! doom-modeline)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
 (package! import-js :recipe (:fetcher github :repo "qhuyduong/emacs-import-js" :files ("plugin/import-js.el")))
