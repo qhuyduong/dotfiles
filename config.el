@@ -6,6 +6,7 @@
 (setq doom-localleader-key ",")
 (setq show-trailing-whitespace t)
 (setq display-line-numbers-type 'relative)
+(setq doom-modeline-major-mode-color-icon t)
 (add-hook 'after-init-hook 'doom-modeline-init)
 
 ;; Use fancy icons for neotree
