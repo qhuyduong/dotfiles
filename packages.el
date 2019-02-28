@@ -23,6 +23,7 @@
 (package! org-pivotal)
 (package! osx-trash)
 (package! prettier-js)
+(package! shackle)
 (package! uuidgen)
 
 ;;; Disabled packages

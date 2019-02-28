@@ -186,9 +186,10 @@
                      (fringe-lib-load fringe-lib-slash)
                      (fringe-lib-load fringe-lib-backslash))))
 
-;; Rspec doesn't use RVM!
 (after! rspec-mode
-  (add-hook! rspec-compilation-mode #'inf-ruby-switch-setup)
+  (add-hook! rspec-compilation-mode #'(inf-ruby-switch-setup shackle-mode))
+  (setq shackle-rules '(("\\`\\*rspec-compilation.*?\\*\\'" :regexp t :align right :size 0.3)))
+  ;; Rspec doesn't use RVM!
   (setq rspec-use-rvm nil))
 
 (after! treemacs
