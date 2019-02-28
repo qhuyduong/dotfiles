@@ -69,6 +69,8 @@
       :nvi "C-j"  #'evil-window-down
       :nvi "C-k"  #'evil-window-up
       :nvi "C-l"  #'evil-window-right
+      :nv "C-S-k" #'move-line-up
+      :nv "C-S-j" #'move-line-down
       (:leader
         :nv "x" nil
         (:prefix "/"
