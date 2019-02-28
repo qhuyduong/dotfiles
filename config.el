@@ -7,6 +7,9 @@
 (setq show-trailing-whitespace t)
 (setq display-line-numbers-type 'relative)
 (setq doom-modeline-major-mode-color-icon t)
+(setq doom-modeline-enable-word-count t)
+(setq doom-modeline-column-zero-based t)
+(setq column-number-mode t)
 (add-hook 'after-init-hook 'doom-modeline-init)
 
 ;; Use fancy icons for neotree
