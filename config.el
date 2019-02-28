@@ -191,7 +191,19 @@
   (add-hook! rspec-compilation-mode #'(inf-ruby-switch-setup shackle-mode))
   (setq shackle-rules '(("\\`\\*rspec-compilation.*?\\*\\'" :regexp t :align right :size 0.3)))
   ;; Rspec doesn't use RVM!
-  (setq rspec-use-rvm nil))
+  (setq rspec-use-rvm nil)
+  (map! :localleader
+        :mode (ruby-mode enh-ruby-mode)
+        :prefix "t"
+        "r" #'rspec-rerun
+        "a" #'rspec-verify-all
+        "v" #'rspec-verify
+        "e" #'rspec-toggle-example-pendingness
+        "f" #'rspec-verify-method
+        "l" #'rspec-run-last-failed
+        "m" #'rspec-verify-matching
+        "t" #'rspec-toggle-spec-and-target-find-example
+        "T" #'rspec-toggle-spec-and-target))
 
 (after! treemacs
   (setq doom-treemacs-use-generic-icons nil))
