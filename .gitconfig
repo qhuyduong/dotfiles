@@ -13,3 +13,5 @@
 	excludesfile = /Users/qhuyduong/.gitignore_global
 [github]
 	user = qhuyduong
+[merge]
+	conflictStyle = diff3
