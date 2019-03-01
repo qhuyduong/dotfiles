@@ -75,29 +75,33 @@
       :nvi "C-l"  #'evil-window-right
       :nv "C-S-k" #'move-line-up
       :nv "C-S-j" #'move-line-down
+
       (:leader
-        :nv "x" nil
+        :nv "x" nil ;; Disable x prefix for scratch buffer
+
         (:prefix "/"
           :desc "Search this text in project" :nv "*"  #'helm-projectile-ag)
-        (:prefix "p"
-          :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test
-          :desc "Regenerate tags" :n "G" #'projectile-regenerate-tags)
+
         (:prefix "g"
           :desc "Resolve conflicts" :n "r" #'hydra-smerge/body)
+
         (:prefix "w"
           :desc "evil-window-resize" :n "r" #'hydra-evil-window-resize/body)
+
         (:prefix "i"
           :desc "UUIDv4" :n "u" #'uuidgen
-          (:desc "lorem-ipsum" :prefix "l"
+          (:prefix ("l" . "lorem-ipsum")
             :desc "list" :n "l" #'lorem-ipsum-insert-list
             :desc "sentences" :n "s" #'lorem-ipsum-insert-sentences
             :desc "paragraphs" :n "p" #'lorem-ipsum-insert-paragraphs)
           :desc "Emoji" :n "e" #'emoji-cheat-sheet-plus-insert)
+
         (:prefix "t"
           :desc "Truncate lines" :n "t" #'toggle-truncate-lines)
-        (:desc "text-transform" :prefix "x"
+
+        (:prefix ("x" . "text-transform")
           :desc "Translate this text" :nv "g" #'google-translate-at-point
-          (:desc "copy-as-format" :prefix "f"
+          (:prefix ("f" . "copy-as-format")
             :desc "Github" :nv "g" #'copy-as-format-github
             :desc "HTML" :nv "h" #'copy-as-format-html
             :desc "Markdown" :nv "m" #'copy-as-format-markdown
@@ -167,10 +171,15 @@
 (after! js2-mode
   (setq-default js-indent-level 2)
   (add-hook! js2-mode #'(add-node-modules-path prettier-js-mode))
-  (map! :mode js2-mode (:localleader
-                         :prefix "d"
-                         :nv "g" #'dumb-jump-go
-                         :nv "G" #'dumb-jump-go-other-window)))
+  (map! :mode js2-mode
+        (:leader
+          (:prefix "p"
+            :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test
+            :desc "Regenerate tags" :n "G" #'projectile-regenerate-tags))
+        (:localleader
+          (:prefix ("d" . "dumb-jump")
+            :nv "g" #'dumb-jump-go
+            :nv "G" #'dumb-jump-go-other-window))))
 
 ;; json-mode
 (after! json-mode
@@ -216,10 +225,15 @@
   (setq +helm-posframe-text-scale nil))
 
 (after! enh-ruby-mode
-  (map! :mode enh-ruby-mode (:localleader
-                              :prefix "d"
-                              :nv "g" #'dumb-jump-go
-                              :nv "G" #'dumb-jump-go-other-window)))
+  (map! :mode enh-ruby-mode
+        (:leader
+          (:prefix "p"
+            :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test
+            :desc "Regenerate tags" :n "G" #'projectile-regenerate-tags))
+        (:localleader
+          (:prefix ("d" . "dumb-jump")
+            :nv "g" #'dumb-jump-go
+            :nv "G" #'dumb-jump-go-other-window))))
 
 (after! company-box
   (setq company-box-doc-delay 5))
