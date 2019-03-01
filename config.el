@@ -221,6 +221,11 @@
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test
             :desc "Regenerate tags" :n "G" #'projectile-regenerate-tags))
         (:localleader
+          (:prefix ("b" . "bundle"))
+          (:prefix ("k" . "rake"))
+          (:prefix ("r" . "robe"))
+          (:prefix ("s" . "inf-ruby"))
+          (:prefix ("t" . "rspec"))
           (:prefix ("d" . "dumb-jump")
             :nv "g" #'dumb-jump-go
             :nv "G" #'dumb-jump-go-other-window))))
