@@ -131,6 +131,8 @@
 
 ;; lang/org
 (after! org
+  (map! "C-c c" #'org-capture
+        "C-c n p" #'org-projectile-project-todo-completing-read)
   (set-face-attribute 'org-headline-done nil :strike-through t)
   (add-to-list 'org-modules 'org-drill)
   (advice-add 'org-babel-execute-src-block :around 'ob-async-org-babel-execute-src-block)
@@ -229,6 +231,11 @@
 (after! all-the-icons
   (add-to-list 'all-the-icons-mode-icon-alist
                '(enh-ruby-mode all-the-icons-alltheicon "ruby-alt" :face all-the-icons-lred)))
+
+(after! org-projectile
+  (setq org-projectile-projects-file "~/orgs/inbox.org")
+  (push (org-projectile-project-todo-entry) org-capture-templates)
+  (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
