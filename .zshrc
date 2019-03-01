@@ -145,11 +145,3 @@ alias ll='ls -lha'
 ########## Export variables ##########
 export EDITOR='nvim'
 
-########## Emacs term configuration ##########
-if [ -n "$INSIDE_EMACS" ]; then
-    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=2'
-    export FZF_DEFAULT_OPTS="--height 20% --reverse --bind=\
-ctrl-j:accept,ctrl-k:kill-line,tab:toggle-up,btab:toggle-down,\
-ctrl-y:execute('echo {} | xclip -selection clipboard')+abort"
-    export TERM=xterm-256color
-fi
