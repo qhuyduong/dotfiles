@@ -80,7 +80,7 @@
         :nv "x" nil ;; Disable x prefix for scratch buffer
 
         (:prefix "/"
-          :desc "Search this text in project" :nv "*"  #'helm-projectile-ag)
+          :desc "Search this text in project" :nv "*"  #'counsel-projectile-ag)
 
         (:prefix "g"
           :desc "Resolve conflicts" :n "r" #'hydra-smerge/body)
@@ -213,6 +213,9 @@
 (after! helm
   (setq helm-ag-insert-at-point 'symbol)
   (setq +helm-posframe-text-scale nil))
+
+(after! ivy
+  (setq counsel-projectile-ag-initial-input '(ivy-thing-at-point)))
 
 (after! enh-ruby-mode
   (map! :mode enh-ruby-mode
