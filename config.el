@@ -221,6 +221,7 @@
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test
             :desc "Regenerate tags" :n "G" #'projectile-regenerate-tags))
         (:localleader
+          (:desc "Toggle block" "}" #'enh-ruby-toggle-block)
           (:prefix ("b" . "bundle"))
           (:prefix ("k" . "rake"))
           (:prefix ("r" . "robe"))
