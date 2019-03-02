@@ -45,6 +45,7 @@
        (flycheck         ; tasing you for every semicolon you forget
         +childframe)     ; use childframes for error popups (Emacs 26+ only)
        flyspell          ; tasing you for misspelling mispelling
+       lsp               ; LSP client
        macos             ; MacOS-specific commands
        (magit            ; a git porcelain for Emacs
         +forge)          ; github integration to magit
