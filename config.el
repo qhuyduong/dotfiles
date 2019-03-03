@@ -248,11 +248,10 @@
                     :major-modes '(reason-mode)
                     :priority -1
                     :server-id 'reason-ls))
-  (setq lsp-eldoc-render-all t))
+  (setq lsp-eldoc-render-all nil))
 
 (after! lsp-ui
-  (setq lsp-ui-flycheck-enable nil)
-  (setq lsp-ui-sideline-enable nil)
+  (setq lsp-ui-sideline-show-hover nil)
   (setq lsp-ui-doc-enable nil))
 
 (after! web-mode
