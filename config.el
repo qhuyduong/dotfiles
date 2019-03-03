@@ -176,12 +176,7 @@
   (map! :mode js2-mode
         (:leader
           (:prefix "p"
-            :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test
-            :desc "Regenerate tags" :n "G" #'projectile-regenerate-tags))
-        (:localleader
-          (:prefix ("d" . "dumb-jump")
-            :nv "g" #'dumb-jump-go
-            :nv "G" #'dumb-jump-go-other-window))))
+            :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
 
 ;; json-mode
 (after! json-mode
@@ -221,18 +216,14 @@
   (map! :mode enh-ruby-mode
         (:leader
           (:prefix "p"
-            :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test
-            :desc "Regenerate tags" :n "G" #'projectile-regenerate-tags))
+            :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))
         (:localleader
           (:desc "Toggle block" "}" #'enh-ruby-toggle-block)
           (:prefix ("b" . "bundle"))
           (:prefix ("k" . "rake"))
           (:prefix ("r" . "robe"))
           (:prefix ("s" . "inf-ruby"))
-          (:prefix ("t" . "rspec"))
-          (:prefix ("d" . "dumb-jump")
-            :nv "g" #'dumb-jump-go
-            :nv "G" #'dumb-jump-go-other-window))))
+          (:prefix ("t" . "rspec")))))
 
 (after! all-the-icons
   (add-to-list 'all-the-icons-mode-icon-alist
