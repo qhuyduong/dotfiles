@@ -239,14 +239,12 @@
                                 (add-hook 'before-save-hook #'lsp-format-buffer nil t))))
 
 (after! lsp-mode
-  (setq lsp-prefer-flymake nil)
   (setq lsp-eldoc-render-all t))
 
 (after! lsp-ui
   (setq lsp-ui-flycheck-enable nil)
   (setq lsp-ui-sideline-enable nil)
-  (setq lsp-ui-doc-enable nil)
-  (setq lsp-ui-peek-enable nil))
+  (setq lsp-ui-doc-enable nil))
 
 (after! web-mode
   (add-hook! (html-mode css-mode sass-mode less-css-mode web-mode) #'lsp!))
