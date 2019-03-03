@@ -247,6 +247,9 @@
   (add-hook 'reason-mode-hook (lambda ()
                                 (add-hook 'before-save-hook #'lsp-format-buffer nil t))))
 
+(after! lsp-mode
+  (setq lsp-eldoc-render-all t))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
   "
