@@ -257,6 +257,9 @@
   (setq lsp-ui-doc-enable nil)
   (setq lsp-ui-peek-enable nil))
 
+(after! web-mode
+  (add-hook! (html-mode css-mode sass-mode less-css-mode web-mode) #'lsp!))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
   "
