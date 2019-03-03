@@ -234,9 +234,6 @@
             :nv "g" #'dumb-jump-go
             :nv "G" #'dumb-jump-go-other-window))))
 
-(after! company-box
-  (setq company-box-doc-delay 5))
-
 (after! all-the-icons
   (add-to-list 'all-the-icons-mode-icon-alist
                '(enh-ruby-mode all-the-icons-alltheicon "ruby-alt" :face all-the-icons-lred)))
