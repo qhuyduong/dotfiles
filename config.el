@@ -239,6 +239,14 @@
                                 (add-hook 'before-save-hook #'lsp-format-buffer nil t))))
 
 (after! lsp-mode
+  (ht-set! lsp--default-notification-handlers "client/registerCapability" 'ignore)
+  (setq lsp-reason-lang-server-command '("reason-language-server"))
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection
+                                     (-const lsp-reason-lang-server-command))
+                    :major-modes '(reason-mode)
+                    :priority -1
+                    :server-id 'reason-ls))
   (setq lsp-eldoc-render-all t))
 
 (after! lsp-ui
