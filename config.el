@@ -213,6 +213,7 @@
   (setq counsel-projectile-ag-initial-input '(ivy-thing-at-point)))
 
 (after! enh-ruby-mode
+  (setq-hook! enh-ruby-mode flycheck-checker 'ruby-rubocop)
   (map! :mode enh-ruby-mode
         (:leader
           (:prefix "p"
