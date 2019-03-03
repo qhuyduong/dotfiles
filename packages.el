@@ -23,6 +23,7 @@
 (package! org-projectile)
 (package! osx-trash)
 (package! prettier-js)
+(package! reason-mode)
 (package! shackle)
 (package! uuidgen)
 
