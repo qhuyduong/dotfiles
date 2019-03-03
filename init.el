@@ -55,7 +55,8 @@
        emacs-lisp        ; drown in parentheses
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
        markdown          ; writing docs for people to ignore
-       ocaml             ; an objective camel
+       (ocaml            ; an objective camel
+        +lsp)            ; enable LSP support
        (org              ; organize your plain life in plain text
         +attach          ; custom attachment system
         +babel           ; running code in org
