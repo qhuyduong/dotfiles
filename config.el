@@ -203,6 +203,11 @@
   (setq rspec-use-rvm nil))
 
 (after! treemacs
+  (map! :mode treemacs-mode
+        "C-h"  #'evil-window-left
+        "C-j"  #'evil-window-down
+        "C-k"  #'evil-window-up
+        "C-l"  #'evil-window-right)
   (setq doom-treemacs-use-generic-icons nil))
 
 (after! helm
