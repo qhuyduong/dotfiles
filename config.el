@@ -10,7 +10,7 @@
 (setq doom-modeline-enable-word-count t)
 (setq doom-modeline-column-zero-based t)
 (setq column-number-mode t)
-(add-hook 'after-init-hook 'doom-modeline-init)
+(add-hook! 'after-init-hook '(doom-modeline-init fancy-battery-mode))
 
 ;; Use fancy icons for neotree
 (setq doom-neotree-file-icons t)
