@@ -244,6 +244,7 @@
   (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
 
 (after! reason-mode
+  (add-hook! reason-mode #'lsp)
   (add-hook 'reason-mode-hook (lambda ()
                                 (add-hook 'before-save-hook #'lsp-format-buffer nil t))))
 
