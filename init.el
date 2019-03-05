@@ -53,8 +53,7 @@
        :lang
        data              ; config/data formats
        emacs-lisp        ; drown in parentheses
-       (javascript       ; all(hope(abandon(ye(who(enter(here))))))
-        +lsp)            ; enable LSP
+       javascript       ; all(hope(abandon(ye(who(enter(here))))))
        markdown          ; writing docs for people to ignore
        (ocaml            ; an objective camel
         +lsp)            ; enable LSP support
