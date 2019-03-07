@@ -61,7 +61,8 @@
         +capture         ; org-capture in and outside of Emacs
         +present)        ; Emacs for presentations
        (ruby             ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-        +rbenv)          ; enable rbenv
+        +rbenv           ; enable rbenv
+        +lsp)            ; enable LSP
        web               ; the tubes
 
        :config

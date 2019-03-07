@@ -28,6 +28,7 @@
 (package! reason-mode)
 (package! shackle)
 (package! uuidgen)
+(package! lsp-mode :recipe (:fetcher github :repo "qhuyduong/lsp-mode"))
 
 ;;; Disabled packages
 (package! coffee-mode :disable t)
