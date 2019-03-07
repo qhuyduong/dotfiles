@@ -220,8 +220,6 @@
 (after! enh-ruby-mode
   (setq-hook! enh-ruby-mode flycheck-checker 'ruby-rubocop)
   (add-hook! :append enh-ruby-mode #'flycheck-buffer)
-  (add-hook 'enh-ruby-mode-hook (lambda ()
-                                  (add-hook 'before-save-hook #'lsp-format-buffer nil t)))
   (map! :mode enh-ruby-mode
         (:leader
           (:prefix "p"
