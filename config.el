@@ -131,8 +131,11 @@
 
 ;; lang/org
 (after! org
+  (add-hook! 'org-pomodoro-finished-hook
+    (terminal-notifier-notify "org-pomodoro" "Pomodoro finished!"))
   (map! "C-c c" #'org-capture
-        "C-c n p" #'org-projectile-project-todo-completing-read)
+        "C-c n p" #'org-projectile-project-todo-completing-read
+        :nv "C-c C-p" #'org-pomodoro)
   (set-face-attribute 'org-headline-done nil :strike-through t)
   (add-to-list 'org-modules 'org-drill)
   (advice-add 'org-babel-execute-src-block :around 'ob-async-org-babel-execute-src-block)
@@ -295,3 +298,15 @@ Movement^^^^            Merge action^^           Other
   ("l" (evil-window-increase-width 10) "increase width by 10 columns")
   ("h" (evil-window-decrease-width 10) "decrease width by 10 columns")
   ("q" nil "quit"))
+
+(defun terminal-notifier-notify (title message)
+  "Show a message with `terminal-notifier-command`."
+  (start-process "terminal-notifier"
+                 "*terminal-notifier*"
+                 (executable-find "terminal-notifier")
+                 "-title" title
+                 "-message" message
+                 "-sound" "default"
+                 "-activate" "org.gnu.Emacs"
+                 "-group" "org.gnu.Emacs"
+                 "-appIcon" "/Users/qhuyduong/orgs/org-unicorn.png"))
