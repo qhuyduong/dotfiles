@@ -246,8 +246,7 @@
 
 (after! lsp-mode
   (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection
-                                     (-const "reason-language-server"))
+   (make-lsp-client :new-connection (lsp-stdio-connection "reason-language-server")
                     :major-modes '(reason-mode)
                     :notification-handlers (ht ("client/registerCapability" 'ignore))
                     :priority 1
