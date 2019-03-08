@@ -79,6 +79,14 @@
       (:leader
         :nv "x" nil ;; Disable x prefix for scratch buffer
 
+        (:prefix "b"
+          :nv "k" nil
+          :desc "Delete buffer" :nv "d"  #'kill-this-buffer)
+
+        (:prefix "w"
+          :nv "c" nil
+          :nv "d"  #'+workspace/close-window-or-workspace)
+
         (:prefix "/"
           :desc "Search this text in project" :nv "*"  #'counsel-projectile-ag)
 
