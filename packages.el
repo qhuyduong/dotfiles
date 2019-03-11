@@ -39,6 +39,7 @@
 (package! evil-vimish-fold :disable t)
 (package! evil-visualstar :disable t)
 (package! exato :disable t)
+(package! rubocop :disable t)
 (package! skewer-mode :disable t)
 (package! toml-mode :disable t)
 (package! typescript-mode :disable t)
