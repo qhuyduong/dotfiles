@@ -80,6 +80,7 @@
         :nv "x" nil ;; Disable x prefix for scratch buffer
 
         (:prefix "b"
+          :nv "s" nil
           :nv "k" nil
           :desc "Delete buffer" :nv "d"  #'kill-this-buffer)
 
