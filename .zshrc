@@ -144,6 +144,3 @@ alias ll='ls -lha'
 
 ########## Export variables ##########
 export EDITOR='nvim'
-
-# opam configuration
-test -r /Users/qhuyduong/.opam/opam-init/init.zsh && . /Users/qhuyduong/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
