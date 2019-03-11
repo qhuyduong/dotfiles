@@ -93,6 +93,13 @@ Plug 'elzr/vim-json'                      " A better JSON for Vim
 " Language: Proto
 Plug 'qhuyduong/vim-proto'                " Google Proto Buffer syntax highlighting
 
+Plug 'reasonml-editor/vim-reason-plus'
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
 " Initialize plugin system
 call plug#end()
 
@@ -586,3 +593,13 @@ autocmd Languages FileType vim set expandtab shiftwidth=2 softtabstop=2 tabstop=
 " Language: YAML
 "----------------------------------------------
 autocmd Languages FileType yaml set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+
+
+let g:LanguageClient_serverCommands = {
+      \ 'reason': ['~/.config/nvim/reason-language-server.exe'],
+      \ }
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
+nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
+nnoremap <silent> <cr> :call LanguageClient_textDocument_hover()<cr>
+
+autocmd BufWritePre *.re :call LanguageClient_textDocument_formatting()
