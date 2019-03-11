@@ -1,4 +1,4 @@
-export TERM=xterm-24bit
+export TERM=xterm-256color
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
