@@ -35,7 +35,6 @@
 
        :emacs
        (dired            ; making dired pretty [functional]
-        +ranger          ; bringing the goodness of ranger to dired
         +icons)          ; colorful icons for dired-mode
        electric          ; smarter, keyword-based electric-indent
        imenu             ; an imenu sidebar and searchable code index
