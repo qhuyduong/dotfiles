@@ -79,6 +79,9 @@
       (:leader
         :nv "x" nil ;; Disable x prefix for scratch buffer
 
+        (:prefix "o"
+          :desc "List processes" :nv "x"  #'list-processes)
+
         (:prefix "b"
           :nv "s" nil
           :nv "k" nil
