@@ -91,6 +91,9 @@
         (:prefix "/"
           :desc "Search this text in project" :nv "*"  #'counsel-projectile-ag)
 
+        (:prefix "p"
+          :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
+
         (:prefix "g"
           :desc "Resolve conflicts" :n "r" #'hydra-smerge/body)
 
