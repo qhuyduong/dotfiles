@@ -144,3 +144,5 @@ alias ll='ls -lha'
 
 ########## Export variables ##########
 export EDITOR='nvim'
+
+export LESS="-FXR"
