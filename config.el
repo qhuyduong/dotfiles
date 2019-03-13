@@ -135,9 +135,6 @@
   (map! :map evil-inner-text-objects-map "g" 'evil-inner-buffer
         :map evil-motion-state-map "," nil))
 
-;; indent-guide
-(indent-guide-global-mode)
-
 ;; Magit
 (after! magit
   (setq magit-repository-directories '(("~/EH-Workspace" . 1)
