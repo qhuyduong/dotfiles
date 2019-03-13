@@ -132,9 +132,6 @@ export NVM_DIR="$HOME/.nvm"
 # Configure exercism
 [ -s "$HOME/.config/exercism/exercism_completion.zsh" ] && source "$HOME/.config/exercism/exercism_completion.zsh"
 
-# Configure iterm2 shell integration
-! [ -n "$INSIDE_EMACS" ] && test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
