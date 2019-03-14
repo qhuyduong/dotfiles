@@ -154,14 +154,14 @@
   (setq org-plantuml-jar-path "~/.local/bin/plantuml.jar")
   (remove-hook! org-mode #'org-indent-mode)
   (setq org-startup-indented nil)
-  (setq org-directory (expand-file-name "~/orgs")
+  (setq org-directory (expand-file-name "~/Workspace/orgs")
         org-agenda-files (list org-directory))
   ;; Org capture templates
   (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                                 (file+headline "~/orgs/inbox.org" "Tasks")
+                                 (file+headline "~/Workspace/orgs/inbox.org" "Tasks")
                                  "* ☛ TODO %i%?")
                                 ("T" "Tickler" entry
-                                 (file+headline "~/orgs/tickler.org" "Tickler")
+                                 (file+headline "~/Workspace/orgs/tickler.org" "Tickler")
                                  "* %i%? \n %U")))
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
   (setq org-refile-allow-creating-parent-nodes 'confirm)
@@ -250,7 +250,7 @@
                '(enh-ruby-mode all-the-icons-alltheicon "ruby-alt" :face all-the-icons-lred)))
 
 (after! org-projectile
-  (setq org-projectile-projects-file "~/orgs/inbox.org")
+  (setq org-projectile-projects-file "~/Workspace/orgs/inbox.org")
   (push (org-projectile-project-todo-entry) org-capture-templates)
   (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
 
@@ -323,4 +323,4 @@ Movement^^^^            Merge action^^           Other
                  "-sound" "default"
                  "-activate" "org.gnu.Emacs"
                  "-group" "org.gnu.Emacs"
-                 "-appIcon" "/Users/qhuyduong/orgs/org-unicorn.png"))
+                 "-appIcon" "/Users/qhuyduong/Workspace/orgs/org-unicorn.png"))
