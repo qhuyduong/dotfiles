@@ -28,8 +28,6 @@
         +defaults)       ; default popup rules
        treemacs          ; a project drawer, like neotree but cooler
        vc-gutter         ; vcs diff in the fringe
-       vi-tilde-fringe   ; fringe tildes to mark beyond EOB
-       window-select     ; visually switch windows
 
        :editor
        multiple-cursors  ; editing in many places at once
@@ -37,14 +35,11 @@
        :emacs
        (dired            ; making dired pretty [functional]
         +icons)          ; colorful icons for dired-mode
-       electric          ; smarter, keyword-based electric-indent
-       imenu             ; an imenu sidebar and searchable code index
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
        (flycheck         ; tasing you for every semicolon you forget
         +childframe)     ; use childframes for error popups (Emacs 26+ only)
-       flyspell          ; tasing you for misspelling mispelling
        lsp               ; LSP client
        macos             ; MacOS-specific commands
        (magit            ; a git porcelain for Emacs
@@ -53,7 +48,7 @@
        :lang
        data              ; config/data formats
        emacs-lisp        ; drown in parentheses
-       javascript       ; all(hope(abandon(ye(who(enter(here))))))
+       javascript        ; all(hope(abandon(ye(who(enter(here))))))
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
         +attach          ; custom attachment system
