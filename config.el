@@ -273,8 +273,8 @@
   (setq lsp-eldoc-render-all nil))
 
 (after! lsp-ui
+  (setq lsp-ui-sideline-enable nil)
   (setq lsp-ui-imenu-enable nil)
-  (setq lsp-ui-sideline-show-hover nil)
   (setq lsp-ui-doc-enable nil))
 
 (after! web-mode
