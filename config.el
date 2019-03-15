@@ -239,6 +239,8 @@
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))
         (:localleader
           (:desc "Toggle block" "}" #'enh-ruby-toggle-block)
+          (:prefix ("l" . "lsp")
+            "f" #'lsp-format-buffer)
           (:prefix ("b" . "bundle"))
           (:prefix ("k" . "rake"))
           (:prefix ("r" . "robe"))
