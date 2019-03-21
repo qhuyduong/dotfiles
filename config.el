@@ -215,8 +215,8 @@
                      (fringe-lib-load fringe-lib-backslash))))
 
 (after! rspec-mode
-  (add-hook! rspec-compilation-mode #'(inf-ruby-switch-setup shackle-mode))
-  (setq shackle-rules '(("\\`\\*rspec-compilation.*?\\*\\'" :regexp t :align right :size 0.3)))
+  (add-hook! rspec-compilation-mode #'inf-ruby-switch-setup)
+  (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :side 'right)
   ;; Rspec doesn't use RVM!
   (setq rspec-use-rvm nil))
 

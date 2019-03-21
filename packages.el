@@ -26,7 +26,6 @@
 (package! osx-trash)
 (package! prettier-js)
 (package! reason-mode)
-(package! shackle)
 (package! uuidgen)
 (package! lsp-mode :recipe (:fetcher github :repo "qhuyduong/lsp-mode" :branch "add-options-for-solargraph"))
 
