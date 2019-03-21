@@ -6,10 +6,8 @@
 (setq doom-localleader-key ",")
 (setq show-trailing-whitespace t)
 (setq display-line-numbers-type 'relative)
-(setq doom-modeline-major-mode-color-icon t)
-(setq doom-modeline-enable-word-count t)
-(setq doom-modeline-column-zero-based t)
-(setq column-number-mode t)
+(setq column-number-mode nil)
+(setq line-number-mode nil)
 (add-hook! 'after-init-hook '(doom-modeline-init fancy-battery-mode))
 
 ;; Use fancy icons for neotree
@@ -41,6 +39,12 @@
 (when (eq system-type 'darwin)
   (osx-trash-setup))
 (setq delete-by-moving-to-trash t)
+
+(after! doom-modeline
+  (setq doom-modeline-major-mode-color-icon t)
+  (setq doom-modeline-enable-word-count t)
+  (setq doom-modeline-percent-position nil)
+  (setq doom-modeline-env-ruby-executable "~/.rbenv/shims/ruby"))
 
 ;; Icons in dired
 (after! dired
