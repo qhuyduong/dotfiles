@@ -283,6 +283,12 @@
 (after! web-mode
   (add-hook! (html-mode css-mode sass-mode less-css-mode web-mode) #'lsp!))
 
+(after! elisp-mode
+  (map! :mode emacs-lisp-mode
+        (:leader
+          (:prefix "p"
+            :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
   "
