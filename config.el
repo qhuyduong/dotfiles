@@ -165,11 +165,8 @@
         org-agenda-files (list org-directory))
   ;; Org capture templates
   (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                                 (file+headline "~/Workspace/orgs/inbox.org" "Tasks")
-                                 "* ☛ TODO %i%?")
-                                ("T" "Tickler" entry
-                                 (file+headline "~/Workspace/orgs/tickler.org" "Tickler")
-                                 "* %i%? \n %U")))
+                                 (file "~/Workspace/orgs/inbox.org")
+                                 "* ☛ TODO %i%?")))
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
   (setq org-refile-allow-creating-parent-nodes 'confirm)
   (setq org-refile-use-outline-path 'file)
