@@ -1,17 +1,13 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Emacs GUI settings
-(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 16))
+(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 15))
 (setq doom-theme 'doom-city-lights)
 (setq doom-localleader-key ",")
-(setq show-trailing-whitespace t)
 (setq display-line-numbers-type 'relative)
-(setq column-number-mode nil)
 (setq line-number-mode nil)
 (add-hook! 'after-init-hook '(doom-modeline-init fancy-battery-mode))
 
-;; Use fancy icons for neotree
-(setq doom-neotree-file-icons t)
 
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil)
@@ -24,27 +20,31 @@
 ;; Make Emacs fullscreen by default
 (add-to-list 'default-frame-alist '(fullscreen . fullboth))
 
+;; Workaround for magithub authentication stuffs
+(setq auth-sources '("~/.authinfo"))
+
 ;; Set command key as super on OSX
 (setq mac-command-modifier 'super)
 
 ;; Set option key as meta on OSX
 (setq mac-option-modifier 'meta)
 
-;; Reduce which-key delay
-(setq which-key-idle-delay 0.5)
-
-;; Workaround for magithub authentication stuffs
-(setq auth-sources '("~/.authinfo"))
-
-(when (eq system-type 'darwin)
-  (osx-trash-setup))
 (setq delete-by-moving-to-trash t)
 
 (after! doom-modeline
+  (setq doom-modeline-buffer-file-name-style 'file-name)
   (setq doom-modeline-major-mode-color-icon t)
   (setq doom-modeline-enable-word-count t)
   (setq doom-modeline-percent-position nil)
   (setq doom-modeline-env-ruby-executable "~/.rbenv/shims/ruby"))
+
+;; Reduce which-key delay
+(after! which-key
+  (setq which-key-idle-delay 0.5))
+
+(after! osx-trash
+  (when (eq system-type 'darwin)
+    (osx-trash-setup)))
 
 ;; Icons in dired
 (after! dired
