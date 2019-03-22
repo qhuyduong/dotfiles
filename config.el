@@ -8,7 +8,6 @@
 (setq line-number-mode nil)
 (add-hook! 'after-init-hook '(doom-modeline-init fancy-battery-mode))
 
-
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil)
 (setq-default global-visual-line-mode t)
@@ -335,4 +334,4 @@ Movement^^^^            Merge action^^           Other
                  "-sound" "default"
                  "-activate" "org.gnu.Emacs"
                  "-group" "org.gnu.Emacs"
-                 "-appIcon" "/Users/qhuyduong/Workspace/orgs/org-unicorn.png"))
+                 "-appIcon" "/Users/qhuyduong/Workspace/inventory/org-unicorn.png"))
