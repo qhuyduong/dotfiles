@@ -2,7 +2,7 @@
 
 ;; Emacs GUI settings
 (setq doom-font (font-spec :family "Iosevka Nerd Font" :size 15))
-(setq doom-theme 'doom-city-lights)
+(setq doom-theme 'doom-palenight)
 (setq doom-localleader-key ",")
 (setq display-line-numbers-type 'relative)
 (setq line-number-mode nil)
