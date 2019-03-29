@@ -291,6 +291,9 @@
           (:prefix "p"
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
 
+(after! css-mode
+  (setq css-indent-offset 2))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
   "
