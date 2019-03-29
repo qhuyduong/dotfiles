@@ -83,7 +83,8 @@
         :nv "x" nil ;; Disable x prefix for scratch buffer
 
         (:prefix "o"
-          :desc "List processes" :nv "x"  #'list-processes)
+          :desc "List processes" :nv "x"  #'list-processes
+          :desc "Project sidebar" :nv "p"  #'treemacs)
 
         (:prefix "b"
           :nv "s" nil
@@ -226,7 +227,8 @@
         "C-j"  #'evil-window-down
         "C-k"  #'evil-window-up
         "C-l"  #'evil-window-right)
-  (setq doom-treemacs-use-generic-icons nil))
+  (setq doom-treemacs-use-generic-icons nil)
+  (treemacs-follow-mode t))
 
 (after! helm
   (setq helm-ag-insert-at-point 'symbol)
