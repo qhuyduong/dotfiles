@@ -283,6 +283,14 @@
 (after! css-mode
   (setq css-indent-offset 2))
 
+(awesome-tab-mode t)
+
+(after! awesome-tab
+  (map! :n "]b" #'awesome-tab-forward-tab
+        :n "[b" #'awesome-tab-backward-tab)
+  (setq awesome-tab-display-sticky-function-name nil)
+  (setq awesome-tab-style 'alternate))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
   "

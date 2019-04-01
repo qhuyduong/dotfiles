@@ -9,6 +9,7 @@
 (package! add-node-modules-path)
 (package! all-the-icons-dired)
 (package! apib-mode)
+(package! awesome-tab :recipe (:fetcher github :repo "manateelazycat/awesome-tab"))
 (package! copy-as-format)
 (package! dired-single)
 (package! docker-compose-mode)
@@ -19,6 +20,7 @@
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
 (package! indent-guide)
 (package! lorem-ipsum)
+(package! lsp-mode :recipe (:fetcher github :repo "qhuyduong/lsp-mode" :branch "add-options-for-solargraph"))
 (package! ob-async)
 (package! org-pivotal)
 (package! org-pomodoro)
@@ -27,7 +29,6 @@
 (package! prettier-js)
 (package! reason-mode)
 (package! uuidgen)
-(package! lsp-mode :recipe (:fetcher github :repo "qhuyduong/lsp-mode" :branch "add-options-for-solargraph"))
 
 ;;; Disabled packages
 (package! coffee-mode :disable t)
