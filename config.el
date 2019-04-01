@@ -243,7 +243,9 @@
 
 (after! all-the-icons
   (add-to-list 'all-the-icons-mode-icon-alist
-               '(enh-ruby-mode all-the-icons-alltheicon "ruby-alt" :face all-the-icons-lred)))
+               '(enh-ruby-mode all-the-icons-alltheicon "ruby-alt" :face all-the-icons-lred))
+  (add-to-list 'all-the-icons-mode-icon-alist
+               '(vterm-mode all-the-icons-octicon "terminal" :v-adjust 0.2)))
 
 (after! org-projectile
   (setq org-projectile-projects-file "~/Workspace/orgs/inbox.org")
@@ -291,6 +293,9 @@
         :n "[b" #'awesome-tab-backward-tab)
   (setq awesome-tab-display-sticky-function-name nil)
   (setq awesome-tab-style 'alternate))
+
+(after! vterm
+  (evil-declare-key 'insert vterm-mode-map (kbd "C-c") 'vterm--self-insert))
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
