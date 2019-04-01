@@ -286,6 +286,7 @@
 (awesome-tab-mode t)
 
 (after! awesome-tab
+  (setq awesome-tab-hide-tab-function #'custom-awesome-tab-hide-tab)
   (map! :n "]b" #'awesome-tab-forward-tab
         :n "[b" #'awesome-tab-backward-tab)
   (setq awesome-tab-display-sticky-function-name nil)
@@ -337,3 +338,23 @@ Movement^^^^            Merge action^^           Other
                  "-activate" "org.gnu.Emacs"
                  "-group" "org.gnu.Emacs"
                  "-appIcon" "/Users/qhuyduong/Workspace/inventory/org-unicorn.png"))
+
+(defun custom-awesome-tab-hide-tab (x)
+  (let ((name (format "%s" x)))
+    (or
+     ;; Current window is not dedicated window.
+     (window-dedicated-p (selected-window))
+
+     ;; Buffer name not match below blacklist.
+     (string-prefix-p "*Messages*" name)
+     (string-prefix-p "*scratch*" name)
+     (string-prefix-p "*helpful" name)
+     (string-prefix-p "*epc" name)
+     (string-prefix-p "*helm" name)
+     (string-prefix-p "*Compile-Log*" name)
+     (string-prefix-p "*lsp" name)
+
+     ;; Is not magit buffer.
+     (and (string-prefix-p "magit" name)
+          (not (file-name-extension name)))
+     )))
