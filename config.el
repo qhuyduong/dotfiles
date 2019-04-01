@@ -295,7 +295,13 @@
   (setq awesome-tab-style 'alternate))
 
 (after! vterm
-  (evil-declare-key 'insert vterm-mode-map (kbd "C-c") 'vterm--self-insert))
+  (require 'term)
+  (defun vterm-send-return ()
+    (interactive)
+    (term-send-raw-string "\C-m"))
+  (map! :mode vterm-mode
+        :i "RET" #'vterm-send-return
+        :i "C-c" #'vterm--self-insert))
 
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
