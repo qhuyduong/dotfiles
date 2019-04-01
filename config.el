@@ -48,20 +48,9 @@
 ;; Icons in dired
 (after! dired
   (require 'font-lock+)
-  (diredp-toggle-find-file-reuse-dir t)
-  ;; Make diredp less colorful
-  (dolist (face '(diredp-dir-priv
-                  diredp-read-priv
-                  diredp-write-priv
-                  diredp-exec-priv
-                  diredp-file-suffix
-                  diredp-link-priv
-                  diredp-rare-priv
-                  diredp-number
-                  diredp-date-time))
-    (set-face-foreground face (face-foreground 'default)))
-  (setq diredp-hide-details-initially-flag nil)
-  (setq diredp-hide-details-propagate-flag nil))
+  (map! :mode dired-mode
+        [remap dired-find-file] #'dired-single-buffer
+        [remap dired-up-directory] #'dired-single-up-directory))
 
 ;; Set default source and destination languages for Google Translate
 (after! google-translate-core-ui

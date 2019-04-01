@@ -10,7 +10,7 @@
 (package! all-the-icons-dired)
 (package! apib-mode)
 (package! copy-as-format)
-(package! dired+ :recipe (:fetcher github :repo "emacsmirror/dired-plus"))
+(package! dired-single)
 (package! docker-compose-mode)
 (package! dockerfile-mode)
 (package! doom-modeline)
