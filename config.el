@@ -304,6 +304,9 @@
         :i "RET" #'vterm-send-return
         :i "C-c" #'vterm--self-insert))
 
+(after! forge
+  (setq forge-topic-list-limit '(5 . 5)))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
   "
