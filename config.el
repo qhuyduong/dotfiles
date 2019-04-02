@@ -256,8 +256,6 @@
                                 (add-hook 'before-save-hook #'lsp-format-buffer nil t))))
 
 (after! lsp-mode
-  (add-to-list 'company-lsp-filter-candidates '(ruby-ls . nil))
-  (add-to-list 'company-lsp-filter-candidates '(reason-ls . nil))
   (lsp-register-client
    (make-lsp-client :new-connection (lsp-stdio-connection "reason-language-server")
                     :major-modes '(reason-mode)
@@ -265,6 +263,9 @@
                     :priority 1
                     :server-id 'reason-ls))
   (setq lsp-eldoc-render-all nil))
+
+(after! company-lsp
+  (setq company-lsp-cache-candidates 'auto))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil)
