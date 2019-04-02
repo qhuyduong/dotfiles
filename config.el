@@ -224,6 +224,7 @@
   (setq +helm-posframe-text-scale nil))
 
 (after! ivy
+  (add-to-list 'ivy-display-functions-alist 'ivy-source-awesome-tab-group)
   (setq counsel-projectile-ag-initial-input '(ivy-thing-at-point)))
 
 (after! enh-ruby-mode
@@ -292,8 +293,20 @@
 
 (after! awesome-tab
   (setq awesome-tab-hide-tab-function #'custom-awesome-tab-hide-tab)
-  (map! :n "]b" #'awesome-tab-forward-tab
-        :n "[b" #'awesome-tab-backward-tab)
+  (setq awesome-tab-buffer-groups-function #'custom-awesome-tab-buffer-groups)
+
+  (map! :nv "]b" #'awesome-tab-forward-tab
+        :nv "[b" #'awesome-tab-backward-tab
+        (:leader
+          (:prefix "b"
+            :desc "Next buffer" :nv "]" #'awesome-tab-forward-tab
+            :desc "Previous buffer" :nv "[" #'awesome-tab-backward-tab)
+
+          (:prefix ("TAB" . "awesome-tab")
+            :desc "Forward tab group" :nv "]" #'awesome-tab-forward-group
+            :desc "Backward tab group" :nv "[" #'awesome-tab-backward-group
+            :desc "Switch to tab group" :nv "TAB" #'awesome-tab-build-ivy-source)))
+
   (setq awesome-tab-display-sticky-function-name nil)
   (setq awesome-tab-style 'alternate))
 
