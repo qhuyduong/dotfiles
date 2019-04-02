@@ -24,7 +24,6 @@
 (package! ob-async)
 (package! org-pivotal)
 (package! org-pomodoro)
-(package! org-projectile)
 (package! osx-trash)
 (package! prettier-js)
 (package! reason-mode)

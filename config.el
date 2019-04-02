@@ -83,7 +83,7 @@
 
         (:prefix "w"
           :nv "c" nil
-          :nv "d"  #'+workspace/close-window-or-workspace)
+          :nv "d"  #'evil-window-delete)
 
         (:prefix "/"
           :desc "Search this text in project" :nv "*"  #'counsel-projectile-ag)
