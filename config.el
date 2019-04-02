@@ -131,6 +131,8 @@
 
 ;; Magit
 (after! magit
+  (setq magit-status-mode-hook nil)
+  (setq-hook! 'magit-status-mode-hook header-line-format '(:eval (awesome-tab-line)))
   (setq magit-repository-directories '(("~/EH-Workspace" . 1)
                                        ("~/Workspace" . 1))
         magit-save-repository-buffers nil))
@@ -253,8 +255,7 @@
 
 (after! reason-mode
   (add-hook! reason-mode #'lsp)
-  (add-hook 'reason-mode-hook (lambda ()
-                                (add-hook 'before-save-hook #'lsp-format-buffer nil t))))
+  (add-hook! reason-mode (add-hook 'before-save-hook #'lsp-format-buffer nil t)))
 
 (after! lsp-mode
   (lsp-register-client
@@ -370,10 +371,9 @@ Movement^^^^            Merge action^^           Other
      (string-prefix-p "*Compile-Log*" name)
      (string-prefix-p "*lsp" name)
 
-     ;; Is not magit buffer.
-     (and (string-prefix-p "magit" name)
-          (not (file-name-extension name)))
-     )))
+     ;; Is not magit-* buffer.
+     (and (string-prefix-p "magit-" name)
+          (not (eq (file-name-extension name) "el"))))))
 
 (defun custom-awesome-tab-buffer-groups ()
   "Always try to add buffer to project group first.
