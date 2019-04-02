@@ -385,6 +385,7 @@ Movement^^^^            Merge action^^           Other
      (string-prefix-p "*lsp" name)
      ;; Not LSP client buffer
      (string-match-p "^\*[a-z]*-ls" name)
+     (string-match-p "treemacs-persist" name)
 
      ;; Is not magit-* buffer.
      (and (string-prefix-p "magit-" name)
