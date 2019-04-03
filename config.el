@@ -304,8 +304,8 @@
             :desc "Previous buffer" :nv "[" #'awesome-tab-backward-tab)
 
           (:prefix ("TAB" . "awesome-tab")
-            :desc "Forward tab group" :nv "]" #'awesome-tab-forward-group
-            :desc "Backward tab group" :nv "[" #'awesome-tab-backward-group
+            :desc "Forward tab group" :nv "]" #'+awesome-tab-forward-group
+            :desc "Backward tab group" :nv "[" #'+awesome-tab-backward-group
             :desc "Kill all buffers in group" :nv "d" #'awesome-tab-kill-all-buffers-in-current-group
             :desc "Switch to tab group" :nv "TAB" #'awesome-tab-build-ivy-source)))
 
@@ -411,3 +411,13 @@ If buffer is not in any project, try these groups:
 (defun +vterm/open-in-project ()
   (interactive)
   (+vterm/open t))
+
+(defun +awesome-tab-forward-group ()
+  (interactive)
+  (awesome-tab-forward-group)
+  (minibuffer-message "%s" (awesome-tab-get-group-name (current-buffer))))
+
+(defun +awesome-tab-backward-group ()
+  (interactive)
+  (awesome-tab-backward-group)
+  (minibuffer-message "%s" (awesome-tab-get-group-name (current-buffer))))
