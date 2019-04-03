@@ -224,6 +224,7 @@
   (setq +helm-posframe-text-scale nil))
 
 (after! ivy
+  (set-face-foreground 'ivy-current-match "#c3e88d")
   (add-to-list 'ivy-display-functions-alist 'ivy-source-awesome-tab-group)
   (setq counsel-projectile-ag-initial-input '(ivy-thing-at-point)))
 
