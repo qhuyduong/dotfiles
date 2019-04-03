@@ -389,6 +389,7 @@ Movement^^^^            Merge action^^           Other
      (string-match-p "treemacs-persist" name)
      (string-match-p "*flycheck" name)
      (string-prefix-p "*tide-server*" name)
+     (string-prefix-p "*company" name)
 
      ;; Is not magit-* buffer.
      (and (string-prefix-p "magit-" name)
