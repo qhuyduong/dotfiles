@@ -306,6 +306,7 @@
           (:prefix ("TAB" . "awesome-tab")
             :desc "Forward tab group" :nv "]" #'awesome-tab-forward-group
             :desc "Backward tab group" :nv "[" #'awesome-tab-backward-group
+            :desc "Kill all buffers in group" :nv "d" #'awesome-tab-kill-all-buffers-in-current-group
             :desc "Switch to tab group" :nv "TAB" #'awesome-tab-build-ivy-source)))
 
   (setq awesome-tab-display-sticky-function-name nil)
