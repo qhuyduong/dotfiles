@@ -381,7 +381,7 @@ Movement^^^^            Merge action^^           Other
      (window-dedicated-p (selected-window))
 
      ;; Buffer name begin with asterisk *
-     (and (string-prefix-p "*" name)
+     (and (string-match-p "^[ ]*\\*" name)
           ;; but not one of these buffers
           (not (string-prefix-p "*rspec" name)))
 
