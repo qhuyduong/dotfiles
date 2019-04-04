@@ -15,6 +15,7 @@
 (package! docker-compose-mode)
 (package! dockerfile-mode)
 (package! doom-modeline)
+(package! exec-path-from-shell)
 (package! fancy-battery)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))

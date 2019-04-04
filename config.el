@@ -8,6 +8,8 @@
 (setq line-number-mode nil)
 (add-hook! 'after-init-hook '(doom-modeline-init fancy-battery-mode))
 
+(exec-path-from-shell-initialize)
+
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil)
 (setq-default global-visual-line-mode t)
