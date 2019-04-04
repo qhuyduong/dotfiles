@@ -378,23 +378,16 @@ Movement^^^^            Merge action^^           Other
      ;; Current window is not dedicated window.
      (window-dedicated-p (selected-window))
 
-     ;; Buffer name not match below blacklist.
-     (string-prefix-p "*Messages*" name)
-     (string-prefix-p "*scratch*" name)
-     (string-prefix-p "*helpful" name)
-     (string-prefix-p "*epc" name)
-     (string-prefix-p "*helm" name)
-     (string-prefix-p "*Compile-Log*" name)
-     (string-prefix-p "*lsp" name)
-     (string-match-p "^\*[a-z]*-ls" name) ;; Not LSP client buffer
-     (string-match-p "treemacs-persist" name)
-     (string-match-p "*flycheck" name)
-     (string-prefix-p "*tide-server*" name)
-     (string-prefix-p "*company" name)
+     ;; Buffer name begin with asterisk *
+     (and (string-prefix-p "*" name)
+          ;; but not one of these buffers
+          (not (string-prefix-p "*rspec" name)))
 
-     ;; Is not magit-* buffer.
+     (string-match-p "treemacs-persist" name)
+
+     ;; Is not magit-* buffer (except magit source file)
      (and (string-prefix-p "magit-" name)
-          (not (eq (file-name-extension name) "el"))))))
+          (not (string= (file-name-extension name) "el"))))))
 
 (defun custom-awesome-tab-buffer-groups ()
   "Always try to add buffer to project group first.
