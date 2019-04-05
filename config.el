@@ -7,6 +7,7 @@
 (setq display-line-numbers-type 'relative)
 (setq line-number-mode nil)
 
+(setq exec-path-from-shell-check-startup-files nil)
 (exec-path-from-shell-initialize)
 
 ;; truncate-lines in all buffers
