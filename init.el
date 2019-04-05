@@ -21,6 +21,7 @@
        doom              ; what makes DOOM look the way it does
        evil-goggles      ; display visual hints when editing in evil
        hl-todo           ; highlight TODO/FIXME/NOTE tags
+       modeline          ; snazzy, Atom-inspired modeline, plus API
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules

@@ -6,7 +6,6 @@
 (setq doom-localleader-key ",")
 (setq display-line-numbers-type 'relative)
 (setq line-number-mode nil)
-(add-hook! 'after-init-hook '(doom-modeline-init fancy-battery-mode))
 
 (exec-path-from-shell-initialize)
 
@@ -33,11 +32,12 @@
 (setq delete-by-moving-to-trash t)
 
 (after! doom-modeline
+  (remove-hook! 'doom-modeline-mode-hook #'column-number-mode)
   (setq doom-modeline-buffer-file-name-style 'file-name)
+  (setq doom-modeline-major-mode-icon t)
   (setq doom-modeline-major-mode-color-icon t)
   (setq doom-modeline-enable-word-count t)
-  (setq doom-modeline-percent-position nil)
-  (setq doom-modeline-env-ruby-executable "~/.rbenv/shims/ruby"))
+  (setq doom-modeline-percent-position nil))
 
 ;; Reduce which-key delay
 (after! which-key
