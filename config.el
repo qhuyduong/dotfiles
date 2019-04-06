@@ -396,7 +396,7 @@ If buffer is not in any project, try these groups:
 2. Other buffers pushed to group \"Emacs\"."
   (list
    (cond
-    ((projectile-project-p default-directory)
+    ((projectile-project-p buffer-file-name)
      (awesome-tab-get-group-name (current-buffer)))
     ((derived-mode-p 'dired-mode)
      "Dired")
