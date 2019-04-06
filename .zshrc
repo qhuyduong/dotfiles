@@ -141,5 +141,5 @@ if [[ -n $INSIDE_EMACS ]]; then
   export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=2'
   export EDITOR=emacsclient
   export VISUAL=$EDITOR
-  export TERM=xterm
+  export TERM=xterm-256color
 fi
