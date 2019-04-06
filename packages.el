@@ -7,7 +7,6 @@
 ;; (package! builtin-package :disable t)
 
 (package! add-node-modules-path)
-(package! all-the-icons-dired)
 (package! apib-mode)
 (package! awesome-tab :recipe (:fetcher github :repo "manateelazycat/awesome-tab"))
 (package! copy-as-format)
