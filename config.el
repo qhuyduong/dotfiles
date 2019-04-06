@@ -437,3 +437,5 @@ If buffer is not in any project, try these groups:
         (string-trim (car (posn-string (event-start event))))))
     (unless (string-match-p "^%-$" selected-tab-name)
       (switch-to-buffer selected-tab-name))))
+
+(load! "prodigy-services-list")

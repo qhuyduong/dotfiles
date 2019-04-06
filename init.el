@@ -43,6 +43,7 @@
        macos             ; MacOS-specific commands
        (magit            ; a git porcelain for Emacs
         +forge)          ; github integration to magit
+       prodigy           ; FIXME managing external services & code builders
        vterm             ; another terminals in Emacs
 
        :lang
