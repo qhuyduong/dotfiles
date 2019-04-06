@@ -383,7 +383,8 @@ Movement^^^^            Merge action^^           Other
      ;; Buffer name begin with asterisk *
      (and (string-match-p "^[ ]*\\*" name)
           ;; but not one of these buffers
-          (not (string-prefix-p "*rspec" name)))
+          (not (or (string-prefix-p "*rspec" name)
+                   (string-prefix-p "*prodigy" name))))
 
      (string-match-p "treemacs-persist" name)
 
@@ -392,13 +393,16 @@ Movement^^^^            Merge action^^           Other
           (not (string= (file-name-extension name) "el"))))))
 
 (defun +awesome-tab-buffer-groups ()
-  "Always try to add buffer to project group first.
-If buffer is not in any project, try these groups:
-1. Group buffer with mode if buffer is derived from `dired-mode' `org-mode'.
-2. Other buffers pushed to group \"Emacs\"."
+  "Group priority:
+1. Handle some exceptional buffers (e.g: Prodigy)
+2. Try to add buffer to project.
+3. Group buffer with mode if buffer is derived from `dired-mode' `org-mode'.
+4. Other buffers pushed to group \"Emacs\"."
   (let ((current-project (cdr (project-current))))
     (list
      (cond
+      ((string-prefix-p "*prodigy" (buffer-name))
+       "Prodigy")
       (current-project
        current-project)
       ((derived-mode-p 'dired-mode)
@@ -423,12 +427,12 @@ If buffer is not in any project, try these groups:
 (defun +awesome-tab-forward-group ()
   (interactive)
   (awesome-tab-forward-group)
-  (minibuffer-message "%s" (awesome-tab-get-group-name (current-buffer))))
+  (minibuffer-message "Awesome-Tab Group: %s" (cdr (awesome-tab-selected-tab (awesome-tab-current-tabset t)))))
 
 (defun +awesome-tab-backward-group ()
   (interactive)
   (awesome-tab-backward-group)
-  (minibuffer-message "%s" (awesome-tab-get-group-name (current-buffer))))
+  (minibuffer-message "Awesome-Tab Group: %s" (cdr (awesome-tab-selected-tab (awesome-tab-current-tabset t)))))
 
 (defun awesome-tab-click-to-tab (event)
   "Switch to buffer (obtained from EVENT) on clicking header line"
