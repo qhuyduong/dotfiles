@@ -136,3 +136,13 @@ alias ll='ls -lha'
 export EDITOR='nvim'
 
 export LESS="-FXR"
+
+if [[ -n $INSIDE_EMACS ]]; then
+  export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=2'
+  export EDITOR=emacsclient
+  export VISUAL=$EDITOR
+  export TERM=xterm
+  export FZF_DEFAULT_OPTS="--height 20% --reverse --bind=\
+    ctrl-j:accept,ctrl-k:kill-line,tab:toggle-up,btab:toggle-down,\
+    ctrl-y:execute('echo {} | xclip -selection clipboard')+abort"
+fi
