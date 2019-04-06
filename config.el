@@ -299,8 +299,10 @@
   (setq awesome-tab-hide-tab-function #'+awesome-tab-hide-tab)
   (setq awesome-tab-buffer-groups-function #'+awesome-tab-buffer-groups)
 
-  (map! :nv "]b" #'awesome-tab-forward-tab
+  (map! [header-line mouse-1] #'awesome-tab-click-to-tab
+        :nv "]b" #'awesome-tab-forward-tab
         :nv "[b" #'awesome-tab-backward-tab
+
         (:leader
           (:prefix "b"
             :desc "Next buffer" :nv "]" #'awesome-tab-forward-tab
@@ -422,3 +424,11 @@ If buffer is not in any project, try these groups:
   (interactive)
   (awesome-tab-backward-group)
   (minibuffer-message "%s" (awesome-tab-get-group-name (current-buffer))))
+
+(defun awesome-tab-click-to-tab (event)
+  "Switch to buffer (obtained from EVENT) on clicking header line"
+  (interactive "e")
+  (let ((selected-tab-name
+        (string-trim (car (posn-string (event-start event))))))
+    (unless (string-match-p "^%-$" selected-tab-name)
+      (switch-to-buffer selected-tab-name))))
