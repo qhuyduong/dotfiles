@@ -39,3 +39,4 @@ Thumbs.db
 # Docker's files
 Dockerfile-dev
 docker-compose-dev.yml
+.stylelintrc
