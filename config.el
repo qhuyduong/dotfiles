@@ -321,6 +321,7 @@
 (after! vterm
   (map! :mode vterm-mode
         :i [return] #'vterm-send-return
+        :i "C-g" #'vterm-send-escape
         :i "C-c" #'vterm--self-insert))
 
 (after! forge
@@ -405,6 +406,10 @@ If buffer is not in any project, try these groups:
       ((memq major-mode '(org-mode org-agenda-mode diary-mode))
        "OrgMode")
       (t "Emacs")))))
+
+(defun vterm-send-escape ()
+  (interactive)
+  (vterm-send-string "\e"))
 
 (defun vterm-send-return ()
   "Sends C-m to the libvterm."
