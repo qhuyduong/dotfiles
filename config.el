@@ -438,4 +438,5 @@ If buffer is not in any project, try these groups:
     (unless (string-match-p "^%-$" selected-tab-name)
       (switch-to-buffer selected-tab-name))))
 
-(load! "prodigy-services-list")
+(when (file-exists-p "~/.doom.d/+prodigy-services.el")
+  (load! "+prodigy-services"))
