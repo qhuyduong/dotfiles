@@ -76,7 +76,7 @@
 
         (:prefix "o"
           :desc "List processes" :nv "x"  #'list-processes
-          :desc "Terminal" :nv "t" #'+vterm/open-in-project
+          :desc "Terminal" :nv "t" #'vterm/open-in-project
           :desc "Project sidebar" :nv "p"  #'treemacs)
 
         (:prefix "b"
