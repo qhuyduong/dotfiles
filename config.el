@@ -296,8 +296,8 @@
 (awesome-tab-mode t)
 
 (after! awesome-tab
-  (setq awesome-tab-hide-tab-function #'custom-awesome-tab-hide-tab)
-  (setq awesome-tab-buffer-groups-function #'custom-awesome-tab-buffer-groups)
+  (setq awesome-tab-hide-tab-function #'+awesome-tab-hide-tab)
+  (setq awesome-tab-buffer-groups-function #'+awesome-tab-buffer-groups)
 
   (map! :nv "]b" #'awesome-tab-forward-tab
         :nv "[b" #'awesome-tab-backward-tab
@@ -318,11 +318,8 @@
 
 (after! vterm
   (require 'term)
-  (defun vterm-send-return ()
-    (interactive)
-    (term-send-raw-string "\C-m"))
   (map! :mode vterm-mode
-        :i "RET" #'vterm-send-return
+        :i [return] #'vterm-send-return
         :i "C-c" #'vterm--self-insert))
 
 (after! forge
@@ -375,7 +372,7 @@ Movement^^^^            Merge action^^           Other
                  "-group" "org.gnu.Emacs"
                  "-appIcon" "/Users/qhuyduong/Workspace/inventory/org-unicorn.png"))
 
-(defun custom-awesome-tab-hide-tab (x)
+(defun +awesome-tab-hide-tab (x)
   (let ((name (format "%s" x)))
     (or
      ;; Current window is not dedicated window.
@@ -392,7 +389,7 @@ Movement^^^^            Merge action^^           Other
      (and (string-prefix-p "magit-" name)
           (not (string= (file-name-extension name) "el"))))))
 
-(defun custom-awesome-tab-buffer-groups ()
+(defun +awesome-tab-buffer-groups ()
   "Always try to add buffer to project group first.
 If buffer is not in any project, try these groups:
 1. Group buffer with mode if buffer is derived from `dired-mode' `org-mode'.
@@ -407,7 +404,11 @@ If buffer is not in any project, try these groups:
      "OrgMode")
     (t "Emacs"))))
 
-(defun +vterm/open-in-project ()
+(defun vterm-send-return ()
+  (interactive)
+  (term-send-raw-string "\C-m"))
+
+(defun vterm/open-in-project ()
   (interactive)
   (+vterm/open t))
 
