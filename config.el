@@ -319,7 +319,6 @@
   (setq awesome-tab-style 'alternate))
 
 (after! vterm
-  (require 'term)
   (map! :mode vterm-mode
         :i [return] #'vterm-send-return
         :i "C-c" #'vterm--self-insert))
@@ -408,8 +407,9 @@ If buffer is not in any project, try these groups:
       (t "Emacs")))))
 
 (defun vterm-send-return ()
+  "Sends C-m to the libvterm."
   (interactive)
-  (term-send-raw-string "\C-m"))
+  (process-send-string vterm--process "\C-m"))
 
 (defun vterm/open-in-project ()
   (interactive)
