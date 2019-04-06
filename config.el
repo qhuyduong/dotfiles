@@ -394,15 +394,16 @@ Movement^^^^            Merge action^^           Other
 If buffer is not in any project, try these groups:
 1. Group buffer with mode if buffer is derived from `dired-mode' `org-mode'.
 2. Other buffers pushed to group \"Emacs\"."
-  (list
-   (cond
-    ((projectile-project-p buffer-file-name)
-     (awesome-tab-get-group-name (current-buffer)))
-    ((derived-mode-p 'dired-mode)
-     "Dired")
-    ((memq major-mode '(org-mode org-agenda-mode diary-mode))
-     "OrgMode")
-    (t "Emacs"))))
+  (let ((current-project (cdr (project-current))))
+    (list
+     (cond
+      (current-project
+       current-project)
+      ((derived-mode-p 'dired-mode)
+       "Dired")
+      ((memq major-mode '(org-mode org-agenda-mode diary-mode))
+       "OrgMode")
+      (t "Emacs")))))
 
 (defun vterm-send-return ()
   (interactive)
