@@ -388,7 +388,7 @@ Movement^^^^            Merge action^^           Other
      (and (string-match-p "^[ ]*\\*" name)
           ;; but not one of these buffers
           (not (or (string-prefix-p "*rspec" name)
-                   (string-prefix-p "*prodigy" name))))
+                   (string-prefix-p "*prodigy-" name))))
 
      (string-match-p "treemacs-persist" name)
 
@@ -405,7 +405,7 @@ Movement^^^^            Merge action^^           Other
   (let ((current-project (cdr (project-current))))
     (list
      (cond
-      ((string-prefix-p "*prodigy" (buffer-name))
+      ((string-prefix-p "*prodigy-" (buffer-name))
        "Prodigy")
       (current-project
        current-project)
