@@ -328,6 +328,9 @@
 (after! forge
   (setq forge-topic-list-limit '(5 . 5)))
 
+(after! hydra
+  (setq hydra-hint-display-type 'message))
+
 ;;;;;;;;;; Chores ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
   "
