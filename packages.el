@@ -18,7 +18,6 @@
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
 (package! indent-guide)
 (package! lorem-ipsum)
-(package! lsp-mode :recipe (:fetcher github :repo "qhuyduong/lsp-mode"))
 (package! ob-async)
 (package! org-pivotal)
 (package! org-pomodoro)
