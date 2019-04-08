@@ -265,6 +265,13 @@
 
 (after! lsp-mode
   (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection '("solargraph" "stdio"))
+                    :major-modes '(ruby-mode enh-ruby-mode)
+                    :priority 1
+                    :initialization-options '(:diagnostics t)
+                    :server-id 'enh-ruby-ls))
+
+  (lsp-register-client
    (make-lsp-client :new-connection (lsp-stdio-connection "reason-language-server")
                     :major-modes '(reason-mode)
                     :notification-handlers (ht ("client/registerCapability" 'ignore))
