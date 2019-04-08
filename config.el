@@ -448,10 +448,12 @@ Movement^^^^            Merge action^^           Other
 (defun awesome-tab-click-to-tab (event)
   "Switch to buffer (obtained from EVENT) on clicking header line"
   (interactive "e")
-  (let ((selected-tab-name
-        (string-trim (car (posn-string (event-start event))))))
-    (unless (string-match-p "^%-$" selected-tab-name)
-      (switch-to-buffer selected-tab-name))))
+  (let ((position (event-start event)))
+    (select-window (posn-window position))
+    (let ((selected-tab-name
+           (string-trim (car (posn-string position)))))
+      (unless (string-match-p "^%-$" selected-tab-name)
+        (switch-to-buffer selected-tab-name)))))
 
 (when (file-exists-p "~/.doom.d/+prodigy-services.el")
   (load! "+prodigy-services"))
