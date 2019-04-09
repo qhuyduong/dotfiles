@@ -7,6 +7,8 @@
 (setq display-line-numbers-type 'relative)
 (setq line-number-mode nil)
 
+(custom-set-faces '(cursor ((t (:background "#98f5ff")))))
+
 (setq exec-path-from-shell-check-startup-files nil)
 (exec-path-from-shell-initialize)
 
@@ -48,8 +50,8 @@
   (when (eq system-type 'darwin)
     (osx-trash-setup)))
 
-;; Icons in dired
 (after! dired
+  ;; Icons in dired
   (require 'font-lock+)
   (map! :mode dired-mode
         [remap dired-find-file] #'dired-single-buffer
