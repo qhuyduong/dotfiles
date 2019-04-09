@@ -220,6 +220,7 @@
         "C-j"  #'evil-window-down
         "C-k"  #'evil-window-up
         "C-l"  #'evil-window-right)
+  (setq treemacs-show-cursor t)
   (setq doom-treemacs-use-generic-icons nil)
   (treemacs-follow-mode t))
 
