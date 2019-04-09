@@ -309,25 +309,20 @@
 (after! awesome-tab
   (setq awesome-tab-hide-tab-function #'+awesome-tab-hide-tab)
   (setq awesome-tab-buffer-groups-function #'+awesome-tab-buffer-groups)
+  (setq awesome-tab-display-sticky-function-name nil)
+  (setq awesome-tab-style 'alternate)
 
   (map! [header-line mouse-1] #'awesome-tab-click-to-tab
-        :nv "]b" #'awesome-tab-forward-tab
-        :nv "[b" #'awesome-tab-backward-tab
+        "s-]" #'awesome-tab-forward-tab
+        "s-[" #'awesome-tab-backward-tab
 
         (:leader
-          (:prefix "b"
-            :desc "Next buffer" :nv "]" #'awesome-tab-forward-tab
-            :desc "Previous buffer" :nv "[" #'awesome-tab-backward-tab)
-
           (:prefix ("TAB" . "awesome-tab")
             :desc "Forward tab group" :nv "]" #'+awesome-tab-forward-group
             :desc "Backward tab group" :nv "[" #'+awesome-tab-backward-group
             :desc "Kill all buffers in group" :nv "d" #'awesome-tab-kill-all-buffers-in-current-group
             :desc "Kill other buffers in group" :nv "D" #'awesome-tab-kill-other-buffers-in-current-group
-            :desc "Switch to tab group" :nv "TAB" #'awesome-tab-build-ivy-source)))
-
-  (setq awesome-tab-display-sticky-function-name nil)
-  (setq awesome-tab-style 'alternate))
+            :desc "Switch to tab group" :nv "TAB" #'awesome-tab-build-ivy-source))))
 
 (after! vterm
   (map! :mode vterm-mode
