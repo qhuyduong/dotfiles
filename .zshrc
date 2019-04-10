@@ -117,6 +117,10 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --skip-vcs-ignores -f -g "
 # Add rbenv to PATH
 eval "$(rbenv init -)"
 
+# Add pyenv to PATH
+eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+
 # Source NVM on shell starting up
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
