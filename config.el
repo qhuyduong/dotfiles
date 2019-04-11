@@ -336,7 +336,10 @@
 (after! hydra
   (setq hydra-hint-display-type 'message))
 
-;;;;;;;;;; Chores ;;;;;;;;;;
+(after! prodigy
+  (set-evil-initial-state! 'prodigy-mode 'normal))
+
+;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
   "
 Movement^^^^            Merge action^^           Other
