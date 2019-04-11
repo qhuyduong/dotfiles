@@ -63,8 +63,13 @@
   (setq google-translate-default-target-language "vi"))
 
 ;; Keybindings
-(map! "s-c"  #'evil-yank
-      "s-v"  #'yank
+(map! "s-c" #'evil-yank
+      "s-v" #'yank
+      "s-w" #'kill-current-buffer
+      "s-W" #'delete-window
+      "s-p" #'counsel-projectile-switch-project
+      "s-o" #'+ivy/projectile-find-file
+
       ;; Easier window navigation
       :nvi "C-h"  #'evil-window-left
       :nvi "C-j"  #'evil-window-down
@@ -315,6 +320,8 @@
   (map! [header-line mouse-1] #'awesome-tab-click-to-tab
         "s-]" #'awesome-tab-forward-tab
         "s-[" #'awesome-tab-backward-tab
+        "s-}" #'+awesome-tab-forward-group
+        "s-{" #'+awesome-tab-backward-group
 
         (:leader
           (:prefix ("TAB" . "awesome-tab")
