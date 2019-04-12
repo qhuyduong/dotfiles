@@ -205,8 +205,9 @@
 (after! projectile
   ;; Configure npm project with projectile
   (projectile-register-project-type 'npm '("package.json")
-                                    :test "npm run test"
-                                    :test-suffix ".spec"))
+                                    :test "yarn test"
+                                    :test-suffix ".spec"
+                                    :related-files-fn #'projectile-frontend-core-related-files))
 
 ;; Re-add visual-line-mode's fringes
 (after! fringe-helper
@@ -465,3 +466,12 @@ Movement^^^^            Merge action^^           Other
 
 (when (file-exists-p "~/.doom.d/+prodigy-services.el")
   (load! "+prodigy-services"))
+
+(defun projectile-frontend-core-related-files (path)
+  (when (string-match "\\(.*\\)\/\\(.*\\)$" path)
+    (let* ((dir (match-string 1 path))
+           (file-name (match-string 2 path))
+           (base-file-name (car (split-string file-name "\\."))))
+      (if (projectile-test-file-p file-name)
+          (list :impl (concat dir "/../" base-file-name ".js"))
+        (list :test (concat dir "/__tests__/" base-file-name ".spec.js"))))))
