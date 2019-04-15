@@ -9,8 +9,8 @@ setopt SHARE_HISTORY
 
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
-export EDITOR='nvim'
-export LESS='-FXR'
+export EDITOR=nvim
+export LESS=-FXR
 
 if [[ -n $INSIDE_EMACS ]]; then
   export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=2'
@@ -75,6 +75,9 @@ zplug load
 # Return 'v' to its original function, i.e: visual mode
 bindkey -M vicmd 'v' visual-mode
 bindkey -M vicmd '^v' edit-command-line
+
+export AGKOZAK_PROMPT_CHAR=λ
+export AGKOZAK_COLORS_PROMPT_CHAR=yellow
 
 # Stop profiling
 # zprof
