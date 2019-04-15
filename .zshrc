@@ -1,3 +1,6 @@
+# Begin profiling
+# zmodload zsh/zprof
+
 # History
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
@@ -72,3 +75,6 @@ zplug load
 # Return 'v' to its original function, i.e: visual mode
 bindkey -M vicmd 'v' visual-mode
 bindkey -M vicmd '^v' edit-command-line
+
+# Stop profiling
+# zprof
