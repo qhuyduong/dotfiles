@@ -23,9 +23,7 @@ eval "$(pyenv init -)"
 export PYENV_ROOT="$HOME/.pyenv"
 
 # Node
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_LAZY_LOAD=true
 
 # Fzf
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --skip-vcs-ignores -f -g ""'
@@ -40,24 +38,22 @@ alias ll='ls -lha'
 source ~/.zplug/init.zsh
 
 # Zplug plugins
-zplug "zplug/zplug"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "rimraf/k"
+zplug "agkozak/agkozak-zsh-prompt"
 zplug "b4b4r07/enhancd", use:init.sh
-zplug 'plugins/git', from:oh-my-zsh
-zplug 'plugins/vi-mode', from:oh-my-zsh
-zplug 'plugins/fzf', from:oh-my-zsh
 # Async for zsh, used by pure
 zplug "mafredri/zsh-async", from:github, defer:0
+zplug 'plugins/fzf', from:oh-my-zsh
+zplug 'plugins/git', from:oh-my-zsh
+zplug 'plugins/vi-mode', from:oh-my-zsh
 # Load completion library for those sweet [tab] squares
 zplug "lib/completion", from:oh-my-zsh
+zplug "lukechilds/zsh-nvm"
 # Syntax highlighting for commands, load last
+zplug "zplug/zplug"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
-# Theme!
-# zplug "ergenekonyigit/lambda-gitster", as:theme
-zplug "agkozak/agkozak-zsh-prompt"
 
 # Actually install plugins, prompt user input
 if ! zplug check --verbose; then
