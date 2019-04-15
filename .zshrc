@@ -71,3 +71,8 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+# Remap ESC key
+# Return 'v' to its original function, i.e: visual mode
+bindkey -M vicmd 'v' visual-mode
+bindkey -M vicmd '^v' edit-command-line
