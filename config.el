@@ -192,6 +192,7 @@
 (after! js2-mode
   (setq-default js-indent-level 2)
   (add-hook! js2-mode #'(add-node-modules-path prettier-js-mode indent-guide-mode))
+  (add-hook! js2-mode (nvm-use "10.15.0"))
   (map! :mode js2-mode
         (:leader
           (:prefix "p"
