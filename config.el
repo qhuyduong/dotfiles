@@ -347,7 +347,11 @@
 
 (after! prodigy
   (add-hook! (prodigy-mode prodigy-view-mode) (nvm-use "10.15.0"))
-  (set-evil-initial-state! 'prodigy-mode 'normal))
+  (set-evil-initial-state! 'prodigy-mode 'normal)
+  (map! :mode prodigy-mode
+        (:prefix "g"
+          :nv "s" #'prodigy-start
+          :nv "S" #'prodigy-stop)))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
