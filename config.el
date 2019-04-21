@@ -136,8 +136,13 @@
 (after! evil
   (evil-define-text-object evil-inner-buffer (count &optional beg end type)
     (list (point-min) (point-max)))
+  (evil-define-text-object evil-outer-defun (count &optional beg end type)
+    (save-excursion
+      (mark-defun)
+      (evil-range (region-beginning) (region-end) type :expanded t)))
   (add-to-list 'evil-motion-state-modes #'process-menu-mode)
   (map! :map evil-inner-text-objects-map "g" 'evil-inner-buffer
+        :map evil-outer-text-objects-map "m" 'evil-outer-defun
         :map evil-motion-state-map "," nil))
 
 ;; Magit
