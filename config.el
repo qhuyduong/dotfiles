@@ -21,7 +21,7 @@
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 ;; Make Emacs fullscreen by default
-(add-to-list 'default-frame-alist '(fullscreen . fullboth))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Workaround for magithub authentication stuffs
 (setq auth-sources '("~/.authinfo"))
