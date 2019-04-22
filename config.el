@@ -323,6 +323,9 @@
   (setq awesome-tab-buffer-groups-function #'+awesome-tab-buffer-groups)
   (setq awesome-tab-display-sticky-function-name nil)
   (setq awesome-tab-style 'alternate)
+  (setq awesome-tab-background-color (doom-lighten "#292d3e" 0.05))
+  (set-face-background 'awesome-tab-selected "#292d3e")
+  (set-face-background 'awesome-tab-unselected (doom-lighten "#292d3e" 0.05))
 
   (map! [header-line mouse-1] #'awesome-tab-click-to-tab
         "s-]" #'awesome-tab-forward-tab
