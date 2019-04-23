@@ -31,8 +31,6 @@ export NVM_LAZY_LOAD=true
 # Fzf
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --skip-vcs-ignores -f -g ""'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # Aliases
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
@@ -77,6 +75,8 @@ bindkey -M vicmd '^v' edit-command-line
 
 export AGKOZAK_PROMPT_CHAR=λ
 export AGKOZAK_COLORS_PROMPT_CHAR=yellow
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Stop profiling
 # zprof
