@@ -327,6 +327,10 @@
   (set-face-attribute 'awesome-tab-selected nil :background "#292d3e" :slant 'italic)
   (set-face-background 'awesome-tab-unselected (doom-lighten "#292d3e" 0.05))
 
+  (dotimes (num 10)
+    (let ((key-sequence (format "s-%d" num)))
+      (map! key-sequence #'awesome-tab-select-visible-tab)))
+
   (map! [header-line mouse-1] #'awesome-tab-click-to-tab
         "s-]" #'awesome-tab-forward-tab
         "s-[" #'awesome-tab-backward-tab
