@@ -11,9 +11,9 @@ export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export EDITOR=nvim
 export LESS=-FXR
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 
 if [[ -n $INSIDE_EMACS ]]; then
-  export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=2'
   export EDITOR=emacsclient
   export VISUAL=$EDITOR
 fi
