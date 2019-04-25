@@ -6,6 +6,7 @@
 (setq doom-localleader-key ",")
 (setq display-line-numbers-type 'relative)
 (setq line-number-mode nil)
+(setq initial-scratch-message ";; Happy Hacking")
 
 (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
 
