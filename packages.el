@@ -16,7 +16,6 @@
 (package! exec-path-from-shell)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
-(package! indent-guide)
 (package! lorem-ipsum)
 (package! nvm)
 (package! ob-async)
