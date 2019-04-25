@@ -34,6 +34,7 @@
 (package! evil-escape :disable t)
 (package! evil-vimish-fold :disable t)
 (package! exato :disable t)
+(package! magit-gitflow :disable t)
 (package! magit-todos :disable t)
 (package! nodejs-repl :disable t)
 (package! rubocop :disable t)
