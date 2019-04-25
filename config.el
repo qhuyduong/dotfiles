@@ -197,7 +197,7 @@
 ;; js2-mode
 (after! js2-mode
   (setq-default js-indent-level 2)
-  (add-hook! js2-mode #'(add-node-modules-path prettier-js-mode indent-guide-mode))
+  (add-hook! js2-mode #'(add-node-modules-path prettier-js-mode))
   (add-hook! js2-mode (nvm-use "10.15.0"))
   (map! :mode js2-mode
         (:leader
@@ -249,7 +249,6 @@
   (setq counsel-projectile-ag-initial-input '(ivy-thing-at-point)))
 
 (after! enh-ruby-mode
-  (add-hook! enh-ruby-mode #'indent-guide-mode)
   (map! :mode enh-ruby-mode
         (:leader
           (:prefix "p"
@@ -304,17 +303,15 @@
   (setq lsp-ui-doc-enable nil))
 
 (after! web-mode
-  (add-hook! (html-mode css-mode sass-mode less-css-mode web-mode) #'(lsp! indent-guide-mode)))
+  (add-hook! (html-mode css-mode sass-mode less-css-mode web-mode) #'lsp!))
 
 (after! elisp-mode
-  (add-hook! elisp-mode #'indent-guide-mode)
   (map! :mode emacs-lisp-mode
         (:leader
           (:prefix "p"
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
 
 (after! css-mode
-  (add-hook! css-mode #'indent-guide-mode)
   (setq css-indent-offset 2))
 
 (awesome-tab-mode t)
