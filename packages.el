@@ -35,6 +35,7 @@
 (package! evil-escape :disable t)
 (package! evil-vimish-fold :disable t)
 (package! exato :disable t)
+(package! nodejs-repl :disable t)
 (package! rubocop :disable t)
 (package! skewer-mode :disable t)
 (package! toml-mode :disable t)
