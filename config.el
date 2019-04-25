@@ -365,6 +365,10 @@
           :nv "s" #'prodigy-start
           :nv "S" #'prodigy-stop)))
 
+(after! tide
+  (setq tide-hl-identifier-idle-time 2)
+  (setq tide-sync-request-timeout 5))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
   "
