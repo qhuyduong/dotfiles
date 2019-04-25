@@ -1,16 +1,14 @@
 ;;; init.el -*- lexical-binding: t; -*-
-;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
-(doom! :feature
-       eval              ; run code, run (also, repls)
-       (evil             ; come to the dark side, we have cookies
-        +everywhere)     ; enables evil globally
-       file-templates    ; auto-snippets for empty files
-       (lookup           ; helps you navigate your code and documentation
-        +docsets)        ; ...or in Dash docsets locally
-       snippets          ; my elves. They type so I don't have to
+;; Copy this file to ~/.doom.d/init.el or ~/.config/doom/init.el ('doom
+;; quickstart' will do this for you). The `doom!' block below controls what
+;; modules are enabled and in what order they will be loaded. Remember to run
+;; 'doom refresh' after modifying it.
+;;
+;; More information about these modules (and what flags they support) can be
+;; found in modules/README.org.
 
-       :completion
+(doom! :completion
        (company          ; the ultimate code completion backend
         +auto            ; as-you-type code completion
         +childframe)     ; enables displaying completion candidates in a child frame
@@ -19,9 +17,9 @@
 
        :ui
        doom              ; what makes DOOM look the way it does
-       evil-goggles      ; display visual hints when editing in evil
        hl-todo           ; highlight TODO/FIXME/NOTE tags
        modeline          ; snazzy, Atom-inspired modeline, plus API
+       ophints           ; highlight the region an operation acts on
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
@@ -29,16 +27,24 @@
        vc-gutter         ; vcs diff in the fringe
 
        :editor
+       (evil +everywhere); come to the dark side, we have cookies
+       file-templates    ; auto-snippets for empty files
        multiple-cursors  ; editing in many places at once
+       snippets          ; my elves. They type so I don't have to
 
        :emacs
        (dired            ; making dired pretty [functional]
         +icons)          ; colorful icons for dired-mode
+       imenu             ; an imenu sidebar and searchable code index
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
+       eval              ; run code, run (also, repls)
        (flycheck         ; tasing you for every semicolon you forget
         +childframe)     ; use childframes for error popups (Emacs 26+ only)
+       gist              ; interacting with github gists
+       (lookup           ; helps you navigate your code and documentation
+        +docsets)        ; ...or in Dash docsets locally
        lsp               ; LSP client
        macos             ; MacOS-specific commands
        (magit            ; a git porcelain for Emacs
