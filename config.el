@@ -357,6 +357,7 @@
   (setq hydra-hint-display-type 'message))
 
 (after! prodigy
+  (setq prodigy-view-buffer-maximum-size 512)
   (add-hook! (prodigy-mode prodigy-view-mode) (nvm-use "10.15.0"))
   (set-evil-initial-state! 'prodigy-mode 'normal)
   (map! :mode prodigy-mode
