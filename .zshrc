@@ -18,6 +18,9 @@ if [[ -n $INSIDE_EMACS ]]; then
   export VISUAL=$EDITOR
 fi
 
+# Emacs mode
+bindkey -e
+
 # Ruby
 eval "$(rbenv init -)"
 
@@ -42,9 +45,8 @@ source ~/.zplug/init.zsh
 zplug "agkozak/agkozak-zsh-prompt"
 # Async for zsh, used by pure
 zplug "mafredri/zsh-async", from:github, defer:0
-zplug 'plugins/fzf', from:oh-my-zsh
-zplug 'plugins/git', from:oh-my-zsh
-zplug 'plugins/vi-mode', from:oh-my-zsh
+zplug "plugins/fzf", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
 # Load completion library for those sweet [tab] squares
 zplug "lib/completion", from:oh-my-zsh
 zplug "lukechilds/zsh-nvm"
@@ -67,11 +69,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-
-# Remap ESC key
-# Return 'v' to its original function, i.e: visual mode
-bindkey -M vicmd 'v' visual-mode
-bindkey -M vicmd '^v' edit-command-line
 
 export AGKOZAK_PROMPT_CHAR=λ
 export AGKOZAK_COLORS_PROMPT_CHAR=yellow
