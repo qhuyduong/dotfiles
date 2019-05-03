@@ -346,7 +346,6 @@
   (add-hook! vterm-mode (setq-local evil-insert-state-cursor 'box))
   (map! :mode vterm-mode
         :i [return] #'vterm-send-return
-        :i "C-g" #'vterm-send-escape
         :i "C-c" #'vterm--self-insert
         :i "C-h" #'vterm--self-insert))
 
