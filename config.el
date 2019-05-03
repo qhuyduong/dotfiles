@@ -37,7 +37,6 @@
 
 (after! doom-modeline
   (remove-hook! 'doom-modeline-mode-hook #'column-number-mode)
-  (setq doom-modeline-buffer-file-name-style 'file-name)
   (setq doom-modeline-major-mode-icon t)
   (setq doom-modeline-major-mode-color-icon t)
   (setq doom-modeline-enable-word-count t)
