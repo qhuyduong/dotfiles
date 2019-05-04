@@ -148,7 +148,7 @@
 ;; Magit
 (after! magit
   (setq magit-status-mode-hook nil)
-  (setq-hook! 'magit-status-mode-hook header-line-format '(:eval (awesome-tab-line)))
+  (setq-hook! 'magit-status-mode-hook header-line-format '(:eval (tabbar-line)))
   (setq magit-repository-directories '(("~/EH-Workspace" . 1)
                                        ("~/Workspace" . 1))
         magit-save-repository-buffers nil))
@@ -244,7 +244,6 @@
 
 (after! ivy
   (set-face-foreground 'ivy-current-match "#c3e88d")
-  (add-to-list 'ivy-display-functions-alist 'ivy-source-awesome-tab-group)
   (setq counsel-projectile-ag-initial-input '(ivy-thing-at-point)))
 
 (after! enh-ruby-mode
@@ -313,35 +312,6 @@
 (after! css-mode
   (setq css-indent-offset 2))
 
-(awesome-tab-mode t)
-
-(after! awesome-tab
-  (setq awesome-tab-hide-tab-function #'+awesome-tab-hide-tab)
-  (setq awesome-tab-buffer-groups-function #'+awesome-tab-buffer-groups)
-  (setq awesome-tab-display-sticky-function-name nil)
-  (setq awesome-tab-style 'alternate)
-  (setq awesome-tab-background-color (doom-lighten "#292d3e" 0.05))
-  (set-face-attribute 'awesome-tab-selected nil :background "#292d3e" :slant 'italic)
-  (set-face-background 'awesome-tab-unselected (doom-lighten "#292d3e" 0.05))
-
-  (dotimes (num 10)
-    (let ((key-sequence (format "s-%d" num)))
-      (map! key-sequence #'awesome-tab-select-visible-tab)))
-
-  (map! [header-line mouse-1] #'awesome-tab-click-to-tab
-        "s-]" #'awesome-tab-forward-tab
-        "s-[" #'awesome-tab-backward-tab
-        "s-}" #'+awesome-tab-forward-group
-        "s-{" #'+awesome-tab-backward-group
-
-        (:leader
-          (:prefix ("TAB" . "awesome-tab")
-            :desc "Forward tab group" :nv "]" #'+awesome-tab-forward-group
-            :desc "Backward tab group" :nv "[" #'+awesome-tab-backward-group
-            :desc "Kill all buffers in group" :nv "d" #'awesome-tab-kill-all-buffers-in-current-group
-            :desc "Kill other buffers in group" :nv "D" #'awesome-tab-kill-other-buffers-in-current-group
-            :desc "Switch to tab group" :nv "TAB" #'awesome-tab-build-ivy-source))))
-
 (after! vterm
   (add-hook! vterm-mode (setq-local evil-insert-state-cursor 'box))
   (map! :mode vterm-mode
@@ -367,6 +337,38 @@
 (after! tide
   (setq tide-hl-identifier-idle-time 2)
   (setq tide-sync-request-timeout 5))
+
+(tabbar-mode t)
+
+(after! tabbar
+  (require 'tabbar-ruler)
+
+  (setq tabbar-scroll-right-button '(("") ""))
+  (setq tabbar-scroll-left-button '(("") ""))
+  (setq tabbar-buffer-home-button '(("") ""))
+  (setq tabbar-background-color "#333747")
+  (setq tabbar-buffer-list-function #'+tabbar-buffer-list)
+  (setq tabbar-buffer-groups-function #'+tabbar-buffer-groups)
+  (custom-set-faces '(tabbar-selected ((t (:background "#292d3e" :slant italic))))
+                    '(tabbar-selected-modified ((t (:foreground "#ff5370"))))
+                    '(tabbar-unselected ((t (:background "#333747"))))
+                    '(tabbar-unselected-modified ((t (:background "#333747")))))
+
+  (map! "s-]" #'tabbar-forward-tab
+        "s-[" #'tabbar-backward-tab
+        "s-}" #'+tabbar-forward-group
+        "s-{" #'+tabbar-backward-group
+
+        (:leader
+          (:prefix ("TAB" . "tabbar")
+            :desc "Forward tab group" :nv "]" #'+tabbar-forward-group
+            :desc "Backward tab group" :nv "[" #'+tabbar-backward-group))))
+
+(after! tabbar-ruler
+  (setq tabbar-ruler-global-tabbar t)
+  (setq tabbar-ruler-fancy-close-image t)
+  (setq tabbar-ruler-fancy-tab-separator 'alternate)
+  (setq tabbar-ruler-fancy-current-tab-separator 'alternate))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
@@ -415,8 +417,18 @@ Movement^^^^            Merge action^^           Other
                  "-group" "org.gnu.Emacs"
                  "-appIcon" "/Users/qhuyduong/Workspace/inventory/org-unicorn.png"))
 
-(defun +awesome-tab-hide-tab (x)
-  (let ((name (format "%s" x)))
+(defun +tabbar-forward-group ()
+  (interactive)
+  (tabbar-forward-group)
+  (minibuffer-message "Tabbar Group: %s" (cdr (tabbar-selected-tab (tabbar-current-tabset t)))))
+
+(defun +tabbar-backward-group ()
+  (interactive)
+  (tabbar-backward-group)
+  (minibuffer-message "Tabbar Group: %s" (cdr (tabbar-selected-tab (tabbar-current-tabset t)))))
+
+(defun +tabbar-hide-tab (buffer)
+  (let ((name (format "%s" buffer)))
     (or
      ;; Current window is not dedicated window.
      (window-dedicated-p (selected-window))
@@ -433,7 +445,22 @@ Movement^^^^            Merge action^^           Other
      (and (string-prefix-p "magit-" name)
           (not (string= (file-name-extension name) "el"))))))
 
-(defun +awesome-tab-buffer-groups ()
+(defun +tabbar-buffer-list ()
+  "Return the list of buffers to show in tabs.
+Exclude buffers whose name starts with a space or *, when they are not
+visiting a file.  The current buffer is always included."
+  (delq nil
+        (mapcar #'(lambda (buffer)
+                    (cond
+                     ;; Always include the current buffer.
+                     ((eq (current-buffer) buffer) buffer)
+                     ((buffer-file-name buffer) buffer)
+                     ;; Buffer name begin with asterisk *
+                     ((+tabbar-hide-tab buffer) nil)
+                     ((buffer-live-p buffer) buffer)))
+                (buffer-list))))
+
+(defun +tabbar-buffer-groups ()
   "Group priority:
 1. Handle some exceptional buffers (e.g: Prodigy)
 2. Try to add buffer to project.
@@ -464,26 +491,6 @@ Movement^^^^            Merge action^^           Other
 (defun vterm/open-in-project ()
   (interactive)
   (+vterm/open t))
-
-(defun +awesome-tab-forward-group ()
-  (interactive)
-  (awesome-tab-forward-group)
-  (minibuffer-message "Awesome-Tab Group: %s" (cdr (awesome-tab-selected-tab (awesome-tab-current-tabset t)))))
-
-(defun +awesome-tab-backward-group ()
-  (interactive)
-  (awesome-tab-backward-group)
-  (minibuffer-message "Awesome-Tab Group: %s" (cdr (awesome-tab-selected-tab (awesome-tab-current-tabset t)))))
-
-(defun awesome-tab-click-to-tab (event)
-  "Switch to buffer (obtained from EVENT) on clicking header line"
-  (interactive "e")
-  (let ((position (event-start event)))
-    (select-window (posn-window position))
-    (let ((selected-tab-name
-           (string-trim (car (posn-string position)))))
-      (unless (string-match-p "^%-$" selected-tab-name)
-        (switch-to-buffer selected-tab-name)))))
 
 (when (file-exists-p "~/.doom.d/+prodigy-services.el")
   (load! "+prodigy-services"))

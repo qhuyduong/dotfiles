@@ -8,7 +8,6 @@
 
 (package! add-node-modules-path)
 (package! apib-mode)
-(package! awesome-tab :recipe (:fetcher github :repo "manateelazycat/awesome-tab"))
 (package! copy-as-format)
 (package! dired-single)
 (package! docker-compose-mode)
@@ -24,6 +23,7 @@
 (package! osx-trash)
 (package! prettier-js)
 (package! reason-mode)
+(package! tabbar-ruler)
 (package! uuidgen)
 
 ;;; Disabled packages
