@@ -134,9 +134,9 @@
 ;; Modules
 ;; Evil
 (after! evil
-  (evil-define-text-object evil-inner-buffer (count &optional beg end type)
+  (evil-define-text-object evil-inner-buffer (count &optional _beg _end _type)
     (list (point-min) (point-max)))
-  (evil-define-text-object evil-outer-defun (count &optional beg end type)
+  (evil-define-text-object evil-outer-defun (count &optional _beg _end _type)
     (save-excursion
       (mark-defun)
       (evil-range (region-beginning) (region-end) type :expanded t)))
