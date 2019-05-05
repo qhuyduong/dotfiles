@@ -360,7 +360,9 @@
         (:leader
           (:prefix ("TAB" . "tabbar")
             :desc "Forward tab group" :nv "]" #'+tabbar-forward-group
-            :desc "Backward tab group" :nv "[" #'+tabbar-backward-group))))
+            :desc "Backward tab group" :nv "[" #'+tabbar-backward-group
+            :desc "Kill all buffers in group" :nv "d" #'+tabbar-kill-all-buffers-in-current-group
+            :desc "Kill other buffers in group" :nv "D" #'+tabbar-kill-other-buffers-in-current-group))))
 
 (after! tabbar-ruler
   (setq tabbar-ruler-global-tabbar t)
@@ -476,6 +478,34 @@ visiting a file.  The current buffer is always included."
       ((memq major-mode '(org-mode org-agenda-mode diary-mode))
        "OrgMode")
       (t "Emacs")))))
+
+(defmacro +tabbar-kill-buffer-match-rule (match-rule)
+  `(save-excursion
+     (mapc #'(lambda (buffer)
+               (with-current-buffer buffer
+                 (when (string-equal current-group-name
+                                     (cdr (tabbar-selected-tab (tabbar-current-tabset t))))
+                   (when (funcall ,match-rule buffer)
+                     (kill-buffer buffer))
+                   )))
+           (buffer-list))))
+
+(defun +tabbar-kill-all-buffers-in-current-group ()
+  "Kill all buffers in current group."
+  (interactive)
+  (let* ((current-group-name (cdr (tabbar-selected-tab (tabbar-current-tabset t)))))
+    ;; Kill all buffers in current group.
+    (+tabbar-kill-buffer-match-rule (lambda (_buffer) t))
+    ;; Switch to next group.
+    (+tabbar-forward-group)))
+
+(defun +tabbar-kill-other-buffers-in-current-group ()
+  "Kill all buffers except current buffer in current group."
+  (interactive)
+  (let* ((current-group-name (cdr (tabbar-selected-tab (tabbar-current-tabset t))))
+         (current-buffer (current-buffer)))
+    ;; Kill all buffers in current group.
+    (+tabbar-kill-buffer-match-rule (lambda (buffer) (not (equal buffer current-buffer))))))
 
 (defun vterm-send-escape ()
   (interactive)
