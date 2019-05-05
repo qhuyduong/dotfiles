@@ -370,6 +370,12 @@
   (setq tabbar-ruler-fancy-tab-separator 'alternate)
   (setq tabbar-ruler-fancy-current-tab-separator 'alternate))
 
+(after! mode-icons
+  (add-to-list 'mode-icons '("\\`JS2\\'" "js" xpm))
+  (add-to-list 'mode-icons '("\\`Elisp\\'" "emacs" xpm))
+  (add-to-list 'mode-icons '("\\`VTerm\\'" "term" xpm))
+  (add-to-list 'mode-icons '("\\`JSON\\'" #xf07c github-octicons)))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
   "
