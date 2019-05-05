@@ -101,10 +101,10 @@
           :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
 
         (:prefix "g"
-          :desc "Resolve conflicts" :n "r" #'hydra-smerge/body)
+          :desc "Resolve conflicts" :n "r" #'smerge-hydra/body)
 
         (:prefix "w"
-          :desc "evil-window-resize" :n "r" #'hydra-evil-window-resize/body)
+          :desc "evil-window-resize" :n "r" #'evil-window-resize-hydra/body)
 
         (:prefix "i"
           :desc "UUIDv4" :n "u" #'uuidgen
@@ -379,34 +379,24 @@
   (add-to-list 'mode-icons '("\\`Gitignore\\'" #xf1d2 FontAwesome)))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
-(defhydra hydra-smerge (:hint nil)
-  "
-Movement^^^^            Merge action^^           Other
-------------------^^^^  ---------------------^^  -----------
-[_n_]^^    next hunk    [_b_] keep base          [_u_] undo
-[_N_/_p_]  prev hunk    [_m_] keep mine          [_r_] refine
-[_k_]^^    move up      [_a_] keep all           [_q_] quit
-[_j_]^^    move down    [_o_] keep other
-[_C-u_]^^  scroll up    [_c_] keep current
-[_C-d_]^^  scroll down  [_C_] combine with next"
-  ("n" smerge-next)
-  ("N" smerge-prev)
-  ("p" smerge-prev)
-  ("j" evil-next-line)
-  ("k" evil-previous-line)
-  ("C-u" evil-scroll-up)
-  ("C-d" evil-scroll-down)
-  ("b" smerge-keep-base)
-  ("m" smerge-keep-mine)
-  ("a" smerge-keep-all)
-  ("o" smerge-keep-other)
-  ("c" smerge-keep-current)
-  ("C" smerge-combine-with-next)
-  ("u" undo-tree-undo)
-  ("r" smerge-refine)
-  ("q" nil))
+(defhydra smerge-hydra (:hint nil)
+  ("n" smerge-next "next hunk" :column "Movement")
+  ("N" smerge-prev "prev hunk")
+  ("k" evil-previous-line "move up")
+  ("j" evil-next-line "move down")
+  ("C-u" evil-scroll-up "scroll up")
+  ("C-d" evil-scroll-down "scroll down")
+  ("b" smerge-keep-base "keep base" :column "Merge action")
+  ("m" smerge-keep-mine "keep mine")
+  ("a" smerge-keep-all "keep all")
+  ("o" smerge-keep-other "keep other")
+  ("c" smerge-keep-current "keep current")
+  ("C" smerge-combine-with-next "combine with next")
+  ("u" undo-tree-undo "undo" :column "Other")
+  ("r" smerge-refine "refine")
+  ("q" nil "quit"))
 
-(defhydra hydra-evil-window-resize (:hint nil)
+(defhydra evil-window-resize-hydra (:hint nil)
   ("k" (evil-window-increase-height 10) "increase height by 10 rows")
   ("j" (evil-window-decrease-height 10) "decrease height by 10 rows")
   ("l" (evil-window-increase-width 10) "increase width by 10 columns")
