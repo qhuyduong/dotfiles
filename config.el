@@ -374,7 +374,9 @@
   (add-to-list 'mode-icons '("\\`JS2\\'" "js" xpm))
   (add-to-list 'mode-icons '("\\`Elisp\\'" "emacs" xpm))
   (add-to-list 'mode-icons '("\\`VTerm\\'" "term" xpm))
-  (add-to-list 'mode-icons '("\\`JSON\\'" #xf07c github-octicons)))
+  (add-to-list 'mode-icons '("\\`JSON\\'" #xf07c github-octicons))
+  (add-to-list 'mode-icons '("\\`BSDmakefile\\'" #xe679 file-icons))
+  (add-to-list 'mode-icons '("\\`Gitignore\\'" #xf1d2 FontAwesome)))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra hydra-smerge (:hint nil)
