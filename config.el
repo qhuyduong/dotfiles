@@ -344,13 +344,13 @@
   (setq tabbar-scroll-right-button '(("") ""))
   (setq tabbar-scroll-left-button '(("") ""))
   (setq tabbar-buffer-home-button '(("") ""))
-  (setq tabbar-background-color "#333747")
+  (setq tabbar-background-color "#3e4151")
   (setq tabbar-buffer-list-function #'+tabbar-buffer-list)
   (setq tabbar-buffer-groups-function #'+tabbar-buffer-groups)
   (custom-set-faces '(tabbar-selected ((t (:background "#292d3e" :slant italic))))
                     '(tabbar-selected-modified ((t (:foreground "#ff5370"))))
-                    '(tabbar-unselected ((t (:background "#333747"))))
-                    '(tabbar-unselected-modified ((t (:background "#333747")))))
+                    '(tabbar-unselected ((t (:foreground "#EEFFFF" :background "#3e4151"))))
+                    '(tabbar-unselected-modified ((t (:background "#3e4151")))))
 
   (map! "s-]" #'tabbar-forward-tab
         "s-[" #'tabbar-backward-tab
