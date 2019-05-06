@@ -368,8 +368,8 @@
 (after! tabbar-ruler
   (setq tabbar-ruler-global-tabbar t)
   (setq tabbar-ruler-fancy-close-image t)
-  (setq tabbar-ruler-fancy-tab-separator 'alternate)
-  (setq tabbar-ruler-fancy-current-tab-separator 'alternate))
+  (setq tabbar-ruler-fancy-tab-separator 'box)
+  (setq tabbar-ruler-fancy-current-tab-separator 'box))
 
 (after! mode-icons
   (add-to-list 'mode-icons '("\\`JS2\\'" "js" xpm))
