@@ -40,6 +40,7 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
+       docker
        eval              ; run code, run (also, repls)
        (flycheck         ; tasing you for every semicolon you forget
         +childframe)     ; use childframes for error popups (Emacs 26+ only)

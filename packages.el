@@ -11,7 +11,6 @@
 (package! copy-as-format)
 (package! dired-single)
 (package! docker-compose-mode)
-(package! dockerfile-mode)
 (package! exec-path-from-shell)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
