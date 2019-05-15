@@ -586,9 +586,9 @@ visiting a file.  The current buffer is always included."
   "
 Tab groups: %s(+tabbar-group-tab-layout)
 "
-  ("n" +tabbar-forward-group "Next Layout")
-  ("p" +tabbar-backward-group "Prev Layout")
-  ("l" +tabbar-switch-group "Switch Layout")
+  ("n" +tabbar-forward-group "Next group")
+  ("p" +tabbar-backward-group "Prev group")
+  ("l" +tabbar-switch-group "Switch group")
   ("0" +tabbar-switch-group-to-0)
   ("1" +tabbar-switch-group-to-1)
   ("2" +tabbar-switch-group-to-2)
