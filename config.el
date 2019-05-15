@@ -222,7 +222,7 @@
 
 (after! rspec-mode
   (add-hook! rspec-compilation-mode #'inf-ruby-switch-setup)
-  (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.4 :side 'right :quit 'current)
+  (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.3 :side 'right :quit 'current)
   ;; Rspec doesn't use RVM!
   (setq rspec-use-rvm nil))
 
