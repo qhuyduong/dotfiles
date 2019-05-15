@@ -435,8 +435,7 @@
      ;; Buffer name begin with asterisk *
      (and (string-match-p "^[ ]*\\*" name)
           ;; but not one of these buffers
-          (not (or (string-prefix-p "*rspec" name)
-                   (string-prefix-p "*prodigy-" name))))
+          (not (string-prefix-p "*rspec" name)))
 
      (string-match-p "treemacs-persist" name)
 
@@ -468,8 +467,6 @@ visiting a file.  The current buffer is always included."
   (let ((current-project (cdr (project-current))))
     (list
      (cond
-      ((string-prefix-p "*prodigy-" (buffer-name))
-       "Prodigy")
       (current-project
        current-project)
       ((derived-mode-p 'dired-mode)
