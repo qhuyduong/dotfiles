@@ -51,6 +51,7 @@
 (after! dired
   ;; Icons in dired
   (require 'font-lock+)
+  (add-hook! dired-mode #'rspec-dired-mode)
   (map! :mode dired-mode
         [remap dired-find-file] #'dired-single-buffer
         [remap dired-up-directory] #'dired-single-up-directory))
