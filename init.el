@@ -50,7 +50,6 @@
        lsp               ; LSP client
        macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
-       prodigy           ; FIXME managing external services & code builders
        vterm             ; another terminals in Emacs
 
        :lang

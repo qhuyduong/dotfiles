@@ -326,6 +326,7 @@
   (setq hydra-hint-display-type 'message))
 
 (after! prodigy
+  (setq prodigy-view-truncate-by-default t)
   (setq prodigy-view-buffer-maximum-size 512)
   (add-hook! (prodigy-mode prodigy-view-mode) (nvm-use "10.15.0"))
   (set-evil-initial-state! 'prodigy-mode 'normal)
@@ -517,9 +518,6 @@ visiting a file.  The current buffer is always included."
 (defun vterm/open-in-project ()
   (interactive)
   (+vterm/open t))
-
-(when (file-exists-p "~/.doom.d/+prodigy-services.el")
-  (load! "+prodigy-services"))
 
 (defun projectile-frontend-core-related-files (path)
   (when (string-match "\\(.*\\)\/\\(.*\\)$" path)
