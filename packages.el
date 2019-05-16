@@ -10,6 +10,7 @@
 (package! apib-mode)
 (package! copy-as-format)
 (package! dired-single)
+(package! dockerfile-mode)
 (package! docker-compose-mode)
 (package! exec-path-from-shell)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
