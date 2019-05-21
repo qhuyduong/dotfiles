@@ -354,6 +354,10 @@
                     '(tabbar-unselected ((t (:foreground "#EEFFFF" :background "#494c5a"))))
                     '(tabbar-unselected-modified ((t (:background "#494c5a")))))
 
+  (dotimes (num 10)
+    (let ((key-sequence (format "s-%d" num)))
+      (global-set-key (kbd key-sequence) #'+tabbar-select-visible-tab)))
+
   (map! "s-]" #'tabbar-forward-tab
         "s-[" #'tabbar-backward-tab
         "s-}" #'+tabbar-forward-group
@@ -577,6 +581,33 @@ visiting a file.  The current buffer is always included."
                                (format "%d:%s" (+ idx 1) (f-base elt))))))
     (message "%s" highlight-groups)
     (string-join (seq-map-indexed highlight-groups (+tabbar-get-groups)) " | ")))
+
+(defun +tabbar-select-visible-nth-tab (tab-index)
+  "Select visible tab with `tab-index'.
+Example, when `tab-index' is 1, this function will select the leftmost label in the visible area,
+instead of the first label in the current group.
+If `tab-index' more than length of visible tabs, selet the last tab.
+If `tab-index' is 0, select last tab."
+  (let ((visible-tabs (tabbar-view tabbar-current-tabset)))
+    (switch-to-buffer
+     (car
+      (if (or (equal tab-index 0)
+              (> tab-index (length visible-tabs)))
+          (car (last visible-tabs))
+        (nth (- tab-index 1) visible-tabs))))))
+
+(defun +tabbar-select-visible-tab ()
+  "Bind this function with number keystroke, such as s-1, s-2, s-3 ... etc.
+This function automatically recognizes the number at the end of the keystroke
+and switches to the tab of the corresponding index.
+Note that this function switches to the visible range,
+not the actual logical index position of the current group."
+  (interactive)
+  (let* ((event last-command-event)
+         (key (make-vector 1 event))
+         (key-desc (key-description key)))
+    (+tabbar-select-visible-nth-tab
+     (string-to-number (nth 1 (split-string key-desc "-"))))))
 
 (defhydra +tabbar-group-hydra (:hint nil :exit t)
   "
