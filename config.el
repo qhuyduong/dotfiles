@@ -444,6 +444,7 @@
           (not (string-prefix-p "*rspec" name)))
 
      (string-match-p "treemacs-persist" name)
+     (string-match-p "markdown-code-fontification" name)
 
      ;; Is not magit-* buffer (except magit source file)
      (and (string-prefix-p "magit-" name)
