@@ -39,6 +39,9 @@
        imenu             ; an imenu sidebar and searchable code index
        vc                ; version-control and Emacs, sitting in a tree
 
+       :term
+       vterm             ; another terminals in Emacs
+
        :tools
        eval              ; run code, run (also, repls)
        (flycheck         ; tasing you for every semicolon you forget
@@ -49,7 +52,6 @@
        lsp               ; LSP client
        macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
-       vterm             ; another terminals in Emacs
 
        :lang
        data              ; config/data formats
