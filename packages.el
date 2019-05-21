@@ -22,7 +22,6 @@
 (package! org-pomodoro)
 (package! osx-trash)
 (package! prettier-js)
-(package! reason-mode)
 (package! tabbar-ruler)
 (package! uuidgen)
 (package! vterm :recipe (:fetcher github :repo "jixiuf/emacs-libvterm" :branch "support-256color" :files ("*")))
