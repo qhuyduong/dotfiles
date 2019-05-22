@@ -28,7 +28,6 @@
 
 ;;; Disabled packages
 (package! coffee-mode :disable t)
-(package! company-box :disable t)
 (package! csv-mode :disable t)
 (package! dhall-mode :disable t)
 (package! eslintd-fix :disable t)
