@@ -337,6 +337,8 @@
   (setq tide-hl-identifier-idle-time 2)
   (setq tide-sync-request-timeout 5))
 
+(mode-icons-mode)
+
 (after! mode-icons
   (add-to-list 'mode-icons '("\\`JS2\\'" "js" xpm))
   (add-to-list 'mode-icons '("\\`Elisp\\'" "emacs" xpm))

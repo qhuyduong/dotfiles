@@ -16,6 +16,7 @@
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
 (package! lorem-ipsum)
+(package! mode-icons)
 (package! nvm)
 (package! ob-async)
 (package! org-pivotal)
