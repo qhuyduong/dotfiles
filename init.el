@@ -35,7 +35,6 @@
        :emacs
        (dired            ; making dired pretty [functional]
         +icons)          ; colorful icons for dired-mode
-       imenu             ; an imenu sidebar and searchable code index
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
