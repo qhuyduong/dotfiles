@@ -147,7 +147,6 @@
 ;; Magit
 (after! magit
   (setq magit-status-mode-hook nil)
-  (setq-hook! 'magit-status-mode-hook header-line-format '(:eval (tabbar-line)))
   (setq magit-repository-directories '(("~/EH-Workspace" . 1)
                                        ("~/Workspace" . 1))
         magit-save-repository-buffers nil))
@@ -338,45 +337,6 @@
   (setq tide-hl-identifier-idle-time 2)
   (setq tide-sync-request-timeout 5))
 
-(tabbar-mode t)
-
-(after! tabbar
-  (require 'tabbar-ruler)
-
-  (setq tabbar-scroll-right-button '(("") ""))
-  (setq tabbar-scroll-left-button '(("") ""))
-  (setq tabbar-buffer-home-button '(("") ""))
-  (setq tabbar-background-color "#494c5a")
-  (setq tabbar-buffer-list-function #'+tabbar-buffer-list)
-  (setq tabbar-buffer-groups-function #'+tabbar-buffer-groups)
-  (custom-set-faces '(tabbar-selected ((t (:background "#292d3e" :slant italic :weight medium))))
-                    '(tabbar-selected-modified ((t (:foreground "#ff5370"))))
-                    '(tabbar-unselected ((t (:foreground "#EEFFFF" :background "#494c5a"))))
-                    '(tabbar-unselected-modified ((t (:background "#494c5a")))))
-
-  (dotimes (num 10)
-    (let ((key-sequence (format "s-%d" num)))
-      (global-set-key (kbd key-sequence) #'+tabbar-select-visible-tab)))
-
-  (map! "s-]" #'tabbar-forward-tab
-        "s-[" #'tabbar-backward-tab
-        "s-}" #'+tabbar-forward-group
-        "s-{" #'+tabbar-backward-group
-
-        (:leader
-          (:prefix ("TAB" . "tabbar")
-            :desc "Forward tab group" :nv "]" #'+tabbar-forward-group
-            :desc "Backward tab group" :nv "[" #'+tabbar-backward-group
-            :desc "Kill all buffers in group" :nv "d" #'+tabbar-kill-all-buffers-in-current-group
-            :desc "Kill other buffers in group" :nv "D" #'+tabbar-kill-other-buffers-in-current-group
-            :desc "Switch to tab group" :nv "TAB" #'+tabbar-group-hydra/body))))
-
-(after! tabbar-ruler
-  (setq tabbar-ruler-global-tabbar t)
-  (setq tabbar-ruler-fancy-close-image t)
-  (setq tabbar-ruler-fancy-tab-separator 'box)
-  (setq tabbar-ruler-fancy-current-tab-separator 'box))
-
 (after! mode-icons
   (add-to-list 'mode-icons '("\\`JS2\\'" "js" xpm))
   (add-to-list 'mode-icons '("\\`Elisp\\'" "emacs" xpm))
@@ -422,94 +382,6 @@
                  "-group" "org.gnu.Emacs"
                  "-appIcon" "/Users/qhuyduong/Workspace/inventory/org-unicorn.png"))
 
-(defun +tabbar-forward-group ()
-  (interactive)
-  (tabbar-forward-group)
-  (minibuffer-message "Tabbar Group: %s" (cdr (tabbar-selected-tab (tabbar-current-tabset t)))))
-
-(defun +tabbar-backward-group ()
-  (interactive)
-  (tabbar-backward-group)
-  (minibuffer-message "Tabbar Group: %s" (cdr (tabbar-selected-tab (tabbar-current-tabset t)))))
-
-(defun +tabbar-hide-tab (buffer)
-  (let ((name (format "%s" buffer)))
-    (or
-     ;; Current window is not dedicated window.
-     (window-dedicated-p (selected-window))
-
-     ;; Buffer name begin with asterisk *
-     (and (string-match-p "^[ ]*\\*" name)
-          ;; but not one of these buffers
-          (not (string-prefix-p "*rspec" name)))
-
-     (string-match-p "treemacs-persist" name)
-     (string-match-p "markdown-code-fontification" name)
-
-     ;; Is not magit-* buffer (except magit source file)
-     (and (string-prefix-p "magit-" name)
-          (not (string= (file-name-extension name) "el"))))))
-
-(defun +tabbar-buffer-list ()
-  "Return the list of buffers to show in tabs.
-Exclude buffers whose name starts with a space or *, when they are not
-visiting a file.  The current buffer is always included."
-  (delq nil
-        (mapcar #'(lambda (buffer)
-                    (cond
-                     ;; Always include the current buffer.
-                     ((eq (current-buffer) buffer) buffer)
-                     ((buffer-file-name buffer) buffer)
-                     ;; Buffer name begin with asterisk *
-                     ((+tabbar-hide-tab buffer) nil)
-                     ((buffer-live-p buffer) buffer)))
-                (buffer-list))))
-
-(defun +tabbar-buffer-groups ()
-  "Group priority:
-1. Handle some exceptional buffers (e.g: Prodigy)
-2. Try to add buffer to project.
-3. Group buffer with mode if buffer is derived from `dired-mode' `org-mode'.
-4. Other buffers pushed to group \"Emacs\"."
-  (let ((current-project (cdr (project-current))))
-    (list
-     (cond
-      (current-project
-       current-project)
-      ((derived-mode-p 'dired-mode)
-       "Dired")
-      ((memq major-mode '(org-mode org-agenda-mode diary-mode))
-       "OrgMode")
-      (t "Emacs")))))
-
-(defmacro +tabbar-kill-buffer-match-rule (match-rule)
-  `(save-excursion
-     (mapc #'(lambda (buffer)
-               (with-current-buffer buffer
-                 (when (string-equal current-group-name
-                                     (cdr (tabbar-selected-tab (tabbar-current-tabset t))))
-                   (when (funcall ,match-rule buffer)
-                     (kill-buffer buffer))
-                   )))
-           (buffer-list))))
-
-(defun +tabbar-kill-all-buffers-in-current-group ()
-  "Kill all buffers in current group."
-  (interactive)
-  (let* ((current-group-name (cdr (tabbar-selected-tab (tabbar-current-tabset t)))))
-    ;; Kill all buffers in current group.
-    (+tabbar-kill-buffer-match-rule (lambda (_buffer) t))
-    ;; Switch to next group.
-    (+tabbar-forward-group)))
-
-(defun +tabbar-kill-other-buffers-in-current-group ()
-  "Kill all buffers except current buffer in current group."
-  (interactive)
-  (let* ((current-group-name (cdr (tabbar-selected-tab (tabbar-current-tabset t))))
-         (current-buffer (current-buffer)))
-    ;; Kill all buffers in current group.
-    (+tabbar-kill-buffer-match-rule (lambda (buffer) (not (equal buffer current-buffer))))))
-
 (defun vterm-send-escape ()
   (interactive)
   (vterm-send-string "\e"))
@@ -531,103 +403,6 @@ visiting a file.  The current buffer is always included."
       (if (projectile-test-file-p file-name)
           (list :impl (concat dir "/../" base-file-name ".js"))
         (list :test (concat dir "/__tests__/" base-file-name ".spec.js"))))))
-
-(defun +tabbar-get-groups ()
-  "Get all tab groups"
-  (set tabbar-tabsets-tabset (tabbar-map-tabsets 'tabbar-selected-tab))
-  (mapcar #'(lambda (group)
-              (format "%s" (cdr group)))
-          (tabbar-tabs tabbar-tabsets-tabset)))
-
-(defun +tabbar-switch-group (&optional groupname)
-  "Switch tab groups using ido."
-  (interactive)
-  (let* ((tab-buffer-list (mapcar
-                           #'(lambda (b)
-                               (with-current-buffer b
-                                 (list (current-buffer)
-                                       (buffer-name)
-                                       (funcall tabbar-buffer-groups-function) )))
-                           (funcall tabbar-buffer-list-function)))
-         (groups (+tabbar-get-groups))
-         (group-name (or groupname (completing-read "Groups: " groups))) )
-    (catch 'done
-      (mapc
-       #'(lambda (group)
-           (when (equal group-name (car (car (cdr (cdr group)))))
-             (throw 'done (switch-to-buffer (car (cdr group))))))
-       tab-buffer-list) )))
-
-(defun +tabbar-switch-group-by-pos (pos)
-  "Switch to tab group of position POS."
-  (let ((group-to-switch (nth pos (+tabbar-get-groups))))
-    (if group-to-switch
-        (+tabbar-switch-group group-to-switch))))
-
-(dolist (i (number-sequence 9 0 -1))
-  (eval `(defun ,(intern (format "+tabbar-switch-group-to-%s" i)) nil
-           ,(format "Switch to tab group %s.\n%s"
-                    i "See `+tabbar-switch-group-by-pos' for details.")
-           (interactive)
-           (+tabbar-switch-group-by-pos ,(if (eq 0 i) 9 (1- i))))))
-
-(defun +tabbar-group-tab-layout ()
-  "Layout for display tab groups"
-  (let* ((group-current-name (tabbar-current-tabset t))
-         (highlight-groups (lambda (elt idx)
-                             (if (string= elt group-current-name)
-                                 (propertize
-                                  (format "%d:%s" (+ idx 1) (f-base elt))
-                                  'face '(:foreground "red" :background "yellow"))
-                               (format "%d:%s" (+ idx 1) (f-base elt))))))
-    (message "%s" highlight-groups)
-    (string-join (seq-map-indexed highlight-groups (+tabbar-get-groups)) " | ")))
-
-(defun +tabbar-select-visible-nth-tab (tab-index)
-  "Select visible tab with `tab-index'.
-Example, when `tab-index' is 1, this function will select the leftmost label in the visible area,
-instead of the first label in the current group.
-If `tab-index' more than length of visible tabs, selet the last tab.
-If `tab-index' is 0, select last tab."
-  (let ((visible-tabs (tabbar-view tabbar-current-tabset)))
-    (switch-to-buffer
-     (car
-      (if (or (equal tab-index 0)
-              (> tab-index (length visible-tabs)))
-          (car (last visible-tabs))
-        (nth (- tab-index 1) visible-tabs))))))
-
-(defun +tabbar-select-visible-tab ()
-  "Bind this function with number keystroke, such as s-1, s-2, s-3 ... etc.
-This function automatically recognizes the number at the end of the keystroke
-and switches to the tab of the corresponding index.
-Note that this function switches to the visible range,
-not the actual logical index position of the current group."
-  (interactive)
-  (let* ((event last-command-event)
-         (key (make-vector 1 event))
-         (key-desc (key-description key)))
-    (+tabbar-select-visible-nth-tab
-     (string-to-number (nth 1 (split-string key-desc "-"))))))
-
-(defhydra +tabbar-group-hydra (:hint nil :exit t)
-  "
-Tab groups: %s(+tabbar-group-tab-layout)
-"
-  ("n" +tabbar-forward-group "Next group")
-  ("p" +tabbar-backward-group "Prev group")
-  ("l" +tabbar-switch-group "Switch group")
-  ("0" +tabbar-switch-group-to-0)
-  ("1" +tabbar-switch-group-to-1)
-  ("2" +tabbar-switch-group-to-2)
-  ("3" +tabbar-switch-group-to-3)
-  ("4" +tabbar-switch-group-to-4)
-  ("5" +tabbar-switch-group-to-5)
-  ("6" +tabbar-switch-group-to-6)
-  ("7" +tabbar-switch-group-to-7)
-  ("8" +tabbar-switch-group-to-8)
-  ("9" +tabbar-switch-group-to-9)
-  ("q" nil "quit"))
 
 (defhydra +dired-hydra (:hint nil :color pink)
   "
