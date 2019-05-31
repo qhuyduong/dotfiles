@@ -345,10 +345,16 @@
   (add-to-list 'mode-icons '("\\`BSDmakefile\\'" #xe679 file-icons))
   (add-to-list 'mode-icons '("\\`Gitignore\\'" #xf1d2 FontAwesome)))
 
-(persp-mode-projectile-bridge-mode 1)
-
-(after! persp-mode-projectile-bridge
-  (add-hook! persp-mode-projectile-bridge-mode #'persp-mode-projectile-bridge-find-perspectives-for-all-buffers))
+(with-eval-after-load "persp-mode-projectile-bridge-autoloads"
+  (add-hook 'persp-mode-projectile-bridge-mode-hook
+            #'(lambda ()
+                (if persp-mode-projectile-bridge-mode
+                    (persp-mode-projectile-bridge-find-perspectives-for-all-buffers)
+                  (persp-mode-projectile-bridge-kill-perspectives))))
+  (add-hook 'after-init-hook
+            #'(lambda ()
+                (persp-mode-projectile-bridge-mode 1))
+            t))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra smerge-hydra (:hint nil)
