@@ -22,6 +22,7 @@
 (package! org-pivotal)
 (package! org-pomodoro)
 (package! osx-trash)
+(package! persp-mode-projectile-bridge)
 (package! prettier-js)
 (package! uuidgen)
 (package! vterm :recipe (:fetcher github :repo "jixiuf/emacs-libvterm" :branch "support-256color" :files ("*")))

@@ -350,6 +350,11 @@
   (add-to-list 'mode-icons '("\\`BSDmakefile\\'" #xe679 file-icons))
   (add-to-list 'mode-icons '("\\`Gitignore\\'" #xf1d2 FontAwesome)))
 
+(persp-mode-projectile-bridge-mode 1)
+
+(after! persp-mode-projectile-bridge
+  (add-hook! persp-mode-projectile-bridge-mode #'persp-mode-projectile-bridge-find-perspectives-for-all-buffers))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra smerge-hydra (:hint nil)
   ("n" smerge-next "next hunk" :column "Movement")
