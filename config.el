@@ -189,7 +189,7 @@
 
 ;; flycheck-apib
 (def-package! flycheck-apib
-  :when (featurep! :feature syntax-checker)
+  :when (featurep! :tools flycheck)
   :after apib-mode
   :config (add-hook! apib-mode #'flycheck-apib-setup))
 
