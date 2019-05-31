@@ -69,6 +69,8 @@
       "s-W" #'delete-window
       "s-p" #'counsel-projectile-switch-project
       "s-o" #'+ivy/projectile-find-file
+      "s-[" #'previous-buffer
+      "s-]" #'next-buffer
 
       ;; Easier window navigation
       :nvi "C-h"  #'evil-window-left
