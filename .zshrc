@@ -43,6 +43,7 @@ source ~/.zplug/init.zsh
 
 # Zplug plugins
 zplug "agkozak/agkozak-zsh-prompt"
+zplug "hlissner/zsh-autopair", defer:2
 # Async for zsh, used by pure
 zplug "mafredri/zsh-async", from:github, defer:0
 zplug "plugins/fzf", from:oh-my-zsh
