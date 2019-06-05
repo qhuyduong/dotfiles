@@ -84,9 +84,9 @@
         :nv "x" nil ;; Disable x prefix for scratch buffer
 
         (:prefix "o"
-          :desc "List processes" :nv "x"  #'list-processes
+          :desc "List processes" :nv "x" #'list-processes
           :desc "Terminal" :nv "t" #'vterm/open-in-project
-          :desc "Project sidebar" :nv "p"  #'treemacs)
+          :desc "Project sidebar" :nv "p" #'treemacs)
 
         (:prefix "b"
           :nv "s" nil
@@ -98,9 +98,10 @@
           :nv "d"  #'evil-window-delete)
 
         (:prefix "/"
-          :desc "Search this text in project" :nv "*"  #'counsel-projectile-ag)
+          :desc "Search this text in project" :nv "*" #'counsel-projectile-ag)
 
         (:prefix "p"
+          :desc "Find file in project" :nv "/" #'counsel-fzf
           :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
 
         (:prefix "g"
@@ -356,6 +357,8 @@
                 (persp-mode-projectile-bridge-mode 1))
             t))
 
+(setq +workspaces-switch-project-function '+counsel-fzf-find-project)
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra smerge-hydra (:hint nil)
   ("n" smerge-next "next hunk" :column "Movement")
@@ -485,3 +488,6 @@ T - tag prefix
   ("8" +workspace-switch-to-7)
   ("9" +workspace-switch-to-8)
   ("0" +workspace-switch-to-9))
+
+(defun +counsel-fzf-find-project (dir)
+  (counsel-fzf nil dir (format "[%s]" (file-name-nondirectory (directory-file-name dir)))))
