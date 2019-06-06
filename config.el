@@ -67,8 +67,8 @@
       "s-v" #'yank
       "s-w" #'kill-current-buffer
       "s-W" #'delete-window
-      "s-p" #'counsel-projectile-switch-project
-      "s-o" #'+ivy/projectile-find-file
+      "s-p" #'helm-projectile-switch-project
+      "s-o" #'+helm/projectile-find-file
       "s-[" #'previous-buffer
       "s-]" #'next-buffer
 
@@ -98,11 +98,10 @@
           :nv "d"  #'evil-window-delete)
 
         (:prefix "/"
-          :desc "Search this text in project" :nv "*" #'counsel-projectile-ag)
+          :desc "Search this text in project" :nv "*" #'helm-projectile-ag)
 
         (:prefix "p"
-          :desc "Find file in project" :nv "/" #'counsel-fzf
-          :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
+          :desc "Find dir" :nv "d" #'helm-projectile-find-dir)
 
         (:prefix "g"
           :desc "Resolve conflicts" :n "r" #'smerge-hydra/body)
@@ -243,12 +242,7 @@
   (treemacs-follow-mode t))
 
 (after! helm
-  (setq helm-ag-insert-at-point 'symbol)
-  (setq +helm-posframe-text-scale nil))
-
-(after! ivy
-  (set-face-foreground 'ivy-current-match "#c3e88d")
-  (setq counsel-projectile-ag-initial-input '(ivy-thing-at-point)))
+  (setq helm-ag-insert-at-point 'symbol))
 
 (after! enh-ruby-mode
   (map! :mode enh-ruby-mode
@@ -356,8 +350,6 @@
             #'(lambda ()
                 (persp-mode-projectile-bridge-mode 1))
             t))
-
-(setq +workspaces-switch-project-function '+counsel-fzf-find-project)
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra smerge-hydra (:hint nil)
@@ -488,6 +480,3 @@ T - tag prefix
   ("8" +workspace-switch-to-7)
   ("9" +workspace-switch-to-8)
   ("0" +workspace-switch-to-9))
-
-(defun +counsel-fzf-find-project (dir)
-  (counsel-fzf nil dir (format "[%s]" (file-name-nondirectory (directory-file-name dir)))))
