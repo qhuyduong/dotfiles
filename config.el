@@ -152,6 +152,7 @@
 ;; Magit
 (after! magit
   (setq magit-status-mode-hook nil)
+  (set-popup-rule! "^magit:\s" :width 0.3 :side 'right :select t :modeline t :quit 'current)
   (setq magit-repository-directories '(("~/EH-Workspace" . 1)
                                        ("~/Workspace" . 1))
         magit-save-repository-buffers nil))
