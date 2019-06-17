@@ -21,9 +21,6 @@
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 
-;; Make Emacs fullscreen by default
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-
 ;; Workaround for magithub authentication stuffs
 (setq auth-sources '("~/.authinfo"))
 
@@ -130,9 +127,6 @@
 
         (:prefix "TAB"
           :desc "Display TAB bar" "TAB" #'+workspace-hydra/body)))
-
-;; Emacs sometimes registers C-s-f as this weird keycode
-(global-set-key (kbd "<C-s-268632070>") #'toggle-frame-fullscreen)
 
 ;; Modules
 ;; Evil
