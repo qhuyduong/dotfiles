@@ -85,7 +85,6 @@
 
         (:prefix "o"
           :desc "List processes" :nv "x" #'list-processes
-          :desc "Terminal" :nv "t" #'vterm/open-in-project
           :desc "Project sidebar" :nv "p" #'treemacs)
 
         (:prefix "b"
@@ -262,9 +261,7 @@
 
 (after! all-the-icons
   (add-to-list 'all-the-icons-mode-icon-alist
-               '(enh-ruby-mode all-the-icons-alltheicon "ruby-alt" :face all-the-icons-lred))
-  (add-to-list 'all-the-icons-mode-icon-alist
-               '(vterm-mode all-the-icons-octicon "terminal" :v-adjust 0.2)))
+               '(enh-ruby-mode all-the-icons-alltheicon "ruby-alt" :face all-the-icons-lred)))
 
 (after! org-projectile
   (setq org-projectile-projects-file "~/Workspace/orgs/inbox.org")
@@ -304,13 +301,6 @@
 (after! css-mode
   (setq css-indent-offset 2))
 
-(after! vterm
-  (add-hook! vterm-mode (setq-local evil-insert-state-cursor 'box))
-  (map! :mode vterm-mode
-        :i [return] #'vterm-send-return
-        :i "C-c" #'vterm--self-insert
-        :i "C-h" #'vterm--self-insert))
-
 (after! forge
   (setq forge-topic-list-limit '(5 . 5)))
 
@@ -336,7 +326,6 @@
 (after! mode-icons
   (add-to-list 'mode-icons '("\\`JS2\\'" "js" xpm))
   (add-to-list 'mode-icons '("\\`Elisp\\'" "emacs" xpm))
-  (add-to-list 'mode-icons '("\\`VTerm\\'" "term" xpm))
   (add-to-list 'mode-icons '("\\`JSON\\'" #xe90b all-the-icons))
   (add-to-list 'mode-icons '("\\`BSDmakefile\\'" #xe679 file-icons))
   (add-to-list 'mode-icons '("\\`Gitignore\\'" #xf1d2 FontAwesome)))
@@ -388,19 +377,6 @@
                  "-activate" "org.gnu.Emacs"
                  "-group" "org.gnu.Emacs"
                  "-appIcon" "/Users/qhuyduong/Workspace/inventory/org-unicorn.png"))
-
-(defun vterm-send-escape ()
-  (interactive)
-  (vterm-send-string "\e"))
-
-(defun vterm-send-return ()
-  "Sends C-m to the libvterm."
-  (interactive)
-  (process-send-string vterm--process "\C-m"))
-
-(defun vterm/open-in-project ()
-  (interactive)
-  (+vterm/open t))
 
 (defun projectile-frontend-core-related-files (path)
   (when (string-match "\\(.*\\)\/\\(.*\\)$" path)
