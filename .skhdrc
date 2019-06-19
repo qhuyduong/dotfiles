@@ -93,10 +93,10 @@ ctrl + alt - k : yabai -m window --insert north
 ctrl + alt - l : yabai -m window --insert east
 
 # rotate tree
-cmd - r : yabai -m space --rotate 90
+alt - r : yabai -m space --rotate 90
 
 # mirror tree y-axis
-cmd - y : yabai -m space --mirror y-axis
+alt - y : yabai -m space --mirror y-axis
 
 # toggle desktop offset
 alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
