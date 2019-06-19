@@ -1,8 +1,8 @@
 # focus window
-cmd - h : yabai -m window --focus west
-cmd - j : yabai -m window --focus south
-cmd - k : yabai -m window --focus north
-cmd - l : yabai -m window --focus east
+shift + cmd - h : yabai -m window --focus west
+shift + cmd - j : yabai -m window --focus south
+shift + cmd - k : yabai -m window --focus north
+shift + cmd - l : yabai -m window --focus east
 
 # swap window
 shift + alt - h : yabai -m window --swap west
@@ -11,10 +11,10 @@ shift + alt - k : yabai -m window --swap north
 shift + alt - l : yabai -m window --swap east
 
 # move window
-shift + cmd - h : yabai -m window --warp west
-shift + cmd - j : yabai -m window --warp south
-shift + cmd - k : yabai -m window --warp north
-shift + cmd - l : yabai -m window --warp east
+alt - h : yabai -m window --warp west
+alt - j : yabai -m window --warp south
+alt - k : yabai -m window --warp north
+alt - l : yabai -m window --warp east
 
 # balance size of windows
 shift + cmd - 0 : yabai -m space --balance
