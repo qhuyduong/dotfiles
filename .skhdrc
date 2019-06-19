@@ -1,8 +1,8 @@
 # focus window
-shift + cmd - h : yabai -m window --focus west
-shift + cmd - j : yabai -m window --focus south
-shift + cmd - k : yabai -m window --focus north
-shift + cmd - l : yabai -m window --focus east
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
 
 # swap window
 shift + alt - h : yabai -m window --swap west
@@ -11,22 +11,22 @@ shift + alt - k : yabai -m window --swap north
 shift + alt - l : yabai -m window --swap east
 
 # move window
-alt - h : yabai -m window --warp west
-alt - j : yabai -m window --warp south
-alt - k : yabai -m window --warp north
-alt - l : yabai -m window --warp east
+shift + cmd - h : yabai -m window --warp west
+shift + cmd - j : yabai -m window --warp south
+shift + cmd - k : yabai -m window --warp north
+shift + cmd - l : yabai -m window --warp east
 
 # balance size of windows
 shift + cmd - 0 : yabai -m space --balance
 
 # make floating window fill screen
-shift + cmd - up     : yabai -m window --grid 1:1:0:0:1:1
+shift + cmd - up : yabai -m window --grid 1:1:0:0:1:1
 
 # make floating window fill left-half of screen
-shift + cmd - left   : yabai -m window --grid 1:2:0:0:1:1
+shift + cmd - left : yabai -m window --grid 1:2:0:0:1:1
 
 # make floating window fill right-half of screen
-shift + cmd - right  : yabai -m window --grid 1:2:1:0:1:1
+shift + cmd - right : yabai -m window --grid 1:2:1:0:1:1
 
 # create desktop and follow focus
 shift + cmd - c : yabai -m space --create;\
@@ -34,7 +34,7 @@ shift + cmd - c : yabai -m space --create;\
                   yabai -m space --focus $(echo ${id:10:${#id}-10})
 
 # destroy desktop
-cmd + alt - w : yabai -m space --destroy
+shift + cmd - backspace : yabai -m space --destroy
 
 # fast focus desktop
 shift + cmd - x : yabai -m space --focus last
@@ -48,25 +48,25 @@ alt + cmd - c : yabai -m space --create;\
                 yabai -m space --focus $(echo ${id:10:${#id}-10})
 
 # send window to desktop and follow focus
-alt + cmd - x : yabai -m window --space last; yabai -m space --focus last
-alt + cmd - p : yabai -m window --space prev; yabai -m space --focus prev
-alt + cmd - n : yabai -m window --space next; yabai -m space --focus next
+ctrl + cmd - x : yabai -m window --space last; yabai -m space --focus last
+ctrl + cmd - p : yabai -m window --space prev; yabai -m space --focus prev
+ctrl + cmd - n : yabai -m window --space next; yabai -m space --focus next
 
 # focus monitor
-ctrl + alt - x  : yabai -m display --focus last
-ctrl + alt - p  : yabai -m display --focus prev
-ctrl + alt - n  : yabai -m display --focus next
-ctrl + alt - 1  : yabai -m display --focus 1
-ctrl + alt - 2  : yabai -m display --focus 2
-ctrl + alt - 3  : yabai -m display --focus 3
+ctrl + alt - x : yabai -m display --focus last
+ctrl + alt - p : yabai -m display --focus prev
+ctrl + alt - n : yabai -m display --focus next
+ctrl + alt - 1 : yabai -m display --focus 1
+ctrl + alt - 2 : yabai -m display --focus 2
+ctrl + alt - 3 : yabai -m display --focus 3
 
 # send window to monitor and follow focus
-ctrl + cmd - x  : yabai -m window --display last; yabai -m display --focus last
-ctrl + cmd - p  : yabai -m window --display prev; yabai -m display --focus prev
-ctrl + cmd - n  : yabai -m window --display next; yabai -m display --focus next
-ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
-ctrl + cmd - 2  : yabai -m window --display 2; yabai -m display --focus 2
-ctrl + cmd - 3  : yabai -m window --display 3; yabai -m display --focus 3
+alt + cmd - x : yabai -m window --display last; yabai -m display --focus last
+alt + cmd - p : yabai -m window --display prev; yabai -m display --focus prev
+alt + cmd - n : yabai -m window --display next; yabai -m display --focus next
+alt + cmd - 1 : yabai -m window --display 1; yabai -m display --focus 1
+alt + cmd - 2 : yabai -m window --display 2; yabai -m display --focus 2
+alt + cmd - 3 : yabai -m window --display 3; yabai -m display --focus 3
 
 # move window
 shift + ctrl - a : yabai -m window --move -20:0
