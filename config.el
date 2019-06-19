@@ -8,6 +8,9 @@
 (setq line-number-mode nil)
 (setq initial-scratch-message ";; Happy Hacking")
 
+;; Enable menu-bar-mode to fix focus issue
+(menu-bar-mode t)
+
 (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
 
 (setq exec-path-from-shell-check-startup-files nil)
