@@ -32,7 +32,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export NVM_LAZY_LOAD=true
 
 # Fzf
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --skip-vcs-ignores -f -g ""'
+export FZF_DEFAULT_COMMAND='ag -f -g ""'
 
 # Aliases
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
