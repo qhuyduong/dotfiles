@@ -37,6 +37,7 @@ shift + cmd - c : yabai -m space --create;\
 shift + cmd - backspace : yabai -m space --destroy
 
 # fast focus desktop
+cmd - tab : yabai -m space --focus last
 shift + cmd - x : yabai -m space --focus last
 shift + cmd - p : yabai -m space --focus prev
 shift + cmd - n : yabai -m space --focus next
