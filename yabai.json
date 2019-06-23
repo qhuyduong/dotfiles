@@ -354,6 +354,39 @@
         {
           "type": "basic",
           "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/yabai -m space --focus last"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "shift",
+                "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "/usr/local/bin/yabai -m space --focus last"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "x",
             "modifiers": {
               "mandatory": [
