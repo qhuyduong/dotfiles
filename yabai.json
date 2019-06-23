@@ -1312,27 +1312,6 @@
       ]
     },
     {
-      "description": "[Yabai] Toggle sticky",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "s",
-            "modifiers": {
-              "mandatory": [
-                "option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "/usr/local/bin/yabai -m window --toggle sticky"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "description": "[Yabai] Toggle sticky, float and resize to picture-in-picture size",
       "manipulators": [
         {
