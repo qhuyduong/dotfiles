@@ -1,3 +1,6 @@
+# To use karabiner instead of skhd:
+# karabiner://karabiner/assets/complex_modifications/import?url=file%3A%2F%2F%2FUsers%2Fqhuyduong%2Fdotfiles%2Fyabai.json
+
 # focus window
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
@@ -15,6 +18,10 @@ shift + cmd - h : yabai -m window --warp west
 shift + cmd - j : yabai -m window --warp south
 shift + cmd - k : yabai -m window --warp north
 shift + cmd - l : yabai -m window --warp east
+shift + ctrl - a : yabai -m window --move -20:0
+shift + ctrl - s : yabai -m window --move 0:20
+shift + ctrl - w : yabai -m window --move 0:-20
+shift + ctrl - d : yabai -m window --move 20:0
 
 # balance size of windows
 shift + cmd - 0 : yabai -m space --balance
@@ -80,12 +87,6 @@ alt + cmd - n : yabai -m window --display next; yabai -m display --focus next
 alt + cmd - 1 : yabai -m window --display 1; yabai -m display --focus 1
 alt + cmd - 2 : yabai -m window --display 2; yabai -m display --focus 2
 alt + cmd - 3 : yabai -m window --display 3; yabai -m display --focus 3
-
-# move window
-shift + ctrl - a : yabai -m window --move -20:0
-shift + ctrl - s : yabai -m window --move 0:20
-shift + ctrl - w : yabai -m window --move 0:-20
-shift + ctrl - d : yabai -m window --move 20:0
 
 # increase window size
 shift + alt - a : yabai -m window --resize left:-20:0
