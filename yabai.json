@@ -213,74 +213,6 @@
               "shell_command": "/usr/local/bin/yabai -m window --warp east"
             }
           ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "a",
-            "modifiers": {
-              "mandatory": [
-                "shift",
-                "control"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "/usr/local/bin/yabai -m window --move -20:0"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "s",
-            "modifiers": {
-              "mandatory": [
-                "shift",
-                "control"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "/usr/local/bin/yabai -m window --move 0:20"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "w",
-            "modifiers": {
-              "mandatory": [
-                "shift",
-                "control"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "/usr/local/bin/yabai -m window --move 0:-20"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "d",
-            "modifiers": {
-              "mandatory": [
-                "shift",
-                "control"
-              ]
-            }
-          },
-          "to": [
-            {
-              "shell_command": "/usr/local/bin/yabai -m window --move 20:0"
-            }
-          ]
         }
       ]
     },
@@ -356,7 +288,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "left_arrow",
+            "key_code": "right_arrow",
             "modifiers": {
               "mandatory": [
                 "shift",
