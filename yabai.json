@@ -320,7 +320,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --create && id=$(/usr/local/bin/yabai -m query --displays --display | grep spaces) && /usr/local/bin/yabai -m space --focus $(echo ${id:10:${#id}-10})"
+              "shell_command": "/usr/local/bin/yabai -m space --create && id=$(/usr/local/bin/yabai -m query --displays --display | grep spaces) && /usr/local/bin/yabai -m space --focus $(echo ${id:10:${#id}-10}) && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         }
@@ -342,7 +342,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --destroy"
+              "shell_command": "/usr/local/bin/yabai -m space --destroy && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         }
@@ -363,7 +363,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --focus last"
+              "shell_command": "/usr/local/bin/yabai -m space --focus last && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -380,7 +380,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --focus last"
+              "shell_command": "/usr/local/bin/yabai -m space --focus last && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -397,7 +397,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --focus last"
+              "shell_command": "/usr/local/bin/yabai -m space --focus last && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -414,7 +414,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --focus prev"
+              "shell_command": "/usr/local/bin/yabai -m space --focus prev && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -431,7 +431,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --focus next"
+              "shell_command": "/usr/local/bin/yabai -m space --focus next && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -448,7 +448,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --focus 1"
+              "shell_command": "/usr/local/bin/yabai -m space --focus 1 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -465,7 +465,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --focus 2"
+              "shell_command": "/usr/local/bin/yabai -m space --focus 2 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -482,7 +482,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --focus 3"
+              "shell_command": "/usr/local/bin/yabai -m space --focus 3 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -499,7 +499,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --focus 4"
+              "shell_command": "/usr/local/bin/yabai -m space --focus 4 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -516,7 +516,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --focus 5"
+              "shell_command": "/usr/local/bin/yabai -m space --focus 5 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -533,7 +533,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --focus 6"
+              "shell_command": "/usr/local/bin/yabai -m space --focus 6 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         }
@@ -555,7 +555,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m space --create && id=$(/usr/local/bin/yabai -m query --displays --display | grep spaces) && /usr/local/bin/yabai -m window --space $(echo ${id:10:${#id}-10}) && /usr/local/bin/yabai -m space --focus $(echo ${id:10:${#id}-10})"
+              "shell_command": "/usr/local/bin/yabai -m space --create && id=$(/usr/local/bin/yabai -m query --displays --display | grep spaces) && /usr/local/bin/yabai -m window --space $(echo ${id:10:${#id}-10}) && /usr/local/bin/yabai -m space --focus $(echo ${id:10:${#id}-10}) && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         }
@@ -577,7 +577,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --space last && /usr/local/bin/yabai -m space --focus last"
+              "shell_command": "/usr/local/bin/yabai -m window --space last && /usr/local/bin/yabai -m space --focus last && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -594,7 +594,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --space prev && /usr/local/bin/yabai -m space --focus prev"
+              "shell_command": "/usr/local/bin/yabai -m window --space prev && /usr/local/bin/yabai -m space --focus prev && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -611,7 +611,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --space next && /usr/local/bin/yabai -m space --focus next"
+              "shell_command": "/usr/local/bin/yabai -m window --space next && /usr/local/bin/yabai -m space --focus next && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -628,7 +628,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --space 1 && /usr/local/bin/yabai -m space --focus 1"
+              "shell_command": "/usr/local/bin/yabai -m window --space 1 && /usr/local/bin/yabai -m space --focus 1 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -645,7 +645,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --space 2 && /usr/local/bin/yabai -m space --focus 2"
+              "shell_command": "/usr/local/bin/yabai -m window --space 2 && /usr/local/bin/yabai -m space --focus 2 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -662,7 +662,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --space 3 && /usr/local/bin/yabai -m space --focus 3"
+              "shell_command": "/usr/local/bin/yabai -m window --space 3 && /usr/local/bin/yabai -m space --focus 3 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -679,7 +679,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --space 4 && /usr/local/bin/yabai -m space --focus 4"
+              "shell_command": "/usr/local/bin/yabai -m window --space 4 && /usr/local/bin/yabai -m space --focus 4 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -696,7 +696,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --space 5 && /usr/local/bin/yabai -m space --focus 5"
+              "shell_command": "/usr/local/bin/yabai -m window --space 5 && /usr/local/bin/yabai -m space --focus 5 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -713,7 +713,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --space 6 && /usr/local/bin/yabai -m space --focus 6"
+              "shell_command": "/usr/local/bin/yabai -m window --space 6 && /usr/local/bin/yabai -m space --focus 6 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         }
@@ -735,7 +735,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m display --focus last"
+              "shell_command": "/usr/local/bin/yabai -m display --focus last && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -752,7 +752,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m display --focus prev"
+              "shell_command": "/usr/local/bin/yabai -m display --focus prev && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -769,7 +769,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m display --focus next"
+              "shell_command": "/usr/local/bin/yabai -m display --focus next && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -786,7 +786,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m display --focus 1"
+              "shell_command": "/usr/local/bin/yabai -m display --focus 1 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -803,7 +803,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m display --focus 2"
+              "shell_command": "/usr/local/bin/yabai -m display --focus 2 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -820,7 +820,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m display --focus 3"
+              "shell_command": "/usr/local/bin/yabai -m display --focus 3 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         }
@@ -842,7 +842,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --display last && /usr/local/bin/yabai -m display --focus last"
+              "shell_command": "/usr/local/bin/yabai -m window --display last && /usr/local/bin/yabai -m display --focus last && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -859,7 +859,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --display prev && /usr/local/bin/yabai -m display --focus prev"
+              "shell_command": "/usr/local/bin/yabai -m window --display prev && /usr/local/bin/yabai -m display --focus prev && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -876,7 +876,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --display next && /usr/local/bin/yabai -m display --focus next"
+              "shell_command": "/usr/local/bin/yabai -m window --display next && /usr/local/bin/yabai -m display --focus next && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -893,7 +893,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --display 1 && /usr/local/bin/yabai -m display --focus 1"
+              "shell_command": "/usr/local/bin/yabai -m window --display 1 && /usr/local/bin/yabai -m display --focus 1 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -910,7 +910,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --display 2 && /usr/local/bin/yabai -m display --focus 2"
+              "shell_command": "/usr/local/bin/yabai -m window --display 2 && /usr/local/bin/yabai -m display --focus 2 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         },
@@ -927,7 +927,7 @@
           },
           "to": [
             {
-              "shell_command": "/usr/local/bin/yabai -m window --display 3 && /usr/local/bin/yabai -m display --focus 3"
+              "shell_command": "/usr/local/bin/yabai -m window --display 3 && /usr/local/bin/yabai -m display --focus 3 && /usr/local/bin/uebersicht-refresh-desktop"
             }
           ]
         }
