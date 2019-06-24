@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # bar settings
-yabai -m config status_bar                   on
+yabai -m config status_bar                   off
 yabai -m config status_bar_text_font         "Helvetica Neue:Regular:12.0"
 yabai -m config status_bar_icon_font         "FontAwesome:Regular:12.0"
 yabai -m config status_bar_background_color  0xff202020
@@ -32,6 +32,7 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
+yabai -m config top_padding                  27
 yabai -m config window_gap                   10
 
 # window rules
