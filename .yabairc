@@ -42,4 +42,7 @@ yabai -m rule --add app=Slack space=3
 yabai -m rule --add app="Google Chrome" space=4
 yabai -m rule --add app=Messages space=5
 
+# signals
+yabai -m signal --add event=space_changed action="uebersicht-refresh-desktop"
+
 echo "yabai configuration loaded.."
