@@ -276,6 +276,13 @@
                     :notification-handlers (ht ("client/registerCapability" 'ignore))
                     :priority 1
                     :server-id 'reason-ls))
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection '("solargraph" "stdio"))
+                    :major-modes '(ruby-mode enh-ruby-mode)
+                    :priority 1
+                    :multi-root t
+                    :initialization-options  '(:diagnostics t)
+                    :server-id 'enh-ruby-ls))
   (setq lsp-eldoc-render-all nil))
 
 (after! company-lsp
