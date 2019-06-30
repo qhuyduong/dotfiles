@@ -1,12 +1,12 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Emacs GUI settings
-(setq doom-font (font-spec :family "Monaco" :size 15))
+(setq doom-font (font-spec :family "Monaco" :size 14))
 (setq doom-theme 'doom-city-lights)
 (setq doom-localleader-key ",")
 (setq display-line-numbers-type 'relative)
 (setq line-number-mode nil)
-(setq initial-scratch-message ";; Happy Hacking")
+(setq-default initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
 
 ;; Enable menu-bar-mode to fix focus issue
 (menu-bar-mode t)
@@ -145,7 +145,6 @@
 
 ;; Magit
 (after! magit
-  (setq magit-status-mode-hook nil)
   (set-popup-rule! "^magit:\s" :width 0.5 :side 'right :select t :modeline t :quit 'current)
   (setq magit-repository-directories '(("~/EH-Workspace" . 1)
                                        ("~/Workspace" . 1))
