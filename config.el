@@ -49,8 +49,6 @@
     (osx-trash-setup)))
 
 (after! dired
-  ;; Icons in dired
-  (require 'font-lock+)
   (add-hook! dired-mode #'rspec-dired-mode)
   (map! :mode dired-mode
         :nv "." #'+dired-hydra/body
@@ -247,7 +245,6 @@
           (:prefix "p"
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))
         (:localleader
-          (:desc "Toggle block" "}" #'enh-ruby-toggle-block)
           (:prefix ("l" . "lsp")
             "f" #'lsp-format-buffer)
           (:prefix ("b" . "bundle"))
