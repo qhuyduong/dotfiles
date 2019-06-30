@@ -1,7 +1,7 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Emacs GUI settings
-(setq doom-font (font-spec :family "Iosevka SS07" :size 15 :weight 'light))
+(setq doom-font (font-spec :family "Monaco" :size 15))
 (setq doom-theme 'doom-city-lights)
 (setq doom-localleader-key ",")
 (setq display-line-numbers-type 'relative)
