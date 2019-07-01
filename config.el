@@ -226,7 +226,6 @@
   (setq rspec-use-rvm nil))
 
 (after! treemacs
-  (treemacs-load-theme "Default")
   (map! :mode treemacs-mode
         "C-h"  #'evil-window-left
         "C-j"  #'evil-window-down
