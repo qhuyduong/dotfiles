@@ -193,7 +193,7 @@
 ;; js2-mode
 (after! js2-mode
   (setq-default js-indent-level 2)
-  (add-hook! js2-mode #'(add-node-modules-path prettier-js-mode))
+  (add-hook! js2-mode #'(add-node-modules-path prettier-js-mode tern-mode))
   (add-hook! js2-mode (nvm-use "10.15.0"))
   (map! :mode js2-mode
         (:leader
@@ -339,6 +339,20 @@
             #'(lambda ()
                 (persp-mode-projectile-bridge-mode 1))
             t))
+
+(def-package! tern
+  :defer t
+  :config
+  (set-company-backend! 'tern-mode 'company-tern)
+  (set-lookup-handlers! 'tern-mode
+    :definition '(tern-find-definition :async t)
+    :documentation '(tern-get-docs :async t))
+  (map! :mode js2-mode
+        :localleader
+        :prefix ("t" . "tern")
+        :nv "r" #'tern-rename-variable
+        :nv "t" #'tern-get-type
+        :nv "g" #'tern-find-definition-by-name))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra smerge-hydra (:hint nil)
