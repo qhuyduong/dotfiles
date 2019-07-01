@@ -1,12 +1,12 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Emacs GUI settings
-(setq doom-font (font-spec :family "Monaco" :size 14))
-(setq doom-theme 'doom-city-lights)
-(setq doom-localleader-key ",")
-(setq display-line-numbers-type 'relative)
-(setq line-number-mode nil)
-(setq-default initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
+(setq doom-font (font-spec :family "Monaco" :size 14)
+      doom-theme 'doom-city-lights
+      doom-localleader-key ","
+      display-line-numbers-type 'relative
+      line-number-mode nil
+      initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
 
 ;; Enable menu-bar-mode to fix focus issue
 (menu-bar-mode t)
@@ -232,7 +232,6 @@
         "C-k"  #'evil-window-up
         "C-l"  #'evil-window-right)
   (setq treemacs-show-cursor t)
-  (setq doom-treemacs-use-generic-icons nil)
   (treemacs-follow-mode t))
 
 (after! helm
