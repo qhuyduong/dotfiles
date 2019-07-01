@@ -15,6 +15,7 @@
 (package! docker-compose-mode)
 (package! exec-path-from-shell)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
+(package! google-translate)
 (package! lorem-ipsum)
 (package! mode-icons)
 (package! nvm)
