@@ -1,7 +1,7 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Emacs GUI settings
-(setq doom-font (font-spec :family "Monaco" :size 14)
+(setq doom-font (font-spec :family "Hack" :size 14)
       doom-theme 'doom-city-lights
       doom-localleader-key ","
       display-line-numbers-type 'relative
@@ -82,8 +82,7 @@
         :nv "x" nil ;; Disable x prefix for scratch buffer
 
         (:prefix "o"
-          :desc "List processes" :nv "x" #'list-processes
-          :desc "Project sidebar" :nv "p" #'treemacs)
+          :desc "List processes" :nv "x" #'list-processes)
 
         (:prefix "b"
           :nv "s" nil
@@ -353,6 +352,9 @@
         :nv "r" #'tern-rename-variable
         :nv "t" #'tern-get-type
         :nv "g" #'tern-find-definition-by-name))
+
+(after! gist
+  (set-evil-initial-state! 'gist-list-mode 'emacs))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra smerge-hydra (:hint nil)
