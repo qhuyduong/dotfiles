@@ -49,6 +49,8 @@
     (osx-trash-setup)))
 
 (after! dired
+  ;; Icons in dired
+  (require 'font-lock+)
   (add-hook! dired-mode #'rspec-dired-mode)
   (map! :mode dired-mode
         :nv "." #'+dired-hydra/body
