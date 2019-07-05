@@ -67,8 +67,8 @@
       "s-v" #'yank
       "s-w" #'kill-current-buffer
       "s-W" #'delete-window
-      "s-p" #'helm-projectile-switch-project
-      "s-o" #'+helm/projectile-find-file
+      "s-p" #'counsel-projectile-switch-project
+      "s-o" #'+ivy/projectile-find-file
       "s-[" #'previous-buffer
       "s-]" #'next-buffer
 
@@ -96,10 +96,10 @@
           :nv "d"  #'evil-window-delete)
 
         (:prefix "/"
-          :desc "Search this text in project" :nv "*" #'helm-projectile-ag)
+          :desc "Search this text in project" :nv "*" #'counsel-projectile-rg)
 
         (:prefix "p"
-          :desc "Find dir" :nv "d" #'helm-projectile-find-dir)
+          :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
 
         (:prefix "g"
           :desc "Resolve conflicts" :n "r" #'smerge-hydra/body)
@@ -237,6 +237,9 @@
 
 (after! helm
   (setq helm-ag-insert-at-point 'symbol))
+
+(after! ivy
+  (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
 
 (after! enh-ruby-mode
   (map! :mode enh-ruby-mode
