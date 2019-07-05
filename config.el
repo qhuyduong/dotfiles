@@ -35,6 +35,8 @@
 
 (setq delete-by-moving-to-trash t)
 
+(setq +workspaces-switch-project-function #'+counsel-fzf-find-project)
+
 (after! doom-modeline
   (remove-hook! 'doom-modeline-mode-hook #'column-number-mode)
   (setq doom-modeline-enable-word-count t)
@@ -91,6 +93,7 @@
       :nv "C-S-j" #'move-line-down
 
       (:leader
+        :nv "SPC" #'+counsel-fzf-find-project
         :nv "x" nil ;; Disable x prefix for scratch buffer
 
         (:prefix "o"
@@ -109,7 +112,8 @@
           :desc "Search this text in project" :nv "*" #'counsel-projectile-rg)
 
         (:prefix "p"
-          :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
+          :desc "Find dir" :nv "d" #'counsel-projectile-find-dir
+          :desc "Find file in project" :nv "/" #'+counsel-fzf-find-project)
 
         (:prefix "g"
           :desc "Resolve conflicts" :n "r" #'smerge-hydra/body)
@@ -487,3 +491,8 @@ T - tag prefix
   ("8" +workspace-switch-to-7)
   ("9" +workspace-switch-to-8)
   ("0" +workspace-switch-to-9))
+
+(defun +counsel-fzf-find-project (&optional dir)
+  (interactive)
+  (let ((project-dir (if dir dir (projectile-project-root))))
+    (counsel-fzf nil dir (format "[%s] " (file-name-nondirectory (directory-file-name project-dir))))))
