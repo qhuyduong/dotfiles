@@ -97,7 +97,8 @@
         :nv "x" nil ;; Disable x prefix for scratch buffer
 
         (:prefix "o"
-          :desc "List processes" :nv "x" #'list-processes)
+          :desc "List processes" :nv "x" #'list-processes
+          :desc "Project sidebar" :nv "p" #'treemacs)
 
         (:prefix "b"
           :nv "s" nil
