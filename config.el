@@ -1,25 +1,29 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
-;; Emacs GUI settings
-(setq doom-font (font-spec :family "Hack" :size 14)
-      doom-theme 'doom-city-lights
+(setq doom-theme 'doom-city-lights
       doom-localleader-key ","
       display-line-numbers-type 'relative
       line-number-mode nil
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
 
-;; Enable menu-bar-mode to fix focus issue
-(menu-bar-mode t)
+;; Graphic configurations
+(when (display-graphic-p)
+  (setq doom-font (font-spec :family "Hack" :size 14))
 
-(custom-set-faces '(cursor ((t (:background "#98f5ff")))))
+  (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
+
+  ;; Enable menu-bar-mode to fix focus issue
+  (menu-bar-mode t)
+
+  ;; Make titlebar match background color
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(ns-appearance . dark))
+
+  (mode-icons-mode))
 
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil)
 (setq-default global-visual-line-mode t)
-
-;; Make titlebar match background color
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 ;; Workaround for magithub authentication stuffs
 (setq auth-sources '("~/.authinfo"))
@@ -338,8 +342,6 @@
 (after! tide
   (setq tide-hl-identifier-idle-time 2)
   (setq tide-sync-request-timeout 5))
-
-(mode-icons-mode)
 
 (after! mode-icons
   (add-to-list 'mode-icons '("\\`JS2\\'" "js" xpm))
