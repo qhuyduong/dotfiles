@@ -49,7 +49,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  decorations: full
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -648,3 +648,16 @@ key_bindings:
   - { key: F11,      mods: Super,   chars: "\x1b[23;3~"                      }
   - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                      }
   - { key: NumpadEnter,             chars: "\n"                              }
+  - { key: Key1,     mods: Super,   chars: "\x02\x31"                        }
+  - { key: Key2,     mods: Super,   chars: "\x02\x32"                        }
+  - { key: Key3,     mods: Super,   chars: "\x02\x33"                        }
+  - { key: Key4,     mods: Super,   chars: "\x02\x34"                        }
+  - { key: Key5,     mods: Super,   chars: "\x02\x35"                        }
+  - { key: Key6,     mods: Super,   chars: "\x02\x36"                        }
+  - { key: Key7,     mods: Super,   chars: "\x02\x37"                        }
+  - { key: Key8,     mods: Super,   chars: "\x02\x38"                        }
+  - { key: Key9,     mods: Super,   chars: "\x02\x39"                        }
+  - { key: C,        mods: Super,   chars: "\x02\x63"                        }
+  - { key: N,        mods: Super,   chars: "\x02\x6E"                        }
+  - { key: P,        mods: Super,   chars: "\x02\x70"                        }
+  - { key: Back,     mods: Super,   chars: "\x02\x78"                        }
