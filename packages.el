@@ -8,7 +8,6 @@
 
 (package! add-node-modules-path)
 (package! apib-mode)
-(package! company-tern)
 (package! copy-as-format)
 (package! dired-single)
 (package! dockerfile-mode)
@@ -32,4 +31,3 @@
 ;;; Disabled packages
 (package! eslintd-fix :disable t)
 (package! evil-escape :disable t)
-(package! tide :disable t)
