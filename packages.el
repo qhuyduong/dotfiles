@@ -12,6 +12,7 @@
 (package! dired-single)
 (package! dockerfile-mode)
 (package! docker-compose-mode)
+(package! evil-matchit)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
 (package! font-lock+ :recipe (:fetcher github :repo "emacsmirror/font-lock-plus"))
 (package! google-translate)

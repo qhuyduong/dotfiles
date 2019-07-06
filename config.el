@@ -34,6 +34,22 @@
 
 (setq +workspaces-switch-project-function #'+counsel-fzf-find-project)
 
+;; apib-mode
+(add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
+
+(with-eval-after-load "persp-mode-projectile-bridge-autoloads"
+  (add-hook 'persp-mode-projectile-bridge-mode-hook
+            #'(lambda ()
+                (if persp-mode-projectile-bridge-mode
+                    (persp-mode-projectile-bridge-find-perspectives-for-all-buffers)
+                  (persp-mode-projectile-bridge-kill-perspectives))))
+  (add-hook 'after-init-hook
+            #'(lambda ()
+                (persp-mode-projectile-bridge-mode 1))
+            t))
+
+(global-evil-matchit-mode t)
+
 (after! doom-modeline
   (remove-hook! 'doom-modeline-mode-hook #'column-number-mode)
   (setq doom-modeline-enable-word-count t)
@@ -44,8 +60,6 @@
     (osx-trash-setup)))
 
 (after! dired
-  ;; Icons in dired
-  (require 'font-lock+)
   (add-hook! dired-mode #'rspec-dired-mode)
   (map! :mode dired-mode
         :nv "." #'+dired-hydra/body
@@ -196,9 +210,6 @@
   :after apib-mode
   :config (add-hook! apib-mode #'flycheck-apib-setup))
 
-;; apib-mode
-(add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
-
 ;; js2-mode
 (after! js2-mode
   (setq-default js-indent-level 2)
@@ -336,17 +347,6 @@
   (add-to-list 'mode-icons '("\\`JSON\\'" #xe90b all-the-icons))
   (add-to-list 'mode-icons '("\\`BSDmakefile\\'" #xe679 file-icons))
   (add-to-list 'mode-icons '("\\`Gitignore\\'" #xf1d2 FontAwesome)))
-
-(with-eval-after-load "persp-mode-projectile-bridge-autoloads"
-  (add-hook 'persp-mode-projectile-bridge-mode-hook
-            #'(lambda ()
-                (if persp-mode-projectile-bridge-mode
-                    (persp-mode-projectile-bridge-find-perspectives-for-all-buffers)
-                  (persp-mode-projectile-bridge-kill-perspectives))))
-  (add-hook 'after-init-hook
-            #'(lambda ()
-                (persp-mode-projectile-bridge-mode 1))
-            t))
 
 (after! gist
   (set-evil-initial-state! 'gist-list-mode 'emacs))
