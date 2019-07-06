@@ -17,6 +17,7 @@
 (package! google-translate)
 (package! lorem-ipsum)
 (package! mode-icons)
+(package! navigate :recipe (:fetcher github :repo "keith/evil-tmux-navigator"))
 (package! nvm)
 (package! ob-async)
 (package! org-pivotal)

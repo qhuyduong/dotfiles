@@ -156,6 +156,13 @@
         (:prefix "TAB"
           :desc "Display TAB bar" "TAB" #'+workspace-hydra/body)))
 
+(unless (display-graphic-p)
+  (require 'navigate)
+  (map! :nvi "C-h" #'evil-tmux-navigate-left
+        :nvi "C-j" #'evil-tmux-navigate-down
+        :nvi "C-k" #'evil-tmux-navigate-up
+        :nvi "C-l" #'evil-tmux-navigate-right))
+
 ;; Modules
 ;; Evil
 (after! evil
@@ -474,3 +481,23 @@ T - tag prefix
   (interactive)
   (let ((project-dir (if dir dir (projectile-project-root))))
     (counsel-fzf nil dir (format "[%s] " (file-name-nondirectory (directory-file-name project-dir))))))
+
+(defun evil-tmux-navigate-left ()
+  "Navigate to the left tmux pane"
+  (interactive)
+  (tmux-navigate "left"))
+
+(defun evil-tmux-navigate-down ()
+  "Navigate to the below tmux pane"
+  (interactive)
+  (tmux-navigate "down"))
+
+(defun evil-tmux-navigate-up ()
+  "Navigate to the above tmux pane"
+  (interactive)
+  (tmux-navigate "up"))
+
+(defun evil-tmux-navigate-right ()
+  "Navigate to the right tmux pane"
+  (interactive)
+  (tmux-navigate "right"))
