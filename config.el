@@ -42,10 +42,6 @@
   (setq doom-modeline-enable-word-count t)
   (setq doom-modeline-percent-position nil))
 
-;; Reduce which-key delay
-(after! which-key
-  (setq which-key-idle-delay 0.5))
-
 (after! osx-trash
   (when (eq system-type 'darwin)
     (osx-trash-setup)))
@@ -237,9 +233,7 @@
 
 (after! rspec-mode
   (add-hook! rspec-compilation-mode #'inf-ruby-switch-from-compilation)
-  (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.3 :side 'right :quit 'current)
-  ;; Rspec doesn't use RVM!
-  (setq rspec-use-rvm nil))
+  (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.3 :side 'right :quit 'current))
 
 (after! treemacs
   (map! :mode treemacs-mode
