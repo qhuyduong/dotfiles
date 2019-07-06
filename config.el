@@ -13,9 +13,6 @@
 
 (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
 
-(setq exec-path-from-shell-check-startup-files nil)
-(exec-path-from-shell-initialize)
-
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil)
 (setq-default global-visual-line-mode t)
@@ -206,7 +203,6 @@
 (after! js2-mode
   (setq-default js-indent-level 2)
   (add-hook! js2-mode #'(add-node-modules-path prettier-js-mode))
-  (add-hook! js2-mode (nvm-use "10.15.0"))
   (map! :mode js2-mode
         (:leader
           (:prefix "p"
@@ -322,7 +318,6 @@
 (after! prodigy
   (setq prodigy-view-truncate-by-default t)
   (setq prodigy-view-buffer-maximum-size 512)
-  (add-hook! (prodigy-mode prodigy-view-mode) (nvm-use "10.15.0"))
   (set-evil-initial-state! 'prodigy-mode 'normal)
   (map! :mode prodigy-mode
         (:prefix "g"
