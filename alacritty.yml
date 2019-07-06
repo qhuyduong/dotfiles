@@ -661,3 +661,4 @@ key_bindings:
   - { key: N,        mods: Super,   chars: "\x02\x6E"                        }
   - { key: P,        mods: Super,   chars: "\x02\x70"                        }
   - { key: Back,     mods: Super,   chars: "\x02\x78"                        }
+  - { key: X,        mods: Alt,     chars: "\x1bx"                           }
