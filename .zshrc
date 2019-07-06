@@ -7,7 +7,7 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 setopt SHARE_HISTORY
 
-export TERM=xterm-256color
+export TERM=xterm-24bit
 export LANG=en_US.UTF-8
 export EDITOR=nvim
 export LESS=-FXR
