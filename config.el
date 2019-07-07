@@ -364,6 +364,9 @@
 (after! gist
   (set-evil-initial-state! 'gist-list-mode 'emacs))
 
+(after! git-gutter
+  (setq git-gutter:modified-sign "~"))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra smerge-hydra (:hint nil)
   ("n" smerge-next "next hunk" :column "Movement")
