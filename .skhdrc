@@ -111,7 +111,7 @@ alt - r : yabai -m space --rotate 90
 alt - y : yabai -m space --mirror y-axis
 
 # mirror tree x-axis
-alt - x : yabai -m space --mirror x-axis
+#alt - x : yabai -m space --mirror x-axis
 
 # toggle desktop offset
 alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
