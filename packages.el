@@ -13,6 +13,7 @@
 (package! dockerfile-mode)
 (package! docker-compose-mode)
 (package! evil-matchit)
+(package! evil-terminal-cursor-changer)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
 (package! google-translate)
 (package! lorem-ipsum)

@@ -163,6 +163,10 @@
         :nvi "C-k" #'evil-tmux-navigate-up
         :nvi "C-l" #'evil-tmux-navigate-right))
 
+(unless (display-graphic-p)
+  (require 'evil-terminal-cursor-changer)
+  (evil-terminal-cursor-changer-activate))
+
 ;; Modules
 ;; Evil
 (after! evil
