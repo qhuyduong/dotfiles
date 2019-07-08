@@ -472,7 +472,7 @@ T - tag prefix
 
 (defhydra +workspace-hydra (:hint nil)
   "
-%s(+workspace--tabline)"
+%s(+workspace/display)"
   ("1" +workspace-switch-to-0)
   ("2" +workspace-switch-to-1)
   ("3" +workspace-switch-to-2)
