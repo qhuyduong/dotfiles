@@ -16,6 +16,7 @@
 (package! evil-terminal-cursor-changer)
 (package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
 (package! google-translate)
+(package! icons-in-terminal :recipe (:fetcher github :repo "seagle0128/icons-in-terminal.el"))
 (package! lorem-ipsum)
 (package! mode-icons)
 (package! navigate :recipe (:fetcher github :repo "keith/evil-tmux-navigator"))
