@@ -396,7 +396,7 @@
                               :extensions (tag-open))
 
         (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "chevron-right" :v-adjust 0 :face face-spec))
-                              :icon (format " %s " (icons-in-terminal-octicon "chevron-right"))
+                              :fallback (format " %s " (icons-in-terminal-octicon "chevron-right"))
                               :extensions (tag-closed))
 
         (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "chevron-down" :v-adjust 0 :face face-spec))
@@ -404,11 +404,11 @@
                               :extensions (tag-node-open))
 
         (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "chevron-right" :v-adjust 0 :face face-spec))
-                              :icon (format " %s " (icons-in-terminal-octicon "chevron-right"))
+                              :fallback (format " %s " (icons-in-terminal-octicon "chevron-right"))
                               :extensions (tag-node-closed))
 
         (treemacs-create-icon :icon (format " %s " (all-the-icons-faicon "tag" :v-adjust 0 :face face-spec))
-                              :icon (format " %s " (icons-in-terminal-faicon "tag"))
+                              :fallback (format " %s " (icons-in-terminal-faicon "tag"))
                               :extensions (tag-leaf))
 
         ;; Programming Languages
