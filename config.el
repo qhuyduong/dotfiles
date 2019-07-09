@@ -1,4 +1,4 @@
-;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
+;;; ~/.doom.d/config.el
 
 (setq doom-theme 'doom-city-lights
       doom-localleader-key ","
@@ -374,151 +374,147 @@
   (treemacs-modify-theme "doom"
     :config
     (progn
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-octicon "repo"))
-                            :fallback (format "%s " (icons-in-terminal-octicon "repo"))
-                            :extensions (root))
+      (let ((face-spec '(:inherit font-lock-doc-face :slant normal)))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "repo" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-octicon "repo"))
+                              :extensions (root))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-faicon "file-text-o"))
-                            :fallback (format "%s " (icons-in-terminal-faicon "file-text-o"))
-                            :extensions (fallback))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-faicon "file-text" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-faicon "file-text"))
+                              :extensions (fallback))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-material "folder_open"))
-                            :fallback (format "%s " (icons-in-terminal-material "folder_open"))
-                            :extensions (dir-open))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-faicon "folder-open" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-faicon "folder-open"))
+                              :extensions (dir-open))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-material "folder"))
-                            :fallback (format "%s " (icons-in-terminal-material "folder"))
-                            :extensions (dir-closed))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-faicon "folder" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-faicon "folder"))
+                              :extensions (dir-closed))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-faicon "chevron-down"))
-                            :fallback (format "%s " (icons-in-terminal-faicon "chevron-down"))
-                            :extensions (tag-open))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "chevron-down" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-octicon "chevron-down"))
+                              :extensions (tag-open))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-faicon "location-arrow"))
-                            :icon (format "%s " (icons-in-terminal-faicon "location-arrow"))
-                            :extensions (tag-closed))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "chevron-right" :v-adjust 0 :face face-spec))
+                              :icon (format " %s " (icons-in-terminal-octicon "chevron-right"))
+                              :extensions (tag-closed))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-faicon "chevron-down"))
-                            :fallback (format "%s " (icons-in-terminal-faicon "chevron-down"))
-                            :extensions (tag-node-open))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "chevron-down" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-octicon "chevron-down"))
+                              :extensions (tag-node-open))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-faicon "location-arrow"))
-                            :icon (format "%s " (icons-in-terminal-faicon "location-arrow"))
-                            :extensions (tag-node-closed))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "chevron-right" :v-adjust 0 :face face-spec))
+                              :icon (format " %s " (icons-in-terminal-octicon "chevron-right"))
+                              :extensions (tag-node-closed))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-faicon "tag"))
-                            :icon (format "%s " (icons-in-terminal-faicon "tag"))
-                            :extensions (tag-leaf))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-faicon "tag" :v-adjust 0 :face face-spec))
+                              :icon (format " %s " (icons-in-terminal-faicon "tag"))
+                              :extensions (tag-leaf))
 
-      ;; Icons for filetypes
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-faicon "css3"))
-                            :fallback (format "%s " (icons-in-terminal-faicon "css3"))
-                            :extensions ("css"))
+        ;; Programming Languages
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "elisp" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "elisp"))
+                              :extensions ("el" "elc"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "git"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "git"))
-                            :extensions ("gitignore" "git" "gitconfig" "gitmodules"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-alltheicon "javascript" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "javascript"))
+                              :extensions ("js"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "html5"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "html5"))
-                            :extensions ("html" "htm"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "jsx2-alt" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "jsx"))
+                              :extensions ("jsx"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "javascript"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "javascript"))
-                            :extensions ("js"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "typescript" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "typescript"))
+                              :extensions ("ts"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "python"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "python"))
-                            :extensions ("py"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "reason" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "reason"))
+                              :extensions ("re" "rei"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "rust"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "rust"))
-                            :extensions ("rs"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-alltheicon "ruby-alt" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "ruby-alt"))
+                              :extensions ("rb"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-alltheicon "ruby-alt"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "ruby-alt"))
-                            :extensions ("rb"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-alltheicon "python" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "python"))
+                              :extensions ("py"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "go"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "go"))
-                            :extensions ("go"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-alltheicon "rust" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "rust"))
+                              :extensions ("rs"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "elisp"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "elisp"))
-                            :extensions ("el" "elc"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "database" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-octicon "database"))
+                              :extensions ("sql"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "jsx"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "jsx"))
-                            :extensions ("jsx"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "terminal" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "terminal"))
+                              :extensions ("sh" "zsh" "fish"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "org"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "org"))
-                            :extensions ("org"))
+        ;; Mark-up languages
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-alltheicon "css3" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-faicon "css3"))
+                              :extensions ("css"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "terminal"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "terminal"))
-                            :extensions ("sh" "zsh" "fish"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-alltheicon "html5" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "html5"))
+                              :extensions ("html" "htm"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "typescript"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "typescript"))
-                            :extensions ("ts"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "code" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-octicon "code"))
+                              :extensions ("erb" "haml"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "tex"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "tex"))
-                            :extensions ("tex"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "org" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "org"))
+                              :extensions ("org"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "rst"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "rst"))
-                            :extensions ("rst"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "tex" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "tex"))
+                              :extensions ("tex"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-octicon "markdown"))
-                            :fallback (format "%s " (icons-in-terminal-octicon "markdown"))
-                            :extensions ("md" "markdown"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "markdown" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-octicon "markdown"))
+                              :extensions ("md" "markdown"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-octicon "file-pdf"))
-                            :fallback (format "%s " (icons-in-terminal-octicon "file-pdf"))
-                            :extensions ("pdf"))
+        ;; Project configuration
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-faicon "git-square" :v-adjust -0.1 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "git"))
+                              :extensions ("gitignore" "git" "gitconfig" "gitmodules"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-octicon "database"))
-                            :fallback (format "%s " (icons-in-terminal-octicon "database"))
-                            :extensions ("sql"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "gnu" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "gnu"))
+                              :extensions ("makefile"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "asciidoc"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "asciidoc"))
-                            :extensions ("adoc" "asciidoc"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "config" :v-adjust -0.1 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "config"))
+                              :extensions ("conf" "cfg" "yaml" "yml" "json" "xml" "toml" "cson" "ini" "zshrc"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "dockerfile"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "dockerfile"))
-                            :extensions ("dockerfile"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "dockerfile" :v-adjust -0.1 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "dockerfile"))
+                              :extensions ("dockerfile"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-fileicon "reason"))
-                            :fallback (format "%s " (icons-in-terminal-fileicon "reason"))
-                            :extensions ("re" "rei"))
+        ;; Media file types
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "file-pdf" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-octicon "file-pdf"))
+                              :extensions ("pdf"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-faicon "cogs"))
-                            :fallback (format "%s " (icons-in-terminal-faicon "cogs"))
-                            :extensions ("conf" "cfg" "yaml" "yml" "json" "xml" "toml" "cson" "ini"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "file-zip" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-octicon "file-zip"))
+                              :extensions ("zip" "xz" "tar" "gz" "7z" "rar"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-octicon "code"))
-                            :fallback (format "%s " (icons-in-terminal-octicon "code"))
-                            :extensions ("tpl" "erb" "mustache" "twig" "ejs" "mk" "haml" "pug" "jade"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "file-media" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-octicon "file-media"))
+                              :extensions ("jpg" "jpeg" "png" "gif" "ico" "tif" "tiff"
+                                           "svg" "bmp" "psd" "ai" "eps" "indd"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-octicon "file-zip"))
-                            :fallback (format "%s " (icons-in-terminal-octicon "file-zip"))
-                            :extensions ("zip" "xz" "tar" "gz" "7z" "rar"))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-material "movie" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-material "movie"))
+                              :extensions ("mov" "avi" "mp4" "webm" "webp" "mkv"))
 
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-octicon "file-media"))
-                            :fallback (format "%s " (icons-in-terminal-octicon "file-media"))
-                            :extensions ("jpg" "jpeg" "png" "gif" "ico" "tif" "tiff"
-                                         "svg" "bmp" "psd" "ai" "eps" "indd"))
-
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-material "movie"))
-                            :fallback (format "%s " (icons-in-terminal-material "movie"))
-                            :extensions ("mov" "avi" "mp4" "webm" "webp" "mkv"))
-
-      (treemacs-create-icon :icon (format "%s " (all-the-icons-faicon "music"))
-                            :fallback (format "%s " (icons-in-terminal-faicon "music"))
-                            :extensions ("wav" "mp3" "ogg" "midi")))))
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-faicon "music" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-faicon "music"))
+                              :extensions ("wav" "mp3" "ogg" "midi"))))))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra smerge-hydra (:hint nil)
