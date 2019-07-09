@@ -503,7 +503,7 @@
                               :fallback (format " %s " (icons-in-terminal-octicon "file-pdf"))
                               :extensions ("pdf"))
 
-        (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "file-zip" :v-adjust 0 :face face-spec))
+        (treemacs-create-icon :icon (format " %s " (icons-in-terminal-octicon "file-zip" :v-adjust 0 :face face-spec))
                               :fallback (format " %s " (icons-in-terminal-octicon "file-zip"))
                               :extensions ("zip" "xz" "tar" "gz" "7z" "rar"))
 
