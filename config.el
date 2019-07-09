@@ -381,7 +381,7 @@
 
         (treemacs-create-icon :icon (format " %s " (all-the-icons-faicon "file-text" :v-adjust 0 :face face-spec))
                               :fallback (format " %s " (icons-in-terminal-faicon "file-text"))
-                              :extensions (fallback))
+                              :extensions (fallback "txt"))
 
         (treemacs-create-icon :icon (format " %s " (all-the-icons-faicon "folder-open" :v-adjust 0 :face face-spec))
                               :fallback (format " %s " (icons-in-terminal-faicon "folder-open"))
@@ -488,13 +488,17 @@
 
         (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "config" :v-adjust -0.1 :face face-spec))
                               :fallback (format " %s " (icons-in-terminal-fileicon "config"))
-                              :extensions ("conf" "cfg" "yaml" "yml" "json" "xml" "toml" "cson" "ini" "zshrc"))
+                              :extensions ("conf" "cfg" "yaml" "yml" "json" "xml" "toml" "cson" "ini" "zshrc" "vimrc"))
 
         (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "dockerfile" :v-adjust -0.1 :face face-spec))
                               :fallback (format " %s " (icons-in-terminal-fileicon "dockerfile"))
                               :extensions ("dockerfile"))
 
         ;; Media file types
+        (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "word" :v-adjust 0 :face face-spec))
+                              :fallback (format " %s " (icons-in-terminal-fileicon "word"))
+                              :extensions ("docx"))
+
         (treemacs-create-icon :icon (format " %s " (all-the-icons-octicon "file-pdf" :v-adjust 0 :face face-spec))
                               :fallback (format " %s " (icons-in-terminal-octicon "file-pdf"))
                               :extensions ("pdf"))
