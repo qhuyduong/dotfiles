@@ -479,7 +479,7 @@
 
         ;; Project configuration
         (treemacs-create-icon :icon (format " %s " (all-the-icons-faicon "git-square" :v-adjust -0.1 :face face-spec))
-                              :fallback (format " %s " (icons-in-terminal-fileicon "git"))
+                              :fallback (format " %s " (icons-in-terminal-faicon "git"))
                               :extensions ("gitignore" "git" "gitconfig" "gitmodules"))
 
         (treemacs-create-icon :icon (format " %s " (all-the-icons-fileicon "gnu" :v-adjust 0 :face face-spec))
