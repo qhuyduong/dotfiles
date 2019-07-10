@@ -6,6 +6,9 @@
       line-number-mode nil
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
 
+(unless (display-graphic-p)
+  (custom-set-faces '(vertical-border ((t (:background "#181e24" :foreground "#181e24"))))))
+
 ;; Graphic configurations
 (when (display-graphic-p)
   (setq doom-font (font-spec :family "Hack" :size 14))
