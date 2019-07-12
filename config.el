@@ -370,11 +370,13 @@
 (after! git-gutter
   (setq git-gutter:modified-sign "~"))
 
-(after! doom-themes-ext-treemacs
-  (require 'treemacs)
+(after! doom-themes
+  (remove-hook! 'doom-load-theme-hook #'doom-themes-treemacs-config))
+
+(after! treemacs
   (require 'icons-in-terminal)
 
-  (treemacs-modify-theme "doom"
+  (treemacs-create-theme "better-doom"
     :config
     (progn
       (let ((face-spec '(:inherit font-lock-doc-face :slant normal)))
@@ -521,7 +523,9 @@
 
         (treemacs-create-icon :icon (format " %s " (all-the-icons-faicon "music" :v-adjust 0 :face face-spec))
                               :fallback (format " %s " (icons-in-terminal-faicon "music"))
-                              :extensions ("wav" "mp3" "ogg" "midi"))))))
+                              :extensions ("wav" "mp3" "ogg" "midi")))))
+
+  (treemacs-load-theme "better-doom"))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra smerge-hydra (:hint nil)
