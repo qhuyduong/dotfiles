@@ -790,7 +790,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>330 306 620 392 0 0 1280 800 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>636 444 796 486 0 0 1920 1080 </string>
+	<string>636 418 796 486 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>20 31 930 1024 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1298,6 +1298,13 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x02 0x70</string>
+				</dict>
+				<key>0x73-0x100000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x02 0x73</string>
 				</dict>
 				<key>0x77-0x100000</key>
 				<dict>
