@@ -3,13 +3,13 @@
 # bar settings
 yabai -m config status_bar                   off
 yabai -m config status_bar_text_font         "Helvetica Neue:Bold:12.0"
-yabai -m config status_bar_icon_font         "FontAwesome:Regular:12.0"
-yabai -m config status_bar_background_color  0xff202020
+yabai -m config status_bar_icon_font         "icons-in-terminal:in-terminal:14.0"
+yabai -m config status_bar_background_color  0xff2d2d2d
 yabai -m config status_bar_foreground_color  0xffa8a8a8
-yabai -m config status_bar_space_icon_strip  I II III IV V VI VII VIII IX X
-yabai -m config status_bar_power_icon_strip   
-yabai -m config status_bar_space_icon        
-yabai -m config status_bar_clock_icon        
+yabai -m config status_bar_space_icon_strip      
+yabai -m config status_bar_power_icon_strip   
+yabai -m config status_bar_space_icon        
+yabai -m config status_bar_clock_icon        
 
 # global settings
 yabai -m config mouse_follows_focus          off
@@ -41,12 +41,12 @@ yabai -m config window_gap                   10
 
 # window rules
 yabai -m rule --add app=Emacs space=1
-yabai -m rule --add app=iTerm space=1
-yabai -m rule --add app=Alacritty space=1
-yabai -m rule --add app=kitty space=1
-yabai -m rule --add app=Slack space=2
+yabai -m rule --add app=iTerm space=2
+yabai -m rule --add app=Alacritty space=2
+yabai -m rule --add app=kitty space=2
 yabai -m rule --add app="Google Chrome" space=3
-yabai -m rule --add app=Messages space=4
+yabai -m rule --add app=Slack space=4
+yabai -m rule --add app=Messages space=5
 
 # signals
 yabai -m signal --add event=space_changed action="uebersicht-refresh-desktop"
