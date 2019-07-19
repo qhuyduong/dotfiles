@@ -29,7 +29,7 @@
 (setq-default global-visual-line-mode t)
 
 ;; Workaround for magithub authentication stuffs
-(setq auth-sources '("~/.authinfo"))
+(add-to-list 'auth-sources "~/.authinfo")
 
 ;; Set command key as super on OSX
 (setq mac-command-modifier 'super)
