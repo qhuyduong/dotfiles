@@ -61,7 +61,7 @@
         +present)        ; using Emacs for presentations
        (ruby             ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +lsp             ; enable LSP
-        +rvm)            ; enable rvm
+        +rbenv)          ; enable rbenv
        (rust             ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
         +lsp)            ; enable LSP
        web               ; the tubes

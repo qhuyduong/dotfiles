@@ -276,7 +276,7 @@
   (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
 
 (after! enh-ruby-mode
-  (add-hook! enh-ruby-mode #'rvm-activate-corresponding-ruby)
+  (add-hook! enh-ruby-mode #'rbenv-use-global)
   (map! :mode enh-ruby-mode
         (:leader
           (:prefix "p"
