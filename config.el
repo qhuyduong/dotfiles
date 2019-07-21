@@ -15,8 +15,9 @@
 
   (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
 
-  ;; Enable menu-bar-mode to fix focus issue
-  (menu-bar-mode t)
+  ;; Enable menu-bar-mode to fix focus issue on macOS
+  (when IS-MAC
+    (menu-bar-mode t))
 
   ;; Make titlebar match background color
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
