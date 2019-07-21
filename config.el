@@ -75,6 +75,7 @@
 
 ;; Set default source and destination languages for Google Translate
 (after! google-translate-core-ui
+  (setq google-translate-backend-method 'curl)
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "vi"))
 
