@@ -14,7 +14,7 @@
 
 ;; Graphic configurations
 (when (display-graphic-p)
-  (setq doom-font (font-spec :family "Hack" :size 14))
+  (setq doom-font (font-spec :family "Hack" :size 24))
 
   (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
 
