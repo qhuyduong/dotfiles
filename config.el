@@ -6,6 +6,9 @@
       line-number-mode nil
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
 
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 (unless (display-graphic-p)
   (custom-set-faces '(vertical-border ((t (:background "#181e24" :foreground "#181e24"))))))
 
@@ -189,8 +192,7 @@
 ;; Magit
 (after! magit
   (set-popup-rule! "^magit:\s" :width 0.5 :side 'right :select t :modeline t :quit 'current)
-  (setq magit-repository-directories '(("~/EH-Workspace" . 1)
-                                       ("~/Workspace" . 1))
+  (setq magit-repository-directories '(("~/workspace" . 1))
         magit-save-repository-buffers nil))
 
 ;; lang/org
@@ -206,11 +208,11 @@
   (setq org-plantuml-jar-path "~/.local/bin/plantuml.jar")
   (remove-hook! org-mode #'org-indent-mode)
   (setq org-startup-indented nil)
-  (setq org-directory (expand-file-name "~/Workspace/orgs")
+  (setq org-directory (expand-file-name "~/workspace/orgs")
         org-agenda-files (list org-directory))
   ;; Org capture templates
   (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                                 (file "~/Workspace/orgs/inbox.org")
+                                 (file "~/workspace/orgs/inbox.org")
                                  "* ☛ TODO %i%?")))
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
   (setq org-refile-allow-creating-parent-nodes 'confirm)
@@ -278,7 +280,6 @@
   (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
 
 (after! enh-ruby-mode
-  (add-hook! enh-ruby-mode #'rbenv-use-global)
   (map! :mode enh-ruby-mode
         (:leader
           (:prefix "p"
