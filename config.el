@@ -346,7 +346,7 @@
   (setq forge-topic-list-limit '(5 . 5)))
 
 (after! hydra
-  (setq hydra-hint-display-type 'message))
+  (setq hydra-hint-display-type 'lv))
 
 (after! prodigy
   (setq prodigy-view-truncate-by-default t)
@@ -636,7 +636,7 @@ T - tag prefix
 
 (defhydra +workspace-hydra (:hint nil)
   "
-%s(+workspace/display)"
+%s(+workspace--tabline)"
   ("1" +workspace-switch-to-0)
   ("2" +workspace-switch-to-1)
   ("3" +workspace-switch-to-2)
