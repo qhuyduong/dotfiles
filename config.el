@@ -193,7 +193,8 @@
 (after! magit
   (set-popup-rule! "^magit:\s" :width 0.5 :side 'right :select t :modeline t :quit 'current)
   (setq magit-repository-directories '(("~/workspace" . 1))
-        magit-save-repository-buffers nil))
+        magit-save-repository-buffers nil
+        +magit-default-clone-url "git@github.com:%s/%s"))
 
 ;; lang/org
 (after! org
