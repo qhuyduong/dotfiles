@@ -1,4 +1,4 @@
-;;; ~/.doom.d/config.el
+;;; .doom.d/config.el -*- lexical-binding: t; -*-
 
 (setq doom-theme 'doom-city-lights
       doom-localleader-key ","
@@ -347,7 +347,7 @@
   (setq forge-topic-list-limit '(5 . 5)))
 
 (after! hydra
-  (setq hydra-hint-display-type 'lv))
+  (setq hydra-hint-display-type 'message))
 
 (after! prodigy
   (setq prodigy-view-truncate-by-default t)
