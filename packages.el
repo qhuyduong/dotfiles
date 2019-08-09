@@ -1,9 +1,9 @@
 ;; -*- no-byte-compile: t; -*-
-;;; ~/.doom.d/packages.el
+;;; .doom.d/packages.el
 
 ;;; Examples:
 ;; (package! some-package)
-;; (package! another-package :recipe (:fetcher github :repo "username/repo"))
+;; (package! another-package :recipe (:host github :repo "username/repo"))
 ;; (package! builtin-package :disable t)
 
 (package! add-node-modules-path)
@@ -15,12 +15,12 @@
 (package! evil-matchit)
 (package! evil-terminal-cursor-changer)
 (package! exec-path-from-shell)
-(package! flycheck-apib :recipe (:fetcher github :repo "qhuyduong/flycheck-apib"))
+(package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))
 (package! google-translate)
-(package! icons-in-terminal :recipe (:fetcher github :repo "seagle0128/icons-in-terminal.el"))
+(package! icons-in-terminal :recipe (:host github :repo "seagle0128/icons-in-terminal.el"))
 (package! lorem-ipsum)
 (package! mode-icons)
-(package! navigate :recipe (:fetcher github :repo "keith/evil-tmux-navigator"))
+(package! navigate :recipe (:host github :repo "keith/evil-tmux-navigator"))
 (package! nvm)
 (package! ob-async)
 (package! org-pivotal)
