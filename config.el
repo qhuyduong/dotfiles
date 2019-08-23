@@ -3,7 +3,6 @@
 (setq doom-theme 'doom-city-lights
       doom-localleader-key ","
       display-line-numbers-type 'relative
-      line-number-mode nil
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
 
 (when (memq window-system '(mac ns x))
@@ -62,7 +61,6 @@
 (global-evil-matchit-mode t)
 
 (after! doom-modeline
-  (remove-hook! 'doom-modeline-mode-hook #'column-number-mode)
   (setq doom-modeline-enable-word-count t)
   (setq doom-modeline-percent-position nil))
 
