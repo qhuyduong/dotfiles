@@ -1,6 +1,6 @@
 ;;; .doom.d/config.el -*- lexical-binding: t; -*-
 
-(setq doom-theme 'doom-city-lights
+(setq doom-theme 'doom-palenight
       doom-localleader-key ","
       display-line-numbers-type 'relative
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
