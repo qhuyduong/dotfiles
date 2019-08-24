@@ -5,9 +5,6 @@
       display-line-numbers-type 'relative
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
 
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
-
 (unless (display-graphic-p)
   (custom-set-faces '(vertical-border ((t (:background "#181e24" :foreground "#181e24"))))))
 

@@ -14,7 +14,6 @@
 (package! docker-compose-mode)
 (package! evil-matchit)
 (package! evil-terminal-cursor-changer)
-(package! exec-path-from-shell)
 (package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))
 (package! google-translate)
 (package! icons-in-terminal :recipe (:host github :repo "seagle0128/icons-in-terminal.el"))
