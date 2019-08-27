@@ -10,7 +10,6 @@
 	email = huy.duong@employmenthero.com
 [core]
 	hooksPath = /Users/qhuyduong/.config/git/hooks
-	excludesfile = /Users/qhuyduong/.gitignore_global
 [github]
 	user = qhuyduong
 [merge]
