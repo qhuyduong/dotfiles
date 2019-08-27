@@ -527,6 +527,9 @@
 
   (treemacs-load-theme "better-doom"))
 
+(after! buttercup
+  (set-popup-rule! "\\*Buttercup\\*" :width 0.3 :side 'right :quit 'current))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra smerge-hydra (:hint nil)
   ("n" smerge-next "next hunk" :column "Movement")
