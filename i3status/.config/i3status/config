@@ -1,0 +1,39 @@
+general {
+        colors = true
+        interval = 3
+}
+
+#order += "cpu_usage"
+order += "cpu_temperature 0"
+#order += "memory"
+order += "tztime local"
+order += "battery 0"
+
+cpu_usage {
+        format = " %usage "
+}
+
+cpu_temperature 0 {
+	max_threshold = 90
+	format = " %degrees %C"
+	path = "/sys/class/thermal/thermal_zone2/temp"
+}
+
+memory {
+	format = " %free"
+}
+
+battery 0 {
+	low_threshold = 20
+	threshold_type = "percentage"
+	status_chr = "⚡"
+	status_bat = " "
+	status_full = " "
+	integer_battery_capacity = true
+	format = "%status %percentage"	
+	separator = true
+}
+
+tztime local {
+        format = "%a %b %d %H:%M"
+}
