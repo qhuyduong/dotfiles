@@ -1,0 +1,105 @@
+# /Users/qhuyduong/.config/tmuxinator/playground.yml
+
+name: playground
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+# pre: open -a Docker
+
+# Project hooks
+# Runs on project start, always
+# on_project_start: command
+# Run on project start, the first time
+# on_project_first_start: command
+# Run on project start, after the first time
+# on_project_restart: command
+# Run on project exit ( detaching from tmux session )
+# on_project_exit: tmux -CC attach -t Playground
+# Run on project stop
+# on_project_stop: command
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: editor
+
+# Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
+# startup_pane: 1
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t Playground
+
+windows:
+  - employment-hero:
+      root: ~/workspace/employment-hero
+      layout: main-vertical
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - server: rails server
+        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+        - redis: redis-server
+
+  - frontend-core:
+      root: ~/workspace/frontend-core
+      layout: main-vertical
+      panes:
+        - server: yarn start
+
+  - auth:
+      root: ~/workspace/auth
+      layout: main-vertical
+      panes:
+        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+
+  - nomination:
+      root: ~/workspace/nominations-service
+      layout: main-vertical
+      panes:
+        - server: bundle exec puma -p 3007
+        - sidekiq: bundle exec sidekiq -r ./config/environment.rb
+        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+
+  - kafka-docker:
+      root: ~/workspace/kafka-docker
+      layout: main-vertical
+      panes:
+        - docker: docker-compose up
+
+  - announcement:
+      root: ~/workspace/announcement-api-service
+      layout: main-vertical
+      panes:
+        - server: rails server -p 3001
+        - worker: bundle exec sidekiq
+        - consumer: bundle exec karafka server
+
+  # - herodollar-service:
+  #     root: ~/EH-Workspace/herodollar-service
+  #     layout: main-vertical
+  #     panes:
+  #       - server: bundle exec puma -p 3002
+  #       - grpc: bundle exec ruby grpc/grpc_server.rb
+
+  # - herodollar-purchase-service:
+  #     root: ~/EH-Workspace/herodollar-purchase-service
+  #     layout: main-vertical
+  #     panes:
+  #       - server: bundle exec puma -p 3003
+  #       - sidekiq: bundle exec sidekiq -r ./config/environment.rb -C ./config/sidekiq.yml
+
