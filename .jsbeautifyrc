@@ -1,9 +1,0 @@
-{
-    "html": {
-        "allowed_file_extensions": ["htm", "html", "xhtml", "shtml", "xml", "svg", "dust"],
-        "indent_size": 2,
-        "unformatted": ["a", "span", "img", "code", "pre", "sub", "sup", "em", "strong", "b", "i", "u", "strike", "big", "small", "pre", "h1",
-            "h2", "h3", "h4", "h5", "h6"
-        ]
-    }
-}

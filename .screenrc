@@ -1,7 +1,0 @@
-escape ``
-term screen-256color
-#hardstatus alwayslastline "%?%{yk}%-Lw%?%{wb}%n*%f %t%?(%u)%?%?%{yk}%+Lw%?"
-hardstatus alwayslastline "%{b kw}%H %{r}%1` %{w}| %{g}%c:%s %{w}| %{y}%d.%m.%Y %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"
-defshell -bash
-defscrollback 10000
-defwrap
