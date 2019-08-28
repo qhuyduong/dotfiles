@@ -53,7 +53,7 @@ Plug 'ntpeters/vim-better-whitespace'     " Remove trailing whitespaces
 Plug 'alvan/vim-closetag'                 " Auto close (X)HTML tags
 Plug 'easymotion/vim-easymotion'          " Enhanced vim motions
 Plug 'tommcdo/vim-exchange'               " Easy text exchange operator for Vim
-Plug 'ludovicchabant/vim-gutentags'       " Tags manager
+" Plug 'ludovicchabant/vim-gutentags'       " Tags manager
 Plug 'matze/vim-move'                     " Move lines/block
 Plug 'kana/vim-textobj-user'              " Dependency
 Plug 'kana/vim-textobj-entire'            " Add ie and ae textobj
