@@ -181,7 +181,7 @@ vnoremap <C-x> "+d
 " Colors
 "----------------------------------------------
 set background=dark
-colorscheme nord
+"colorscheme nord
 
 "----------------------------------------------
 " Searching
