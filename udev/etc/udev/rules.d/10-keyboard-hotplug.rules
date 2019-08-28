@@ -1,0 +1,2 @@
+ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="1b1c", ATTRS{idProduct}=="1b40", RUN+="/usr/bin/keyboard-hotplug.sh"
+ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="feed", ATTRS{idProduct}=="1307", RUN+="/usr/bin/keyboard-hotplug.sh"
