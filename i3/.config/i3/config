@@ -178,9 +178,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-	tray_output DP1
-	tray_output primary
-	tray_output HDMI2
+        tray_output DP1
+        tray_output primary
+        tray_output HDMI2
 }
 
 # Automatic started apps
@@ -198,7 +198,7 @@ exec --no-startup-id xautolock -time 30 -locker "systemctl suspend"
 
 # Audio volume controls
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
-bindsym XF86AudioLowerVolume  exec amixer -q sset Master 5%- unmute
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q sset Master toggle
 
 # Sreen brightness controls
