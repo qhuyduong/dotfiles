@@ -51,7 +51,7 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - server: rails server
+        - web: bundle exec rails server
         - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
         - redis: redis-server
 
@@ -59,7 +59,7 @@ windows:
       root: ~/workspace/frontend-core
       layout: main-vertical
       panes:
-        - server: yarn start
+        - server: yarn install && yarn start
 
   - auth:
       root: ~/workspace/auth
@@ -67,13 +67,13 @@ windows:
       panes:
         - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
 
-  - nomination:
-      root: ~/workspace/nominations-service
-      layout: main-vertical
-      panes:
-        - server: bundle exec puma -p 3007
-        - sidekiq: bundle exec sidekiq -r ./config/environment.rb
-        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+  # - nomination:
+  #     root: ~/workspace/nominations-service
+  #     layout: main-vertical
+  #     panes:
+  #       - web: bundle exec puma -p 3002
+  #       - worker: bundle exec sidekiq -r ./config/environment.rb
+  #       - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
 
   - kafka-docker:
       root: ~/workspace/kafka-docker
@@ -85,8 +85,16 @@ windows:
       root: ~/workspace/announcement-api-service
       layout: main-vertical
       panes:
-        - server: rails server -p 3001
-        - worker: bundle exec sidekiq
+        - server: bundle exec rails server -p 3001
+        # - worker: bundle exec sidekiq
+        # - consumer: bundle exec karafka server
+
+  - employee-milestones:
+      root: ~/workspace/employee-milestones
+      layout: main-vertical
+      panes:
+        - web: bundle exec puma -p 3006
+        - worker: bundle exec sidekiq -r ./config/environment.rb
         - consumer: bundle exec karafka server
 
   # - herodollar-service:
