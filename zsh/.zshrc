@@ -42,7 +42,6 @@ alias ll='ls -lha'
 source ~/.zplug/init.zsh
 
 # Zplug plugins
-zplug "agkozak/agkozak-zsh-prompt"
 zplug "hlissner/zsh-autopair", defer:2
 # Async for zsh, used by pure
 zplug "mafredri/zsh-async", from:github, defer:0
@@ -57,6 +56,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
+zplug "specious/bender", as:theme
 
 # Actually install plugins, prompt user input
 if ! zplug check --verbose; then
@@ -70,9 +70,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-
-export AGKOZAK_PROMPT_CHAR=λ
-export AGKOZAK_COLORS_PROMPT_CHAR=yellow
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
