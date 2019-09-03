@@ -9,7 +9,7 @@
 	name = Huy Duong
 	email = huy.duong@employmenthero.com
 [core]
-	hooksPath = /Users/qhuyduong/.config/git/hooks
+	hooksPath = /home/qhuyduong/.config/git/hooks
 [github]
 	user = qhuyduong
 [merge]
