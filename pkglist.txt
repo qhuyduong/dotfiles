@@ -26,6 +26,7 @@ docker
 docker-compose
 e2fsprogs
 emacs
+ethtool
 exfat-utils
 fakeroot
 fd
@@ -93,6 +94,7 @@ nodejs
 noto-fonts-emoji
 openssh
 pacman
+pacman-contrib
 paprefs
 pasystray
 patch
@@ -100,6 +102,7 @@ pavucontrol
 pciutils
 perl
 pkgconf
+playerctl
 postgresql
 powertop
 procps-ng
@@ -112,12 +115,14 @@ refind-efi
 reiserfsprogs
 ripgrep
 rofi
+rsync
 s-nail
 sed
 shadow
 shellcheck
 smartmontools
 sshpass
+stow
 sudo
 sysfsutils
 systemd-sysvcompat
@@ -147,12 +152,12 @@ util-linux
 vi
 wget
 which
+words
 wpa_supplicant
 x86_energy_perf_policy
 xautolock
 xcape
 xclip
-xf86-input-synaptics
 xf86-video-intel
 xf86-video-vesa
 xfce4-notifyd

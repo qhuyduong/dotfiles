@@ -7,13 +7,14 @@ glxinfo
 google-chrome
 ideviceinstaller-git
 intel-undervolt
-linux-macbook
-linux-macbook-headers
 mbpfan-git
+nodejs-nativefier
 package-query
 plymouth
+rbenv
 rofi-calc
 rofi-file-browser-extended-git
+ruby-build
 s-tui
 slack-desktop
 spotify
@@ -21,4 +22,6 @@ teamviewer
 thermald
 ttf-mac-fonts
 ttf-ms-fonts
+xf86-input-mtrack-git
 yay
+zalo-nativefier
