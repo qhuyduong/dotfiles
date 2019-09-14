@@ -1,5 +1,6 @@
 bcwc-pcie-git
 cydia-impactor
+drafter
 dropbox
 enpass-bin
 fix-bt-a2dp
@@ -7,6 +8,7 @@ glxinfo
 google-chrome
 ideviceinstaller-git
 intel-undervolt
+lightdm-mini-greeter
 mbpfan-git
 nodejs-nativefier
 package-query

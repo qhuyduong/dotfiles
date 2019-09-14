@@ -1,4 +1,5 @@
 alsa-utils
+android-tools
 arandr
 autoconf
 automake
@@ -70,7 +71,6 @@ less
 licenses
 light
 lightdm
-lightdm-webkit2-greeter
 linux
 linux-firmware
 logrotate
@@ -110,6 +110,7 @@ psmisc
 pulseaudio-alsa
 pulseaudio-bluetooth
 pyenv
+ranger
 redis
 refind-efi
 reiserfsprogs
