@@ -208,4 +208,4 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshooter
 bindsym $mod+Shift+p exec "xfce4-screenshooter -r"
-bindsym $mod+Ctrl+q exec "i3lock -c 292d3e"
+bindsym $mod+Ctrl+q exec "~/dotfiles/lock.sh"
