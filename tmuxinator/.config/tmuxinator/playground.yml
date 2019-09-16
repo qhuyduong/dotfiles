@@ -53,7 +53,6 @@ windows:
       panes:
         - web: bundle exec rails server
         - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
-        - redis: redis-server
 
   - frontend-core:
       root: ~/workspace/frontend-core
