@@ -7,11 +7,8 @@ fix-bt-a2dp
 glxinfo
 google-chrome
 ideviceinstaller-git
-intel-undervolt
 lightdm-mini-greeter
 mbpfan-git
-nodejs-nativefier
-package-query
 plymouth
 rbenv
 rofi-calc
@@ -26,4 +23,3 @@ ttf-mac-fonts
 ttf-ms-fonts
 xf86-input-mtrack-git
 yay
-zalo-nativefier
