@@ -52,7 +52,7 @@ httpie
 hub
 i3-gaps
 i3blocks
-i3lock
+i3lock-color
 i3status
 i7z
 ibus-unikey
