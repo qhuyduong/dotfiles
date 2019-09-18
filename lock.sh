@@ -6,6 +6,7 @@ WRONG='#f07178ff'
 VERIFY='#82aaffff'
 
 i3lock \
+  --color="$(echo $BACKGROUND | cut -c1-7)" \
   --insidecolor=$BACKGROUND \
   --insidevercolor=$VERIFY  \
   --insidewrongcolor=$WRONG \
@@ -18,7 +19,6 @@ i3lock \
   --datecolor=$TEXT         \
   --layoutcolor=$TEXT       \
   --screen=1                \
-  --blur=7                  \
   --clock                   \
   --indicator               \
   --timestr="%H:%M"         \
