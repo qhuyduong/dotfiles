@@ -530,6 +530,11 @@
 (after! buttercup
   (set-popup-rule! "\\*Buttercup\\*" :width 0.3 :side 'right :quit 'current))
 
+(projectile-rails-global-mode)
+
+(after! projectile-rails
+  (set-lookup-handlers! 'projectile-rails-mode :file #'projectile-rails-goto-file-at-point))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 (defhydra smerge-hydra (:hint nil)
   ("n" smerge-next "next hunk" :column "Movement")

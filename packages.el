@@ -17,6 +17,7 @@
 (package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))
 (package! google-translate)
 (package! icons-in-terminal :recipe (:host github :repo "seagle0128/icons-in-terminal.el"))
+(package! inflections)
 (package! lorem-ipsum)
 (package! mode-icons)
 (package! navigate :recipe (:host github :repo "keith/evil-tmux-navigator"))
@@ -27,6 +28,7 @@
 (package! osx-trash)
 (package! persp-mode-projectile-bridge)
 (package! prettier-js)
+(package! projectile-rails)
 (package! reason-mode)
 (package! uuidgen)
 
