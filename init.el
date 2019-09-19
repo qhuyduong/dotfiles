@@ -16,6 +16,7 @@
 
        :ui
        doom              ; what makes DOOM look the way it does
+       doom-dashboard    ; a nifty splash screen for Emacs
        hl-todo           ; highlight TODO/FIXME/NOTE tags
        modeline          ; snazzy, Atom-inspired modeline, plus API
        ophints           ; highlight the region an operation acts on
