@@ -232,6 +232,7 @@
 (after! js2-mode
   (setq-default js-indent-level 2)
   (add-hook! js2-mode #'(add-node-modules-path prettier-js-mode))
+  (add-hook! js2-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
   (map! :mode js2-mode
         (:leader
           (:prefix "p"
@@ -687,3 +688,9 @@ T - tag prefix
   (forward-line 1)
   (transpose-lines 1)
   (forward-line -1))
+
+(defun find-relative-file-or-folder (identifier)
+  (let ((path (format "%s/%s" default-directory identifier)))
+    (if (file-exists-p path)
+        (find-file path)
+      (current-buffer))))
