@@ -228,12 +228,12 @@
   :after apib-mode
   :config (add-hook! apib-mode #'flycheck-apib-setup))
 
-;; js2-mode
-(after! js2-mode
+;; rjsx-mode
+(after! rjsx-mode
   (setq-default js-indent-level 2)
-  (add-hook! js2-mode #'(add-node-modules-path prettier-js-mode))
-  (add-hook! js2-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
-  (map! :mode js2-mode
+  (add-hook! rjsx-mode #'(add-node-modules-path prettier-js-mode))
+  (add-hook! rjsx-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
+  (map! :mode rjsx-mode
         (:leader
           (:prefix "p"
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
