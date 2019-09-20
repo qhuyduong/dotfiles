@@ -60,7 +60,6 @@
         +dragndrop       ; file drag & drop support
         +present)        ; using Emacs for presentations
        (ruby             ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-        +lsp             ; enable LSP
         +rbenv)          ; enable rbenv
        (rust             ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
         +lsp)            ; enable LSP

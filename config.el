@@ -276,14 +276,15 @@
 (after! ivy
   (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
 
+(after! rubocop
+  (set-popup-rule! "\\*RuboCop" :ttl 0 :quit 'other))
+
 (after! enh-ruby-mode
   (map! :mode enh-ruby-mode
         (:leader
           (:prefix "p"
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))
         (:localleader
-          (:prefix ("l" . "lsp")
-            "f" #'lsp-format-buffer)
           (:prefix ("b" . "bundle"))
           (:prefix ("k" . "rake"))
           (:prefix ("r" . "robe"))
@@ -310,17 +311,7 @@
                     :notification-handlers (ht ("client/registerCapability" 'ignore))
                     :priority 1
                     :server-id 'reason-ls))
-  (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection '("solargraph" "stdio"))
-                    :major-modes '(ruby-mode enh-ruby-mode)
-                    :priority 1
-                    :multi-root t
-                    :initialization-options  '(:diagnostics t)
-                    :server-id 'enh-ruby-ls))
   (setq lsp-eldoc-render-all nil))
-
-(after! company-lsp
-  (setq company-lsp-cache-candidates 'auto))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil)
