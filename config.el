@@ -1,32 +1,21 @@
 ;;; .doom.d/config.el -*- lexical-binding: t; -*-
 
+;; Global settings
 (setq doom-theme 'doom-palenight
       doom-localleader-key ","
       display-line-numbers-type 'relative
-      initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
+      initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n")
+      doom-font (font-spec :family "Hack" :size 24))
 
-(unless (display-graphic-p)
-  (custom-set-faces '(vertical-border ((t (:background "#181e24" :foreground "#181e24"))))))
+(custom-set-faces '(cursor ((t (:background "#98f5ff")))))
 
-;; Graphic configurations
-(when (display-graphic-p)
-  (setq doom-font (font-spec :family "Hack" :size 24))
-
-  (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
-
-  ;; Enable menu-bar-mode to fix focus issue on macOS
-  (when IS-MAC
-    (menu-bar-mode t))
-
-  ;; Make titlebar match background color
-  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-  (add-to-list 'default-frame-alist '(ns-appearance . dark))
-
-  (mode-icons-mode))
+;; Make titlebar match background color
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 ;; truncate-lines in all buffers
-(setq-default truncate-lines nil)
-(setq-default global-visual-line-mode t)
+(setq-default truncate-lines nil
+              global-visual-line-mode t)
 
 ;; Workaround for magithub authentication stuffs
 (add-to-list 'auth-sources "~/.authinfo")
@@ -41,9 +30,6 @@
 
 (setq +workspaces-switch-project-function #'+counsel-fzf-find-project)
 
-;; apib-mode
-(add-to-list 'auto-mode-alist '("\\.apib\\'" . apib-mode))
-
 (with-eval-after-load "persp-mode-projectile-bridge-autoloads"
   (add-hook 'persp-mode-projectile-bridge-mode-hook
             #'(lambda ()
@@ -55,7 +41,13 @@
                 (persp-mode-projectile-bridge-mode 1))
             t))
 
+;; Global modes
+;; Enable menu-bar-mode to fix focus issue on macOS
+(when IS-MAC
+  (menu-bar-mode t))
+(mode-icons-mode)
 (global-evil-matchit-mode t)
+(projectile-rails-global-mode)
 
 (after! doom-modeline
   (setq doom-modeline-enable-word-count t)
@@ -209,14 +201,20 @@
                                  ("✓ DONE" . (:foreground "green"))
                                  ("✘ CANCELED" . (:foreground "red")))))
 
+;; apib-mode
+(use-package! apib-mode
+  :mode "\\.apib\\'")
+
 ;; flycheck-apib
-(def-package! flycheck-apib
+(use-package! flycheck-apib
   :when (featurep! :tools flycheck)
   :after apib-mode
   :config (add-hook! apib-mode #'flycheck-apib-setup))
 
 ;; rjsx-mode
-(after! rjsx-mode
+(use-package! rjsx-mode
+  :mode "\\.js*\\'"
+  :config
   (setq-default js-indent-level 2)
   (add-hook! rjsx-mode #'(add-node-modules-path prettier-js-mode))
   (add-hook! rjsx-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
@@ -354,8 +352,6 @@
 
 (after! buttercup
   (set-popup-rule! "\\*Buttercup\\*" :width 0.3 :side 'right :quit 'current))
-
-(projectile-rails-global-mode)
 
 (after! projectile-rails
   (set-lookup-handlers! 'projectile-rails-mode :file #'projectile-rails-goto-file-at-point))
