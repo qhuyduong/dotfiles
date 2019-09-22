@@ -46,13 +46,13 @@
 ;; Enable menu-bar-mode to fix focus issue on macOS
 (when IS-MAC
   (menu-bar-mode t))
-(mode-icons-mode)
 (global-evil-matchit-mode t)
 (projectile-rails-global-mode)
 
 (after! doom-modeline
   (setq doom-modeline-enable-word-count t)
-  (setq doom-modeline-percent-position nil))
+  (setq doom-modeline-percent-position nil)
+  (setq doom-modeline-major-mode-icon t))
 
 (when IS-MAC
   (after! osx-trash
@@ -334,13 +334,6 @@
 (after! tide
   (setq tide-hl-identifier-idle-time 2)
   (setq tide-sync-request-timeout 5))
-
-(after! mode-icons
-  (add-to-list 'mode-icons '("\\`JS2\\'" "js" xpm))
-  (add-to-list 'mode-icons '("\\`Elisp\\'" "emacs" xpm))
-  (add-to-list 'mode-icons '("\\`JSON\\'" #xe90b all-the-icons))
-  (add-to-list 'mode-icons '("\\`BSDmakefile\\'" #xe679 file-icons))
-  (add-to-list 'mode-icons '("\\`Gitignore\\'" #xf1d2 FontAwesome)))
 
 (after! gist
   (set-evil-initial-state! 'gist-list-mode 'emacs))

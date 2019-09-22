@@ -19,7 +19,6 @@
 (package! icons-in-terminal :recipe (:host github :repo "seagle0128/icons-in-terminal.el"))
 (package! inflections)
 (package! lorem-ipsum)
-(package! mode-icons)
 (package! navigate :recipe (:host github :repo "keith/evil-tmux-navigator"))
 (package! nvm)
 (package! ob-async)
