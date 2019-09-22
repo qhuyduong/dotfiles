@@ -10,8 +10,9 @@
 (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
 
 ;; Make titlebar match background color
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
+(when IS-MAC
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(ns-appearance . dark)))
 
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil
@@ -53,8 +54,8 @@
   (setq doom-modeline-enable-word-count t)
   (setq doom-modeline-percent-position nil))
 
-(after! osx-trash
-  (when (eq system-type 'darwin)
+(when IS-MAC
+  (after! osx-trash
     (osx-trash-setup)))
 
 (after! dired
