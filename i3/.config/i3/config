@@ -197,6 +197,9 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# Screenshooter
-bindsym $mod+Shift+p exec "xfce4-screenshooter -r"
+# Screenshotting
+bindsym $mod+Shift+p --release exec "scrot -ue 'mv $f /tmp && xclip -selection clipboard -t image/png -i /tmp/$n'; notify-send 'Screenshot has been copied to clipboard'"
+bindsym $mod+Shift+Ctrl+p --release exec "scrot -se 'mv $f /tmp && xclip -selection clipboard -t image/png -i /tmp/$n'; notify-send 'Screen selection has been copied to clipboard'"
+
+# Lock screen
 bindsym $mod+Ctrl+q exec "~/dotfiles/lock.sh"
