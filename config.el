@@ -479,3 +479,64 @@ T - tag prefix
     (if (file-exists-p path)
         (find-file path)
       (current-buffer))))
+
+;;;###autoload
+(defun ++lookup/file (path)
+  "Figure out PATH from whatever is at point and open it.
+
+Each function in `+lookup-file-functions' is tried until one changes the point
+or the current buffer.
+
+Otherwise, falls back on `find-file-at-point'."
+  (interactive
+   (progn
+     (require 'ffap)
+     (list
+      (or (ffap-guesser)
+          (+lookup-symbol-or-region)))))
+  (require 'ffap)
+  (cond ((not path)
+         (call-interactively #'find-file-at-point))
+
+        ((ffap-url-p path)
+         (find-file-at-point path))
+
+        ((not (+lookup--jump-to :file path))
+         (let ((fullpath (doom-path path)))
+           (when (and buffer-file-name (file-equal-p fullpath buffer-file-name))
+             (user-error "Already here"))
+           (let* ((insert-default-directory t)
+                  (project-root (doom-project-root))
+                  (ffap-file-finder
+                   (cond ((not (doom-glob fullpath))
+                          #'find-file)
+                         ((ignore-errors (file-in-directory-p fullpath project-root))
+                          (lambda (dir)
+                            (let* ((default-directory dir)
+                                   projectile-project-name
+                                   projectile-project-root
+                                   (projectile-project-root-cache (make-hash-table :test 'equal))
+                                   (file (projectile-completing-read "Find file: "
+                                                                     (projectile-current-project-files)
+                                                                     :initial-input path)))
+                              (find-file (expand-file-name file (doom-project-root)))
+                              (run-hooks 'projectile-find-file-hook))))
+                         (#'doom-project-browse))))
+             (find-file-at-point path))))))
+
+(advice-add '+lookup/file :override #'++lookup/file)
+
+;;;###autoload
+(defun +projectile-rails-goto-template-at-point ()
+  "Visit a template or a partial under the point."
+  (interactive)
+  (require 'find-lisp)
+  (let* ((template (projectile-rails-filename-at-point))
+         (dir (projectile-rails-template-dir template))
+         (name (projectile-rails-template-name template))
+         (regex (concat "^[_]?" name)))
+    (when (find-lisp-find-files dir regex)
+      (find-file (car (find-lisp-find-files dir regex))))))
+
+(add-hook '+lookup-file-functions #'current-buffer)
+(advice-add 'projectile-rails-goto-template-at-point :override #'+projectile-rails-goto-template-at-point)
