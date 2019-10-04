@@ -13,13 +13,10 @@
 (package! dockerfile-mode)
 (package! docker-compose-mode)
 (package! evil-matchit)
-(package! evil-terminal-cursor-changer)
 (package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))
 (package! google-translate)
-(package! icons-in-terminal :recipe (:host github :repo "seagle0128/icons-in-terminal.el"))
 (package! inflections)
 (package! lorem-ipsum)
-(package! navigate :recipe (:host github :repo "keith/evil-tmux-navigator"))
 (package! nvm)
 (package! ob-async)
 (package! org-pivotal)
@@ -29,7 +26,6 @@
 (package! prettier-js)
 (package! projectile-rails)
 (package! reason-mode)
-(package! uuidgen)
 
 ;;; Disabled packages
 (package! eslintd-fix :disable t)
