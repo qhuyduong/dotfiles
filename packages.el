@@ -14,6 +14,7 @@
 (package! dockerfile-mode)
 (package! docker-compose-mode)
 (package! evil-matchit)
+(package! evil-string-inflection)
 (package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))
 (package! google-translate)
 (package! inflections)

@@ -350,6 +350,10 @@
 (after! projectile-rails
   (set-lookup-handlers! 'projectile-rails-mode :file #'projectile-rails-goto-file-at-point))
 
+(use-package! evil-string-inflection
+  :config
+  (map! :nv "g~" #'evil-operator-string-inflection))
+
 ;;;;;;;;;; Hydras ;;;;;;;;;;
 
 (defhydra smerge-hydra (:hint nil)
