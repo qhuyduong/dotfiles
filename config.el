@@ -130,7 +130,7 @@
           :desc "evil-window-resize" :n "r" #'evil-window-resize-hydra/body)
 
         (:prefix "i"
-          :desc "UUIDv4" :n "u" #'uuidgen
+          :desc "UUIDv4" :n "u" #'insert-random-uuid
           (:prefix ("l" . "lorem-ipsum")
             :desc "list" :n "l" #'lorem-ipsum-insert-list
             :desc "sentences" :n "s" #'lorem-ipsum-insert-sentences
@@ -540,3 +540,20 @@ Otherwise, falls back on `find-file-at-point'."
 
 (add-hook '+lookup-file-functions #'current-buffer)
 (advice-add 'projectile-rails-goto-template-at-point :override #'+projectile-rails-goto-template-at-point)
+
+(defun insert-random-uuid ()
+  "Insert a random UUID.
+Example of a UUID: 1df63142-a513-c850-31a3-535fc3520c3d
+
+WARNING: this is a simple implementation. The chance of generating the same UUID is much higher than a robust algorithm.."
+  (interactive)
+  (random t)
+  (insert
+   (format "%04x%04x-%04x-%04x-%04x-%06x%06x"
+           (random (expt 16 4))
+           (random (expt 16 4))
+           (random (expt 16 4))
+           (random (expt 16 4))
+           (random (expt 16 4))
+           (random (expt 16 6))
+           (random (expt 16 6)) ) ) )
