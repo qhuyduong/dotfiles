@@ -9,6 +9,7 @@
 (package! add-node-modules-path)
 (package! apib-mode)
 (package! copy-as-format)
+(package! feature-mode)
 (package! dired-single)
 (package! dockerfile-mode)
 (package! docker-compose-mode)
