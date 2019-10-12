@@ -17,6 +17,7 @@
 (package! evil-string-inflection)
 (package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))
 (package! google-translate)
+(package! import-js :recipe (:host github :repo "qhuyduong/emacs-import-js"))
 (package! inflections)
 (package! lorem-ipsum)
 (package! nvm)

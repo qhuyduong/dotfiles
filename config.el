@@ -217,8 +217,9 @@
   :mode "\\.js*\\'"
   :config
   (setq-default js-indent-level 2)
-  (add-hook! rjsx-mode #'(add-node-modules-path prettier-js-mode))
+  (add-hook! rjsx-mode #'(add-node-modules-path prettier-js-mode run-import-js))
   (add-hook! rjsx-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
+  (add-hook! rjsx-mode (add-hook 'before-save-hook #'import-js-fix nil t))
   (map! :mode rjsx-mode
         (:leader
           (:prefix "p"
@@ -331,9 +332,11 @@
           :nv "s" #'prodigy-start
           :nv "S" #'prodigy-stop)))
 
-(after! tide
-  (setq tide-hl-identifier-idle-time 2)
-  (setq tide-sync-request-timeout 5))
+(use-package! tide
+  :config
+  (set-company-backend! 'tide-mode 'company-files 'company-tide)
+  (setq tide-completion-enable-autoimport-suggestions nil)
+  (setq tide-hl-identifier-idle-time 1))
 
 (after! gist
   (set-evil-initial-state! 'gist-list-mode 'emacs))
