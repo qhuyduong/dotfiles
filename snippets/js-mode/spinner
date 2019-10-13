@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: spinner
+# key: spin
+# --
+export const $1 = spinner(
+  ({ $2 }) => $2(),
+  $0
+)

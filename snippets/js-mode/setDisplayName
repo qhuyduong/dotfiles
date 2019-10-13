@@ -2,4 +2,4 @@
 # name: setDisplayName
 # key: sdn
 # --
-setDisplayName('$1')
+setDisplayName('$0')

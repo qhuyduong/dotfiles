@@ -2,4 +2,4 @@
 # name: mapProps
 # key: mps
 # --
-mapProps(({ $1 }) => ({ $2 }))
+mapProps(({ $1 }) => ({ $0 }))

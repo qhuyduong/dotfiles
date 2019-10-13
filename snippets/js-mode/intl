@@ -2,4 +2,4 @@
 # name: Intl
 # key: intl
 # --
-Intl.formatMessage({ id: '$1' })
+Intl.formatMessage({ id: '$0' })

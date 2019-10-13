@@ -2,7 +2,7 @@
 # name: enhance
 # key: enh
 # --
-const enhance = compose(
+export const enhance = compose(
   setDisplayName('$1'),
-  $2
+  $0
 )

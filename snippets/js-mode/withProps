@@ -2,4 +2,4 @@
 # name: withProps
 # key: wps
 # --
-withProps(({ $1 }) => ({ $2 }))
+withProps(({ $1 }) => ({ $0 }))
