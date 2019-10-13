@@ -268,6 +268,7 @@
   (set-popup-rule! "\\*RuboCop" :ttl 0 :quit 'other))
 
 (after! enh-ruby-mode
+  (set-company-backend! 'enh-ruby-mode '(company-robe company-files :with company-yasnippet))
   (map! :mode enh-ruby-mode
         (:leader
           (:prefix "p"
