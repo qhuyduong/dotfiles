@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: setDisplayName
+# key: sdn
+# --
+setDisplayName('$1')

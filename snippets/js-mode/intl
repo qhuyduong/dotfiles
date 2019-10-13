@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Intl
+# key: intl
+# --
+Intl.formatMessage({ id: '$1' })

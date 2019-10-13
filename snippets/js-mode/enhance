@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: enhance
+# key: enh
+# --
+const enhance = compose(
+  setDisplayName('$1'),
+  $2
+)
