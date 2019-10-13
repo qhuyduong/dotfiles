@@ -217,9 +217,10 @@
   :mode "\\.js*\\'"
   :config
   (setq-default js-indent-level 2)
-  (add-hook! rjsx-mode #'(add-node-modules-path prettier-js-mode run-import-js))
+  (add-hook! rjsx-mode #'(add-node-modules-path prettier-js-mode run-import-js tern-mode))
   (add-hook! rjsx-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
   (add-hook! rjsx-mode (add-hook 'before-save-hook #'import-js-fix nil t))
+  (set-company-backend! 'rjsx-mode '(company-tern company-files :with company-yasnippet))
   (map! :mode rjsx-mode
         (:leader
           (:prefix "p"
@@ -332,12 +333,6 @@
           :nv "s" #'prodigy-start
           :nv "S" #'prodigy-stop)))
 
-(use-package! tide
-  :config
-  (set-company-backend! 'tide-mode 'company-files 'company-tide)
-  (setq tide-completion-enable-autoimport-suggestions nil)
-  (setq tide-hl-identifier-idle-time 1))
-
 (after! gist
   (set-evil-initial-state! 'gist-list-mode 'emacs))
 
@@ -356,6 +351,10 @@
 (use-package! evil-string-inflection
   :config
   (map! :nv "g~" #'evil-operator-string-inflection))
+
+(use-package! tern
+  :config
+  (set-lookup-handlers! 'tern-mode :definition '(tern-find-definition :async t)))
 
 ;;;;;;;;;; Hydras ;;;;;;;;;;
 
