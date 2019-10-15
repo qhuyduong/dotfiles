@@ -357,6 +357,10 @@
   :config
   (set-lookup-handlers! 'tern-mode :definition '(tern-find-definition :async t)))
 
+(use-package! wakatime-mode
+  :config
+  (setq +wakatime-hide-filenames t))
+
 ;;;;;;;;;; Hydras ;;;;;;;;;;
 
 (defhydra smerge-hydra (:hint nil)

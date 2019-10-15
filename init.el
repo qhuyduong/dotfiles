@@ -50,6 +50,7 @@
         +docsets)        ; ...or in Dash docsets locally
        lsp               ; LSP client
        magit             ; a git porcelain for Emacs
+       wakatime
 
        :lang
        data              ; config/data formats
