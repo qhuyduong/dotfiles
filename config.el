@@ -567,4 +567,4 @@ WARNING: this is a simple implementation. The chance of generating the same UUID
            (random (expt 16 4))
            (random (expt 16 4))
            (random (expt 16 6))
-           (random (expt 16 6)) ) ) )
+           (random (expt 16 6)))))
