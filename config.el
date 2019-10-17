@@ -359,7 +359,8 @@
 
 (use-package! wakatime-mode
   :config
-  (setq +wakatime-hide-filenames t))
+  (setq +wakatime-hide-filenames t)
+  (setq wakatime-api-key (getenv "WAKATIME_API_KEY")))
 
 ;;;;;;;;;; Hydras ;;;;;;;;;;
 
