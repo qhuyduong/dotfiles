@@ -1,7 +1,9 @@
+aspell-vi
 bcwc-pcie-git
 cydia-impactor
 drafter
 dropbox
+emacs-git
 enpass-bin
 fix-bt-a2dp
 glxinfo
@@ -9,12 +11,12 @@ google-chrome
 ideviceinstaller-git
 lightdm-mini-greeter
 mbpfan-git
+next-browser-git
 plymouth
 rbenv
 rofi-calc
 rofi-file-browser-extended-git
 ruby-build
-s-tui
 slack-desktop
 spotify
 teamviewer
