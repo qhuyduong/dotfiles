@@ -9,14 +9,9 @@ setopt SHARE_HISTORY
 
 export TERM=xterm-24bit
 export LANG=en_US.UTF-8
-export EDITOR=nvim
+export EDITOR=emacsclient
 export LESS=-FXR
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
-
-if [[ -n $INSIDE_EMACS ]]; then
-  export EDITOR=emacsclient
-  export VISUAL=$EDITOR
-fi
 
 # Emacs mode
 bindkey -e
@@ -37,6 +32,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --follow'
 # Aliases
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
+alias e=$EDITOR
 
 # Essential
 source ~/.zplug/init.zsh
