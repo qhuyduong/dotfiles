@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BROWSER=firefox-developer-edition
+BROWSER=google-chrome-stable
 CACHE_FILE=~/.local/share/rofi/scripts/cache/github-repos.cache
 
 get_repositories() {
