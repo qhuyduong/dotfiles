@@ -181,7 +181,7 @@ exec --no-startup-id ibus-daemon -drx # Ibus
 exec --no-startup-id dropbox
 exec --no-startup-id enpass
 exec --no-startup-id feh --bg-fill ~/Pictures/break-the-rules.jpg
-exec --no-startup-id ~/.pyenv/shims/python3 ~/.config/i3/i3scripts/autoname_workspaces.py
+exec --no-startup-id ~/.pyenv/shims/i3-workspace-names-daemon -d " |"
 
 # Audio volume controls
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
