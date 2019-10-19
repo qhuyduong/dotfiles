@@ -5,7 +5,8 @@
       doom-localleader-key ","
       display-line-numbers-type 'relative
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n")
-      doom-font (font-spec :family "Hack" :size 24))
+      doom-font (font-spec :family "Hack" :size 24)
+      vc-handled-backends '(Git))
 
 (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
 
@@ -169,6 +170,8 @@
 ;; Magit
 (after! magit
   (set-popup-rule! "^magit:\s" :width 0.5 :side 'right :select t :modeline t :quit 'current)
+  (setq magit-refresh-status-buffer nil)
+  (remove-hook 'server-switch-hook 'magit-commit-diff)
   (setq magit-repository-directories '(("~/workspace" . 1))
         magit-save-repository-buffers nil
         +magit-default-clone-url "git@github.com:%s/%s"))
