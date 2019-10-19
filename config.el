@@ -12,6 +12,9 @@
 
 ;; Make titlebar match background color
 (when IS-MAC
+  ;; Set command key as super on OSX
+  (setq mac-command-modifier 'super
+        mac-option-modifier 'meta)
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   (add-to-list 'default-frame-alist '(ns-appearance . dark)))
 
@@ -21,12 +24,6 @@
 
 ;; Workaround for magithub authentication stuffs
 (add-to-list 'auth-sources "~/.authinfo")
-
-;; Set command key as super on OSX
-(setq mac-command-modifier 'super)
-
-;; Set option key as meta on OSX
-(setq mac-option-modifier 'meta)
 
 (setq delete-by-moving-to-trash t)
 
