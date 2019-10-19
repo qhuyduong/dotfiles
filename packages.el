@@ -32,6 +32,7 @@
 (package! react-snippets)
 (package! reason-mode)
 (package! tern)
+(package! vimrc-mode)
 
 ;;; Disabled packages
 (package! eslintd-fix :disable t)
