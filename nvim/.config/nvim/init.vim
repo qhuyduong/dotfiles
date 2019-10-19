@@ -8,16 +8,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Make sure you use single quotes
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 " Junegunn Choi's plugins
-Plug '/usr/local/opt/fzf'                 " Add fzf to runtime path
 Plug 'junegunn/fzf.vim'                   " Fuzzy Finder
 Plug 'junegunn/vim-easy-align'            " Easily alignment
 Plug 'junegunn/vim-github-dashboard'      " Browse GitHub events in Vim
-Plug 'junegunn/vader.vim'                 " A simple Vimscript test framework
 
 " Tim Pope's plugins
 Plug 'tpope/vim-bundler'                  " Bundle support in vim
 Plug 'tpope/vim-commentary'               " Comment stuff out
-Plug 'tpope/vim-dadbod'                   " Modern database interface for Vim
 Plug 'tpope/vim-dispatch'                 " Asynchronous build and test dispatcher
 Plug 'tpope/vim-dotenv'                   " Basic support for .env and Procfile
 Plug 'tpope/vim-endwise'                  " Add 'end' to ruby structures
@@ -33,27 +30,19 @@ Plug 'tpope/vim-speeddating'              " Increase date with <C-a>/<C-x>
 Plug 'tpope/vim-surround'                 " Easily change Surround characters
 Plug 'tpope/vim-unimpaired'               " Better buffers switching mapping
 
-" Visualisation
-Plug 'vim-airline/vim-airline'            " Airline
-Plug 'vim-airline/vim-airline-themes'     " Themes for airline
-Plug 'flazz/vim-colorschemes'             " Color Schemes
+" UI
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'             " Add file type glyphs/icons to popular Vim plugins
 Plug 'airblade/vim-gitgutter'             " Shows a git diff in the gutter and stages/undoes hunks
-" Plug 'qhuyduong/vim-ruby-conceal'         " Unicode goodness for Ruby code by using vim's `conceal` feature
-Plug 'arcticicestudio/nord-vim'           " Nord theme
 
 " Editing
-Plug 'w0rp/ale'                           " Code linting
 Plug 'jiangmiao/auto-pairs'               " Auto insert or delete brackets, parens, quotes
-Plug 'qhuyduong/dbext.vim'                " Database interaction from vim
-Plug 'Shougo/deoplete.nvim'               " Autocompletion for neovim
-Plug 'fszymanski/deoplete-emoji'          " Emoji autocompletion
 Plug 'coderifous/textobj-word-column.vim' " Adds text-objects for word-based columns in Vim
 Plug 'ntpeters/vim-better-whitespace'     " Remove trailing whitespaces
 Plug 'alvan/vim-closetag'                 " Auto close (X)HTML tags
 Plug 'easymotion/vim-easymotion'          " Enhanced vim motions
 Plug 'tommcdo/vim-exchange'               " Easy text exchange operator for Vim
-" Plug 'ludovicchabant/vim-gutentags'       " Tags manager
 Plug 'matze/vim-move'                     " Move lines/block
 Plug 'kana/vim-textobj-user'              " Dependency
 Plug 'kana/vim-textobj-entire'            " Add ie and ae textobj
@@ -65,7 +54,6 @@ Plug 'AndrewRadev/splitjoin.vim'          " Better lines split/join
 Plug 'kassio/neoterm'                     " Wrapper of some vim/neovim's :terminal functions
 Plug 'scrooloose/nerdtree'                " A tree explorer plugin for vim
 Plug 'Xuyuanp/nerdtree-git-plugin'        " A plugin of NERDTree showing git status
-Plug 'majutsushi/tagbar'                  " Tags sidebar
 Plug 'benmills/vimux'                     " Interact with tmux within vim
 Plug 'mhinz/vim-startify'                 " The fancy start screen for Vim
 Plug 'janko-m/vim-test'                   " Run your tests at the speed of thought
@@ -80,12 +68,9 @@ Plug 'kylef/apiblueprint.vim'             " Syntax highlighting and linting for 
 Plug 'vim-ruby/vim-ruby'                  " Vim/Ruby Configuration Files
 
 " Language: JavaScript
-Plug 'carlitux/deoplete-ternjs'           " deoplete.nvim source for javascript
 Plug 'mattn/emmet-vim'                    " Provides support for expanding abbreviations similar to emmet
-Plug 'ternjs/tern_for_vim'                " Tern plugin for Vim
 Plug 'pangloss/vim-javascript'            " Vastly improved Javascript indentation and syntax support in Vim
 Plug 'mxw/vim-jsx'                        " React JSX syntax highlighting and indenting for vim
-Plug 'moll/vim-node'                      " Like Rails.vim for Node
 
 " Language: Json
 Plug 'elzr/vim-json'                      " A better JSON for Vim
@@ -93,12 +78,8 @@ Plug 'elzr/vim-json'                      " A better JSON for Vim
 " Language: Proto
 Plug 'qhuyduong/vim-proto'                " Google Proto Buffer syntax highlighting
 
-Plug 'reasonml-editor/vim-reason-plus'
-
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-denite'
 
 " Initialize plugin system
 call plug#end()
@@ -107,61 +88,43 @@ call plug#end()
 " General settings
 "----------------------------------------------
 filetype plugin indent on
-set autoindent                    " take indent for new line from previous line
-set smartindent                   " enable smart indentation
-set autoread                      " reload file if the file changes on the disk
-set autowrite                     " write when switching buffers
-set autowriteall                  " write on :quit
-set completeopt-=preview          " remove the horrendous preview window
-set cursorline                    " highlight the current line for the cursor
-" set list
-" set listchars=tab:→\ ,eol:↵,trail:⋅,extends:❯,precedes:❮
-" set showbreak=↪
-set splitright
-set nospell                       " disable spelling
-set noswapfile                    " disable swapfile usage
-set nowrap
-set noerrorbells                  " No bells!
-set novisualbell                  " I said, no bells!
+syntax enable " Allow vim to set a custom font or color for a word
 set number                        " show number ruler
 set relativenumber                " show relative numbers in the ruler
-set ruler
-set formatoptions=tcqronj         " set vims text formatting options
-set expandtab                     " expands tabs to spaces
-set softtabstop=2
-set tabstop=2
-set shiftwidth=2
+set expandtab softtabstop=2 tabstop=2 shiftwidth=2 " global indentation
 set title                         " let vim set the terminal title
-set updatetime=100                " redraw the status bar often
-set nomodeline " don't use modeline (no. of lines in file containing vim config) (security)
-set scrolloff=3
-set showmode
-set showcmd
-set hidden " can put buffer to the background without writing to disk, will remember history/marks.
-set wildmenu
-set wildmode=full
-set wildignorecase
-set ttyfast " Send more characters at a given time.
+set updatetime=300                " redraw the status bar often
 set backspace=indent,eol,start
 set undolevels=100
 set ignorecase
 set smartcase
-set gdefault
-set showmatch
-set viminfo^=%
-" Enable mouse if possible
-if has('mouse')
-  set mouse=a
-endif
-
-" Allow vim to set a custom font or color for a word
-syntax enable
+set inccommand=split          " enables interactive search and replace
+set splitbelow " create horizontal splits below the current window
+set splitright " create vertical splits to the right of current window
+set termguicolors
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Set the leader button
 let g:mapleader = ','
 
-" Define a group `Utilities` and initialize.
-augroup Utilities
+"----------------------------------------------
+" UI
+"----------------------------------------------
+set background=dark
+colorscheme palenight
+
+let g:lightline = {
+      \ 'colorscheme': 'palenight',
+      \ }
+
+"----------------------------------------------
+" Keys Mapping
+"----------------------------------------------
+" Clear search highlights
+nnoremap <Esc> :noh<CR><Esc>
+
+" These mappings will make it so that going to the next one in a search will
+" center on the line it's faugroup Utilities
   autocmd!
   " Autosave buffers before leaving them
   autocmd BufLeave * silent! :wa
@@ -169,114 +132,129 @@ augroup Utilities
   autocmd BufWritePre * StripWhitespace
 augroup END
 
-" Center the screen quickly
-nnoremap <space> zz
-
-" Key maps to emulate the "system clipboard" shortcuts
-inoremap <C-v> <ESC>"+pa
-vnoremap <C-c> "+y
-vnoremap <C-x> "+d
-
-"----------------------------------------------
-" Colors
-"----------------------------------------------
-set background=dark
-"colorscheme nord
-
-"----------------------------------------------
-" Searching
-"----------------------------------------------
-set incsearch                     " move to match as you type the search query
-set hlsearch                      " disable search result highlighting
-
-if has('nvim')
-  set inccommand=split          " enables interactive search and replace
-endif
-
-" Clear search highlights
-nnoremap <Esc> :noh<CR><Esc>
-
-" These mappings will make it so that going to the next one in a search will
-" center on the line it's found in.
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
-"----------------------------------------------
-" Navigation
-"----------------------------------------------
-" Skip the quickfix when navigating
-augroup Quickfixes
-  autocmd!
-  autocmd FileType qf set nobuflisted
+augroup Languages
+  autocmd FileType apiblueprint setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+  autocmd FileType gitcommit setlocal spell textwidth=80
+  autocmd FileType gitconfig setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+  autocmd FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 augroup END
 
-" Fix some common typos
-cnoreabbrev W! w!
-cnoreabbrev Q! q!
-cnoreabbrev Qall! qall!
-cnoreabbrev Wq wq
-cnoreabbrev Wa wa
-cnoreabbrev wQ wq
-cnoreabbrev WQ wq
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qall qall
+"----------------------------------------------
 
 "----------------------------------------------
-" Splits
+" Plug 'neoclide/coc.nvim'
 "----------------------------------------------
-" Create horizontal splits below the current window
-set splitbelow
-set splitright
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
 
-"----------------------------------------------
-" Plug 'Shougo/deoplete.nvim'
-"----------------------------------------------
-if has('nvim')
-  " Enable deoplete on startup
-  let g:deoplete#enable_at_startup = 1
-endif
+" Better display for messages
+set cmdheight=2
 
-"----------------------------------------------
-" Plug 'vim-airline/vim-airline'
-"----------------------------------------------
-" Show status bar by default.
-set laststatus=2
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
 
-" Set this. Airline will handle the rest.
-let g:airline_theme = 'nord'
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
 
-" Enable top tabline.
-" let g:airline#extensions#tabline#enabled = 1
+" always show signcolumns
+set signcolumn=yes
 
-" Disable showing tabs in the tabline. This will ensure that the buffers are
-" what is shown in the tabline at all times.
-let g:airline#extensions#tabline#show_tabs = 0
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-" Show only file name in tabline
-let g:airline#extensions#tabline#fnamemod = ':t'
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
 
-" Show buffer index next to file name
-let g:airline#extensions#tabline#buffer_nr_show = 1
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Enable powerline fonts.
-let g:airline_powerline_fonts = 1
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Advanced separators (extra-powerline-symbols):
-" let g:airline_left_sep = "\uE0B4"
-" let g:airline_right_sep = "\uE0B6"
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Create mappings for function text object, requires document symbols feature of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 "----------------------------------------------
 " Plug 'christoomey/vim-tmux-navigator'
 "----------------------------------------------
-" tmux will send xterm-style keys when its xterm-keys option is on.
-if &term =~? '^screen'
-  execute "set <xUp>=\e[1;*A"
-  execute "set <xDown>=\e[1;*B"
-  execute "set <xRight>=\e[1;*C"
-  execute "set <xLeft>=\e[1;*D"
-endif
-
 " Tmux vim integration
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 1
@@ -324,7 +302,6 @@ nnoremap <F3> :TagbarToggle<cr>
 " Plug 'scrooloose/nerdtree'
 "----------------------------------------------
 nnoremap <leader>d :NERDTreeToggle<cr>
-nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap \ :Ag<cr>
 
 " Files to ignore
@@ -355,7 +332,6 @@ let g:closetag_close_shortcut = '<leader>>'
 "----------------------------------------------
 " Plug 'mattn/emmet-vim'
 "----------------------------------------------
-"let g:user_emmet_expandabbr_key='<Tab>'
 let g:user_emmet_settings = {
       \  'javascript.jsx' : {
       \      'extends' : 'jsx',
@@ -380,49 +356,16 @@ let g:github_dashboard = { 'username': $GITHUB_USER, 'password': $GITHUB_TOKEN }
 let g:github_dashboard['position'] = 'right'
 
 "----------------------------------------------
-" Plug 'kassio/neoterm'
-"----------------------------------------------
-let g:neoterm_size='12'
-let g:neoterm_default_mod = 'belowright'
-
-augroup Terminals
-  " Allow to navigation as normal
-  autocmd TermOpen *neoterm* :tnoremap <buffer> <Esc> <C-\><C-n>
-  autocmd TermOpen *neoterm* :tnoremap <buffer> <C-h> <C-\><C-n><C-w>h
-  autocmd TermOpen *neoterm* :tnoremap <buffer> <C-k> <C-\><C-n><C-w>k
-  autocmd TermOpen *neoterm* :tnoremap <buffer> <C-j> <C-\><C-n><C-w>j
-  autocmd TermOpen *neoterm* :tnoremap <buffer> <C-l> <C-\><C-n><C-w>l
-  " Exclude from buffer list
-  autocmd TermOpen * set nobuflisted
-augroup END
-
-" Escape from terminal mode to normal mode
-tnoremap <esc> <C-\><C-n>
-nnoremap <silent> <C-t> :Ttoggle<cr>
-" Toggle terminal from within terminal mode
-tnoremap <silent> <C-t> <C-\><C-n>:Ttoggle<cr>
-
-"----------------------------------------------
 " Plug 'janko-m/vim-test'
 "----------------------------------------------
 let g:test#strategy = 'vimux'
 let g:test#preserve_screen = 1
 
-nnoremap <Leader>n :TestNearest<CR>
-nnoremap <Leader>f :TestFile<CR>
-nnoremap <Leader>s :TestSuite<CR>
-nnoremap <Leader>l :TestLast<CR>
-nnoremap <Leader>v :TestVisit<CR>
-
-"----------------------------------------------
-" Plug 'pangloss/vim-javascript'
-"----------------------------------------------
-let g:javascript_plugin_flow = 1
-
-"----------------------------------------------
-" Plug 'mxw/vim-jsx'
-"----------------------------------------------
-let g:jsx_ext_required = 1
+nnoremap <Leader>tn :TestNearest<CR>
+nnoremap <Leader>tf :TestFile<CR>
+nnoremap <Leader>ts :TestSuite<CR>
+nnoremap <Leader>tl :TestLast<CR>
+nnoremap <Leader>tv :TestVisit<CR>
 
 "----------------------------------------------
 " Plug 'benmills/vimux'
@@ -445,49 +388,9 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "----------------------------------------------
-" Plug 'w0rp/ale'
-"----------------------------------------------
-" Enable completion where available.
-let g:ale_completion_enabled = 1
-
-" Set this variable to 1 to fix files when you save them.
-let g:ale_lint_on_save = 1
-
-let g:ale_fixers = {
-      \   'html': ['tidy'],
-      \   'javascript': ['prettier-eslint'],
-      \   'json': ['jq'],
-      \   'ruby': ['rubocop'],
-      \}
-
-let g:ale_linters = {
-      \   'html': ['tidy'],
-      \   'javascript': ['eslint'],
-      \   'json': ['jsonlint'],
-      \   'ruby': ['rubocop'],
-      \   'vim': ['vint'],
-      \}
-
-" Configure signs.
-let g:ale_sign_error   = '✘'
-let g:ale_sign_warning = '⚠'
-highlight ALEErrorSign ctermbg=NONE ctermfg=red
-highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
-
-let g:ale_html_tidy_options = '-q -i --show-errors 0'
-let g:ale_json_jq_options = '--indent 2'
-
-nnoremap <leader>a :ALEFix<CR>
-
-"----------------------------------------------
 " Plug 'mhinz/vim-startify'
 "----------------------------------------------
 let g:startify_change_to_vcs_root = 1
-
-"----------------------------------------------
-" Plug 'tpope/vim-dadbod'
-"----------------------------------------------
-let g:dadbod_manage_dbext = 1
 
 "----------------------------------------------
 " Plug 'mbbill/undotree'
@@ -504,102 +407,5 @@ vmap <silent> <S-j> <Plug>MoveBlockDown
 "----------------------------------------------
 " Miscellaneous
 "----------------------------------------------
-" Grep word under cursor
-nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
-
 " Easy expansion of the active file directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" Define a group `Languages` and initialize
-augroup Languages
-  autocmd!
-augroup END
-
-"----------------------------------------------
-" Language: apiblueprint
-"----------------------------------------------
-autocmd Languages FileType apiblueprint set expandtab shiftwidth=4 softtabstop=4 tabstop=4
-
-"----------------------------------------------
-" Language: Bash
-"----------------------------------------------
-autocmd Languages FileType sh set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-
-"----------------------------------------------
-" Language: gitcommit
-"----------------------------------------------
-autocmd Languages FileType gitcommit setlocal spell
-autocmd Languages FileType gitcommit setlocal textwidth=80
-
-"----------------------------------------------
-" Language: gitconfig
-"----------------------------------------------
-autocmd Languages FileType gitconfig set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
-
-"----------------------------------------------
-" Language: HTML
-"----------------------------------------------
-autocmd Languages FileType html set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-"autocmd Languages FileType html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
-"----------------------------------------------
-" Language: CSS
-"----------------------------------------------
-autocmd Languages FileType css set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-
-"----------------------------------------------
-" Language: JavaScript
-"----------------------------------------------
-autocmd Languages FileType javascript* set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-"autocmd Languages FileType javascript.jsx imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
-"----------------------------------------------
-" Language: JSON
-"----------------------------------------------
-autocmd Languages FileType json set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-
-"----------------------------------------------
-" Language: LESS
-"----------------------------------------------
-autocmd Languages FileType less set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-
-"----------------------------------------------
-" Language: Make
-"----------------------------------------------
-autocmd Languages FileType make set noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
-
-"----------------------------------------------
-" Language: Markdown
-"----------------------------------------------
-autocmd Languages FileType markdown setlocal spell
-autocmd Languages FileType markdown set expandtab shiftwidth=4 softtabstop=4 tabstop=4 syntax=markdown
-
-"----------------------------------------------
-" Language: Ruby
-"----------------------------------------------
-autocmd Languages FileType ruby set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-
-"----------------------------------------------
-" Language: SQL
-"----------------------------------------------
-autocmd Languages FileType sql set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-
-"----------------------------------------------
-" Language: vimscript
-"----------------------------------------------
-autocmd Languages FileType vim set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-
-"----------------------------------------------
-" Language: YAML
-"----------------------------------------------
-autocmd Languages FileType yaml set expandtab shiftwidth=2 softtabstop=2 tabstop=2
-
-
-let g:LanguageClient_serverCommands = {
-      \ 'reason': ['~/.config/nvim/reason-language-server.exe'],
-      \ }
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
-nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
-nnoremap <silent> <cr> :call LanguageClient_textDocument_hover()<cr>
-
-autocmd BufWritePre *.re :call LanguageClient_textDocument_formatting()
