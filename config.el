@@ -365,6 +365,10 @@
   (setq +wakatime-hide-filenames t)
   (setq wakatime-api-key (getenv "WAKATIME_API_KEY")))
 
+(use-package! company
+  :config
+  (setq company-idle-delay 0))
+
 ;;;;;;;;;; Hydras ;;;;;;;;;;
 
 (defhydra smerge-hydra (:hint nil)
