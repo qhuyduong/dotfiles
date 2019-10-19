@@ -153,6 +153,11 @@ mode "resize" {
 workspace_layout tabbed
 
 for_window [class="Thunar"] floating enable
+assign [class="Alacritty"] workspace number 1
+assign [class="Emacs"] workspace number 2
+assign [class="Google-chrome"] workspace number 3
+assign [class="Slack"] workspace number 4
+
 floating_minimum_size 75x50
 
 workspace 1 output primary
@@ -169,6 +174,22 @@ bar {
         tray_output primary
         tray_output HDMI2
 }
+
+## Manual management of external displays
+# Set the shortcuts and what they do
+set $mode_display Ext Screen (1) DP1 ON, (2) DP2 ON, (3) HDMI2 ON, (0) OFF
+mode "$mode_display" {
+    bindsym 1 exec --no-startup-id xrandr --output DP2 --auto --off --output HDMI2 --auto --off --output DP1 --auto --pos 0x0 --scale 1.5x1.5 --output eDP1 --auto --pos 3840x0 --primary, mode "default"
+    bindsym 2 exec --no-startup-id xrandr --output DP1 --auto --off --output HDMI2 --auto --off --output DP2 --auto --pos 0x0 --scale 1.5x1.5 --output eDP1 --auto --pos 3840x0 --primary, mode "default"
+    bindsym 3 exec --no-startup-id xrandr --output DP1 --auto --off --output DP2 --auto --off --output HDMI2 --auto --pos 0x0 --scale 1.75x1.75 --output eDP1 --auto --pos 0x1890 --primary, mode "default"
+    bindsym 0 exec --no-startup-id xrandr --output DP1 --auto --off --output DP2 --auto --off --output HDMI2 --auto --off --output eDP1 --auto --primary, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Declare here the shortcut to bring the display selection menu
+bindsym $mod+x mode "$mode_display"
 
 # Automatic started apps
 exec --no-startup-id nm-applet # Network
