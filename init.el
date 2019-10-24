@@ -9,8 +9,7 @@
 ;; found in modules/README.org.
 
 (doom! :completion
-       (company          ; the ultimate code completion backend
-        +childframe)     ; enables displaying completion candidates in a child frame
+       company           ; the ultimate code completion backend
        ivy               ; a search engine for love and life
 
        :ui
