@@ -33,6 +33,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --follow'
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
 alias e=$EDITOR
+alias cat='bat'
 
 # Essential
 source ~/.zplug/init.zsh
