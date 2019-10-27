@@ -105,13 +105,7 @@
           :desc "List processes" :nv "x" #'list-processes
           :desc "Project sidebar" :nv "p" #'treemacs)
 
-        (:prefix "b"
-          :nv "s" nil
-          :nv "k" nil
-          :desc "Delete buffer" :nv "d"  #'kill-this-buffer)
-
         (:prefix "w"
-          :nv "c" nil
           :nv "d"  #'evil-window-delete)
 
         (:prefix "/"
