@@ -96,6 +96,8 @@
       :nvi "C-l"  #'evil-window-right
       :nv "C-S-k" #'move-line-up
       :nv "C-S-j" #'move-line-down
+      :nv "p"     #'+evil-paste-and-indent-after
+      :nv "P"     #'+evil-paste-and-indent-before
 
       (:leader
         :nv "SPC" #'+counsel-fzf-find-project
@@ -567,3 +569,17 @@ WARNING: this is a simple implementation. The chance of generating the same UUID
            (random (expt 16 4))
            (random (expt 16 6))
            (random (expt 16 6)))))
+
+(defun +evil-paste-and-indent-after ()
+  (interactive)
+  (let ((cg (prepare-change-group)))
+    (evil-paste-after 1)
+    (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\]))
+    (undo-amalgamate-change-group cg)))
+
+(defun +evil-paste-and-indent-before ()
+  (interactive)
+  (let ((cg (prepare-change-group)))
+    (evil-paste-before 1)
+    (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\]))
+    (undo-amalgamate-change-group cg)))
