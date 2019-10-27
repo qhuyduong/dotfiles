@@ -62,6 +62,7 @@
        (org              ; organize your plain life in plain text
         +dragndrop       ; file drag & drop support
         +present)        ; using Emacs for presentations
+       racket            ; a DSL for DSLs
        (ruby             ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +rbenv)          ; enable rbenv
        (rust             ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
