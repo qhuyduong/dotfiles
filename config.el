@@ -488,9 +488,12 @@ T - tag prefix
 
 (defun find-relative-file-or-folder (identifier)
   (let ((path (format "%s/%s" default-directory identifier)))
-    (if (file-exists-p path)
-        (find-file path)
-      (current-buffer))))
+    (cond ((file-directory-p path)
+           (find-file (format "%s/index.js" path)))
+          ((file-exists-p path)
+           (find-file path))
+          (t
+           (current-buffer)))))
 
 ;;;###autoload
 (defun ++lookup/file (path)
