@@ -213,9 +213,8 @@
   :mode "\\.js*\\'"
   :config
   (setq-default js-indent-level 2)
-  (add-hook! rjsx-mode #'(add-node-modules-path prettier-js-mode run-import-js tern-mode))
+  (add-hook! rjsx-mode #'(add-node-modules-path prettier-js-mode tern-mode))
   (add-hook! rjsx-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
-  (add-hook! rjsx-mode (add-hook 'before-save-hook #'import-js-fix nil t))
   (set-company-backend! 'rjsx-mode '(company-tern company-files :with company-yasnippet))
   (map! :mode rjsx-mode
         (:leader
