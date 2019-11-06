@@ -5,7 +5,7 @@
       doom-localleader-key ","
       display-line-numbers-type 'relative
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n")
-      doom-font (font-spec :family "Hack" :size 24)
+      doom-font (font-spec :family "Hack" :size 26)
       vc-handled-backends '(Git))
 
 (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
