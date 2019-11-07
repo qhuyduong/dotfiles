@@ -97,8 +97,6 @@
       :nvi "C-l"  #'evil-window-right
       :nv "C-S-k" #'move-line-up
       :nv "C-S-j" #'move-line-down
-      :nv "p"     #'+evil-paste-and-indent-after
-      :nv "P"     #'+evil-paste-and-indent-before
 
       (:leader
         :nv "SPC" #'+counsel-fzf-find-project
@@ -573,16 +571,155 @@ WARNING: this is a simple implementation. The chance of generating the same UUID
            (random (expt 16 6))
            (random (expt 16 6)))))
 
-(defun +evil-paste-and-indent-after ()
-  (interactive)
-  (let ((cg (prepare-change-group)))
-    (evil-paste-after 1)
-    (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\]))
-    (undo-amalgamate-change-group cg)))
+(evil-define-command +evil-paste-and-indent-before
+  (count &optional register yank-handler)
+  "Pastes the latest yanked text before the cursor position.
+The return value is the yanked text."
+  :suppress-operator t
+  (interactive "P<x>")
+  (if (evil-visual-state-p)
+      (evil-visual-paste count register)
+    (evil-with-undo
+      (let* ((text (if register
+                       (evil-get-register register)
+                     (current-kill 0)))
+             (yank-handler (or yank-handler
+                               (when (stringp text)
+                                 (car-safe (get-text-property
+                                            0 'yank-handler text)))))
+             (opoint (point)))
+        (when text
+          (if (functionp yank-handler)
+              (let ((evil-paste-count count)
+                    ;; for non-interactive use
+                    (this-command #'evil-paste-before))
+                (push-mark opoint t)
+                (insert-for-yank text))
+            ;; no yank-handler, default
+            (when (vectorp text)
+              (setq text (evil-vector-to-string text)))
+            (set-text-properties 0 (length text) nil text)
+            (push-mark opoint t)
+            (dotimes (i (or count 1))
+              (insert-for-yank text))
+            (setq evil-last-paste
+                  (list #'evil-paste-before
+                        count
+                        opoint
+                        opoint    ; beg
+                        (point))) ; end
+            (evil-set-marker ?\[ opoint)
+            (evil-set-marker ?\] (1- (point)))
+            (when (and evil-move-cursor-back
+                       (> (length text) 0))
+              (backward-char))))
+        ;; no paste-pop after pasting from a register
+        (when register
+          (setq evil-last-paste nil))
+        (and (> (length text) 0) text)))
+    (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\]))))
 
-(defun +evil-paste-and-indent-before ()
-  (interactive)
-  (let ((cg (prepare-change-group)))
-    (evil-paste-before 1)
-    (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\]))
-    (undo-amalgamate-change-group cg)))
+(evil-define-command +evil-paste-and-indent-after
+  (count &optional register yank-handler)
+  "Pastes the latest yanked text behind point.
+The return value is the yanked text."
+  :suppress-operator t
+  (interactive "P<x>")
+  (if (evil-visual-state-p)
+      (evil-visual-paste count register)
+    (evil-with-undo
+      (let* ((text (if register
+                       (evil-get-register register)
+                     (current-kill 0)))
+             (yank-handler (or yank-handler
+                               (when (stringp text)
+                                 (car-safe (get-text-property
+                                            0 'yank-handler text)))))
+             (opoint (point)))
+        (when text
+          (if (functionp yank-handler)
+              (let ((evil-paste-count count)
+                    ;; for non-interactive use
+                    (this-command #'evil-paste-after))
+                (insert-for-yank text))
+            ;; no yank-handler, default
+            (when (vectorp text)
+              (setq text (evil-vector-to-string text)))
+            (set-text-properties 0 (length text) nil text)
+            (unless (eolp) (forward-char))
+            (push-mark (point) t)
+            ;; TODO: Perhaps it is better to collect a list of all
+            ;; (point . mark) pairs to undo the yanking for COUNT > 1.
+            ;; The reason is that this yanking could very well use
+            ;; `yank-handler'.
+            (let ((beg (point)))
+              (dotimes (i (or count 1))
+                (insert-for-yank text))
+              (setq evil-last-paste
+                    (list #'evil-paste-after
+                          count
+                          opoint
+                          beg       ; beg
+                          (point))) ; end
+              (evil-set-marker ?\[ beg)
+              (evil-set-marker ?\] (1- (point)))
+              (when (evil-normal-state-p)
+                (evil-move-cursor-back)))))
+        (when register
+          (setq evil-last-paste nil))
+        (and (> (length text) 0) text))
+      (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\])))))
+
+(evil-define-command +evil-visual-paste-and-indent (count &optional register)
+  "Paste over Visual selection."
+  :suppress-operator t
+  (interactive "P<x>")
+  ;; evil-visual-paste is typically called from evil-paste-before or
+  ;; evil-paste-after, but we have to mark that the paste was from
+  ;; visual state
+  (setq this-command 'evil-visual-paste)
+  (let* ((text (if register
+                   (evil-get-register register)
+                 (current-kill 0)))
+         (yank-handler (car-safe (get-text-property
+                                  0 'yank-handler text)))
+         new-kill
+         paste-eob)
+    (evil-with-undo
+      (let* ((kill-ring (list (current-kill 0)))
+             (kill-ring-yank-pointer kill-ring))
+        (when (evil-visual-state-p)
+          (evil-visual-rotate 'upper-left)
+          ;; if we replace the last buffer line that does not end in a
+          ;; newline, we use `evil-paste-after' because `evil-delete'
+          ;; will move point to the line above
+          (when (and (= evil-visual-end (point-max))
+                     (/= (char-before (point-max)) ?\n))
+            (setq paste-eob t))
+          (evil-delete evil-visual-beginning evil-visual-end
+                       (evil-visual-type))
+          (when (and (eq yank-handler #'evil-yank-line-handler)
+                     (not (eq (evil-visual-type) 'line))
+                     (not (= evil-visual-end (point-max))))
+            (insert "\n"))
+          (evil-normal-state)
+          (setq new-kill (current-kill 0))
+          (current-kill 1))
+        (if paste-eob
+            (evil-paste-after count register)
+          (evil-paste-before count register)))
+      (when evil-kill-on-visual-paste
+        (kill-new new-kill))
+      ;; mark the last paste as visual-paste
+      (setq evil-last-paste
+            (list (nth 0 evil-last-paste)
+                  (nth 1 evil-last-paste)
+                  (nth 2 evil-last-paste)
+                  (nth 3 evil-last-paste)
+                  (nth 4 evil-last-paste)
+                  t)))
+    (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\]))))
+
+(advice-add #'evil-paste-before :override #'+evil-paste-and-indent-before)
+(advice-add #'evil-paste-after :override #'+evil-paste-and-indent-after)
+(advice-add #'evil-visual-paste :override #'+evil-visual-paste-and-indent)
