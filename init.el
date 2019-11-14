@@ -52,7 +52,6 @@
         +docsets)        ; ...or in Dash docsets locally
        lsp               ; LSP client
        magit             ; a git porcelain for Emacs
-       wakatime
 
        :lang
        data              ; config/data formats
@@ -62,7 +61,6 @@
        (org              ; organize your plain life in plain text
         +dragndrop       ; file drag & drop support
         +present)        ; using Emacs for presentations
-       racket            ; a DSL for DSLs
        (ruby             ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +rbenv)          ; enable rbenv
        web               ; the tubes

@@ -46,7 +46,6 @@
   (menu-bar-mode t))
 (global-evil-matchit-mode t)
 (projectile-rails-global-mode)
-(global-wakatime-mode t)
 
 (after! doom-modeline
   (setq doom-modeline-enable-word-count t)
@@ -350,11 +349,6 @@
 (use-package! tern
   :config
   (set-lookup-handlers! 'tern-mode :definition '(tern-find-definition :async t)))
-
-(use-package! wakatime-mode
-  :config
-  (setq +wakatime-hide-filenames t)
-  (setq wakatime-api-key (getenv "WAKATIME_API_KEY")))
 
 (use-package! company
   :config
