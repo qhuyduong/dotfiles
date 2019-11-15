@@ -1,5 +1,7 @@
-evdev:input:b0003v05ACp0273e0110* # Apple Inc. Apple Internal Keyboard / Trackpad
- KEYBOARD_KEY_70039=leftctrl # bind capslock to leftctrl
+evdev:input:b0011v0001p0001eAB41* # AT Translated Set 2 keyboard
+ KEYBOARD_KEY_3a=leftctrl # bind capslock to leftctrl
+ KEYBOARD_KEY_38=leftmeta # bind leftalt to leftmeta
+ KEYBOARD_KEY_db=leftalt  # bind leftmeta to leftalt
 
 evdev:input:b0003v1B1Cp1B40e0111* # Corsair Corsair Gaming K63 Keyboard
  KEYBOARD_KEY_70039=leftctrl # bind capslock to leftctrl
