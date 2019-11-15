@@ -75,7 +75,6 @@ kdialog
 keychain
 libmagick6
 libtool
-light
 lightdm
 lightdm-mini-greeter
 linux
@@ -174,6 +173,7 @@ x86_energy_perf_policy
 xautolock
 xcape
 xclip
+xf86-input-mtrack
 xf86-video-vesa
 xfce4-notifyd
 xfce4-terminal
