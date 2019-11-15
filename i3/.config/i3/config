@@ -50,10 +50,22 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
+
+# change focus to output
+bindsym $mod+Mod1+h focus output left
+bindsym $mod+Mod1+j focus output down
+bindsym $mod+Mod1+k focus output up
+bindsym $mod+Mod1+l focus output right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Mod1+Left  focus out left
+bindsym $mod+Mod1+Down  focus out down
+bindsym $mod+Mod1+Up    focus out up
+bindsym $mod+Mod1+Right focus out right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -223,7 +235,7 @@ exec --no-startup-id autorandr --change
 exec --no-startup-id ibus-daemon -drx # Ibus
 exec --no-startup-id dropbox
 exec --no-startup-id enpass
-exec --no-startup-id feh --bg-fill ~/Pictures/break-the-rules.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/300068.jpg
 exec --no-startup-id ~/.pyenv/shims/i3-workspace-names-daemon -d " |"
 
 # Audio volume controls
