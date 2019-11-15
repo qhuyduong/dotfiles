@@ -235,7 +235,7 @@ exec --no-startup-id autorandr --change
 exec --no-startup-id ibus-daemon -drx # Ibus
 exec --no-startup-id dropbox
 exec --no-startup-id enpass
-exec --no-startup-id feh --bg-fill ~/Pictures/300068.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/aerial-view-of-seashore-near-large-grey-rocks-853199.jpg
 exec --no-startup-id ~/.pyenv/shims/i3-workspace-names-daemon -d " |"
 
 # Audio volume controls
