@@ -241,11 +241,11 @@ exec --no-startup-id ~/.pyenv/shims/i3-workspace-names-daemon -d " |"
 # Audio volume controls
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%- unmute
-bindsym XF86AudioMute exec amixer -q sset Master toggle
+bindsym XF86AudioMute        exec amixer -q sset Master toggle
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp   exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
