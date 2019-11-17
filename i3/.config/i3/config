@@ -190,15 +190,15 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         tray_output primary
-        tray_output HDMI-1
+        tray_output HDMI1
 }
 
 ## Manual management of external displays
 # Set the shortcuts and what they do
-set $mode_display Ext Screen (1) HDMI-1 ON, (0) OFF
+set $mode_display Ext Screen (1) HDMI1 ON, (0) OFF
 mode "$mode_display" {
-    bindsym 1 exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1 --output eDP-1 --auto --primary
-    bindsym 0 exec --no-startup-id xrandr --output HDMI-1 --auto --off --output eDP-1 --auto --primary, mode "default"
+    bindsym 1 exec --no-startup-id xrandr --output HDMI1 --auto --left-of eDP1 --output eDP1 --auto --primary
+    bindsym 0 exec --no-startup-id xrandr --output HDMI1 --auto --off --output eDP1 --auto --primary, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
