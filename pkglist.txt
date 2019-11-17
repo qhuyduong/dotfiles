@@ -1,3 +1,4 @@
+acpi
 acpica
 alsa-utils
 android-tools
@@ -43,6 +44,7 @@ findutils
 firefox-developer-edition
 fix-bt-a2dp
 flex
+fwupd
 fzf
 gawk
 gcc
@@ -86,6 +88,7 @@ make
 man-pages
 marked
 mdadm
+memtest86-efi
 mplayer
 msr-tools
 nano
@@ -164,6 +167,7 @@ unzip
 usbutils
 util-linux
 vi
+vulkan-intel
 wget
 which
 wireless_tools
@@ -174,7 +178,6 @@ xautolock
 xcape
 xclip
 xf86-input-mtrack
-xf86-video-intel
 xf86-video-vesa
 xfce4-notifyd
 xfce4-terminal
