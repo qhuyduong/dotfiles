@@ -1,3 +1,4 @@
+alsa-utils
 aspell
 aspell-en
 aspell-vi
@@ -49,9 +50,11 @@ netctl
 network-manager-applet
 networkmanager
 noto-fonts-emoji
+openssh
 pavucontrol
 pkgconf
 postgresql
+pulseaudio-alsa
 pyenv
 rbenv
 rofi
