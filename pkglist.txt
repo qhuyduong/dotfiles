@@ -63,6 +63,7 @@ sudo
 sysfsutils
 the_silver_searcher
 thunar
+tlp
 tmux
 tree
 ttf-dejavu
@@ -73,6 +74,7 @@ unzip
 vulkan-intel
 wget
 wpa_supplicant
+x86_energy_perf_policy
 xautolock
 xcape
 xclip
