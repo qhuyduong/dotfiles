@@ -14,7 +14,7 @@ cpu_usage {
 cpu_temperature 0 {
 	max_threshold = 90
 	format = " %degrees°"
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp2_input"
 }
 
 memory {
