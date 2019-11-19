@@ -195,9 +195,10 @@ bar {
 
 ## Manual management of external displays
 # Set the shortcuts and what they do
-set $mode_display Ext Screen (1) HDMI1 ON, (0) OFF
+set $mode_display Ext Screen (1) HOME, (2) WORK, (0) OFF
 mode "$mode_display" {
     bindsym 1 exec --no-startup-id xrandr --output HDMI1 --auto --left-of eDP1 --output eDP1 --auto --primary
+    bindsym 2 exec --no-startup-id xrandr --output HDMI1 --auto --above eDP1 --output eDP1 --auto --primary
     bindsym 0 exec --no-startup-id xrandr --output HDMI1 --auto --off --output eDP1 --auto --primary, mode "default"
 
     # back to normal: Enter or Escape
@@ -236,7 +237,7 @@ exec --no-startup-id ibus-daemon -drx # Ibus
 exec --no-startup-id dropbox
 exec --no-startup-id enpass
 exec --no-startup-id feh --bg-fill ~/Pictures/aerial-view-of-seashore-near-large-grey-rocks-853199.jpg
-exec --no-startup-id ~/.pyenv/shims/i3-workspace-names-daemon -d " |"
+exec --no-startup-id ~/.pyenv/shims/i3-workspace-names-daemon -d " | "
 
 # Audio volume controls
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
