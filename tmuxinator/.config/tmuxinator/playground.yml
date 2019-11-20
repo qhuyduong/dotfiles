@@ -51,8 +51,8 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - web: bundle exec rails server
-        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+        - web: rails server
+        - grpc: eh_protobuf start -c ./config/environment.rb
 
   - frontend-core:
       root: ~/workspace/frontend-core
@@ -70,9 +70,9 @@ windows:
       root: ~/workspace/nominations-service
       layout: main-vertical
       panes:
-        - web: bundle exec puma -p 3002
-        - worker: bundle exec sidekiq -r ./config/environment.rb
-        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+        - web: puma -p 3002
+        - worker: sidekiq -r ./config/environment.rb
+        - grpc: eh_protobuf start -c ./config/environment.rb
 
   # - kafka-docker:
   #     root: ~/workspace/kafka-docker
