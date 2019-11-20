@@ -1,14 +1,13 @@
-#!/usr/bin/env ruby
-branch_name = `git symbolic-ref HEAD`.strip
-message_file = ARGV[0]
+#!/bin/bash
+BRANCH_NAME=$(git symbolic-ref HEAD | xargs)
+BRANCH_REGEX="[--|__]([0-9]+)"
+COMMIT_EDITMSG_FILE=$1
+COMMIT_MSG=$(cat $COMMIT_EDITMSG_FILE)
 
-if branch_name =~ /(--|__)(\w+)\z/
-  story_number = Regexp.last_match(2)
-  message = File.read(message_file).strip
-
-  exit 0 if message =~ /\/#{Regexp.escape(story_number)}/
-
-  message << "\n\n[https://www.pivotaltracker.com/story/show/#{story_number}]"
-
-  File.open(message_file, 'w') { |f| f.write(message) }
-end
+if [[ $BRANCH_NAME =~ $BRANCH_REGEX ]]; then
+    STORY_ID=${BASH_REMATCH[1]}
+    if [[ $COMMIT_MSG =~ $STORY_ID ]]; then
+        exit
+    fi
+    printf "\n\n[https://www.pivotaltracker.com/story/show/$STORY_ID]" >> $COMMIT_EDITMSG_FILE
+fi
