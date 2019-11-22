@@ -208,7 +208,7 @@ mode "$mode_display" {
 # Declare here the shortcut to bring the display selection menu
 bindsym $mod+x mode "$mode_display"
 
-set $Locker exec "~/dotfiles/lock.sh" && sleep 1
+set $Locker "dm-tool lock"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -258,4 +258,4 @@ bindsym $mod+Shift+p --release exec "scrot -ue 'mv $f /tmp && xclip -selection c
 bindsym $mod+Shift+Ctrl+p --release exec "scrot -se 'mv $f /tmp && xclip -selection clipboard -t image/png -i /tmp/$n'; notify-send 'Screen selection has been copied to clipboard'"
 
 # Lock screen
-bindsym $mod+Ctrl+q exec "~/dotfiles/lock.sh"
+bindsym $mod+Ctrl+q exec --no-startup-id $Locker
