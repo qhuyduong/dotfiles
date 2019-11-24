@@ -105,6 +105,7 @@ vulkan-intel
 wget
 wpa_supplicant
 x86_energy_perf_policy
+xautolock
 xcape
 xclip
 xf86-input-mtrack
