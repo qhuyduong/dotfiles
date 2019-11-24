@@ -3,3 +3,4 @@ export ELM_SCALE=1.5
 export GTK_IM_MODULE='ibus'
 export QT_IM_MODULE='ibus'
 export XMODIFIERS=@im='ibus'
+export OPENCV_LOG_LEVEL=ERROR
