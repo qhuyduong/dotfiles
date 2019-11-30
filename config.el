@@ -100,6 +100,8 @@
       (:leader
         :nv "SPC" #'+counsel-fzf-find-project
         :nv "x" nil ;; Disable x prefix for scratch buffer
+        :nv "*" nil
+        :nv "s" nil
 
         (:prefix "o"
           :desc "List processes" :nv "x" #'list-processes
@@ -109,7 +111,23 @@
           :nv "d"  #'evil-window-delete)
 
         (:prefix "/"
-          :desc "Search this text in project" :nv "*" #'counsel-projectile-rg)
+          :desc "Search buffer"                    "b" #'swiper
+          :desc "Search current directory"         "d" #'+default/search-cwd
+          :desc "Search other directory"           "D" #'+default/search-other-cwd
+          :desc "Locate file"                      "f" #'locate
+          :desc "Jump to symbol"                   "i" #'imenu
+          :desc "Jump to link"                     "l" #'ace-link
+          :desc "Jump list"                        "j" #'evil-show-jumps
+          :desc "Jump to mark"                     "m" #'evil-show-marks
+          :desc "Look up online"                   "o" #'+lookup/online
+          :desc "Look up online (w/ prompt)"       "O" #'+lookup/online-select
+          :desc "Look up in local docsets"         "k" #'+lookup/in-docsets
+          :desc "Look up in all docsets"           "K" #'+lookup/in-all-docsets
+          :desc "Search project"                   "p" #'+default/search-project
+          :desc "Search other project"             "P" #'+default/search-other-project
+          :desc "Search buffer"                    "s" #'swiper-isearch
+          :desc "Search buffer for thing at point" "S" #'swiper-isearch-thing-at-point
+          :desc "Search for symbol in project"     "*" #'+default/search-project-for-symbol-at-point)
 
         (:prefix "p"
           :desc "Find dir" :nv "d" #'counsel-projectile-find-dir
