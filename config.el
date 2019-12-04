@@ -6,6 +6,7 @@
       display-line-numbers-type 'relative
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n")
       doom-font (font-spec :family "Hack" :size 18)
+      default-input-method "vietnamese-telex"
       vc-handled-backends '(Git))
 
 (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
