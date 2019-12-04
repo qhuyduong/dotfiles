@@ -319,6 +319,12 @@
   (setq lsp-ui-doc-enable nil))
 
 (after! web-mode
+  (setq-hook! 'web-mode-hook
+    web-mode-code-indent-offset 2
+    web-mode-code-indent-offset 2
+    web-mode-css-indent-offset 2
+    web-mode-markup-indent-offset 2
+    web-mode-sql-indent-offset 2)
   (add-hook! (html-mode css-mode sass-mode less-css-mode web-mode) #'lsp!))
 
 (after! elisp-mode
