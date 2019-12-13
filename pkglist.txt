@@ -1,3 +1,4 @@
+acpid
 alsa-utils
 aspell
 aspell-en
@@ -7,6 +8,7 @@ automake
 autorandr
 base
 bat
+bind-tools
 binutils
 bison
 blueman
@@ -18,7 +20,9 @@ crda
 cronie
 dhcpcd
 dialog
+discord
 dmenu
+dmidecode
 docker
 docker-compose
 dosfstools
@@ -28,22 +32,27 @@ dunst
 emacs-git
 enpass-bin
 evtest
+exfat-utils
 fakeroot
 fd
 feh
-fix-bt-a2dp
 flex
+font-manager
 fzf
 gcc
 git
+gobject-introspection
 google-chrome
+gst-plugins-good
 gtk2
+heroku-cli
 howdy
 htop
 hub
 i3-gaps
 i3blocks
 i3status
+ibus
 ibus-unikey
 intel-ucode
 jq
@@ -63,6 +72,10 @@ nodejs
 noto-fonts
 noto-fonts-emoji
 openssh
+openssl-1.0
+otf-fira-code
+otf-san-francisco-mono
+otf-san-francisco-pro
 paprefs
 parted
 pasystray
@@ -71,6 +84,8 @@ pavucontrol
 pkgconf
 postgresql
 pulseaudio-alsa
+pulseaudio-bluetooth
+pulseeffects
 pyenv
 python-pip
 python2-pip
@@ -99,6 +114,7 @@ ttf-inconsolata
 ttf-liberation
 ttf-linux-libertine
 ttf-mac-fonts
+ttf-monaco
 ttf-ms-fonts
 ttf-opensans
 ttf-roboto
@@ -167,6 +183,7 @@ xorg-xvinfo
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+yarn
 yay
 zsh
 zsh-completions
