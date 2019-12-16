@@ -42,6 +42,9 @@
        ibuffer           ; interactive buffer management
        vc                ; version-control and Emacs, sitting in a tree
 
+       :term
+       vterm             ; another terminals in Emacs
+
        :tools
        eval              ; run code, run (also, repls)
        (flycheck         ; tasing you for every semicolon you forget

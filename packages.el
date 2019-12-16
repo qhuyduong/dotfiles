@@ -32,6 +32,7 @@
 (package! reason-mode)
 (package! tern)
 (package! vimrc-mode)
+(package! yaml-tomato)
 
 ;;; Disabled packages
 (package! eslintd-fix :disable t)
