@@ -8,6 +8,7 @@
 
 (package! add-node-modules-path)
 (package! apib-mode)
+(package! company-tabnine)
 (package! company-tern)
 (package! copy-as-format)
 (package! feature-mode)
