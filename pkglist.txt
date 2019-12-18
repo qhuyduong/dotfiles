@@ -57,6 +57,7 @@ ibus-unikey
 intel-ucode
 jq
 libmagick6
+libpng12
 lightdm
 lightdm-mini-greeter
 linux
