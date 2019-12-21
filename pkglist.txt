@@ -85,6 +85,7 @@ pasystray
 patch
 pavucontrol
 pkgconf
+playerctl
 postgresql
 postgresql-old-upgrade
 pulseaudio-alsa
@@ -93,6 +94,7 @@ pulseeffects
 pyenv
 python-pip
 python2-pip
+qemu
 rbenv
 redis
 ripgrep
@@ -102,11 +104,13 @@ rofi-file-browser-extended-git
 ruby-build
 scrot
 slack-desktop
+spotify
 stow
 sudo
 sysfsutils
 the_silver_searcher
 thunar
+tigervnc
 tlp
 tmux
 tree
@@ -131,7 +135,6 @@ x86_energy_perf_policy
 xautolock
 xcape
 xclip
-xf86-input-mtrack
 xf86-video-intel
 xf86-video-vesa
 xfce4-notifyd
@@ -189,5 +192,6 @@ xorg-xwininfo
 xorg-xwud
 yarn
 yay
+zoom
 zsh
 zsh-completions
