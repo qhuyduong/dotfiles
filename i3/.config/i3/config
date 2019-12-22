@@ -255,7 +255,7 @@ exec --no-startup-id autorandr --change
 exec --no-startup-id ibus-daemon -drx # Ibus
 exec --no-startup-id dropbox
 exec --no-startup-id enpass
-exec --no-startup-id feh --bg-fill ~/Pictures/background.jpg
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id ~/.pyenv/shims/i3-workspace-names-daemon -d " | "
 exec --no-startup-id pulseeffects --gapplication-service -l airpods
 

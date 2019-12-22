@@ -71,6 +71,7 @@ nerd-fonts-dejavu-complete
 netctl
 network-manager-applet
 networkmanager
+nitrogen
 nodejs
 noto-fonts
 noto-fonts-emoji
