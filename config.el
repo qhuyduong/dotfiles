@@ -742,6 +742,6 @@ The return value is the yanked text."
                   t)))
     (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\]))))
 
-(advice-add #'evil-paste-before :override #'+evil-paste-and-indent-before)
-(advice-add #'evil-paste-after :override #'+evil-paste-and-indent-after)
-(advice-add #'evil-visual-paste :override #'+evil-visual-paste-and-indent)
+;; (advice-add #'evil-paste-before :override #'+evil-paste-and-indent-before)
+;; (advice-add #'evil-paste-after :override #'+evil-paste-and-indent-after)
+;; (advice-add #'evil-visual-paste :override #'+evil-visual-paste-and-indent)
