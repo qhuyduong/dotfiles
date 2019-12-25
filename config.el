@@ -280,7 +280,6 @@
   (set-popup-rule! "\\*RuboCop" :ttl 0 :quit 'other))
 
 (after! enh-ruby-mode
-  (set-company-backend! 'enh-ruby-mode '(company-tabnine company-robe company-files :with company-yasnippet))
   (map! :mode enh-ruby-mode
         (:leader
           (:prefix "p"
@@ -377,12 +376,11 @@
 
 (use-package! company
   :config
-  (setq company-idle-delay 0))
+  (setq company-idle-delay 0)
+  (add-to-list 'company-backends '(company-files :with company-yasnippet)))
 
-(use-package! company-tabnine
-  :ensure t
-  :config
-  (add-to-list 'company-backends 'company-tabnine))
+(after! robe
+  (set-company-backend! 'enh-ruby-mode '(company-robe company-files :with company-yasnippet)))
 
 ;;;;;;;;;; Hydras ;;;;;;;;;;
 
