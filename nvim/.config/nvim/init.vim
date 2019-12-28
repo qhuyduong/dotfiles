@@ -23,9 +23,6 @@ Plug 'moll/vim-node'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'w0rp/ale'
 
-" Tags
-Plug 'ludovicchabant/vim-gutentags'
-
 " Autocomplete
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
@@ -110,7 +107,6 @@ let g:lightline = {}
 let g:lightline.colorscheme = 'tender'
 let g:lightline.component_function = {
       \ 'gitbranch': 'fugitive#head',
-      \ 'gutentags': 'gutentags#statusline'
       \ }
 let g:lightline.component_expand = {
       \ 'linter_checking': 'lightline#ale#checking',
@@ -133,7 +129,6 @@ let g:lightline.active = {
       \   [ 'lineinfo' ],
       \   [ 'percent' ],
       \   [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
-      \   [ 'gutentags' ]
       \ ]
       \ }
 
@@ -200,18 +195,6 @@ map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
-
-
-" Gutentags configs
-" Require universal-ctags
-let g:gutentags_ctags_exclude = [ '*.min.js', '*.min.css', 'build', 'vendor', '.git', 'node_modules', '*.vim/bundle/*' ]
-let g:gutentags_define_advanced_commands = 1
-augroup MyGutentagsStatusLineRefresher
-  autocmd!
-  autocmd User GutentagsUpdating call lightline#update()
-  autocmd User GutentagsUpdated call lightline#update()
-augroup END
-
 
 " Haskell
 let g:haskell_indent_if = 3
