@@ -73,6 +73,7 @@
         +dragndrop       ; drag & drop files/images into org buffers
         +present)        ; using org-mode for presentations
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+        +lsp
         +rbenv)          ; rbenv as version manager
        web               ; the tubes
 
