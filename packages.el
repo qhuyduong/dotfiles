@@ -20,6 +20,7 @@
 (package! google-translate)
 (package! inflections)
 (package! lorem-ipsum)
+(package! multi-libvterm :recipe (:host github :repo "suonlight/multi-libvterm"))
 (package! nvm)
 (package! ob-async)
 (package! org-pivotal)
