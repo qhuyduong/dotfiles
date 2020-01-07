@@ -12,6 +12,7 @@ bat
 bind-tools
 binutils
 bison
+blackarch-keyring
 blueman
 bluez-utils
 cask
@@ -57,6 +58,8 @@ i3blocks
 i3status
 ibus
 ibus-unikey
+ideviceinstaller-git
+ifuse
 intel-ucode
 jq
 libmagick6
@@ -65,8 +68,10 @@ lightdm
 lightdm-mini-greeter
 linux
 linux-firmware
+lshw
 make
 mplayer
+ncdu
 neovim
 nerd-fonts-dejavu-complete
 netctl
@@ -106,6 +111,7 @@ rofi-file-browser-extended-git
 ruby-build
 scrot
 slack-desktop
+spice-gtk
 spotify
 stow
 sudo
@@ -130,6 +136,7 @@ ttf-opensans
 ttf-roboto
 ttf-ubuntu-font-family
 unzip
+usbmuxd
 vulkan-intel
 wd719x-firmware
 wget
@@ -195,6 +202,7 @@ xorg-xwininfo
 xorg-xwud
 yarn
 yay
+zip
 zoom
 zsh
 zsh-completions
