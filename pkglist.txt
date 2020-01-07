@@ -32,7 +32,7 @@ dosfstools
 drafter
 dropbox
 dunst
-emacs-git
+emacs
 enpass-bin
 evtest
 exfat-utils
@@ -161,7 +161,6 @@ xorg-mkfontscale
 xorg-server
 xorg-server-common
 xorg-server-devel
-xorg-server-xdmx
 xorg-server-xephyr
 xorg-server-xnest
 xorg-server-xvfb
