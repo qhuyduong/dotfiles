@@ -21,7 +21,6 @@ cmake
 cpupower
 crda
 cronie
-dhcpcd
 dialog
 discord
 dmenu
@@ -116,11 +115,13 @@ spotify
 stow
 sudo
 sysfsutils
+systemd-resolvconf
 the_silver_searcher
 thunar
 tigervnc
 tlp
 tmux
+traceroute
 tree
 ttf-dejavu
 ttf-droid
