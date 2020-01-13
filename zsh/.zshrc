@@ -70,5 +70,7 @@ zplug load
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Command not found hook
+source /usr/share/doc/pkgfile/command-not-found.zsh
 # Stop profiling
 # zprof
