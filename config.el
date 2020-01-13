@@ -222,7 +222,7 @@
 
 ;; flycheck-apib
 (use-package! flycheck-apib
-  :when (featurep! :tools flycheck)
+  :when (featurep! :checkers syntax)
   :after apib-mode
   :config (add-hook! apib-mode #'flycheck-apib-setup))
 

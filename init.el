@@ -52,12 +52,15 @@
        :term
        vterm             ; another terminals in Emacs
 
+       :checkers
+       (syntax           ; tasing you for every semicolon you forget
+        +childframe)
+       spell             ; tasing you for misspelling mispelling
+       grammar           ; tasing grammar mistake every you make
+
        :tools
-       (eval              ; run code, run (also, repls)
+       (eval             ; run code, run (also, repls)
          +overlay)
-       (flycheck         ; tasing you for every semicolon you forget
-        +childframe)     ; use childframes for error popups (Emacs 26+ only)
-       flyspell          ; tasing you for misspelling mispelling
        gist              ; interacting with github gists
        (lookup           ; helps you navigate your code and documentation
         +docsets)        ; ...or in Dash docsets locally
