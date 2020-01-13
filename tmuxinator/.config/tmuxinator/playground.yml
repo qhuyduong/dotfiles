@@ -66,20 +66,6 @@ windows:
       panes:
         - docker: docker-compose up
 
-  # - nomination:
-  #     root: ~/workspace/nominations-service
-  #     layout: main-vertical
-  #     panes:
-  #       - web: bundle exec puma -p 3003
-  #       - worker: bundle exec sidekiq -r ./config/environment.rb
-  #       - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
-
-  # - kafka-docker:
-  #     root: ~/workspace/kafka-docker
-  #     layout: main-vertical
-  #     panes:
-  #       - docker: docker-compose up
-
   - announcement:
       root: ~/workspace/announcement-api-service
       layout: main-vertical
@@ -88,25 +74,10 @@ windows:
         # - worker: bundle exec sidekiq
         # - consumer: bundle exec karafka server
 
-  # - employee-milestones:
-  #     root: ~/workspace/employee-milestones
-  #     layout: main-vertical
-  #     panes:
-  #       - web: bundle exec puma -p 3007
-  #       - worker: bundle exec sidekiq -r ./config/environment.rb
-  #       - consumer: bundle exec karafka server
-
-  # - herodollar-service:
-  #     root: ~/EH-Workspace/herodollar-service
-  #     layout: main-vertical
-  #     panes:
-  #       - server: bundle exec puma -p 3002
-  #       - grpc: bundle exec ruby grpc/grpc_server.rb
-
-  # - herodollar-purchase-service:
-  #     root: ~/EH-Workspace/herodollar-purchase-service
-  #     layout: main-vertical
-  #     panes:
-  #       - server: bundle exec puma -p 3003
-  #       - sidekiq: bundle exec sidekiq -r ./config/environment.rb -C ./config/sidekiq.yml
-
+  - nomination:
+      root: ~/workspace/nominations-service
+      layout: main-vertical
+      panes:
+        - web: bundle exec puma -p 3003
+        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+        # - worker: bundle exec sidekiq -r ./config/environment.rb
