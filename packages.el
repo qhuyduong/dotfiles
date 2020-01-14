@@ -6,7 +6,6 @@
 ;; (package! another-package :recipe (:host github :repo "username/repo"))
 ;; (package! builtin-package :disable t)
 
-(package! add-node-modules-path)
 (package! apib-mode)
 (package! company-tern)
 (package! copy-as-format)
@@ -27,7 +26,6 @@
 (package! org-pomodoro)
 (package! osx-trash)
 (package! persp-mode-projectile-bridge)
-(package! prettier-js)
 (package! projectile-rails)
 (package! react-snippets)
 (package! reason-mode)
