@@ -38,7 +38,5 @@
 ;;; Disabled packages
 (package! eslintd-fix :disable t)
 (package! evil-escape :disable t)
-(package! magit-gitflow :disable t)
-(package! magit-todos :disable t)
 (package! robe :disable t)
 (package! tide :disable t)

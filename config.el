@@ -181,10 +181,7 @@
 ;; Magit
 (after! magit
   (set-popup-rule! "^magit:\s" :width 0.5 :side 'right :select t :modeline t :quit 'current)
-  (setq magit-refresh-status-buffer nil)
-  (remove-hook 'server-switch-hook 'magit-commit-diff)
   (setq magit-repository-directories '(("~/workspace" . 1))
-        magit-save-repository-buffers nil
         +magit-default-clone-url "git@github.com:%s/%s"))
 
 ;; lang/org
