@@ -59,6 +59,7 @@
        grammar           ; tasing grammar mistake every you make
 
        :tools
+       docker
        (eval             ; run code, run (also, repls)
          +overlay)
        gist              ; interacting with github gists

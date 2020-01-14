@@ -11,7 +11,6 @@
 (package! copy-as-format)
 (package! feature-mode)
 (package! dired-single)
-(package! dockerfile-mode)
 (package! docker-compose-mode)
 (package! evil-matchit)
 (package! evil-string-inflection)
