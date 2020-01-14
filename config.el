@@ -159,10 +159,7 @@
             :desc "HTML" :nv "h" #'copy-as-format-html
             :desc "Markdown" :nv "m" #'copy-as-format-markdown
             :desc "Org" :nv "o" #'copy-as-format-org
-            :desc "Slack" :nv "s" #'copy-as-format-slack))
-
-        (:prefix "TAB"
-          :desc "Display TAB bar" "TAB" #'+workspace-hydra/body)))
+            :desc "Slack" :nv "s" #'copy-as-format-slack))))
 
 ;; Modules
 ;; Evil
@@ -500,26 +497,6 @@ T - tag prefix
   ("Z" dired-do-compress)
   ("q" nil)
   ("." nil :color blue))
-
-(dolist (i (number-sequence 0 9))
-  (eval `(defun ,(intern (format "+workspace-switch-to-%s" i)) nil
-           ,(format "Switch to workspace %s" i)
-           (interactive)
-           (+workspace/switch-to ,i))))
-
-(defhydra +workspace-hydra (:hint nil)
-  "
-%s(+workspace--tabline)"
-  ("1" +workspace-switch-to-0)
-  ("2" +workspace-switch-to-1)
-  ("3" +workspace-switch-to-2)
-  ("4" +workspace-switch-to-3)
-  ("5" +workspace-switch-to-4)
-  ("6" +workspace-switch-to-5)
-  ("7" +workspace-switch-to-6)
-  ("8" +workspace-switch-to-7)
-  ("9" +workspace-switch-to-8)
-  ("0" +workspace-switch-to-9))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
