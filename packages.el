@@ -23,6 +23,7 @@
 (package! org-pivotal)
 (package! osx-trash)
 (package! persp-mode-projectile-bridge)
+(package! prettier-js)
 (package! projectile-rails)
 (package! react-snippets)
 (package! reason-mode)
