@@ -61,12 +61,15 @@ jq
 languagetool
 libmagick6
 libpng12
+libva-intel-driver
+libva-utils
 lightdm
 lightdm-mini-greeter
 linux
 linux-firmware
 lshw
 make
+mesa-demos
 mplayer
 ncdu
 neovim
