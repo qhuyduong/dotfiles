@@ -15,7 +15,6 @@ bison
 blueman
 bluez-utils
 cask
-ckb-next
 cmake
 cpupower
 crda
@@ -57,8 +56,6 @@ i3blocks
 i3status
 ibus
 ibus-unikey
-ideviceinstaller-git
-ifuse
 intel-ucode
 jq
 languagetool
@@ -138,8 +135,6 @@ ttf-opensans
 ttf-roboto
 ttf-ubuntu-font-family
 unzip
-usbmuxd
-vulkan-intel
 wd719x-firmware
 wget
 wpa_supplicant
@@ -147,8 +142,6 @@ x86_energy_perf_policy
 xautolock
 xcape
 xclip
-xf86-video-intel
-xf86-video-vesa
 xfce4-notifyd
 xfce4-terminal
 xorg-bdftopcf
