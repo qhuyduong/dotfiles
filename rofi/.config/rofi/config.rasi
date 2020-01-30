@@ -1,7 +1,7 @@
 /*-*- mode: css; -*-*/
 
 configuration {
-	modi: "combi,calc,file-browser,github:~/.local/share/rofi/scripts/github.sh,circleci:~/.local/share/rofi/scripts/circleci.sh,power:~/.local/share/rofi/scripts/power.sh";
+	modi: "combi,github:~/.local/share/rofi/scripts/github.sh,circleci:~/.local/share/rofi/scripts/circleci.sh,power:~/.local/share/rofi/scripts/power.sh";
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/

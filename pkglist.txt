@@ -109,8 +109,6 @@ rbenv
 redis
 ripgrep
 rofi
-rofi-calc
-rofi-file-browser-extended-git
 ruby-build
 scrot
 slack-desktop
