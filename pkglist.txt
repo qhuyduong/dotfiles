@@ -20,6 +20,7 @@ cmake
 cpupower
 crda
 cronie
+dhcpcd
 dialog
 discord
 dmenu
@@ -60,6 +61,7 @@ ideviceinstaller-git
 ifuse
 intel-ucode
 jq
+languagetool
 libmagick6
 libpng12
 lightdm
@@ -72,10 +74,12 @@ mplayer
 ncdu
 neovim
 nerd-fonts-dejavu-complete
+net-tools
 netctl
 network-manager-applet
 networkmanager
 nitrogen
+nmap
 nodejs
 noto-fonts
 noto-fonts-emoji
@@ -90,6 +94,7 @@ pasystray
 patch
 pavucontrol
 pkgconf
+pkgfile
 playerctl
 postgresql
 postgresql-old-upgrade
