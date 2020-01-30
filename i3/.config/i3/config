@@ -255,7 +255,6 @@ exec --no-startup-id autorandr --change && nitrogen --restore
 exec --no-startup-id ibus-daemon -drx # Ibus
 exec --no-startup-id dropbox
 exec --no-startup-id ~/.pyenv/shims/i3-workspace-names-daemon -d " | "
-exec --no-startup-id pulseeffects --gapplication-service -l airpods
 
 # Audio volume controls
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
