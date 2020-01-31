@@ -243,7 +243,12 @@
   (projectile-register-project-type 'npm '("package.json")
                                     :test "yarn test"
                                     :test-suffix ".spec"
-                                    :related-files-fn #'projectile-frontend-core-related-files))
+                                    :related-files-fn #'projectile-frontend-core-related-files)
+  ;; Workaround for Rails 6
+  (projectile-register-project-type 'rails-rspec '("Gemfile")
+                                    :test "bundle exec rspec"
+                                    :test-suffix "_spec"
+                                    :test-dir "spec"))
 
 ;; Re-add visual-line-mode's fringes
 (after! fringe-helper
