@@ -63,6 +63,7 @@ libmagick6
 libpng12
 libva-intel-driver
 libva-utils
+light
 lightdm
 lightdm-mini-greeter
 linux
@@ -168,7 +169,6 @@ xorg-setxkbmap
 xorg-smproxy
 xorg-x11perf
 xorg-xauth
-xorg-xbacklight
 xorg-xclock
 xorg-xcmsdb
 xorg-xcursorgen
