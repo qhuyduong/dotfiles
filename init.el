@@ -80,7 +80,8 @@
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +lsp
         +rbenv)          ; rbenv as version manager
-       web               ; the tubes
+       (web              ; the tubes
+        +lsp)
 
        :config
        ;;literate
