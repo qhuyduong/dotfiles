@@ -59,6 +59,7 @@
        grammar           ; tasing grammar mistake every you make
 
        :tools
+       debugger
        docker
        (eval             ; run code, run (also, repls)
          +overlay)
