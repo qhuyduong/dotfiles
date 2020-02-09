@@ -39,11 +39,13 @@ alias cat='bat'
 source ~/.zplug/init.zsh
 
 # Zplug plugins
+zplug "djui/alias-tips"
 zplug "hlissner/zsh-autopair", defer:2
 # Async for zsh, used by pure
 zplug "mafredri/zsh-async", from:github, defer:0
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
+zplug "popstas/zsh-command-time"
 # Load completion library for those sweet [tab] squares
 zplug "lib/completion", from:oh-my-zsh
 zplug "lukechilds/zsh-nvm"
