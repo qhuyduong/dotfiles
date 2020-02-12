@@ -76,6 +76,7 @@
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
         +dragndrop       ; drag & drop files/images into org buffers
+        +pomodoro        ; be fruitful with the tomato technique
         +present)        ; using org-mode for presentations
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +lsp
