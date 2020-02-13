@@ -19,10 +19,6 @@ bindkey -e
 # Ruby
 eval "$(rbenv init -)"
 
-# Python
-eval "$(pyenv init -)"
-export PYENV_ROOT="$HOME/.pyenv"
-
 # Node
 export NVM_LAZY_LOAD=true
 

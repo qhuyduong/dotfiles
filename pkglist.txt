@@ -101,7 +101,6 @@ postgresql
 postgresql-old-upgrade
 pulseaudio-alsa
 pulseaudio-bluetooth
-pyenv
 python-pip
 python2-pip
 qemu
