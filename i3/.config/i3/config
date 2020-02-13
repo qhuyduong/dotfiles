@@ -188,7 +188,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command ~/.i3/i3status.sh
         tray_output primary
         tray_output HDMI1
 }
@@ -210,7 +210,7 @@ bindsym $mod+x mode "$mode_display"
 
 set $Locker "dm-tool lock"
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System (l) lock (e) logout (s) suspend (h) hibernate (r) reboot (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker
     bindsym e exec --no-startup-id i3-msg exit
@@ -223,10 +223,8 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
 bindsym $mod+z mode "$mode_system"
 
-bindsym $mod+m mode "move" focus floating
 mode "move" {
     bindsym $mod+Tab focus right
 
@@ -244,6 +242,22 @@ mode "move" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+bindsym $mod+m mode "move" focus floating
+
+set $mode_pomodoro Pomodoro (1) start (2) toggle (3) skip (4) start-stop (0) stop
+mode "$mode_pomodoro" {
+    bindsym 1 exec --no-startup-id i3-gnome-pomodoro start
+    bindsym 2 exec --no-startup-id i3-gnome-pomodoro toggle
+    bindsym 3 exec --no-startup-id i3-gnome-pomodoro skip
+    bindsym 4 exec --no-startup-id i3-gnome-pomodoro start-stop
+    bindsym 0 exec --no-startup-id i3-gnome-pomodoro stop
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Declare here the shortcut to bring the display selection menu
+bindsym $mod+g mode "$mode_pomodoro"
 
 # Automatic started apps
 exec --no-startup-id nm-applet # Network
@@ -254,7 +268,8 @@ exec --no-startup-id xautolock -detectsleep -time 30 -locker "systemctl suspend"
 exec --no-startup-id autorandr --change && nitrogen --restore
 exec --no-startup-id ibus-daemon -drx # Ibus
 exec --no-startup-id dropbox
-exec --no-startup-id ~/.pyenv/shims/i3-workspace-names-daemon -d " | "
+exec --no-startup-id i3-workspace-names-daemon -d " | "
+exec --no-startup-id i3-gnome-pomodoro daemon 2 3 4 --nagbar
 
 # Audio volume controls
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute

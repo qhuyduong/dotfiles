@@ -52,6 +52,7 @@ howdy
 htop
 hub
 i3-gaps
+i3-gnome-pomodoro-git
 i3blocks
 i3status
 ibus

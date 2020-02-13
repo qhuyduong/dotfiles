@@ -1,6 +1,6 @@
 general {
         colors = true
-        interval = 3
+        interval = 1
 }
 
 order += "cpu_temperature 0"
