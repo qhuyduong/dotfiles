@@ -66,6 +66,7 @@ libmagick6
 libpng12
 libva-intel-driver
 libva-utils
+libvdpau-va-gl
 light
 lightdm
 lightdm-mini-greeter
@@ -144,6 +145,7 @@ ttf-opensans
 ttf-roboto
 ttf-ubuntu-font-family
 unzip
+vdpauinfo
 wd719x-firmware
 wget
 wpa_supplicant
