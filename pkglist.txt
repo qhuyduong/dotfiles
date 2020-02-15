@@ -1,6 +1,7 @@
 acpid
 aic94xx-firmware
 alsa-utils
+android-file-transfer
 aspell
 aspell-en
 aspell-vi
