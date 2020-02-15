@@ -269,7 +269,6 @@ exec --no-startup-id autorandr --change && nitrogen --restore
 exec --no-startup-id ibus-daemon -drx # Ibus
 exec --no-startup-id dropbox
 exec --no-startup-id i3-workspace-names-daemon -d " | "
-exec --no-startup-id i3-gnome-pomodoro daemon 2 3 4 --nagbar
 
 # Audio volume controls
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
