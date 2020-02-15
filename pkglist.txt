@@ -40,6 +40,7 @@ fd
 feh
 flex
 font-manager
+fwupd
 fzf
 gcc
 gimp
