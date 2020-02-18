@@ -1,7 +1,7 @@
 /*-*- mode: css; -*-*/
 
 configuration {
-	modi: "combi,github:~/.local/share/rofi/scripts/github.sh,circleci:~/.local/share/rofi/scripts/circleci.sh,power:~/.local/share/rofi/scripts/power.sh";
+	modi: "combi,github:~/.local/share/rofi/scripts/github.sh,circleci:~/.local/share/rofi/scripts/circleci.sh,power:~/.local/share/rofi/scripts/power.sh,sentry:~/.local/share/rofi/scripts/sentry.sh";
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
@@ -36,7 +36,7 @@ configuration {
 /*	auto-select: false;*/
 /*	parse-hosts: false;*/
 /*	parse-known-hosts: true;*/
-	combi-modi: "window,drun,github,circleci,power";
+	combi-modi: "window,drun,github,circleci,power,sentry";
 /*	matching: "normal";*/
 /*	tokenize: true;*/
 /*	m: "-5";*/
