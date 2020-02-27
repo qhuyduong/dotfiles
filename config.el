@@ -256,7 +256,7 @@
 
 (after! rspec-mode
   (add-hook! rspec-compilation-mode #'inf-ruby-switch-from-compilation)
-  (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.3 :side 'right :quit 'current))
+  (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.5 :side 'right :quit 'current))
 
 (after! treemacs
   (map! :mode treemacs-mode
@@ -358,7 +358,7 @@
   (remove-hook! 'doom-load-theme-hook #'doom-themes-treemacs-config))
 
 (after! buttercup
-  (set-popup-rule! "\\*Buttercup\\*" :width 0.3 :side 'right :quit 'current))
+  (set-popup-rule! "\\*Buttercup\\*" :width 0.5 :side 'right :quit 'current))
 
 (after! projectile-rails
   (set-lookup-handlers! 'projectile-rails-mode :file #'projectile-rails-goto-file-at-point))
