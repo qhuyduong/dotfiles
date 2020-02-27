@@ -1,11 +1,11 @@
 #!/bin/bash
 BRANCH_NAME=$(git symbolic-ref HEAD | xargs)
-BRANCH_REGEX="[--|__]([0-9]+)$"
+BRANCH_REGEX="(--|__)(.*)$"
 COMMIT_EDITMSG_FILE=$1
 COMMIT_MSG=$(cat $COMMIT_EDITMSG_FILE)
 
 if [[ $BRANCH_NAME =~ $BRANCH_REGEX ]]; then
-    STORY_ID=${BASH_REMATCH[1]}
+    STORY_ID=${BASH_REMATCH[2]}
     if [[ $COMMIT_MSG =~ "/$STORY_ID" ]]; then
         exit
     fi
