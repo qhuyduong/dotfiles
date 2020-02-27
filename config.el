@@ -135,9 +135,6 @@
           :desc "Find dir" :nv "d" #'counsel-projectile-find-dir
           :desc "Find file in project" :nv "/" #'+counsel-fzf-find-project)
 
-        (:prefix "g"
-          :desc "Resolve conflicts" :n "r" #'smerge-hydra/body)
-
         (:prefix "w"
           :desc "evil-window-resize" :n "r" #'evil-window-resize-hydra/body)
 
@@ -418,23 +415,6 @@
   (evil-define-key 'normal vterm-mode-map (kbd "<return>") #'evil-insert-resume))
 
 ;;;;;;;;;; Hydras ;;;;;;;;;;
-
-(defhydra smerge-hydra (:hint nil)
-  ("n" smerge-next "next hunk" :column "Movement")
-  ("N" smerge-prev "prev hunk")
-  ("k" evil-previous-line "move up")
-  ("j" evil-next-line "move down")
-  ("C-u" evil-scroll-up "scroll up")
-  ("C-d" evil-scroll-down "scroll down")
-  ("b" smerge-keep-base "keep base" :column "Merge action")
-  ("m" smerge-keep-mine "keep mine")
-  ("a" smerge-keep-all "keep all")
-  ("o" smerge-keep-other "keep other")
-  ("c" smerge-keep-current "keep current")
-  ("C" smerge-combine-with-next "combine with next")
-  ("u" undo-tree-undo "undo" :column "Other")
-  ("r" smerge-refine "refine")
-  ("q" nil "quit"))
 
 (defhydra evil-window-resize-hydra (:hint nil)
   ("k" (evil-window-increase-height 10) "increase height by 10 rows")
