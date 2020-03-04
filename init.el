@@ -49,9 +49,6 @@
        ibuffer           ; interactive buffer management
        vc                ; version-control and Emacs, sitting in a tree
 
-       :term
-       vterm             ; another terminals in Emacs
-
        :checkers
        (syntax           ; tasing you for every semicolon you forget
         +childframe)

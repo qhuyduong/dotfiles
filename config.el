@@ -28,8 +28,6 @@
 
 (setq delete-by-moving-to-trash t)
 
-(setq +workspaces-switch-project-function #'+counsel-fzf-find-project)
-
 (with-eval-after-load "persp-mode-projectile-bridge-autoloads"
   (add-hook 'persp-mode-projectile-bridge-mode-hook
             #'(lambda ()
@@ -71,26 +69,7 @@
   (setq google-translate-default-target-language "vi"))
 
 ;; Keybindings
-(map! "s-c" #'evil-yank
-      "s-v" #'yank
-      "s-w" #'kill-current-buffer
-      "s-W" #'delete-window
-      "s-p" #'counsel-projectile-switch-project
-      "s-o" #'+ivy/projectile-find-file
-      "s-[" #'previous-buffer
-      "s-]" #'next-buffer
-      "s-1" #'+workspace-switch-to-0
-      "s-2" #'+workspace-switch-to-1
-      "s-3" #'+workspace-switch-to-2
-      "s-4" #'+workspace-switch-to-3
-      "s-5" #'+workspace-switch-to-4
-      "s-6" #'+workspace-switch-to-5
-      "s-7" #'+workspace-switch-to-6
-      "s-8" #'+workspace-switch-to-7
-      "s-9" #'+workspace-switch-to-8
-      "s-0" #'+workspace-switch-to-9
-
-      ;; Easier window navigation
+(map! ;; Easier window navigation
       :nvi "C-h"  #'evil-window-left
       :nvi "C-j"  #'evil-window-down
       :nvi "C-k"  #'evil-window-up
@@ -99,15 +78,13 @@
       :nv "C-S-j" #'move-line-down
 
       (:leader
-        :nv "SPC" #'+counsel-fzf-find-project
         :nv "x" nil ;; Disable x prefix for scratch buffer
         :nv "*" nil
         :nv "s" nil
 
         (:prefix "o"
           :desc "List processes" :nv "x" #'list-processes
-          :desc "Project sidebar" :nv "p" #'treemacs
-          :desc "Toggle vterm popup" :nv "t" #'multi-libvterm-projectile)
+          :desc "Project sidebar" :nv "p" #'treemacs)
 
         (:prefix "w"
           :nv "d"  #'evil-window-delete)
@@ -132,8 +109,7 @@
           :desc "Search for symbol in project"     "*" #'+default/search-project-for-symbol-at-point)
 
         (:prefix "p"
-          :desc "Find dir" :nv "d" #'counsel-projectile-find-dir
-          :desc "Find file in project" :nv "/" #'+counsel-fzf-find-project)
+          :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
 
         (:prefix "w"
           :desc "evil-window-resize" :n "r" #'evil-window-resize-hydra/body)
@@ -379,41 +355,6 @@
 (after! robe
   (set-company-backend! 'enh-ruby-mode '(company-robe company-files :with company-yasnippet)))
 
-(use-package! vterm
-  :config
-  (add-hook 'vterm-mode-hook
-            (lambda ()
-              (setq-local evil-insert-state-cursor 'box)
-              (evil-insert-state)))
-  (define-key vterm-mode-map [return]                      #'vterm-send-return)
-
-  (setq vterm-keymap-exceptions nil)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-e")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-f")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-a")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-v")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-b")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-w")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-u")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-d")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-n")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-m")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-p")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-j")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-k")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-r")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-t")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-g")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-c")      #'vterm--self-insert)
-  (evil-define-key 'insert vterm-mode-map (kbd "C-SPC")    #'vterm--self-insert)
-  (evil-define-key 'normal vterm-mode-map (kbd "C-d")      #'vterm--self-insert)
-  (evil-define-key 'normal vterm-mode-map (kbd ",c")       #'multi-libvterm)
-  (evil-define-key 'normal vterm-mode-map (kbd ",n")       #'multi-libvterm-next)
-  (evil-define-key 'normal vterm-mode-map (kbd ",p")       #'multi-libvterm-prev)
-  (evil-define-key 'normal vterm-mode-map (kbd "i")        #'evil-insert-resume)
-  (evil-define-key 'normal vterm-mode-map (kbd "o")        #'evil-insert-resume)
-  (evil-define-key 'normal vterm-mode-map (kbd "<return>") #'evil-insert-resume))
-
 ;;;;;;;;;; Hydras ;;;;;;;;;;
 
 (defhydra evil-window-resize-hydra (:hint nil)
@@ -522,11 +463,6 @@ T - tag prefix
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
-(defun +counsel-fzf-find-project (&optional dir)
-  (interactive)
-  (let ((project-dir (if dir dir (projectile-project-root))))
-    (counsel-fzf nil dir (format "[%s] " (file-name-nondirectory (directory-file-name project-dir))))))
-
 (defun move-line-up ()
   (interactive)
   (transpose-lines 1)
@@ -548,52 +484,6 @@ T - tag prefix
            (current-buffer)))))
 
 ;;;###autoload
-(defun ++lookup/file (path)
-  "Figure out PATH from whatever is at point and open it.
-
-Each function in `+lookup-file-functions' is tried until one changes the point
-or the current buffer.
-
-Otherwise, falls back on `find-file-at-point'."
-  (interactive
-   (progn
-     (require 'ffap)
-     (list
-      (or (ffap-guesser)
-          (+lookup-symbol-or-region)))))
-  (require 'ffap)
-  (cond ((not path)
-         (call-interactively #'find-file-at-point))
-
-        ((ffap-url-p path)
-         (find-file-at-point path))
-
-        ((not (+lookup--jump-to :file path))
-         (let ((fullpath (doom-path path)))
-           (when (and buffer-file-name (file-equal-p fullpath buffer-file-name))
-             (user-error "Already here"))
-           (let* ((insert-default-directory t)
-                  (project-root (doom-project-root))
-                  (ffap-file-finder
-                   (cond ((not (doom-glob fullpath))
-                          #'find-file)
-                         ((ignore-errors (file-in-directory-p fullpath project-root))
-                          (lambda (dir)
-                            (let* ((default-directory dir)
-                                   projectile-project-name
-                                   projectile-project-root
-                                   (projectile-project-root-cache (make-hash-table :test 'equal))
-                                   (file (projectile-completing-read "Find file: "
-                                                                     (projectile-current-project-files)
-                                                                     :initial-input path)))
-                              (find-file (expand-file-name file (doom-project-root)))
-                              (run-hooks 'projectile-find-file-hook))))
-                         (#'doom-project-browse))))
-             (find-file-at-point path))))))
-
-(advice-add '+lookup/file :override #'++lookup/file)
-
-;;;###autoload
 (defun +projectile-rails-goto-template-at-point ()
   "Visit a template or a partial under the point."
   (interactive)
@@ -605,7 +495,6 @@ Otherwise, falls back on `find-file-at-point'."
     (when (find-lisp-find-files dir regex)
       (find-file (car (find-lisp-find-files dir regex))))))
 
-(add-hook '+lookup-file-functions #'current-buffer)
 (advice-add 'projectile-rails-goto-template-at-point :override #'+projectile-rails-goto-template-at-point)
 
 (defun insert-random-uuid ()
