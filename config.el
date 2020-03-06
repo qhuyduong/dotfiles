@@ -287,9 +287,7 @@
   (setq lsp-eldoc-render-all nil))
 
 (after! lsp-ui
-  (setq lsp-ui-sideline-enable nil)
-  (setq lsp-ui-imenu-enable nil)
-  (setq lsp-ui-doc-enable nil))
+  (setq lsp-ui-sideline-enable nil))
 
 (after! web-mode
   (setq-hook! 'web-mode-hook
