@@ -18,6 +18,7 @@
 (package! google-translate)
 (package! inflections)
 (package! lorem-ipsum)
+(package! monkeyc-mode :recipe (:host github :repo "4lick/monkeyc-mode"))
 (package! nvm)
 (package! org-pivotal)
 (package! osx-trash)

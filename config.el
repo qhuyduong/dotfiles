@@ -349,6 +349,9 @@
 (after! robe
   (set-company-backend! 'enh-ruby-mode '(company-robe company-files :with company-yasnippet)))
 
+(use-package! monkeyc-mode
+  :mode "\\.mc\\'")
+
 ;;;;;;;;;; Hydras ;;;;;;;;;;
 
 (defhydra evil-window-resize-hydra (:hint nil)
