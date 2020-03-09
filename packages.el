@@ -27,9 +27,11 @@
 (package! projectile-rails)
 (package! react-snippets)
 (package! reason-mode)
+(package! tern)
 (package! vimrc-mode)
 (package! yaml-tomato)
 
 ;;; Disabled packages
 (package! evil-escape :disable t)
 (package! robe :disable t)
+(package! tide :disable t)

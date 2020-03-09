@@ -198,9 +198,9 @@
   :mode "\\.js*\\'"
   :config
   (setq-default js-indent-level 2)
-  (add-hook! rjsx-mode #'prettier-js-mode)
+  (add-hook! rjsx-mode #'(prettier-js-mode tern-mode))
   (add-hook! rjsx-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
-  (set-company-backend! 'rjsx-mode '(company-files :with company-yasnippet))
+  (set-company-backend! 'rjsx-mode '(company-tern company-files :with company-yasnippet))
   (map! :mode rjsx-mode
         (:leader
           (:prefix "p"
@@ -340,6 +340,10 @@
 (use-package! evil-string-inflection
   :config
   (map! :nv "g~" #'evil-operator-string-inflection))
+
+(use-package! tern
+  :config
+  (set-lookup-handlers! 'tern-mode :definition '(tern-find-definition :async t)))
 
 (use-package! company
   :config
