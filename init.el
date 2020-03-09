@@ -70,8 +70,7 @@
        :lang
        data              ; config/data formats
        emacs-lisp        ; drown in parentheses
-       (javascript       ; all(hope(abandon(ye(who(enter(here))))))
-        +lsp)
+       javascript        ; all(hope(abandon(ye(who(enter(here))))))
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
         +dragndrop       ; drag & drop files/images into org buffers
