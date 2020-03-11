@@ -198,9 +198,9 @@
   :mode "\\.js*\\'"
   :config
   (setq-default js-indent-level 2)
-  (add-hook! rjsx-mode #'(prettier-js-mode tern-mode))
+  (add-hook! rjsx-mode #'prettier-js-mode)
   (add-hook! rjsx-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
-  (set-company-backend! 'rjsx-mode '(company-tern company-files :with company-yasnippet))
+  (set-company-backend! 'rjsx-mode '(company-tide company-files :with company-yasnippet))
   (map! :mode rjsx-mode
         (:leader
           (:prefix "p"
@@ -284,7 +284,12 @@
                     :notification-handlers (ht ("client/registerCapability" 'ignore))
                     :priority 1
                     :server-id 'reason-ls))
-  (setq lsp-eldoc-render-all nil))
+  (setq lsp-eldoc-render-all nil)
+  (setq lsp-eslint-server-command
+        '("node"
+          "/home/qhuyduong/.vscode/extensions/dbaeumer.vscode-eslint-2.1.1/server/out/eslintServer.js"
+          "--stdio"))
+  (setq lsp-enable-file-watchers nil))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil))
@@ -340,10 +345,6 @@
 (use-package! evil-string-inflection
   :config
   (map! :nv "g~" #'evil-operator-string-inflection))
-
-(use-package! tern
-  :config
-  (set-lookup-handlers! 'tern-mode :definition '(tern-find-definition :async t)))
 
 (use-package! company
   :config
