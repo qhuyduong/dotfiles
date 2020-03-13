@@ -31,4 +31,3 @@
 
 ;;; Disabled packages
 (package! evil-escape :disable t)
-(package! robe :disable t)
