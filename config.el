@@ -80,11 +80,7 @@
         :nv "x" nil ;; Disable x prefix for scratch buffer
 
         (:prefix "o"
-          :desc "List processes" :nv "x" #'list-processes
-          :desc "Project sidebar" :nv "p" #'treemacs)
-
-        (:prefix "w"
-          :nv "d"  #'evil-window-delete)
+          :desc "List processes" :nv "x" #'list-processes)
 
         (:prefix "p"
           :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
@@ -96,9 +92,6 @@
             :desc "sentences" :n "s" #'lorem-ipsum-insert-sentences
             :desc "paragraphs" :n "p" #'lorem-ipsum-insert-paragraphs)
           :desc "Emoji" :n "e" #'emoji-cheat-sheet-plus-insert)
-
-        (:prefix "t"
-          :desc "Truncate lines" :n "t" #'toggle-truncate-lines)
 
         (:prefix ("x" . "text-transform")
           :desc "Translate this text" :nv "g" #'google-translate-at-point
