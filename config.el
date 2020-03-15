@@ -89,9 +89,6 @@
         (:prefix "p"
           :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
 
-        (:prefix "w"
-          :desc "evil-window-resize" :n "r" #'evil-window-resize-hydra/body)
-
         (:prefix "i"
           :desc "UUIDv4" :n "u" #'insert-random-uuid
           (:prefix ("l" . "lorem-ipsum")
