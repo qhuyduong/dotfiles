@@ -77,6 +77,7 @@
         +pomodoro        ; be fruitful with the tomato technique
         +present)        ; using org-mode for presentations
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+        +rails
         +rbenv)          ; rbenv as version manager
        web               ; the tubes
 

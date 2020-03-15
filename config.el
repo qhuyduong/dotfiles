@@ -44,7 +44,6 @@
 (when IS-MAC
   (menu-bar-mode t))
 (global-evil-matchit-mode t)
-(projectile-rails-global-mode)
 
 (after! doom-modeline
   (setq doom-modeline-enable-word-count t)
