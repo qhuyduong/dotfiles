@@ -15,7 +15,9 @@ binutils
 bison
 blueman
 bluez-utils
+calibre
 cask
+clang
 cmake
 cpupower
 crda
@@ -31,7 +33,8 @@ dosfstools
 drafter
 dropbox
 dunst
-emacs
+eclipse-cpp
+emacs-git
 enpass-bin
 evtest
 exfat-utils
@@ -43,6 +46,7 @@ font-manager
 fwupd
 fzf
 gcc
+gcc-arm-none-eabi-bin
 gimp
 git
 gobject-introspection
@@ -75,6 +79,8 @@ linux-firmware
 lshw
 make
 mesa-demos
+minicom
+mitmproxy
 mplayer
 ncdu
 neofetch
@@ -89,6 +95,8 @@ nmap
 nodejs
 noto-fonts
 noto-fonts-emoji
+openocd
+opensmtpd
 openssh
 openssl-1.0
 otf-fira-code
@@ -103,11 +111,13 @@ pavucontrol
 pkgconf
 pkgfile
 playerctl
+poppler-glib
 postgresql
 postgresql-old-upgrade
 pulseaudio-alsa
 pulseaudio-bluetooth
 python-pip
+python-pybluez
 python2-pip
 qemu
 rbenv
@@ -116,6 +126,7 @@ ripgrep
 rofi
 rsync
 ruby-build
+scrcpy
 scrot
 slack-desktop
 spice-gtk
@@ -144,10 +155,16 @@ ttf-ms-fonts
 ttf-opensans
 ttf-roboto
 ttf-ubuntu-font-family
+unrar
 unzip
 vdpauinfo
+visual-studio-code-bin
 wd719x-firmware
+webkit2gtk
+webkitgtk
+webkitgtk2
 wget
+wireless_tools
 wpa_supplicant
 x86_energy_perf_policy
 xautolock
