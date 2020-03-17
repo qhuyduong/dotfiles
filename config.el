@@ -139,11 +139,6 @@
   (setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
                              ("~/gtd/someday.org" :level . 1)
                              ("~/gtd/tickler.org" :maxlevel . 2)))
-  (setq org-refile-allow-creating-parent-nodes 'confirm)
-  (setq org-refile-use-outline-path 'file)
-  ;; makes org-refile outline working with helm/ivy
-  (setq org-outline-path-complete-in-steps nil)
-  ;; Org TODO keywords
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c)")))
   (setq org-todo-keyword-faces '(("TODO" . (:foreground "grey"))
                                  ("WAITING" . (:foreground "yellow"))
