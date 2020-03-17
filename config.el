@@ -127,23 +127,28 @@
   (set-face-attribute 'org-headline-done nil :strike-through t)
   (advice-add 'org-babel-execute-src-block :around 'ob-async-org-babel-execute-src-block)
   (setq org-startup-indented nil)
-  (setq org-directory (expand-file-name "~/workspace/orgs")
-        org-agenda-files (list org-directory))
-  ;; Org capture templates
+  (setq org-agenda-files '("~/gtd/inbox.org"
+                           "~/gtd/gtd.org"
+                           "~/gtd/tickler.org"))
   (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                                 (file "~/workspace/orgs/inbox.org")
-                                 "* ☛ TODO %i%?")))
-  (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+                                 (file "~/gtd/inbox.org")
+                                 "* TODO %i%?")
+                                ("T" "Tickler" entry
+                                 (file "~/gtd/tickler.org")
+                                 "* TODO %i%?\n  %T")))
+  (setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
+                             ("~/gtd/someday.org" :level . 1)
+                             ("~/gtd/tickler.org" :maxlevel . 2)))
   (setq org-refile-allow-creating-parent-nodes 'confirm)
   (setq org-refile-use-outline-path 'file)
   ;; makes org-refile outline working with helm/ivy
   (setq org-outline-path-complete-in-steps nil)
   ;; Org TODO keywords
-  (setq org-todo-keywords '((sequence "☛ TODO" "⚑ IN-PROGRESS" "|" "✓ DONE" "✘ CANCELED")))
-  (setq org-todo-keyword-faces '(("☛ TODO" . (:foreground "grey"))
-                                 ("⚑ IN-PROGRESS" . (:foreground "yellow"))
-                                 ("✓ DONE" . (:foreground "green"))
-                                 ("✘ CANCELED" . (:foreground "red")))))
+  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c)")))
+  (setq org-todo-keyword-faces '(("TODO" . (:foreground "grey"))
+                                 ("IN-PROGRESS" . (:foreground "yellow"))
+                                 ("DONE" . (:foreground "green"))
+                                 ("CANCELED" . (:foreground "red")))))
 
 ;; apib-mode
 (use-package! apib-mode
