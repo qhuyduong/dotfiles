@@ -231,11 +231,6 @@
   (add-to-list 'all-the-icons-mode-icon-alist
                '(enh-ruby-mode all-the-icons-alltheicon "ruby-alt" :face all-the-icons-lred)))
 
-(after! org-projectile
-  (setq org-projectile-projects-file "~/Workspace/orgs/inbox.org")
-  (push (org-projectile-project-todo-entry) org-capture-templates)
-  (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
-
 (after! reason-mode
   (add-hook! reason-mode #'lsp)
   (add-hook! reason-mode (add-hook 'before-save-hook #'lsp-format-buffer nil t)))
