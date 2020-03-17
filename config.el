@@ -135,7 +135,7 @@
                                  "* TODO %i%?")
                                 ("T" "Tickler" entry
                                  (file "~/gtd/tickler.org")
-                                 "* TODO %i%?\n  %T")))
+                                 "* TODO %i%?\nSCHEDULED: %T")))
   (setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
                              ("~/gtd/someday.org" :level . 1)
                              ("~/gtd/tickler.org" :maxlevel . 2)))
@@ -146,7 +146,7 @@
   ;; Org TODO keywords
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c)")))
   (setq org-todo-keyword-faces '(("TODO" . (:foreground "grey"))
-                                 ("IN-PROGRESS" . (:foreground "yellow"))
+                                 ("WAITING" . (:foreground "yellow"))
                                  ("DONE" . (:foreground "green"))
                                  ("CANCELED" . (:foreground "red")))))
 
