@@ -124,14 +124,8 @@
 
 ;; lang/org
 (after! org
-  (map! "C-c c" #'org-capture
-        "C-c n p" #'org-projectile-project-todo-completing-read
-        :nv "C-c C-p" #'org-pomodoro)
   (set-face-attribute 'org-headline-done nil :strike-through t)
-  (add-to-list 'org-modules 'org-drill)
   (advice-add 'org-babel-execute-src-block :around 'ob-async-org-babel-execute-src-block)
-  (setq org-plantuml-jar-path "~/.local/bin/plantuml.jar")
-  (remove-hook! org-mode #'org-indent-mode)
   (setq org-startup-indented nil)
   (setq org-directory (expand-file-name "~/workspace/orgs")
         org-agenda-files (list org-directory))
