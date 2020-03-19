@@ -139,9 +139,10 @@
   (setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
                              ("~/gtd/someday.org" :level . 1)
                              ("~/gtd/tickler.org" :maxlevel . 2)))
-  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c)")))
+  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "NEXT(n)" "|" "DONE(d)" "CANCELED(c)")))
   (setq org-todo-keyword-faces '(("TODO" . (:foreground "grey"))
                                  ("WAITING" . (:foreground "yellow"))
+                                 ("NEXT" . (:foreground "lightblue"))
                                  ("DONE" . (:foreground "green"))
                                  ("CANCELED" . (:foreground "red")))))
 
