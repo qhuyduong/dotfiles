@@ -77,7 +77,10 @@
       :nv "C-S-j" #'move-line-down
 
       (:leader
-        :nv "x" nil ;; Disable x prefix for scratch buffer
+        "x" nil ;; Disable x prefix for scratch buffer
+        "s" nil ;; Disable s prefix for search
+
+        :desc "search" "/" doom-leader-search-map
 
         (:prefix "o"
           :desc "List processes" :nv "x" #'list-processes)
