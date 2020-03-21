@@ -20,6 +20,7 @@
 (package! monkeyc-mode :recipe (:host github :repo "4lick/monkeyc-mode"))
 (package! nvm)
 (package! org-pivotal)
+(package! org-super-agenda)
 (package! osx-trash)
 (package! persp-mode-projectile-bridge)
 (package! prettier-js)

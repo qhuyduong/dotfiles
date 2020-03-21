@@ -83,7 +83,9 @@
         :desc "search" "/" doom-leader-search-map
 
         (:prefix "o"
-          :desc "List processes" :nv "x" #'list-processes)
+          :desc "List processes" :nv "x" #'list-processes
+          (:prefix "a"
+            :desc "Getting things done" :nv "g" #'org-agenda-gtd))
 
         (:prefix "p"
           :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
@@ -147,7 +149,51 @@
                                  ("WAITING" . (:foreground "yellow"))
                                  ("NEXT" . (:foreground "lightblue"))
                                  ("DONE" . (:foreground "green"))
-                                 ("CANCELED" . (:foreground "red")))))
+                                 ("CANCELED" . (:foreground "red"))))
+  (setq org-agenda-skip-scheduled-if-done t
+        org-agenda-skip-deadline-if-done t
+        org-agenda-block-separator nil
+        org-agenda-compact-blocks t)
+  (setq org-tag-alist '(("@work" . ?w) ("@personal" . ?p)))
+  (set-face-attribute 'org-agenda-date nil :font (font-spec :family "Fira Code" :size 24) :foreground "lightblue" :underline t)
+  (map! :map org-super-agenda-header-map
+        "j" #'evil-next-line
+        "k" #'evil-previous-line)
+  (org-super-agenda-mode t)
+  (setq org-agenda-custom-commands
+        '(("g" "Getting things done"
+           ((agenda "" ((org-agenda-span 'day)
+                        (org-super-agenda-groups
+                         '((:name "Today"
+                                  :time-grid t
+                                  :date today
+                                  :todo "TODAY"
+                                  :scheduled today
+                                  :order 1)))))
+            (alltodo "" ((org-agenda-overriding-header "")
+                           (org-super-agenda-groups
+                            '((:name "Important"
+                                   :tag "Important"
+                                   :priority "A"
+                                   :order 2)
+                              (:name "Next to do"
+                                     :todo "NEXT"
+                                     :order 5)
+                              (:name "Work"
+                                     :tag "@work"
+                                     :order 10)
+                              (:name "Personal"
+                                     :tag "@personal"
+                                     :order 15)
+                              (:name "To read"
+                                     :tag "Read"
+                                     :order 30)
+                              (:name "Waiting"
+                                     :todo "WAITING"
+                                     :order 40)
+                              (:name "Due Today"
+                                     :deadline today
+                                     :order 2))))))))))
 
 ;; apib-mode
 (use-package! apib-mode
@@ -416,3 +462,7 @@ WARNING: this is a simple implementation. The chance of generating the same UUID
            (random (expt 16 4))
            (random (expt 16 6))
            (random (expt 16 6)))))
+
+(defun org-agenda-gtd ()
+  (interactive)
+  (org-agenda nil "g"))
