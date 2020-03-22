@@ -68,8 +68,7 @@
   (setq google-translate-default-target-language "vi"))
 
 ;; Keybindings
-(map! ;; Easier window navigation
-      :nvi "C-h"  #'evil-window-left
+(map! :nvi "C-h"  #'evil-window-left ;; Easier window navigation
       :nvi "C-j"  #'evil-window-down
       :nvi "C-k"  #'evil-window-up
       :nvi "C-l"  #'evil-window-right
@@ -156,9 +155,6 @@
         org-agenda-compact-blocks t)
   (setq org-tag-alist '(("@work" . ?w) ("@personal" . ?p)))
   (set-face-attribute 'org-agenda-date nil :font (font-spec :family "Fira Code" :size 24) :foreground "lightblue" :underline t)
-  (map! :map org-super-agenda-header-map
-        "j" #'evil-next-line
-        "k" #'evil-previous-line)
   (org-super-agenda-mode t)
   (setq org-agenda-custom-commands
         '(("g" "Getting things done"
@@ -173,27 +169,23 @@
             (alltodo "" ((org-agenda-overriding-header "")
                          (org-super-agenda-groups
                           '((:name "Important"
-                                   :tag "Important"
                                    :priority "A"
                                    :order 2)
                             (:name "Next to do"
                                    :todo "NEXT"
                                    :order 5)
-                            (:name "Work"
-                                   :tag "@work"
-                                   :order 10)
-                            (:name "Personal"
-                                   :tag "@personal"
-                                   :order 15)
-                            (:name "To read"
-                                   :tag "Read"
-                                   :order 30)
                             (:name "Waiting"
                                    :todo "WAITING"
                                    :order 40)
                             (:name "Due Today"
                                    :deadline today
-                                   :order 2))))))))))
+                                   :order 2)))
+                         (org-agenda-files '("~/gtd/gtd.org"))))
+            (alltodo "" ((org-agenda-overriding-header "")
+                         (org-super-agenda-groups
+                          '((:name "Inbox"
+                                   :anything)))
+                         (org-agenda-files '("~/gtd/inbox.org")))))))))
 
 ;; apib-mode
 (use-package! apib-mode
