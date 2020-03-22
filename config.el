@@ -171,29 +171,29 @@
                                   :scheduled today
                                   :order 1)))))
             (alltodo "" ((org-agenda-overriding-header "")
-                           (org-super-agenda-groups
-                            '((:name "Important"
+                         (org-super-agenda-groups
+                          '((:name "Important"
                                    :tag "Important"
                                    :priority "A"
                                    :order 2)
-                              (:name "Next to do"
-                                     :todo "NEXT"
-                                     :order 5)
-                              (:name "Work"
-                                     :tag "@work"
-                                     :order 10)
-                              (:name "Personal"
-                                     :tag "@personal"
-                                     :order 15)
-                              (:name "To read"
-                                     :tag "Read"
-                                     :order 30)
-                              (:name "Waiting"
-                                     :todo "WAITING"
-                                     :order 40)
-                              (:name "Due Today"
-                                     :deadline today
-                                     :order 2))))))))))
+                            (:name "Next to do"
+                                   :todo "NEXT"
+                                   :order 5)
+                            (:name "Work"
+                                   :tag "@work"
+                                   :order 10)
+                            (:name "Personal"
+                                   :tag "@personal"
+                                   :order 15)
+                            (:name "To read"
+                                   :tag "Read"
+                                   :order 30)
+                            (:name "Waiting"
+                                   :todo "WAITING"
+                                   :order 40)
+                            (:name "Due Today"
+                                   :deadline today
+                                   :order 2))))))))))
 
 ;; apib-mode
 (use-package! apib-mode
