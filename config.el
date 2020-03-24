@@ -257,8 +257,11 @@
 (after! rubocop
   (set-popup-rule! "\\*RuboCop" :ttl 0 :quit 'other))
 
-(after! enh-ruby-mode
-  (map! :mode enh-ruby-mode
+(after! ruby-mode
+  (setq-hook! 'ruby-mode-hook
+    flycheck-command-wrapper-function (lambda (command)
+                                        (append '("bundle" "exec") command)))
+  (map! :mode ruby-mode
         (:leader
           (:prefix "p"
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))
