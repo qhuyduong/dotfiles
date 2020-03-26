@@ -236,7 +236,6 @@
 
 (after! rspec-mode
   (add-hook! rspec-compilation-mode #'inf-ruby-switch-from-compilation)
-  (setq rspec-use-spring-when-possible t)
   (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.5 :side 'right :quit 'current))
 
 (after! treemacs
