@@ -272,10 +272,6 @@
           (:prefix ("s" . "inf-ruby"))
           (:prefix ("t" . "rspec")))))
 
-(after! all-the-icons
-  (add-to-list 'all-the-icons-mode-icon-alist
-               '(enh-ruby-mode all-the-icons-alltheicon "ruby-alt" :face all-the-icons-lred)))
-
 (after! reason-mode
   (add-hook! reason-mode #'lsp)
   (add-hook! reason-mode (add-hook 'before-save-hook #'lsp-format-buffer nil t)))
