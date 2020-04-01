@@ -152,9 +152,10 @@
   (setq org-agenda-skip-scheduled-if-done t
         org-agenda-skip-deadline-if-done t
         org-agenda-block-separator nil
-        org-agenda-compact-blocks t)
+        org-agenda-compact-blocks t
+        org-agenda-start-day nil)
   (setq org-tag-alist '(("@work" . ?w) ("@personal" . ?p)))
-  (set-face-attribute 'org-agenda-date nil :font (font-spec :family "Fira Code" :size 24) :foreground "lightblue" :underline t)
+  (set-face-attribute 'org-agenda-date-today nil :font (font-spec :family "Fira Code" :size 24) :foreground "lightblue" :underline t)
   (org-super-agenda-mode t)
   (setq org-agenda-custom-commands
         '(("g" "Getting things done"
