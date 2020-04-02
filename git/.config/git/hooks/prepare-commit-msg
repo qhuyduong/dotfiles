@@ -9,5 +9,5 @@ if [[ $BRANCH_NAME =~ $BRANCH_REGEX ]]; then
     if [[ $COMMIT_MSG =~ "/$STORY_ID" ]]; then
         exit
     fi
-    printf "\n[https://www.pivotaltracker.com/story/show/$STORY_ID]" >> $COMMIT_EDITMSG_FILE
+    printf "\n[https://employmenthero.atlassian.net/browse/$STORY_ID]" >> $COMMIT_EDITMSG_FILE
 fi
