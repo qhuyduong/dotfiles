@@ -31,6 +31,10 @@ alias ll='ls -lha'
 alias e=$EDITOR
 alias cat='bat'
 
+function bgkill() {
+  kill -9 $(jobs -l | head -1 | awk '{print $3}')
+}
+
 # Essential
 source ~/.zplug/init.zsh
 
@@ -70,6 +74,7 @@ zplug load
 
 # Command not found hook
 source /usr/share/doc/pkgfile/command-not-found.zsh
+eval "$(direnv hook zsh)"
 if [ "$TMUX" = "" ]; then tmux; fi
 # Stop profiling
 # zprof
