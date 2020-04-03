@@ -1,6 +1,6 @@
 general {
         colors = true
-        interval = 3
+        interval = 1
 }
 
 order += "cpu_temperature 0"
@@ -12,25 +12,25 @@ cpu_usage {
 }
 
 cpu_temperature 0 {
-	max_threshold = 90
-	format = " %degrees°"
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp2_input"
+        max_threshold = 90
+        format = " %degrees°"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp2_input"
 }
 
 memory {
-	format = " %free"
+        format = " %free"
 }
 
 battery 0 {
-	low_threshold = 20
-	threshold_type = "percentage"
-	status_chr = "⚡"
-	status_bat = " "
-	status_full = " "
-	integer_battery_capacity = true
-	format = "%status %percentage"	
-	separator = true
-	last_full_capacity = true
+        low_threshold = 20
+        threshold_type = "percentage"
+        status_chr = "⚡"
+        status_bat = " "
+        status_full = " "
+        integer_battery_capacity = true
+        format = "%status %percentage"
+        separator = true
+        last_full_capacity = true
 }
 
 tztime local {

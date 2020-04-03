@@ -23,6 +23,7 @@ crda
 cronie
 dhcpcd
 dialog
+direnv
 discord
 dmenu
 dmidecode
@@ -32,8 +33,7 @@ dosfstools
 drafter
 dropbox
 dunst
-eclipse-cpp
-emacs-git
+emacs27-git
 enpass-bin
 evtest
 exfat-utils
@@ -48,16 +48,14 @@ gcc
 gcc-arm-none-eabi-bin
 gimp
 git
-gobject-introspection
 google-chrome
-gst-plugins-good
+graphviz
 gtk2
 heroku-cli
 howdy
 htop
 hub
 i3-gaps
-i3-gnome-pomodoro-git
 i3blocks
 i3status
 ibus
@@ -75,7 +73,6 @@ lightdm
 lightdm-mini-greeter
 linux
 linux-firmware
-lshw
 make
 mesa-demos
 minicom
