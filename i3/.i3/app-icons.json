@@ -12,6 +12,5 @@
   "blueman-manager": "bluetooth",
   "dropbox": "dropbox",
   "discord": "discord",
-  "telegramdesktop": "telegram",
-  "gnome-pomodoro": "stopwatch"
+  "telegramdesktop": "telegram"
 }

@@ -246,21 +246,6 @@ mode "move" {
 }
 bindsym $mod+m mode "move" focus floating
 
-set $mode_pomodoro Pomodoro (1) start (2) toggle (3) skip (4) start-stop (0) stop
-mode "$mode_pomodoro" {
-    bindsym 1 exec --no-startup-id i3-gnome-pomodoro start
-    bindsym 2 exec --no-startup-id i3-gnome-pomodoro toggle
-    bindsym 3 exec --no-startup-id i3-gnome-pomodoro skip
-    bindsym 4 exec --no-startup-id i3-gnome-pomodoro start-stop
-    bindsym 0 exec --no-startup-id i3-gnome-pomodoro stop
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-# Declare here the shortcut to bring the display selection menu
-bindsym $mod+g mode "$mode_pomodoro"
-
 # Automatic started apps
 exec --no-startup-id nm-applet # Network
 exec --no-startup-id pasystray # Audio Volume
