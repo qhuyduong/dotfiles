@@ -29,7 +29,6 @@ export FZF_DEFAULT_COMMAND='fd --type f --follow'
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
 alias e=$EDITOR
-alias cat='bat'
 
 function bgkill() {
   kill -9 $(jobs -l | head -1 | awk '{print $3}')

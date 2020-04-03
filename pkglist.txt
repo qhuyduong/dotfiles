@@ -9,7 +9,6 @@ autoconf
 automake
 autorandr
 base
-bat
 bind-tools
 binutils
 bison
