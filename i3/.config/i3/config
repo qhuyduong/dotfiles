@@ -197,10 +197,11 @@ bar {
 
 ## Manual management of external displays
 # Set the shortcuts and what they do
-set $mode_display Ext Screen (1) Home, (2) Work, (0) Standalone
+set $mode_display Ext Screen (1) Home, (2) Work, (3) Home Vertical, (0) Standalone
 mode "$mode_display" {
     bindsym 1 exec --no-startup-id autorandr -l home
     bindsym 2 exec --no-startup-id autorandr -l work
+    bindsym 3 exec --no-startup-id autorandr -l home-vertical
     bindsym 0 exec --no-startup-id autorandr -l standalone
 
     # back to normal: Enter or Escape
