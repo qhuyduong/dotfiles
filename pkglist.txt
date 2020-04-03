@@ -79,7 +79,6 @@ mitmproxy
 mplayer
 ncdu
 neovim
-nerd-fonts-dejavu-complete
 net-tools
 netctl
 network-manager-applet
@@ -146,8 +145,6 @@ xclip
 xfce4-notifyd
 xfce4-terminal
 xorg-bdftopcf
-xorg-font-util
-xorg-fonts-encodings
 xorg-mkfontscale
 xorg-server
 xorg-server-common
