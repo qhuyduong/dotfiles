@@ -73,7 +73,6 @@ lightdm-mini-greeter
 linux
 linux-firmware
 make
-mesa-demos
 minicom
 mitmproxy
 mplayer
