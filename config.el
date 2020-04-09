@@ -460,3 +460,15 @@ WARNING: this is a simple implementation. The chance of generating the same UUID
 (defun org-agenda-gtd ()
   (interactive)
   (org-agenda nil "g"))
+
+(defun +google-translate-json-suggestion (json)
+  "Retrieve from JSON (which returns by the
+`google-translate-request' function) suggestion. This function
+does matter when translating misspelled word. So instead of
+translation it is possible to get suggestion."
+  (let ((info (aref json 7)))
+    (if (and info (> (length info) 0))
+        (aref info 1)
+      nil)))
+
+(advice-add 'google-translate-json-suggestion :override #'+google-translate-json-suggestion)
