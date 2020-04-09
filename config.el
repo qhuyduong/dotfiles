@@ -223,6 +223,7 @@
 
 ;; projectile
 (after! projectile
+  (setq projectile-create-missing-test-files t)
   ;; Configure npm project with projectile
   (projectile-register-project-type 'npm '("package.json")
                                     :test "yarn test"
@@ -230,6 +231,7 @@
                                     :related-files-fn #'projectile-frontend-core-related-files)
   ;; Workaround for Rails 6
   (projectile-register-project-type 'rails-rspec '("Gemfile")
+                                    :src-dir "app"
                                     :test "bundle exec rspec"
                                     :test-suffix "_spec"
                                     :test-dir "spec"))
