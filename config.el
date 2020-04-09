@@ -68,11 +68,7 @@
   (setq google-translate-default-target-language "vi"))
 
 ;; Keybindings
-(map! :nvi "C-h"  #'evil-window-left ;; Easier window navigation
-      :nvi "C-j"  #'evil-window-down
-      :nvi "C-k"  #'evil-window-up
-      :nvi "C-l"  #'evil-window-right
-      :nv "C-S-k" #'move-line-up
+(map! :nv "C-S-k" #'move-line-up
       :nv "C-S-j" #'move-line-down
 
       (:leader
@@ -105,6 +101,13 @@
             :desc "Markdown" :nv "m" #'copy-as-format-markdown
             :desc "Org" :nv "o" #'copy-as-format-org
             :desc "Slack" :nv "s" #'copy-as-format-slack))))
+
+;; Easier window navigation
+(map! :map general-override-mode-map
+      :nvim "C-h"  #'evil-window-left
+      :nvim "C-j"  #'evil-window-down
+      :nvim "C-k"  #'evil-window-up
+      :nvim "C-l"  #'evil-window-right)
 
 ;; Modules
 ;; Evil
