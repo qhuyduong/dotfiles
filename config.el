@@ -159,6 +159,9 @@
         org-agenda-start-day nil)
   (setq org-tag-alist '(("@work" . ?w) ("@personal" . ?p)))
   (set-face-attribute 'org-agenda-date-today nil :font (font-spec :family "Fira Code" :size 24) :foreground "lightblue" :underline t)
+  (map! :map org-super-agenda-header-map
+        "j" #'evil-next-line
+        "k" #'evil-previous-line)
   (org-super-agenda-mode t)
   (setq org-agenda-custom-commands
         '(("g" "Getting things done"
