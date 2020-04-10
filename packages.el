@@ -19,6 +19,7 @@
 (package! lorem-ipsum)
 (package! monkeyc-mode :recipe (:host github :repo "4lick/monkeyc-mode"))
 (package! nvm)
+(package! ob-mermaid)
 (package! org-pivotal)
 (package! org-super-agenda)
 (package! osx-trash)
