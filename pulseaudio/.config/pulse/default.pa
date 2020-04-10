@@ -22,7 +22,7 @@
 
 ### Automatically restore the volume of streams and devices
 load-module module-device-restore
-load-module module-stream-restore
+load-module module-stream-restore restore_device=false
 load-module module-card-restore
 
 ### Automatically augment property information from .desktop files
@@ -140,5 +140,15 @@ load-module module-filter-apply
 ### Make some devices default
 #set-default-sink output
 #set-default-source input
-# automatically switch to newly-connected devices
+
+### BEGIN: Equalized audio configuration
+### Generated from: pulseaudio-equalizer
+.nofail
+load-module module-ladspa-sink sink_name=ladspa_output.mbeq_1197.mbeq sink_master=alsa_output.pci-0000_00_1f.3.analog-stereo plugin=mbeq_1197 label=mbeq control=4.0,2.0,1.0,0.0,0.0,-1.0,-1.0,-2.0,-2.0,0.0,0.0,2.0,3.0,3.0,26.6
+set-default-sink ladspa_output.mbeq_1197.mbeq
+set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo 0
+.fail
+### END: Equalized audio configuration
+
+### Automatically switch to connected devices
 load-module module-switch-on-connect
