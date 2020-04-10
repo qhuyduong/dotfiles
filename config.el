@@ -366,6 +366,9 @@
 (use-package! monkeyc-mode
   :mode "\\.mc\\'")
 
+(after! plantuml-mode
+  (setq plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar"))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
 (defun projectile-frontend-core-related-files (path)

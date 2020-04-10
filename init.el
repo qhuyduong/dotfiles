@@ -77,6 +77,7 @@
         +dragndrop       ; drag & drop files/images into org buffers
         +pomodoro        ; be fruitful with the tomato technique
         +present)        ; using org-mode for presentations
+       plantuml          ; diagrams for confusing people more
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +lsp
         +rails
