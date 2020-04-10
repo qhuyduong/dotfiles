@@ -15,7 +15,6 @@
 (package! evil-string-inflection)
 (package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))
 (package! google-translate)
-(package! inflections)
 (package! lorem-ipsum)
 (package! monkeyc-mode :recipe (:host github :repo "4lick/monkeyc-mode"))
 (package! nvm)
