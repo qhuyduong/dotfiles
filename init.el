@@ -64,6 +64,7 @@
        gist              ; interacting with github gists
        (lookup           ; helps you navigate your code and documentation
         +docsets)        ; ...or in Dash docsets locally
+       lsp
        magit             ; a git porcelain for Emacs
        pdf               ; pdf enhancements
 
@@ -77,6 +78,7 @@
         +pomodoro        ; be fruitful with the tomato technique
         +present)        ; using org-mode for presentations
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+        +lsp
         +rails
         +rbenv)          ; rbenv as version manager
        web               ; the tubes

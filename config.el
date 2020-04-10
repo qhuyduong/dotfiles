@@ -296,7 +296,8 @@
         '("node"
           "/home/qhuyduong/.vscode/extensions/dbaeumer.vscode-eslint-2.1.1/server/out/eslintServer.js"
           "--stdio"))
-  (setq lsp-enable-file-watchers nil))
+  (setq lsp-enable-file-watchers nil)
+  (set-company-backend! 'ruby-mode '(company-lsp company-files :with company-yasnippet)))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil))
@@ -358,7 +359,7 @@
   (add-to-list 'company-backends '(company-files :with company-yasnippet)))
 
 (after! robe
-  (set-company-backend! 'enh-ruby-mode '(company-robe company-files :with company-yasnippet)))
+  (set-company-backend! 'ruby-mode '(company-robe company-files :with company-yasnippet)))
 
 (use-package! monkeyc-mode
   :mode "\\.mc\\'")
