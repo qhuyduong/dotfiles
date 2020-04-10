@@ -14,6 +14,7 @@
 (package! evil-matchit)
 (package! evil-string-inflection)
 (package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))
+(package! git-link)
 (package! google-translate)
 (package! lorem-ipsum)
 (package! monkeyc-mode :recipe (:host github :repo "4lick/monkeyc-mode"))
