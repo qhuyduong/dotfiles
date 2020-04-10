@@ -130,6 +130,7 @@ tigervnc
 tlp
 tmux
 tree
+ttf-font-awesome
 ttf-liberation
 unrar
 unzip
