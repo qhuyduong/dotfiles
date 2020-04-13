@@ -263,6 +263,7 @@ exec --no-startup-id i3-workspace-names-daemon -d " | "
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%- unmute
 bindsym XF86AudioMute        exec amixer -q sset Master toggle
+bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute 1 toggle
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp   exec light -A 20 # increase screen brightness
