@@ -9,6 +9,14 @@
       default-input-method "vietnamese-telex"
       vc-handled-backends '(Git))
 
+(setq frame-title-format
+      '(""
+        "%b"
+        (:eval
+         (let ((project-name (projectile-project-name)))
+           (unless (string= "-" project-name)
+             (format (if (buffer-modified-p)  " ◉ %s" "  ●  %s") project-name))))))
+
 (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
 
 ;; Make titlebar match background color
