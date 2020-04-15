@@ -389,43 +389,6 @@
           (list :impl (concat dir "/../" base-file-name ".js"))
         (list :test (concat dir "/__tests__/" base-file-name ".spec.js"))))))
 
-(dolist (i (number-sequence 0 9))
-  (eval `(defun ,(intern (format "+workspace-switch-to-%s" i)) nil
-           ,(format "Switch to workspace %s" i)
-           (interactive)
-           (+workspace/switch-to ,i))))
-
-(defhydra +workspace-hydra (:hint nil)
-  ("1" +workspace-switch-to-0)
-  ("2" +workspace-switch-to-1)
-  ("3" +workspace-switch-to-2)
-  ("4" +workspace-switch-to-3)
-  ("5" +workspace-switch-to-4)
-  ("6" +workspace-switch-to-5)
-  ("7" +workspace-switch-to-6)
-  ("8" +workspace-switch-to-7)
-  ("9" +workspace-switch-to-8)
-  ("0" +workspace-switch-to-9))
-
-(defun +workspace--tabline-hydra (&optional workspace-names)
-  (setq +workspace-hydra/hint
-        (let ((names (or workspace-names (+workspace-list-names)))
-              (current-name (+workspace-current-name)))
-          (mapconcat
-           #'identity
-           (cl-loop for name in names
-                    for i to (length names)
-                    collect
-                    (propertize (format " [%d] %s " (1+ i) name)
-                                'face (if (equal current-name name)
-                                          '+workspace-tab-selected-face
-                                        '+workspace-tab-face)))
-           " ")))
-  (+workspace-hydra/body)
-  +workspace-hydra/hint)
-
-(advice-add '+workspace--tabline :override #'+workspace--tabline-hydra)
-
 (defun move-line-up ()
   (interactive)
   (transpose-lines 1)
