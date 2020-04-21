@@ -99,8 +99,7 @@
           (:prefix ("l" . "lorem-ipsum")
             :desc "list" :n "l" #'lorem-ipsum-insert-list
             :desc "sentences" :n "s" #'lorem-ipsum-insert-sentences
-            :desc "paragraphs" :n "p" #'lorem-ipsum-insert-paragraphs)
-          :desc "Emoji" :n "e" #'emoji-cheat-sheet-plus-insert)
+            :desc "paragraphs" :n "p" #'lorem-ipsum-insert-paragraphs))
 
         (:prefix ("x" . "text-transform")
           :desc "Translate this text" :nv "g" #'google-translate-at-point
