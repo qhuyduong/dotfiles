@@ -39,7 +39,6 @@
        (evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        multiple-cursors  ; editing in many places at once
-       rotate-text       ; cycle region at point between text candidates
        snippets          ; my elves. They type so I don't have to
        word-wrap         ; soft wrapping with language-aware indent
 
@@ -61,9 +60,7 @@
        docker
        (eval             ; run code, run (also, repls)
          +overlay)
-       gist              ; interacting with github gists
-       (lookup           ; helps you navigate your code and documentation
-        +docsets)        ; ...or in Dash docsets locally
+       lookup           ; helps you navigate your code and documentation
        lsp
        magit             ; a git porcelain for Emacs
        pdf               ; pdf enhancements
@@ -74,8 +71,6 @@
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
-        +dragndrop       ; drag & drop files/images into org buffers
-        +pomodoro        ; be fruitful with the tomato technique
         +present)        ; using org-mode for presentations
        plantuml          ; diagrams for confusing people more
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}

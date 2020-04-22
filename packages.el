@@ -17,17 +17,10 @@
 (package! git-link)
 (package! google-translate)
 (package! lorem-ipsum)
-(package! monkeyc-mode :recipe (:host github :repo "4lick/monkeyc-mode"))
-(package! nvm)
 (package! ob-mermaid)
-(package! org-pivotal)
 (package! org-super-agenda)
-(package! osx-trash)
-(package! persp-mode-projectile-bridge)
 (package! prettier-js)
 (package! react-snippets)
-(package! reason-mode)
-(package! vimrc-mode)
 (package! yaml-tomato)
 
 ;;; Disabled packages

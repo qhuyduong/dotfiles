@@ -19,14 +19,6 @@
 
 (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
 
-;; Make titlebar match background color
-(when IS-MAC
-  ;; Set command key as super on OSX
-  (setq mac-command-modifier 'super
-        mac-option-modifier 'meta)
-  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-  (add-to-list 'default-frame-alist '(ns-appearance . dark)))
-
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil
               global-visual-line-mode t)
@@ -36,31 +28,10 @@
 
 (setq delete-by-moving-to-trash t)
 
-(with-eval-after-load "persp-mode-projectile-bridge-autoloads"
-  (add-hook 'persp-mode-projectile-bridge-mode-hook
-            #'(lambda ()
-                (if persp-mode-projectile-bridge-mode
-                    (persp-mode-projectile-bridge-find-perspectives-for-all-buffers)
-                  (persp-mode-projectile-bridge-kill-perspectives))))
-  (add-hook 'after-init-hook
-            #'(lambda ()
-                (persp-mode-projectile-bridge-mode 1))
-            t))
-
-;; Global modes
-;; Enable menu-bar-mode to fix focus issue on macOS
-(when IS-MAC
-  (menu-bar-mode t))
 (global-evil-matchit-mode t)
 
 (after! doom-modeline
-  (setq doom-modeline-enable-word-count t)
-  (setq doom-modeline-percent-position nil)
-  (setq doom-modeline-major-mode-icon t))
-
-(when IS-MAC
-  (after! osx-trash
-    (osx-trash-setup)))
+  (setq doom-modeline-percent-position nil))
 
 (after! dired
   (add-hook! dired-mode #'rspec-dired-mode)
@@ -266,9 +237,6 @@
   (setq treemacs-show-cursor t)
   (treemacs-follow-mode t))
 
-(after! helm
-  (setq helm-ag-insert-at-point 'symbol))
-
 (after! ivy
   (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
 
@@ -290,22 +258,8 @@
           (:prefix ("s" . "inf-ruby"))
           (:prefix ("t" . "rspec")))))
 
-(after! reason-mode
-  (add-hook! reason-mode #'lsp)
-  (add-hook! reason-mode (add-hook 'before-save-hook #'lsp-format-buffer nil t)))
-
 (after! lsp-mode
-  (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection "reason-language-server")
-                    :major-modes '(reason-mode)
-                    :notification-handlers (ht ("client/registerCapability" 'ignore))
-                    :priority 1
-                    :server-id 'reason-ls))
   (setq lsp-eldoc-render-all nil)
-  (setq lsp-eslint-server-command
-        '("node"
-          "/home/qhuyduong/.vscode/extensions/dbaeumer.vscode-eslint-2.1.1/server/out/eslintServer.js"
-          "--stdio"))
   (setq lsp-enable-file-watchers nil)
   (set-company-backend! 'ruby-mode '(company-lsp company-files :with company-yasnippet)))
 
@@ -335,18 +289,6 @@
 (after! hydra
   (setq hydra-hint-display-type 'message))
 
-(after! prodigy
-  (setq prodigy-view-truncate-by-default t)
-  (setq prodigy-view-buffer-maximum-size 512)
-  (set-evil-initial-state! 'prodigy-mode 'normal)
-  (map! :mode prodigy-mode
-        (:prefix "g"
-          :nv "s" #'prodigy-start
-          :nv "S" #'prodigy-stop)))
-
-(after! gist
-  (set-evil-initial-state! 'gist-list-mode 'emacs))
-
 (after! git-gutter
   (setq git-gutter:modified-sign "~"))
 
@@ -367,12 +309,6 @@
   :config
   (setq company-idle-delay 0)
   (add-to-list 'company-backends '(company-files :with company-yasnippet)))
-
-(after! robe
-  (set-company-backend! 'ruby-mode '(company-robe company-files :with company-yasnippet)))
-
-(use-package! monkeyc-mode
-  :mode "\\.mc\\'")
 
 (after! plantuml-mode
   (setq plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar"))
