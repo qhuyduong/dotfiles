@@ -66,18 +66,36 @@ windows:
       panes:
         - docker: docker-compose up
 
-  - announcement:
-      root: ~/workspace/announcement-api-service
-      layout: main-vertical
-      panes:
-        - server: bundle exec rails server -p 3002
-        # - worker: bundle exec sidekiq
-        # - consumer: bundle exec karafka server
+          #- announcement:
+          #    root: ~/workspace/announcement-api-service
+          #    layout: main-vertical
+          #    panes:
+          #      - server: bundle exec rails server
+          #      # - worker: bundle exec sidekiq
+          #      # - consumer: bundle exec karafka server
 
   - nomination:
       root: ~/workspace/nominations-service
       layout: main-vertical
       panes:
-        - web: bundle exec puma -p 3003
         - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+        #- web: bundle exec puma
         # - worker: bundle exec sidekiq -r ./config/environment.rb
+        #
+        
+  - meeting-management:
+      root: ~/workspace/meeting-management
+      layout: main-vertical
+      panes:
+        - server: bundle exec rails server
+        # - worker: bundle exec sidekiq
+        # - consumer: bundle exec karafka server
+
+  - comment:
+      root: ~/workspace/comment
+      layout: main-vertical
+      panes:
+        - server: bundle exec rails server
+        # - worker: bundle exec sidekiq
+        # - consumer: bundle exec karafka server
+
