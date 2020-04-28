@@ -88,6 +88,7 @@ windows:
       layout: main-vertical
       panes:
         - server: bundle exec rails server
+        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
         # - worker: bundle exec sidekiq
         # - consumer: bundle exec karafka server
 
