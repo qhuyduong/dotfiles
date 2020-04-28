@@ -16,7 +16,6 @@ blueman
 bluez-utils
 calibre
 cask
-ckb-next
 clang
 cmake
 cpupower
