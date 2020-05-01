@@ -248,6 +248,7 @@
   (setq-hook! 'ruby-mode-hook
     flycheck-command-wrapper-function (lambda (command)
                                         (append '("bundle" "exec") command)))
+  (set-company-backend! 'ruby-mode '(company-capf company-files :with company-yasnippet))
   (map! :mode ruby-mode
         (:leader
           (:prefix "p"
@@ -260,9 +261,11 @@
           (:prefix ("t" . "rspec")))))
 
 (after! lsp-mode
-  (setq lsp-eldoc-render-all nil)
-  (setq lsp-enable-file-watchers nil)
-  (set-company-backend! 'ruby-mode '(company-lsp company-files :with company-yasnippet)))
+  (setq lsp-eldoc-render-all nil
+        lsp-enable-file-watchers nil
+        lsp-prefer-capf t
+        +lsp-company-backend 'company-capf
+        lsp-solargraph-use-bundler t))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil))
@@ -308,8 +311,7 @@
 
 (use-package! company
   :config
-  (setq company-idle-delay 0)
-  (add-to-list 'company-backends '(company-files :with company-yasnippet)))
+  (setq company-idle-delay 0))
 
 (after! plantuml-mode
   (setq plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar"))
