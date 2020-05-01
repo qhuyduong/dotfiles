@@ -7,7 +7,8 @@
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n")
       doom-font (font-spec :family "Fira Code" :size 18)
       default-input-method "vietnamese-telex"
-      vc-handled-backends '(Git))
+      vc-handled-backends '(Git)
+      read-process-output-max (* 1024 1024))
 
 (setq frame-title-format
       '(""
