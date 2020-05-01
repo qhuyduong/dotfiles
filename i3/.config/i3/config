@@ -192,8 +192,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-        tray_output primary
-        tray_output HDMI1
+        tray_output HDMI-1
+        tray_output eDP-1
 }
 
 ## Manual management of external displays
