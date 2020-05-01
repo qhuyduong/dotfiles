@@ -264,8 +264,7 @@
   (setq lsp-eldoc-render-all nil
         lsp-enable-file-watchers nil
         lsp-prefer-capf t
-        +lsp-company-backend 'company-capf
-        lsp-solargraph-use-bundler t))
+        +lsp-company-backend 'company-capf))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil))
