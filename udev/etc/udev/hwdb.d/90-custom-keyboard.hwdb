@@ -7,3 +7,8 @@ evdev:input:b0003v1B1Cp1B40e0111* # Corsair Corsair Gaming K63 Keyboard
  KEYBOARD_KEY_70039=leftctrl # bind capslock to leftctrl
  KEYBOARD_KEY_700e2=leftmeta # bind leftalt to leftmeta
  KEYBOARD_KEY_700e3=leftalt  # bind leftmeta to leftalt
+
+evdev:input:b0003v0C45p6613e0111* # Ducky AKKO 3108 V2
+ KEYBOARD_KEY_70039=leftctrl # bind capslock to leftctrl
+ KEYBOARD_KEY_700e2=leftmeta # bind leftalt to leftmeta
+ KEYBOARD_KEY_700e3=leftalt  # bind leftmeta to leftalt
