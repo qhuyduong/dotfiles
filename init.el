@@ -59,9 +59,10 @@
        docker
        (eval             ; run code, run (also, repls)
          +overlay)
-       lookup           ; helps you navigate your code and documentation
+       lookup            ; helps you navigate your code and documentation
        lsp
-       magit             ; a git porcelain for Emacs
+       (magit            ; a git porcelain for Emacs
+        +forge)
        pdf               ; pdf enhancements
 
        :lang
