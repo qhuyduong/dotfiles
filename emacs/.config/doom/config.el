@@ -201,6 +201,9 @@
 (after! json-mode
   (setq-default js-indent-level 2))
 
+(after! tide
+  (setq tide-native-json-parsing t))
+
 ;; projectile
 (after! projectile
   (setq projectile-create-missing-test-files t)
