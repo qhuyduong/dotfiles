@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: expect
+# key: expect
+# --
+expect($1).${2:$$(yas-choose-value '("toBe" "toBeDefined" "toBeFalsy" "toBeGreaterThan" "toBeGreaterThanOrEqual" "toBeLessThan" "toBeLessThanOrEqual" "toBeNull" "toBeTruthy" "toBeUndefined" "toContain" "toEqual" "toHaveBeenCalledBefore" "toHaveBeenCalledTimes" "toHaveBeenCalledWith" "toMatch" "toThrow" "toThrowError"))}($0)

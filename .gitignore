@@ -1,1 +1,3 @@
 cache
+*.log
+tmp/

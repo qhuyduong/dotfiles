@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: connect
+# key: conn
+# --
+connect(
+  state => ({ $1 }),
+  dispatch => ({ $0 })
+)

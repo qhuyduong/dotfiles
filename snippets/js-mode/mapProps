@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: mapProps
+# key: mps
+# --
+mapProps(({ $1 }) => ({ $0 }))
