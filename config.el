@@ -186,15 +186,13 @@
   :after apib-mode
   :config (add-hook! apib-mode #'flycheck-apib-setup))
 
-;; rjsx-mode
-(use-package! rjsx-mode
-  :mode "\\.js*\\'"
-  :config
+;; js2-mode
+(after! js2-mode
   (setq-default js-indent-level 2)
-  (add-hook! rjsx-mode #'prettier-js-mode)
-  (add-hook! rjsx-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
-  (set-company-backend! 'rjsx-mode '(company-tide company-files :with company-yasnippet))
-  (map! :mode rjsx-mode
+  (add-hook! js2-mode #'prettier-js-mode)
+  (add-hook! js2-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
+  (set-company-backend! 'js2-mode '(company-tide company-files :with company-yasnippet))
+  (map! :mode js2-mode
         (:leader
           (:prefix "p"
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
