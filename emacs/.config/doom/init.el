@@ -72,6 +72,7 @@
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
+        +pomodoro
         +present)        ; using org-mode for presentations
        plantuml          ; diagrams for confusing people more
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
