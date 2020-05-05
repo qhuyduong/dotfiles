@@ -15,7 +15,8 @@
 ;;      directory (for easy access to its source code).
 
 (doom! :completion
-       company           ; the ultimate code completion backend
+       (company           ; the ultimate code completion backend
+        +childframe)
        (ivy              ; a search engine for love and life
         +icons)
 
