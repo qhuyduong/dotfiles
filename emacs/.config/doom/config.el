@@ -305,12 +305,10 @@
 (after! projectile-rails
   (set-lookup-handlers! 'projectile-rails-mode :file #'projectile-rails-goto-file-at-point))
 
-(use-package! evil-string-inflection
-  :config
+(after! evil-string-inflection
   (map! :nv "g~" #'evil-operator-string-inflection))
 
-(use-package! company
-  :config
+(after! company
   (setq company-idle-delay 0))
 
 (after! plantuml-mode
