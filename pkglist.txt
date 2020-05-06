@@ -59,7 +59,7 @@ i3-gaps
 i3blocks
 i3status
 ibus
-ibus-unikey
+ibus-bamboo
 intel-ucode
 jq
 languagetool
