@@ -74,14 +74,14 @@ windows:
           #      # - worker: bundle exec sidekiq
           #      # - consumer: bundle exec karafka server
 
-  - nomination:
-      root: ~/workspace/nominations-service
-      layout: main-vertical
-      panes:
-        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
-        #- web: bundle exec puma
-        # - worker: bundle exec sidekiq -r ./config/environment.rb
-        #
+          #- nomination:
+          #    root: ~/workspace/nominations-service
+          #    layout: main-vertical
+          #    panes:
+          #      - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+          #      #- web: bundle exec puma
+          #      # - worker: bundle exec sidekiq -r ./config/environment.rb
+          #      #
         
   - meeting-management:
       root: ~/workspace/meeting-management
