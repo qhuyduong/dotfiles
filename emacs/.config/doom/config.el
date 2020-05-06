@@ -265,7 +265,10 @@
   (setq lsp-eldoc-render-all nil
         lsp-enable-file-watchers nil
         lsp-prefer-capf t
-        +lsp-company-backend 'company-capf))
+        lsp-eslint-server-command
+        '("node"
+          "/home/qhuyduong/.vscode/extensions/dbaeumer.vscode-eslint-2.1.1/server/out/eslintServer.js"
+          "--stdio")))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-enable nil))
