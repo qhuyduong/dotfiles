@@ -251,7 +251,7 @@
           (:prefix ("t" . "rspec")))))
 
 (after! lsp-mode
-  (setq lsp-eldoc-render-all nil
+  (setq lsp-eldoc-render-all t
         lsp-enable-file-watchers nil
         lsp-prefer-capf t
         lsp-diagnostic-package :none))
