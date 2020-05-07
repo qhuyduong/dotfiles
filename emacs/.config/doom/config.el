@@ -254,10 +254,7 @@
   (setq lsp-eldoc-render-all nil
         lsp-enable-file-watchers nil
         lsp-prefer-capf t
-        lsp-eslint-server-command
-        '("node"
-          "/home/qhuyduong/.vscode/extensions/dbaeumer.vscode-eslint-2.1.1/server/out/eslintServer.js"
-          "--stdio")))
+        lsp-diagnostic-package :none))
 
 (after! web-mode
   (setq-hook! 'web-mode-hook
