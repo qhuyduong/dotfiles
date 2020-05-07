@@ -230,15 +230,6 @@
   (add-hook! rspec-compilation-mode #'inf-ruby-switch-from-compilation)
   (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.5 :side 'right :quit 'current))
 
-(after! treemacs
-  (map! :mode treemacs-mode
-        "C-h"  #'evil-window-left
-        "C-j"  #'evil-window-down
-        "C-k"  #'evil-window-up
-        "C-l"  #'evil-window-right)
-  (setq treemacs-show-cursor t)
-  (treemacs-follow-mode t))
-
 (after! ivy
   (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
 
