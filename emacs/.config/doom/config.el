@@ -251,10 +251,12 @@
           (:prefix ("t" . "rspec")))))
 
 (after! lsp-mode
-  (setq lsp-eldoc-render-all t
-        lsp-enable-file-watchers nil
+  (setq lsp-enable-file-watchers nil
         lsp-prefer-capf t
         lsp-diagnostic-package :none))
+
+(after! lsp-ui
+  (setq lsp-ui-sideline-show-hover t))
 
 (after! web-mode
   (setq-hook! 'web-mode-hook
