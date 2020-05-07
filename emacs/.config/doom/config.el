@@ -191,7 +191,6 @@
   (setq-default js-indent-level 2)
   (add-hook! js2-mode #'prettier-js-mode)
   (add-hook! js2-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
-  (set-company-backend! 'js2-mode '(company-capf company-files :with company-yasnippet))
   (map! :mode js2-mode
         (:leader
           (:prefix "p"
@@ -240,7 +239,6 @@
   (setq-hook! 'ruby-mode-hook
     flycheck-command-wrapper-function (lambda (command)
                                         (append '("bundle" "exec") command)))
-  (set-company-backend! 'ruby-mode '(company-capf company-files :with company-yasnippet))
   (map! :mode ruby-mode
         (:leader
           (:prefix "p"
