@@ -261,9 +261,6 @@
           "/home/qhuyduong/.vscode/extensions/dbaeumer.vscode-eslint-2.1.1/server/out/eslintServer.js"
           "--stdio")))
 
-(after! lsp-ui
-  (setq lsp-ui-sideline-enable nil))
-
 (after! web-mode
   (setq-hook! 'web-mode-hook
     web-mode-code-indent-offset 2
