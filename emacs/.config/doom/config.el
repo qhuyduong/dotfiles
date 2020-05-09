@@ -304,6 +304,9 @@
 (after! plantuml-mode
   (setq plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar"))
 
+(after! emmet-mode
+  (setq emmet-expand-jsx-className? t))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
 (defun projectile-frontend-core-related-files (path)
@@ -418,3 +421,10 @@ translation it is possible to get suggestion."
       nil)))
 
 (advice-add 'google-translate-json-suggestion :override #'+google-translate-json-suggestion)
+
+(defun +rjsx-electric-gt (_)
+  (when (and (looking-back "<>")
+             (looking-at-p "/>"))
+    (save-excursion (insert "<"))))
+
+(advice-add #'rjsx-electric-gt :after #'+rjsx-electric-gt)
