@@ -46,7 +46,19 @@
   (setq google-translate-backend-method 'curl)
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "vi")
-  (setq google-translate-show-phonetic t))
+  (setq google-translate-show-phonetic t)
+
+  (defun +google-translate-json-suggestion (json)
+    "Retrieve from JSON (which returns by the
+`google-translate-request' function) suggestion. This function
+does matter when translating misspelled word. So instead of
+translation it is possible to get suggestion."
+    (let ((info (aref json 7)))
+      (if (and info (> (length info) 0))
+          (aref info 1)
+        nil)))
+
+  (advice-add 'google-translate-json-suggestion :override #'+google-translate-json-suggestion))
 
 ;; Keybindings
 (map! :nv "C-S-k" #'move-line-up
@@ -190,7 +202,6 @@
 (after! js2-mode
   (setq-default js-indent-level 2)
   (add-hook! js2-mode #'prettier-js-mode)
-  (add-hook! js2-mode (add-hook '+lookup-file-functions #'find-relative-file-or-folder nil t))
   (map! :mode js2-mode
         (:leader
           (:prefix "p"
@@ -205,6 +216,15 @@
 
 ;; projectile
 (after! projectile
+  (defun projectile-frontend-core-related-files (path)
+    (when (string-match "\\(.*\\)\/\\(.*\\)$" path)
+      (let* ((dir (match-string 1 path))
+             (file-name (match-string 2 path))
+             (base-file-name (car (split-string file-name "\\."))))
+        (if (projectile-test-file-p file-name)
+            (list :impl (concat dir "/../" base-file-name ".js"))
+          (list :test (concat dir "/__tests__/" base-file-name ".spec.js"))))))
+
   (setq projectile-create-missing-test-files t)
   ;; Configure npm project with projectile
   (projectile-register-project-type 'npm '("package.json")
@@ -293,6 +313,19 @@
   (set-popup-rule! "\\*Buttercup\\*" :width 0.5 :side 'right :quit 'current))
 
 (after! projectile-rails
+  (defun +projectile-rails-goto-template-at-point ()
+    "Visit a template or a partial under the point."
+    (interactive)
+    (require 'find-lisp)
+    (let* ((template (projectile-rails-filename-at-point))
+           (dir (projectile-rails-template-dir template))
+           (name (projectile-rails-template-name template))
+           (regex (concat "^[_]?" name)))
+      (when (find-lisp-find-files dir regex)
+        (find-file (car (find-lisp-find-files dir regex))))))
+
+  (advice-add 'projectile-rails-goto-template-at-point :override #'+projectile-rails-goto-template-at-point)
+
   (set-lookup-handlers! 'projectile-rails-mode :file #'projectile-rails-goto-file-at-point))
 
 (after! evil-string-inflection
@@ -307,16 +340,16 @@
 (after! emmet-mode
   (setq emmet-expand-jsx-className? t))
 
-;;;;;;;;;; Functions ;;;;;;;;;;
+(after! rjsx-mode
+  (defun +rjsx-electric-gt (_)
+    (when (and (looking-back "<>")
+               (looking-at-p "/>"))
+      (save-excursion (insert "<"))))
 
-(defun projectile-frontend-core-related-files (path)
-  (when (string-match "\\(.*\\)\/\\(.*\\)$" path)
-    (let* ((dir (match-string 1 path))
-           (file-name (match-string 2 path))
-           (base-file-name (car (split-string file-name "\\."))))
-      (if (projectile-test-file-p file-name)
-          (list :impl (concat dir "/../" base-file-name ".js"))
-        (list :test (concat dir "/__tests__/" base-file-name ".spec.js"))))))
+  (advice-add #'rjsx-electric-gt :after #'+rjsx-electric-gt))
+
+
+;;;;;;;;;; Functions ;;;;;;;;;;
 
 (dolist (i (number-sequence 0 9))
   (eval `(defun ,(intern (format "+workspace-switch-to-%s" i)) nil
@@ -366,29 +399,6 @@
   (transpose-lines 1)
   (forward-line -1))
 
-(defun find-relative-file-or-folder (identifier)
-  (let ((path (format "%s/%s" default-directory identifier)))
-    (cond ((file-directory-p path)
-           (find-file (format "%s/index.js" path)))
-          ((file-exists-p path)
-           (find-file path))
-          (t
-           (current-buffer)))))
-
-;;;###autoload
-(defun +projectile-rails-goto-template-at-point ()
-  "Visit a template or a partial under the point."
-  (interactive)
-  (require 'find-lisp)
-  (let* ((template (projectile-rails-filename-at-point))
-         (dir (projectile-rails-template-dir template))
-         (name (projectile-rails-template-name template))
-         (regex (concat "^[_]?" name)))
-    (when (find-lisp-find-files dir regex)
-      (find-file (car (find-lisp-find-files dir regex))))))
-
-(advice-add 'projectile-rails-goto-template-at-point :override #'+projectile-rails-goto-template-at-point)
-
 (defun insert-random-uuid ()
   "Insert a random UUID.
 Example of a UUID: 1df63142-a513-c850-31a3-535fc3520c3d
@@ -409,22 +419,3 @@ WARNING: this is a simple implementation. The chance of generating the same UUID
 (defun org-agenda-gtd ()
   (interactive)
   (org-agenda nil "g"))
-
-(defun +google-translate-json-suggestion (json)
-  "Retrieve from JSON (which returns by the
-`google-translate-request' function) suggestion. This function
-does matter when translating misspelled word. So instead of
-translation it is possible to get suggestion."
-  (let ((info (aref json 7)))
-    (if (and info (> (length info) 0))
-        (aref info 1)
-      nil)))
-
-(advice-add 'google-translate-json-suggestion :override #'+google-translate-json-suggestion)
-
-(defun +rjsx-electric-gt (_)
-  (when (and (looking-back "<>")
-             (looking-at-p "/>"))
-    (save-excursion (insert "<"))))
-
-(advice-add #'rjsx-electric-gt :after #'+rjsx-electric-gt)
