@@ -271,6 +271,11 @@ translation it is possible to get suggestion."
           (:prefix ("t" . "rspec")))))
 
 (after! lsp-mode
+  (add-hook 'lsp-mode-hook
+            (lambda ()
+              (setq-local company-backends
+                          (cons 'company-files company-backends)))
+            t)
   (setq lsp-eldoc-enable-hover nil
         lsp-enable-file-watchers nil
         lsp-prefer-capf t
