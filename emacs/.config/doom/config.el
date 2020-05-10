@@ -353,6 +353,13 @@ translation it is possible to get suggestion."
 
   (advice-add #'rjsx-electric-gt :after #'+rjsx-electric-gt))
 
+(after! company-files
+  (defun +company-files--post-completion (arg)
+    (let* ((file-name-regex (rx (and "." (or "js" "jsx" "rb") line-end)))
+           (matched-position (string-match file-name-regex arg)))
+      (when matched-position (delete-char (- (- (length arg) matched-position))))))
+
+  (advice-add #'company-files--post-completion :after #'+company-files--post-completion))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
