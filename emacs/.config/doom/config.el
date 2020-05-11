@@ -117,7 +117,6 @@ translation it is possible to get suggestion."
 
 ;; Magit
 (after! magit
-  (set-popup-rule! "^magit:\s" :width 0.5 :side 'right :select t :modeline t :quit 'current)
   (setq magit-repository-directories '(("~/workspace" . 1))
         +magit-default-clone-url "git@github.com:%s/%s"))
 
@@ -246,14 +245,10 @@ translation it is possible to get suggestion."
                      (fringe-lib-load fringe-lib-backslash))))
 
 (after! rspec-mode
-  (add-hook! rspec-compilation-mode #'inf-ruby-switch-from-compilation)
-  (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.5 :side 'right :quit 'current))
+  (add-hook! rspec-compilation-mode #'inf-ruby-switch-from-compilation))
 
 (after! ivy
   (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
-
-(after! rubocop
-  (set-popup-rule! "\\*RuboCop" :ttl 0 :quit 'other))
 
 (after! ruby-mode
   (setq-hook! 'ruby-mode-hook
@@ -313,9 +308,6 @@ translation it is possible to get suggestion."
 
 (after! doom-themes
   (remove-hook! 'doom-load-theme-hook #'doom-themes-treemacs-config))
-
-(after! buttercup
-  (set-popup-rule! "\\*Buttercup\\*" :width 0.5 :side 'right :quit 'current))
 
 (after! projectile-rails
   (defun +projectile-rails-goto-template-at-point ()
