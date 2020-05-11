@@ -28,4 +28,4 @@
 (package! evil-escape :disable t)
 (package! robe :disable t)
 
-(unpin! tide)
+(unpin! company)
