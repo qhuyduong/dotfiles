@@ -99,7 +99,9 @@ translation it is possible to get suggestion."
       :nvim "C-h"  #'evil-window-left
       :nvim "C-j"  #'evil-window-down
       :nvim "C-k"  #'evil-window-up
-      :nvim "C-l"  #'evil-window-right)
+      :nvim "C-l"  #'evil-window-right
+      :nvim "<C-tab>" #'centaur-tabs-forward
+      :nvim "<C-S-iso-lefttab>" #'centaur-tabs-backward)
 
 ;; Modules
 ;; Evil
