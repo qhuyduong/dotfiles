@@ -15,7 +15,7 @@
 ;;      directory (for easy access to its source code).
 
 (doom! :completion
-       (company           ; the ultimate code completion backend
+       (company          ; the ultimate code completion backend
         +childframe)
        (ivy              ; a search engine for love and life
         +icons)
@@ -51,6 +51,9 @@
        ibuffer           ; interactive buffer management
        vc                ; version-control and Emacs, sitting in a tree
 
+       :term
+       vterm             ; the best terminal emulation in Emacs
+
        :checkers
        (syntax           ; tasing you for every semicolon you forget
         +childframe)
@@ -77,7 +80,7 @@
         +brain
         +pomodoro
         +present
-        +roam)        ; using org-mode for presentations
+        +roam)           ; using org-mode for presentations
        plantuml          ; diagrams for confusing people more
        rest
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
