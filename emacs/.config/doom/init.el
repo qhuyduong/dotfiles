@@ -78,6 +78,7 @@
         +pomodoro
         +present)        ; using org-mode for presentations
        plantuml          ; diagrams for confusing people more
+       rest
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +lsp
         +rails
