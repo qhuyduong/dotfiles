@@ -79,8 +79,7 @@
        (org              ; organize your plain life in plain text
         +brain
         +pomodoro
-        +present
-        +roam)           ; using org-mode for presentations
+        +present)        ; using org-mode for presentations
        plantuml          ; diagrams for confusing people more
        rest
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
