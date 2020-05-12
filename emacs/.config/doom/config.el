@@ -8,7 +8,8 @@
       doom-font (font-spec :family "Fira Code" :size 18)
       default-input-method "vietnamese-telex"
       vc-handled-backends '(Git)
-      read-process-output-max (* 1024 1024))
+      read-process-output-max (* 1024 1024)
+      fancy-splash-image "~/.config/doom/black-hole.png")
 
 (setq frame-title-format
       '(""
