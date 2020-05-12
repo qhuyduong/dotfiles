@@ -74,6 +74,5 @@ zplug load
 # Command not found hook
 source /usr/share/doc/pkgfile/command-not-found.zsh
 eval "$(direnv hook zsh)"
-if [ "$TMUX" = "" ]; then tmux; fi
 # Stop profiling
 # zprof
