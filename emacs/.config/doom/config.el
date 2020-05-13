@@ -333,7 +333,8 @@ translation it is possible to get suggestion."
   (map! :nv "g~" #'evil-operator-string-inflection))
 
 (after! company
-  (setq company-idle-delay 0))
+  (setq company-idle-delay 0)
+  (add-to-list 'company-backends 'company-dabbrev-code))
 
 (after! plantuml-mode
   (setq plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar"))
