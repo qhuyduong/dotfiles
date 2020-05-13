@@ -102,7 +102,9 @@ translation it is possible to get suggestion."
       :nvim "C-k"  #'evil-window-up
       :nvim "C-l"  #'evil-window-right
       :nvim "<C-tab>" #'centaur-tabs-forward
-      :nvim "<C-S-iso-lefttab>" #'centaur-tabs-backward)
+      :nvim "<C-S-iso-lefttab>" #'centaur-tabs-backward
+      :nvim "C-," #'centaur-tabs-move-current-tab-to-left
+      :nvim "C-." #'centaur-tabs-move-current-tab-to-right)
 
 ;; Modules
 ;; Evil
