@@ -71,6 +71,8 @@
        pdf               ; pdf enhancements
 
        :lang
+       (cc               ; C/C++/Obj-C madness
+        +lsp)
        data              ; config/data formats
        emacs-lisp        ; drown in parentheses
        (javascript       ; all(hope(abandon(ye(who(enter(here))))))
