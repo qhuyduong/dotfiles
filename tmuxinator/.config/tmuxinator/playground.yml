@@ -64,7 +64,7 @@ windows:
       root: ~/workspace/auth
       layout: main-vertical
       panes:
-        - docker: docker-compose up
+        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
 
           #- announcement:
           #    root: ~/workspace/announcement-api-service
