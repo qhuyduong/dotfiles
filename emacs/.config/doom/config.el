@@ -251,7 +251,7 @@ translation it is possible to get suggestion."
 
 (after! rspec-mode
   (add-hook! rspec-compilation-mode #'inf-ruby-switch-from-compilation)
-  (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.5 :side 'right :quit 'current))
+  (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.25 :side 'right :quit 'current))
 
 (after! ivy
   (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
