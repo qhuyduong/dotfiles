@@ -61,14 +61,12 @@
        grammar           ; tasing grammar mistake every you make
 
        :tools
-       docker
        (eval             ; run code, run (also, repls)
          +overlay)
        lookup            ; helps you navigate your code and documentation
        lsp
        (magit            ; a git porcelain for Emacs
         +forge)
-       pdf               ; pdf enhancements
 
        :lang
        (cc               ; C/C++/Obj-C madness
@@ -82,7 +80,6 @@
         +brain
         +pomodoro
         +present)        ; using org-mode for presentations
-       plantuml          ; diagrams for confusing people more
        rest
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +lsp
