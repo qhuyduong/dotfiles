@@ -126,23 +126,20 @@ translation it is possible to get suggestion."
 
 ;; lang/org
 (after! org
-  (setq org-directory "~/gtd")
+  (setq org-directory (file-name-as-directory "~/gtd"))
   (set-face-attribute 'org-headline-done nil :strike-through t)
   (advice-add 'org-babel-execute-src-block :around 'ob-async-org-babel-execute-src-block)
   (setq org-startup-indented nil)
-  (setq org-agenda-files '("~/gtd/inbox.org"
-                           "~/gtd/gtd.org"
-                           "~/gtd/tickler.org"))
-  (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                                 (file "~/gtd/inbox.org")
-                                 "* TODO %i%?")
-                                ("T" "Tickler" entry
-                                 (file "~/gtd/tickler.org")
-                                 "* TODO %i%?\nSCHEDULED: %T")))
-  (setq org-refile-targets '(("~/gtd/gtd.org" :maxlevel . 3)
-                             ("~/gtd/someday.org" :level . 1)
-                             ("~/gtd/tickler.org" :maxlevel . 2)
-                             ("~/gtd/references.org" :maxlevel . 1)))
+  (setq org-gtd-gtd-file (concat org-directory "gtd.org"))
+  (setq org-gtd-tickler-file (concat org-directory "tickler.org"))
+  (setq org-gtd-inbox-file (concat org-directory "inbox.org"))
+  (setq org-agenda-files (list org-gtd-gtd-file org-gtd-inbox-file org-gtd-tickler-file))
+  (setq org-capture-templates `(("t" "Todo [inbox]" entry
+                                 (file ,org-gtd-inbox-file)
+                                 "* TODO %i%?")))
+  (setq org-refile-targets `((:maxlevel . 3)
+                             (,org-gtd-gtd-file :level . 1)
+                             (,org-gtd-tickler-file :maxlevel . 2)))
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "NEXT(n)" "|" "DONE(d)" "CANCELED(c)")))
   (setq org-todo-keyword-faces '(("TODO" . (:foreground "grey"))
                                  ("WAITING" . (:foreground "yellow"))
@@ -162,7 +159,7 @@ translation it is possible to get suggestion."
         "k" #'evil-previous-line)
   (org-super-agenda-mode t)
   (setq org-agenda-custom-commands
-        '(("g" "Getting things done"
+        `(("g" "Getting things done"
            ((agenda "" ((org-agenda-span 'day)
                         (org-super-agenda-groups
                          '((:name "Today"
@@ -185,12 +182,12 @@ translation it is possible to get suggestion."
                             (:name "Due Today"
                                    :deadline today
                                    :order 2)))
-                         (org-agenda-files '("~/gtd/gtd.org"))))
+                         (org-agenda-files `(,org-gtd-gtd-file))))
             (alltodo "" ((org-agenda-overriding-header "")
                          (org-super-agenda-groups
                           '((:name "Inbox"
                                    :anything)))
-                         (org-agenda-files '("~/gtd/inbox.org")))))))))
+                         (org-agenda-files `(,org-gtd-inbox-file)))))))))
 
 ;; apib-mode
 (use-package! apib-mode
@@ -362,8 +359,7 @@ translation it is possible to get suggestion."
 (after! org-gcal
   (setq org-gcal-client-id (getenv "GCAL_CLIENT_ID")
         org-gcal-client-secret (getenv "GCAL_CLIENT_SECRET")
-        org-gcal-file-alist '(("p86jn0g5a8bponbqsc3ejumv4g@group.calendar.google.com" . "~/gtd/gtd.org")
-                              ("2n5iodugs0c9p9hav3gtdrk764@group.calendar.google.com" . "~/gtd/tickler.org"))))
+        org-gcal-file-alist `(("2n5iodugs0c9p9hav3gtdrk764@group.calendar.google.com" . ,org-gtd-tickler-file))))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
