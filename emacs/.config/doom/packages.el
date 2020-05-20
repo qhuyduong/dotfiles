@@ -25,6 +25,8 @@
 (package! yaml-tomato)
 
 ;;; Disabled packages
+(package! calfw :disable t)
+(package! calfw-org :disable t)
 (package! company-lsp :disable t)
 (package! evil-escape :disable t)
 (package! robe :disable t)
