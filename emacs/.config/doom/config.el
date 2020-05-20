@@ -9,7 +9,8 @@
       default-input-method "vietnamese-telex"
       vc-handled-backends '(Git)
       read-process-output-max (* 1024 1024)
-      fancy-splash-image "~/.config/doom/black-hole.png")
+      fancy-splash-image "~/.config/doom/black-hole.png"
+      alert-default-style 'libnotify)
 
 (setq frame-title-format
       '(""
