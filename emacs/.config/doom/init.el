@@ -88,6 +88,9 @@
         +rbenv)          ; rbenv as version manager
        web               ; the tubes
 
+       :app
+       calendar
+
        :config
        ;;literate
        (default +bindings +smartparens))

@@ -359,6 +359,12 @@ translation it is possible to get suggestion."
 
   (advice-add #'company-files--post-completion :after #'+company-files--post-completion))
 
+(after! org-gcal
+  (setq org-gcal-client-id (getenv "GCAL_CLIENT_ID")
+        org-gcal-client-secret (getenv "GCAL_CLIENT_SECRET")
+        org-gcal-file-alist '(("p86jn0g5a8bponbqsc3ejumv4g@group.calendar.google.com" . "~/gtd/gtd.org")
+                              ("2n5iodugs0c9p9hav3gtdrk764@group.calendar.google.com" . "~/gtd/tickler.org"))))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
 (dolist (i (number-sequence 0 9))
