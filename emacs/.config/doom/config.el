@@ -166,6 +166,7 @@ translation it is possible to get suggestion."
   (map! :map org-super-agenda-header-map
         "j" #'evil-next-line
         "k" #'evil-previous-line)
+  (set-popup-rule! "*Calendar*" :width 1 :side 'bottom)
   (org-super-agenda-mode t)
   (setq org-agenda-custom-commands
         `(("g" "Getting things done"
