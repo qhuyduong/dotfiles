@@ -126,7 +126,7 @@ translation it is possible to get suggestion."
 
 ;; lang/org
 (after! org
-  (setq org-directory (file-name-as-directory "~/gtd"))
+  (setq org-directory (file-name-as-directory "~/org"))
   (set-face-attribute 'org-headline-done nil :strike-through t)
   (advice-add 'org-babel-execute-src-block :around 'ob-async-org-babel-execute-src-block)
   (setq org-startup-indented nil)
