@@ -190,6 +190,11 @@ translation it is possible to get suggestion."
                                    :anything)))
                          (org-agenda-files `(,org-gtd-inbox-file)))))))))
 
+(after! org-gcal
+  (setq org-gcal-client-id (getenv "GCAL_CLIENT_ID")
+        org-gcal-client-secret (getenv "GCAL_CLIENT_SECRET")
+        org-gcal-file-alist `((,(getenv "GCAL_TICKLER_CALENDAR_ID") . ,org-gtd-tickler-file))))
+
 ;; apib-mode
 (use-package! apib-mode
   :mode "\\.apib\\'")
@@ -356,11 +361,6 @@ translation it is possible to get suggestion."
       (when matched-position (delete-char (- (- (length arg) matched-position))))))
 
   (advice-add #'company-files--post-completion :after #'+company-files--post-completion))
-
-(after! org-gcal
-  (setq org-gcal-client-id (getenv "GCAL_CLIENT_ID")
-        org-gcal-client-secret (getenv "GCAL_CLIENT_SECRET")
-        org-gcal-file-alist `(("2n5iodugs0c9p9hav3gtdrk764@group.calendar.google.com" . ,org-gtd-tickler-file))))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
