@@ -216,7 +216,15 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
                (capture-target-is-cal-file (member capture-target cal-files)))
       (org-gcal-post-at-point)))
 
-  (add-hook 'org-capture-after-finalize-hook '+org-gcal-post-cal-after-capture))
+  (add-hook 'org-capture-after-finalize-hook '+org-gcal-post-cal-after-capture)
+
+  (map! :mode org-mode
+        (:localleader
+         (:prefix ("j" . "org-gcal")
+          :n "d" #'org-gcal-delete-at-point
+          :n "f" #'org-gcal-fetch
+          :n "p" #'org-gcal-post-at-point
+          :n "s" #'org-gcal-sync))))
 
 ;; apib-mode
 (use-package! apib-mode
