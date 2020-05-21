@@ -216,8 +216,7 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
                (capture-target-is-cal-file (member capture-target cal-files)))
       (org-gcal-post-at-point)))
 
-  (add-hook 'org-capture-after-finalize-hook '+org-gcal-post-cal-after-capture)
-  (run-with-idle-timer 600 t 'org-gcal-fetch))
+  (add-hook 'org-capture-after-finalize-hook '+org-gcal-post-cal-after-capture))
 
 ;; apib-mode
 (use-package! apib-mode
