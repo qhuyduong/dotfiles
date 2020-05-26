@@ -9,6 +9,7 @@ autoconf
 automake
 autorandr
 base
+bear
 bind-tools
 binutils
 bison
@@ -47,6 +48,7 @@ gcc
 gcc-arm-none-eabi-bin
 gimp
 git
+glslang
 google-chrome
 graphviz
 groff
@@ -99,6 +101,7 @@ parted
 pasystray
 patch
 pavucontrol
+peek
 pkgconf
 pkgfile
 plantuml
