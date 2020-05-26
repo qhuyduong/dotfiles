@@ -393,6 +393,51 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
 
   (advice-add #'company-files--post-completion :after #'+company-files--post-completion))
 
+(after! smerge-mode
+  (defhydra ++vc/smerge-hydra (:hint nil
+                               :pre (if (not smerge-mode) (smerge-mode 1))
+                               ;; Disable `smerge-mode' when quitting hydra if
+                               ;; no merge conflicts remain.
+                               :post (smerge-auto-leave))
+    "
+                                                         [smerge]
+  Movement   Keep           Diff              Other
+  ╭─────────────────────────────────────────────────────────╯
+     ^_g_^       [_b_] base       [_<_] upper/base    [_C_] Combine
+     ^_N_^       [_u_] upper      [_=_] upper/lower   [_r_] resolve
+     ^_C-u_ ↑↑^  [_l_] lower      [_>_] base/lower    [_R_] remove
+     ^_k_ ↑^     [_a_] all        [_H_] hightlight
+     ^_j_ ↓^     [_RET_] current  [_E_] ediff
+     ^_C-d_ ↓↓^
+     ^_n_^                                                ╭──────────
+     ^_G_^                                                │ [_q_] quit
+"
+    ("g" (progn (goto-char (point-min)) (smerge-next)))
+    ("G" (progn (goto-char (point-max)) (smerge-prev)))
+    ("n" smerge-next)
+    ("N" smerge-prev)
+    ("j" next-line)
+    ("k" previous-line)
+    ("C-u" evil-scroll-up)
+    ("C-d" evil-scroll-down)
+    ("b" smerge-keep-base)
+    ("u" smerge-keep-upper)
+    ("l" smerge-keep-lower)
+    ("a" smerge-keep-all)
+    ("RET" smerge-keep-current)
+    ("\C-m" smerge-keep-current)
+    ("<" smerge-diff-base-upper)
+    ("=" smerge-diff-upper-lower)
+    (">" smerge-diff-base-lower)
+    ("H" smerge-refine)
+    ("E" smerge-ediff)
+    ("C" smerge-combine-with-next)
+    ("r" smerge-resolve)
+    ("R" smerge-kill-current)
+    ("q" nil :color blue))
+
+  (advice-add '+vc/smerge-hydra/body :override #'++vc/smerge-hydra/body))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
 (defun move-line-up ()
