@@ -404,10 +404,10 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
   Movement   Keep           Diff              Other
   ╭─────────────────────────────────────────────────────────╯
      ^_g_^       [_b_] base       [_<_] upper/base    [_C_] Combine
-     ^_N_^       [_u_] upper      [_=_] upper/lower   [_r_] resolve
-     ^_C-u_ ↑↑^  [_l_] lower      [_>_] base/lower    [_R_] remove
-     ^_k_ ↑^     [_a_] all        [_H_] hightlight
-     ^_j_ ↓^     [_RET_] current  [_E_] ediff
+     ^_N_^       [_m_] mine       [_=_] upper/lower   [_r_] resolve
+     ^_C-u_ ↑↑^  [_o_] other      [_>_] base/lower    [_R_] remove
+     ^_k_ ↑^     [_c_] current    [_H_] hightlight    [_u_] undo
+     ^_j_ ↓^     [_a_] all        [_E_] ediff         [_C-r_] redo
      ^_C-d_ ↓↓^
      ^_n_^                                                ╭──────────
      ^_G_^                                                │ [_q_] quit
@@ -421,11 +421,10 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
     ("C-u" evil-scroll-up)
     ("C-d" evil-scroll-down)
     ("b" smerge-keep-base)
-    ("u" smerge-keep-upper)
-    ("l" smerge-keep-lower)
+    ("m" smerge-keep-upper)
+    ("o" smerge-keep-lower)
+    ("c" smerge-keep-current)
     ("a" smerge-keep-all)
-    ("RET" smerge-keep-current)
-    ("\C-m" smerge-keep-current)
     ("<" smerge-diff-base-upper)
     ("=" smerge-diff-upper-lower)
     (">" smerge-diff-base-lower)
@@ -434,6 +433,8 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
     ("C" smerge-combine-with-next)
     ("r" smerge-resolve)
     ("R" smerge-kill-current)
+    ("u" undo-fu-only-undo)
+    ("C-r" undo-fu-only-redo)
     ("q" nil :color blue))
 
   (advice-add '+vc/smerge-hydra/body :override #'++vc/smerge-hydra/body))
