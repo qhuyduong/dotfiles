@@ -202,7 +202,8 @@ translation it is possible to get suggestion."
                          (org-agenda-files `(,org-gtd-inbox-file)))))))))
 
 (after! org-gcal
-  (setq org-gcal-client-id (getenv "GCAL_CLIENT_ID")
+  (setq org-gcal-cancelled-todo-keyword "CANCELED"
+        org-gcal-client-id (getenv "GCAL_CLIENT_ID")
         org-gcal-client-secret (getenv "GCAL_CLIENT_SECRET")
         org-gcal-file-alist `((,(getenv "GCAL_TICKLER_CALENDAR_ID") . ,org-gtd-tickler-file)))
 
