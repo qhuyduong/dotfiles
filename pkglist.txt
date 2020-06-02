@@ -2,6 +2,7 @@ acpid
 aic94xx-firmware
 alsa-utils
 android-file-transfer
+android-studio
 aspell
 aspell-en
 aspell-vi
@@ -116,6 +117,7 @@ python-pybluez
 python2-pip
 qemu
 rbenv
+react-native-debugger
 redis
 ripgrep
 rofi
