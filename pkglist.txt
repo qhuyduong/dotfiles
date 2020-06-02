@@ -123,7 +123,6 @@ ripgrep
 rofi
 rsync
 ruby-build
-scrcpy
 scrot
 slack-desktop
 spotify
