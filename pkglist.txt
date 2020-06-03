@@ -64,6 +64,7 @@ i3status
 ibus
 ibus-bamboo
 intel-ucode
+jdk8-openjdk
 jq
 languagetool
 libmagick6
