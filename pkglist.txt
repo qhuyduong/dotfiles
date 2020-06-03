@@ -142,6 +142,7 @@ unrar
 unzip
 vdpauinfo
 visual-studio-code-bin
+watchman
 wd719x-firmware
 wget
 wireless_tools
