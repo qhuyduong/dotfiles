@@ -182,9 +182,9 @@ for_window [title=".*Emulator.*"] floating enable
 for_window [title=".*Emulator.*"] sticky enable
 assign [class="Emacs"] workspace number 1
 assign [class="Google-chrome"] workspace number 2
-assign [class="Slack"] workspace number 3
-for_window [class="Spotify"] move to workspace number 4
-assign [class="discord"] workspace number 5
+assign [class="discord"] workspace number 7
+for_window [class="Spotify"] move to workspace number 8
+assign [class="Slack"] workspace number 9
 
 floating_minimum_size 75x50
 
