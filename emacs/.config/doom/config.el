@@ -139,13 +139,18 @@ translation it is possible to get suggestion."
   (setq org-agenda-files (list org-gtd-gtd-file org-gtd-inbox-file org-gtd-tickler-file))
   (setq org-capture-templates `(("t" "Todo [inbox]" entry
                                  (file ,org-gtd-inbox-file)
-                                 "* TODO %i%?")
+                                 "\
+* TODO %i%?
+  :PROPERTIES:
+  :CREATED: %U
+  :END:")
                                 ("T" "Tickler" entry
                                  (file ,org-gtd-tickler-file)
                                  "\
 * TODO %i%?
   SCHEDULED: %^t
   :PROPERTIES:
+  :CREATED: %U
   :calendar-id: %(getenv \"GCAL_TICKLER_CALENDAR_ID\")
   :END:")))
   (setq org-refile-targets `((,org-gtd-gtd-file :maxlevel . 3)
