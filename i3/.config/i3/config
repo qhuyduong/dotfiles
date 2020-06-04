@@ -116,6 +116,7 @@ set $ws7 
 set $ws8 
 set $ws9 
 
+for_window [class=".*"] border none
 for_window [class="Thunar"] floating enable
 for_window [class="Simulator"] floating enable
 for_window [title=".*Emulator.*"] floating enable
@@ -123,7 +124,6 @@ for_window [title=".*Emulator.*"] sticky enable
 assign [class="Slack"] workspace $ws0
 assign [class="Emacs"] workspace $ws1
 assign [class="Google-chrome"] workspace $ws2
-assign [class="Xfce4-terminal"] workspace $ws3
 for_window [class="Spotify"] move to workspace $ws8
 assign [class="discord"] workspace $ws9
 
