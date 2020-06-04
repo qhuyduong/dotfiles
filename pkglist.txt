@@ -128,6 +128,7 @@ rsync
 ruby-build
 scrot
 slack-desktop
+spicetify-cli
 spotify
 stow
 sudo
