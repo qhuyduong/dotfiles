@@ -151,7 +151,6 @@ wpa_supplicant
 x86_energy_perf_policy
 xcape
 xclip
-xfce4-notifyd
 xfce4-terminal
 xorg-bdftopcf
 xorg-mkfontscale
