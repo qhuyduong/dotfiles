@@ -278,3 +278,10 @@ bindsym $mod+Ctrl+q exec --no-startup-id $Locker
 # Set inner/outer gaps
 gaps inner 10
 gaps outer 0
+
+# Theme colors
+# class                 border  backgr. text
+client.focused          #232635 #232635 #676E95
+client.focused_inactive #242837 #242837 #676E95
+client.unfocused        #292D3E #292D3E #676E95
+client.background       #232635
