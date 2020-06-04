@@ -104,10 +104,12 @@ pasystray
 patch
 pavucontrol
 peek
+picom
 pkgconf
 pkgfile
 plantuml
 playerctl
+polybar-git
 poppler-glib
 postgresql
 postgresql-old-upgrade
