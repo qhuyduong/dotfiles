@@ -28,7 +28,6 @@ border-bottom-size = 10
 border-left-size = 10
 bottom = true
 cursor-click = pointer
-enable-ipc = true
 font-0 = "Roboto Mono:style=Regular:size=11:antialias=true;3"
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=11;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=11;3"
@@ -38,7 +37,7 @@ line-size = 3
 module-margin-left = 1
 module-margin-right = 2
 modules-left = i3
-modules-center = spotify previous playpause next
+modules-center = spotify spotify-previous spotify-playpause spotify-next
 modules-right = memory cpu temperature
 
 [module/battery]
@@ -137,28 +136,31 @@ format-underline =
 label = %percentage_used%%
 
 [module/spotify]
-type = custom/ipc
-hook-0 = echo ""
-hook-1 = "echo  $(python ~/.config/polybar/spotify_status.py)"
-
-[module/previous]
 type = custom/script
+interval = 1
+format-prefix = "  "
+exec = python ~/.config/polybar/spotify_status.py
+
+[module/spotify-previous]
+type = custom/script
+interval = 1
 exec-if = "pgrep spotify"
 exec = echo ""
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 
-[module/next]
+[module/spotify-playpause]
 type = custom/script
+interval = 1
+exec-if = "pgrep spotify"
+exec = python ~/.config/polybar/spotify_playback_status.py
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+[module/spotify-next]
+type = custom/script
+interval = 1
 exec-if = "pgrep spotify"
 exec = echo ""
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-
-[module/playpause]
-type = custom/ipc
-hook-0 = echo ""
-hook-1 = echo ""
-hook-2 = echo ""
-click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 
 [module/temperature]
 type = internal/temperature
