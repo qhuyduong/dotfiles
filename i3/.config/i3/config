@@ -105,17 +105,30 @@ bindsym $mod+p focus parent
 # focus the child container
 bindsym $mod+c focus child
 
-set $ws1 
-set $ws2 
-set $ws3 
-set $ws4 
-set $ws5 
-set $ws6 
-set $ws7 
-set $ws8 
+set $ws0 
+set $ws1 
+set $ws2 
+set $ws3 
+set $ws4 
+set $ws5 
+set $ws6 
+set $ws7 
+set $ws8 
 set $ws9 
 
+for_window [class="Thunar"] floating enable
+for_window [class="Simulator"] floating enable
+for_window [title=".*Emulator.*"] floating enable
+for_window [title=".*Emulator.*"] sticky enable
+assign [class="Slack"] workspace $ws0
+assign [class="Emacs"] workspace $ws1
+assign [class="Google-chrome"] workspace $ws2
+assign [class="Xfce4-terminal"] workspace $ws3
+for_window [class="Spotify"] move to workspace $ws8
+assign [class="discord"] workspace $ws9
+
 # switch to workspace
+bindsym $mod+0 workspace $ws0
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -127,6 +140,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
 # Move focused container to workspace
+bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
@@ -179,16 +193,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
-for_window [class="Thunar"] floating enable
-for_window [class="Simulator"] floating enable
-for_window [title=".*Emulator.*"] floating enable
-for_window [title=".*Emulator.*"] sticky enable
-assign [class="Emacs"] workspace number 1
-assign [class="Google-chrome"] workspace number 2
-assign [class="discord"] workspace number 7
-for_window [class="Spotify"] move to workspace number 8
-assign [class="Slack"] workspace number 9
 
 floating_minimum_size 75x50
 
