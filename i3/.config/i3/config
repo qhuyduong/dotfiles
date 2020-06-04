@@ -285,3 +285,7 @@ bindsym $mod+Shift+Ctrl+p --release exec "scrot -se 'mv $f /tmp && xclip -select
 
 # Lock screen
 bindsym $mod+Ctrl+q exec --no-startup-id $Locker
+
+# Set inner/outer gaps
+gaps inner 10
+gaps outer 0
