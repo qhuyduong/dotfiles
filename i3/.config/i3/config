@@ -187,14 +187,6 @@ floating_minimum_size 75x50
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-        tray_output HDMI-1
-        tray_output eDP-1
-}
-
 ## Manual management of external displays
 # Set the shortcuts and what they do
 set $mode_display Ext Screen (1) Home, (2) Work, (3) Dock, (0) Standalone
