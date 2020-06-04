@@ -12,14 +12,6 @@
       fancy-splash-image "~/.config/doom/black-hole.png"
       alert-default-style 'libnotify)
 
-(setq frame-title-format
-      '(""
-        "%b"
-        (:eval
-         (let ((project-name (projectile-project-name)))
-           (unless (string= "-" project-name)
-             (format (if (buffer-modified-p)  " ◉ %s" "  ●  %s") project-name))))))
-
 (custom-set-faces '(cursor ((t (:background "#98f5ff")))))
 
 ;; truncate-lines in all buffers
