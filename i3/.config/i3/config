@@ -173,9 +173,6 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-# default layout
-workspace_layout tabbed
-
 for_window [class="Thunar"] floating enable
 for_window [class="Simulator"] floating enable
 for_window [title=".*Emulator.*"] floating enable
