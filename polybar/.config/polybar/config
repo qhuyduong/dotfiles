@@ -1,5 +1,6 @@
 [colors]
-highlight = #B2535B
+primary = #7fe5f0
+secondary = #b2535b
 
 [bar/top]
 background = 0
@@ -99,9 +100,7 @@ label-mode-foreground = #000000
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-background =
-label-focused-foreground = ${colors.highlight}
-label-focused-underline = ${colors.highlight}
+label-focused-foreground = ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -110,13 +109,11 @@ label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+label-visible-padding = 2
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
-label-urgent-background = ${colors.highlight}
+label-urgent-foreground = ${colors.secondary}
 label-urgent-padding = 2
 
 [module/memory]
@@ -160,7 +157,7 @@ warn-temperature = 60
 
 label =  %temperature-c%
 label-warn =  %temperature-c%
-label-warn-foreground = ${colors.highlight}
+label-warn-foreground = ${colors.primary}
 
 [module/wlan]
 type = internal/network
