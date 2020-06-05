@@ -1,6 +1,5 @@
 [colors]
-secondary = #B2535B
-alert = #B2535B
+highlight = #B2535B
 
 [bar/top]
 background = 0
@@ -47,28 +46,21 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline =
+format-discharging = <ramp-capacity> <label-discharging>
+format-full =  <label-full>
 
-format-discharging-prefix = ""
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
-format-full-prefix = ""
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-framerate = 750
 
 [module/cpu]
 type = internal/cpu
@@ -109,8 +101,8 @@ label-mode-foreground = #000000
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
 label-focused-background =
-label-focused-foreground = ${colors.secondary}
-label-focused-underline = ${colors.secondary}
+label-focused-foreground = ${colors.highlight}
+label-focused-underline = ${colors.highlight}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -125,7 +117,7 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
-label-urgent-background = ${colors.alert}
+label-urgent-background = ${colors.highlight}
 label-urgent-padding = 2
 
 [module/memory]
