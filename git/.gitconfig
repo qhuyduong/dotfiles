@@ -15,3 +15,5 @@
 	user = qhuyduong
 [merge]
 	conflictStyle = diff3
+[pull]
+	ff = only
