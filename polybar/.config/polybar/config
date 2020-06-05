@@ -158,18 +158,9 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
-format-underline =
-format-warn = <ramp> <label-warn>
-format-warn-underline =
-
 label =  %temperature-c%
 label-warn =  %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+label-warn-foreground = ${colors.highlight}
 
 [module/wlan]
 type = internal/network
