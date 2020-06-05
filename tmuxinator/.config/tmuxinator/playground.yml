@@ -89,8 +89,8 @@ windows:
       panes:
         - server: bundle exec rails server
         - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
-        # - worker: bundle exec sidekiq
-        # - consumer: bundle exec karafka server
+        - worker: bundle exec sidekiq
+        - redis: redis-server
 
   - comment:
       root: ~/workspace/comment
