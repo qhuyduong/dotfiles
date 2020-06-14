@@ -20,6 +20,7 @@ calibre
 cask
 clang
 cmake
+colorpicker
 cpupower
 crda
 cronie
@@ -78,10 +79,12 @@ lightdm-mini-greeter
 linux
 linux-firmware
 make
+man-db
 minicom
 mitmproxy
 mplayer
 ncdu
+neofetch
 neovim
 nerd-fonts-fira-code
 net-tools
@@ -144,7 +147,6 @@ ttf-liberation
 unrar
 unzip
 vdpauinfo
-visual-studio-code-bin
 watchman
 wd719x-firmware
 wget
