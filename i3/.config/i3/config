@@ -247,7 +247,6 @@ exec --no-startup-id xcape -e 'Control_L=Escape' # make short-pressed Ctrl behav
 exec --no-startup-id xautolock -detectsleep -time 30 -locker "systemctl suspend"
 exec --no-startup-id autorandr --change && nitrogen --restore
 exec --no-startup-id ibus-daemon -drx # Ibus
-exec --no-startup-id dropbox
 exec --no-startup-id picom
 exec --no-startup-id $HOME/.config/polybar/launch.sh
 
