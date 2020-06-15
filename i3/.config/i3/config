@@ -108,8 +108,7 @@ bindsym $mod+c focus child
 for_window [class=".*"] border none
 for_window [class="Thunar"] floating enable
 for_window [class="Simulator"] floating enable
-for_window [title=".*Emulator.*"] floating enable
-for_window [title=".*Emulator.*"] sticky enable
+for_window [title=".*Emulator.*"] floating enable, sticky enable
 assign [class="Slack"] workspace 0
 assign [class="Emacs"] workspace 1
 assign [class="Google-chrome"] workspace 2
