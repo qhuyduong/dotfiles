@@ -12,8 +12,6 @@
       fancy-splash-image "~/.config/doom/black-hole.png"
       alert-default-style 'libnotify)
 
-(custom-set-faces '(cursor ((t (:background "#98f5ff")))))
-
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil
               global-visual-line-mode t)
@@ -470,3 +468,10 @@ WARNING: this is a simple implementation. The chance of generating the same UUID
 (defun org-agenda-gtd ()
   (interactive)
   (org-agenda nil "g"))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(cursor ((t (:background "#98f5ff")))))
