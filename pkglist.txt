@@ -66,6 +66,7 @@ ibus-bamboo
 intel-ucode
 jdk8-openjdk
 jq
+kdeconnect
 languagetool
 libmagick6
 libpng12

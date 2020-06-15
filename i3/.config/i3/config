@@ -249,6 +249,7 @@ exec --no-startup-id autorandr --change && nitrogen --restore
 exec --no-startup-id ibus-daemon -drx # Ibus
 exec --no-startup-id picom
 exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id /usr/lib/kdeconnectd
 
 # Audio volume controls
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
