@@ -20,7 +20,7 @@ calibre
 cask
 clang
 cmake
-colorpicker
+color-picker
 cpupower
 crda
 cronie
