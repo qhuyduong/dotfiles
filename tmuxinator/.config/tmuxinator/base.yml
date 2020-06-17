@@ -1,0 +1,34 @@
+# /Users/qhuyduong/.config/tmuxinator/base.yml
+
+name: base
+root: ~/
+
+windows:
+  - employment-hero:
+      root: ~/workspace/employment-hero
+      layout: main-vertical
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - web: bundle exec rails server
+        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+        - redis: redis-server
+
+  - frontend-core:
+      root: ~/workspace/frontend-core
+      layout: main-vertical
+      panes:
+        - server: yarn install && yarn start
+
+  - auth:
+      root: ~/workspace/auth
+      layout: main-vertical
+      panes:
+        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+
+  - kafka:
+     root: ~/workspace/kafka-docker
+     layout: main-vertical
+     panes:
+       - docker: docker-compose up

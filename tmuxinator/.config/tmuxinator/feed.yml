@@ -1,0 +1,21 @@
+# /Users/qhuyduong/.config/tmuxinator/feed.yml
+
+name: feed
+root: ~/
+
+windows:
+  - announcement:
+     root: ~/workspace/announcement-api-service
+     layout: main-vertical
+     panes:
+       - server: bundle exec rails server
+       - worker: bundle exec sidekiq
+       - consumer: bundle exec karafka server
+
+  - nomination:
+     root: ~/workspace/nominations-service
+     layout: main-vertical
+     panes:
+       - server: bundle exec puma
+       - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+       - worker: bundle exec sidekiq -r ./config/environment.rb

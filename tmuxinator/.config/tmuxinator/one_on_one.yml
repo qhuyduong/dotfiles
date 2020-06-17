@@ -1,0 +1,21 @@
+# /Users/qhuyduong/.config/tmuxinator/one_on_one.yml
+
+name: one_on_one
+root: ~/
+
+windows:
+  - meeting-management:
+      root: ~/workspace/meeting-management
+      layout: main-vertical
+      panes:
+        - server: bundle exec rails server
+        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+        - worker: bundle exec sidekiq
+
+  - comment:
+      root: ~/workspace/comment
+      layout: main-vertical
+      panes:
+        - server: bundle exec rails server
+        - worker: bundle exec sidekiq
+        - consumer: bundle exec karafka server
