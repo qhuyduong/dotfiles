@@ -16,6 +16,7 @@ x-scheme-handler/discord=discord.desktop
 x-scheme-handler/ftp=google-chrome.desktop
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/notion=notion-app.desktop
 x-scheme-handler/org-protocol=org-protocol.desktop
 x-scheme-handler/slack=slack.desktop
 x-scheme-handler/webcal=google-chrome.desktop
