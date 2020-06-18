@@ -112,7 +112,6 @@ for_window [title=".*Emulator.*"] floating enable, sticky enable
 assign [class="Slack"] workspace 0
 assign [class="Emacs"] workspace 1
 assign [class="Google-chrome"] workspace 2
-assign [class="Notion"] workspace 3
 for_window [class="Spotify"] move to workspace 8
 assign [class="discord"] workspace 9
 
