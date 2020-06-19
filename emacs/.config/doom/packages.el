@@ -27,5 +27,3 @@
 (package! company-lsp :disable t)
 (package! evil-escape :disable t)
 (package! robe :disable t)
-
-(unpin! company)
