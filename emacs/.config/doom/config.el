@@ -10,7 +10,10 @@
       vc-handled-backends '(Git)
       read-process-output-max (* 1024 1024)
       fancy-splash-image "~/.config/doom/black-hole.png"
-      alert-default-style 'libnotify)
+      alert-default-style 'libnotify
+      vc-follow-symlinks nil
+      find-file-visit-truename nil)
+
 
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil
