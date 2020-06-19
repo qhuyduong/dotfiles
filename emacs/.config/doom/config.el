@@ -134,7 +134,7 @@ translation it is possible to get suggestion."
   :PROPERTIES:
   :CREATED: %U
   :END:")
-                                ("T" "Tickler" entry
+                                ("k" "Tickler" entry
                                  (file ,org-gtd-tickler-file)
                                  "\
 * TODO %i%?
