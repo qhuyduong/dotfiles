@@ -7,5 +7,7 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch top and bottom bars
-polybar top -r &
-polybar bottom -r
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+	MONITOR=$m polybar -r top &
+	MONITOR=$m polybar -r bottom &
+done

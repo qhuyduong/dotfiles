@@ -16,6 +16,7 @@ module-margin-left = 1
 module-margin-right = 1
 modules-center = xwindow
 modules-right = wlan battery date
+monitor = ${env:MONITOR:}
 tray-transparent = true
 tray-position = right
 
@@ -37,6 +38,7 @@ module-margin-left = 1
 module-margin-right = 2
 modules-left = i3
 modules-center = spotify spotify-previous spotify-playpause spotify-next
+monitor = ${env:MONITOR:}
 modules-right = memory cpu temperature
 
 [module/battery]
