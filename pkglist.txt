@@ -78,6 +78,7 @@ lightdm
 lightdm-mini-greeter
 linux
 linux-firmware
+linux-headers
 make
 man-db
 minicom
@@ -146,6 +147,7 @@ ttf-font-awesome
 ttf-liberation
 unrar
 unzip
+v4l2loopback-dkms-git
 vdpauinfo
 watchman
 wd719x-firmware
