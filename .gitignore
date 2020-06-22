@@ -2,3 +2,4 @@ cache
 *.log
 tmp/
 rofi/**/themes
+node_modules
