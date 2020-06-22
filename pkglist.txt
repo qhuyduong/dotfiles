@@ -62,7 +62,7 @@ i3-gaps
 i3blocks
 i3status
 ibus
-ibus-bamboo
+ibus-unikey
 intel-ucode
 jdk8-openjdk
 jq
