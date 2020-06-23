@@ -244,10 +244,6 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
           (:prefix "p"
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
 
-;; json-mode
-(after! json-mode
-  (setq-default js-indent-level 2))
-
 (after! tide
   (setq tide-native-json-parsing t))
 
