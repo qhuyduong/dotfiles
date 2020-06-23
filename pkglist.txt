@@ -46,7 +46,6 @@ flex
 fwupd
 fzf
 gcc
-gcc-arm-none-eabi-bin
 gimp
 git
 glslang
