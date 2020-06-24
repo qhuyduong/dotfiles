@@ -1,2 +1,0 @@
-" SCRATCH BUFFER
-
