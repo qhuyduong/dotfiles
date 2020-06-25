@@ -244,6 +244,9 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
           (:prefix "p"
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
 
+(after! json-mode
+  (set-formatter! 'jsonlint "jsonlint" :modes '(json-mode)))
+
 (after! tide
   (setq tide-native-json-parsing t))
 
