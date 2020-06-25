@@ -238,7 +238,7 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
 ;; js2-mode
 (after! js2-mode
   (setq-default js-indent-level 2)
-  (set-formatter! 'prettier "prettier" :modes '(js2-mode))
+  (set-formatter! 'prettier "yarn --silent prettier" :modes '(js2-mode))
   (map! :mode js2-mode
         (:leader
           (:prefix "p"
