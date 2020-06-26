@@ -125,6 +125,7 @@ python2-pip
 qemu
 rbenv
 react-native-debugger
+realvnc-vnc-viewer
 redis
 ripgrep
 rofi
@@ -139,7 +140,6 @@ sysfsutils
 systemd-resolvconf
 the_silver_searcher
 thunar
-tigervnc
 tlp
 tmux
 tree
