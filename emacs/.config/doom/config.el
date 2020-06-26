@@ -120,6 +120,7 @@ translation it is possible to get suggestion."
 
 ;; lang/org
 (after! org
+  (setq org-adapt-indentation nil)
   (setq org-directory (file-name-as-directory "~/org"))
   (set-face-attribute 'org-headline-done nil :strike-through t)
   (advice-add 'org-babel-execute-src-block :around 'ob-async-org-babel-execute-src-block)
@@ -134,18 +135,18 @@ translation it is possible to get suggestion."
                                  (file ,org-gtd-inbox-file)
                                  "\
 * TODO %i%?
-  :PROPERTIES:
-  :CREATED: %U
-  :END:")
+:PROPERTIES:
+:CREATED: %U
+:END:")
                                 ("k" "Tickler" entry
                                  (file ,org-gtd-tickler-file)
                                  "\
 * TODO %i%?
-  SCHEDULED: %^t
-  :PROPERTIES:
-  :CREATED: %U
-  :calendar-id: %(getenv \"GCAL_TICKLER_CALENDAR_ID\")
-  :END:")))
+SCHEDULED: %^t
+:PROPERTIES:
+:CREATED: %U
+:calendar-id: %(getenv \"GCAL_TICKLER_CALENDAR_ID\")
+:END:")))
   (setq org-refile-targets `((,org-gtd-gtd-file :maxlevel . 3)
                              (,org-gtd-someday-file :level . 1)
                              (,org-gtd-tickler-file :maxlevel . 2)))
