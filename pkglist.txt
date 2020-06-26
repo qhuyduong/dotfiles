@@ -96,6 +96,7 @@ nmap
 nodejs
 noto-fonts
 noto-fonts-emoji
+npm
 openocd
 opensmtpd
 openssh
@@ -175,7 +176,6 @@ xorg-xrdb
 xorg-xset
 xorg-xsetroot
 xorg-xwininfo
-yarn
 yay
 zip
 zoom
