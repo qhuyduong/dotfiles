@@ -138,6 +138,7 @@ stow
 sudo
 sysfsutils
 systemd-resolvconf
+telegram-desktop
 the_silver_searcher
 thunar
 tlp
