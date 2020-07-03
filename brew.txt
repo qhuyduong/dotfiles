@@ -1,5 +1,7 @@
+aspell
 autoconf
 automake
+cmake
 coreutils
 direnv
 emacs-mac
@@ -14,6 +16,7 @@ htop
 hub
 icu4c
 jansson
+jq
 krb5
 libevent
 libffi
@@ -28,6 +31,7 @@ msgpack
 ncurses
 neovim
 nettle
+oniguruma
 openssl@1.1
 p11-kit
 pcre2
