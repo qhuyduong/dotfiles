@@ -123,6 +123,7 @@ translation it is possible to get suggestion."
 
 ;; Magit
 (after! magit
+  (setq magit-git-executable "/usr/local/bin/git")
   (setq magit-repository-directories '(("~/workspace" . 1))
         +magit-default-clone-url "git@github.com:%s/%s"))
 
