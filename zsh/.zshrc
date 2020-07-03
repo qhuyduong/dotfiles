@@ -71,8 +71,6 @@ zplug load
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Command not found hook
-source /usr/share/doc/pkgfile/command-not-found.zsh
 eval "$(direnv hook zsh)"
 # Stop profiling
 # zprof
