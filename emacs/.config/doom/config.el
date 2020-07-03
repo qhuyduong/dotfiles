@@ -14,6 +14,14 @@
       vc-follow-symlinks nil
       find-file-visit-truename nil)
 
+;; Make Emacs fullscreen by default
+(add-to-list 'default-frame-alist '(fullscreen . fullscreen))
+
+;; Emacs sometimes registers C-s-f as this weird keycode
+(global-set-key (kbd "<C-S-s>") #'toggle-frame-fullscreen)
+
+ ;; Workaround for magithub authentication stuffs
+ (setq auth-sources '("~/.authinfo"))
 
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil
