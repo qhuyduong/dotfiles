@@ -103,6 +103,7 @@ translation it is possible to get suggestion."
       :nvim "C-k"  #'evil-window-up
       :nvim "C-l"  #'evil-window-right
       :nvim "<C-tab>" #'centaur-tabs-forward
+      :nvim "<C-S-tab>" #'centaur-tabs-backward
       :nvim "<C-S-iso-lefttab>" #'centaur-tabs-backward
       :nvim "C-," #'centaur-tabs-move-current-tab-to-left
       :nvim "C-." #'centaur-tabs-move-current-tab-to-right)
@@ -343,6 +344,7 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
             :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
 
 (after! css-mode
+  (set-formatter! 'stylelint "yarn --silent stylelint --fix" :modes '(css-mode))
   (setq css-indent-offset 2))
 
 (after! forge
