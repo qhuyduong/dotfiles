@@ -24,10 +24,5 @@ windows:
       root: ~/workspace/auth
       layout: main-vertical
       panes:
-        - docker: docker-compose up
-
-  - kafka:
-      root: ~/workspace/kafka-docker
-      layout: main-vertical
-      panes:
-        - docker: docker-compose up
+        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
+        - redis: redis-server

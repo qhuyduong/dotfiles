@@ -1,0 +1,14 @@
+# /home/qhuyduong/.config/tmuxinator/smart_factory.yml
+
+name: smart_factory
+root: ~/workspace/smart-factory
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+pre_window: node -v
+
+windows:
+  - smart-factory:
+      layout: main-vertical
+      panes:
+        - server: bundle exec rails server
+        - webpacker: ./bin/webpack-dev-server
