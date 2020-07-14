@@ -15,7 +15,7 @@
       find-file-visit-truename nil)
 
 ;; Make Emacs fullscreen by default
-(add-to-list 'default-frame-alist '(fullscreen . fullscreen))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Emacs sometimes registers C-s-f as this weird keycode
 (global-set-key (kbd "<C-S-s>") #'toggle-frame-fullscreen)
