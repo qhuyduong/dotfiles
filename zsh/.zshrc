@@ -72,5 +72,12 @@ zplug load
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(direnv hook zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+[ -f ~/google-cloud-sdk/path.zsh.inc ] && source ~/google-cloud-sdk/path.zsh.inc
+
+# The next line enables shell command completion for gcloud.
+[ -f ~/google-cloud-sdk/completion.zsh.inc ] && source ~/google-cloud-sdk/completion.zsh.inc
+
 # Stop profiling
 # zprof
