@@ -150,8 +150,8 @@ translation it is possible to get suggestion."
                                 ("k" "Tickler" entry
                                  (file ,org-gtd-tickler-file)
                                  "\
-* TODO %i%?
-SCHEDULED: %^t
+* %i%?
+%^t
 :PROPERTIES:
 :CREATED: %U
 :END:")))
@@ -420,6 +420,23 @@ SCHEDULED: %^t
     ("q" nil :color blue))
 
   (advice-add '+vc/smerge-hydra/body :override #'++vc/smerge-hydra/body))
+
+
+(after! org-caldav
+  (setq plstore-cache-passphrase-for-symmetric-encryption t)
+  (setq org-caldav-url 'google)
+  (setq org-caldav-calendar-id (getenv "GCAL_TICKLER_CALENDAR_ID"))
+  (setq org-caldav-oauth2-client-id (getenv "GCAL_CLIENT_ID"))
+  (setq org-caldav-oauth2-client-secret (getenv "GCAL_CLIENT_SECRET"))
+  (setq org-caldav-inbox org-gtd-tickler-file)
+
+  (defun +org-caldav-sync-after-capture ()
+    "Sync calendar after a event was added with org-capture.
+The function can be run automatically with the 'org-capture-after-finalize-hook'."
+    (when (string= (org-capture-get :key) "k")
+      (org-caldav-sync)))
+
+  (add-hook 'org-capture-after-finalize-hook '+org-caldav-sync-after-capture))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
