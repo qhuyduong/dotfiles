@@ -139,7 +139,6 @@ translation it is possible to get suggestion."
   (setq org-gtd-tickler-file (concat org-directory "tickler.org"))
   (setq org-gtd-inbox-file (concat org-directory "inbox.org"))
   (setq org-gtd-someday-file (concat org-directory "someday.org"))
-  (require 'org-gcal)
   (setq org-agenda-files (list org-gtd-gtd-file org-gtd-inbox-file org-gtd-tickler-file))
   (setq org-capture-templates `(("t" "Todo [inbox]" entry
                                  (file ,org-gtd-inbox-file)
@@ -155,7 +154,6 @@ translation it is possible to get suggestion."
 SCHEDULED: %^t
 :PROPERTIES:
 :CREATED: %U
-:calendar-id: %(getenv \"GCAL_TICKLER_CALENDAR_ID\")
 :END:")))
   (setq org-refile-targets `((,org-gtd-gtd-file :maxlevel . 3)
                              (,org-gtd-someday-file :level . 1)
@@ -209,32 +207,6 @@ SCHEDULED: %^t
                           '((:name "Inbox"
                                    :anything)))
                          (org-agenda-files `(,org-gtd-inbox-file)))))))))
-
-(after! org-gcal
-  (setq org-gcal-cancelled-todo-keyword "CANCELED"
-        org-gcal-client-id (getenv "GCAL_CLIENT_ID")
-        org-gcal-client-secret (getenv "GCAL_CLIENT_SECRET")
-        org-gcal-file-alist `((,(getenv "GCAL_TICKLER_CALENDAR_ID") . ,org-gtd-tickler-file)))
-
-  (defun +org-gcal-post-cal-after-capture ()
-    "Sync calendar after a event was added with org-capture.
-The function can be run automatically with the 'org-capture-after-finalize-hook'."
-    (when-let ((cal-files (mapcar 'f-expand (mapcar 'cdr org-gcal-file-alist)))
-               (capture-target (f-expand (car (cdr (org-capture-get :target)))))
-               (cal-file-exists (and (mapcar 'f-file? cal-files)))
-               (capture-target-isfile (eq (car (org-capture-get :target)) 'file))
-               (capture-target-is-cal-file (member capture-target cal-files)))
-      (org-gcal-post-at-point)))
-
-  (add-hook 'org-capture-after-finalize-hook '+org-gcal-post-cal-after-capture)
-
-  (map! :mode org-mode
-        (:localleader
-         (:prefix ("j" . "org-gcal")
-          :n "d" #'org-gcal-delete-at-point
-          :n "f" #'org-gcal-fetch
-          :n "p" #'org-gcal-post-at-point
-          :n "s" #'org-gcal-sync))))
 
 ;; apib-mode
 (use-package! apib-mode
