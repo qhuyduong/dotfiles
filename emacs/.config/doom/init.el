@@ -35,7 +35,6 @@
        unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
        workspaces        ; tab emulation, persistence & separate workspaces
-       zen               ; distraction-free coding or writing
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies
@@ -70,15 +69,12 @@
         +forge)
 
        :lang
-       (cc               ; C/C++/Obj-C madness
-        +lsp)
        data              ; config/data formats
        emacs-lisp        ; drown in parentheses
        (javascript       ; all(hope(abandon(ye(who(enter(here))))))
         +lsp)
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
-        +pomodoro
         +present         ; using org-mode for presentations
         +roam)
        rest
