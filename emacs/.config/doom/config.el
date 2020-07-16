@@ -16,6 +16,7 @@
 
 ;; Make Emacs fullscreen by default
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
 ;; Emacs sometimes registers C-s-f as this weird keycode
 (global-set-key (kbd "<C-S-s>") #'toggle-frame-fullscreen)
@@ -437,6 +438,12 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
       (org-caldav-sync)))
 
   (add-hook 'org-capture-after-finalize-hook '+org-caldav-sync-after-capture))
+
+(use-package! hl-line+
+  :load-path "."
+  :config
+  (hl-line-when-idle-interval 0.3)
+  (toggle-hl-line-when-idle 1))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
