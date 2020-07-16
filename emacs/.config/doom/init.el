@@ -25,12 +25,12 @@
        doom-dashboard    ; a nifty splash screen for Emacs
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        hydra
-       modeline          ; snazzy, Atom-inspired modeline, plus API
+       (modeline         ; snazzy, Atom-inspired modeline, plus API
+        +light)
        ophints           ; highlight the region an operation acts on
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
-       tabs              ; an tab bar for Emacs
        treemacs          ; a project drawer, like neotree but cooler
        unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
@@ -75,7 +75,6 @@
         +lsp)
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
-        +present         ; using org-mode for presentations
         +roam)
        rest
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
