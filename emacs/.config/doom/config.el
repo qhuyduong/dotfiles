@@ -21,8 +21,8 @@
 ;; Emacs sometimes registers C-s-f as this weird keycode
 (global-set-key (kbd "<C-S-s>") #'toggle-frame-fullscreen)
 
- ;; Workaround for magithub authentication stuffs
- (setq auth-sources '("~/.authinfo"))
+;; Workaround for magithub authentication stuffs
+(setq auth-sources '("~/.authinfo"))
 
 ;; truncate-lines in all buffers
 (setq-default truncate-lines nil
@@ -68,34 +68,34 @@ translation it is possible to get suggestion."
       :nv "C-S-j" #'move-line-down
 
       (:leader
-        "x" nil ;; Disable x prefix for scratch buffer
-        "s" nil ;; Disable s prefix for search
+       "x" nil ;; Disable x prefix for scratch buffer
+       "s" nil ;; Disable s prefix for search
 
-        :desc "search" "/" doom-leader-search-map
+       :desc "search" "/" doom-leader-search-map
 
-        (:prefix "o"
-          :desc "List processes" :nv "x" #'list-processes
-          (:prefix "a"
-            :desc "Getting things done" :nv "g" #'org-agenda-gtd))
+       (:prefix "o"
+        :desc "List processes" :nv "x" #'list-processes
+        (:prefix "a"
+         :desc "Getting things done" :nv "g" #'org-agenda-gtd))
 
-        (:prefix "p"
-          :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
+       (:prefix "p"
+        :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
 
-        (:prefix "i"
-          :desc "UUIDv4" :n "u" #'insert-random-uuid
-          (:prefix ("l" . "lorem-ipsum")
-            :desc "list" :n "l" #'lorem-ipsum-insert-list
-            :desc "sentences" :n "s" #'lorem-ipsum-insert-sentences
-            :desc "paragraphs" :n "p" #'lorem-ipsum-insert-paragraphs))
+       (:prefix "i"
+        :desc "UUIDv4" :n "u" #'insert-random-uuid
+        (:prefix ("l" . "lorem-ipsum")
+         :desc "list" :n "l" #'lorem-ipsum-insert-list
+         :desc "sentences" :n "s" #'lorem-ipsum-insert-sentences
+         :desc "paragraphs" :n "p" #'lorem-ipsum-insert-paragraphs))
 
-        (:prefix ("x" . "text-transform")
-          :desc "Translate this text" :nv "g" #'google-translate-at-point
-          (:prefix ("f" . "copy-as-format")
-            :desc "Github" :nv "g" #'copy-as-format-github
-            :desc "HTML" :nv "h" #'copy-as-format-html
-            :desc "Markdown" :nv "m" #'copy-as-format-markdown
-            :desc "Org" :nv "o" #'copy-as-format-org
-            :desc "Slack" :nv "s" #'copy-as-format-slack))))
+       (:prefix ("x" . "text-transform")
+        :desc "Translate this text" :nv "g" #'google-translate-at-point
+        (:prefix ("f" . "copy-as-format")
+         :desc "Github" :nv "g" #'copy-as-format-github
+         :desc "HTML" :nv "h" #'copy-as-format-html
+         :desc "Markdown" :nv "m" #'copy-as-format-markdown
+         :desc "Org" :nv "o" #'copy-as-format-org
+         :desc "Slack" :nv "s" #'copy-as-format-slack))))
 
 ;; Easier window navigation
 (map! :map general-override-mode-map
@@ -183,30 +183,30 @@ translation it is possible to get suggestion."
            ((agenda "" ((org-agenda-span 'day)
                         (org-super-agenda-groups
                          '((:name "Today"
-                                  :time-grid t
-                                  :date today
-                                  :todo "TODAY"
-                                  :scheduled today
-                                  :order 1)))))
+                            :time-grid t
+                            :date today
+                            :todo "TODAY"
+                            :scheduled today
+                            :order 1)))))
             (alltodo "" ((org-agenda-overriding-header "")
                          (org-super-agenda-groups
                           '((:name "Important"
-                                   :priority "A"
-                                   :order 2)
+                             :priority "A"
+                             :order 2)
                             (:name "Next to do"
-                                   :todo "NEXT"
-                                   :order 5)
+                             :todo "NEXT"
+                             :order 5)
                             (:name "Waiting"
-                                   :todo "WAITING"
-                                   :order 40)
+                             :todo "WAITING"
+                             :order 40)
                             (:name "Due Today"
-                                   :deadline today
-                                   :order 2)))
+                             :deadline today
+                             :order 2)))
                          (org-agenda-files `(,org-gtd-gtd-file))))
             (alltodo "" ((org-agenda-overriding-header "")
                          (org-super-agenda-groups
                           '((:name "Inbox"
-                                   :anything)))
+                             :anything)))
                          (org-agenda-files `(,org-gtd-inbox-file)))))))))
 
 ;; apib-mode
@@ -225,8 +225,8 @@ translation it is possible to get suggestion."
   (set-formatter! 'prettier "yarn --silent prettier" :modes '(js2-mode))
   (map! :mode js2-mode
         (:leader
-          (:prefix "p"
-            :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
+         (:prefix "p"
+          :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
 
 (after! json-mode
   (set-formatter! 'jsonlint "jsonlint" :modes '(json-mode)))
@@ -278,14 +278,14 @@ translation it is possible to get suggestion."
                                         (append '("bundle" "exec") command)))
   (map! :mode ruby-mode
         (:leader
-          (:prefix "p"
-            :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))
+         (:prefix "p"
+          :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))
         (:localleader
-          (:prefix ("b" . "bundle"))
-          (:prefix ("k" . "rake"))
-          (:prefix ("r" . "robe"))
-          (:prefix ("s" . "inf-ruby"))
-          (:prefix ("t" . "rspec")))))
+         (:prefix ("b" . "bundle"))
+         (:prefix ("k" . "rake"))
+         (:prefix ("r" . "robe"))
+         (:prefix ("s" . "inf-ruby"))
+         (:prefix ("t" . "rspec")))))
 
 (after! lsp-mode
   (add-hook 'lsp-mode-hook
@@ -313,8 +313,8 @@ translation it is possible to get suggestion."
 (after! elisp-mode
   (map! :mode emacs-lisp-mode
         (:leader
-          (:prefix "p"
-            :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
+         (:prefix "p"
+          :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
 
 (after! css-mode
   (set-formatter! 'stylelint "yarn --silent stylelint --fix" :modes '(css-mode))
