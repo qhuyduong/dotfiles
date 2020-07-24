@@ -82,6 +82,8 @@
         +rails
         +rbenv)          ; rbenv as version manager
        web               ; the tubes
+       (yaml             ; JSON, but readable
+        +lsp)
 
        :config
        ;;literate
