@@ -217,6 +217,7 @@ translation it is possible to get suggestion."
 ;; js2-mode
 (after! js2-mode
   (setq-default js-indent-level 2)
+  (add-hook! js2-mode #'prettier-js-mode)
   (map! :mode js2-mode
         (:leader
          (:prefix "p"

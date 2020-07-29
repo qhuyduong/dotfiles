@@ -23,6 +23,7 @@
 (package! org-caldav)
 (package! org-super-agenda)
 (package! ox-slack)
+(package! prettier-js)
 (package! react-snippets)
 (package! yaml-tomato)
 
