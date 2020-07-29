@@ -217,14 +217,10 @@ translation it is possible to get suggestion."
 ;; js2-mode
 (after! js2-mode
   (setq-default js-indent-level 2)
-  (set-formatter! 'prettier "yarn --silent prettier" :modes '(js2-mode))
   (map! :mode js2-mode
         (:leader
          (:prefix "p"
           :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
-
-(after! json-mode
-  (set-formatter! 'jsonlint "jsonlint" :modes '(json-mode)))
 
 (after! tide
   (setq tide-native-json-parsing t))
@@ -312,7 +308,6 @@ translation it is possible to get suggestion."
           :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
 
 (after! css-mode
-  (set-formatter! 'stylelint "yarn --silent stylelint --fix" :modes '(css-mode))
   (setq css-indent-offset 2))
 
 (after! forge
