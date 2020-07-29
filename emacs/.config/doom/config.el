@@ -264,9 +264,7 @@ translation it is possible to get suggestion."
   (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
 
 (after! ruby-mode
-  (setq-hook! 'ruby-mode-hook
-    flycheck-command-wrapper-function (lambda (command)
-                                        (append '("bundle" "exec") command)))
+  (add-hook! ruby-mode (add-hook 'before-save-hook #'lsp-format-buffer t t))
   (map! :mode ruby-mode
         (:leader
          (:prefix "p"
