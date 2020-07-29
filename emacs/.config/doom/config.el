@@ -102,12 +102,7 @@ translation it is possible to get suggestion."
       :nvim "C-h"  #'evil-window-left
       :nvim "C-j"  #'evil-window-down
       :nvim "C-k"  #'evil-window-up
-      :nvim "C-l"  #'evil-window-right
-      :nvim "<C-tab>" #'centaur-tabs-forward
-      :nvim "<C-S-tab>" #'centaur-tabs-backward
-      :nvim "<C-S-iso-lefttab>" #'centaur-tabs-backward
-      :nvim "C-," #'centaur-tabs-move-current-tab-to-left
-      :nvim "C-." #'centaur-tabs-move-current-tab-to-right)
+      :nvim "C-l"  #'evil-window-right)
 
 ;; Modules
 ;; Evil
@@ -444,6 +439,13 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
   :config
   (hl-line-when-idle-interval 0.3)
   (toggle-hl-line-when-idle 1))
+
+(after! centaur-tabs
+  (map! :nvim "<C-tab>" #'centaur-tabs-forward
+        :nvim "<C-S-tab>" #'centaur-tabs-backward
+        :nvim "<C-S-iso-lefttab>" #'centaur-tabs-backward
+        :nvim "C-," #'centaur-tabs-move-current-tab-to-left
+        :nvim "C-." #'centaur-tabs-move-current-tab-to-right))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
