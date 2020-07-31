@@ -4,3 +4,4 @@ export GTK_IM_MODULE='ibus'
 export QT_IM_MODULE='ibus'
 export XMODIFIERS=@im='ibus'
 export OPENCV_LOG_LEVEL=ERROR
+export XLIB_SKIP_ARGB_VISUALS=1
