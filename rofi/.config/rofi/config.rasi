@@ -1,10 +1,10 @@
 /*-*- mode: css; -*-*/
 
 configuration {
-    modi: "combi,github:~/.local/share/rofi/scripts/github.sh,circleci:~/.local/share/rofi/scripts/circleci.sh,power:~/.local/share/rofi/scripts/power.sh,sentry:~/.local/share/rofi/scripts/sentry.sh";
+    modi: "combi,github:~/.local/share/rofi/scripts/github.sh,circleci:~/.local/share/rofi/scripts/circleci.sh,sentry:~/.local/share/rofi/scripts/sentry.sh";
     font: "Fira Code 10";
     show-icons: true;
     terminal: "rofi-sensible-terminal";
-    combi-modi: "window,drun,github,circleci,power,sentry";
-    theme: "slate";
+    combi-modi: "window,drun,github,circleci,sentry";
+    theme: "nord";
 }
