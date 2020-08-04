@@ -5,7 +5,7 @@
       doom-localleader-key ","
       display-line-numbers-type nil
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n")
-      doom-font (font-spec :family "Fira Code" :size 14)
+      doom-font (font-spec :family "Fira Code" :size 16)
       default-input-method "vietnamese-telex"
       vc-handled-backends '(Git)
       read-process-output-max (* 1024 1024)
