@@ -25,6 +25,7 @@
 (package! ox-slack)
 (package! prettier-js)
 (package! react-snippets)
+(package! web-beautify)
 (package! yaml-tomato)
 
 ;;; Disabled packages
