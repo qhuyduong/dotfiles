@@ -16,7 +16,6 @@
 ;; Make Emacs fullscreen by default
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
-(add-to-list 'default-frame-alist '(undecorated . t))
 
 ;; Emacs sometimes registers C-s-f as this weird keycode
 (global-set-key (kbd "<C-S-s>") #'toggle-frame-fullscreen)
