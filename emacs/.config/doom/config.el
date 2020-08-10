@@ -115,7 +115,13 @@ translation it is possible to get suggestion."
   (add-to-list 'evil-motion-state-modes #'process-menu-mode)
   (map! :map evil-inner-text-objects-map "g" 'evil-inner-buffer
         :map evil-outer-text-objects-map "m" 'evil-outer-defun
-        :map evil-motion-state-map "," nil))
+        :map evil-motion-state-map "," nil)
+
+  (defun switch-to-other-window (&optional _count _file)
+    (other-window 1))
+
+  (advice-add #'evil-window-split :after #'switch-to-other-window)
+  (advice-add #'evil-window-vsplit :after #'switch-to-other-window))
 
 ;; Magit
 (after! magit
