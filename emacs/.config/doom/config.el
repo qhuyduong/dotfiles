@@ -13,6 +13,8 @@
       vc-follow-symlinks nil
       find-file-visit-truename nil)
 
+(set-fontset-font t 'symbol "Noto Color Emoji")
+
 ;; Make Emacs fullscreen by default
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
