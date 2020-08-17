@@ -17,17 +17,3 @@ evdev:input:b0003v0C45p6613e0111* # Ducky AKKO 3108 V2
 
 evdev:input:b0005v056Ep0133e0001* # DEFT Pro TrackBall
  KEYBOARD_KEY_90008=btn_middle # bind button 8 to button middle
-
-evdev:input:b0003v0483p4020e0110* # CATEX TECH. 69M-RGB
- KEYBOARD_KEY_70029=grave     # bind escape to grave
- KEYBOARD_KEY_70039=leftctrl  # bind capslock to leftctrl
- KEYBOARD_KEY_700e2=leftmeta  # bind leftalt to leftmeta
- KEYBOARD_KEY_700e3=leftalt   # bind leftmeta to leftalt
- KEYBOARD_KEY_700e6=rightmeta # bind rightalt to rightmeta
-
-evdev:input:b0005v05ACp022Ce0100* # keydous
- KEYBOARD_KEY_70029=grave     # bind escape to grave
- KEYBOARD_KEY_70039=leftctrl  # bind capslock to leftctrl
- KEYBOARD_KEY_700e2=leftmeta  # bind leftalt to leftmeta
- KEYBOARD_KEY_700e3=leftalt   # bind leftmeta to leftalt
- KEYBOARD_KEY_700e6=rightmeta # bind rightalt to rightmeta
