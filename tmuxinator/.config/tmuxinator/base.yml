@@ -3,6 +3,8 @@
 name: base
 root: ~/
 
+pre_window: node -v
+
 windows:
   - employment-hero:
       root: ~/workspace/employment-hero
@@ -25,4 +27,3 @@ windows:
       layout: main-vertical
       panes:
         - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
-        - redis: redis-server

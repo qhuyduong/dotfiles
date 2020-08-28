@@ -10,5 +10,6 @@ windows:
   - smart-factory:
       layout: main-vertical
       panes:
-        - server: bundle exec rails server
+        - server: bundle exec rails server -b 0.0.0.0
         - webpacker: ./bin/webpack-dev-server
+        - worker: bundle exec sidekiq
