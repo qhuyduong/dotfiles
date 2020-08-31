@@ -316,6 +316,9 @@ translation it is possible to get suggestion."
   (setq css-indent-offset 2)
   (add-hook! css-mode (add-hook 'before-save-hook 'web-beautify-css-buffer t t)))
 
+(after! json-mode
+  (add-hook! json-mode (add-hook 'before-save-hook 'web-beautify-js-buffer t t)))
+
 (after! forge
   (setq forge-topic-list-limit '(5 . 5)))
 

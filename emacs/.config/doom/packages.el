@@ -16,6 +16,7 @@
 (package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))
 (package! git-link)
 (package! google-translate)
+(package! json-mode)
 (package! lorem-ipsum)
 (package! oauth2)
 (package! ob-mermaid)
