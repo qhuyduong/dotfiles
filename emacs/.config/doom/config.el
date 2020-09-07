@@ -328,9 +328,6 @@ translation it is possible to get suggestion."
 (after! git-gutter
   (setq git-gutter:modified-sign "~"))
 
-(after! doom-themes
-  (remove-hook! 'doom-load-theme-hook #'doom-themes-treemacs-config))
-
 (after! projectile-rails
   (defun +projectile-rails-goto-template-at-point ()
     "Visit a template or a partial under the point."
