@@ -59,6 +59,7 @@
        grammar           ; tasing grammar mistake every you make
 
        :tools
+       direnv
        (eval             ; run code, run (also, repls)
          +overlay)
        lookup            ; helps you navigate your code and documentation
