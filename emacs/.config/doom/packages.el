@@ -21,6 +21,7 @@
 (package! oauth2)
 (package! ob-mermaid)
 (package! org-caldav)
+(package! org-roam-server)
 (package! org-super-agenda)
 (package! ox-slack)
 (package! prettier-js)
