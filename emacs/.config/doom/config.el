@@ -229,9 +229,6 @@ translation it is possible to get suggestion."
          (:prefix "p"
           :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
 
-(after! tide
-  (setq tide-native-json-parsing t))
-
 ;; projectile
 (after! projectile
   (defun projectile-frontend-core-related-files (path)
@@ -350,9 +347,6 @@ translation it is possible to get suggestion."
 (after! company
   (setq company-idle-delay 0))
 
-(after! plantuml-mode
-  (setq plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar"))
-
 (after! emmet-mode
   (setq emmet-expand-jsx-className? t))
 
@@ -440,13 +434,6 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
   :config
   (hl-line-when-idle-interval 0.3)
   (toggle-hl-line-when-idle 1))
-
-(after! centaur-tabs
-  (map! :nvim "<C-tab>" #'centaur-tabs-forward
-        :nvim "<C-S-tab>" #'centaur-tabs-backward
-        :nvim "<C-S-iso-lefttab>" #'centaur-tabs-backward
-        :nvim "C-," #'centaur-tabs-move-current-tab-to-left
-        :nvim "C-." #'centaur-tabs-move-current-tab-to-right))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
