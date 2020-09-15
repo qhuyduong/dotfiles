@@ -438,7 +438,6 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
 (use-package! org-roam-protocol)
 
 (use-package! org-roam-server
-  :ensure t
   :config
   (setq org-roam-server-host "127.0.0.1"
         org-roam-server-port 8080
