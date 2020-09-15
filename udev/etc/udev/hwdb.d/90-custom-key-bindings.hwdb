@@ -17,3 +17,6 @@ evdev:input:b0003v0C45p6613e0111* # Ducky AKKO 3108 V2
 
 evdev:input:b0005v056Ep0133e0001* # DEFT Pro TrackBall
  KEYBOARD_KEY_90008=btn_middle # bind button 8 to button middle
+
+evdev:input:b0003v056Ep0132e0111* # ELECOM TrackBall Mouse DEFT Pro TrackBall
+ KEYBOARD_KEY_90008=btn_middle # bind button 8 to button middle
