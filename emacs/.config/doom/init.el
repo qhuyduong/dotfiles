@@ -63,7 +63,8 @@
        (eval             ; run code, run (also, repls)
          +overlay)
        lookup            ; helps you navigate your code and documentation
-       lsp
+       (lsp
+        +peek)
        (magit            ; a git porcelain for Emacs
         +forge)
 
