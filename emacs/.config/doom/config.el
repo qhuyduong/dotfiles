@@ -268,7 +268,11 @@ translation it is possible to get suggestion."
   (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
 
 (after! ruby-mode
-  (add-hook! ruby-mode (add-hook 'before-save-hook #'lsp-format-buffer t t))
+  (add-hook! ruby-mode (add-hook 'before-save-hook
+                                 (lambda ()
+                                   (unless (string= (buffer-name) "schema.rb")
+                                     (lsp-format-buffer)))
+                                 t t))
   (map! :mode ruby-mode
         (:leader
          (:prefix "p"
