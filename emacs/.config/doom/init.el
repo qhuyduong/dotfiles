@@ -73,6 +73,8 @@
        emacs-lisp        ; drown in parentheses
        (javascript       ; all(hope(abandon(ye(who(enter(here))))))
         +lsp)
+       (json             ; At least it ain't XML
+        +lsp)
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
         +roam)
