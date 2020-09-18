@@ -60,6 +60,8 @@
 
        :tools
        direnv
+       (docker
+        +lsp)
        (eval             ; run code, run (also, repls)
          +overlay)
        lookup            ; helps you navigate your code and documentation
