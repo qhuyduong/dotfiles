@@ -11,6 +11,7 @@
       read-process-output-max (* 1024 1024)
       alert-default-style 'libnotify
       vc-follow-symlinks nil
+      system-time-locale "C"
       find-file-visit-truename nil)
 
 (set-fontset-font t 'symbol "Noto Color Emoji")
