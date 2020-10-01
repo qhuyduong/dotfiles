@@ -456,6 +456,9 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
         org-roam-server-network-label-truncate-length 60
         org-roam-server-network-label-wrap-length 20))
 
+(after! org-sidebar
+  (setq org-sidebar-tree-side 'right))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
 (defun move-line-up ()
