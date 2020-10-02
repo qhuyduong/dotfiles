@@ -3,9 +3,6 @@
 name: power_management
 root: ~/workspace/power-management
 
-# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: node -v
-
 windows:
   - power-management:
       layout: tiled
