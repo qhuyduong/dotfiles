@@ -19,9 +19,6 @@ bindkey -e
 # Ruby
 eval "$(rbenv init -)"
 
-# Node
-export NVM_LAZY_LOAD=true
-
 # Fzf
 export FZF_DEFAULT_COMMAND='fd --type f --follow'
 
