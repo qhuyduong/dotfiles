@@ -292,7 +292,7 @@ translation it is possible to get suggestion."
                           (cons 'company-files company-backends)))
             t)
   (setq lsp-eldoc-enable-hover nil
-        lsp-diagnostics-provider nil))
+        lsp-diagnostics-provider 'flycheck))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-show-hover t
