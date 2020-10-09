@@ -18,11 +18,14 @@
        (company          ; the ultimate code completion backend
         +childframe)
        (ivy              ; a search engine for love and life
-        +icons)
+        +childframe
+        +icons
+        +prescient)
 
        :ui
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
+       doom-quit         ; DOOM quit-message prompts when you quit Emacs
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        hydra
        modeline          ; snazzy, Atom-inspired modeline, plus API
@@ -63,7 +66,7 @@
         +lsp)
        (eval             ; run code, run (also, repls)
          +overlay)
-       lookup            ; helps you navigate your code and documentation
+       lookup            ; navigate your code and its documentation
        (lsp
         +peek)
        (magit            ; a git porcelain for Emacs
