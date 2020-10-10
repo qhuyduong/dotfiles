@@ -268,6 +268,9 @@ translation it is possible to get suggestion."
 (after! ivy
   (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
 
+(after! ivy-posframe
+  (setq ivy-posframe-display-functions-alist '((t . +ivy-display-at-frame-center-near-bottom-fn))))
+
 (after! ruby-mode
   (add-hook! ruby-mode (add-hook 'before-save-hook
                                  (lambda ()
