@@ -1,8 +1,7 @@
 ;;; .doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Global settings
-(setq doom-theme 'doom-palenight
-      doom-localleader-key ","
+(setq doom-localleader-key ","
       display-line-numbers-type nil
       initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n")
       doom-font (font-spec :family "Fira Code" :size 16)
