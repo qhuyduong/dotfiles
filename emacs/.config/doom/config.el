@@ -160,7 +160,7 @@ translation it is possible to get suggestion."
   (setq org-refile-targets `((,org-gtd-gtd-file :maxlevel . 3)
                              (,org-gtd-someday-file :level . 1)
                              (,org-gtd-tickler-file :maxlevel . 2)))
-  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "NEXT(n)" "|" "DONE(d)" "CANCELED(c)")))
+  (setq org-todo-keywords '((sequence "TODO(t!)" "WAITING(w@/!)" "NEXT(n!)" "|" "DONE(d!)" "CANCELED(c@/!)")))
   (setq org-todo-keyword-faces '(("TODO" . (:foreground "grey"))
                                  ("WAITING" . (:foreground "yellow"))
                                  ("NEXT" . (:foreground "lightblue"))
