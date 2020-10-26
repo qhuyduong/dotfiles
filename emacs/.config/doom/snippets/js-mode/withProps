@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: withProps
-# key: wps
-# --
-withProps(({ $1 }) => ({ $0 }))

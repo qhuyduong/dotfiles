@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: withState
-# key: wse
-# --
-withState('$1', '$2', $0)
