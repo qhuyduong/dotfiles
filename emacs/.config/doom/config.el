@@ -357,12 +357,6 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
 (after! doom-themes
   (setq doom-themes-treemacs-theme 'doom-colors))
 
-(use-package! hl-line+
-  :load-path "."
-  :config
-  (hl-line-when-idle-interval 0.3)
-  (toggle-hl-line-when-idle 1))
-
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
 (defun move-line-up ()
