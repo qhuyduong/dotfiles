@@ -3,6 +3,7 @@
 ;; Global settings
 (setq doom-theme 'doom-palenight
       doom-localleader-key ","
+      display-line-numbers-type 'relative
       doom-font (font-spec :family "Fira Code" :size 16)
       default-input-method "vietnamese-telex"
       vc-handled-backends '(Git)
