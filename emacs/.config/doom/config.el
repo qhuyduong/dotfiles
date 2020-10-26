@@ -428,12 +428,6 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
 
   (add-hook 'org-capture-after-finalize-hook '+org-caldav-sync-after-capture))
 
-(use-package! hl-line+
-  :load-path "."
-  :config
-  (hl-line-when-idle-interval 0.3)
-  (toggle-hl-line-when-idle 1))
-
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
 (defun move-line-up ()
