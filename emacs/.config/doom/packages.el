@@ -14,6 +14,7 @@
 (package! git-link)
 (package! google-translate)
 (package! lorem-ipsum)
+(package! lsp-treemacs)
 (package! oauth2)
 (package! org-caldav)
 (package! org-super-agenda)
