@@ -18,6 +18,7 @@
 (package! org-caldav)
 (package! org-super-agenda)
 (package! prettier-js)
+(package! protobuf-mode)
 (package! react-snippets)
 (package! web-beautify)
 
