@@ -32,6 +32,8 @@
 
 (global-evil-matchit-mode t)
 
+(lsp-treemacs-sync-mode 1)
+
 (after! dired
   (add-hook! dired-mode #'rspec-dired-mode))
 
