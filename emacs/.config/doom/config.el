@@ -3,18 +3,12 @@
 ;; Global settings
 (setq doom-theme 'doom-palenight
       doom-localleader-key ","
-      display-line-numbers-type nil
-      initial-scratch-message (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n")
       doom-font (font-spec :family "Fira Code" :size 16)
       default-input-method "vietnamese-telex"
       vc-handled-backends '(Git)
       read-process-output-max (* 1024 1024)
-      alert-default-style 'libnotify
       vc-follow-symlinks nil
-      system-time-locale "C"
-      find-file-visit-truename nil)
-
-(set-fontset-font t 'symbol "Noto Color Emoji")
+      system-time-locale "C")
 
 ;; Make Emacs fullscreen by default
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
@@ -37,9 +31,6 @@
 
 (global-evil-matchit-mode t)
 
-(after! doom-modeline
-  (setq doom-modeline-percent-position nil))
-
 (after! dired
   (add-hook! dired-mode #'rspec-dired-mode))
 
@@ -48,19 +39,7 @@
   (setq google-translate-backend-method 'curl)
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "vi")
-  (setq google-translate-show-phonetic t)
-
-  (defun +google-translate-json-suggestion (json)
-    "Retrieve from JSON (which returns by the
-`google-translate-request' function) suggestion. This function
-does matter when translating misspelled word. So instead of
-translation it is possible to get suggestion."
-    (let ((info (aref json 7)))
-      (if (and info (> (length info) 0))
-          (aref info 1)
-        nil)))
-
-  (advice-add 'google-translate-json-suggestion :override #'+google-translate-json-suggestion))
+  (setq google-translate-show-phonetic t))
 
 ;; Keybindings
 (map! :nv "C-S-k" #'move-line-up
@@ -103,8 +82,6 @@ translation it is possible to get suggestion."
       :nvim "C-k"  #'evil-window-up
       :nvim "C-l"  #'evil-window-right)
 
-;; Modules
-;; Evil
 (after! evil
   (evil-define-text-object evil-inner-buffer (count &optional _beg _end _type)
     (list (point-min) (point-max)))
@@ -208,48 +185,17 @@ translation it is possible to get suggestion."
                              :anything)))
                          (org-agenda-files `(,org-gtd-inbox-file)))))))))
 
-;; apib-mode
 (use-package! apib-mode
   :mode "\\.apib\\'")
 
-;; flycheck-apib
 (use-package! flycheck-apib
   :when (featurep! :checkers syntax)
   :after apib-mode
   :config (add-hook! apib-mode #'flycheck-apib-setup))
 
-;; js2-mode
 (after! js2-mode
   (setq-default js-indent-level 2)
-  (add-hook! js2-mode #'prettier-js-mode)
-  (map! :mode js2-mode
-        (:leader
-         (:prefix "p"
-          :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
-
-;; projectile
-(after! projectile
-  (defun projectile-frontend-core-related-files (path)
-    (when (string-match "\\(.*\\)\/\\(.*\\)$" path)
-      (let* ((dir (match-string 1 path))
-             (file-name (match-string 2 path))
-             (base-file-name (car (split-string file-name "\\."))))
-        (if (projectile-test-file-p file-name)
-            (list :impl (concat dir "/../" base-file-name ".js"))
-          (list :test (concat dir "/__tests__/" base-file-name ".spec.js"))))))
-
-  (setq projectile-create-missing-test-files t)
-  ;; Configure npm project with projectile
-  (projectile-register-project-type 'npm '("package.json")
-                                    :test "yarn test"
-                                    :test-suffix ".spec"
-                                    :related-files-fn #'projectile-frontend-core-related-files)
-  ;; Workaround for Rails 6
-  (projectile-register-project-type 'rails-rspec '("Gemfile")
-                                    :src-dir "app"
-                                    :test "bundle exec rspec"
-                                    :test-suffix "_spec"
-                                    :test-dir "spec"))
+  (add-hook! js2-mode #'prettier-js-mode))
 
 ;; Re-add visual-line-mode's fringes
 (after! fringe-helper
@@ -264,9 +210,6 @@ translation it is possible to get suggestion."
 
 (after! ivy
   (setq counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
-
-(after! ivy-posframe
-  (setq ivy-posframe-display-functions-alist '((t . +ivy-display-at-frame-center-near-bottom-fn))))
 
 (after! ruby-mode
   (add-hook! ruby-mode (add-hook 'before-save-hook
@@ -286,6 +229,8 @@ translation it is possible to get suggestion."
          (:prefix ("t" . "rspec")))))
 
 (after! lsp-mode
+  (setq lsp-headerline-breadcrumb-enable t)
+  (setq lsp-headerline-breadcrumb-segments '(project file symbols))
   (add-hook 'lsp-mode-hook
             (lambda ()
               (setq-local company-backends
@@ -306,12 +251,6 @@ translation it is possible to get suggestion."
     web-mode-markup-indent-offset 2
     web-mode-sql-indent-offset 2))
 
-(after! elisp-mode
-  (map! :mode emacs-lisp-mode
-        (:leader
-         (:prefix "p"
-          :desc "Toggle source <=> test" :n "a" #'projectile-toggle-between-implementation-and-test))))
-
 (after! css-mode
   (setq css-indent-offset 2)
   (add-hook! css-mode (add-hook 'before-save-hook 'web-beautify-css-buffer t t)))
@@ -327,22 +266,6 @@ translation it is possible to get suggestion."
 
 (after! git-gutter
   (setq git-gutter:modified-sign "~"))
-
-(after! projectile-rails
-  (defun +projectile-rails-goto-template-at-point ()
-    "Visit a template or a partial under the point."
-    (interactive)
-    (require 'find-lisp)
-    (let* ((template (projectile-rails-filename-at-point))
-           (dir (projectile-rails-template-dir template))
-           (name (projectile-rails-template-name template))
-           (regex (concat "^[_]?" name)))
-      (when (find-lisp-find-files dir regex)
-        (find-file (car (find-lisp-find-files dir regex))))))
-
-  (advice-add 'projectile-rails-goto-template-at-point :override #'+projectile-rails-goto-template-at-point)
-
-  (set-lookup-handlers! 'projectile-rails-mode :file #'projectile-rails-goto-file-at-point))
 
 (after! company
   (setq company-idle-delay 0))
@@ -412,7 +335,6 @@ translation it is possible to get suggestion."
 
   (advice-add '+vc/smerge-hydra/body :override #'++vc/smerge-hydra/body))
 
-
 (after! org-caldav
   (setq plstore-cache-passphrase-for-symmetric-encryption t)
   (setq org-caldav-url 'google)
@@ -428,6 +350,9 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
       (org-caldav-sync)))
 
   (add-hook 'org-capture-after-finalize-hook '+org-caldav-sync-after-capture))
+
+(after! doom-themes
+  (setq doom-themes-treemacs-theme 'doom-colors))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
@@ -462,4 +387,3 @@ WARNING: this is a simple implementation. The chance of generating the same UUID
 (defun org-agenda-gtd ()
   (interactive)
   (org-agenda nil "g"))
-
