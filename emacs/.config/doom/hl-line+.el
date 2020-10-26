@@ -1,5 +1,3 @@
-;;; ../../dotfiles/emacs/.config/doom/hl-line+.el -*- lexical-binding: t; -*-
-
 ;;; hl-line+.el --- Extensions to hl-line.el.
 ;;
 ;; Filename: hl-line+.el
