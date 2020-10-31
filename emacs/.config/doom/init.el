@@ -18,8 +18,7 @@
        (company          ; the ultimate code completion backend
         +childframe)
        (ivy              ; a search engine for love and life
-        +icons
-        +prescient)
+        +icons)
 
        :ui
        doom              ; what makes DOOM look the way it does
