@@ -357,6 +357,13 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
 (after! doom-themes
   (setq doom-themes-treemacs-theme 'doom-colors))
 
+(after! centaur-tabs
+  (map! :nvim "<C-tab>" #'centaur-tabs-forward
+        :nvim "<C-S-tab>" #'centaur-tabs-backward
+        :nvim "<C-S-iso-lefttab>" #'centaur-tabs-backward
+        :nvim "C-," #'centaur-tabs-move-current-tab-to-left
+        :nvim "C-." #'centaur-tabs-move-current-tab-to-right))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
 (defun move-line-up ()
