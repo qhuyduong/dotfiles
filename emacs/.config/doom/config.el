@@ -233,7 +233,7 @@
 
 (after! lsp-mode
   (setq lsp-headerline-breadcrumb-enable t)
-  (setq lsp-headerline-breadcrumb-segments '(project file symbols))
+  (setq lsp-headerline-breadcrumb-segments '(symbols))
   (add-hook 'lsp-mode-hook
             (lambda ()
               (setq-local company-backends
