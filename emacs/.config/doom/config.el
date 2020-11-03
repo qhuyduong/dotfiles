@@ -42,7 +42,19 @@
   (setq google-translate-backend-method 'curl)
   (setq google-translate-default-source-language "en")
   (setq google-translate-default-target-language "vi")
-  (setq google-translate-show-phonetic t))
+  (setq google-translate-show-phonetic t)
+
+  (defun +google-translate-json-suggestion (json)
+    "Retrieve from JSON (which returns by the
+`google-translate-request' function) suggestion. This function
+does matter when translating misspelled word. So instead of
+translation it is possible to get suggestion."
+    (let ((info (aref json 7)))
+      (if (and info (> (length info) 0))
+          (aref info 1)
+        nil)))
+
+  (advice-add 'google-translate-json-suggestion :override #'+google-translate-json-suggestion))
 
 ;; Keybindings
 (map! :nv "C-S-k" #'move-line-up
