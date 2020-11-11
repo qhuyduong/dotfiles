@@ -2,7 +2,7 @@
 
 ;; Global settings
 (setq doom-theme 'doom-palenight
-      doom-localleader-key "'"
+      doom-localleader-key ","
       display-line-numbers-type 'relative
       doom-font (font-spec :family "Fira Code" :size 16)
       default-input-method "vietnamese-telex"
@@ -10,6 +10,8 @@
       read-process-output-max (* 1024 1024)
       vc-follow-symlinks nil
       system-time-locale "C")
+
+(setq evil-snipe-override-evil-repeat-keys nil)
 
 ;; Make Emacs fullscreen by default
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
