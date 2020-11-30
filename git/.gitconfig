@@ -17,3 +17,5 @@
 	conflictStyle = diff3
 [pull]
 	ff = only
+[color]
+	ui = auto
