@@ -381,6 +381,9 @@ The function can be run automatically with the 'org-capture-after-finalize-hook'
         :nvim "C-," #'centaur-tabs-move-current-tab-to-left
         :nvim "C-." #'centaur-tabs-move-current-tab-to-right))
 
+(use-package! smali-mode
+  :mode "\\.smali\\'")
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
 (defun move-line-up ()
