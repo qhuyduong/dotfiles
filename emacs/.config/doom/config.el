@@ -224,7 +224,6 @@ translation it is possible to get suggestion."
                      (fringe-lib-load fringe-lib-backslash))))
 
 (after! rspec-mode
-  (setq rspec-spec-command "spring rspec")
   (add-hook! rspec-compilation-mode #'inf-ruby-switch-from-compilation)
   (set-popup-rule! "\\`\\*rspec-compilation.*?\\*\\'" :width 0.25 :side 'right :quit 'current))
 
