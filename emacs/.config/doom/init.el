@@ -83,8 +83,7 @@
        rest
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +lsp
-        +rails
-        +rbenv)          ; rbenv as version manager
+        +rails)
        web               ; the tubes
        yaml              ; JSON, but readable
 
