@@ -63,7 +63,5 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-eval "$(direnv hook zsh)"
-
 # Stop profiling
 # zprof
