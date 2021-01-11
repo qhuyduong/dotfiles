@@ -61,7 +61,6 @@
        grammar           ; tasing grammar mistake every you make
 
        :tools
-       direnv
        docker
        (eval             ; run code, run (also, repls)
          +overlay)
