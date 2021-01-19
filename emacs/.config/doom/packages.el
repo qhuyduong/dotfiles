@@ -15,6 +15,7 @@
 (package! google-translate)
 (package! lorem-ipsum)
 (package! lsp-treemacs)
+(package! multi-vterm)
 (package! oauth2)
 (package! org-caldav)
 (package! org-super-agenda)
