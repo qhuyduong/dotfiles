@@ -26,13 +26,12 @@
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        hydra
-       modeline          ; snazzy, Atom-inspired modeline, plus API
+       (modeline         ; snazzy, Atom-inspired modeline, plus API
+        +light)
        ophints           ; highlight the region an operation acts on
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
-       tabs              ; a tab bar for Emacs
-       treemacs          ; a project drawer, like neotree but cooler
        unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
        workspaces        ; tab emulation, persistence & separate workspaces
@@ -61,7 +60,6 @@
        grammar           ; tasing grammar mistake every you make
 
        :tools
-       docker
        (eval             ; run code, run (also, repls)
          +overlay)
        lookup            ; navigate your code and its documentation
@@ -71,9 +69,6 @@
         +forge)
 
        :lang
-       (cc               ; C/C++/Obj-C madness
-        +lsp)
-       data              ; config/data formats
        emacs-lisp        ; drown in parentheses
        (javascript       ; all(hope(abandon(ye(who(enter(here))))))
         +lsp)
@@ -81,10 +76,8 @@
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
         +roam)
-       rest
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-        +lsp
-        +rails)
+        +lsp)
        web               ; the tubes
        yaml              ; JSON, but readable
 

@@ -3,7 +3,7 @@
 ;; Global settings
 (setq doom-theme 'doom-palenight
       doom-localleader-key ","
-      display-line-numbers-type 'relative
+      display-line-numbers-type nil
       doom-font (font-spec :family "Fira Code" :size 16)
       default-input-method "vietnamese-telex"
       vc-handled-backends '(Git)
@@ -261,6 +261,9 @@ translation it is possible to get suggestion."
 (after! lsp-ui
   (setq lsp-ui-sideline-show-hover t
         lsp-ui-sideline-delay 1))
+
+(after! lsp-solargraph
+  (add-to-list 'lsp-solargraph-library-directories "~/.asdf/installs/ruby"))
 
 (after! web-mode
   (setq-hook! 'web-mode-hook

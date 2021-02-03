@@ -10,7 +10,6 @@
 (package! copy-as-format)
 (package! feature-mode)
 (package! evil-matchit)
-(package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))
 (package! git-link)
 (package! google-translate)
 (package! lorem-ipsum)
@@ -22,7 +21,6 @@
 (package! prettier-js)
 (package! protobuf-mode)
 (package! react-snippets)
-(package! smali-mode :recipe (:host github :repo "strazzere/Emacs-Smali"))
 (package! web-beautify)
 
 ;;; Disabled packages
