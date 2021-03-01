@@ -34,21 +34,20 @@ source ~/.zplug/init.zsh
 # Zplug plugins
 zplug "djui/alias-tips"
 zplug "hlissner/zsh-autopair", defer:2
-# Async for zsh, used by pure
+zplug "kiurchv/asdf.plugin.zsh", defer:2
+zplug "lib/completion", from:oh-my-zsh
 zplug "mafredri/zsh-async", from:github, defer:0
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/bundler", from:oh-my-zsh
+zplug "plugins/rails", from:oh-my-zsh
 zplug "popstas/zsh-command-time"
-# Load completion library for those sweet [tab] squares
-zplug "lib/completion", from:oh-my-zsh
-# Syntax highlighting for commands, load last
+zplug "specious/bender", as:theme
 zplug "zplug/zplug"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
-zplug "specious/bender", as:theme
-zplug "kiurchv/asdf.plugin.zsh", defer:2
 
 # Actually install plugins, prompt user input
 if ! zplug check --verbose; then
