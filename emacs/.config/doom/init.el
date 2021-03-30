@@ -76,6 +76,7 @@
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
         +roam)
+       rest
        (ruby             ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
         +lsp)
        web               ; the tubes
