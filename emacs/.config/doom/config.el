@@ -71,9 +71,7 @@ translation it is possible to get suggestion."
        :desc "search" "/" doom-leader-search-map
 
        (:prefix "o"
-        :desc "List processes" :nv "x" #'list-processes
-        (:prefix "a"
-         :desc "Getting things done" :nv "g" #'org-agenda-gtd))
+        :desc "List processes" :nv "x" #'list-processes)
 
        (:prefix "p"
         :desc "Find dir" :nv "d" #'counsel-projectile-find-dir)
@@ -138,29 +136,6 @@ translation it is possible to get suggestion."
   (set-face-attribute 'org-headline-done nil :strike-through t)
   (advice-add 'org-babel-execute-src-block :around 'ob-async-org-babel-execute-src-block)
   (setq org-startup-indented nil)
-  (setq org-gtd-gtd-file (concat org-directory "gtd.org"))
-  (setq org-gtd-tickler-file (concat org-directory "tickler.org"))
-  (setq org-gtd-inbox-file (concat org-directory "inbox.org"))
-  (setq org-gtd-someday-file (concat org-directory "someday.org"))
-  (setq org-agenda-files (list org-gtd-gtd-file org-gtd-inbox-file org-gtd-tickler-file))
-  (setq org-capture-templates `(("t" "Todo [inbox]" entry
-                                 (file ,org-gtd-inbox-file)
-                                 "\
-* TODO %i%?
-:PROPERTIES:
-:CREATED: %U
-:END:")
-                                ("k" "Tickler" entry
-                                 (file ,org-gtd-tickler-file)
-                                 "\
-* %i%?
-%^t
-:PROPERTIES:
-:CREATED: %U
-:END:")))
-  (setq org-refile-targets `((,org-gtd-gtd-file :maxlevel . 3)
-                             (,org-gtd-someday-file :level . 1)
-                             (,org-gtd-tickler-file :maxlevel . 2)))
   (setq org-todo-keywords '((sequence "TODO(t!)" "WAITING(w@/!)" "NEXT(n!)" "|" "DONE(d!)" "CANCELED(c@/!)")))
   (setq org-todo-keyword-faces '(("TODO" . (:foreground "grey"))
                                  ("WAITING" . (:foreground "yellow"))
@@ -172,44 +147,8 @@ translation it is possible to get suggestion."
         org-agenda-block-separator nil
         org-agenda-compact-blocks t
         org-agenda-start-day nil)
-  (setq org-tag-alist '(("@work" . ?w) ("@personal" . ?p)))
   (set-face-attribute 'org-agenda-date-today nil :font (font-spec :family "Fira Code" :size 24) :foreground "lightblue" :underline t)
-  (setq org-protocol-default-template-key "t")
-  (map! :map org-super-agenda-header-map
-        "j" #'evil-next-line
-        "k" #'evil-previous-line)
-  (set-popup-rule! "*Calendar*" :width 1 :side 'bottom)
-  (org-super-agenda-mode t)
-  (setq org-agenda-custom-commands
-        `(("g" "Getting things done"
-           ((agenda "" ((org-agenda-span 'day)
-                        (org-super-agenda-groups
-                         '((:name "Today"
-                            :time-grid t
-                            :date today
-                            :todo "TODAY"
-                            :scheduled today
-                            :order 1)))))
-            (alltodo "" ((org-agenda-overriding-header "")
-                         (org-super-agenda-groups
-                          '((:name "Important"
-                             :priority "A"
-                             :order 2)
-                            (:name "Next to do"
-                             :todo "NEXT"
-                             :order 5)
-                            (:name "Waiting"
-                             :todo "WAITING"
-                             :order 40)
-                            (:name "Due Today"
-                             :deadline today
-                             :order 2)))
-                         (org-agenda-files `(,org-gtd-gtd-file))))
-            (alltodo "" ((org-agenda-overriding-header "")
-                         (org-super-agenda-groups
-                          '((:name "Inbox"
-                             :anything)))
-                         (org-agenda-files `(,org-gtd-inbox-file)))))))))
+  (set-popup-rule! "*Calendar*" :width 1 :side 'bottom))
 
 (use-package! apib-mode
   :mode "\\.apib\\'")
@@ -477,22 +416,6 @@ translation it is possible to get suggestion."
 
   (advice-add '+vc/smerge-hydra/body :override #'++vc/smerge-hydra/body))
 
-(after! org-caldav
-  (setq plstore-cache-passphrase-for-symmetric-encryption t)
-  (setq org-caldav-url 'google)
-  (setq org-caldav-calendar-id (getenv "GCAL_TICKLER_CALENDAR_ID"))
-  (setq org-caldav-oauth2-client-id (getenv "GCAL_CLIENT_ID"))
-  (setq org-caldav-oauth2-client-secret (getenv "GCAL_CLIENT_SECRET"))
-  (setq org-caldav-inbox org-gtd-tickler-file)
-
-  (defun +org-caldav-sync-after-capture ()
-    "Sync calendar after a event was added with org-capture.
-The function can be run automatically with the 'org-capture-after-finalize-hook'."
-    (when (string= (org-capture-get :key) "k")
-      (org-caldav-sync)))
-
-  (add-hook 'org-capture-after-finalize-hook '+org-caldav-sync-after-capture))
-
 (after! doom-themes
   (setq doom-themes-treemacs-theme 'doom-colors))
 
@@ -605,7 +528,3 @@ WARNING: this is a simple implementation. The chance of generating the same UUID
            (random (expt 16 4))
            (random (expt 16 6))
            (random (expt 16 6)))))
-
-(defun org-agenda-gtd ()
-  (interactive)
-  (org-agenda nil "g"))
