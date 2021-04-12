@@ -30,8 +30,6 @@
 ;; Workaround for magithub authentication stuffs
 (add-to-list 'auth-sources "~/.authinfo")
 
-(setq delete-by-moving-to-trash t)
-
 (global-evil-matchit-mode t)
 
 (lsp-treemacs-sync-mode 1)
