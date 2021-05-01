@@ -497,6 +497,9 @@ translation it is possible to get suggestion."
   (evil-define-key 'normal vterm-mode-map (kbd "o")        #'evil-insert-resume)
   (evil-define-key 'normal vterm-mode-map (kbd "<return>") #'evil-insert-resume))
 
+(after! flycheck
+  (setq-default flycheck-disabled-checkers '(ruby-reek)))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
 (defun move-line-up ()
