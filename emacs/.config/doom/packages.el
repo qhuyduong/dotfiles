@@ -18,6 +18,7 @@
 (package! prettier-js)
 (package! protobuf-mode)
 (package! react-snippets)
+(package! smali-mode :recipe (:host github :repo "strazzere/Emacs-Smali"))
 (package! web-beautify)
 
 ;;; Disabled packages
