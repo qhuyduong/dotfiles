@@ -68,6 +68,9 @@
        (magit            ; a git porcelain for Emacs
         +forge)
 
+       :os
+       tty               ; improve the terminal Emacs experience
+
        :lang
        emacs-lisp        ; drown in parentheses
        (javascript       ; all(hope(abandon(ye(who(enter(here))))))
