@@ -498,6 +498,9 @@ translation it is possible to get suggestion."
   (evil-define-key 'normal vterm-mode-map (kbd "<return>") #'evil-insert-resume))
 
 (after! flycheck
+  (setq flycheck-command-wrapper-function
+        (lambda (command)
+          (append '("bundle" "exec") command)))
   (setq-default flycheck-disabled-checkers '(ruby-reek)))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
