@@ -32,7 +32,7 @@
 
 (global-evil-matchit-mode t)
 
-(lsp-treemacs-sync-mode 1)
+(lsp-treemacs-sync-mode t)
 
 (after! dired
   (add-hook! dired-mode #'rspec-dired-mode))
@@ -293,6 +293,9 @@ translation it is possible to get suggestion."
                                    (unless (string= (buffer-name) "schema.rb")
                                      (lsp-format-buffer)))
                                  t t))
+  (add-hook! ruby-mode (setq-local flycheck-command-wrapper-function
+                                   (lambda (command) (append '("bundle" "exec") command))))
+  (setq-default flycheck-disabled-checkers '(ruby-reek))
   (map! :mode ruby-mode
         (:leader
          (:prefix "p"
@@ -312,8 +315,7 @@ translation it is possible to get suggestion."
               (setq-local company-backends
                           (cons 'company-files company-backends)))
             t)
-  (setq lsp-eldoc-enable-hover nil
-        lsp-diagnostics-provider 'flycheck))
+  (setq lsp-eldoc-enable-hover nil))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-show-hover t
@@ -417,13 +419,6 @@ translation it is possible to get suggestion."
 (after! doom-themes
   (setq doom-themes-treemacs-theme 'doom-colors))
 
-(after! centaur-tabs
-  (map! :nvim "<C-tab>" #'centaur-tabs-forward
-        :nvim "<C-S-tab>" #'centaur-tabs-backward
-        :nvim "<C-S-iso-lefttab>" #'centaur-tabs-backward
-        :nvim "C-," #'centaur-tabs-move-current-tab-to-left
-        :nvim "C-." #'centaur-tabs-move-current-tab-to-right))
-
 (use-package! smali-mode
   :mode "\\.smali\\'")
 
@@ -496,12 +491,6 @@ translation it is possible to get suggestion."
   (evil-define-key 'normal vterm-mode-map (kbd "i")        #'evil-insert-resume)
   (evil-define-key 'normal vterm-mode-map (kbd "o")        #'evil-insert-resume)
   (evil-define-key 'normal vterm-mode-map (kbd "<return>") #'evil-insert-resume))
-
-(after! flycheck
-  (setq flycheck-command-wrapper-function
-        (lambda (command)
-          (append '("bundle" "exec") command)))
-  (setq-default flycheck-disabled-checkers '(ruby-reek)))
 
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
