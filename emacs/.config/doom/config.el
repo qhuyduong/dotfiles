@@ -310,13 +310,14 @@ translation it is possible to get suggestion."
 (after! lsp-mode
   (setq lsp-headerline-breadcrumb-enable t)
   (setq lsp-headerline-breadcrumb-segments '(symbols))
+  (setq lsp-enable-file-watchers nil)
+  (setq lsp-eldoc-enable-hover nil)
+  (setq lsp-diagnostics-provider ':flycheck)
   (add-hook 'lsp-mode-hook
             (lambda ()
               (setq-local company-backends
                           (cons 'company-files company-backends)))
-            t)
-  (setq lsp-eldoc-enable-hover nil
-        lsp-diagnostics-provider 'flycheck))
+            t))
 
 (after! lsp-ui
   (setq lsp-ui-sideline-show-hover t
