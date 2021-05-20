@@ -34,6 +34,8 @@
 
 (lsp-treemacs-sync-mode t)
 
+(treemacs-follow-mode t)
+
 (after! dired
   (add-hook! dired-mode #'rspec-dired-mode))
 
@@ -312,7 +314,7 @@ translation it is possible to get suggestion."
   (setq lsp-headerline-breadcrumb-segments '(symbols))
   (setq lsp-enable-file-watchers nil)
   (setq lsp-eldoc-enable-hover nil)
-  (setq lsp-diagnostics-provider ':flycheck)
+  (setq lsp-diagnostics-provider 'flycheck)
   (add-hook 'lsp-mode-hook
             (lambda ()
               (setq-local company-backends
