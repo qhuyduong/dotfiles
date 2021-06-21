@@ -1,6 +1,9 @@
 # Begin profiling
 # zmodload zsh/zprof
 
+# Emacs mode
+bindkey -e
+
 # History
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
@@ -12,11 +15,6 @@ export LANG=en_US.UTF-8
 export EDITOR='nvim'
 export LESS=-FXR
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
-
-# Emacs mode
-bindkey -e
-
-# Fzf
 export FZF_DEFAULT_COMMAND='fd --type f --follow'
 
 # Aliases
@@ -24,6 +22,9 @@ ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
 alias e=$EDITOR
 alias open='xdg-open'
+alias heroclistag="HERO_ACCESS_TOKEN=$HERO_ACCESS_TOKEN_STG herocli --server hero2.staging.ehrocks.com:443"
+alias herocliprod="HERO_ACCESS_TOKEN=$HERO_ACCESS_TOKEN_PROD herocli --server hero2.ehrocks.com:443"
+alias ssh='TERM=xterm-256color ssh'
 
 function bgkill() {
   kill -9 $(jobs -l | head -1 | awk '{print $3}')

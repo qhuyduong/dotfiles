@@ -9,6 +9,7 @@
 (package! apib-mode)
 (package! copy-as-format)
 (package! feature-mode)
+(package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))
 (package! evil-matchit)
 (package! git-link)
 (package! google-translate)
@@ -20,6 +21,7 @@
 (package! react-snippets)
 (package! smali-mode :recipe (:host github :repo "strazzere/Emacs-Smali"))
 (package! web-beautify)
+(package! yaml-tomato)
 
 ;;; Disabled packages
 (package! evil-escape :disable t)
