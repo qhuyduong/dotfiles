@@ -16,46 +16,34 @@ font:
     family: Fira Code
     style: Italic
 
+# Colors (Oceanic Next)
 colors:
   # Default colors
   primary:
-    background: '0x292d3e'
-    foreground: '0x959dcb'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x292d3e'
-    cursor: '0x959dcb'
+    background: '0x1b2b34'
+    foreground: '0xd8dee9'
 
   # Normal colors
   normal:
-    black:   '0x292d3e'
-    red:     '0xf07178'
-    green:   '0xc3e88d'
-    yellow:  '0xffcb6b'
-    blue:    '0x82aaff'
-    magenta: '0xc792ea'
-    cyan:    '0x89ddff'
-    white:   '0x959dcb'
+    black:   '0x29414f'
+    red:     '0xec5f67'
+    green:   '0x99c794'
+    yellow:  '0xfac863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0x65737e'
 
   # Bright colors
   bright:
-    black:   '0x676e95'
-    red:     '0xf07178'
-    green:   '0xc3e88d'
-    yellow:  '0xffcb6b'
-    blue:    '0x82aaff'
-    magenta: '0xc792ea'
-    cyan:    '0x89ddff'
-    white:   '0xffffff'
-
-  indexed_colors:
-    - { index: 16, color: '0xf78c6c' }
-    - { index: 17, color: '0xff5370' }
-    - { index: 18, color: '0x444267' }
-    - { index: 19, color: '0x32374d' }
-    - { index: 20, color: '0x8796b0' }
-    - { index: 21, color: '0x959dcb' }
+    black:   '0x405860'
+    red:     '0xec5f67'
+    green:   '0x99c794'
+    yellow:  '0xfac863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0xadb5c0'
 
 selection:
   save_to_clipboard: true
