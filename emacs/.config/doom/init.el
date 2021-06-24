@@ -70,6 +70,8 @@
        tmux              ; an API for interacting with tmux
 
        :lang
+       (cc               ; C > C++ == 1
+        +lsp)
        emacs-lisp        ; drown in parentheses
        (javascript       ; all(hope(abandon(ye(who(enter(here))))))
         +lsp)
