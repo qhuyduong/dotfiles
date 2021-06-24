@@ -16,6 +16,7 @@
 (package! lorem-ipsum)
 (package! lsp-treemacs)
 (package! multi-vterm)
+(package! ob-mermaid)
 (package! prettier-js)
 (package! protobuf-mode)
 (package! react-snippets)
