@@ -7,6 +7,7 @@
 ;; (package! builtin-package :disable t)
 
 (package! apib-mode)
+(package! clang-format+)
 (package! copy-as-format)
 (package! feature-mode)
 (package! flycheck-apib :recipe (:host github :repo "qhuyduong/flycheck-apib"))

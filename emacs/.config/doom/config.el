@@ -436,15 +436,6 @@ translation it is possible to get suggestion."
       (* (max steps 1)
          c-basic-offset)))
 
-  ;; Add Linux kernel style
-  (add-hook 'c-mode-common-hook
-            (lambda ()
-              (c-add-style "linux-kernel"
-                           '("linux" (c-offsets-alist
-                                      (arglist-cont-nonempty
-                                       c-lineup-gcc-asm-reg
-                                       linux-kernel-coding-style/c-lineup-arglist-tabs-only))))))
-
   (defun linux-kernel-coding-style/setup ()
     (let ((filename (buffer-file-name)))
       ;; Enable kernel mode for the appropriate files
@@ -459,7 +450,16 @@ translation it is possible to get suggestion."
         (c-set-style "linux-kernel")
         (message "Setting up indentation for the linux kernel"))))
 
-  (add-hook 'c-mode-hook 'linux-kernel-coding-style/setup))
+  ;; Add Linux kernel style
+  (add-hook! c-mode-common
+            (lambda ()
+              (c-add-style "linux-kernel"
+                           '("linux" (c-offsets-alist
+                                      (arglist-cont-nonempty
+                                       c-lineup-gcc-asm-reg
+                                       linux-kernel-coding-style/c-lineup-arglist-tabs-only))))))
+  (add-hook! c-mode 'linux-kernel-coding-style/setup)
+  (add-hook! c-mode #'clang-format+-mode))
 
 (use-package! multi-vterm
   :config
