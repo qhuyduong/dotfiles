@@ -74,8 +74,7 @@
        (cc               ; C > C++ == 1
         +lsp)
        emacs-lisp        ; drown in parentheses
-       (java             ; the poster child for carpal tunnel syndrome
-        +lsp)
+       java              ; the poster child for carpal tunnel syndrome
        (javascript       ; all(hope(abandon(ye(who(enter(here))))))
         +lsp)
        json              ; At least it ain't XML
