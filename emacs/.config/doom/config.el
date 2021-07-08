@@ -1,7 +1,7 @@
 ;;; .doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Global settings
-(setq doom-theme 'doom-oceanic-next
+(setq doom-theme 'doom-dracula
       doom-localleader-key ","
       display-line-numbers-type nil
       doom-font (font-spec :family "Fira Code" :size 19)
