@@ -104,7 +104,10 @@ translation it is possible to get suggestion."
        "C-S-s" (general-simulate-key "M-o a s <return>"))
       (:after ivy :map ivy-minibuffer-map
        "C-S-v" (general-simulate-key "M-o a v <return>")
-       "C-S-s" (general-simulate-key "M-o a s <return>")))
+       "C-S-s" (general-simulate-key "M-o a s <return>"))
+      (:after ivy :map ivy-minibuffer-map
+       "C-d" (general-simulate-key "M-o d M-o")
+       "C-u" (general-simulate-key "M-o u M-o")))
 
 (after! evil
   (evil-define-text-object evil-inner-buffer (count &optional _beg _end _type)
