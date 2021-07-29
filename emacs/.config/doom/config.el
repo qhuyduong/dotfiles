@@ -99,15 +99,20 @@ translation it is possible to get suggestion."
        :nvim "C-k"  #'evil-window-up
        :nvim "C-l"  #'evil-window-right)
 
-      (:after ivy :map ivy-switch-buffer-map
+      (:after ivy
+       :map ivy-switch-buffer-map
        "C-S-v" (general-simulate-key "M-o a v <return>")
-       "C-S-s" (general-simulate-key "M-o a s <return>"))
-      (:after ivy :map ivy-minibuffer-map
+       "C-S-s" (general-simulate-key "M-o a s <return>")
+       :map ivy-minibuffer-map
        "C-S-v" (general-simulate-key "M-o a v <return>")
-       "C-S-s" (general-simulate-key "M-o a s <return>"))
-      (:after ivy :map ivy-minibuffer-map
-       "C-d" (general-simulate-key "M-o d M-o")
-       "C-u" (general-simulate-key "M-o u M-o")))
+       "C-S-s" (general-simulate-key "M-o a s <return>")
+       :map ivy-minibuffer-map
+       "C-d" 'ivy-scroll-up-command
+       "C-u" 'ivy-scroll-down-command)
+
+      (:after magit
+       :map magit-diff-section-base-map
+       "C-<return>" 'magit-diff-visit-file-other-window))
 
 (after! evil
   (evil-define-text-object evil-inner-buffer (count &optional _beg _end _type)
