@@ -502,6 +502,16 @@ translation it is possible to get suggestion."
   (evil-define-key 'normal vterm-mode-map (kbd "o")        #'evil-insert-resume)
   (evil-define-key 'normal vterm-mode-map (kbd "<return>") #'evil-insert-resume))
 
+(after! ivy-posframe
+  (defun +ivy-posframe-get-size ()
+    "Set the ivy-posframe size according to the current frame."
+    (let ((height (or ivy-posframe-height (or ivy-height 10)))
+          (width (min (or ivy-posframe-width 200) (round (* .75 (frame-width))))))
+      (list :height height :width width :min-height height :min-width width)))
+
+  (setq ivy-posframe-size-function '+ivy-posframe-get-size)
+  (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-center))))
+
 ;;;;;;;;;; Functions ;;;;;;;;;;
 
 (defun move-line-up ()
