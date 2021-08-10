@@ -1,15 +1,15 @@
-evdev:input:b0011v0001p0001eAB41* # AT Translated Set 2 keyboard
- KEYBOARD_KEY_3a=leftctrl # bind capslock to leftctrl
- KEYBOARD_KEY_38=leftmeta # bind leftalt to leftmeta
- KEYBOARD_KEY_db=leftalt  # bind leftmeta to leftalt
+evdev:input:b0011v0001p0001e* # AT Translated Set 2 keyboard
+ KEYBOARD_KEY_3a=rightctrl # bind capslock to rightctrl
+ KEYBOARD_KEY_38=leftmeta  # bind leftalt to leftmeta
+ KEYBOARD_KEY_db=leftalt   # bind leftmeta to leftalt
 
 evdev:input:b0003v1B1Cp1B40e0111* # Corsair Corsair Gaming K63 Keyboard
- KEYBOARD_KEY_70039=leftctrl # bind capslock to leftctrl
- KEYBOARD_KEY_700e2=leftmeta # bind leftalt to leftmeta
- KEYBOARD_KEY_700e3=leftalt  # bind leftmeta to leftalt
+ KEYBOARD_KEY_70039=rightctrl # bind capslock to rightctrl
+ KEYBOARD_KEY_700e2=leftmeta  # bind leftalt to leftmeta
+ KEYBOARD_KEY_700e3=leftalt   # bind leftmeta to leftalt
 
 evdev:input:b0003v0C45p6613e0111* # Ducky AKKO 3108 V2
- KEYBOARD_KEY_70039=leftctrl  # bind capslock to leftctrl
+ KEYBOARD_KEY_70039=rightctrl # bind capslock to rightctrl
  KEYBOARD_KEY_700e2=leftmeta  # bind leftalt to leftmeta
  KEYBOARD_KEY_700e3=leftalt   # bind leftmeta to leftalt
  KEYBOARD_KEY_700e6=rightmeta # bind rightalt to rightmeta
@@ -23,14 +23,14 @@ evdev:input:b0003v056Ep0132e0111* # ELECOM TrackBall Mouse DEFT Pro TrackBall
 
 evdev:input:b0003v0483p4020e0110* # CATEX TECH. 69M-RGB
  KEYBOARD_KEY_70029=grave     # bind escape to grave
- KEYBOARD_KEY_70039=leftctrl  # bind capslock to leftctrl
+ KEYBOARD_KEY_70039=rightctrl # bind capslock to rightctrl
  KEYBOARD_KEY_700e2=leftmeta  # bind leftalt to leftmeta
  KEYBOARD_KEY_700e3=leftalt   # bind leftmeta to leftalt
  KEYBOARD_KEY_700e6=rightmeta # bind rightalt to rightmeta
 
 evdev:input:b0005v05ACp022Ce0100* # keydous
  KEYBOARD_KEY_70029=grave     # bind escape to grave
- KEYBOARD_KEY_70039=leftctrl  # bind capslock to leftctrl
+ KEYBOARD_KEY_70039=rightctrl # bind capslock to rightctrl
  KEYBOARD_KEY_700e2=leftmeta  # bind leftalt to leftmeta
  KEYBOARD_KEY_700e3=leftalt   # bind leftmeta to leftalt
  KEYBOARD_KEY_700e6=rightmeta # bind rightalt to rightmeta
