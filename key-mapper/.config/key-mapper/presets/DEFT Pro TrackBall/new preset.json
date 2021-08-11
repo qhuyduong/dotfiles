@@ -1,0 +1,6 @@
+{
+    "mapping": {
+        "1,277,1": "Shift_L + KEY_LEFTCTRL + TAB",
+        "1,278,1": "KEY_LEFTCTRL + TAB"
+    }
+}
