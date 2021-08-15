@@ -1,0 +1,1 @@
+build-essential zsh neovim stow fzf ripgrep fd-find hub libssl-dev libreadline-dev zlib1g-dev autoconf texinfo libgccjit-9-dev pkg-config libgnutls28-dev libgtk-3-dev libxpm-dev libjpeg-dev libgif-dev libtiff-dev libjansson-dev libpq-dev libgpgme-dev libtool-bin postgresql redis-server jq cmake sqlite3 openjdk-8-jdk git-lfs
