@@ -44,7 +44,7 @@ zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/bundler", from:oh-my-zsh
 zplug "plugins/rails", from:oh-my-zsh
 zplug "popstas/zsh-command-time"
-zplug "specious/bender", as:theme
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "zplug/zplug"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
