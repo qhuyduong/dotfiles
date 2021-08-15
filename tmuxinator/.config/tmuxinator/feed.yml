@@ -5,7 +5,7 @@ root: ~/
 
 windows:
   - announcement:
-     root: ~/workspace/announcement-api-service
+     root: ~/cabinet/announcement-api-service
      layout: main-vertical
      panes:
        - server: bundle exec rails server
@@ -13,7 +13,7 @@ windows:
        - consumer: bundle exec karafka server
 
   - nomination:
-     root: ~/workspace/nominations-service
+     root: ~/cabinet/nominations-service
      layout: main-vertical
      panes:
        - server: bundle exec puma

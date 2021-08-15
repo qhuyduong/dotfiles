@@ -134,7 +134,7 @@ translation it is possible to get suggestion."
 
 ;; Magit
 (after! magit
-  (setq magit-repository-directories '(("~/workspace" . 1))
+  (setq magit-repository-directories '(("~/cabinet" . 1))
         +magit-default-clone-url "git@github.com:%s/%s"))
 
 ;; lang/org

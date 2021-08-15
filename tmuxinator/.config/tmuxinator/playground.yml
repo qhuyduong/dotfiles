@@ -45,7 +45,7 @@ root: ~/
 
 windows:
   - employment-hero:
-      root: ~/workspace/employment-hero
+      root: ~/cabinet/employment-hero
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
@@ -55,19 +55,19 @@ windows:
         - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
 
   - frontend-core:
-      root: ~/workspace/frontend-core
+      root: ~/cabinet/frontend-core
       layout: main-vertical
       panes:
         - server: yarn install && yarn start
 
   - auth:
-      root: ~/workspace/auth
+      root: ~/cabinet/auth
       layout: main-vertical
       panes:
         - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
 
           #- announcement:
-          #    root: ~/workspace/announcement-api-service
+          #    root: ~/cabinet/announcement-api-service
           #    layout: main-vertical
           #    panes:
           #      - server: bundle exec rails server
@@ -75,7 +75,7 @@ windows:
           #      # - consumer: bundle exec karafka server
 
           #- nomination:
-          #    root: ~/workspace/nominations-service
+          #    root: ~/cabinet/nominations-service
           #    layout: main-vertical
           #    panes:
           #      - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
@@ -84,7 +84,7 @@ windows:
           #      #
         
   - meeting-management:
-      root: ~/workspace/meeting-management
+      root: ~/cabinet/meeting-management
       layout: main-vertical
       panes:
         - server: bundle exec rails server
@@ -93,7 +93,7 @@ windows:
         - redis: redis-server
 
   - comment:
-      root: ~/workspace/comment
+      root: ~/cabinet/comment
       layout: main-vertical
       panes:
         - server: bundle exec rails server

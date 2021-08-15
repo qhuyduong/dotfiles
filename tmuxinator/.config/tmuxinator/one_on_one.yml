@@ -5,7 +5,7 @@ root: ~/
 
 windows:
   - meeting-management:
-      root: ~/workspace/meeting-management
+      root: ~/cabinet/meeting-management
       layout: main-vertical
       panes:
         - server: bundle exec rails server

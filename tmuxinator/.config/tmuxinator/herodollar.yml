@@ -5,14 +5,14 @@ root: ~/
 
 windows:
   - herodollar:
-     root: ~/workspace/herodollar-service
+     root: ~/cabinet/herodollar-service
      layout: main-vertical
      panes:
        - server: bundle exec puma -p $PORT
        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
 
   - herodollar-purchase:
-     root: ~/workspace/herodollar-purchase-service
+     root: ~/cabinet/herodollar-purchase-service
      layout: main-vertical
      panes:
        - server: bundle exec puma -p $PORT

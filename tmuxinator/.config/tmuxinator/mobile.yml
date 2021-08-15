@@ -46,7 +46,7 @@ root: ~/
 
 windows:
   - mobile:
-      root: ~/workspace/eh-mobile-pro
+      root: ~/cabinet/eh-mobile-pro
       layout: main-vertical
       panes:
         - server: yarn start

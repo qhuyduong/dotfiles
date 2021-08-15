@@ -46,7 +46,7 @@ root: ~/
 
 windows:
   - ganhhangrong:
-      root: ~/workspace/GanhHangRong
+      root: ~/cabinet/GanhHangRong
       layout: main-vertical
       panes:
         - server: yarn react-native start

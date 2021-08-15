@@ -1,7 +1,7 @@
 # /home/qhuyduong/.config/tmuxinator/smart_factory.yml
 
 name: smart_factory
-root: ~/workspace/smart-factory
+root: ~/cabinet/smart-factory
 
 windows:
   - smart-factory:

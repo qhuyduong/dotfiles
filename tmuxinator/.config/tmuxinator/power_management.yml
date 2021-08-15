@@ -1,7 +1,7 @@
 # ~/.config/tmuxinator/power_management.yml
 
 name: power_management
-root: ~/workspace/power-management
+root: ~/cabinet/power-management
 
 windows:
   - power-management:
