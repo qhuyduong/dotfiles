@@ -4,7 +4,7 @@
 (setq doom-theme 'doom-dracula
       doom-localleader-key ","
       display-line-numbers-type nil
-      doom-font (font-spec :family "Fira Code" :size 19)
+      doom-font (font-spec :family "Fira Code" :size 16)
       default-input-method "vietnamese-telex"
       vc-handled-backends '(Git)
       read-process-output-max (* 1024 1024)
