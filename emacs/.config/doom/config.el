@@ -9,7 +9,8 @@
       vc-handled-backends '(Git)
       read-process-output-max (* 1024 1024)
       vc-follow-symlinks nil
-      system-time-locale "C")
+      system-time-locale "C"
+      browse-url-chromium-program (getenv "BROWSER"))
 
 (setq evil-snipe-override-evil-repeat-keys nil)
 
