@@ -15,7 +15,7 @@ export LANG=en_US.UTF-8
 export EDITOR='nvim'
 export LESS=-FXR
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
-export FZF_DEFAULT_COMMAND='fd --type f --follow'
+export FZF_DEFAULT_COMMAND='rg --files  --hidden --follow --glob "!{.git, node_modules}"'
 
 # Aliases
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
