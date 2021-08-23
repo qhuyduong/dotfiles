@@ -12,7 +12,8 @@ setopt SHARE_HISTORY
 
 export TERM=xterm-24bit
 export LANG=en_US.UTF-8
-export EDITOR='nvim'
+export EDITOR=nvim
+export VISUAL=nvim
 export LESS=-FXR
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 export FZF_DEFAULT_COMMAND='rg --files  --hidden --follow --glob "!{.git, node_modules}"'
