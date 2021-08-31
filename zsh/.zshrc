@@ -10,7 +10,6 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 setopt SHARE_HISTORY
 
-export TERM=xterm-24bit
 export LANG=en_US.UTF-8
 export EDITOR=nvim
 export VISUAL=nvim
@@ -25,7 +24,6 @@ alias e=$EDITOR
 alias open='xdg-open'
 alias heroclistag="HERO_ACCESS_TOKEN=$HERO_ACCESS_TOKEN_STG herocli --server hero2.staging.ehrocks.com:443"
 alias herocliprod="HERO_ACCESS_TOKEN=$HERO_ACCESS_TOKEN_PROD herocli --server hero2.ehrocks.com:443"
-alias ssh='TERM=xterm-256color ssh'
 
 function bgkill() {
   kill -9 $(jobs -l | head -1 | awk '{print $3}')
