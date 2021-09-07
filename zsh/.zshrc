@@ -38,9 +38,10 @@ zplug "hlissner/zsh-autopair", defer:2
 zplug "kiurchv/asdf.plugin.zsh", defer:2
 zplug "lib/completion", from:oh-my-zsh
 zplug "mafredri/zsh-async", from:github, defer:0
-zplug "plugins/fzf", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/bundler", from:oh-my-zsh
+zplug "plugins/fzf", from:oh-my-zsh
+zplug "plugins/gh", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/rails", from:oh-my-zsh
 zplug "popstas/zsh-command-time"
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
