@@ -1,0 +1,12 @@
+os:
+  openCommand: "nvim"
+customCommands:
+  - key: "S"
+    description: "Spin-off"
+    prompts:
+      - type: "input"
+        title: "What is the new branch name?"
+        initialValue: ""
+    command: "git spinoff {{index .PromptResponses 0}} {{.SelectedLocalBranch.Name}}"
+    context: "localBranches"
+    loadingText: "Creating branch"
