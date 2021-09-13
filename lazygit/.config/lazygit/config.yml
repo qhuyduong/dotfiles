@@ -2,7 +2,7 @@ os:
   openCommand: "nvim"
 customCommands:
   - key: "S"
-    description: "Spin-off"
+    description: "spin-off"
     prompts:
       - type: "input"
         title: "What is the new branch name?"
@@ -10,3 +10,18 @@ customCommands:
     command: "git spinoff {{index .PromptResponses 0}} {{.SelectedLocalBranch.Name}}"
     context: "localBranches"
     loadingText: "Creating branch"
+  - key: "o"
+    description: "open pull request in browser"
+    command: "gh pr view --web"
+    context: "localBranches"
+    loadingText: "Opening pull request"
+  - key: "C"
+    description: "create pull request in browser"
+    command: "gh pr create --web"
+    context: "localBranches"
+    loadingText: "Opening browser"
+  - key: "y"
+    description: "copy pull request URL to clipboard"
+    command: 'gh pr view {{.SelectedLocalBranch.Name}} --json url | jq ''.url'' | tr -d ''"'' | clip.exe'
+    context: "localBranches"
+    loadingText: "Copying PR URL"
