@@ -1,6 +1,6 @@
-# /Users/qhuyduong/.config/tmuxinator/base.yml
+# /Users/qhuyduong/.config/tmuxinator/playground.yml
 
-name: base
+name: playground
 root: ~/
 
 windows:
