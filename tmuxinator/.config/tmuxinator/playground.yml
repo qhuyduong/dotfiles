@@ -1,47 +1,7 @@
-# /Users/qhuyduong/.config/tmuxinator/playground.yml
+# /Users/qhuyduong/.config/tmuxinator/base.yml
 
-name: playground
+name: base
 root: ~/
-
-# Optional tmux socket
-# socket_name: foo
-
-# Runs before everything. Use it to start daemons etc.
-# pre: sudo /etc/rc.d/mysqld start
-# pre: open -a Docker
-
-# Project hooks
-# Runs on project start, always
-# on_project_start: command
-# Run on project start, the first time
-# on_project_first_start: command
-# Run on project start, after the first time
-# on_project_restart: command
-# Run on project exit ( detaching from tmux session )
-# on_project_exit: tmux -CC attach -t Playground
-# Run on project stop
-# on_project_stop: command
-
-# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
-
-# Pass command line options to tmux. Useful for specifying a different tmux.conf.
-# tmux_options: -f ~/.tmux.mac.conf
-
-# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
-# tmux_command: byobu
-
-# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-# startup_window: editor
-
-# Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
-# startup_pane: 1
-
-# Controls whether the tmux session should be attached to automatically. Defaults to true.
-# attach: false
-
-# Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t Playground
 
 windows:
   - employment-hero:
@@ -65,38 +25,3 @@ windows:
       layout: main-vertical
       panes:
         - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
-
-          #- announcement:
-          #    root: ~/cabinet/announcement-api-service
-          #    layout: main-vertical
-          #    panes:
-          #      - server: bundle exec rails server
-          #      # - worker: bundle exec sidekiq
-          #      # - consumer: bundle exec karafka server
-
-          #- nomination:
-          #    root: ~/cabinet/nominations-service
-          #    layout: main-vertical
-          #    panes:
-          #      - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
-          #      #- web: bundle exec puma
-          #      # - worker: bundle exec sidekiq -r ./config/environment.rb
-          #      #
-        
-  - meeting-management:
-      root: ~/cabinet/meeting-management
-      layout: main-vertical
-      panes:
-        - server: bundle exec rails server
-        - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
-        - worker: bundle exec sidekiq
-        - redis: redis-server
-
-  - comment:
-      root: ~/cabinet/comment
-      layout: main-vertical
-      panes:
-        - server: bundle exec rails server
-        # - worker: bundle exec sidekiq
-        # - consumer: bundle exec karafka server
-
