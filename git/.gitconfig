@@ -1,19 +1,25 @@
-[user]
-	name = Huy Duong
-	email = huy.duong@employmenthero.com
+[color]
+	ui = auto
 [core]
 	hooksPath = ~/.config/git/hooks
 	excludesfile = ~/.gitignore
-[github]
-	user = qhuyduong
-[pull]
-	ff = only
-[color]
-	ui = auto
+[diff]
+        tool = nvimdiff
+[difftool]
+        prompt = false
+[difftool "nvimdiff"]
+        cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[github]
+	user = qhuyduong
+[pull]
+	ff = only
 [push]
 	default = current
+[user]
+	name = Huy Duong
+	email = huy.duong@employmenthero.com
