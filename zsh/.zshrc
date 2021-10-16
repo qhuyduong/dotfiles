@@ -24,7 +24,6 @@ alias e=$EDITOR
 alias open='xdg-open'
 alias heroclistag="HERO_ACCESS_TOKEN=$HERO_ACCESS_TOKEN_STG herocli --server hero2.staging.ehrocks.com:443"
 alias herocliprod="HERO_ACCESS_TOKEN=$HERO_ACCESS_TOKEN_PROD herocli --server hero2.ehrocks.com:443"
-alias cadb="ADB_SERVER_SOCKET=tcp:$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):5037 adb"
 
 function bgkill() {
   kill -9 $(jobs -l | head -1 | awk '{print $3}')
