@@ -3,7 +3,6 @@
 [core]
 	hooksPath = ~/.config/git/hooks
 	excludesfile = ~/.gitignore
-	autocrlf = true
 [diff]
         tool = nvimdiff
 [difftool]
