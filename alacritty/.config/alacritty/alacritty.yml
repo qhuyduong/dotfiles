@@ -1,6 +1,3 @@
-window:
-  startup_mode: Maximized
-
 font:
   size: 14.0
 
@@ -53,4 +50,5 @@ selection:
   save_to_clipboard: true
 
 window:
+  startup_mode: Maximized
   decorations: "none"
