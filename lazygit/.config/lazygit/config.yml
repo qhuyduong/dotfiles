@@ -8,7 +8,7 @@ customCommands:
       - type: "input"
         title: "What is the new branch name?"
         initialValue: ""
-    command: "git spinoff {{index .PromptResponses 0}} {{.SelectedLocalBranch.Name}}"
+    command: "git spinoff {{index .PromptResponses 0}}"
     context: "localBranches"
     loadingText: "Creating branch"
   - key: "o"
