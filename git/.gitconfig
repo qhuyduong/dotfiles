@@ -23,3 +23,5 @@
 [user]
 	name = Huy Duong
 	email = huy.duong@employmenthero.com
+[init]
+	defaultBranch = main
