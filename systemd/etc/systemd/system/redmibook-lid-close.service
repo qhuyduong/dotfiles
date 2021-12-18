@@ -1,0 +1,9 @@
+[Unit]
+Description=RedmiBook Lid Close Service
+
+[Service]
+ExecStart=redmibook-lid-close.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
