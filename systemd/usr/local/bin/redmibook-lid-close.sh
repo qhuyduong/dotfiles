@@ -1,7 +1,7 @@
 #!/bin/bash
 
 delay_time="1"
-cmd="pm-suspend"
+cmd="systemctl suspend-then-hibernate"
 
 while true ; do
 	state=( $(</proc/acpi/button/lid/LID0/state) )
