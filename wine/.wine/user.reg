@@ -7,6 +7,41 @@ WINE REGISTRY Version 2
 #time=1d7fbe0f5af87d6
 @=""
 
+[Console\\C:_ProgramData_Ableton_Live 10 Suite_Program_InstallHelper.exe] 1640701434
+#time=1d7fbf68b370300
+"ColorTable00"=dword:00000000
+"ColorTable01"=dword:00800000
+"ColorTable02"=dword:00008000
+"ColorTable03"=dword:00808000
+"ColorTable04"=dword:00000080
+"ColorTable05"=dword:00800080
+"ColorTable06"=dword:00008080
+"ColorTable07"=dword:00c0c0c0
+"ColorTable08"=dword:00808080
+"ColorTable09"=dword:00ff0000
+"ColorTable10"=dword:0000ff00
+"ColorTable11"=dword:00ffff00
+"ColorTable12"=dword:000000ff
+"ColorTable13"=dword:00ff00ff
+"ColorTable14"=dword:0000ffff
+"ColorTable15"=dword:00ffffff
+"CursorSize"=dword:00000019
+"CursorVisible"=dword:00000001
+"EditionMode"=dword:00000000
+"FaceName"="Courier New"
+"FontPitchFamily"=dword:00000001
+"FontSize"=dword:000f0009
+"FontWeight"=dword:00000190
+"HistoryBufferSize"=dword:00000032
+"HistoryNoDup"=dword:00000000
+"InsertMode"=dword:00000001
+"MenuMask"=dword:00000000
+"PopupColors"=dword:000000f5
+"QuickEdit"=dword:00000000
+"ScreenBufferSize"=dword:00960050
+"ScreenColors"=dword:0000000f
+"WindowSize"=dword:00190050
+
 [Console\\C:_ProgramData_Ableton_Live 10 Suite_Redist_push2-display-driver-installer.exe] 1640692789
 #time=1d7fbe26a4d3042
 "ColorTable00"=dword:00000000
@@ -129,8 +164,8 @@ WINE REGISTRY Version 2
 #time=1d7fbe0f2212a16
 "On"="0"
 
-[Control Panel\\Colors] 1640692511
-#time=1d7fbe1c4b1853e
+[Control Panel\\Colors] 1640742322
+#time=1d7fc55be672ec6
 "ActiveBorder"="42 42 42"
 "ActiveTitle"="180 52 51"
 "AppWorkSpace"="36 36 36"
@@ -152,7 +187,7 @@ WINE REGISTRY Version 2
 "InactiveTitle"="35 35 35"
 "InactiveTitleText"="255 255 255"
 "InfoText"="0 0 0"
-"Menu"="59 59 59"
+"Menu"="55 55 55"
 "MenuBar"="42 42 42"
 "MenuHilight"="42 42 42"
 "MenuText"="222 222 222"
@@ -308,10 +343,23 @@ WINE REGISTRY Version 2
 #time=1d7fbe0f221136e
 "1"="00000409"
 
+[Software\\Ableton\\Keys] 1640701721
+#time=1d7fbf73661693c
+"Ableton API"=hex:
+
 [Software\\Ableton\\{633cc501-cd60-4281-a629-f989dd207c66}] 1640692646
 #time=1d7fbe2150d6caa
 "InstallPath"="C:\\ProgramData\\Ableton\\Live 10 Suite"
 "LinkName"="C:\\users\\qhuyduong\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Ableton Live 10 Suite.lnk"
+
+[Software\\Classes\\notion] 1640711017
+#time=1d7fc0cdab8094a
+@="URL:notion"
+"URL Protocol"=""
+
+[Software\\Classes\\notion\\shell\\open\\command] 1640711017
+#time=1d7fc0cdab80cba
+@="\"C:\\users\\qhuyduong\\AppData\\Local\\Programs\\Notion\\Notion.exe\" \"%1\""
 
 [Software\\Microsoft\\Installer\\Features\\02757FEBF32E20A50BF1ECB922A0B129] 1640692164
 #time=1d7fbe0f59c76be
@@ -395,18 +443,91 @@ WINE REGISTRY Version 2
 #time=1d7fbe0f5ad4016
 "Text Color"="0,0,0"
 
+[Software\\Microsoft\\Notepad] 1640701882
+#time=1d7fbf795ddd512
+"fWrap"=dword:00000001
+"iMarginBottom"=dword:000009c4
+"iMarginLeft"=dword:000007d0
+"iMarginRight"=dword:000007d0
+"iMarginTop"=dword:000009c4
+"iPointSize"=dword:0000005a
+"iWindowPosDX"=dword:00000558
+"iWindowPosDY"=dword:00000402
+"iWindowPosX"=dword:00000000
+"iWindowPosY"=dword:0000001b
+"lfCharSet"=dword:00000001
+"lfClipPrecision"=dword:00000000
+"lfEscapement"=dword:00000000
+"lfFaceName"="System"
+"lfItalic"=dword:00000000
+"lfOrientation"=dword:00000000
+"lfOutPrecision"=dword:00000000
+"lfPitchAndFamily"=dword:00000001
+"lfQuality"=dword:00000000
+"lfStrikeOut"=dword:00000000
+"lfUnderline"=dword:00000000
+"lfWeight"=dword:00000190
+"szHeader"="&f"
+"szTrailer"="Page &p"
+
 [Software\\Microsoft\\Protected Storage System Provider] 1640692164
 #time=1d7fbe0f5af8830
+
+[Software\\Microsoft\\SystemCertificates\\CA\\Certificates] 1640711018
+#time=1d7fc0cdb8a1016
+
+[Software\\Microsoft\\SystemCertificates\\CA\\CRLs] 1640711018
+#time=1d7fc0cdb8a10b6
+
+[Software\\Microsoft\\SystemCertificates\\CA\\CTLs] 1640711018
+#time=1d7fc0cdb8a1192
+
+[Software\\Microsoft\\SystemCertificates\\My\\Certificates] 1640711018
+#time=1d7fc0cdb8a18a4
+
+[Software\\Microsoft\\SystemCertificates\\My\\CRLs] 1640711018
+#time=1d7fc0cdb8a193a
+
+[Software\\Microsoft\\SystemCertificates\\My\\CTLs] 1640711018
+#time=1d7fc0cdb8a19d0
+
+[Software\\Microsoft\\SystemCertificates\\Root\\Certificates] 1640711018
+#time=1d7fc0cdb88f53c
+
+[Software\\Microsoft\\SystemCertificates\\Root\\CRLs] 1640711018
+#time=1d7fc0cdb88f69a
+
+[Software\\Microsoft\\SystemCertificates\\Root\\CTLs] 1640711018
+#time=1d7fc0cdb88f88e
+
+[Software\\Microsoft\\SystemCertificates\\Trust\\Certificates] 1640711018
+#time=1d7fc0cdb8a1d40
+
+[Software\\Microsoft\\SystemCertificates\\Trust\\CRLs] 1640711018
+#time=1d7fc0cdb8a1dd6
+
+[Software\\Microsoft\\SystemCertificates\\Trust\\CTLs] 1640711018
+#time=1d7fc0cdb8a1e6c
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced] 1640692232
 #time=1d7fbe11e4063f0
 
-[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\LastVisitedMRU] 1640692233
-#time=1d7fbe11f10545c
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\LastVisitedMRU] 1640701773
+#time=1d7fbf75506b9fa
 "a"=hex:77,00,69,00,6e,00,65,00,63,00,66,00,67,00,2e,00,65,00,78,00,65,00,00,\
   00,5a,00,3a,00,5c,00,68,00,6f,00,6d,00,65,00,5c,00,71,00,68,00,75,00,79,00,\
   64,00,75,00,6f,00,6e,00,67,00,5c,00,44,00,6f,00,77,00,6e,00,6c,00,6f,00,61,\
   00,64,00,73,00,00,00
+"b"=hex:6b,00,65,00,79,00,67,00,65,00,6e,00,2e,00,65,00,78,00,65,00,00,00,43,\
+  00,3a,00,5c,00,75,00,73,00,65,00,72,00,73,00,5c,00,71,00,68,00,75,00,79,00,\
+  64,00,75,00,6f,00,6e,00,67,00,5c,00,44,00,65,00,73,00,6b,00,74,00,6f,00,70,\
+  00,00,00
+"MRUList"="ba"
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs] 1640704760
+#time=1d7fbfe49afabaa
+"a"=hex:74,72,61,69,6e,69,6e,67,2e,61,6c,73,00,1d,00,30,00,00,00,00,00,00,00,\
+  00,00,00,00,74,72,61,69,6e,69,6e,67,2e,61,6c,73,2e,6c,6e,6b,00,00,00,00
 "MRUList"="a"
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders] 1640692160
@@ -708,6 +829,9 @@ WINE REGISTRY Version 2
 [Software\\Microsoft\\Windows\\CurrentVersion\\Run] 1640692164
 #time=1d7fbe0f5ae8bce
 
+[Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall] 1640711213
+#time=1d7fc0d4fd344ec
+
 [Software\\Microsoft\\Windows\\Shell\\Associations\\UrlAssociations\\ftp\\UserChoice] 1640692164
 #time=1d7fbe0f5af95c8
 "ProgId"="ftp"
@@ -741,61 +865,61 @@ WINE REGISTRY Version 2
 #time=1d7fbe26a525536
 "Enable"="Y"
 
-[Software\\Wine\\FileOpenAssociations\\.adg] 1640692789
-#time=1d7fbe26a41092a
+[Software\\Wine\\FileOpenAssociations\\.adg] 1640701434
+#time=1d7fbf68b3e3aa8
 "AppName"="Ableton Live 10 Suite"
 "DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-adg.desktop"
 "MimeType"="application/x-wine-extension-adg"
 "OpenWithIcon"="0330_Ableton Live 10 Suite.0"
-"ProgID"="Ableton Live Group Preset"
+"ProgID"="Ableton.Live.AppLiveSuite.adg.10"
 
-[Software\\Wine\\FileOpenAssociations\\.adv] 1640692789
-#time=1d7fbe26a4458d2
+[Software\\Wine\\FileOpenAssociations\\.adv] 1640701434
+#time=1d7fbf68b40a234
 "AppName"="Ableton Live 10 Suite"
 "DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-adv.desktop"
 "MimeType"="application/x-wine-extension-adv"
 "OpenWithIcon"="0330_Ableton Live 10 Suite.0"
-"ProgID"="Ableton Live Device Preset"
+"ProgID"="Ableton.Live.AppLiveSuite.adv.10"
 
-[Software\\Wine\\FileOpenAssociations\\.alc] 1640692789
-#time=1d7fbe26a46f696
+[Software\\Wine\\FileOpenAssociations\\.alc] 1640701434
+#time=1d7fbf68b428932
 "AppName"="Ableton Live 10 Suite"
 "DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-alc.desktop"
 "MimeType"="application/x-wine-extension-alc"
 "OpenWithIcon"="0330_Ableton Live 10 Suite.0"
-"ProgID"="Ableton Live Clip"
+"ProgID"="Ableton.Live.AppLiveSuite.alc.10"
 
-[Software\\Wine\\FileOpenAssociations\\.alp] 1640692789
-#time=1d7fbe26a49ce8e
+[Software\\Wine\\FileOpenAssociations\\.alp] 1640701434
+#time=1d7fbf68b447f80
 "AppName"="Ableton Live 10 Suite"
 "DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-alp.desktop"
 "MimeType"="application/x-wine-extension-alp"
 "OpenWithIcon"="0330_Ableton Live 10 Suite.0"
-"ProgID"="Ableton Live Pack"
+"ProgID"="Ableton.Live.AppLiveSuite.alp.10"
 
-[Software\\Wine\\FileOpenAssociations\\.als] 1640692789
-#time=1d7fbe26a4c57da
+[Software\\Wine\\FileOpenAssociations\\.als] 1640701434
+#time=1d7fbf68b466e26
 "AppName"="Ableton Live 10 Suite"
 "DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-als.desktop"
 "MimeType"="application/x-wine-extension-als"
 "OpenWithIcon"="0330_Ableton Live 10 Suite.0"
-"ProgID"="Ableton Live Set"
+"ProgID"="Ableton.Live.AppLiveSuite.als.10"
 
-[Software\\Wine\\FileOpenAssociations\\.amxd] 1640692789
-#time=1d7fbe26a4f198e
+[Software\\Wine\\FileOpenAssociations\\.amxd] 1640701434
+#time=1d7fbf68b485c4a
 "AppName"="Ableton Live 10 Suite"
 "DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-amxd.desktop"
 "MimeType"="application/x-wine-extension-amxd"
 "OpenWithIcon"="0330_Ableton Live 10 Suite.0"
-"ProgID"="Ableton Max Device"
+"ProgID"="Ableton.Live.AppLiveSuite.amxd.10"
 
-[Software\\Wine\\FileOpenAssociations\\.auz] 1640692789
-#time=1d7fbe26a5257c0
+[Software\\Wine\\FileOpenAssociations\\.auz] 1640701434
+#time=1d7fbf68b4a4686
 "AppName"="Ableton Live 10 Suite"
 "DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-auz.desktop"
 "MimeType"="application/x-wine-extension-auz"
 "OpenWithIcon"="0330_Ableton Live 10 Suite.0"
-"ProgID"="Ableton Live Authorization File"
+"ProgID"="Ableton.Live.AppLiveSuite.auz.10"
 
 [Software\\Wine\\FileOpenAssociations\\.chm] 1640692217
 #time=1d7fbe11530f888
@@ -945,13 +1069,13 @@ WINE REGISTRY Version 2
 #time=1d7fbe0f5ae7fda
 "winebrowser"="\"C:\\windows\\system32\\winebrowser.exe\" -nohome"
 
-[Software\\Wine\\Fonts] 1640692569
-#time=1d7fbe1e730ce08
+[Software\\Wine\\Fonts] 1640749240
+#time=1d7fc65d98622f6
 "Codepages"="1252,437"
 "LogPixels"=dword:00000090
 
-[Software\\Wine\\Fonts\\External Fonts] 1640692569
-#time=1d7fbe1e731b0de
+[Software\\Wine\\Fonts\\External Fonts] 1640749240
+#time=1d7fc65d987013a
 "@Droid Sans Fallback (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\droid\\DroidSansFallbackFull.ttf"
 "@Microsoft Yahei (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\msyh.ttf"
 "@Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Regular.ttc"
@@ -1331,10 +1455,23 @@ WINE REGISTRY Version 2
 "Yrsa SemiBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\fonts-yrsa-rasa\\Yrsa-SemiBoldItalic.ttf"
 "Z003-MediumItalic (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\urw-base35\\Z003-MediumItalic.otf"
 
-[Software\\Wine\\MenuFiles] 1640701263
-#time=1d7fbf624e50b9c
+[Software\\Wine\\MenuFiles] 1640749623
+#time=1d7fc66be36e26e
 "\\\\?\\Z:\\home\\qhuyduong\\.config\\menus\\applications-merged\\wine-Programs-Ableton Live 10 Suite.menu"="C:\\users\\qhuyduong\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Ableton Live 10 Suite.lnk"
+"\\\\?\\Z:\\home\\qhuyduong\\.config\\menus\\applications-merged\\wine-Programs-Garena-Garena-Garena.menu"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Garena\\Garena\\Garena.lnk"
+"\\\\?\\Z:\\home\\qhuyduong\\.config\\menus\\applications-merged\\wine-Programs-Garena-Garena-Uninstall.menu"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Garena\\Garena\\Uninstall.lnk"
 "\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine\\Programs\\Ableton Live 10 Suite.desktop"="C:\\users\\qhuyduong\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Ableton Live 10 Suite.lnk"
+"\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine\\Programs\\Garena\\Garena\\Garena.desktop"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Garena\\Garena\\Garena.lnk"
+"\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine\\Programs\\Garena\\Garena\\Uninstall.desktop"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Garena\\Garena\\Uninstall.lnk"
+
+[Software\\Wine\\WineASIO] 1640702421
+#time=1d7fbf8d7397a10
+"Autostart server"=dword:00000001
+"Connect to hardware"=dword:00000001
+"Fixed buffersize"=dword:00000001
+"Number of inputs"=dword:00000010
+"Number of outputs"=dword:00000010
+"Preferred buffersize"=dword:00000400
 
 [Volatile Environment] 1640692167
 #time=1d7fbe0f794c390
