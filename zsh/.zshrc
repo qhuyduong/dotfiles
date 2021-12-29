@@ -64,5 +64,7 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
+fortune | cowsay -pn
+
 # Stop profiling
 # zprof
