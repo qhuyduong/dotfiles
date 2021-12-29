@@ -1069,13 +1069,13 @@ WINE REGISTRY Version 2
 #time=1d7fbe0f5ae7fda
 "winebrowser"="\"C:\\windows\\system32\\winebrowser.exe\" -nohome"
 
-[Software\\Wine\\Fonts] 1640749240
-#time=1d7fc65d98622f6
+[Software\\Wine\\Fonts] 1640750643
+#time=1d7fc691e0e64f8
 "Codepages"="1252,437"
 "LogPixels"=dword:00000090
 
-[Software\\Wine\\Fonts\\External Fonts] 1640749240
-#time=1d7fc65d987013a
+[Software\\Wine\\Fonts\\External Fonts] 1640750643
+#time=1d7fc691e0fa160
 "@Droid Sans Fallback (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\droid\\DroidSansFallbackFull.ttf"
 "@Microsoft Yahei (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\msyh.ttf"
 "@Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Regular.ttc"
@@ -1276,6 +1276,7 @@ WINE REGISTRY Version 2
 "Norasi Bold Oblique (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-BoldOblique.ttf"
 "Norasi Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-Italic.ttf"
 "Norasi Oblique (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-Oblique.ttf"
+"Noto Color Emoji"="Z:\\usr\\share\\fonts\\truetype\\noto\\NotoColorEmoji.ttf"
 "Noto Mono (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\noto\\NotoMono-Regular.ttf"
 "Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Regular.ttc"
 "Noto Sans CJK HK Bold (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Bold.ttc"
@@ -1472,6 +1473,9 @@ WINE REGISTRY Version 2
 "Number of inputs"=dword:00000010
 "Number of outputs"=dword:00000010
 "Preferred buffersize"=dword:00000400
+
+[Software\\Wine\\WineDbg] 1640750704
+#time=1d7fc694221f8c8
 
 [Volatile Environment] 1640692167
 #time=1d7fbe0f794c390
