@@ -26,6 +26,35 @@ WINE REGISTRY Version 2
 
 [Control Panel\\Colors] 1641088301
 #time=1d7ff7b49c6d282
+"ActiveBorder"="42 42 42"
+"ActiveTitle"="180 52 51"
+"AppWorkSpace"="36 36 36"
+"Background"="255 255 255"
+"ButtonAlternateFace"="42 42 42"
+"ButtonDkShadow"="29 29 29"
+"ButtonFace"="42 42 42"
+"ButtonHilight"="54 54 54"
+"ButtonLight"="42 42 42"
+"ButtonShadow"="29 29 29"
+"ButtonText"="222 222 222"
+"GradientActiveTitle"="255 175 174"
+"GradientInactiveTitle"="36 36 36"
+"GrayText"="86 86 86"
+"Hilight"="237 95 93"
+"HilightText"="255 255 255"
+"HotTrackingColor"="66 66 66"
+"InactiveBorder"="42 42 42"
+"InactiveTitle"="35 35 35"
+"InactiveTitleText"="255 255 255"
+"InfoText"="0 0 0"
+"Menu"="55 55 55"
+"MenuBar"="42 42 42"
+"MenuHilight"="42 42 42"
+"MenuText"="222 222 222"
+"Scrollbar"="46 46 46"
+"Window"="36 36 36"
+"WindowFrame"="218 114 112"
+"WindowText"="222 222 222"
 
 [Control Panel\\Desktop] 1641088316
 #time=1d7ff7b52bfe13a
@@ -584,6 +613,94 @@ WINE REGISTRY Version 2
 [Software\\Wine\\DllOverrides] 1641088301
 #time=1d7ff7b49c13b6a
 
+[Software\\Wine\\FileOpenAssociations\\.chm] 1641088461
+#time=1d7ff7ba95834a2
+"AppName"="hh"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-chm.desktop"
+"MimeType"="application/vnd.ms-htmlhelp"
+"OpenWithIcon"="D15F_hh.0"
+"ProgID"="chm.file"
+
+[Software\\Wine\\FileOpenAssociations\\.hlp] 1641088461
+#time=1d7ff7ba95bb5e6
+"AppName"="winhlp32"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-hlp.desktop"
+"MimeType"="application/winhlp"
+"OpenWithIcon"="C06E_winhlp32.0"
+"ProgID"="hlpfile"
+
+[Software\\Wine\\FileOpenAssociations\\.htm] 1641088461
+#time=1d7ff7ba95f0f2a
+"AppName"="winebrowser"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-htm.desktop"
+"MimeType"="text/html"
+"OpenWithIcon"="81F5_winebrowser.0"
+"ProgID"="htmlfile"
+
+[Software\\Wine\\FileOpenAssociations\\.ini] 1641088461
+#time=1d7ff7ba9624816
+"AppName"="notepad"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-ini.desktop"
+"MimeType"="application/x-wine-extension-ini"
+"OpenWithIcon"="2E40_notepad.0"
+"ProgID"="inifile"
+
+[Software\\Wine\\FileOpenAssociations\\.msp] 1641088461
+#time=1d7ff7ba9643680
+"AppName"="Wine Installer"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-msp.desktop"
+"MimeType"="application/x-wine-extension-msp"
+"OpenWithIcon"="D23E_msiexec.0"
+"ProgID"="Msi.Patch"
+
+[Software\\Wine\\FileOpenAssociations\\.pdf] 1641088461
+#time=1d7ff7ba965f290
+"AppName"="winebrowser"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-pdf.desktop"
+"MimeType"="application/pdf"
+"OpenWithIcon"="81F5_winebrowser.0"
+"ProgID"="pdffile"
+
+[Software\\Wine\\FileOpenAssociations\\.rtf] 1641088461
+#time=1d7ff7ba9684eb4
+"AppName"="wordpad"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-rtf.desktop"
+"MimeType"="application/rtf"
+"OpenWithIcon"="3365_wordpad.0"
+"ProgID"="rtffile"
+
+[Software\\Wine\\FileOpenAssociations\\.txt] 1641088461
+#time=1d7ff7ba96a1744
+"AppName"="notepad"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-txt.desktop"
+"MimeType"="text/plain"
+"OpenWithIcon"="2E40_notepad.0"
+"ProgID"="txtfile"
+
+[Software\\Wine\\FileOpenAssociations\\.vbs] 1641088461
+#time=1d7ff7ba96bef6a
+"AppName"="wscript"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-vbs.desktop"
+"MimeType"="text/vbscript"
+"OpenWithIcon"="2905_wscript.0"
+"ProgID"="VBSFile"
+
+[Software\\Wine\\FileOpenAssociations\\.wri] 1641088461
+#time=1d7ff7ba96e0eee
+"AppName"="wordpad"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-wri.desktop"
+"MimeType"="application/x-mswrite"
+"OpenWithIcon"="3365_wordpad.0"
+"ProgID"="wrifile"
+
+[Software\\Wine\\FileOpenAssociations\\.xml] 1641088461
+#time=1d7ff7ba96ffc86
+"AppName"="winebrowser"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-xml.desktop"
+"MimeType"="application/xml"
+"OpenWithIcon"="81F5_winebrowser.0"
+"ProgID"="xmlfile"
+
 [Software\\Wine\\FileOpenBlacklist\\.gif] 1641088309
 #time=1d7ff7b4e8812f4
 "iexplore"="\"C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe\" -nohome"
@@ -644,13 +761,13 @@ WINE REGISTRY Version 2
 #time=1d7ff7b4d0529a8
 "winebrowser"="\"C:\\windows\\system32\\winebrowser.exe\" -nohome"
 
-[Software\\Wine\\Fonts] 1641088301
-#time=1d7ff7b49bfe4ae
+[Software\\Wine\\Fonts] 1641088461
+#time=1d7ff7ba93ec2d8
 "Codepages"="1252,437"
-"LogPixels"=dword:00000060
+"LogPixels"=dword:00000090
 
-[Software\\Wine\\Fonts\\External Fonts] 1641088301
-#time=1d7ff7b49c0a8d0
+[Software\\Wine\\Fonts\\External Fonts] 1641088461
+#time=1d7ff7ba93f92e4
 "@Droid Sans Fallback (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\droid\\DroidSansFallbackFull.ttf"
 "@Microsoft Yahei (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\msyh.ttf"
 "@Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Regular.ttc"
@@ -851,7 +968,6 @@ WINE REGISTRY Version 2
 "Norasi Bold Oblique (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-BoldOblique.ttf"
 "Norasi Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-Italic.ttf"
 "Norasi Oblique (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-Oblique.ttf"
-"Noto Color Emoji"="Z:\\usr\\share\\fonts\\truetype\\noto\\NotoColorEmoji.ttf"
 "Noto Mono (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\noto\\NotoMono-Regular.ttf"
 "Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Regular.ttc"
 "Noto Sans CJK HK Bold (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Bold.ttc"
@@ -1030,6 +1146,9 @@ WINE REGISTRY Version 2
 "Yrsa SemiBold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\fonts-yrsa-rasa\\Yrsa-SemiBold.ttf"
 "Yrsa SemiBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\fonts-yrsa-rasa\\Yrsa-SemiBoldItalic.ttf"
 "Z003-MediumItalic (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\urw-base35\\Z003-MediumItalic.otf"
+
+[Software\\Wine\\MenuFiles] 1641088461
+#time=1d7ff7ba9732c44
 
 [Volatile Environment] 1641088309
 #time=1d7ff7b4eacee4e
