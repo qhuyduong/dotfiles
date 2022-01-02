@@ -7,6 +7,146 @@ WINE REGISTRY Version 2
 #time=1d7ff7b4d06284e
 @=""
 
+[Console\\C:_ProgramData_Ableton_Live 11 Suite_Program_InstallHelper.exe] 1641089103
+#time=1d7ff7d27948c34
+"ColorTable00"=dword:00000000
+"ColorTable01"=dword:00800000
+"ColorTable02"=dword:00008000
+"ColorTable03"=dword:00808000
+"ColorTable04"=dword:00000080
+"ColorTable05"=dword:00800080
+"ColorTable06"=dword:00008080
+"ColorTable07"=dword:00c0c0c0
+"ColorTable08"=dword:00808080
+"ColorTable09"=dword:00ff0000
+"ColorTable10"=dword:0000ff00
+"ColorTable11"=dword:00ffff00
+"ColorTable12"=dword:000000ff
+"ColorTable13"=dword:00ff00ff
+"ColorTable14"=dword:0000ffff
+"ColorTable15"=dword:00ffffff
+"CursorSize"=dword:00000019
+"CursorVisible"=dword:00000001
+"EditionMode"=dword:00000000
+"FaceName"="Courier New"
+"FontPitchFamily"=dword:00000001
+"FontSize"=dword:000f0009
+"FontWeight"=dword:00000190
+"HistoryBufferSize"=dword:00000032
+"HistoryNoDup"=dword:00000000
+"InsertMode"=dword:00000001
+"MenuMask"=dword:00000000
+"PopupColors"=dword:000000f5
+"QuickEdit"=dword:00000000
+"ScreenBufferSize"=dword:00960050
+"ScreenColors"=dword:0000000f
+"WindowSize"=dword:00190050
+
+[Console\\C:_ProgramData_Ableton_Live 11 Suite_Redist_push2-display-driver-installer.exe] 1641088803
+#time=1d7ff7c75378ce4
+"ColorTable00"=dword:00000000
+"ColorTable01"=dword:00800000
+"ColorTable02"=dword:00008000
+"ColorTable03"=dword:00808000
+"ColorTable04"=dword:00000080
+"ColorTable05"=dword:00800080
+"ColorTable06"=dword:00008080
+"ColorTable07"=dword:00c0c0c0
+"ColorTable08"=dword:00808080
+"ColorTable09"=dword:00ff0000
+"ColorTable10"=dword:0000ff00
+"ColorTable11"=dword:00ffff00
+"ColorTable12"=dword:000000ff
+"ColorTable13"=dword:00ff00ff
+"ColorTable14"=dword:0000ffff
+"ColorTable15"=dword:00ffffff
+"CursorSize"=dword:00000019
+"CursorVisible"=dword:00000001
+"EditionMode"=dword:00000000
+"FaceName"="Courier New"
+"FontPitchFamily"=dword:00000001
+"FontSize"=dword:000f0009
+"FontWeight"=dword:00000190
+"HistoryBufferSize"=dword:00000032
+"HistoryNoDup"=dword:00000000
+"InsertMode"=dword:00000001
+"MenuMask"=dword:00000000
+"PopupColors"=dword:000000f5
+"QuickEdit"=dword:00000000
+"ScreenBufferSize"=dword:00960050
+"ScreenColors"=dword:0000000f
+"WindowSize"=dword:00190050
+
+[Console\\C:_ProgramData_Ableton_Live 11 Suite_Resources_Extensions_Index_Ableton Index.exe] 1641088978
+#time=1d7ff7cdd20ce1a
+"ColorTable00"=dword:00000000
+"ColorTable01"=dword:00800000
+"ColorTable02"=dword:00008000
+"ColorTable03"=dword:00808000
+"ColorTable04"=dword:00000080
+"ColorTable05"=dword:00800080
+"ColorTable06"=dword:00008080
+"ColorTable07"=dword:00c0c0c0
+"ColorTable08"=dword:00808080
+"ColorTable09"=dword:00ff0000
+"ColorTable10"=dword:0000ff00
+"ColorTable11"=dword:00ffff00
+"ColorTable12"=dword:000000ff
+"ColorTable13"=dword:00ff00ff
+"ColorTable14"=dword:0000ffff
+"ColorTable15"=dword:00ffffff
+"CursorSize"=dword:00000019
+"CursorVisible"=dword:00000001
+"EditionMode"=dword:00000000
+"FaceName"="Courier New"
+"FontPitchFamily"=dword:00000001
+"FontSize"=dword:000f0009
+"FontWeight"=dword:00000190
+"HistoryBufferSize"=dword:00000032
+"HistoryNoDup"=dword:00000000
+"InsertMode"=dword:00000001
+"MenuMask"=dword:00000000
+"PopupColors"=dword:000000f5
+"QuickEdit"=dword:00000000
+"ScreenBufferSize"=dword:00960050
+"ScreenColors"=dword:0000000f
+"WindowSize"=dword:00190050
+
+[Console\\C:_ProgramData_Ableton_Live 11 Suite_Resources_Extensions_WebConnector_Ableton Web Connector.exe] 1641088978
+#time=1d7ff7cdd12e21e
+"ColorTable00"=dword:00000000
+"ColorTable01"=dword:00800000
+"ColorTable02"=dword:00008000
+"ColorTable03"=dword:00808000
+"ColorTable04"=dword:00000080
+"ColorTable05"=dword:00800080
+"ColorTable06"=dword:00008080
+"ColorTable07"=dword:00c0c0c0
+"ColorTable08"=dword:00808080
+"ColorTable09"=dword:00ff0000
+"ColorTable10"=dword:0000ff00
+"ColorTable11"=dword:00ffff00
+"ColorTable12"=dword:000000ff
+"ColorTable13"=dword:00ff00ff
+"ColorTable14"=dword:0000ffff
+"ColorTable15"=dword:00ffffff
+"CursorSize"=dword:00000019
+"CursorVisible"=dword:00000001
+"EditionMode"=dword:00000000
+"FaceName"="Courier New"
+"FontPitchFamily"=dword:00000001
+"FontSize"=dword:000f0009
+"FontWeight"=dword:00000190
+"HistoryBufferSize"=dword:00000032
+"HistoryNoDup"=dword:00000000
+"InsertMode"=dword:00000001
+"MenuMask"=dword:00000000
+"PopupColors"=dword:000000f5
+"QuickEdit"=dword:00000000
+"ScreenBufferSize"=dword:00960050
+"ScreenColors"=dword:0000000f
+"WindowSize"=dword:00190050
+
 [Control Panel\\Accessibility\\AudioDescription] 1641088301
 #time=1d7ff7b49c0cbe4
 "Locale"=dword:00000000
@@ -203,6 +343,15 @@ WINE REGISTRY Version 2
 #time=1d7ff7b49c0b280
 "1"="00000409"
 
+[Software\\Ableton\\Keys] 1641089385
+#time=1d7ff7dcfbb2f3a
+"Ableton API"=hex:
+
+[Software\\Ableton\\{c5b6d61c-6008-409d-a622-c1742dccfaa7}] 1641088664
+#time=1d7ff7c2250db52
+"InstallPath"="C:\\ProgramData\\Ableton\\Live 11 Suite"
+"LinkName"="C:\\users\\qhuyduong\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Ableton Live 11 Suite.lnk"
+
 [Software\\Microsoft\\Installer\\Features\\02757FEBF32E20A50BF1ECB922A0B129] 1641088306
 #time=1d7ff7b4cf2cb1e
 "wine_mono"=""
@@ -285,8 +434,46 @@ WINE REGISTRY Version 2
 #time=1d7ff7b4d03f844
 "Text Color"="0,0,0"
 
+[Software\\Microsoft\\Notepad] 1641089517
+#time=1d7ff7e1ea7793c
+"fWrap"=dword:00000001
+"iMarginBottom"=dword:000009c4
+"iMarginLeft"=dword:000007d0
+"iMarginRight"=dword:000007d0
+"iMarginTop"=dword:000009c4
+"iPointSize"=dword:0000005a
+"iWindowPosDX"=dword:00000558
+"iWindowPosDY"=dword:00000402
+"iWindowPosX"=dword:00000000
+"iWindowPosY"=dword:0000001b
+"lfCharSet"=dword:00000001
+"lfClipPrecision"=dword:00000000
+"lfEscapement"=dword:00000000
+"lfFaceName"="System"
+"lfItalic"=dword:00000000
+"lfOrientation"=dword:00000000
+"lfOutPrecision"=dword:00000000
+"lfPitchAndFamily"=dword:00000001
+"lfQuality"=dword:00000000
+"lfStrikeOut"=dword:00000000
+"lfUnderline"=dword:00000000
+"lfWeight"=dword:00000190
+"szHeader"="&f"
+"szTrailer"="Page &p"
+
 [Software\\Microsoft\\Protected Storage System Provider] 1641088306
 #time=1d7ff7b4d0628d0
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced] 1641089277
+#time=1d7ff7d8f9c45ba
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\LastVisitedMRU] 1641089304
+#time=1d7ff7d9f803af4
+"a"=hex:6b,00,65,00,79,00,67,00,65,00,6e,00,2e,00,65,00,78,00,65,00,00,00,43,\
+  00,3a,00,5c,00,75,00,73,00,65,00,72,00,73,00,5c,00,71,00,68,00,75,00,79,00,\
+  64,00,75,00,6f,00,6e,00,67,00,5c,00,44,00,65,00,73,00,6b,00,74,00,6f,00,70,\
+  00,00,00
+"MRUList"="a"
 
 [Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders] 1641088303
 #time=1d7ff7b4afcbb44
@@ -613,6 +800,65 @@ WINE REGISTRY Version 2
 [Software\\Wine\\DllOverrides] 1641088301
 #time=1d7ff7b49c13b6a
 
+[Software\\Wine\\Drivers\\winepulse.drv] 1641088972
+#time=1d7ff7cd998d4cc
+
+[Software\\Wine\\FileOpenAssociations\\.adg] 1641089103
+#time=1d7ff7d279cc066
+"AppName"="Ableton Live 11 Suite"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-adg.desktop"
+"MimeType"="application/x-wine-extension-adg"
+"OpenWithIcon"="3CC9_Ableton Live 11 Suite.0"
+"ProgID"="Ableton.Live.AppLiveSuite.adg.11"
+
+[Software\\Wine\\FileOpenAssociations\\.adv] 1641089103
+#time=1d7ff7d279f2310
+"AppName"="Ableton Live 11 Suite"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-adv.desktop"
+"MimeType"="application/x-wine-extension-adv"
+"OpenWithIcon"="3CC9_Ableton Live 11 Suite.0"
+"ProgID"="Ableton.Live.AppLiveSuite.adv.11"
+
+[Software\\Wine\\FileOpenAssociations\\.alc] 1641089103
+#time=1d7ff7d27a1540a
+"AppName"="Ableton Live 11 Suite"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-alc.desktop"
+"MimeType"="application/x-wine-extension-alc"
+"OpenWithIcon"="3CC9_Ableton Live 11 Suite.0"
+"ProgID"="Ableton.Live.AppLiveSuite.alc.11"
+
+[Software\\Wine\\FileOpenAssociations\\.alp] 1641089103
+#time=1d7ff7d27a335e0
+"AppName"="Ableton Live 11 Suite"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-alp.desktop"
+"MimeType"="application/x-wine-extension-alp"
+"OpenWithIcon"="3CC9_Ableton Live 11 Suite.0"
+"ProgID"="Ableton.Live.AppLiveSuite.alp.11"
+
+[Software\\Wine\\FileOpenAssociations\\.als] 1641089103
+#time=1d7ff7d27a527b0
+"AppName"="Ableton Live 11 Suite"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-als.desktop"
+"MimeType"="application/x-wine-extension-als"
+"OpenWithIcon"="3CC9_Ableton Live 11 Suite.0"
+"ProgID"="Ableton.Live.AppLiveSuite.als.11"
+
+[Software\\Wine\\FileOpenAssociations\\.amxd] 1641089103
+#time=1d7ff7d27a6e230
+"AppName"="Ableton Live 11 Suite"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-amxd.desktop"
+"MimeType"="application/x-wine-extension-amxd"
+"OpenWithIcon"="3CC9_Ableton Live 11 Suite.0"
+"ProgID"="Ableton.Live.AppLiveSuite.amxd.11"
+
+[Software\\Wine\\FileOpenAssociations\\.auz] 1641089103
+#time=1d7ff7d27a8fc5a
+"AppName"="Ableton Live 11 Suite"
+"DesktopFile"="\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine-extension-auz.desktop"
+"MimeType"="application/x-wine-extension-auz"
+"OpenWithIcon"="3CC9_Ableton Live 11 Suite.0"
+"ProgID"="Ableton.Live.AppLiveSuite.auz.11"
+
 [Software\\Wine\\FileOpenAssociations\\.chm] 1641088461
 #time=1d7ff7ba95834a2
 "AppName"="hh"
@@ -761,13 +1007,13 @@ WINE REGISTRY Version 2
 #time=1d7ff7b4d0529a8
 "winebrowser"="\"C:\\windows\\system32\\winebrowser.exe\" -nohome"
 
-[Software\\Wine\\Fonts] 1641088461
-#time=1d7ff7ba93ec2d8
+[Software\\Wine\\Fonts] 1641089102
+#time=1d7ff7d26fa8648
 "Codepages"="1252,437"
 "LogPixels"=dword:00000090
 
-[Software\\Wine\\Fonts\\External Fonts] 1641088461
-#time=1d7ff7ba93f92e4
+[Software\\Wine\\Fonts\\External Fonts] 1641089102
+#time=1d7ff7d26fb3f66
 "@Droid Sans Fallback (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\droid\\DroidSansFallbackFull.ttf"
 "@Microsoft Yahei (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\msyh.ttf"
 "@Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Regular.ttc"
@@ -968,6 +1214,7 @@ WINE REGISTRY Version 2
 "Norasi Bold Oblique (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-BoldOblique.ttf"
 "Norasi Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-Italic.ttf"
 "Norasi Oblique (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-Oblique.ttf"
+"Noto Color Emoji"="Z:\\usr\\share\\fonts\\truetype\\noto\\NotoColorEmoji.ttf"
 "Noto Mono (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\noto\\NotoMono-Regular.ttf"
 "Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Regular.ttc"
 "Noto Sans CJK HK Bold (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Bold.ttc"
@@ -1147,8 +1394,19 @@ WINE REGISTRY Version 2
 "Yrsa SemiBold Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\fonts-yrsa-rasa\\Yrsa-SemiBoldItalic.ttf"
 "Z003-MediumItalic (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\urw-base35\\Z003-MediumItalic.otf"
 
-[Software\\Wine\\MenuFiles] 1641088461
-#time=1d7ff7ba9732c44
+[Software\\Wine\\MenuFiles] 1641088813
+#time=1d7ff7c7ae0555e
+"\\\\?\\Z:\\home\\qhuyduong\\.config\\menus\\applications-merged\\wine-Programs-Ableton Live 11 Suite.menu"="C:\\users\\qhuyduong\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Ableton Live 11 Suite.lnk"
+"\\\\?\\Z:\\home\\qhuyduong\\.local\\share\\applications\\wine\\Programs\\Ableton Live 11 Suite.desktop"="C:\\users\\qhuyduong\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Ableton Live 11 Suite.lnk"
+
+[Software\\Wine\\WineASIO] 1641089168
+#time=1d7ff7d4eb9e80e
+"Autostart server"=dword:00000001
+"Connect to hardware"=dword:00000001
+"Fixed buffersize"=dword:00000001
+"Number of inputs"=dword:00000010
+"Number of outputs"=dword:00000010
+"Preferred buffersize"=dword:00000400
 
 [Volatile Environment] 1641088309
 #time=1d7ff7b4eacee4e
