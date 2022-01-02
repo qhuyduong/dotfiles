@@ -475,6 +475,13 @@ WINE REGISTRY Version 2
   00,00,00
 "MRUList"="a"
 
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs] 1641089622
+#time=1d7ff7e5d093cc4
+"a"=hex:64,72,61,67,6f,73,74,65,61,5f,64,69,6e,5f,74,65,69,2e,61,6c,73,00,26,\
+  00,30,00,00,00,00,00,00,00,00,00,00,00,64,72,61,67,6f,73,74,65,61,5f,64,69,\
+  6e,5f,74,65,69,2e,61,6c,73,2e,6c,6e,6b,00,00,00,00
+"MRUList"="a"
+
 [Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders] 1641088303
 #time=1d7ff7b4afcbb44
 "Administrative Tools"="C:\\users\\qhuyduong\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Administrative Tools"
@@ -1007,13 +1014,13 @@ WINE REGISTRY Version 2
 #time=1d7ff7b4d0529a8
 "winebrowser"="\"C:\\windows\\system32\\winebrowser.exe\" -nohome"
 
-[Software\\Wine\\Fonts] 1641089102
-#time=1d7ff7d26fa8648
+[Software\\Wine\\Fonts] 1641094106
+#time=1d7ff88cdbe144e
 "Codepages"="1252,437"
 "LogPixels"=dword:00000090
 
-[Software\\Wine\\Fonts\\External Fonts] 1641089102
-#time=1d7ff7d26fb3f66
+[Software\\Wine\\Fonts\\External Fonts] 1641094106
+#time=1d7ff88cdbeda1e
 "@Droid Sans Fallback (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\droid\\DroidSansFallbackFull.ttf"
 "@Microsoft Yahei (TrueType)"="Z:\\opt\\wine-staging\\share\\wine\\fonts\\msyh.ttf"
 "@Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Regular.ttc"
@@ -1214,7 +1221,6 @@ WINE REGISTRY Version 2
 "Norasi Bold Oblique (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-BoldOblique.ttf"
 "Norasi Italic (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-Italic.ttf"
 "Norasi Oblique (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\tlwg\\Norasi-Oblique.ttf"
-"Noto Color Emoji"="Z:\\usr\\share\\fonts\\truetype\\noto\\NotoColorEmoji.ttf"
 "Noto Mono (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\noto\\NotoMono-Regular.ttf"
 "Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Regular.ttc"
 "Noto Sans CJK HK Bold (TrueType)"="Z:\\usr\\share\\fonts\\opentype\\noto\\NotoSansCJK-Bold.ttc"
