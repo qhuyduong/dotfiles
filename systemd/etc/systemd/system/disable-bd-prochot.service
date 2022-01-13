@@ -1,7 +1,0 @@
-[Unit]
-Description=Disable BD PROCHOT
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/disable-bd-prochot.sh
-StandardOutput=journal
