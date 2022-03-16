@@ -1,5 +1,4 @@
 os:
-  openCommand: "wsl-open"
   editCommand: "nvr -cc 'split | only' --remote-wait +'set bufhidden=delete'"
 customCommands:
   - key: "S"
