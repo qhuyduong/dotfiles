@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Ableton Live 11 Suite
-Exec=env WINEPREFIX="/home/qhuyduong/.wine" sh -c "cd ~/.wine/drive_c/ProgramData/Ableton/Live\ 11\ Suite/Program; wine Ableton\ Live\ 11\ Suite.exe"
+Exec=env WINEPREFIX="/home/qhuyduong/.wine" wine start /unix /home/qhuyduong/.wine/drive_c/ProgramData/Ableton/Live\ 11\ Suite/Program/Ableton\ Live\ 11\ Suite.exe
 Type=Application
 StartupNotify=true
 Comment=Ableton Live 11 Suite
