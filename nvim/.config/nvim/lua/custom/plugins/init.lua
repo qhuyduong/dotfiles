@@ -20,4 +20,15 @@ return {
          require("telescope").load_extension "media_files"
       end,
    },
+
+   ["Pocco81/TrueZen.nvim"] = {
+      cmd = {
+         "TZAtaraxis",
+         "TZMinimalist",
+         "TZFocus",
+      },
+      config = function()
+         require "custom.plugins.truezen"
+      end,
+   },
 }

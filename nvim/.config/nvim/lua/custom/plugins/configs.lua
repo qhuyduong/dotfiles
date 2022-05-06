@@ -9,11 +9,11 @@ M.treesitter = {
       "css",
       "javascript",
       "json",
+      "toml",
       "markdown",
       "c",
       "bash",
       "lua",
-     "ruby",
    },
 }
 
