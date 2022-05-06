@@ -25,7 +25,7 @@ M.plugins = {
 }
 
 M.ui = {
-   theme = "onedark",
+   theme = "tokyonight",
 }
 
 return M
