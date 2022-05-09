@@ -5,7 +5,7 @@ root: ~/
 
 windows:
   - employment-hero:
-      root: ~/cabinet/thinkei/employment-hero
+      root: ~/workspace/thinkei/employment-hero
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
@@ -15,13 +15,13 @@ windows:
         - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
 
   - frontend-core:
-      root: ~/cabinet/thinkei/frontend-core
+      root: ~/workspace/thinkei/frontend-core
       layout: main-vertical
       panes:
         - server: yarn install && yarn start
 
   - auth:
-      root: ~/cabinet/thinkei/auth
+      root: ~/workspace/thinkei/auth
       layout: main-vertical
       panes:
         - grpc: bundle exec eh_protobuf start -c ./config/environment.rb
