@@ -43,4 +43,11 @@ return {
    ["tpope/vim-surround"] = {},
 
    ["tpope/vim-projectionist"] = {},
+
+   ["windwp/nvim-autopairs"] = {
+      after = "nvim-cmp",
+      config = function()
+         require "custom.plugins.autopairs"
+      end,
+   },
 }
