@@ -1,8 +1,8 @@
 local map = nvchad.map
 
 -- telescope
-map("n", "<leader>fp", ":Telescope media_files <CR>")
-map("n", "<leader>te", ":Telescope <CR>")
+map("n", "<leader>fp", ":Telescope media_files<CR>")
+map("n", "<leader>te", ":Telescope<CR>")
 map("n", "<leader>'", ":Telescope resume<CR>")
 map("n", "<leader>*", ":Telescope grep_string<CR>")
 map(
@@ -12,16 +12,19 @@ map(
 )
 
 -- truezen
-map("n", "<leader>ta", ":TZAtaraxis <CR>")
-map("n", "<leader>tm", ":TZMinimalist <CR>")
-map("n", "<leader>tf", ":TZFocus <CR>")
+map("n", "<leader>ta", ":TZAtaraxis<CR>")
+map("n", "<leader>tm", ":TZMinimalist<CR>")
+map("n", "<leader>tf", ":TZFocus<CR>")
 
 -- Test
-map("n", "<leader>tf", "<cmd>TestFile<CR>")
-map("n", "<leader>tl", "<cmd>TestLast<CR>")
-map("n", "<leader>tn", "<cmd>TestNearest<CR>")
-map("n", "<leader>ts", "<cmd>TestSuite<CR>")
-map("n", "<leader>tv", "<cmd>TestVisit<CR>")
+map("n", "<leader>tf", ":TestFile<CR>")
+map("n", "<leader>tl", ":TestLast<CR>")
+map("n", "<leader>tn", ":TestNearest<CR>")
+map("n", "<leader>ts", ":TestSuite<CR>")
+map("n", "<leader>tv", ":TestVisit<CR>")
 
 -- Projectionist
-map("n", "<leader>a", "<cmd>A<CR>")
+map("n", "<leader>a", ":A<CR>")
+
+-- LazyGit
+map("n", "<leader>go", ":LazyGit<CR>")

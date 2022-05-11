@@ -50,4 +50,9 @@ return {
          require "custom.plugins.autopairs"
       end,
    },
+
+   ["qhuyduong/lazygit.nvim"] = {
+      requires = "plenary.nvim",
+      cmd = { "LazyGit", "LazyGitConfig" },
+   },
 }
