@@ -37,4 +37,6 @@ return {
          require "custom.plugins.tmux"
       end,
    },
+
+   ["vim-test/vim-test"] = { requires = "preservim/vimux" },
 }

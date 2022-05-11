@@ -15,6 +15,7 @@ M.treesitter = {
       "bash",
       "lua",
       "norg",
+      "ruby",
    },
 }
 
