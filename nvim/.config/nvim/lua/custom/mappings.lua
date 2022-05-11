@@ -28,3 +28,6 @@ map("n", "<leader>a", ":A<CR>")
 
 -- LazyGit
 map("n", "<leader>go", ":LazyGit<CR>")
+
+-- Terminal
+vim.api.nvim_del_keymap("t", "jk")
