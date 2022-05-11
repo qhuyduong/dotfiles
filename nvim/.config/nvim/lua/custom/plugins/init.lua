@@ -31,4 +31,10 @@ return {
          require "custom.plugins.truezen"
       end,
    },
+
+   ["aserowy/tmux.nvim"] = {
+      config = function()
+         require "custom.plugins.tmux"
+      end,
+   },
 }
