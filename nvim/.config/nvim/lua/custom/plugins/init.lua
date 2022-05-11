@@ -39,4 +39,8 @@ return {
    },
 
    ["vim-test/vim-test"] = { requires = "preservim/vimux" },
+
+   ["tpope/vim-surround"] = {},
+
+   ["tpope/vim-projectionist"] = {},
 }
