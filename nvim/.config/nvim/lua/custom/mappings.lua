@@ -1,7 +1,8 @@
-local map = require("core.utils").map
+local map = nvchad.map
 
 -- telescope
 map("n", "<leader>fp", ":Telescope media_files <CR>")
+
 map("n", "<leader>te", ":Telescope <CR>")
 
 -- truezen
