@@ -55,4 +55,20 @@ return {
       requires = "plenary.nvim",
       cmd = { "LazyGit", "LazyGitConfig" },
    },
+
+   ["tpope/vim-fugitive"] = {
+      cmd = {
+         "Gclog",
+         "Gdiff",
+         "Gdiffsplit",
+         "Git",
+         "Gvdiffsplit",
+         "Gw",
+         "Gwrite",
+      },
+   },
+
+   ["francoiscabrol/ranger.vim"] = {
+      requires = "rbgrouleff/bclose.vim",
+   },
 }

@@ -73,4 +73,18 @@ M.general = {
    },
 }
 
+M.fugitive = {
+   n = {
+      ["<leader>gl"] = { "<cmd> Git log -10 -- % <CR>", "" },
+      ["<leader>gb"] = { "<cmd> Git blame <CR>", "" },
+      ["<leader>gt"] = { "<cmd> %Gclog <CR>", "" },
+   },
+}
+
+M.ranger = {
+   n = {
+      ["<leader>or"] = { "<cmd> Ranger <CR>", "" },
+   },
+}
+
 return M

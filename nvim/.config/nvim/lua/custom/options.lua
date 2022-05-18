@@ -1,4 +1,4 @@
--- global variables
+local opt = vim.opt
 local g = vim.g
 
 -- vim-test
@@ -33,9 +33,16 @@ g.projectionist_heuristics = {
    },
 }
 
+opt.clipboard = "unnamed"
+
 -- autocmds
 vim.cmd [[
 iabbrev JIRA https://employmenthero.atlassian.net/browse/<c-o>:call getchar()<CR>
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
+augroup Fugitive
+  autocmd!
+  autocmd BufEnter fugitive://* nnoremap <buffer> <C-n> :cnext<CR> | nnoremap <buffer> <C-p> :cprevious<CR>
+augroup END
 ]]
