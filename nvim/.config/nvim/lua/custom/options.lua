@@ -32,3 +32,10 @@ g.projectionist_heuristics = {
       },
    },
 }
+
+-- autocmds
+vim.cmd [[
+iabbrev JIRA https://employmenthero.atlassian.net/browse/<c-o>:call getchar()<CR>
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+]]

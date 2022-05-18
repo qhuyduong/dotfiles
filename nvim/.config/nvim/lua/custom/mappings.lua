@@ -22,9 +22,18 @@ M.truzen = {
 
 M.telescope = {
    n = {
-      ["<leader>fp"] = { "<cmd> Telescope media_files <CR>", "  find media" },
       ["<leader>/"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
       ["<leader>'"] = { "<cmd> Telescope resume <CR>", "resume" },
+      ["<leader>*"] = { "<cmd> Telescope grep_string <CR>", "grep string" },
+      ["<leader>d/"] = { '<cmd> Telescope live_grep search_dirs={"%:p:h"} <CR>', "live grep in folder" },
+      ["<leader>d*"] = { '<cmd> Telescope live_grep search_dirs={"%:p:h"} <CR>', "grep string in folder" },
+   },
+
+   v = {
+      ["<leader>*"] = {
+         'y:lua require("telescope.builtin").grep_string({ default_text = "<C-r>=escape(@",\'/\\\')<CR>" })<CR>',
+         "grep string",
+      },
    },
 }
 
@@ -47,6 +56,20 @@ M.test = {
 M.lazygit = {
    n = {
       ["<leader>go"] = { "<cmd> LazyGit <CR>", "lazygit" },
+   },
+}
+
+M.windows = {
+   n = {
+      ["<leader>ws"] = { "<cmd> split <CR>", "split" },
+      ["<leader>wv"] = { "<cmd> vsplit <CR>", "vsplit" },
+      ["<leader>wd"] = { "<C-W>c", "" },
+   },
+}
+
+M.general = {
+   n = {
+      ["<leader>fy"] = { ':let @+=expand("%")<CR>', "copy file path" },
    },
 }
 

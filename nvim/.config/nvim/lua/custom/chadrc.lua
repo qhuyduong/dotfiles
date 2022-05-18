@@ -4,7 +4,6 @@ local override = require "custom.plugins.override"
 local userPlugins = require "custom.plugins"
 
 M.plugins = {
-
    options = {
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig",
@@ -26,6 +25,12 @@ M.plugins = {
 
 M.ui = {
    theme = "tokyonight",
+}
+
+M.options = {
+   user = function()
+      require "custom.options"
+   end,
 }
 
 M.mappings = require "custom.mappings"
