@@ -1,2 +1,2 @@
-require "custom.mappings"
 require "custom.options"
+-- nothing here ._.

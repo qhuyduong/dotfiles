@@ -1,33 +1,53 @@
-local map = nvchad.map
+local M = {}
 
--- telescope
-map("n", "<leader>fp", ":Telescope media_files<CR>")
-map("n", "<leader>te", ":Telescope<CR>")
-map("n", "<leader>'", ":Telescope resume<CR>")
-map("n", "<leader>*", ":Telescope grep_string<CR>")
-map(
-   "v",
-   "<leader>*",
-   'y:lua require("telescope.builtin").grep_string({ default_text = "<C-r>=escape(@",\'/\\\')<CR>" })<CR>'
-)
+M.disabled = {
+   t = {
+      ["jk"] = "",
+   },
+   n = {
+      ["<C-h>"] = "",
+      ["<C-j>"] = "",
+      ["<C-k>"] = "",
+      ["<C-l>"] = "",
+   },
+}
 
--- truezen
-map("n", "<leader>ta", ":TZAtaraxis<CR>")
-map("n", "<leader>tm", ":TZMinimalist<CR>")
-map("n", "<leader>tf", ":TZFocus<CR>")
+M.truzen = {
+   n = {
+      ["<leader>ta"] = { "<cmd> TZAtaraxis <CR>", "   truzen ataraxis" },
+      ["<leader>tm"] = { "<cmd> TZMinimalist <CR>", "   truzen minimal" },
+      ["<leader>tf"] = { "<cmd> TZFocus <CR>", "   truzen focus" },
+   },
+}
 
--- Test
-map("n", "<leader>tf", ":TestFile<CR>")
-map("n", "<leader>tl", ":TestLast<CR>")
-map("n", "<leader>tn", ":TestNearest<CR>")
-map("n", "<leader>ts", ":TestSuite<CR>")
-map("n", "<leader>tv", ":TestVisit<CR>")
+M.telescope = {
+   n = {
+      ["<leader>fp"] = { "<cmd> Telescope media_files <CR>", "  find media" },
+      ["<leader>/"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
+      ["<leader>'"] = { "<cmd> Telescope resume <CR>", "resume" },
+   },
+}
 
--- Projectionist
-map("n", "<leader>a", ":A<CR>")
+M.projectionist = {
+   n = {
+      ["<leader>a"] = { "<cmd> A <CR>", "alternate" },
+   },
+}
 
--- LazyGit
-map("n", "<leader>go", ":LazyGit<CR>")
+M.test = {
+   n = {
+      ["<leader>tf"] = { "<cmd> TestFile <CR>", "test file" },
+      ["<leader>tl"] = { "<cmd> TestLast <CR>", "test last" },
+      ["<leader>tn"] = { "<cmd> TestNearest <CR>", "test nearest" },
+      ["<leader>ts"] = { "<cmd> TestSuite <CR>", "test suite" },
+      ["<leader>tv"] = { "<cmd> TestVisit <CR>", "test visit" },
+   },
+}
 
--- Terminal
-vim.api.nvim_del_keymap("t", "jk")
+M.lazygit = {
+   n = {
+      ["<leader>go"] = { "<cmd> LazyGit <CR>", "lazygit" },
+   },
+}
+
+return M
