@@ -21,17 +21,6 @@ return {
       end,
    },
 
-   ["Pocco81/TrueZen.nvim"] = {
-      cmd = {
-         "TZAtaraxis",
-         "TZMinimalist",
-         "TZFocus",
-      },
-      config = function()
-         require "custom.plugins.truezen"
-      end,
-   },
-
    ["aserowy/tmux.nvim"] = {
       config = function()
          require "custom.plugins.tmux"

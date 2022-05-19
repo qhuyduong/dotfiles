@@ -12,14 +12,6 @@ M.disabled = {
    },
 }
 
-M.truzen = {
-   n = {
-      ["<leader>ta"] = { "<cmd> TZAtaraxis <CR>", "   truzen ataraxis" },
-      ["<leader>tm"] = { "<cmd> TZMinimalist <CR>", "   truzen minimal" },
-      ["<leader>tf"] = { "<cmd> TZFocus <CR>", "   truzen focus" },
-   },
-}
-
 M.telescope = {
    n = {
       ["<leader>/"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
