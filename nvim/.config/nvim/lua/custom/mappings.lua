@@ -19,6 +19,7 @@ M.telescope = {
       ["<leader>*"] = { "<cmd> Telescope grep_string <CR>", "grep string" },
       ["<leader>d/"] = { '<cmd> Telescope live_grep search_dirs={"%:p:h"} <CR>', "live grep in folder" },
       ["<leader>d*"] = { '<cmd> Telescope live_grep search_dirs={"%:p:h"} <CR>', "grep string in folder" },
+      ["<leader>fr"] = { "<cmd> Telescope oldfiles cwd_only=true<CR>", "   find oldfiles" },
    },
 
    v = {
