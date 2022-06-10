@@ -2,16 +2,16 @@ font:
   size: 14
 
   normal:
-    family: JetBrainsMono Nerd Font Mono
-    style: ExtraLight
+    family: DejaVuSansMono Nerd Font
+    style: Book
 
   bold:
-    family: JetBrainsMono Nerd Font Mono
-    style: ExtraBold
+    family: DejaVuSansMono Nerd Font
+    style: Bold
 
   italic:
-    family: JetBrainsMono Nerd Font Mono
-    style: ExtraLight Italic
+    family: DejaVuSansMono Nerd Font
+    style: Oblique
 
 # TokyoNight Alacritty Colors
 colors:
@@ -52,3 +52,7 @@ selection:
 window:
   startup_mode: Maximized
   decorations: "none"
+
+key_bindings:
+  - { key: F, mods: Alt, chars: "\x1BF" }
+  - { key: B, mods: Alt, chars: "\x1BB" }
