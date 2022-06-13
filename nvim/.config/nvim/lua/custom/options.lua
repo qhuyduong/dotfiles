@@ -33,7 +33,7 @@ g.projectionist_heuristics = {
    },
 }
 
-opt.clipboard = "unnamed"
+opt.clipboard = ""
 
 -- autocmds
 vim.cmd [[
