@@ -48,7 +48,7 @@ M.test = {
 
 M.lazygit = {
    n = {
-      ["<leader>go"] = { "<cmd> LazyGit <CR>", "lazygit" },
+      ["<leader>go"] = { "<cmd> FloatermNew --height=0.9 --width=0.9 lazygit <CR>", "lazygit" },
    },
 }
 

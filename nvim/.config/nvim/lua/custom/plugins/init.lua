@@ -40,10 +40,7 @@ return {
       end,
    },
 
-   ["qhuyduong/lazygit.nvim"] = {
-      requires = "plenary.nvim",
-      cmd = { "LazyGit", "LazyGitConfig" },
-   },
+   ["voldikss/vim-floaterm"] = {},
 
    ["tpope/vim-fugitive"] = {
       cmd = {
