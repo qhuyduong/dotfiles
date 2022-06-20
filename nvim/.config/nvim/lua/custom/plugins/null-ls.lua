@@ -2,7 +2,8 @@ local null_ls = require "null-ls"
 local b = null_ls.builtins
 
 local sources = {
-   b.diagnostics.eslint,
+   b.code_actions.eslint_d,
+   b.diagnostics.eslint_d,
    b.formatting.prettier,
    b.formatting.stylua,
    b.formatting.rubocop,
