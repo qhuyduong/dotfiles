@@ -34,6 +34,7 @@ g.projectionist_heuristics = {
 }
 
 opt.clipboard = ""
+opt.relativenumber = true
 
 -- autocmds
 vim.cmd [[
