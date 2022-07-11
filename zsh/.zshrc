@@ -22,7 +22,6 @@ export FZF_DEFAULT_COMMAND='rg --files  --hidden --follow --glob "!{.git, node_m
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
 alias e=$EDITOR
-alias open='xdg-open'
 alias heroclistag="HERO_ACCESS_TOKEN=$HERO_ACCESS_TOKEN_STG herocli --server hero2.staging.ehrocks.com:443"
 alias herocliprod="HERO_ACCESS_TOKEN=$HERO_ACCESS_TOKEN_PROD herocli --server hero2.ehrocks.com:443"
 
