@@ -57,4 +57,6 @@ return {
    ["francoiscabrol/ranger.vim"] = {
       requires = "rbgrouleff/bclose.vim",
    },
+
+   ["github/copilot.vim"] = {},
 }
