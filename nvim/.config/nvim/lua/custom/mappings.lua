@@ -80,4 +80,16 @@ M.ranger = {
    },
 }
 
+M.hop = {
+   n = {
+      ["gj"] = { "<cmd> HopLineAC <CR>", "" },
+      ["gk"] = { "<cmd> HopLineBC <CR>", "" },
+   },
+
+   v = {
+      ["gj"] = { "<cmd> HopLineAC <CR>", "" },
+      ["gk"] = { "<cmd> HopLineBC <CR>", "" },
+   },
+}
+
 return M
