@@ -32,6 +32,7 @@ g.projectionist_heuristics = {
       },
    },
 }
+g["loaded_matchit"] = nil
 
 opt.clipboard = ""
 opt.relativenumber = true
