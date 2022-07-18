@@ -4,9 +4,10 @@ local b = null_ls.builtins
 local sources = {
    b.code_actions.eslint_d,
    b.diagnostics.eslint_d,
+   b.diagnostics.rubocop,
    b.formatting.prettier,
-   b.formatting.stylua,
    b.formatting.rubocop,
+   b.formatting.stylua,
 }
 
 local async_formatting = function(bufnr)
