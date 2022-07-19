@@ -58,8 +58,6 @@ return {
       requires = "rbgrouleff/bclose.vim",
    },
 
-   ["github/copilot.vim"] = {},
-
    ["phaazon/hop.nvim"] = {
       branch = "v2", -- optional but strongly recommended
       config = function()
