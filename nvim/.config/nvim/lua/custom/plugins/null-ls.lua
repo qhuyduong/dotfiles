@@ -5,6 +5,7 @@ local sources = {
    b.code_actions.eslint_d,
    b.diagnostics.eslint_d,
    b.diagnostics.rubocop,
+   b.formatting.jq,
    b.formatting.prettier,
    b.formatting.rubocop,
    b.formatting.stylua,
