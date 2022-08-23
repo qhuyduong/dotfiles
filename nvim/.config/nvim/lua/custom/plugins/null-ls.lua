@@ -2,12 +2,14 @@ local null_ls = require "null-ls"
 local b = null_ls.builtins
 
 local sources = {
-   b.code_actions.eslint_d,
+   b.diagnostics.erb_lint,
    b.diagnostics.eslint_d,
    b.diagnostics.rubocop,
+   b.formatting.erb_lint,
    b.formatting.jq,
    b.formatting.prettier,
    b.formatting.rubocop,
+   b.formatting.stylelint,
    b.formatting.stylua,
 }
 
