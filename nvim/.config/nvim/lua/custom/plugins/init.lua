@@ -65,8 +65,6 @@ return {
       end,
    },
 
-   ["voldikss/vim-floaterm"] = {},
-
    ["tpope/vim-fugitive"] = {
       cmd = {
          "Gclog",
@@ -89,4 +87,6 @@ return {
          require("hop").setup()
       end,
    },
+
+   ["kdheepak/lazygit.nvim"] = {},
 }
