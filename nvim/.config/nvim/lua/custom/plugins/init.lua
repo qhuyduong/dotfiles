@@ -1,4 +1,22 @@
+local overrides = require "custom.plugins.overrides"
+
 return {
+   ["nvim-treesitter/nvim-treesitter"] = {
+      override_options = overrides.treesitter,
+   },
+
+   ["williamboman/mason.nvim"] = {
+      override_options = overrides.mason,
+   },
+
+   ["kyazdani42/nvim-tree.lua"] = {
+      override_options = overrides.nvimtree,
+   },
+
+   ["nvim-telescope/telescope.nvim"] = {
+      override_options = overrides.telescope,
+   },
+
    ["windwp/nvim-ts-autotag"] = {
       ft = { "html", "javascriptreact" },
       after = "nvim-treesitter",
