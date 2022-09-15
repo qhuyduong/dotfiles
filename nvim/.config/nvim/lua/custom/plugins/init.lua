@@ -32,13 +32,6 @@ return {
       end,
    },
 
-   ["nvim-telescope/telescope-media-files.nvim"] = {
-      after = "telescope.nvim",
-      config = function()
-         require("telescope").load_extension "media_files"
-      end,
-   },
-
    ["neovim/nvim-lspconfig"] = {
       config = function()
          require "plugins.configs.lspconfig"
