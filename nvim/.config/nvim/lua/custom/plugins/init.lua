@@ -17,6 +17,16 @@ return {
       override_options = overrides.telescope,
    },
 
+   ["NvChad/ui"] = {
+      override_options = {
+         statusline = {
+            overriden_modules = function()
+               return require "custom.plugins.ui"
+            end,
+         },
+      },
+   },
+
    ["windwp/nvim-ts-autotag"] = {
       ft = { "html", "javascriptreact" },
       after = "nvim-treesitter",
