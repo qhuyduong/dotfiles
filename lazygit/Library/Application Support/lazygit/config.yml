@@ -1,5 +1,3 @@
-os:
-  editCommand: "nvr -cc 'split | only' --remote-wait +'set bufhidden=delete'"
 customCommands:
   - key: "S"
     description: "spin-off"

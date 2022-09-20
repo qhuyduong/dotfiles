@@ -47,4 +47,8 @@ augroup Fugitive
   autocmd!
   autocmd BufEnter fugitive://* nnoremap <buffer> <C-n> :cnext<CR> | nnoremap <buffer> <C-p> :cprevious<CR>
 augroup END
+
+if has('nvim') && executable('nvr')
+  let $GIT_EDITOR = "nvr -cc 'split | only' --remote-wait +'set bufhidden=wipe'"
+endif
 ]]
