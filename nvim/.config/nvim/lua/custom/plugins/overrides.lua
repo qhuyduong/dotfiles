@@ -9,28 +9,16 @@ M.treesitter = {
       "css",
       "javascript",
       "json",
-      "toml",
       "markdown",
-      "c",
-      "bash",
       "lua",
-      "norg",
       "ruby",
+      "typescript",
    },
 }
 
 M.nvimtree = {
    git = {
       enable = true,
-   },
-}
-
-M.telescope = {
-   extensions = {
-      -- fd is needed
-      media_files = {
-         filetypes = { "png", "webp", "jpg", "jpeg" },
-      },
    },
 }
 
