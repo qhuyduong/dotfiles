@@ -22,6 +22,7 @@ else
   export VISUAL="nvim"
   export EDITOR="nvim"
 fi
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 # Aliases
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
