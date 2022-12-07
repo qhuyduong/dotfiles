@@ -7,30 +7,30 @@ g["test#preserve_screen"] = 1
 
 -- Projectionist
 g.projectionist_heuristics = {
-   ["*.rb"] = {
-      ["lib/*.rb"] = {
-         ["alternate"] = "spec/lib/{}_spec.rb",
-         ["type"] = "source",
-      },
-      ["app/*.rb"] = {
-         ["alternate"] = "spec/{}_spec.rb",
-         ["type"] = "source",
-      },
-      ["spec/*_spec.rb"] = {
-         ["alternate"] = { "{}.rb", "app/{}.rb" },
-         ["type"] = "spec",
-      },
-   },
-   ["*.js"] = {
-      ["*.spec.js"] = {
-         ["alternate"] = "{dirname}/../{basename}.js",
-         ["type"] = "spec",
-      },
-      ["*.js"] = {
-         ["alternate"] = "{dirname}/__tests__/{basename}.spec.js",
-         ["type"] = "source",
-      },
-   },
+  ["*.rb"] = {
+    ["lib/*.rb"] = {
+      ["alternate"] = "spec/lib/{}_spec.rb",
+      ["type"] = "source",
+    },
+    ["app/*.rb"] = {
+      ["alternate"] = "spec/{}_spec.rb",
+      ["type"] = "source",
+    },
+    ["spec/*_spec.rb"] = {
+      ["alternate"] = { "{}.rb", "app/{}.rb" },
+      ["type"] = "spec",
+    },
+  },
+  ["*.js"] = {
+    ["*.spec.js"] = {
+      ["alternate"] = "{dirname}/../{basename}.js",
+      ["type"] = "spec",
+    },
+    ["*.js"] = {
+      ["alternate"] = "{dirname}/__tests__/{basename}.spec.js",
+      ["type"] = "source",
+    },
+  },
 }
 g["loaded_matchit"] = nil
 
