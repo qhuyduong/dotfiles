@@ -28,8 +28,6 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
 alias e=$EDITOR
-alias heroclistag="HERO_ACCESS_TOKEN=$HERO_ACCESS_TOKEN_STG herocli --server hero2.staging.ehrocks.com:443"
-alias herocliprod="HERO_ACCESS_TOKEN=$HERO_ACCESS_TOKEN_PROD herocli --server hero2.ehrocks.com:443"
 if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
   alias nvim=nvr -cc 'split | only' --remote-wait +'set bufhidden=wipe'
 fi
