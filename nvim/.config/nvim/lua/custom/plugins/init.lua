@@ -9,10 +9,6 @@ return {
     override_options = overrides.mason,
   },
 
-  ["kyazdani42/nvim-tree.lua"] = {
-    override_options = overrides.nvimtree,
-  },
-
   ["nvim-telescope/telescope.nvim"] = {
     override_options = overrides.telescope,
   },
@@ -92,4 +88,10 @@ return {
   },
 
   ["kdheepak/lazygit.nvim"] = {},
+
+  ["tversteeg/registers.nvim"] = {
+    config = function()
+      require("registers").setup()
+    end,
+  },
 }
