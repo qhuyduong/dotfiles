@@ -5,3 +5,9 @@
 --   pattern = "*",
 --   command = "tabdo wincmd =",
 -- })
+vim.cmd([[
+augroup Fugitive
+  autocmd!
+  autocmd BufEnter fugitive://* nnoremap <buffer> <C-n> :cnext<CR> | nnoremap <buffer> <C-p> :cprevious<CR>
+augroup END
+]])
