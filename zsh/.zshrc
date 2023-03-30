@@ -50,7 +50,6 @@ zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/gh", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/rails", from:oh-my-zsh
-zplug "plugins/ssh-agent", from:oh-my-zsh
 zplug "popstas/zsh-command-time"
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "zplug/zplug"
