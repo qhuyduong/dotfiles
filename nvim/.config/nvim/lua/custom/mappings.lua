@@ -47,4 +47,22 @@ M.telescope = {
 	},
 }
 
+M.comment = {
+	n = {
+		["gc"] = {
+			function()
+				require("Comment.api").toggle.linewise.current()
+			end,
+			"toggle comment",
+		},
+	},
+
+	v = {
+		["gc"] = {
+			"<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+			"toggle comment",
+		},
+	},
+}
+
 return M
