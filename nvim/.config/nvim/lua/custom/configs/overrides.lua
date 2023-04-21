@@ -37,6 +37,7 @@ M.mason = {
 		"prettier",
 		"emmet-ls",
 		"json-lsp",
+		"solargraph",
 	},
 }
 
