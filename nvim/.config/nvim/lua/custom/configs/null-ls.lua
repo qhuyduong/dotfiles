@@ -16,6 +16,7 @@ local sources = {
 	b.formatting.rubocop,
 	b.formatting.stylelint,
 	b.formatting.stylua,
+	b.formatting.clang_format,
 }
 
 local async_formatting = function(bufnr)

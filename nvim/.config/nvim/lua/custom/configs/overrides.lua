@@ -14,6 +14,7 @@ M.treesitter = {
 		"json",
 		"typescript",
 		"tsx",
+		"cpp",
 	},
 	indent = {
 		enable = true,
@@ -38,6 +39,10 @@ M.mason = {
 		"emmet-ls",
 		"json-lsp",
 		"solargraph",
+
+		-- C/C++
+		"clangd",
+		"clang-format",
 	},
 }
 
