@@ -15,22 +15,12 @@ export LANG=en_US.UTF-8
 export LESS=-FXR
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 export FZF_DEFAULT_COMMAND='rg --files  --hidden --follow --glob "!{.git, node_modules}"'
-if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-  export VISUAL="nvr -cc 'split | only' --remote-wait +'set bufhidden=wipe'"
-  export EDITOR="nvr -cc 'split | only' --remote-wait +'set bufhidden=wipe'"
-else
-  export VISUAL="nvim"
-  export EDITOR="nvim"
-fi
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 # Aliases
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
 alias e=$EDITOR
-if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-  alias nvim=nvr -cc 'split | only' --remote-wait +'set bufhidden=wipe'
-fi
 
 function bgkill() {
   kill -9 $(jobs -l | head -1 | awk '{print $3}')

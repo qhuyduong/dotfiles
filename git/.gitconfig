@@ -3,12 +3,6 @@
 [core]
 	hooksPath = ~/.config/git/hooks
 	excludesfile = ~/.gitignore
-[diff]
-        tool = nvimdiff
-[difftool]
-        prompt = false
-[difftool "nvimdiff"]
-        cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [github]
 	user = qhuyduong
 [pull]
