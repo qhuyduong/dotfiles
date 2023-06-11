@@ -20,7 +20,6 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 # Aliases
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
-alias e=$EDITOR
 
 function bgkill() {
   kill -9 $(jobs -l | head -1 | awk '{print $3}')
