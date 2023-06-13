@@ -62,5 +62,12 @@ zplug load
 
 fortune | cowsay -pn
 
+ASDF_LIBEXEC=/usr/local/opt/asdf/libexec/asdf.sh
+if [ -f "$ASDF_LIBEXEC" ]; then
+    source $ASDF_LIBEXEC
+fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 # Stop profiling
 # zprof
