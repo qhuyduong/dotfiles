@@ -8,14 +8,14 @@ bindkey -e
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
-setopt SHARE_HISTORY
+# Appends every command to the history file once it is executed
+setopt inc_append_history
+# Reloads the history whenever you use it
+setopt share_history
 
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
-export LESS=-FXR
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 export FZF_DEFAULT_COMMAND='rg --files  --hidden --follow --glob "!{.git, node_modules}"'
-export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 # Aliases
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
@@ -34,11 +34,9 @@ zplug "hlissner/zsh-autopair", defer:2
 zplug "kiurchv/asdf.plugin.zsh", defer:2
 zplug "lib/completion", from:oh-my-zsh
 zplug "mafredri/zsh-async", from:github, defer:0
-zplug "plugins/bundler", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/gh", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/rails", from:oh-my-zsh
 zplug "popstas/zsh-command-time"
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "zplug/zplug"
@@ -61,13 +59,6 @@ fi
 zplug load
 
 fortune | cowsay -pn
-
-ASDF_LIBEXEC=/usr/local/opt/asdf/libexec/asdf.sh
-if [ -f "$ASDF_LIBEXEC" ]; then
-    source $ASDF_LIBEXEC
-fi
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Stop profiling
 # zprof
