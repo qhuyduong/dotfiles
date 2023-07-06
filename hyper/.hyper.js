@@ -4,7 +4,7 @@
 // See https://hyper.is#cfg for all currently supported options.
 module.exports = {
     config: {
-	catppuccinTheme: 'Mocha',
+        catppuccinTheme: 'Mocha',
         // choose either `'stable'` for receiving highly polished,
         // or `'canary'` for less polished but more frequent updates
         updateChannel: 'stable',
@@ -144,8 +144,8 @@ module.exports = {
     // to load it and avoid it being `npm install`ed
     localPlugins: [],
     keymaps: {
-    // Example
-    // 'window:devtools': 'cmd+alt+o',
+        // Example
+        // 'window:devtools': 'cmd+alt+o',
     },
 };
 //# sourceMappingURL=config-default.js.map
