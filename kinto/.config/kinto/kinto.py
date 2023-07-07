@@ -616,6 +616,10 @@ define_keymap(lambda wm_class: wm_class.casefold() not in remotes,{
     K("Alt-Delete"): K("C-Delete"),               # Delete Right Word of Cursor
     # K(""): pass_through_key,                      # cancel
     # K(""): K(""),                                 #
+
+    K("Super-Alt-Enter"): K("Super-Up"),
+    K("Super-Alt-Left"): K("Super-Left"),
+    K("Super-Alt-Right"): K("Super-Right"),
 }, "General GUI")
 
 define_keymap(lambda wm_class: wm_class.casefold() not in mscodes,{
@@ -848,4 +852,8 @@ define_keymap(re.compile(termStr, re.IGNORECASE),{
     K("RC-Dot"): K("LC-c"),
     K("RC-SLASH"): K("C-Shift-SLASH"),
     K("RC-KPASTERISK"): K("C-Shift-KPASTERISK"),
+
+    K("LC-Alt-Enter"): K("Super-Up"),
+    K("LC-Alt-Left"): K("Super-Left"),
+    K("LC-Alt-Right"): K("Super-Right"),
 }, "terminals")
