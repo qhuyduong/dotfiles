@@ -549,7 +549,7 @@ define_keymap(lambda wm_class: wm_class.casefold() not in remotes,{
     # K("Super-Right"):K("C-Alt-Right"),              # Default SL - Change workspace (budgie)
     # K("Super-Left"):K("C-Alt-Left"),                # Default SL - Change workspace (budgie)
     K("RC-Q"): K("Alt-F4"),                         # Default SL - not-popos
-    K("RC-H"):K("Super-h"),                       # Default SL - Minimize app (gnome/budgie/popos/fedora)
+    # K("RC-H"):K("Super-h"),                       # Default SL - Minimize app (gnome/budgie/popos/fedora)
     K("Alt-Tab"): pass_through_key,                 # Default - Cmd Tab - App Switching Default
     K("RC-Tab"): K("Alt-Tab"),                      # Default - Cmd Tab - App Switching Default
     K("RC-Shift-Tab"): K("Alt-Shift-Tab"),          # Default - Cmd Tab - App Switching Default
