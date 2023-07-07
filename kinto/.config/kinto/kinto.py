@@ -590,8 +590,8 @@ define_keymap(lambda wm_class: wm_class.casefold() not in remotes,{
     K("Super-f"): K("Right"),
     K("Super-n"): K("Down"),
     K("Super-p"): K("Up"),
-    K("Super-k"): [K("Shift-End"), K("Backspace")],
-    K("Super-d"): K("Delete"),
+    #K("Super-k"): [K("Shift-End"), K("Backspace")],
+    #K("Super-d"): K("Delete"),
 
     # K("Alt-RC-Space"): K(""),                       # Open Finder - Placeholder
 
@@ -671,7 +671,15 @@ define_keymap(re.compile(codeStr, re.IGNORECASE),{
     K("C-g"): K("f3"),                          # find_next
     K("Shift-f3"): pass_through_key,            # cancel find_prev
     K("C-Shift-g"): K("Shift-f3"),              # find_prev
-    # K("Super-c"): K("LC-c"),                    # Default - Terminal - Sigint
+    K("Super-c"): K("LC-c"),                    # Default - Terminal - Sigint
+    K("Super-u"): K("LC-u"),                    # Vim
+    K("Super-d"): K("LC-d"),                    # Vim
+    K("Super-h"): K("LC-h"),                    # Vim
+    K("Super-j"): K("LC-j"),                    # Vim
+    K("Super-k"): K("LC-k"),                    # Vim
+    K("Super-l"): K("LC-l"),                    # Vim
+    K("Super-o"): K("LC-o"),                    # Vim
+    K("Super-Grave"): K("LC-Grave"),            # Vim
     # K("Super-x"): K("LC-x"),                    # Default - Terminal - Exit nano
     # K("Alt-c"): K("LC-c"),                        #  Chromebook/IBM - Terminal - Sigint
     # K("Alt-x"): K("LC-x"),                        #  Chromebook/IBM - Terminal - Exit nano
