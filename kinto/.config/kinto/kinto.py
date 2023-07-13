@@ -57,6 +57,7 @@ remotes = [
     "qemu-system-.*",
     "qemu",
     "Spicy",
+    "Virt-manager",
     "VirtualBox",
     "VirtualBox Machine",
     "xfreerdp",
