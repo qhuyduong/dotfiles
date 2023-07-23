@@ -3689,9 +3689,9 @@ keymap("General Terminals", {
     C("RC-SLASH"):              C("C-Shift-SLASH"),
     C("RC-KPASTERISK"):         C("C-Shift-KPASTERISK"),
 
-    C("Super-Alt-Enter"): C("Super-Up"),
-    C("Super-Alt-Left"): C("Super-Left"),
-    C("Super-Alt-Right"): C("Super-Right"),
+    C("C-Alt-Enter"): C("Super-Up"),
+    C("C-Alt-Left"): C("Super-Left"),
+    C("C-Alt-Right"): C("Super-Right"),
 # }, when = matchProps(clas=termStr))
 }, when = matchProps(lst=terminals_lod))
 
