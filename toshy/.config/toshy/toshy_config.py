@@ -295,6 +295,7 @@ vscodes = [
     "code",
     "vscodium",
     "code - oss",
+    "code-url-handler",
 ]
 vscodes = [x.casefold() for x in vscodes]
 vscodeStr = toRgxStr(vscodes)
