@@ -3354,6 +3354,18 @@ keymap("VSCodes", {
     # C("Super-Shift-down"):      C("Alt-Shift-down"),            # multi-cursor down - Sublime
     # C(""):                      ignore_combo,                   # cancel
     # C(""):                      C(""),                          #
+    C("Super-h"):               C("C-h"),
+    C("Super-j"):               C("C-j"),
+    C("Super-k"):               C("C-k"),
+    C("Super-l"):               C("C-l"),
+    C("Super-r"):               C("C-r"),
+    C("Super-v"):               C("C-v"),
+    C("Super-u"):               C("C-u"),
+    C("Super-d"):               C("C-d"),
+    C("Super-o"):               C("C-o"),
+    C("Super-Grave"): 		C("C-Grave"),
+    C("Super-Up"): 		C("C-Up"),
+    C("Super-Down"): 		C("C-Down"),
 }, when = matchProps(clas=vscodeStr))
 
 # Keybindings for Sublime Text
@@ -3806,9 +3818,6 @@ keymap("GenGUI overrides: GNOME", {
     C("RC-Shift-Key_3"):        C("Shift-Print"),               # Take a screenshot immediately (gnome)
     C("RC-Shift-Key_4"):        C("Alt-Print"),                 # Take a screenshot of a window (gnome)
     C("RC-Shift-Key_5"):        C("Print"),                     # Take a screenshot interactively (gnome)
-    C("Super-Alt-Enter"): C("Super-Up"),
-    C("Super-Alt-Left"): C("Super-Left"),
-    C("Super-Alt-Right"): C("Super-Right"),
 }, when = lambda ctx: matchProps(not_lst=remotes_lod)(ctx) and DESKTOP_ENV == 'gnome' )
 keymap("GenGUI overrides: IceWM", {
     C("RC-Space"):              Key.LEFT_META,                  # IceWM: Win95Keys=1 (Meta shows menu)
@@ -3895,7 +3904,11 @@ keymap("General GUI", {
     C("Alt-Delete"):            C("C-Delete"),                  # Delete Right Word of Cursor
     # C(""):                      ignore_combo,                   # cancel
     # C(""):                      C(""),                          #
-
+    C("Super-Alt-Enter"): 	C("Super-Up"),
+    C("Super-Alt-Left"):	C("Super-Left"),
+    C("Super-Alt-Right"):	C("Super-Right"),
+    C("Super-h"):		ignore_combo,
+    C("Super-l"):		ignore_combo,
 # }, when = lambda ctx: ctx.wm_class.casefold() not in remotes) # original conditional
 # }, when = matchProps(not_clas=remoteStr))                      # matchProps with regex string
 }, when = matchProps(not_lst=remotes_lod))                      # matchProps with list-of-dicts
