@@ -3334,7 +3334,6 @@ keymap("VSCodes", {
 
     # VS Code Shortcuts
     C("C-g"):                   ignore_combo,                   # cancel Go to Line...
-    C("Super-g"):               C("C-g"),                       # Go to Line...
     C("F3"):                    ignore_combo,                   # cancel Find next
     C("C-h"):                   ignore_combo,                   # cancel replace
     C("C-Alt-f"):               C("C-h"),                       # replace
@@ -3344,7 +3343,6 @@ keymap("VSCodes", {
     C("C-g"):                   C("f3"),                        # find_next
     C("Shift-f3"):              ignore_combo,                   # cancel find_prev
     C("C-Shift-g"):             C("Shift-f3"),                  # find_prev
-    C("Super-c"):               C("LC-c"),                      # Default - Terminal - Sigint
     # C("Super-x"):               C("LC-x"),                      # Default - Terminal - Exit nano
     # C("Alt-c"):                 C("LC-c"),                      #  Chromebook/IBM - Terminal - Sigint
     # C("Alt-x"):                 C("LC-x"),                      #  Chromebook/IBM - Terminal - Exit nano
@@ -3354,15 +3352,19 @@ keymap("VSCodes", {
     # C("Super-Shift-down"):      C("Alt-Shift-down"),            # multi-cursor down - Sublime
     # C(""):                      ignore_combo,                   # cancel
     # C(""):                      C(""),                          #
+    C("Super-a"):               C("C-a"),
+    C("Super-c"):               C("C-c"),
+    C("Super-d"):               C("C-d"),
+    C("Super-g"):               C("C-g"),
     C("Super-h"):               C("C-h"),
     C("Super-j"):               C("C-j"),
     C("Super-k"):               C("C-k"),
     C("Super-l"):               C("C-l"),
-    C("Super-r"):               C("C-r"),
-    C("Super-v"):               C("C-v"),
-    C("Super-u"):               C("C-u"),
-    C("Super-d"):               C("C-d"),
     C("Super-o"):               C("C-o"),
+    C("Super-r"):               C("C-r"),
+    C("Super-u"):               C("C-u"),
+    C("Super-v"):               C("C-v"),
+    C("Super-x"):               C("C-x"),
     C("Super-Grave"): 		C("C-Grave"),
     C("Super-Up"): 		C("C-Up"),
     C("Super-Down"): 		C("C-Down"),
