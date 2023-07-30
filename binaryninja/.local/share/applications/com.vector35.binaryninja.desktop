@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Binary Ninja
-Exec=env QT_SCREEN_SCALE_FACTORS="1;2" /opt/binaryninja/binaryninja %u
+Exec=/opt/binaryninja/binaryninja %u
 MimeType=application/x-binaryninja;x-scheme-handler/binaryninja;
 Icon=/opt/binaryninja/docs/img/logo.png
 Terminal=false
