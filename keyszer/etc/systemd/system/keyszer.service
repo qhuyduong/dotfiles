@@ -7,7 +7,7 @@ KillMode=process
 ExecStart=/usr/local/bin/keyszer --config /etc/keyszer.conf
 Restart=on-failure
 RestartSec=3
-Environment=DISPLAY=:0
+Environment=DISPLAY=:1
 User=keymapper
 Group=input
 
