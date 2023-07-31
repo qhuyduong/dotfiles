@@ -1,5 +1,0 @@
-{
-	"python.binaryOverride" : "/usr/bin/python3",
-	"python.interpreter" : "/usr/lib/x86_64-linux-gnu/libpython3.11.so.1.0",
-	"ui.theme.name" : "Catppuccin Mocha"
-}
