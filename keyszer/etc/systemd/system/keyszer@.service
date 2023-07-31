@@ -1,0 +1,17 @@
+[Unit]
+Description=keyszer
+PartOf=keyszer.target
+StopWhenUnneeded=true
+
+[Service]
+Environment=DISPLAY=:1
+ExecStart=/usr/local/bin/keyszer --config /etc/keyszer.conf --device /dev/input/%I
+Group=input
+KillMode=process
+Restart=on-failure
+RestartSec=3
+Type=simple
+User=keymapper
+
+[Install]
+WantedBy=keyszer.target
