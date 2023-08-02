@@ -23,6 +23,10 @@ export FZF_DEFAULT_COMMAND='rg --files  --hidden --follow --glob "!{.git, node_m
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 alias ll='ls -lha'
 
+function clion() {
+  /opt/clion-*/bin/clion.sh "$@" > /dev/null 2>&1 &
+}
+
 function bgkill() {
   kill -9 $(jobs -l | head -1 | awk '{print $3}')
 }
