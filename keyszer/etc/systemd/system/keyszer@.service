@@ -4,8 +4,8 @@ PartOf=keyszer.target
 StopWhenUnneeded=true
 
 [Service]
-Environment=DISPLAY=:1
-ExecStart=/usr/local/bin/keyszer --config /etc/keyszer.conf --device /dev/input/%I
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/keyszer --config /etc/keyszer.conf --device /dev/input/%I
 Group=input
 KillMode=process
 Restart=on-failure
