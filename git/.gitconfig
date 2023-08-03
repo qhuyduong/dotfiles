@@ -3,6 +3,7 @@
 [core]
 	hooksPath = ~/.config/git/hooks
 	excludesfile = ~/.gitignore
+	editor = vim
 [github]
 	user = qhuyduong
 [pull]
