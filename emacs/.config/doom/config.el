@@ -76,3 +76,10 @@
 ;; they are implemented.
 (after! lsp-mode
   (setq lsp-headerline-breadcrumb-enable t))
+
+;; Easier window navigation
+(map! (:map general-override-mode-map
+       :nvim "C-h"  #'evil-window-left
+       :nvim "C-j"  #'evil-window-down
+       :nvim "C-k"  #'evil-window-up
+       :nvim "C-l"  #'evil-window-right))
