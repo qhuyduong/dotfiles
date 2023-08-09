@@ -1,8 +1,8 @@
-accountsservice
 adobe-source-han-sans-cn-fonts
 adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
 alacritty
+alsa-utils
 amd-ucode
 archlinux-wallpaper
 awesome-terminal-fonts
@@ -20,14 +20,12 @@ brightnessctl
 btop
 cachy-browser
 cachyos-fish-config
-cachyos-hello
 cachyos-hooks
 cachyos-hyprland-settings
 cachyos-kernel-manager
 cachyos-keyring
 cachyos-mirrorlist
 cachyos-nord-gtk-theme-git
-cachyos-packageinstaller
 cachyos-rate-mirrors
 cachyos-settings
 cachyos-v3-mirrorlist
@@ -44,8 +42,8 @@ dnsmasq
 e2fsprogs
 emacs-wayland
 fastfetch
-ffmpegthumbnailer
 firewalld
+ghidra
 git
 grimblast-git
 gst-libav
