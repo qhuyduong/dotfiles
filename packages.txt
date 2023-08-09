@@ -27,6 +27,7 @@ cachyos-wallpapers
 cantarell-fonts
 capitaine-cursors
 caprine
+clang
 cryptsetup
 device-mapper
 diffutils
@@ -98,8 +99,13 @@ systemd-sysvcompat
 telegram-desktop
 texinfo
 tmux
+ttf-bitstream-vera
+ttf-dejavu
 ttf-firacode-nerd
+ttf-liberation
+ttf-meslo
 ttf-opensans
+ttf-selawik
 unrar
 unzip
 upower
