@@ -9,7 +9,6 @@ bash-completion
 bemenu
 bemenu-wayland
 bluez
-bluez-hid2hci
 bluez-libs
 bluez-utils
 brightnessctl
@@ -18,7 +17,6 @@ cachy-browser
 cachyos-fish-config
 cachyos-hooks
 cachyos-hyprland-settings
-cachyos-kernel-manager
 cachyos-keyring
 cachyos-mirrorlist
 cachyos-nord-gtk-theme-git
@@ -31,7 +29,6 @@ capitaine-cursors
 caprine
 cryptsetup
 device-mapper
-dhclient
 diffutils
 dmg2img
 dnsmasq
@@ -42,12 +39,8 @@ firewalld
 ghidra
 git
 grimblast-git
-hdparm
-hwinfo
 hyprland-git
-inetutils
 iptables-nft
-jfsutils
 kvantum
 kvantum-theme-nordic-git
 less
@@ -55,10 +48,7 @@ lib32-libva-mesa-driver
 lib32-mesa
 lib32-mesa-vdpau
 lib32-vulkan-radeon
-libdvdcss
-libgsf
 libnotify
-libopenraw
 libva-mesa-driver
 libwnck3
 linux-cachyos
