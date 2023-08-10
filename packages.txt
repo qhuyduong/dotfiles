@@ -1,5 +1,4 @@
 alacritty
-alsa-utils
 amd-ucode
 archlinux-wallpaper
 awesome-terminal-fonts
@@ -37,7 +36,7 @@ e2fsprogs
 emacs-wayland
 fastfetch
 firewalld
-ghidra
+ghidra-desktop
 git
 grimblast-git
 hyprland-git
@@ -77,6 +76,7 @@ pipewire-jack
 pipewire-pulse
 polkit-kde-agent
 power-profiles-daemon
+propertree-git
 python
 python-capng
 qemu-full
