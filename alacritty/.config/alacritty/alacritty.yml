@@ -1,58 +1,23 @@
 font:
-  size: 14
+  size: 12
 
   normal:
-    family: DejaVuSansMono Nerd Font
-    style: Book
+    family: JetBrainsMono Nerd Font
+    style: Regular
 
   bold:
-    family: DejaVuSansMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold
 
   italic:
-    family: DejaVuSansMono Nerd Font
-    style: Oblique
-
-# TokyoNight Alacritty Colors
-colors:
-  # Default colors
-  primary:
-    background: '0x1a1b26'
-    foreground: '0xc0caf5'
-
-  # Normal colors
-  normal:
-    black:   '0x15161E'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xa9b1d6'
-
-  # Bright colors
-  bright:
-    black:   '0x414868'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xc0caf5'
-
-  indexed_colors:
-    - { index: 16, color: '0xff9e64' }
-    - { index: 17, color: '0xdb4b4b' }
+    family: JetBrainsMono Nerd Font
+    style: Italic
 
 selection:
   save_to_clipboard: true
 
 window:
-  startup_mode: Maximized
-  decorations: "none"
+  opacity: 0.8
 
-key_bindings:
-  - { key: F, mods: Alt, chars: "\x1BF" }
-  - { key: B, mods: Alt, chars: "\x1BB" }
+import:
+  - ~/.config/alacritty/catppuccin-mocha.yml
