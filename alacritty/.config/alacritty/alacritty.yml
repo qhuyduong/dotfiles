@@ -18,6 +18,7 @@ selection:
 
 window:
   opacity: 0.8
+  dynamic_padding: true
 
 import:
   - ~/.config/alacritty/catppuccin-mocha.yml
