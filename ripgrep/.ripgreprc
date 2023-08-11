@@ -1,2 +1,0 @@
---glob=!*.bundle.js
---glob=!flow-typed

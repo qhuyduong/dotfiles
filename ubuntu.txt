@@ -1,1 +1,0 @@
-build-essential curl zsh neovim stow fzf ripgrep fd-find hub libssl-dev libreadline-dev zlib1g-dev libpq-dev libgpgme-dev postgresql redis-server jq openjdk-8-jdk git-lfs fortune cowsay tmux

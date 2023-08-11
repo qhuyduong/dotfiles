@@ -1,7 +1,0 @@
-KERNEL=="event*", SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", RUN+="/usr/bin/setfacl -m user:keymapper:rw /dev/input/%k"
-KERNEL=="event*", SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", ENV{ID_BUS}=="bluetooth", TAG+="systemd", ENV{SYSTEMD_WANTS}="keyszer@%k.service"
-KERNEL=="event*", SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", ENV{ID_BUS}=="i8042", TAG+="systemd", ENV{SYSTEMD_WANTS}="keyszer@%k.service"
-KERNEL=="event*", SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", ENV{ID_BUS}=="usb", TAG+="systemd", ENV{SYSTEMD_WANTS}="keyszer@%k.service"
-
-KERNEL=="uinput", SUBSYSTEM=="misc", RUN+="/usr/bin/setfacl -m user:keymapper:rw /dev/uinput"
-

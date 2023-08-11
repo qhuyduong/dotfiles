@@ -1,5 +1,0 @@
-[Unit]
-Description=Keyszer
-
-[Install]
-WantedBy=graphical.target
