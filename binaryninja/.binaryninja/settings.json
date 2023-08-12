@@ -1,0 +1,4 @@
+{
+	"python.interpreter" : "/usr/lib/libpython3.11.so.1.0",
+	"ui.theme.name" : "Catppuccin Mocha"
+}
