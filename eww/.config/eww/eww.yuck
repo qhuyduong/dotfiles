@@ -3,7 +3,7 @@
 
 ; various bar modules
 (include "./modules/bluetooth.yuck")
-(include "./modules/bright.yuck")
+(include "./modules/battery.yuck")
 (include "./modules/clock.yuck")
 (include "./modules/indicators.yuck")
 (include "./modules/music.yuck")
@@ -36,10 +36,10 @@
     :space-evenly false
     :halign "end"
     (indicators)
-    (bright)
     (volume-module)
     (bluetooth)
     (net)
+    (battery)
     (sys)
     (clock_module)))
 

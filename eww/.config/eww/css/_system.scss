@@ -4,12 +4,12 @@
 .batbar {
   color: $green;
 
-  .low { color: $red; }
 }
-
+.batbar-low {
+  color: $red;
+}
 .cpubar,
 .membar,
-.batbar { background-color: $bg1; }
 
 .iconmem { color: $peach; }
 .iconcpu { color: $blue; }

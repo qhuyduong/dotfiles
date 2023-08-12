@@ -1,0 +1,8 @@
+(defwidget battery []
+  (box
+    :class "module icon"
+    (eventbox
+      (label
+        :class "batbar${EWW_BATTERY.total_avg > 20 ? '' : '-low'}"
+        :text {battery_icons[round(EWW_BATTERY.total_avg / (100 / arraylength(battery_icons)) - 1,0)]}
+        :tooltip "Battery ${round(EWW_BATTERY.total_avg, 0)}%"))))

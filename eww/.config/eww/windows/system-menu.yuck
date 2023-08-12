@@ -185,7 +185,7 @@
         :space-evenly false
         :halign "start"
         (label
-          :class "battery-icon icon ${EWW_BATTERY.total_avg > 20 ? '' : 'low'}"
+          :class "battery-icon${EWW_BATTERY.total_avg > 20 ? '' : '-low'} icon"
           :text {battery_icons[round(EWW_BATTERY.total_avg / (100 / arraylength(battery_icons)) - 1,0)]})
         (label
           :class "text"

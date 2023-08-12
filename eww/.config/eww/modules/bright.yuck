@@ -1,8 +1,0 @@
-(defwidget bright []
-  (box
-    :class "module"
-    (eventbox
-      (label
-        :text {brightness.icon}
-        :class "bright-icon icon"
-        :tooltip "brightness ${round(brightness.percent, 0)}%"))))

@@ -101,8 +101,11 @@
   .battery-icon {
     color: $green;
     font-size: 2rem;
+  }
 
-    .low { color: $red; }
+  .battery-icon-low {
+    color: $red;
+    font-size: 2rem;
   }
 
   .battery-rate { color: $mauve; }

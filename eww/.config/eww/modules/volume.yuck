@@ -6,5 +6,5 @@
       :onrightclick "scripts/volume mute SINK" ; toggle mute on right click
       (label
         :class "vol-icon"
-        :tooltip "volume ${volume.percent}%"
+        :tooltip "Volume ${volume.percent}%"
         :text {volume.icon}))))
