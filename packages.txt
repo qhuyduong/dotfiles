@@ -41,6 +41,7 @@ pavucontrol
 pipewire
 polkit-gnome
 pulseaudio
+qt5-graphicaleffects
 ripgrep
 rofi-lbonn-wayland
 sddm
