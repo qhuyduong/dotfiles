@@ -18,12 +18,12 @@ catppuccin-mocha-dark-cursors
 cmake
 emacs-gcc-wayland-devel-bin
 eww-wayland
-exa
 fastfetch
 fish
 fisher
 git
 gross-git
+hexo-cli
 hyprland-git
 jc
 jq
@@ -35,11 +35,15 @@ neovim
 network-manager-applet
 networkmanager
 noto-fonts
+noto-fonts-cjk
+npm
 nwg-bar
+p7zip
 pamixer
 pavucontrol
 pipewire
 polkit-gnome
+propertree-git
 pulseaudio
 qt5-graphicaleffects
 ripgrep
@@ -57,7 +61,6 @@ ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-material-icons-git
-waybar
 wget
 wireplumber
 wl-clipboard
