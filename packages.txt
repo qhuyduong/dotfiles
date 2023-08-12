@@ -48,6 +48,7 @@ pulseaudio
 qt5-graphicaleffects
 ripgrep
 rofi-lbonn-wayland
+ruby
 sddm
 socat
 stow
@@ -56,6 +57,7 @@ swaybg
 swayidle
 swaylock
 swayosd-git
+tmux
 tree
 ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
