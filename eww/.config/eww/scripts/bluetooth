@@ -18,12 +18,7 @@ gen_output() {
   status=$(bluetoothctl info)
   name=$(echo "$status" | rg Name | cut -f 2- -d ' ')
   mac=$(echo "$status" | head -1 | awk '{print $2}' | tr ':' '_')
-
-  if [[ "$(echo "$status" | rg Percentage)" != "" ]]; then
-    battery="$(upower -i /org/freedesktop/UPower/devices/headset_dev_"$mac" | rg percentage | awk '{print $2}' | cut -f 1 -d '%')%"
-  else
-    battery=""
-  fi
+  battery="$(echo "$status" | grep "Battery Percentage" | sed -n 's/.*(\(.*\))/\1/p')%"
 
   if [ "$powered" = "yes" ]; then
     if [ "$status" != "Missing device address argument" ]; then
