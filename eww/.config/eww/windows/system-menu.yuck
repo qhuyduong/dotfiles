@@ -65,7 +65,7 @@
             :text "│")
           (button
             :class "bluetooth-arrow-btn"
-            :onclick "eww close system-menu && blueman-manager &"
+            :onclick "eww close system-menu && blueberry"
             ""))
         (label
           :class "text"
@@ -203,7 +203,7 @@
         (button
           :halign "end"
           :class "power-button icon"
-          :onclick "wlogout -p layer-shell &"
+          :onclick "nwg-bar &"
           "")))))
 
 (defwindow system-menu

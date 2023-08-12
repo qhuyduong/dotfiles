@@ -3,10 +3,11 @@ amd-ucode
 archlinux-wallpaper
 base
 base-devel
-blueman
+blueberry
 bluez
 bluez-utils
 brightnessctl
+brillo
 cachy-browser
 cachyos-keyring
 cachyos-mirrorlist
@@ -22,6 +23,7 @@ fastfetch
 fish
 fisher
 git
+gross-git
 hyprland-git
 jc
 jq
@@ -33,6 +35,7 @@ neovim
 network-manager-applet
 networkmanager
 noto-fonts
+nwg-bar
 pamixer
 pavucontrol
 pipewire
@@ -52,6 +55,7 @@ tree
 ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
 ttf-liberation
+ttf-material-icons-git
 waybar
 wget
 wireplumber

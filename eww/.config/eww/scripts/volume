@@ -10,14 +10,14 @@ vol() {
   pamixer --get-volume
 }
 ismuted() {
-  wpctl get-volume @DEFAULT_AUDIO_"$1"@ | rg -qi muted
+  pactl get-sink-mute @DEFAULT_"$1"@ | grep yes
   echo -n $?
 }
 setvol() {
-  wpctl set-volume @DEFAULT_AUDIO_"$1"@ "$(awk -v n="$2" 'BEGIN{print (n / 100)}')"
+  pactl set-sink-volume @DEFAULT_"$1"@ "$(awk -v n="$2" 'BEGIN{print (n / 100)}')"
 }
 setmute() {
-  wpctl set-mute @DEFAULT_AUDIO_"$1"@ toggle
+  pactl set-sink-mute @DEFAULT_"$1"@ toggle
 }
 
 gen_output() {
