@@ -7,17 +7,17 @@ volicons=("" "" "")
 date="$XDG_CACHE_HOME/eww/osd_vol.date"
 
 vol() {
-  pamixer --get-volume
+  wpctl get-volume @DEFAULT_AUDIO_"$1"@ | awk '{print int($2*100)}'
 }
 ismuted() {
-  pactl get-sink-mute @DEFAULT_"$1"@ | grep yes
+  wpctl get-volume @DEFAULT_AUDIO_"$1"@ | rg -qi muted
   echo -n $?
 }
 setvol() {
-  pactl set-sink-volume @DEFAULT_"$1"@ "$(awk -v n="$2" 'BEGIN{print (n / 100)}')"
+  wpctl set-volume @DEFAULT_AUDIO_"$1"@ "$(awk -v n="$2" 'BEGIN{print (n / 100)}')"
 }
 setmute() {
-  pactl set-sink-mute @DEFAULT_"$1"@ toggle
+  wpctl set-mute @DEFAULT_AUDIO_"$1"@ toggle
 }
 
 gen_output() {
