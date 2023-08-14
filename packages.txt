@@ -23,13 +23,14 @@ fisher
 git
 gross-git
 hyprland
+iw
 jc
 jq
 linux
 linux-firmware
+linux-headers
 mako
 neovim
-network-manager-applet
 networkmanager
 noto-fonts
 noto-fonts-cjk
@@ -40,9 +41,11 @@ pipewire-audio
 pipewire-pulse
 polkit-gnome
 propertree-git
+qemu-full
 qt5-graphicaleffects
 ripgrep
 rofi-lbonn-wayland
+samba
 sddm
 socat
 stow
@@ -51,6 +54,7 @@ swaybg
 swayidle
 swaylock
 swayosd-git
+telegram-desktop
 tmux
 tree
 ttf-dejavu
