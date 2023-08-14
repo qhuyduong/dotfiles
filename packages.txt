@@ -6,7 +6,6 @@ base-devel
 blueberry
 bluez
 bluez-utils
-brightnessctl
 brillo
 cachy-browser
 cachyos-keyring
@@ -16,6 +15,8 @@ cachyos-v4-mirrorlist
 catppuccin-gtk-theme-mocha
 catppuccin-mocha-dark-cursors
 cmake
+ddcci-driver-linux-dkms
+downgrade
 emacs-gcc-wayland-devel-bin
 eww-wayland
 fish
@@ -26,15 +27,17 @@ hyprland
 iw
 jc
 jq
-linux
 linux-firmware
-linux-headers
+linux-zen
+linux-zen-headers
 mako
 neovim
 networkmanager
+networkmanager-dmenu-git
 noto-fonts
 noto-fonts-cjk
 nwg-bar
+openssh
 p7zip
 pavucontrol
 pipewire-audio
