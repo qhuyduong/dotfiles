@@ -40,7 +40,7 @@
             :text "│")
           (button
             :class "net-arrow-btn"
-            :onclick "eww close system-menu && nm-connection-editor &"
+            :onclick "eww close system-menu && networkmanager_dmenu &"
             ""))
         (label
           :class "text"
