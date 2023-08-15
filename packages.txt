@@ -21,6 +21,7 @@ emacs-gcc-wayland-devel-bin
 eww-wayland
 fish
 fisher
+ghidra-desktop
 git
 gross-git
 hyprland
@@ -44,6 +45,7 @@ pavucontrol
 pipewire-audio
 pipewire-pulse
 polkit-gnome
+programmer-calculator
 propertree-git
 qemu-full
 qt5-graphicaleffects
