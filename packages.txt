@@ -30,6 +30,7 @@ hyprland
 iw
 jc
 jq
+libimobiledevice
 linux-firmware
 linux-zen
 linux-zen-headers
@@ -46,9 +47,11 @@ p7zip
 pavucontrol
 pipewire-audio
 pipewire-pulse
+playerctl
 polkit-gnome
 programmer-calculator
 propertree-git
+python-lsp-server
 qemu-full
 qt5-graphicaleffects
 ripgrep
@@ -69,6 +72,7 @@ ttf-dejavu
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-material-icons-git
+usbmuxd
 wget
 wireplumber
 wl-clipboard
