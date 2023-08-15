@@ -19,6 +19,8 @@ ddcci-driver-linux-dkms
 downgrade
 emacs-gcc-wayland-devel-bin
 eww-wayland
+fcitx5-configtool
+fcitx5-unikey
 fish
 fisher
 ghidra-desktop
