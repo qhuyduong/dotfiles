@@ -52,6 +52,7 @@ polkit-gnome
 programmer-calculator
 propertree-git
 python-lsp-server
+python-pip
 qemu-full
 qt5-graphicaleffects
 qt5-wayland
@@ -78,4 +79,5 @@ wget
 wireplumber
 wl-clipboard
 xdg-desktop-portal-hyprland-git
+xorg-xhost
 yay-bin
