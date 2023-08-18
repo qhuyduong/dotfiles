@@ -54,6 +54,7 @@ propertree-git
 python-lsp-server
 qemu-full
 qt5-graphicaleffects
+qt5-wayland
 ripgrep
 rofi-lbonn-wayland
 samba
