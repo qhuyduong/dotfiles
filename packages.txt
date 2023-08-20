@@ -31,9 +31,9 @@ iw
 jc
 jq
 libimobiledevice
+linux-cachyos
+linux-cachyos-headers
 linux-firmware
-linux-zen
-linux-zen-headers
 mako
 man-db
 networkmanager
