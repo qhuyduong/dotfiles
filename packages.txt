@@ -36,7 +36,6 @@ linux-zen
 linux-zen-headers
 mako
 man-db
-neovim
 networkmanager
 networkmanager-dmenu-git
 noto-fonts
@@ -69,12 +68,14 @@ swaylock
 swayosd-git
 telegram-desktop
 tmux
+transmission-gtk
 tree
 ttf-dejavu
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-material-icons-git
 usbmuxd
+vim
 wget
 wireplumber
 wl-clipboard
