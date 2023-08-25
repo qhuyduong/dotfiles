@@ -3,6 +3,7 @@ amd-ucode
 archlinux-wallpaper
 base
 base-devel
+bgrep
 blueberry
 bluez
 bluez-utils
@@ -16,6 +17,8 @@ catppuccin-gtk-theme-mocha
 catppuccin-mocha-dark-cursors
 cmake
 ddcci-driver-linux-dkms
+docker
+docker-compose
 downgrade
 emacs-gcc-wayland-devel-bin
 eww-wayland
