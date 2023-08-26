@@ -53,6 +53,7 @@ playerctl
 polkit-gnome
 programmer-calculator
 propertree-git
+python-lsp-black
 python-lsp-server
 python-pip
 qemu-full
