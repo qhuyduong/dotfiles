@@ -51,6 +51,7 @@ pipewire-audio
 pipewire-pulse
 playerctl
 polkit-gnome
+poppler-glib
 programmer-calculator
 propertree-git
 python-lsp-black
