@@ -8,7 +8,6 @@ blueberry
 bluez
 bluez-utils
 brillo
-cachy-browser
 cachyos-keyring
 cachyos-mirrorlist
 cachyos-v3-mirrorlist
@@ -24,10 +23,12 @@ emacs-gcc-wayland-devel-bin
 eww-wayland
 fcitx5-configtool
 fcitx5-unikey
+firefox
 fish
 fisher
 ghidra-desktop
 git
+grim
 gross-git
 hyprland
 iw
@@ -64,6 +65,7 @@ ripgrep
 rofi-lbonn-wayland
 samba
 sddm
+slurp
 socat
 stow
 sudo
@@ -76,6 +78,7 @@ tmux
 transmission-gtk
 tree
 ttf-dejavu
+ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-material-icons-git
