@@ -1,5 +1,6 @@
 alacritty
 amd-ucode
+archlinux-themes-sddm
 archlinux-wallpaper
 base
 base-devel
