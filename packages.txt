@@ -30,6 +30,7 @@ git
 grim
 gross-git
 hyprland
+inotify-tools
 iw
 jc
 jq
@@ -62,6 +63,7 @@ qt5-graphicaleffects
 qt5-wayland
 ripgrep
 rofi-lbonn-wayland
+rsync
 samba
 sddm
 slurp
