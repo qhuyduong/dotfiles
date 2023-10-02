@@ -1,40 +1,35 @@
 {
     "layer": "top",
-    "height": 30,
-    "spacing": 4,
+    "position": "top",
+    "height": 24,
     "modules-left": [ "hyprland/workspaces" ],
-    "modules-right": [ "pulseaudio", "network", "battery", "clock", "tray" ],
-	"hyprland/workspaces": {
-		"format": "{id}",
-		"on-scroll-up": "hyprctl dispatch workspace e+1",
-		"on-scroll-down": "hyprctl dispatch workspace e-1",
-		"on-click": "activate"
-	},
-	"hyprland/window": {
-		"format": "{}",
-		"separate-outputs": true,
-		"max-length": 50,
-	},
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
+    "modules-center": ["hyprland/window"],
+    "modules-right": [ "tray", "pulseaudio", "network", "battery", "clock" ],
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{icon}",
         "format-icons": {
-            "locked": "",
-            "unlocked": ""
+            "1:web": "",
+            "2:code": "",
+            "3:term": "",
+            "4:work": "",
+            "5:music": "",
+            "6:docs": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
         }
     },
     "tray": {
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "<big>   {:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d} ",
-		"format": "{:%H:%M}  ",
+        "format-alt": "{:%Y-%m-%d}"
     },
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
@@ -42,15 +37,9 @@
         "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} 󰈀",
         "tooltip-format": "{ifname} via {gwaddr} 󰈀",
@@ -59,7 +48,6 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": "󰂲 {icon} {format_source}",
@@ -78,4 +66,3 @@
         "on-click": "pavucontrol"
     },
 }
-
