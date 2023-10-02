@@ -17,9 +17,7 @@ catppuccin-gtk-theme-mocha
 catppuccin-mocha-dark-cursors
 cmake
 ddcci-driver-linux-dkms
-downgrade
 emacs-gcc-wayland-devel-bin
-eww-wayland
 fcitx5-configtool
 fcitx5-unikey
 firefox
@@ -28,12 +26,8 @@ fisher
 ghidra-desktop
 git
 grim
-gross-git
 hyprland
 inotify-tools
-iw
-jc
-jq
 libimobiledevice
 linux-cachyos
 linux-cachyos-headers
@@ -41,10 +35,8 @@ linux-firmware
 mako
 man-db
 networkmanager
-networkmanager-dmenu-git
 noto-fonts
 noto-fonts-cjk
-nwg-bar
 openssh
 p7zip
 pavucontrol
@@ -67,7 +59,6 @@ rsync
 samba
 sddm
 slurp
-socat
 stow
 sudo
 swaybg
@@ -76,7 +67,6 @@ swaylock
 swayosd-git
 telegram-desktop
 tmux
-transmission-gtk
 tree
 ttf-dejavu
 ttf-firacode-nerd
@@ -85,6 +75,7 @@ ttf-liberation
 ttf-material-icons-git
 usbmuxd
 vim
+waybar
 wget
 wireplumber
 wl-clipboard

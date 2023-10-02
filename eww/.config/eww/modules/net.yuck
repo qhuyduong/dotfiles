@@ -1,6 +1,0 @@
-(defwidget net []
-  (button
-    :class "module icon"
-    :tooltip {net.name}
-    :style "color: ${net.color};"
-    {net.icon}))
