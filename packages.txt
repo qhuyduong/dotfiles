@@ -64,7 +64,6 @@ sudo
 swaybg
 swayidle
 swaylock
-swayosd-git
 telegram-desktop
 tmux
 tree
