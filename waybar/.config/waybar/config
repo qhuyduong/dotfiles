@@ -4,7 +4,7 @@
     "height": 24,
     "modules-left": [ "hyprland/workspaces" ],
     "modules-center": ["hyprland/window"],
-    "modules-right": [ "tray", "pulseaudio", "network", "battery", "clock" ],
+    "modules-right": [ "tray", "backlight", "wireplumber", "network", "battery", "clock" ],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
@@ -24,31 +24,14 @@
     "tray": {
         "spacing": 10
     },
-    "clock": {
-        "format-alt": "{:%Y-%m-%d}"
+    "backlight": {
+        "format": "{percent}% {icon} ",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+	"on-scroll-up": "brillo -el -A 5",
+	"on-scroll-down": "brillo -el -U 5"
     },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon} ",
-        "format-charging": "{capacity}% 󰂄",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon} ",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
-        "tooltip-format": "{ifname} via {gwaddr} 󰈀",
-        "format-linked": "{ifname} (No IP) 󰈀",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        "format": "{volume}% {icon}",
+    "wireplumber": {
+        "format": "{volume}% {icon} ",
         "format-muted": "󰝟",
         "format-bluetooth": "{volume}% {icon} ",
         "format-bluetooth-muted": "󰂲 {icon} ",
@@ -63,4 +46,27 @@
         },
         "on-click": "pavucontrol"
     },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "tooltip-format": "{ifname} via {gwaddr} 󰈀",
+        "format-linked": "{ifname} (No IP) 󰈀",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon} ",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon} ",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format-alt": "{:%Y-%m-%d}"
+    }
 }
