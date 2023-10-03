@@ -22,8 +22,8 @@
 	"on-scroll-down": "brillo -el -U 5"
     },
     "pulseaudio": {
-        "format": "{volume}% {icon} ",
-        "format-bluetooth": "{volume}% {icon}  ",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon} ",
         "format-muted": "󰝟 ",
         "format-icons": {
             "headphone": "",
