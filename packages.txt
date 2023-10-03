@@ -1,6 +1,5 @@
 alacritty
 amd-ucode
-archlinux-themes-sddm
 archlinux-wallpaper
 base
 base-devel
@@ -52,6 +51,7 @@ python-lsp-server
 python-pip
 qemu-full
 qt5-graphicaleffects
+qt5-quickcontrols2
 qt5-wayland
 ripgrep
 rofi-lbonn-wayland
