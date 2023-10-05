@@ -35,6 +35,7 @@ linux-cachyos-headers
 linux-firmware
 mako
 man-db
+nemu
 networkmanager
 noto-fonts
 noto-fonts-cjk
@@ -75,6 +76,7 @@ ttf-liberation
 ttf-material-icons-git
 usbmuxd
 vim
+virt-viewer
 waybar
 wget
 wireplumber
