@@ -26,6 +26,7 @@ fisher
 ghidra-desktop
 git
 grim
+gtklock-git
 hyprland
 inotify-tools
 libimobiledevice
@@ -64,7 +65,6 @@ stow
 sudo
 swaybg
 swayidle
-swaylock
 telegram-desktop
 tmux
 tree
