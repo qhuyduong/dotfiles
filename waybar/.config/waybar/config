@@ -16,7 +16,7 @@
         "spacing": 10
     },
     "backlight": {
-        "format": "{percent}% {icon} ",
+        "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
 	"on-scroll-up": "brillo -el -A 5",
 	"on-scroll-down": "brillo -el -U 5"
@@ -33,12 +33,11 @@
         "on-click": "pavucontrol"
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-wifi": "{essid} ",
         "format-ethernet": "{ipaddr}/{cidr} 󰈀",
-        "tooltip-format": "{ifname} via {gwaddr} 󰈀",
-        "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
     },
     "battery": {
         "states": {
@@ -46,10 +45,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon} ",
+        "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon} ",
+        "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
