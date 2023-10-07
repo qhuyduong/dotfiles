@@ -41,8 +41,6 @@
     },
     "battery": {
         "states": {
-            "good": 95,
-            "warning": 30,
             "critical": 15
         },
         "format": "{capacity}% {icon}",

@@ -16,7 +16,7 @@ window#waybar {
     margin: 0 5px;
 }
 
-#battery.warning:not(.charging) {
+#battery.critical:not(.charging) {
     color: #f53c3c;
 }
 
