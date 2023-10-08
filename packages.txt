@@ -13,8 +13,10 @@ cachyos-keyring
 cachyos-mirrorlist
 cachyos-v3-mirrorlist
 cachyos-v4-mirrorlist
+caprine
 catppuccin-gtk-theme-mocha
 catppuccin-mocha-dark-cursors
+cloudflare-warp-bin
 cmake
 ddcci-driver-linux-dkms
 emacs-gcc-wayland-devel-bin
@@ -29,6 +31,7 @@ grim
 gtklock-git
 hyprland
 inotify-tools
+iptables-nft
 libimobiledevice
 linux-cachyos
 linux-cachyos-headers
@@ -74,6 +77,7 @@ ttf-firacode-nerd
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-material-icons-git
+ttf-ubuntu-nerd
 usbmuxd
 vim
 virt-viewer
