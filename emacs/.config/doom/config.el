@@ -83,3 +83,7 @@
        :nvim "C-j"  #'evil-window-down
        :nvim "C-k"  #'evil-window-up
        :nvim "C-l"  #'evil-window-right))
+
+(after! evil
+  (advice-add #'evil-window-split :after (lambda (&rest _args) (other-window 1)))
+  (advice-add #'evil-window-vsplit :after (lambda (&rest _args) (other-window 1))))
