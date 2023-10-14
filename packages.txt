@@ -27,9 +27,9 @@ fish
 fisher
 ghidra-desktop
 git
-grim
 gtklock-git
 hyprland
+hyprshot
 inotify-tools
 iptables-nft
 libimobiledevice
@@ -64,7 +64,6 @@ rofi-lbonn-wayland
 rsync
 samba
 sddm
-slurp
 stow
 sudo
 swaybg
