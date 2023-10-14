@@ -50,6 +50,7 @@ picocom
 pipewire-audio
 pipewire-pulse
 playerctl
+plymouth
 polkit-gnome
 poppler-glib
 programmer-calculator
