@@ -32,6 +32,7 @@ hyprland
 hyprshot
 inotify-tools
 iptables-nft
+kdeconnect
 libimobiledevice
 linux-cachyos
 linux-cachyos-headers
