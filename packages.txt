@@ -46,6 +46,7 @@ noto-fonts-cjk
 openssh
 p7zip
 pavucontrol
+picocom
 pipewire-audio
 pipewire-pulse
 playerctl
