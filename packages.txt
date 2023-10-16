@@ -54,6 +54,7 @@ plymouth
 polkit-gnome
 poppler-glib
 programmer-calculator
+python-lsp-server
 python-pip
 qemu-full
 qt5-graphicaleffects
