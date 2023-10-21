@@ -1,0 +1,8 @@
+[Unit]
+Description=Run battery check every Minute
+
+[Timer]
+OnCalendar=*-*-* *:*:00
+
+[Install]
+WantedBy=timers.target

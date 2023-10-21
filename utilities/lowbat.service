@@ -1,0 +1,5 @@
+[Unit]
+Description=Hibernate on low battery
+
+[Service]
+ExecStart=/usr/local/bin/lowbat.sh

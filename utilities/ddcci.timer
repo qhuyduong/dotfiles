@@ -1,0 +1,8 @@
+[Unit]
+Description=Delay loading ddcci module
+
+[Timer]
+OnBootSec=1min
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,6 @@
+[Unit]
+Description=Load ddcci module
+
+[Service]
+Type=oneshot 
+ExecStart=/usr/bin/modprobe ddcci_backlight
