@@ -11,6 +11,7 @@ btop
 caprine
 catppuccin-gtk-theme-mocha
 catppuccin-mocha-dark-cursors
+clang
 cloudflare-warp-bin
 cmake
 ddcci-driver-linux-dkms
