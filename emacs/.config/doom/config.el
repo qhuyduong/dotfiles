@@ -78,11 +78,30 @@
   (setq lsp-headerline-breadcrumb-enable t))
 
 ;; Easier window navigation
+(defun evil-window-or-tmux (func param)
+ (interactive)
+ (condition-case nil
+  (funcall func 1)
+  (error (shell-command (concat "tmux select-pane " param)))))
+
+(defun evil-window-or-tmux-up ()
+  (interactive)
+  (evil-window-or-tmux 'evil-window-up "-U"))
+(defun evil-window-or-tmux-down ()
+  (interactive)
+  (evil-window-or-tmux 'evil-window-down "-D"))
+(defun evil-window-or-tmux-left ()
+  (interactive)
+  (evil-window-or-tmux 'evil-window-left "-L"))
+(defun evil-window-or-tmux-right ()
+  (interactive)
+  (evil-window-or-tmux 'evil-window-right "-R"))
+
 (map! (:map general-override-mode-map
-       :nvim "C-h"  #'evil-window-left
-       :nvim "C-j"  #'evil-window-down
-       :nvim "C-k"  #'evil-window-up
-       :nvim "C-l"  #'evil-window-right))
+       :nvim "C-h"  #'evil-window-or-tmux-left
+       :nvim "C-j"  #'evil-window-or-tmux-down
+       :nvim "C-k"  #'evil-window-or-tmux-up
+       :nvim "C-l"  #'evil-window-or-tmux-right))
 
 (after! evil
   (advice-add #'evil-window-split :after (lambda (&rest _args) (other-window 1)))
