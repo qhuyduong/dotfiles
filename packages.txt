@@ -67,6 +67,7 @@ samba
 sddm
 stow
 sudo
+sway-audio-idle-inhibit-git
 swaybg
 swayidle
 telegram-desktop

@@ -12,15 +12,19 @@ window#waybar {
     padding: 0 5px;
 }
 
-#tray, #backlight, #pulseaudio, #network, #battery, #clock {
+#tray, #custom-audio_idle_inhibitor, #backlight, #pulseaudio, #network, #battery, #clock {
     margin: 0 5px;
 }
 
-#battery.critical:not(.charging) {
-    color: #f53c3c;
+#custom-audio_idle_inhibitor {
+    color: #03fca5;
 }
 
 #network.disconnected {
+    color: #f53c3c;
+}
+
+#battery.critical:not(.charging) {
     color: #f53c3c;
 }
 
