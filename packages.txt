@@ -1,3 +1,4 @@
+acpica
 alacritty
 amd-ucode
 archlinux-wallpaper
@@ -15,6 +16,7 @@ catppuccin-mocha-dark-cursors
 clang
 cloudflare-warp-bin
 cmake
+cpio
 ddcci-driver-linux-dkms
 emacs-gcc-wayland-devel-bin
 fcitx5-configtool
@@ -53,6 +55,7 @@ plymouth
 polkit-gnome
 poppler-glib
 programmer-calculator
+propertree-git
 python-lsp-server
 python-pip
 qemu-full
