@@ -31,6 +31,7 @@ hyprshot
 iptables-nft
 kdeconnect
 libimobiledevice
+libva-mesa-driver
 linux
 linux-firmware
 linux-headers
@@ -84,6 +85,7 @@ ttf-ubuntu-nerd
 usbmuxd
 vim
 virt-viewer
+vulkan-radeon
 waybar
 wget
 wireplumber
