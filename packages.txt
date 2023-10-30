@@ -21,7 +21,6 @@ ddcci-driver-linux-dkms
 emacs-gcc-wayland-devel-bin
 fcitx5-configtool
 fcitx5-unikey
-firefox
 fish
 fisher
 ghidra-desktop
