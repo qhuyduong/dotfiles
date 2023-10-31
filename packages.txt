@@ -83,6 +83,7 @@ ttf-liberation
 ttf-material-icons-git
 ttf-ubuntu-nerd
 usbmuxd
+uxplay
 vim
 virt-viewer
 vulkan-radeon
