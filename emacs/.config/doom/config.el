@@ -107,4 +107,5 @@
   (advice-add #'evil-window-split :after (lambda (&rest _args) (other-window 1)))
   (advice-add #'evil-window-vsplit :after (lambda (&rest _args) (other-window 1))))
 
-(xclip-mode t)
+(unless (display-graphic-p)
+  (xclip-mode t))
