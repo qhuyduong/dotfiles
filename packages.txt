@@ -1,6 +1,9 @@
 acpica
 alacritty
 amd-ucode
+android-apktool-bin
+android-sdk-build-tools
+android-tools
 archlinux-wallpaper
 base
 base-devel
@@ -27,8 +30,9 @@ ghidra-desktop
 git
 gtklock-git
 hyprland
-hyprshot
+hyprshot-git
 iptables-nft
+jadx
 kdeconnect
 libimobiledevice
 libva-mesa-driver
@@ -74,6 +78,7 @@ sway-audio-idle-inhibit-git
 swaybg
 swayidle
 telegram-desktop
+tlp
 tmux
 tree
 ttf-dejavu
@@ -82,6 +87,7 @@ ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-material-icons-git
 ttf-ubuntu-nerd
+uber-apk-signer-bin
 usbmuxd
 uxplay
 vim
