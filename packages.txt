@@ -2,11 +2,15 @@ acpica
 alacritty
 amd-ucode
 android-apktool-bin
+android-emulator
+android-platform
 android-sdk-build-tools
-android-tools
+android-sdk-cmdline-tools-latest
+android-sdk-platform-tools
 archlinux-wallpaper
 base
 base-devel
+binwalk
 blueberry
 bluez
 bluez-utils
@@ -21,6 +25,7 @@ cloudflare-warp-bin
 cmake
 cpio
 ddcci-driver-linux-dkms
+downgrade
 emacs-gcc-wayland-devel-bin
 fcitx5-configtool
 fcitx5-unikey
@@ -42,6 +47,7 @@ linux-headers
 mako
 man-db
 mitmproxy
+ncdu
 nemu
 networkmanager
 nodejs
@@ -88,6 +94,7 @@ ttf-liberation
 ttf-material-icons-git
 ttf-ubuntu-nerd
 uber-apk-signer-bin
+upwork
 usbmuxd
 uxplay
 vim
