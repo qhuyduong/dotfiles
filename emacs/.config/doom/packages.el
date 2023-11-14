@@ -49,4 +49,6 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 (package! catppuccin-theme)
+(package! git-link)
+(package! smali-mode :recipe (:host github :repo "strazzere/Emacs-Smali"))
 (package! xclip)

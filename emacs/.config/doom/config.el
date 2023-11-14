@@ -109,3 +109,6 @@
 
 (unless (display-graphic-p)
   (xclip-mode t))
+
+(use-package! smali-mode
+  :mode "\\.smali\\'")
