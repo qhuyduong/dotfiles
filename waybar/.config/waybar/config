@@ -5,13 +5,6 @@
     "modules-left": [ "hyprland/workspaces" ],
     "modules-center": ["hyprland/window"],
     "modules-right": [ "tray", "custom/audio_idle_inhibitor", "backlight", "pulseaudio", "network", "battery", "clock" ],
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "active": "",
-            "default": ""
-        }
-    },
     "tray": {
         "spacing": 10
     },

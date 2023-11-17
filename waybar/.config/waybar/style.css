@@ -12,6 +12,10 @@ window#waybar {
     padding: 0 5px;
 }
 
+#workspaces button.active {
+    color: #f53c3c;
+}
+
 #tray, #custom-audio_idle_inhibitor, #backlight, #pulseaudio, #network, #battery, #clock {
     margin: 0 5px;
 }
