@@ -18,6 +18,7 @@ bluez-utils
 brave-bin
 brillo
 btop
+bundletool
 caprine
 catppuccin-gtk-theme-mocha
 catppuccin-mocha-dark-cursors
@@ -67,6 +68,7 @@ polkit-gnome
 poppler-glib
 programmer-calculator
 propertree-git
+python-dbus-next
 python-lsp-server
 python-pip
 qemu-full
@@ -84,6 +86,7 @@ sudo
 sway-audio-idle-inhibit-git
 swaybg
 swayidle
+teamviewer
 telegram-desktop
 tlp
 tmux
@@ -95,6 +98,7 @@ ttf-liberation
 ttf-material-icons-git
 ttf-ubuntu-nerd
 uber-apk-signer-bin
+unzip
 upwork
 usbmuxd
 uxplay
