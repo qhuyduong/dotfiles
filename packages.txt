@@ -10,6 +10,7 @@ android-sdk-platform-tools
 archlinux-wallpaper
 base
 base-devel
+binder_linux-dkms
 binwalk
 blueberry
 bluez
@@ -101,6 +102,7 @@ vim
 virt-viewer
 vulkan-radeon
 waybar
+waydroid
 wget
 wireplumber
 wl-clipboard
