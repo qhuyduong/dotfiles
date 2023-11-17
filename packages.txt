@@ -41,9 +41,9 @@ jadx
 kdeconnect
 libimobiledevice
 libva-mesa-driver
-linux
 linux-firmware
-linux-headers
+linux-lts
+linux-lts-headers
 mako
 man-db
 mitmproxy
