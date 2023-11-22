@@ -2,15 +2,15 @@ font:
   size: 12
 
   normal:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMono NF
     style: Regular
 
   bold:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMono NF
     style: Bold
 
   italic:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMono NF
     style: Italic
 
 selection:
