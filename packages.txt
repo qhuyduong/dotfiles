@@ -6,6 +6,7 @@ archlinux-wallpaper
 base
 base-devel
 binder_linux-dkms
+binwalk
 blueberry
 bluez
 bluez-utils
