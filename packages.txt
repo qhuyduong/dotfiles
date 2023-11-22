@@ -29,6 +29,7 @@ fish
 fisher
 ghidra-desktop
 git
+git-lfs
 gtklock-git
 hyprland
 hyprshot-git
