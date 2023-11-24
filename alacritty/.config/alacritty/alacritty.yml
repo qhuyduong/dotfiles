@@ -18,6 +18,7 @@ selection:
 
 window:
   dynamic_padding: true
+  startup_mode: Maximized
 
 import:
   - ~/.config/alacritty/catppuccin-mocha.yml
