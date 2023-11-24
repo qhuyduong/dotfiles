@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Upwork
+Exec=/usr/local/bin/upwork.sh %U
+Terminal=false
+Type=Application
+Icon=upwork
+StartupWMClass=Upwork
+StartupNotify=false
+Encoding=UTF-8
+MimeType=x-scheme-handler/upwork;
+Comment=Upwork Desktop Application
+Categories=Utility;

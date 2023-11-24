@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Caprine
+GenericName=IM Client
+Comment=Unofficial Facebook Messenger app
+Icon=caprine
+Exec=caprine --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime
+Categories=GTK;InstantMessaging;Network;
+StartupNotify=true
