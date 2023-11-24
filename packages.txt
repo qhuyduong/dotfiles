@@ -25,7 +25,7 @@ jadx
 kdeconnect
 less
 lightdm
-lightdm-pantheon-greeter
+lightdm-slick-greeter
 linux-firmware
 linux-lts
 linux-lts-headers
