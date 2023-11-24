@@ -17,7 +17,7 @@ selection:
   save_to_clipboard: true
 
 window:
-  dynamic_padding: true
+  decorations: None
   startup_mode: Maximized
 
 import:
