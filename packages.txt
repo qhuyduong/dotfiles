@@ -8,7 +8,6 @@ binwalk
 brave-bin
 bundletool
 caprine
-cloudflare-warp-bin
 cmake
 ddcci-driver-linux-dkms
 emacs-gcc-wayland-devel-bin
