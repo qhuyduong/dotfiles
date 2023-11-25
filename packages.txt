@@ -1,6 +1,7 @@
 alacritty
 amd-ucode
 android-apktool-bin
+android-studio
 base
 base-devel
 binwalk
@@ -21,6 +22,7 @@ git-lfs
 granite
 granite7
 gtk-theme-elementary
+ibus-bamboo
 jadx
 kdeconnect
 less
@@ -30,6 +32,7 @@ linux-firmware
 linux-lts
 linux-lts-headers
 mitmproxy
+ncdu
 nemu
 networkmanager
 p7zip
@@ -75,6 +78,7 @@ switchboard-plug-sound
 switchboard-plug-user-accounts
 telegram-desktop
 tmux
+touchegg
 tree
 ttf-jetbrains-mono-nerd
 uber-apk-signer-bin
@@ -85,6 +89,7 @@ vim
 virt-viewer
 vulkan-radeon
 wingpanel
+wingpanel-indicator-ayatana-git
 wingpanel-indicator-bluetooth
 wingpanel-indicator-datetime
 wingpanel-indicator-keyboard
