@@ -2,6 +2,7 @@ alacritty
 amd-ucode
 android-apktool-bin
 android-studio
+android-udev
 base
 base-devel
 binwalk
@@ -13,6 +14,8 @@ cmake
 contractor
 elementary-icon-theme
 elementary-wallpapers
+emacs-nativecomp
+evince
 fish
 fisher
 gala
@@ -56,6 +59,8 @@ pantheon-shortcut-overlay
 pantheon-sideload
 pantheon-tasks
 plymouth
+qemu-hw-display-qxl
+qemu-ui-gtk
 ripgrep
 sound-theme-elementary
 stow
