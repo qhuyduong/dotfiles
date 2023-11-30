@@ -1,6 +1,7 @@
 alacritty
 amd-ucode
 android-apktool-bin
+android-studio
 baobab
 base
 base-devel
@@ -8,6 +9,7 @@ binwalk
 brave-bin
 bundletool
 caprine
+clang
 cmake
 emacs-gcc-wayland-devel-bin
 epiphany
@@ -40,6 +42,7 @@ gnome-session
 gnome-settings-daemon
 gnome-shell
 gnome-shell-extension-dash-to-dock
+gnome-shell-extension-tray-icons-reloaded
 gnome-shell-extensions
 gnome-software
 gnome-system-monitor
@@ -57,6 +60,8 @@ gvfs-gphoto2
 gvfs-mtp
 gvfs-nfs
 gvfs-smb
+helix
+ibus-bamboo
 jadx
 kdeconnect
 less
@@ -69,6 +74,7 @@ mitmproxy
 nautilus
 ncdu
 nemu
+neovim
 networkmanager
 orca
 p7zip
@@ -90,7 +96,6 @@ ttf-jetbrains-mono-nerd
 uber-apk-signer-bin
 upwork
 uxplay
-vim
 virt-viewer
 vulkan-radeon
 xdg-desktop-portal-gnome
