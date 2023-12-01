@@ -60,6 +60,13 @@ local plugins = {
   --   "mg979/vim-visual-multi",
   --   lazy = false,
   -- }
+  {
+    "aserowy/tmux.nvim",
+    lazy = false,
+    config = function()
+      require("custom.configs.tmux")
+    end,
+  },
 }
 
 return plugins
