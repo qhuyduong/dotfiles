@@ -5,13 +5,13 @@ android-studio
 baobab
 base
 base-devel
+binder_linux-dkms
 binwalk
 brave-bin
 bundletool
 caprine
 clang
 cmake
-emacs-gcc-wayland-devel-bin
 epiphany
 evince
 fish
@@ -63,7 +63,9 @@ gvfs-smb
 helix
 ibus-bamboo
 jadx
+jdk11-openjdk
 kdeconnect
+lazygit
 less
 linux-firmware
 linux-lts
@@ -79,11 +81,13 @@ networkmanager
 orca
 p7zip
 plymouth
+qemu-desktop
 ripgrep
 rygel
 simple-scan
 snapshot
 stow
+stylua
 sudo
 sushi
 tecla
@@ -98,6 +102,7 @@ upwork
 uxplay
 virt-viewer
 vulkan-radeon
+waydroid
 xdg-desktop-portal-gnome
 xdg-user-dirs-gtk
 yay-bin
