@@ -1,3 +1,4 @@
+android-tools
 arch-install-scripts
 base
 base-devel
@@ -7,13 +8,20 @@ fish
 fisher
 git
 less
+lib32-glibc
+ncurses5-compat-libs
 neovim
 ninja
 openbsd-netcat
 openssh
+perl-xml-simple
 python
+ripgrep
 stow
 sudo
 tmux
+unzip
+usbutils
 vim
 yay-bin
+zip
