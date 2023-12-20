@@ -78,6 +78,8 @@ ncdu
 nemu
 neovim
 networkmanager
+noto-fonts
+noto-fonts-cjk
 orca
 p7zip
 plymouth
@@ -86,6 +88,7 @@ ripgrep
 rygel
 simple-scan
 snapshot
+steam
 stow
 stylua
 sudo
