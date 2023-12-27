@@ -8,11 +8,14 @@ fakeroot-tcp
 fish
 fisher
 git
+jump-bin
+lazygit
 less
 ncdu
 neovim
 openssh
 picocom
+pyenv
 python
 ripgrep
 stow
