@@ -12,7 +12,6 @@ jump-bin
 lazygit
 less
 ncdu
-neovim
 openssh
 picocom
 pyenv
@@ -24,5 +23,6 @@ tmux
 tree
 unzip
 usbutils
+vim
 wget
 yay-bin
