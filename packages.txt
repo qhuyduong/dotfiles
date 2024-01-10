@@ -16,6 +16,7 @@ epiphany
 evince
 fish
 fisher
+gamemode
 gdm
 ghidra-desktop
 git
@@ -67,11 +68,13 @@ jdk11-openjdk
 kdeconnect
 lazygit
 less
+lib32-gamemode
 linux-firmware
 linux-lts
 linux-lts-headers
 loupe
 malcontent
+mangohud-git
 mitmproxy
 nautilus
 ncdu
@@ -85,10 +88,10 @@ p7zip
 plymouth
 qemu-desktop
 ripgrep
+rpfm-bin
 rygel
 simple-scan
 snapshot
-steam
 stow
 stylua
 sudo
