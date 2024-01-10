@@ -1,6 +1,7 @@
 arch-install-scripts
 base
 base-devel
+bind
 binwalk
 btop
 dtc
@@ -8,6 +9,7 @@ fakeroot-tcp
 fish
 fisher
 git
+jadx
 jump-bin
 lazygit
 less
