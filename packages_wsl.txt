@@ -1,6 +1,7 @@
 arch-install-scripts
 base
 base-devel
+bcompare
 bind
 binwalk
 btop
