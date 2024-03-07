@@ -1,3 +1,4 @@
+aosp-devel
 arch-install-scripts
 base
 base-devel
@@ -5,6 +6,7 @@ bcompare
 binwalk
 btop
 cantarell-fonts
+cpio
 dos2unix
 dtc
 extfstools-git
@@ -20,7 +22,9 @@ man-db
 ncdu
 openbsd-netcat
 openssh
+openssl-1.1
 p7zip
+perl-xml-simple
 picocom
 poppler
 pyenv
