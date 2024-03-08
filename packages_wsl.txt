@@ -15,6 +15,7 @@ fd
 fish
 fisher
 git
+jadx
 jump-bin
 lazygit
 less
