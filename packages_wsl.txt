@@ -9,6 +9,7 @@ cantarell-fonts
 cpio
 dos2unix
 dtc
+edl-git
 extfstools-git
 fakeroot-tcp
 fd
@@ -37,6 +38,7 @@ sudo
 tmate
 tmux
 tree
+uefitool-bin
 unzip
 vim
 wget
