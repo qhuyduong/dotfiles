@@ -3,6 +3,7 @@ arch-install-scripts
 base
 base-devel
 bcompare
+binaryninja-personal
 binwalk
 btop
 cantarell-fonts
