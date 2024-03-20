@@ -35,7 +35,6 @@ rsync
 sdat2img-git
 stow
 sudo
-tmate
 tmux
 tree
 uefitool-bin
