@@ -1,4 +1,8 @@
-set -g async_prompt_functions _pure_prompt_git
+if status is-interactive
+    pyenv init - | source
+    jump shell fish | source
 
-alias emacs='emacs -nw'
-alias magit='emacsclient -n -e "(progn (magit-status) (delete-other-windows))"'
+    if not set -q TMUX; and [ "$TERM_PROGRAM" != "vscode" ]
+        tmux new-session -A -s main
+    end
+end
