@@ -8,6 +8,7 @@ binwalk
 btop
 cantarell-fonts
 cpio
+diffr
 dos2unix
 dtc
 edl-git
@@ -36,10 +37,12 @@ rsync
 sdat2img-git
 stow
 sudo
+systemd-resolvconf
 tmux
 tree
 uefitool-bin
 unzip
 vim
 wget
+wireguard-tools
 yay-bin
