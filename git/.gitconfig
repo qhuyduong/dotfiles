@@ -1,7 +1,7 @@
 [core]
 	editor = vim
 	hooksPath = ~/.config/githooks/
-	pager = diffr | less -R
+	pager = diffr --colors refine-removed:background:200,0,0:foreground:white:bold | less -R
 [diff]
 	colorMoved = default
 [delta]

@@ -1,7 +1,7 @@
 git:
   paging:
     colorArg: always
-    pager: diffr
+    useConfig: true
 
 gui:
   theme:
