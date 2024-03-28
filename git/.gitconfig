@@ -1,20 +1,26 @@
-[color]
-	ui = auto
 [core]
-	editor = nvim
+	editor = vim
+	hooksPath = ~/.config/githooks/
+	pager = diffr | less -R
+[diff]
+	colorMoved = default
+[delta]
+	line-numbers = false
+	navigate = true
 [github]
 	user = qhuyduong
+[http "https://qpm-git.qualcomm.com"]
+	followRedirects = true
+[include]
+	path = ~/.git-login.creds
+[interactive]
+	difffilter = diffr
+[merge]
+	conflictstyle = diff3
 [pull]
 	ff = only
 [push]
 	default = current
 [user]
+	email = quochuy.duong@motorolasolutions.com
 	name = Huy Duong
-	email = qhuyduong92@gmail.com
-[init]
-	defaultBranch = main
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
