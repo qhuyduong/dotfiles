@@ -1,9 +1,9 @@
+adobe-source-code-pro-fonts
 aosp-devel
 base
 base-devel
 bcompare
 binwalk
-cantarell-fonts
 cpio
 diffr
 fd
