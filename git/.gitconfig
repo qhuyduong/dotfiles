@@ -1,3 +1,5 @@
+[color]
+	ui = true
 [core]
 	editor = vim
 	hooksPath = ~/.config/githooks/
