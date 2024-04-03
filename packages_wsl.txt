@@ -1,4 +1,3 @@
-adobe-source-code-pro-fonts
 aosp-devel
 base
 base-devel
@@ -28,6 +27,7 @@ sudo
 systemd-resolvconf
 tmux
 tree
+ttf-victor-mono-nerd
 vim
 wget
 wireguard-tools
