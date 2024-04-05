@@ -22,6 +22,7 @@ perl-xml-simple
 picocom
 python2-bin
 ripgrep
+scrcpy
 stow
 sudo
 systemd-resolvconf
