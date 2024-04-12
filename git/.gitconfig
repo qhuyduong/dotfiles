@@ -19,6 +19,7 @@
 	difffilter = diffr
 [merge]
 	conflictstyle = diff3
+	ff = no
 [pull]
 	ff = only
 [push]
