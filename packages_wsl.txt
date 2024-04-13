@@ -20,7 +20,7 @@ openssl-1.1
 p7zip
 perl-xml-simple
 picocom
-python2-bin
+pyenv
 ripgrep
 scrcpy
 stow
