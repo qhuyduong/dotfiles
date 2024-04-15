@@ -3,6 +3,7 @@ base
 base-devel
 bcompare
 binwalk
+ca-certificates
 cpio
 diffr
 fd
