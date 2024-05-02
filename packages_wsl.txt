@@ -4,6 +4,8 @@ base-devel
 bcompare
 binwalk
 ca-certificates
+cantarell-fonts
+cloudflared
 cpio
 diffr
 fd
@@ -28,9 +30,10 @@ scrcpy
 stow
 sudo
 systemd-resolvconf
+tailscale
+tigervnc
 tmux
 tree
-ttf-victor-mono-nerd
 vim
 wget
 wireguard-tools
