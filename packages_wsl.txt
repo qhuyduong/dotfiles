@@ -1,3 +1,4 @@
+android-apktool-bin
 aosp-devel
 base
 base-devel
@@ -12,6 +13,8 @@ fd
 fish
 fisher
 git
+gtk3
+jadx
 jre-openjdk
 jump-bin
 lazygit
@@ -25,16 +28,15 @@ p7zip
 perl-xml-simple
 picocom
 pyenv
+rdesktop
 ripgrep
-scrcpy
 stow
 sudo
 systemd-resolvconf
 tailscale
-tigervnc
 tmux
 tree
 vim
+vysor-bin
 wget
-wireguard-tools
 yay-bin
