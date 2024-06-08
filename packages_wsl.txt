@@ -1,4 +1,5 @@
 android-apktool-bin
+android-tools
 aosp-devel
 base
 base-devel
@@ -36,6 +37,7 @@ systemd-resolvconf
 tailscale
 tmux
 tree
+usbutils
 vim
 vysor-bin
 wget
