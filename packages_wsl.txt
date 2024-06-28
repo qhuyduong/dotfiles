@@ -10,6 +10,9 @@ cantarell-fonts
 cloudflared
 cpio
 diffr
+dtc
+edl-git
+extfstools-git
 fd
 fish
 fisher
@@ -39,6 +42,7 @@ tmux
 tree
 usbutils
 vim
+vmlinux-to-elf-git
 vysor-bin
 wget
 yay-bin
