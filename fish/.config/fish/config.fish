@@ -6,6 +6,6 @@ if status is-interactive
         tmux new-session -A -s main
     end
 end
-set -gx DISPLAY (cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0 #GWSL
-set -gx PULSE_SERVER tcp:(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}') #GWSL
-set -gx LIBGL_ALWAYS_INDIRECT 1 #GWSL
+set -gx DISPLAY (ip route list default | awk '{print $3}'):0.0 # GWSL
+set -gx PULSE_SERVER tcp:(ip route list default | awk '{print $3}') # GWSL
+set -gx LIBGL_ALWAYS_INDIRECT 1 # GWSL
