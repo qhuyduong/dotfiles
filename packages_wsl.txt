@@ -1,4 +1,5 @@
 android-apktool-bin
+android-studio
 android-tools
 aosp-devel
 base
@@ -34,12 +35,15 @@ picocom
 pyenv
 rdesktop
 ripgrep
+sdat2img-git
 stow
 sudo
 systemd-resolvconf
 tailscale
 tmux
 tree
+ttf-jetbrains-mono-nerd
+uber-apk-signer-bin
 usbutils
 vim
 vmlinux-to-elf-git
