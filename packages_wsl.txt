@@ -4,7 +4,6 @@ android-tools
 aosp-devel
 base
 base-devel
-bcompare
 binwalk
 ca-certificates
 cantarell-fonts
