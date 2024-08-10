@@ -9,3 +9,4 @@ end
 set -gx DISPLAY (ip route list default | awk '{print $3}'):0.0 # GWSL
 set -gx PULSE_SERVER tcp:(ip route list default | awk '{print $3}') # GWSL
 set -gx LIBGL_ALWAYS_INDIRECT 1 # GWSL
+set -gx ADB_SERVER_SOCKET tcp:(ip route list default | awk '{print $3}'):5037
