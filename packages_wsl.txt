@@ -10,6 +10,8 @@ cantarell-fonts
 cloudflared
 cpio
 diffr
+docker
+docker-compose
 dtc
 edl-git
 extfstools-git
@@ -31,9 +33,13 @@ openssl-1.1
 p7zip
 perl-xml-simple
 picocom
+postgresql
 pyenv
+rbenv
 rdesktop
 ripgrep
+ruby-build
+scrcpy
 sdat2img-git
 stow
 sudo
@@ -46,6 +52,6 @@ uber-apk-signer-bin
 usbutils
 vim
 vmlinux-to-elf-git
-vysor-bin
 wget
+yarn
 yay-bin
