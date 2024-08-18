@@ -8,6 +8,7 @@ binwalk
 ca-certificates
 cantarell-fonts
 cloudflared
+cmake
 cpio
 diffr
 docker
@@ -26,7 +27,9 @@ jump-bin
 lazygit
 less
 man-db
+mosquitto
 ncdu
+nvm
 openbsd-netcat
 openssh
 openssl-1.1
@@ -37,9 +40,9 @@ postgresql
 pyenv
 rbenv
 rdesktop
+redis
 ripgrep
 ruby-build
-scrcpy
 sdat2img-git
 stow
 sudo
@@ -53,5 +56,4 @@ usbutils
 vim
 vmlinux-to-elf-git
 wget
-yarn
 yay-bin
