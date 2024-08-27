@@ -51,7 +51,6 @@ libssl1.1
 libx11-dev
 libxml-simple-perl
 libxml2-utils
-linux-headers-generic
 login
 lsb-release
 make

@@ -11,8 +11,6 @@
 	navigate = true
 [github]
 	user = qhuyduong
-[http "https://qpm-git.qualcomm.com"]
-	followRedirects = true
 [include]
 	path = ~/.git-login.creds
 [init]
