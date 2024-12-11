@@ -2,7 +2,6 @@
 	ui = true
 [core]
 	editor = vim
-	hooksPath = ~/.config/githooks/
 	pager = diffr --colors refine-removed:background:200,0,0:foreground:white:bold | less -R
 [diff]
 	colorMoved = default
@@ -25,7 +24,7 @@
 [push]
 	default = current
 [user]
-	email = huy.duong@ologn.tech
+	email = quochuy.duong@motorolasolutions.com
 	name = Huy Duong
-[includeIf "gitdir:~/msi/"]
-	path = ~/.gitconfig-msi
+[includeIf "gitdir:~/ologn/"]
+	path = ~/.gitconfig-ologn
