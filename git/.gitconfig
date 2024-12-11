@@ -25,5 +25,7 @@
 [push]
 	default = current
 [user]
-	email = quochuy.duong@motorolasolutions.com
+	email = huy.duong@ologn.tech
 	name = Huy Duong
+[includeIf "gitdir:~/msi/"]
+	path = ~/.gitconfig-msi
