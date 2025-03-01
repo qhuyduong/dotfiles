@@ -1,21 +1,12 @@
-[color]
-	ui = true
 [core]
 	editor = vim
 	pager = diffr --colors refine-removed:background:200,0,0:foreground:white:bold | less -R
 [diff]
 	colorMoved = default
-[delta]
-	line-numbers = false
-	navigate = true
-[github]
-	user = qhuyduong
-[include]
-	path = ~/.git-login.creds
 [init]
 	defaultBranch = main
 [interactive]
-	difffilter = diffr
+	difffilter = diffr --colors refine-removed:background:200,0,0:foreground:white:bold
 [merge]
 	conflictstyle = diff3
 	ff = no
@@ -24,7 +15,5 @@
 [push]
 	default = current
 [user]
-	email = quochuy.duong@motorolasolutions.com
+	email = huy.duong@ologn.tech
 	name = Huy Duong
-[includeIf "gitdir:~/ologn/"]
-	path = ~/.gitconfig-ologn
