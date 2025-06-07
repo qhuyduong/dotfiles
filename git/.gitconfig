@@ -17,3 +17,5 @@
 [user]
 	email = huy.duong@ologn.tech
 	name = Huy Duong
+[color]
+	ui = auto
