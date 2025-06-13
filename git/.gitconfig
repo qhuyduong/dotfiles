@@ -1,3 +1,5 @@
+[color]
+	ui = auto
 [core]
 	editor = vim
 	pager = diffr --colors refine-removed:background:200,0,0:foreground:white:bold | less -R
@@ -17,5 +19,3 @@
 [user]
 	email = huy.duong@ologn.tech
 	name = Huy Duong
-[color]
-	ui = auto
